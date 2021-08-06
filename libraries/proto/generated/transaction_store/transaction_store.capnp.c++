@@ -5,14 +5,14 @@
 
 namespace capnp {
 namespace schemas {
-static const ::capnp::_::AlignedData<67> b_f814b26e1a24039e = {
+static const ::capnp::_::AlignedData<67> b_d9285b8fd155dd07 = {
   {   0,   0,   0,   0,   5,   0,   6,   0,
-    158,   3,  36,  26, 110, 178,  20, 248,
+      7, 221,  85, 209, 143,  91,  40, 217,
      42,   0,   0,   0,   1,   0,   0,   0,
      91,  36, 180, 171, 124, 220,  45, 156,
       2,   0,   7,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0,
-     21,   0,   0,   0, 226,   1,   0,   0,
+     21,   0,   0,   0, 210,   1,   0,   0,
      49,   0,   0,   0,   7,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0,
      45,   0,   0,   0, 119,   0,   0,   0,
@@ -24,8 +24,8 @@ static const ::capnp::_::AlignedData<67> b_f814b26e1a24039e = {
      99, 116, 105, 111, 110,  95, 115, 116,
     111, 114, 101,  46,  99,  97, 112, 110,
     112,  58,  84, 114,  97, 110, 115,  97,
-     99, 116, 105, 111, 110,  82, 101,  99,
-    111, 114, 100,   0,   0,   0,   0,   0,
+     99, 116, 105, 111, 110,  73, 116, 101,
+    109,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   1,   0,   1,   0,
       8,   0,   0,   0,   3,   0,   4,   0,
       0,   0,   0,   0,   0,   0,   0,   0,
@@ -74,16 +74,16 @@ static const ::capnp::_::AlignedData<67> b_f814b26e1a24039e = {
       0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0, }
 };
-::capnp::word const* const bp_f814b26e1a24039e = b_f814b26e1a24039e.words;
+::capnp::word const* const bp_d9285b8fd155dd07 = b_d9285b8fd155dd07.words;
 #if !CAPNP_LITE
-static const ::capnp::_::RawSchema* const d_f814b26e1a24039e[] = {
+static const ::capnp::_::RawSchema* const d_d9285b8fd155dd07[] = {
   &s_a46aea82397b275d,
 };
-static const uint16_t m_f814b26e1a24039e[] = {1, 0};
-static const uint16_t i_f814b26e1a24039e[] = {0, 1};
-const ::capnp::_::RawSchema s_f814b26e1a24039e = {
-  0xf814b26e1a24039e, b_f814b26e1a24039e.words, 67, d_f814b26e1a24039e, m_f814b26e1a24039e,
-  1, 2, i_f814b26e1a24039e, nullptr, nullptr, { &s_f814b26e1a24039e, nullptr, nullptr, 0, 0, nullptr }
+static const uint16_t m_d9285b8fd155dd07[] = {1, 0};
+static const uint16_t i_d9285b8fd155dd07[] = {0, 1};
+const ::capnp::_::RawSchema s_d9285b8fd155dd07 = {
+  0xd9285b8fd155dd07, b_d9285b8fd155dd07.words, 67, d_d9285b8fd155dd07, m_d9285b8fd155dd07,
+  1, 2, i_d9285b8fd155dd07, nullptr, nullptr, { &s_d9285b8fd155dd07, nullptr, nullptr, 0, 0, nullptr }
 };
 #endif  // !CAPNP_LITE
 }  // namespace schemas
@@ -94,12 +94,12 @@ const ::capnp::_::RawSchema s_f814b26e1a24039e = {
 namespace koinos {
 namespace transaction_store {
 
-// TransactionRecord
-constexpr uint16_t TransactionRecord::_capnpPrivate::dataWordSize;
-constexpr uint16_t TransactionRecord::_capnpPrivate::pointerCount;
+// TransactionItem
+constexpr uint16_t TransactionItem::_capnpPrivate::dataWordSize;
+constexpr uint16_t TransactionItem::_capnpPrivate::pointerCount;
 #if !CAPNP_LITE
-constexpr ::capnp::Kind TransactionRecord::_capnpPrivate::kind;
-constexpr ::capnp::_::RawSchema const* TransactionRecord::_capnpPrivate::schema;
+constexpr ::capnp::Kind TransactionItem::_capnpPrivate::kind;
+constexpr ::capnp::_::RawSchema const* TransactionItem::_capnpPrivate::schema;
 #endif  // !CAPNP_LITE
 
 

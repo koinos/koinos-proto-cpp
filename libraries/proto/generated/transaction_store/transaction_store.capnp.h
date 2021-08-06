@@ -15,7 +15,7 @@
 namespace capnp {
 namespace schemas {
 
-CAPNP_DECLARE_SCHEMA(f814b26e1a24039e);
+CAPNP_DECLARE_SCHEMA(d9285b8fd155dd07);
 
 }  // namespace schemas
 }  // namespace capnp
@@ -23,15 +23,15 @@ CAPNP_DECLARE_SCHEMA(f814b26e1a24039e);
 namespace koinos {
 namespace transaction_store {
 
-struct TransactionRecord {
-  TransactionRecord() = delete;
+struct TransactionItem {
+  TransactionItem() = delete;
 
   class Reader;
   class Builder;
   class Pipeline;
 
   struct _capnpPrivate {
-    CAPNP_DECLARE_STRUCT_HEADER(f814b26e1a24039e, 0, 2)
+    CAPNP_DECLARE_STRUCT_HEADER(d9285b8fd155dd07, 0, 2)
     #if !CAPNP_LITE
     static constexpr ::capnp::_::RawBrandedSchema const* brand() { return &schema->defaultBrand; }
     #endif  // !CAPNP_LITE
@@ -40,9 +40,9 @@ struct TransactionRecord {
 
 // =======================================================================================
 
-class TransactionRecord::Reader {
+class TransactionItem::Reader {
 public:
-  typedef TransactionRecord Reads;
+  typedef TransactionItem Reads;
 
   Reader() = default;
   inline explicit Reader(::capnp::_::StructReader base): _reader(base) {}
@@ -75,9 +75,9 @@ private:
   friend class ::capnp::Orphanage;
 };
 
-class TransactionRecord::Builder {
+class TransactionItem::Builder {
 public:
-  typedef TransactionRecord Builds;
+  typedef TransactionItem Builds;
 
   Builder() = delete;  // Deleted to discourage incorrect usage.
                        // You can explicitly initialize to nullptr instead.
@@ -116,9 +116,9 @@ private:
 };
 
 #if !CAPNP_LITE
-class TransactionRecord::Pipeline {
+class TransactionItem::Pipeline {
 public:
-  typedef TransactionRecord Pipelines;
+  typedef TransactionItem Pipelines;
 
   inline Pipeline(decltype(nullptr)): _typeless(nullptr) {}
   inline explicit Pipeline(::capnp::AnyPointer::Pipeline&& typeless)
@@ -135,79 +135,79 @@ private:
 
 // =======================================================================================
 
-inline bool TransactionRecord::Reader::hasTransaction() const {
+inline bool TransactionItem::Reader::hasTransaction() const {
   return !_reader.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS).isNull();
 }
-inline bool TransactionRecord::Builder::hasTransaction() {
+inline bool TransactionItem::Builder::hasTransaction() {
   return !_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS).isNull();
 }
-inline  ::koinos::protocol::Transaction::Reader TransactionRecord::Reader::getTransaction() const {
+inline  ::koinos::protocol::Transaction::Reader TransactionItem::Reader::getTransaction() const {
   return ::capnp::_::PointerHelpers< ::koinos::protocol::Transaction>::get(_reader.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
-inline  ::koinos::protocol::Transaction::Builder TransactionRecord::Builder::getTransaction() {
+inline  ::koinos::protocol::Transaction::Builder TransactionItem::Builder::getTransaction() {
   return ::capnp::_::PointerHelpers< ::koinos::protocol::Transaction>::get(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 #if !CAPNP_LITE
-inline  ::koinos::protocol::Transaction::Pipeline TransactionRecord::Pipeline::getTransaction() {
+inline  ::koinos::protocol::Transaction::Pipeline TransactionItem::Pipeline::getTransaction() {
   return  ::koinos::protocol::Transaction::Pipeline(_typeless.getPointerField(0));
 }
 #endif  // !CAPNP_LITE
-inline void TransactionRecord::Builder::setTransaction( ::koinos::protocol::Transaction::Reader value) {
+inline void TransactionItem::Builder::setTransaction( ::koinos::protocol::Transaction::Reader value) {
   ::capnp::_::PointerHelpers< ::koinos::protocol::Transaction>::set(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), value);
 }
-inline  ::koinos::protocol::Transaction::Builder TransactionRecord::Builder::initTransaction() {
+inline  ::koinos::protocol::Transaction::Builder TransactionItem::Builder::initTransaction() {
   return ::capnp::_::PointerHelpers< ::koinos::protocol::Transaction>::init(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
-inline void TransactionRecord::Builder::adoptTransaction(
+inline void TransactionItem::Builder::adoptTransaction(
     ::capnp::Orphan< ::koinos::protocol::Transaction>&& value) {
   ::capnp::_::PointerHelpers< ::koinos::protocol::Transaction>::adopt(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::koinos::protocol::Transaction> TransactionRecord::Builder::disownTransaction() {
+inline ::capnp::Orphan< ::koinos::protocol::Transaction> TransactionItem::Builder::disownTransaction() {
   return ::capnp::_::PointerHelpers< ::koinos::protocol::Transaction>::disown(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 
-inline bool TransactionRecord::Reader::hasContainingBlocks() const {
+inline bool TransactionItem::Reader::hasContainingBlocks() const {
   return !_reader.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS).isNull();
 }
-inline bool TransactionRecord::Builder::hasContainingBlocks() {
+inline bool TransactionItem::Builder::hasContainingBlocks() {
   return !_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS).isNull();
 }
-inline  ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Reader TransactionRecord::Reader::getContainingBlocks() const {
+inline  ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Reader TransactionItem::Reader::getContainingBlocks() const {
   return ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::get(_reader.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS));
 }
-inline  ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Builder TransactionRecord::Builder::getContainingBlocks() {
+inline  ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Builder TransactionItem::Builder::getContainingBlocks() {
   return ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::get(_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS));
 }
-inline void TransactionRecord::Builder::setContainingBlocks( ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Reader value) {
+inline void TransactionItem::Builder::setContainingBlocks( ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Reader value) {
   ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::set(_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS), value);
 }
-inline void TransactionRecord::Builder::setContainingBlocks(::kj::ArrayPtr<const  ::capnp::Data::Reader> value) {
+inline void TransactionItem::Builder::setContainingBlocks(::kj::ArrayPtr<const  ::capnp::Data::Reader> value) {
   ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::set(_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS), value);
 }
-inline  ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Builder TransactionRecord::Builder::initContainingBlocks(unsigned int size) {
+inline  ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>::Builder TransactionItem::Builder::initContainingBlocks(unsigned int size) {
   return ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::init(_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS), size);
 }
-inline void TransactionRecord::Builder::adoptContainingBlocks(
+inline void TransactionItem::Builder::adoptContainingBlocks(
     ::capnp::Orphan< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>&& value) {
   ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::adopt(_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>> TransactionRecord::Builder::disownContainingBlocks() {
+inline ::capnp::Orphan< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>> TransactionItem::Builder::disownContainingBlocks() {
   return ::capnp::_::PointerHelpers< ::capnp::List< ::capnp::Data,  ::capnp::Kind::BLOB>>::disown(_builder.getPointerField(
       ::capnp::bounded<1>() * ::capnp::POINTERS));
 }

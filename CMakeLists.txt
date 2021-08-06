@@ -19,7 +19,7 @@ HunterGate(
    LOCAL
 )
 
-project(koinos_proto VERSION 0.1.0 LANGUAGES CXX C)
+project(koinos_proto VERSION 0.1.0)
 
 #
 # CONFIGURATION
@@ -27,7 +27,7 @@ project(koinos_proto VERSION 0.1.0 LANGUAGES CXX C)
 include(GNUInstallDirs)
 
 set(KOINOS_LIB_TARGET_NAME                ${PROJECT_NAME})
-set(KOINOS_LIB_TARGET_SHORT_NAME          "crypto")
+set(KOINOS_LIB_TARGET_SHORT_NAME          "proto")
 set(KOINOS_LIB_CONFIG_INSTALL_DIR         "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}" CACHE INTERNAL "")
 set(KOINOS_LIB_INCLUDE_INSTALL_DIR        "${CMAKE_INSTALL_INCLUDEDIR}")
 set(KOINOS_LIB_TARGETS_EXPORT_NAME        "${PROJECT_NAME}Targets")

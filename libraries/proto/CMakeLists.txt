@@ -3,7 +3,7 @@ file(GLOB_RECURSE GEN_SOURCE  "*.capnp.c++")
 add_library(koinos_proto
             ${GEN_SOURCE}
             ${GEN_HEADERS})
-target_link_libraries(koinos_proto CapnProto::capnp)
+target_link_libraries(koinos_proto PUBLIC CapnProto::capnp)
 add_library(Koinos::proto ALIAS koinos_proto)
 
 target_include_directories(koinos_proto PUBLIC

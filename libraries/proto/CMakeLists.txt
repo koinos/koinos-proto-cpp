@@ -11,7 +11,7 @@ target_include_directories(koinos_proto PUBLIC
    $<INSTALL_INTERFACE:include>
 )
 
-install(FILES ${HEADERS} DESTINATION "include/koinos/proto")
+install(FILES ${GEN_HEADERS} DESTINATION "include/koinos/proto")
 
 export(
    TARGETS ${KOINOS_LIB_TARGET_NAME}

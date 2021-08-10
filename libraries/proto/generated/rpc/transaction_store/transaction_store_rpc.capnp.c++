@@ -185,7 +185,7 @@ static const ::capnp::_::AlignedData<56> b_b8e16e3306b23463 = {
       1,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   3,   0,   1,   0,
      16,   0,   0,   0,   0,   0,   0,   0,
-     93,  39, 123,  57, 130, 234, 106, 164,
+      7, 221,  85, 209, 143,  91,  40, 217,
       0,   0,   0,   0,   0,   0,   0,   0,
       0,   0,   0,   0,   0,   0,   0,   0,
      14,   0,   0,   0,   0,   0,   0,   0,
@@ -200,7 +200,7 @@ static const ::capnp::_::RawSchema* const d_b8e16e3306b23463[] = {
 static const uint16_t m_b8e16e3306b23463[] = {0};
 static const uint16_t i_b8e16e3306b23463[] = {0};
 KJ_CONSTEXPR(const) ::capnp::_::RawBrandedSchema::Dependency bd_b8e16e3306b23463[] = {
-  { 16777216,  ::koinos::Optional< ::koinos::protocol::Transaction>::_capnpPrivate::brand() },
+  { 16777216,  ::koinos::Optional< ::koinos::transaction_store::TransactionItem>::_capnpPrivate::brand() },
 };
 const ::capnp::_::RawSchema s_b8e16e3306b23463 = {
   0xb8e16e3306b23463, b_b8e16e3306b23463.words, 56, d_b8e16e3306b23463, m_b8e16e3306b23463,

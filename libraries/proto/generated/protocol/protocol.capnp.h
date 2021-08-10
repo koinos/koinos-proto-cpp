@@ -257,7 +257,7 @@ struct Block {
   class Pipeline;
 
   struct _capnpPrivate {
-    CAPNP_DECLARE_STRUCT_HEADER(f8b832c3c252679d, 0, 5)
+    CAPNP_DECLARE_STRUCT_HEADER(f8b832c3c252679d, 0, 6)
     #if !CAPNP_LITE
     static constexpr ::capnp::_::RawBrandedSchema const* brand() { return &schema->defaultBrand; }
     #endif  // !CAPNP_LITE
@@ -1399,7 +1399,7 @@ public:
   inline bool hasPrevious() const;
   inline  ::capnp::Data::Reader getPrevious() const;
 
-  inline  ::uint32_t getHeight() const;
+  inline  ::uint64_t getHeight() const;
 
   inline  ::uint64_t getTimestamp() const;
 
@@ -1438,8 +1438,8 @@ public:
   inline void adoptPrevious(::capnp::Orphan< ::capnp::Data>&& value);
   inline ::capnp::Orphan< ::capnp::Data> disownPrevious();
 
-  inline  ::uint32_t getHeight();
-  inline void setHeight( ::uint32_t value);
+  inline  ::uint64_t getHeight();
+  inline void setHeight( ::uint64_t value);
 
   inline  ::uint64_t getTimestamp();
   inline void setTimestamp( ::uint64_t value);
@@ -1501,6 +1501,9 @@ public:
 
   inline bool hasSignatureData() const;
   inline  ::capnp::Data::Reader getSignatureData() const;
+
+  inline bool hasTransactions() const;
+  inline  ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Reader getTransactions() const;
 
 private:
   ::capnp::_::StructReader _reader;
@@ -1564,6 +1567,13 @@ public:
   inline  ::capnp::Data::Builder initSignatureData(unsigned int size);
   inline void adoptSignatureData(::capnp::Orphan< ::capnp::Data>&& value);
   inline ::capnp::Orphan< ::capnp::Data> disownSignatureData();
+
+  inline bool hasTransactions();
+  inline  ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Builder getTransactions();
+  inline void setTransactions( ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Reader value);
+  inline  ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Builder initTransactions(unsigned int size);
+  inline void adoptTransactions(::capnp::Orphan< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>&& value);
+  inline ::capnp::Orphan< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>> disownTransactions();
 
 private:
   ::capnp::_::StructBuilder _builder;
@@ -2615,17 +2625,17 @@ inline ::capnp::Orphan< ::capnp::Data> BlockHeader::Builder::disownPrevious() {
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 
-inline  ::uint32_t BlockHeader::Reader::getHeight() const {
-  return _reader.getDataField< ::uint32_t>(
+inline  ::uint64_t BlockHeader::Reader::getHeight() const {
+  return _reader.getDataField< ::uint64_t>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
 
-inline  ::uint32_t BlockHeader::Builder::getHeight() {
-  return _builder.getDataField< ::uint32_t>(
+inline  ::uint64_t BlockHeader::Builder::getHeight() {
+  return _builder.getDataField< ::uint64_t>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS);
 }
-inline void BlockHeader::Builder::setHeight( ::uint32_t value) {
-  _builder.setDataField< ::uint32_t>(
+inline void BlockHeader::Builder::setHeight( ::uint64_t value) {
+  _builder.setDataField< ::uint64_t>(
       ::capnp::bounded<0>() * ::capnp::ELEMENTS, value);
 }
 
@@ -2826,6 +2836,40 @@ inline void Block::Builder::adoptSignatureData(
 inline ::capnp::Orphan< ::capnp::Data> Block::Builder::disownSignatureData() {
   return ::capnp::_::PointerHelpers< ::capnp::Data>::disown(_builder.getPointerField(
       ::capnp::bounded<4>() * ::capnp::POINTERS));
+}
+
+inline bool Block::Reader::hasTransactions() const {
+  return !_reader.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS).isNull();
+}
+inline bool Block::Builder::hasTransactions() {
+  return !_builder.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS).isNull();
+}
+inline  ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Reader Block::Reader::getTransactions() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS));
+}
+inline  ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Builder Block::Builder::getTransactions() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS));
+}
+inline void Block::Builder::setTransactions( ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS), value);
+}
+inline  ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>::Builder Block::Builder::initTransactions(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS), size);
+}
+inline void Block::Builder::adoptTransactions(
+    ::capnp::Orphan< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS), kj::mv(value));
+}
+inline ::capnp::Orphan< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>> Block::Builder::disownTransactions() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::protocol::Transaction,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
+      ::capnp::bounded<5>() * ::capnp::POINTERS));
 }
 
 }  // namespace

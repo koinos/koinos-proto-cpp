@@ -11,7 +11,7 @@
 #endif
 
 #include "../../common.capnp.h"
-#include "../../protocol/protocol.capnp.h"
+#include "../../transaction_store/transaction_store.capnp.h"
 #include "../rpc.capnp.h"
 
 namespace capnp {
@@ -374,7 +374,7 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasTransactions() const;
-  inline  ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Reader getTransactions() const;
+  inline  ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Reader getTransactions() const;
 
 private:
   ::capnp::_::StructReader _reader;
@@ -405,11 +405,11 @@ public:
 #endif  // !CAPNP_LITE
 
   inline bool hasTransactions();
-  inline  ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Builder getTransactions();
-  inline void setTransactions( ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Reader value);
-  inline  ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Builder initTransactions(unsigned int size);
-  inline void adoptTransactions(::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>&& value);
-  inline ::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>> disownTransactions();
+  inline  ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Builder getTransactions();
+  inline void setTransactions( ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Reader value);
+  inline  ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Builder initTransactions(unsigned int size);
+  inline void adoptTransactions(::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>&& value);
+  inline ::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>> disownTransactions();
 
 private:
   ::capnp::_::StructBuilder _builder;
@@ -691,29 +691,29 @@ inline bool GetTransactionsByIDResponse::Builder::hasTransactions() {
   return !_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS).isNull();
 }
-inline  ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Reader GetTransactionsByIDResponse::Reader::getTransactions() const {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
+inline  ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Reader GetTransactionsByIDResponse::Reader::getTransactions() const {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>::get(_reader.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
-inline  ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Builder GetTransactionsByIDResponse::Builder::getTransactions() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
+inline  ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Builder GetTransactionsByIDResponse::Builder::getTransactions() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>::get(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
-inline void GetTransactionsByIDResponse::Builder::setTransactions( ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Reader value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
+inline void GetTransactionsByIDResponse::Builder::setTransactions( ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Reader value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>::set(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), value);
 }
-inline  ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>::Builder GetTransactionsByIDResponse::Builder::initTransactions(unsigned int size) {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
+inline  ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>::Builder GetTransactionsByIDResponse::Builder::initTransactions(unsigned int size) {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>::init(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), size);
 }
 inline void GetTransactionsByIDResponse::Builder::adoptTransactions(
-    ::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>&& value) {
-  ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
+    ::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>&& value) {
+  ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>::adopt(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS), kj::mv(value));
 }
-inline ::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>> GetTransactionsByIDResponse::Builder::disownTransactions() {
-  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::protocol::Transaction>,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
+inline ::capnp::Orphan< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>> GetTransactionsByIDResponse::Builder::disownTransactions() {
+  return ::capnp::_::PointerHelpers< ::capnp::List< ::koinos::Optional< ::koinos::transaction_store::TransactionItem>,  ::capnp::Kind::STRUCT>>::disown(_builder.getPointerField(
       ::capnp::bounded<0>() * ::capnp::POINTERS));
 }
 

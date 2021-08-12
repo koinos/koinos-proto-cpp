@@ -13,7 +13,7 @@ target_include_directories(koinos_proto PUBLIC
 
 install(
    DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/generated/"
-   DESTINATION "include/koinos/proto"
+   DESTINATION "include/koinos"
    FILES_MATCHING PATTERN "*.capnp.h" )
 
 export(

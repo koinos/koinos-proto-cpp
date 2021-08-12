@@ -11,7 +11,10 @@ target_include_directories(koinos_proto PUBLIC
    $<INSTALL_INTERFACE:include>
 )
 
-install(FILES ${GEN_HEADERS} DESTINATION "include/koinos/proto")
+install(
+   DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/generated/"
+   DESTINATION "include/koinos/proto"
+   FILES_MATCHING PATTERN "*.capnp.h" )
 
 export(
    TARGETS ${KOINOS_LIB_TARGET_NAME}
@@ -33,4 +36,3 @@ install(
    NAMESPACE Koinos::
    DESTINATION ${KOINOS_LIB_CONFIG_INSTALL_DIR}
 )
-

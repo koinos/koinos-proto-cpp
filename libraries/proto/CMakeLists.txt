@@ -1,20 +1,21 @@
-file(GLOB_RECURSE GEN_HEADERS "*.capnp.h")
-file(GLOB_RECURSE GEN_SOURCE  "*.capnp.c++")
+file(GLOB_RECURSE GEN_HEADERS "*.pb.h")
+file(GLOB_RECURSE GEN_SOURCE  "*.pb.cc")
 add_library(koinos_proto
             ${GEN_SOURCE}
             ${GEN_HEADERS})
-target_link_libraries(koinos_proto PUBLIC CapnProto::capnp)
+target_link_libraries(koinos_proto PUBLIC protobuf::libprotobuf)
 add_library(Koinos::proto ALIAS koinos_proto)
 
 target_include_directories(koinos_proto PUBLIC
    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/generated>
    $<INSTALL_INTERFACE:include>
 )
 
 install(
    DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/generated/"
-   DESTINATION "include/koinos"
-   FILES_MATCHING PATTERN "*.capnp.h" )
+   DESTINATION "include/"
+   FILES_MATCHING PATTERN "*.pb.h" )
 
 export(
    TARGETS ${KOINOS_LIB_TARGET_NAME}

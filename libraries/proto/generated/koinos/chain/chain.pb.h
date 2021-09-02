@@ -85,6 +85,12 @@ extern apply_upload_contract_operation_argsDefaultTypeInternal _apply_upload_con
 class apply_upload_contract_operation_return;
 class apply_upload_contract_operation_returnDefaultTypeInternal;
 extern apply_upload_contract_operation_returnDefaultTypeInternal _apply_upload_contract_operation_return_default_instance_;
+class call_contract_args;
+class call_contract_argsDefaultTypeInternal;
+extern call_contract_argsDefaultTypeInternal _call_contract_args_default_instance_;
+class call_contract_return;
+class call_contract_returnDefaultTypeInternal;
+extern call_contract_returnDefaultTypeInternal _call_contract_return_default_instance_;
 class db_get_next_object_args;
 class db_get_next_object_argsDefaultTypeInternal;
 extern db_get_next_object_argsDefaultTypeInternal _db_get_next_object_args_default_instance_;
@@ -109,12 +115,6 @@ extern db_put_object_argsDefaultTypeInternal _db_put_object_args_default_instanc
 class db_put_object_return;
 class db_put_object_returnDefaultTypeInternal;
 extern db_put_object_returnDefaultTypeInternal _db_put_object_return_default_instance_;
-class execute_contract_args;
-class execute_contract_argsDefaultTypeInternal;
-extern execute_contract_argsDefaultTypeInternal _execute_contract_args_default_instance_;
-class execute_contract_return;
-class execute_contract_returnDefaultTypeInternal;
-extern execute_contract_returnDefaultTypeInternal _execute_contract_return_default_instance_;
 class exit_contract_args;
 class exit_contract_argsDefaultTypeInternal;
 extern exit_contract_argsDefaultTypeInternal _exit_contract_args_default_instance_;
@@ -250,6 +250,8 @@ template<> ::koinos::chain::apply_transaction_args* Arena::CreateMaybeMessage<::
 template<> ::koinos::chain::apply_transaction_return* Arena::CreateMaybeMessage<::koinos::chain::apply_transaction_return>(Arena*);
 template<> ::koinos::chain::apply_upload_contract_operation_args* Arena::CreateMaybeMessage<::koinos::chain::apply_upload_contract_operation_args>(Arena*);
 template<> ::koinos::chain::apply_upload_contract_operation_return* Arena::CreateMaybeMessage<::koinos::chain::apply_upload_contract_operation_return>(Arena*);
+template<> ::koinos::chain::call_contract_args* Arena::CreateMaybeMessage<::koinos::chain::call_contract_args>(Arena*);
+template<> ::koinos::chain::call_contract_return* Arena::CreateMaybeMessage<::koinos::chain::call_contract_return>(Arena*);
 template<> ::koinos::chain::db_get_next_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_get_next_object_args>(Arena*);
 template<> ::koinos::chain::db_get_next_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_get_next_object_return>(Arena*);
 template<> ::koinos::chain::db_get_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_get_object_args>(Arena*);
@@ -258,8 +260,6 @@ template<> ::koinos::chain::db_get_prev_object_args* Arena::CreateMaybeMessage<:
 template<> ::koinos::chain::db_get_prev_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_get_prev_object_return>(Arena*);
 template<> ::koinos::chain::db_put_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_put_object_args>(Arena*);
 template<> ::koinos::chain::db_put_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_put_object_return>(Arena*);
-template<> ::koinos::chain::execute_contract_args* Arena::CreateMaybeMessage<::koinos::chain::execute_contract_args>(Arena*);
-template<> ::koinos::chain::execute_contract_return* Arena::CreateMaybeMessage<::koinos::chain::execute_contract_return>(Arena*);
 template<> ::koinos::chain::exit_contract_args* Arena::CreateMaybeMessage<::koinos::chain::exit_contract_args>(Arena*);
 template<> ::koinos::chain::exit_contract_return* Arena::CreateMaybeMessage<::koinos::chain::exit_contract_return>(Arena*);
 template<> ::koinos::chain::get_account_nonce_args* Arena::CreateMaybeMessage<::koinos::chain::get_account_nonce_args>(Arena*);
@@ -3951,23 +3951,23 @@ class db_get_prev_object_return PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class execute_contract_args PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.execute_contract_args) */ {
+class call_contract_args PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.call_contract_args) */ {
  public:
-  inline execute_contract_args() : execute_contract_args(nullptr) {}
-  virtual ~execute_contract_args();
+  inline call_contract_args() : call_contract_args(nullptr) {}
+  virtual ~call_contract_args();
 
-  execute_contract_args(const execute_contract_args& from);
-  execute_contract_args(execute_contract_args&& from) noexcept
-    : execute_contract_args() {
+  call_contract_args(const call_contract_args& from);
+  call_contract_args(call_contract_args&& from) noexcept
+    : call_contract_args() {
     *this = ::std::move(from);
   }
 
-  inline execute_contract_args& operator=(const execute_contract_args& from) {
+  inline call_contract_args& operator=(const call_contract_args& from) {
     CopyFrom(from);
     return *this;
   }
-  inline execute_contract_args& operator=(execute_contract_args&& from) noexcept {
+  inline call_contract_args& operator=(call_contract_args&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -3985,19 +3985,19 @@ class execute_contract_args PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const execute_contract_args& default_instance();
+  static const call_contract_args& default_instance();
 
-  static inline const execute_contract_args* internal_default_instance() {
-    return reinterpret_cast<const execute_contract_args*>(
-               &_execute_contract_args_default_instance_);
+  static inline const call_contract_args* internal_default_instance() {
+    return reinterpret_cast<const call_contract_args*>(
+               &_call_contract_args_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     24;
 
-  friend void swap(execute_contract_args& a, execute_contract_args& b) {
+  friend void swap(call_contract_args& a, call_contract_args& b) {
     a.Swap(&b);
   }
-  inline void Swap(execute_contract_args* other) {
+  inline void Swap(call_contract_args* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -4005,7 +4005,7 @@ class execute_contract_args PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(execute_contract_args* other) {
+  void UnsafeArenaSwap(call_contract_args* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -4013,17 +4013,17 @@ class execute_contract_args PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline execute_contract_args* New() const final {
-    return CreateMaybeMessage<execute_contract_args>(nullptr);
+  inline call_contract_args* New() const final {
+    return CreateMaybeMessage<call_contract_args>(nullptr);
   }
 
-  execute_contract_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<execute_contract_args>(arena);
+  call_contract_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<call_contract_args>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const execute_contract_args& from);
-  void MergeFrom(const execute_contract_args& from);
+  void CopyFrom(const call_contract_args& from);
+  void MergeFrom(const call_contract_args& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -4037,13 +4037,13 @@ class execute_contract_args PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(execute_contract_args* other);
+  void InternalSwap(call_contract_args* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.execute_contract_args";
+    return "koinos.chain.call_contract_args";
   }
   protected:
-  explicit execute_contract_args(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit call_contract_args(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -4108,7 +4108,7 @@ class execute_contract_args PROTOBUF_FINAL :
   void _internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.execute_contract_args)
+  // @@protoc_insertion_point(class_scope:koinos.chain.call_contract_args)
  private:
   class _Internal;
 
@@ -4123,23 +4123,23 @@ class execute_contract_args PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class execute_contract_return PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.execute_contract_return) */ {
+class call_contract_return PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.call_contract_return) */ {
  public:
-  inline execute_contract_return() : execute_contract_return(nullptr) {}
-  virtual ~execute_contract_return();
+  inline call_contract_return() : call_contract_return(nullptr) {}
+  virtual ~call_contract_return();
 
-  execute_contract_return(const execute_contract_return& from);
-  execute_contract_return(execute_contract_return&& from) noexcept
-    : execute_contract_return() {
+  call_contract_return(const call_contract_return& from);
+  call_contract_return(call_contract_return&& from) noexcept
+    : call_contract_return() {
     *this = ::std::move(from);
   }
 
-  inline execute_contract_return& operator=(const execute_contract_return& from) {
+  inline call_contract_return& operator=(const call_contract_return& from) {
     CopyFrom(from);
     return *this;
   }
-  inline execute_contract_return& operator=(execute_contract_return&& from) noexcept {
+  inline call_contract_return& operator=(call_contract_return&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -4157,19 +4157,19 @@ class execute_contract_return PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const execute_contract_return& default_instance();
+  static const call_contract_return& default_instance();
 
-  static inline const execute_contract_return* internal_default_instance() {
-    return reinterpret_cast<const execute_contract_return*>(
-               &_execute_contract_return_default_instance_);
+  static inline const call_contract_return* internal_default_instance() {
+    return reinterpret_cast<const call_contract_return*>(
+               &_call_contract_return_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     25;
 
-  friend void swap(execute_contract_return& a, execute_contract_return& b) {
+  friend void swap(call_contract_return& a, call_contract_return& b) {
     a.Swap(&b);
   }
-  inline void Swap(execute_contract_return* other) {
+  inline void Swap(call_contract_return* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -4177,7 +4177,7 @@ class execute_contract_return PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(execute_contract_return* other) {
+  void UnsafeArenaSwap(call_contract_return* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -4185,17 +4185,17 @@ class execute_contract_return PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline execute_contract_return* New() const final {
-    return CreateMaybeMessage<execute_contract_return>(nullptr);
+  inline call_contract_return* New() const final {
+    return CreateMaybeMessage<call_contract_return>(nullptr);
   }
 
-  execute_contract_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<execute_contract_return>(arena);
+  call_contract_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<call_contract_return>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const execute_contract_return& from);
-  void MergeFrom(const execute_contract_return& from);
+  void CopyFrom(const call_contract_return& from);
+  void MergeFrom(const call_contract_return& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -4209,13 +4209,13 @@ class execute_contract_return PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(execute_contract_return* other);
+  void InternalSwap(call_contract_return* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.execute_contract_return";
+    return "koinos.chain.call_contract_return";
   }
   protected:
-  explicit execute_contract_return(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit call_contract_return(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -4253,7 +4253,7 @@ class execute_contract_return PROTOBUF_FINAL :
   std::string* _internal_mutable_result();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.execute_contract_return)
+  // @@protoc_insertion_point(class_scope:koinos.chain.call_contract_return)
  private:
   class _Internal;
 
@@ -10965,59 +10965,59 @@ inline void db_get_prev_object_return::set_allocated_result(std::string* result)
 
 // -------------------------------------------------------------------
 
-// execute_contract_args
+// call_contract_args
 
 // bytes contract_id = 1;
-inline void execute_contract_args::clear_contract_id() {
+inline void call_contract_args::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
-inline const std::string& execute_contract_args::contract_id() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.execute_contract_args.contract_id)
+inline const std::string& call_contract_args::contract_id() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.call_contract_args.contract_id)
   return _internal_contract_id();
 }
-inline void execute_contract_args::set_contract_id(const std::string& value) {
+inline void call_contract_args::set_contract_id(const std::string& value) {
   _internal_set_contract_id(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.execute_contract_args.contract_id)
+  // @@protoc_insertion_point(field_set:koinos.chain.call_contract_args.contract_id)
 }
-inline std::string* execute_contract_args::mutable_contract_id() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.execute_contract_args.contract_id)
+inline std::string* call_contract_args::mutable_contract_id() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.call_contract_args.contract_id)
   return _internal_mutable_contract_id();
 }
-inline const std::string& execute_contract_args::_internal_contract_id() const {
+inline const std::string& call_contract_args::_internal_contract_id() const {
   return contract_id_.Get();
 }
-inline void execute_contract_args::_internal_set_contract_id(const std::string& value) {
+inline void call_contract_args::_internal_set_contract_id(const std::string& value) {
   
   contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void execute_contract_args::set_contract_id(std::string&& value) {
+inline void call_contract_args::set_contract_id(std::string&& value) {
   
   contract_id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.execute_contract_args.contract_id)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.call_contract_args.contract_id)
 }
-inline void execute_contract_args::set_contract_id(const char* value) {
+inline void call_contract_args::set_contract_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.execute_contract_args.contract_id)
+  // @@protoc_insertion_point(field_set_char:koinos.chain.call_contract_args.contract_id)
 }
-inline void execute_contract_args::set_contract_id(const void* value,
+inline void call_contract_args::set_contract_id(const void* value,
     size_t size) {
   
   contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.execute_contract_args.contract_id)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.call_contract_args.contract_id)
 }
-inline std::string* execute_contract_args::_internal_mutable_contract_id() {
+inline std::string* call_contract_args::_internal_mutable_contract_id() {
   
   return contract_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* execute_contract_args::release_contract_id() {
-  // @@protoc_insertion_point(field_release:koinos.chain.execute_contract_args.contract_id)
+inline std::string* call_contract_args::release_contract_id() {
+  // @@protoc_insertion_point(field_release:koinos.chain.call_contract_args.contract_id)
   return contract_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void execute_contract_args::set_allocated_contract_id(std::string* contract_id) {
+inline void call_contract_args::set_allocated_contract_id(std::string* contract_id) {
   if (contract_id != nullptr) {
     
   } else {
@@ -11025,80 +11025,80 @@ inline void execute_contract_args::set_allocated_contract_id(std::string* contra
   }
   contract_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), contract_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.execute_contract_args.contract_id)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.call_contract_args.contract_id)
 }
 
 // uint32 entry_point = 2;
-inline void execute_contract_args::clear_entry_point() {
+inline void call_contract_args::clear_entry_point() {
   entry_point_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 execute_contract_args::_internal_entry_point() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 call_contract_args::_internal_entry_point() const {
   return entry_point_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 execute_contract_args::entry_point() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.execute_contract_args.entry_point)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 call_contract_args::entry_point() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.call_contract_args.entry_point)
   return _internal_entry_point();
 }
-inline void execute_contract_args::_internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void call_contract_args::_internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   entry_point_ = value;
 }
-inline void execute_contract_args::set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void call_contract_args::set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_entry_point(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.execute_contract_args.entry_point)
+  // @@protoc_insertion_point(field_set:koinos.chain.call_contract_args.entry_point)
 }
 
 // bytes args = 3;
-inline void execute_contract_args::clear_args() {
+inline void call_contract_args::clear_args() {
   args_.ClearToEmpty();
 }
-inline const std::string& execute_contract_args::args() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.execute_contract_args.args)
+inline const std::string& call_contract_args::args() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.call_contract_args.args)
   return _internal_args();
 }
-inline void execute_contract_args::set_args(const std::string& value) {
+inline void call_contract_args::set_args(const std::string& value) {
   _internal_set_args(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.execute_contract_args.args)
+  // @@protoc_insertion_point(field_set:koinos.chain.call_contract_args.args)
 }
-inline std::string* execute_contract_args::mutable_args() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.execute_contract_args.args)
+inline std::string* call_contract_args::mutable_args() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.call_contract_args.args)
   return _internal_mutable_args();
 }
-inline const std::string& execute_contract_args::_internal_args() const {
+inline const std::string& call_contract_args::_internal_args() const {
   return args_.Get();
 }
-inline void execute_contract_args::_internal_set_args(const std::string& value) {
+inline void call_contract_args::_internal_set_args(const std::string& value) {
   
   args_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void execute_contract_args::set_args(std::string&& value) {
+inline void call_contract_args::set_args(std::string&& value) {
   
   args_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.execute_contract_args.args)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.call_contract_args.args)
 }
-inline void execute_contract_args::set_args(const char* value) {
+inline void call_contract_args::set_args(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   args_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.execute_contract_args.args)
+  // @@protoc_insertion_point(field_set_char:koinos.chain.call_contract_args.args)
 }
-inline void execute_contract_args::set_args(const void* value,
+inline void call_contract_args::set_args(const void* value,
     size_t size) {
   
   args_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.execute_contract_args.args)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.call_contract_args.args)
 }
-inline std::string* execute_contract_args::_internal_mutable_args() {
+inline std::string* call_contract_args::_internal_mutable_args() {
   
   return args_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* execute_contract_args::release_args() {
-  // @@protoc_insertion_point(field_release:koinos.chain.execute_contract_args.args)
+inline std::string* call_contract_args::release_args() {
+  // @@protoc_insertion_point(field_release:koinos.chain.call_contract_args.args)
   return args_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void execute_contract_args::set_allocated_args(std::string* args) {
+inline void call_contract_args::set_allocated_args(std::string* args) {
   if (args != nullptr) {
     
   } else {
@@ -11106,64 +11106,64 @@ inline void execute_contract_args::set_allocated_args(std::string* args) {
   }
   args_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), args,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.execute_contract_args.args)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.call_contract_args.args)
 }
 
 // -------------------------------------------------------------------
 
-// execute_contract_return
+// call_contract_return
 
 // bytes result = 1;
-inline void execute_contract_return::clear_result() {
+inline void call_contract_return::clear_result() {
   result_.ClearToEmpty();
 }
-inline const std::string& execute_contract_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.execute_contract_return.result)
+inline const std::string& call_contract_return::result() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.call_contract_return.result)
   return _internal_result();
 }
-inline void execute_contract_return::set_result(const std::string& value) {
+inline void call_contract_return::set_result(const std::string& value) {
   _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.execute_contract_return.result)
+  // @@protoc_insertion_point(field_set:koinos.chain.call_contract_return.result)
 }
-inline std::string* execute_contract_return::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.execute_contract_return.result)
+inline std::string* call_contract_return::mutable_result() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.call_contract_return.result)
   return _internal_mutable_result();
 }
-inline const std::string& execute_contract_return::_internal_result() const {
+inline const std::string& call_contract_return::_internal_result() const {
   return result_.Get();
 }
-inline void execute_contract_return::_internal_set_result(const std::string& value) {
+inline void call_contract_return::_internal_set_result(const std::string& value) {
   
   result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void execute_contract_return::set_result(std::string&& value) {
+inline void call_contract_return::set_result(std::string&& value) {
   
   result_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.execute_contract_return.result)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.call_contract_return.result)
 }
-inline void execute_contract_return::set_result(const char* value) {
+inline void call_contract_return::set_result(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.execute_contract_return.result)
+  // @@protoc_insertion_point(field_set_char:koinos.chain.call_contract_return.result)
 }
-inline void execute_contract_return::set_result(const void* value,
+inline void call_contract_return::set_result(const void* value,
     size_t size) {
   
   result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.execute_contract_return.result)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.call_contract_return.result)
 }
-inline std::string* execute_contract_return::_internal_mutable_result() {
+inline std::string* call_contract_return::_internal_mutable_result() {
   
   return result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* execute_contract_return::release_result() {
-  // @@protoc_insertion_point(field_release:koinos.chain.execute_contract_return.result)
+inline std::string* call_contract_return::release_result() {
+  // @@protoc_insertion_point(field_release:koinos.chain.call_contract_return.result)
   return result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void execute_contract_return::set_allocated_result(std::string* result) {
+inline void call_contract_return::set_allocated_result(std::string* result) {
   if (result != nullptr) {
     
   } else {
@@ -11171,7 +11171,7 @@ inline void execute_contract_return::set_allocated_result(std::string* result) {
   }
   result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.execute_contract_return.result)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.call_contract_return.result)
 }
 
 // -------------------------------------------------------------------

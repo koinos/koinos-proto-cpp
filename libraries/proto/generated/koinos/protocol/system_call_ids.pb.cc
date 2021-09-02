@@ -27,29 +27,28 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n%koinos/protocol/system_call_ids.proto\022"
-  "\017koinos.protocol*\261\006\n\016system_call_id\022\017\n\013r"
+  "\017koinos.protocol*\222\006\n\016system_call_id\022\017\n\013r"
   "eserved_id\020\000\022\n\n\006prints\020\001\022\027\n\023verify_block"
   "_header\020\002\022\017\n\013apply_block\020\003\022\025\n\021apply_tran"
   "saction\020\004\022#\n\037apply_upload_contract_opera"
-  "tion\020\005\022$\n apply_execute_contract_operati"
-  "on\020\006\022#\n\037apply_set_system_call_operation\020"
-  "\007\022\021\n\rdb_put_object\020\010\022\021\n\rdb_get_object\020\t\022"
-  "\026\n\022db_get_next_object\020\n\022\026\n\022db_get_prev_o"
-  "bject\020\013\022\024\n\020execute_contract\020\014\022\023\n\017get_ent"
-  "ry_point\020\r\022\032\n\026get_contract_args_size\020\016\022\025"
-  "\n\021get_contract_args\020\017\022\027\n\023set_contract_re"
-  "turn\020\020\022\021\n\rexit_contract\020\021\022\021\n\rget_head_in"
-  "fo\020\022\022\010\n\004hash\020\023\022\026\n\022recover_public_key\020\024\022\032"
-  "\n\026verify_block_signature\020\025\022\026\n\022verify_mer"
-  "kle_root\020\026\022\031\n\025get_transaction_payer\020\027\022\035\n"
-  "\031get_max_account_resources\020\030\022\"\n\036get_tran"
-  "saction_resource_limit\020\031\022\037\n\033get_last_irr"
-  "eversible_block\020\032\022\016\n\nget_caller\020\033\022\025\n\021req"
-  "uire_authority\020\034\022\035\n\031get_transaction_sign"
-  "ature\020\035\022\023\n\017get_contract_id\020\036\022\027\n\023get_head"
-  "_block_time\020\037\022\025\n\021get_account_nonce\020 B7Z5"
-  "github.com/koinos/koinos-proto-golang/ko"
-  "inos/protocolb\006proto3"
+  "tion\020\005\022!\n\035apply_call_contract_operation\020"
+  "\006\022#\n\037apply_set_system_call_operation\020\007\022\021"
+  "\n\rdb_put_object\020\010\022\021\n\rdb_get_object\020\t\022\026\n\022"
+  "db_get_next_object\020\n\022\026\n\022db_get_prev_obje"
+  "ct\020\013\022\021\n\rcall_contract\020\014\022\023\n\017get_entry_poi"
+  "nt\020\r\022\032\n\026get_contract_args_size\020\016\022\025\n\021get_"
+  "contract_args\020\017\022\027\n\023set_contract_return\020\020"
+  "\022\021\n\rexit_contract\020\021\022\021\n\rget_head_info\020\022\022\010"
+  "\n\004hash\020\023\022\026\n\022recover_public_key\020\024\022\032\n\026veri"
+  "fy_block_signature\020\025\022\026\n\022verify_merkle_ro"
+  "ot\020\026\022\031\n\025get_transaction_payer\020\027\022\035\n\031get_m"
+  "ax_account_resources\020\030\022\"\n\036get_transactio"
+  "n_resource_limit\020\031\022\037\n\033get_last_irreversi"
+  "ble_block\020\032\022\016\n\nget_caller\020\033\022\025\n\021require_a"
+  "uthority\020\034\022\035\n\031get_transaction_signature\020"
+  "\035\022\023\n\017get_contract_id\020\036\022\025\n\021get_account_no"
+  "nce\020\037B7Z5github.com/koinos/koinos-proto-"
+  "golang/koinos/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_deps[1] = {
 };
@@ -57,7 +56,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koi
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, "koinos/protocol/system_call_ids.proto", 941,
+  false, false, descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, "koinos/protocol/system_call_ids.proto", 910,
   &descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_once, descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_sccs, descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_deps, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, 0, file_level_enum_descriptors_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto,
@@ -105,7 +104,6 @@ bool system_call_id_IsValid(int value) {
     case 29:
     case 30:
     case 31:
-    case 32:
       return true;
     default:
       return false;

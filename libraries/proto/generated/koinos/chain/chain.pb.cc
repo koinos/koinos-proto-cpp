@@ -1211,7 +1211,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::execute_contract_args, contract_id_),
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::execute_contract_args, entrypoint_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::execute_contract_args, entry_point_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::execute_contract_args, args_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::execute_contract_return, _internal_metadata_),
@@ -1229,7 +1229,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_entry_point_return, entrypoint_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_entry_point_return, entry_point_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::get_contract_args_size_args, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1585,51 +1585,51 @@ const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_S
   "bject_args\022\r\n\005space\030\001 \001(\014\022\013\n\003key\030\002 \001(\014\022\035"
   "\n\020object_size_hint\030\003 \001(\rH\000\210\001\001B\023\n\021_object"
   "_size_hint\"+\n\031db_get_prev_object_return\022"
-  "\016\n\006result\030\003 \001(\014\"N\n\025execute_contract_args"
-  "\022\023\n\013contract_id\030\001 \001(\014\022\022\n\nentrypoint\030\002 \001("
-  "\r\022\014\n\004args\030\003 \001(\014\")\n\027execute_contract_retu"
-  "rn\022\016\n\006result\030\001 \001(\014\"\026\n\024get_entry_point_ar"
-  "gs\",\n\026get_entry_point_return\022\022\n\nentrypoi"
-  "nt\030\001 \001(\r\"\035\n\033get_contract_args_size_args\""
-  ".\n\035get_contract_args_size_return\022\r\n\005valu"
-  "e\030\001 \001(\r\"\030\n\026get_contract_args_args\")\n\030get"
-  "_contract_args_return\022\r\n\005value\030\001 \001(\014\")\n\030"
-  "set_contract_return_args\022\r\n\005value\030\001 \001(\014\""
-  "\034\n\032set_contract_return_return\"\'\n\022exit_co"
-  "ntract_args\022\021\n\texit_code\030\001 \001(\r\"\026\n\024exit_c"
-  "ontract_return\"\024\n\022get_head_info_args\">\n\024"
-  "get_head_info_return\022&\n\005value\030\001 \001(\0132\027.ko"
-  "inos.chain.head_info\"4\n\thash_args\022\014\n\004cod"
-  "e\030\001 \001(\004\022\013\n\003obj\030\002 \001(\014\022\014\n\004size\030\003 \001(\004\"\034\n\013ha"
-  "sh_return\022\r\n\005value\030\001 \001(\014\"A\n\027recover_publ"
-  "ic_key_args\022\026\n\016signature_data\030\001 \001(\014\022\016\n\006d"
-  "igest\030\002 \001(\014\"*\n\031recover_public_key_return"
-  "\022\r\n\005value\030\001 \001(\014\"O\n\032get_transaction_payer"
-  "_args\0221\n\013transaction\030\001 \001(\0132\034.koinos.prot"
-  "ocol.transaction\"-\n\034get_transaction_paye"
-  "r_return\022\r\n\005value\030\001 \001(\014\"1\n\036get_max_accou"
-  "nt_resources_args\022\017\n\007account\030\001 \001(\014\"1\n ge"
-  "t_max_account_resources_return\022\r\n\005value\030"
-  "\001 \001(\004\"W\n#get_transaction_resource_limit_"
-  "args\0220\n\ntransction\030\001 \001(\0132\034.koinos.protoc"
-  "ol.transaction\"6\n%get_transaction_resour"
-  "ce_limit_return\022\r\n\005value\030\001 \001(\004\"\"\n get_la"
-  "st_irreversible_block_args\"K\n\"get_last_i"
-  "rreversible_block_return\022%\n\005value\030\001 \001(\0132"
-  "\026.koinos.block_topology\"\021\n\017get_caller_ar"
-  "gs\"V\n\021get_caller_return\022\016\n\006caller\030\001 \001(\014\022"
-  "1\n\020caller_privilege\030\002 \001(\0162\027.koinos.chain"
-  ".privilege\")\n\026require_authority_args\022\017\n\007"
-  "account\030\001 \001(\014\"\032\n\030require_authority_retur"
-  "n\" \n\036get_transaction_signature_args\"1\n g"
-  "et_transaction_signature_return\022\r\n\005value"
-  "\030\001 \001(\014\"\026\n\024get_contract_id_args\"\'\n\026get_co"
-  "ntract_id_return\022\r\n\005value\030\001 \001(\014\")\n\026get_a"
-  "ccount_nonce_args\022\017\n\007account\030\001 \001(\014\")\n\030ge"
-  "t_account_nonce_return\022\r\n\005nonce\030\001 \001(\004*+\n"
-  "\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuser_mode"
-  "\020\001B4Z2github.com/koinos/koinos-proto-gol"
-  "ang/koinos/chainb\006proto3"
+  "\016\n\006result\030\003 \001(\014\"O\n\025execute_contract_args"
+  "\022\023\n\013contract_id\030\001 \001(\014\022\023\n\013entry_point\030\002 \001"
+  "(\r\022\014\n\004args\030\003 \001(\014\")\n\027execute_contract_ret"
+  "urn\022\016\n\006result\030\001 \001(\014\"\026\n\024get_entry_point_a"
+  "rgs\"-\n\026get_entry_point_return\022\023\n\013entry_p"
+  "oint\030\001 \001(\r\"\035\n\033get_contract_args_size_arg"
+  "s\".\n\035get_contract_args_size_return\022\r\n\005va"
+  "lue\030\001 \001(\r\"\030\n\026get_contract_args_args\")\n\030g"
+  "et_contract_args_return\022\r\n\005value\030\001 \001(\014\")"
+  "\n\030set_contract_return_args\022\r\n\005value\030\001 \001("
+  "\014\"\034\n\032set_contract_return_return\"\'\n\022exit_"
+  "contract_args\022\021\n\texit_code\030\001 \001(\r\"\026\n\024exit"
+  "_contract_return\"\024\n\022get_head_info_args\">"
+  "\n\024get_head_info_return\022&\n\005value\030\001 \001(\0132\027."
+  "koinos.chain.head_info\"4\n\thash_args\022\014\n\004c"
+  "ode\030\001 \001(\004\022\013\n\003obj\030\002 \001(\014\022\014\n\004size\030\003 \001(\004\"\034\n\013"
+  "hash_return\022\r\n\005value\030\001 \001(\014\"A\n\027recover_pu"
+  "blic_key_args\022\026\n\016signature_data\030\001 \001(\014\022\016\n"
+  "\006digest\030\002 \001(\014\"*\n\031recover_public_key_retu"
+  "rn\022\r\n\005value\030\001 \001(\014\"O\n\032get_transaction_pay"
+  "er_args\0221\n\013transaction\030\001 \001(\0132\034.koinos.pr"
+  "otocol.transaction\"-\n\034get_transaction_pa"
+  "yer_return\022\r\n\005value\030\001 \001(\014\"1\n\036get_max_acc"
+  "ount_resources_args\022\017\n\007account\030\001 \001(\014\"1\n "
+  "get_max_account_resources_return\022\r\n\005valu"
+  "e\030\001 \001(\004\"W\n#get_transaction_resource_limi"
+  "t_args\0220\n\ntransction\030\001 \001(\0132\034.koinos.prot"
+  "ocol.transaction\"6\n%get_transaction_reso"
+  "urce_limit_return\022\r\n\005value\030\001 \001(\004\"\"\n get_"
+  "last_irreversible_block_args\"K\n\"get_last"
+  "_irreversible_block_return\022%\n\005value\030\001 \001("
+  "\0132\026.koinos.block_topology\"\021\n\017get_caller_"
+  "args\"V\n\021get_caller_return\022\016\n\006caller\030\001 \001("
+  "\014\0221\n\020caller_privilege\030\002 \001(\0162\027.koinos.cha"
+  "in.privilege\")\n\026require_authority_args\022\017"
+  "\n\007account\030\001 \001(\014\"\032\n\030require_authority_ret"
+  "urn\" \n\036get_transaction_signature_args\"1\n"
+  " get_transaction_signature_return\022\r\n\005val"
+  "ue\030\001 \001(\014\"\026\n\024get_contract_id_args\"\'\n\026get_"
+  "contract_id_return\022\r\n\005value\030\001 \001(\014\")\n\026get"
+  "_account_nonce_args\022\017\n\007account\030\001 \001(\014\")\n\030"
+  "get_account_nonce_return\022\r\n\005nonce\030\001 \001(\004*"
+  "+\n\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuser_mo"
+  "de\020\001B4Z2github.com/koinos/koinos-proto-g"
+  "olang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -1698,7 +1698,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koi
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 3504,
+  false, false, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 3506,
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_sccs, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 59, 2,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, 59, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
@@ -6865,7 +6865,7 @@ execute_contract_args::execute_contract_args(const execute_contract_args& from)
     args_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_args(), 
       GetArena());
   }
-  entrypoint_ = from.entrypoint_;
+  entry_point_ = from.entry_point_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.execute_contract_args)
 }
 
@@ -6873,7 +6873,7 @@ void execute_contract_args::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_execute_contract_args_koinos_2fchain_2fchain_2eproto.base);
   contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   args_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
 }
 
 execute_contract_args::~execute_contract_args() {
@@ -6911,7 +6911,7 @@ void execute_contract_args::Clear() {
 
   contract_id_.ClearToEmpty();
   args_.ClearToEmpty();
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -6930,10 +6930,10 @@ const char* execute_contract_args::_InternalParse(const char* ptr, ::PROTOBUF_NA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 entrypoint = 2;
+      // uint32 entry_point = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          entrypoint_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          entry_point_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6979,10 +6979,10 @@ failure:
         1, this->_internal_contract_id(), target);
   }
 
-  // uint32 entrypoint = 2;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 2;
+  if (this->entry_point() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_entrypoint(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_entry_point(), target);
   }
 
   // bytes args = 3;
@@ -7021,11 +7021,11 @@ size_t execute_contract_args::ByteSizeLong() const {
         this->_internal_args());
   }
 
-  // uint32 entrypoint = 2;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 2;
+  if (this->entry_point() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_entrypoint());
+        this->_internal_entry_point());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7065,8 +7065,8 @@ void execute_contract_args::MergeFrom(const execute_contract_args& from) {
   if (from.args().size() > 0) {
     _internal_set_args(from._internal_args());
   }
-  if (from.entrypoint() != 0) {
-    _internal_set_entrypoint(from._internal_entrypoint());
+  if (from.entry_point() != 0) {
+    _internal_set_entry_point(from._internal_entry_point());
   }
 }
 
@@ -7093,7 +7093,7 @@ void execute_contract_args::InternalSwap(execute_contract_args* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   contract_id_.Swap(&other->contract_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   args_.Swap(&other->args_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(entrypoint_, other->entrypoint_);
+  swap(entry_point_, other->entry_point_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata execute_contract_args::GetMetadata() const {
@@ -7479,12 +7479,12 @@ get_entry_point_return::get_entry_point_return(::PROTOBUF_NAMESPACE_ID::Arena* a
 get_entry_point_return::get_entry_point_return(const get_entry_point_return& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  entrypoint_ = from.entrypoint_;
+  entry_point_ = from.entry_point_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.get_entry_point_return)
 }
 
 void get_entry_point_return::SharedCtor() {
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
 }
 
 get_entry_point_return::~get_entry_point_return() {
@@ -7518,7 +7518,7 @@ void get_entry_point_return::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -7529,10 +7529,10 @@ const char* get_entry_point_return::_InternalParse(const char* ptr, ::PROTOBUF_N
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 entrypoint = 1;
+      // uint32 entry_point = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          entrypoint_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          entry_point_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7564,10 +7564,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 entrypoint = 1;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 1;
+  if (this->entry_point() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_entrypoint(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_entry_point(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7586,11 +7586,11 @@ size_t get_entry_point_return::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint32 entrypoint = 1;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 1;
+  if (this->entry_point() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_entrypoint());
+        this->_internal_entry_point());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -7624,8 +7624,8 @@ void get_entry_point_return::MergeFrom(const get_entry_point_return& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.entrypoint() != 0) {
-    _internal_set_entrypoint(from._internal_entrypoint());
+  if (from.entry_point() != 0) {
+    _internal_set_entry_point(from._internal_entry_point());
   }
 }
 
@@ -7650,7 +7650,7 @@ bool get_entry_point_return::IsInitialized() const {
 void get_entry_point_return::InternalSwap(get_entry_point_return* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(entrypoint_, other->entrypoint_);
+  swap(entry_point_, other->entry_point_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_entry_point_return::GetMetadata() const {

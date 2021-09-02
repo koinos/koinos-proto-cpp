@@ -249,7 +249,7 @@ class contract_call_bundle PROTOBUF_FINAL :
 
   enum : int {
     kContractIdFieldNumber = 1,
-    kEntrypointFieldNumber = 2,
+    kEntryPointFieldNumber = 2,
   };
   // bytes contract_id = 1;
   void clear_contract_id();
@@ -267,13 +267,13 @@ class contract_call_bundle PROTOBUF_FINAL :
   std::string* _internal_mutable_contract_id();
   public:
 
-  // uint32 entrypoint = 2;
-  void clear_entrypoint();
-  ::PROTOBUF_NAMESPACE_ID::uint32 entrypoint() const;
-  void set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 entry_point = 2;
+  void clear_entry_point();
+  ::PROTOBUF_NAMESPACE_ID::uint32 entry_point() const;
+  void set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_entrypoint() const;
-  void _internal_set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_entry_point() const;
+  void _internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.protocol.contract_call_bundle)
@@ -284,7 +284,7 @@ class contract_call_bundle PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contract_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 entrypoint_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 entry_point_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -742,7 +742,7 @@ class call_contract_operation PROTOBUF_FINAL :
   enum : int {
     kContractIdFieldNumber = 1,
     kArgsFieldNumber = 3,
-    kEntrypointFieldNumber = 2,
+    kEntryPointFieldNumber = 2,
   };
   // bytes contract_id = 1;
   void clear_contract_id();
@@ -776,13 +776,13 @@ class call_contract_operation PROTOBUF_FINAL :
   std::string* _internal_mutable_args();
   public:
 
-  // uint32 entrypoint = 2;
-  void clear_entrypoint();
-  ::PROTOBUF_NAMESPACE_ID::uint32 entrypoint() const;
-  void set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 entry_point = 2;
+  void clear_entry_point();
+  ::PROTOBUF_NAMESPACE_ID::uint32 entry_point() const;
+  void set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_entrypoint() const;
-  void _internal_set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_entry_point() const;
+  void _internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.protocol.call_contract_operation)
@@ -794,7 +794,7 @@ class call_contract_operation PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contract_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr args_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 entrypoint_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 entry_point_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -3289,24 +3289,24 @@ inline void contract_call_bundle::set_allocated_contract_id(std::string* contrac
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.contract_call_bundle.contract_id)
 }
 
-// uint32 entrypoint = 2;
-inline void contract_call_bundle::clear_entrypoint() {
-  entrypoint_ = 0u;
+// uint32 entry_point = 2;
+inline void contract_call_bundle::clear_entry_point() {
+  entry_point_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 contract_call_bundle::_internal_entrypoint() const {
-  return entrypoint_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 contract_call_bundle::_internal_entry_point() const {
+  return entry_point_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 contract_call_bundle::entrypoint() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.contract_call_bundle.entrypoint)
-  return _internal_entrypoint();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 contract_call_bundle::entry_point() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.contract_call_bundle.entry_point)
+  return _internal_entry_point();
 }
-inline void contract_call_bundle::_internal_set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void contract_call_bundle::_internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  entrypoint_ = value;
+  entry_point_ = value;
 }
-inline void contract_call_bundle::set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_entrypoint(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.contract_call_bundle.entrypoint)
+inline void contract_call_bundle::set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_entry_point(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.contract_call_bundle.entry_point)
 }
 
 // -------------------------------------------------------------------
@@ -3621,24 +3621,24 @@ inline void call_contract_operation::set_allocated_contract_id(std::string* cont
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.call_contract_operation.contract_id)
 }
 
-// uint32 entrypoint = 2;
-inline void call_contract_operation::clear_entrypoint() {
-  entrypoint_ = 0u;
+// uint32 entry_point = 2;
+inline void call_contract_operation::clear_entry_point() {
+  entry_point_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 call_contract_operation::_internal_entrypoint() const {
-  return entrypoint_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 call_contract_operation::_internal_entry_point() const {
+  return entry_point_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 call_contract_operation::entrypoint() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.call_contract_operation.entrypoint)
-  return _internal_entrypoint();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 call_contract_operation::entry_point() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.call_contract_operation.entry_point)
+  return _internal_entry_point();
 }
-inline void call_contract_operation::_internal_set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void call_contract_operation::_internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  entrypoint_ = value;
+  entry_point_ = value;
 }
-inline void call_contract_operation::set_entrypoint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_entrypoint(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.call_contract_operation.entrypoint)
+inline void call_contract_operation::set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_entry_point(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.call_contract_operation.entry_point)
 }
 
 // bytes args = 3;

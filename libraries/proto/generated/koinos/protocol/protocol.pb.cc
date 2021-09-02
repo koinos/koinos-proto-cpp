@@ -367,7 +367,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fprotocol_2fprotocol_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::contract_call_bundle, contract_id_),
-  PROTOBUF_FIELD_OFFSET(::koinos::protocol::contract_call_bundle, entrypoint_),
+  PROTOBUF_FIELD_OFFSET(::koinos::protocol::contract_call_bundle, entry_point_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::system_call_target, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -389,7 +389,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fprotocol_2fprotocol_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::call_contract_operation, contract_id_),
-  PROTOBUF_FIELD_OFFSET(::koinos::protocol::call_contract_operation, entrypoint_),
+  PROTOBUF_FIELD_OFFSET(::koinos::protocol::call_contract_operation, entry_point_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::call_contract_operation, args_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::set_system_call_operation, _internal_metadata_),
@@ -543,55 +543,55 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036koinos/protocol/protocol.proto\022\017koinos"
-  ".protocol\"\?\n\024contract_call_bundle\022\023\n\013con"
-  "tract_id\030\001 \001(\014\022\022\n\nentrypoint\030\002 \001(\r\"w\n\022sy"
-  "stem_call_target\022\022\n\010thunk_id\030\001 \001(\rH\000\022C\n\022"
-  "system_call_bundle\030\002 \001(\0132%.koinos.protoc"
-  "ol.contract_call_bundleH\000B\010\n\006target\"B\n\031u"
-  "pload_contract_operation\022\023\n\013contract_id\030"
-  "\001 \001(\014\022\020\n\010bytecode\030\002 \001(\014\"P\n\027call_contract"
-  "_operation\022\023\n\013contract_id\030\001 \001(\014\022\022\n\nentry"
-  "point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"a\n\031set_system_"
-  "call_operation\022\017\n\007call_id\030\001 \001(\r\0223\n\006targe"
-  "t\030\002 \001(\0132#.koinos.protocol.system_call_ta"
-  "rget\"\342\001\n\toperation\022E\n\017upload_contract\030\001 "
-  "\001(\0132*.koinos.protocol.upload_contract_op"
-  "erationH\000\022A\n\rcall_contract\030\002 \001(\0132(.koino"
-  "s.protocol.call_contract_operationH\000\022E\n\017"
-  "set_system_call\030\003 \001(\0132*.koinos.protocol."
-  "set_system_call_operationH\000B\004\n\002op\"p\n\027act"
-  "ive_transaction_data\022\026\n\016resource_limit\030\001"
-  " \001(\004\022\r\n\005nonce\030\002 \001(\004\022.\n\noperations\030\003 \003(\0132"
-  "\032.koinos.protocol.operation\"\032\n\030passive_t"
-  "ransaction_data\"m\n\027transaction_active_da"
-  "ta\022:\n\006native\030\001 \001(\0132(.koinos.protocol.act"
-  "ive_transaction_dataH\000\022\016\n\004blob\030\002 \001(\014H\000B\006"
-  "\n\004data\"o\n\030transaction_passive_data\022;\n\006na"
-  "tive\030\001 \001(\0132).koinos.protocol.passive_tra"
-  "nsaction_dataH\000\022\016\n\004blob\030\002 \001(\014H\000B\006\n\004data\""
-  "\247\001\n\013transaction\022\n\n\002id\030\001 \001(\014\0228\n\006active\030\002 "
-  "\001(\0132(.koinos.protocol.transaction_active"
-  "_data\022:\n\007passive\030\003 \001(\0132).koinos.protocol"
-  ".transaction_passive_data\022\026\n\016signature_d"
-  "ata\030\004 \001(\014\"f\n\021active_block_data\022\037\n\027transa"
-  "ction_merkle_root\030\001 \001(\014\022 \n\030passive_data_"
-  "merkle_root\030\002 \001(\014\022\016\n\006signer\030\003 \001(\014\"\024\n\022pas"
-  "sive_block_data\"C\n\014block_header\022\020\n\010previ"
-  "ous\030\001 \001(\014\022\016\n\006height\030\002 \001(\004\022\021\n\ttimestamp\030\003"
-  " \001(\004\"a\n\021block_active_data\0224\n\006native\030\001 \001("
-  "\0132\".koinos.protocol.active_block_dataH\000\022"
-  "\016\n\004blob\030\002 \001(\014H\000B\006\n\004data\"c\n\022block_passive"
-  "_data\0225\n\006native\030\001 \001(\0132#.koinos.protocol."
-  "passive_block_dataH\000\022\016\n\004blob\030\002 \001(\014H\000B\006\n\004"
-  "data\"\370\001\n\005block\022\n\n\002id\030\001 \001(\014\022-\n\006header\030\002 \001"
-  "(\0132\035.koinos.protocol.block_header\0222\n\006act"
-  "ive\030\003 \001(\0132\".koinos.protocol.block_active"
-  "_data\0224\n\007passive\030\004 \001(\0132#.koinos.protocol"
-  ".block_passive_data\022\026\n\016signature_data\030\005 "
-  "\001(\014\0222\n\014transactions\030\006 \003(\0132\034.koinos.proto"
-  "col.transaction\"\017\n\rblock_receiptB7Z5gith"
-  "ub.com/koinos/koinos-proto-golang/koinos"
-  "/protocolb\006proto3"
+  ".protocol\"@\n\024contract_call_bundle\022\023\n\013con"
+  "tract_id\030\001 \001(\014\022\023\n\013entry_point\030\002 \001(\r\"w\n\022s"
+  "ystem_call_target\022\022\n\010thunk_id\030\001 \001(\rH\000\022C\n"
+  "\022system_call_bundle\030\002 \001(\0132%.koinos.proto"
+  "col.contract_call_bundleH\000B\010\n\006target\"B\n\031"
+  "upload_contract_operation\022\023\n\013contract_id"
+  "\030\001 \001(\014\022\020\n\010bytecode\030\002 \001(\014\"Q\n\027call_contrac"
+  "t_operation\022\023\n\013contract_id\030\001 \001(\014\022\023\n\013entr"
+  "y_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"a\n\031set_syste"
+  "m_call_operation\022\017\n\007call_id\030\001 \001(\r\0223\n\006tar"
+  "get\030\002 \001(\0132#.koinos.protocol.system_call_"
+  "target\"\342\001\n\toperation\022E\n\017upload_contract\030"
+  "\001 \001(\0132*.koinos.protocol.upload_contract_"
+  "operationH\000\022A\n\rcall_contract\030\002 \001(\0132(.koi"
+  "nos.protocol.call_contract_operationH\000\022E"
+  "\n\017set_system_call\030\003 \001(\0132*.koinos.protoco"
+  "l.set_system_call_operationH\000B\004\n\002op\"p\n\027a"
+  "ctive_transaction_data\022\026\n\016resource_limit"
+  "\030\001 \001(\004\022\r\n\005nonce\030\002 \001(\004\022.\n\noperations\030\003 \003("
+  "\0132\032.koinos.protocol.operation\"\032\n\030passive"
+  "_transaction_data\"m\n\027transaction_active_"
+  "data\022:\n\006native\030\001 \001(\0132(.koinos.protocol.a"
+  "ctive_transaction_dataH\000\022\016\n\004blob\030\002 \001(\014H\000"
+  "B\006\n\004data\"o\n\030transaction_passive_data\022;\n\006"
+  "native\030\001 \001(\0132).koinos.protocol.passive_t"
+  "ransaction_dataH\000\022\016\n\004blob\030\002 \001(\014H\000B\006\n\004dat"
+  "a\"\247\001\n\013transaction\022\n\n\002id\030\001 \001(\014\0228\n\006active\030"
+  "\002 \001(\0132(.koinos.protocol.transaction_acti"
+  "ve_data\022:\n\007passive\030\003 \001(\0132).koinos.protoc"
+  "ol.transaction_passive_data\022\026\n\016signature"
+  "_data\030\004 \001(\014\"f\n\021active_block_data\022\037\n\027tran"
+  "saction_merkle_root\030\001 \001(\014\022 \n\030passive_dat"
+  "a_merkle_root\030\002 \001(\014\022\016\n\006signer\030\003 \001(\014\"\024\n\022p"
+  "assive_block_data\"C\n\014block_header\022\020\n\010pre"
+  "vious\030\001 \001(\014\022\016\n\006height\030\002 \001(\004\022\021\n\ttimestamp"
+  "\030\003 \001(\004\"a\n\021block_active_data\0224\n\006native\030\001 "
+  "\001(\0132\".koinos.protocol.active_block_dataH"
+  "\000\022\016\n\004blob\030\002 \001(\014H\000B\006\n\004data\"c\n\022block_passi"
+  "ve_data\0225\n\006native\030\001 \001(\0132#.koinos.protoco"
+  "l.passive_block_dataH\000\022\016\n\004blob\030\002 \001(\014H\000B\006"
+  "\n\004data\"\370\001\n\005block\022\n\n\002id\030\001 \001(\014\022-\n\006header\030\002"
+  " \001(\0132\035.koinos.protocol.block_header\0222\n\006a"
+  "ctive\030\003 \001(\0132\".koinos.protocol.block_acti"
+  "ve_data\0224\n\007passive\030\004 \001(\0132#.koinos.protoc"
+  "ol.block_passive_data\022\026\n\016signature_data\030"
+  "\005 \001(\014\0222\n\014transactions\030\006 \003(\0132\034.koinos.pro"
+  "tocol.transaction\"\017\n\rblock_receiptB7Z5gi"
+  "thub.com/koinos/koinos-proto-golang/koin"
+  "os/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
 };
@@ -617,7 +617,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koi
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 1977,
+  false, false, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 1979,
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_sccs, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 18, 0,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, 18, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -648,14 +648,14 @@ contract_call_bundle::contract_call_bundle(const contract_call_bundle& from)
     contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contract_id(), 
       GetArena());
   }
-  entrypoint_ = from.entrypoint_;
+  entry_point_ = from.entry_point_;
   // @@protoc_insertion_point(copy_constructor:koinos.protocol.contract_call_bundle)
 }
 
 void contract_call_bundle::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_contract_call_bundle_koinos_2fprotocol_2fprotocol_2eproto.base);
   contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
 }
 
 contract_call_bundle::~contract_call_bundle() {
@@ -691,7 +691,7 @@ void contract_call_bundle::Clear() {
   (void) cached_has_bits;
 
   contract_id_.ClearToEmpty();
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -710,10 +710,10 @@ const char* contract_call_bundle::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 entrypoint = 2;
+      // uint32 entry_point = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          entrypoint_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          entry_point_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -751,10 +751,10 @@ failure:
         1, this->_internal_contract_id(), target);
   }
 
-  // uint32 entrypoint = 2;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 2;
+  if (this->entry_point() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_entrypoint(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_entry_point(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -780,11 +780,11 @@ size_t contract_call_bundle::ByteSizeLong() const {
         this->_internal_contract_id());
   }
 
-  // uint32 entrypoint = 2;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 2;
+  if (this->entry_point() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_entrypoint());
+        this->_internal_entry_point());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -821,8 +821,8 @@ void contract_call_bundle::MergeFrom(const contract_call_bundle& from) {
   if (from.contract_id().size() > 0) {
     _internal_set_contract_id(from._internal_contract_id());
   }
-  if (from.entrypoint() != 0) {
-    _internal_set_entrypoint(from._internal_entrypoint());
+  if (from.entry_point() != 0) {
+    _internal_set_entry_point(from._internal_entry_point());
   }
 }
 
@@ -848,7 +848,7 @@ void contract_call_bundle::InternalSwap(contract_call_bundle* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   contract_id_.Swap(&other->contract_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(entrypoint_, other->entrypoint_);
+  swap(entry_point_, other->entry_point_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata contract_call_bundle::GetMetadata() const {
@@ -1405,7 +1405,7 @@ call_contract_operation::call_contract_operation(const call_contract_operation& 
     args_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_args(), 
       GetArena());
   }
-  entrypoint_ = from.entrypoint_;
+  entry_point_ = from.entry_point_;
   // @@protoc_insertion_point(copy_constructor:koinos.protocol.call_contract_operation)
 }
 
@@ -1413,7 +1413,7 @@ void call_contract_operation::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_call_contract_operation_koinos_2fprotocol_2fprotocol_2eproto.base);
   contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   args_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
 }
 
 call_contract_operation::~call_contract_operation() {
@@ -1451,7 +1451,7 @@ void call_contract_operation::Clear() {
 
   contract_id_.ClearToEmpty();
   args_.ClearToEmpty();
-  entrypoint_ = 0u;
+  entry_point_ = 0u;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1470,10 +1470,10 @@ const char* call_contract_operation::_InternalParse(const char* ptr, ::PROTOBUF_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 entrypoint = 2;
+      // uint32 entry_point = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          entrypoint_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          entry_point_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1519,10 +1519,10 @@ failure:
         1, this->_internal_contract_id(), target);
   }
 
-  // uint32 entrypoint = 2;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 2;
+  if (this->entry_point() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_entrypoint(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_entry_point(), target);
   }
 
   // bytes args = 3;
@@ -1561,11 +1561,11 @@ size_t call_contract_operation::ByteSizeLong() const {
         this->_internal_args());
   }
 
-  // uint32 entrypoint = 2;
-  if (this->entrypoint() != 0) {
+  // uint32 entry_point = 2;
+  if (this->entry_point() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_entrypoint());
+        this->_internal_entry_point());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1605,8 +1605,8 @@ void call_contract_operation::MergeFrom(const call_contract_operation& from) {
   if (from.args().size() > 0) {
     _internal_set_args(from._internal_args());
   }
-  if (from.entrypoint() != 0) {
-    _internal_set_entrypoint(from._internal_entrypoint());
+  if (from.entry_point() != 0) {
+    _internal_set_entry_point(from._internal_entry_point());
   }
 }
 
@@ -1633,7 +1633,7 @@ void call_contract_operation::InternalSwap(call_contract_operation* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   contract_id_.Swap(&other->contract_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   args_.Swap(&other->args_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(entrypoint_, other->entrypoint_);
+  swap(entry_point_, other->entry_point_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata call_contract_operation::GetMetadata() const {

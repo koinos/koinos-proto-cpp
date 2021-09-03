@@ -46,7 +46,7 @@ struct TableStruct_koinos_2fprotocol_2fprotocol_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -64,15 +64,9 @@ extern active_transaction_dataDefaultTypeInternal _active_transaction_data_defau
 class block;
 class blockDefaultTypeInternal;
 extern blockDefaultTypeInternal _block_default_instance_;
-class block_active_data;
-class block_active_dataDefaultTypeInternal;
-extern block_active_dataDefaultTypeInternal _block_active_data_default_instance_;
 class block_header;
 class block_headerDefaultTypeInternal;
 extern block_headerDefaultTypeInternal _block_header_default_instance_;
-class block_passive_data;
-class block_passive_dataDefaultTypeInternal;
-extern block_passive_dataDefaultTypeInternal _block_passive_data_default_instance_;
 class block_receipt;
 class block_receiptDefaultTypeInternal;
 extern block_receiptDefaultTypeInternal _block_receipt_default_instance_;
@@ -100,12 +94,6 @@ extern system_call_targetDefaultTypeInternal _system_call_target_default_instanc
 class transaction;
 class transactionDefaultTypeInternal;
 extern transactionDefaultTypeInternal _transaction_default_instance_;
-class transaction_active_data;
-class transaction_active_dataDefaultTypeInternal;
-extern transaction_active_dataDefaultTypeInternal _transaction_active_data_default_instance_;
-class transaction_passive_data;
-class transaction_passive_dataDefaultTypeInternal;
-extern transaction_passive_dataDefaultTypeInternal _transaction_passive_data_default_instance_;
 class upload_contract_operation;
 class upload_contract_operationDefaultTypeInternal;
 extern upload_contract_operationDefaultTypeInternal _upload_contract_operation_default_instance_;
@@ -115,9 +103,7 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::protocol::active_block_data* Arena::CreateMaybeMessage<::koinos::protocol::active_block_data>(Arena*);
 template<> ::koinos::protocol::active_transaction_data* Arena::CreateMaybeMessage<::koinos::protocol::active_transaction_data>(Arena*);
 template<> ::koinos::protocol::block* Arena::CreateMaybeMessage<::koinos::protocol::block>(Arena*);
-template<> ::koinos::protocol::block_active_data* Arena::CreateMaybeMessage<::koinos::protocol::block_active_data>(Arena*);
 template<> ::koinos::protocol::block_header* Arena::CreateMaybeMessage<::koinos::protocol::block_header>(Arena*);
-template<> ::koinos::protocol::block_passive_data* Arena::CreateMaybeMessage<::koinos::protocol::block_passive_data>(Arena*);
 template<> ::koinos::protocol::block_receipt* Arena::CreateMaybeMessage<::koinos::protocol::block_receipt>(Arena*);
 template<> ::koinos::protocol::call_contract_operation* Arena::CreateMaybeMessage<::koinos::protocol::call_contract_operation>(Arena*);
 template<> ::koinos::protocol::contract_call_bundle* Arena::CreateMaybeMessage<::koinos::protocol::contract_call_bundle>(Arena*);
@@ -127,8 +113,6 @@ template<> ::koinos::protocol::passive_transaction_data* Arena::CreateMaybeMessa
 template<> ::koinos::protocol::set_system_call_operation* Arena::CreateMaybeMessage<::koinos::protocol::set_system_call_operation>(Arena*);
 template<> ::koinos::protocol::system_call_target* Arena::CreateMaybeMessage<::koinos::protocol::system_call_target>(Arena*);
 template<> ::koinos::protocol::transaction* Arena::CreateMaybeMessage<::koinos::protocol::transaction>(Arena*);
-template<> ::koinos::protocol::transaction_active_data* Arena::CreateMaybeMessage<::koinos::protocol::transaction_active_data>(Arena*);
-template<> ::koinos::protocol::transaction_passive_data* Arena::CreateMaybeMessage<::koinos::protocol::transaction_passive_data>(Arena*);
 template<> ::koinos::protocol::upload_contract_operation* Arena::CreateMaybeMessage<::koinos::protocol::upload_contract_operation>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
@@ -1451,374 +1435,6 @@ class passive_transaction_data PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class transaction_active_data PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.transaction_active_data) */ {
- public:
-  inline transaction_active_data() : transaction_active_data(nullptr) {}
-  virtual ~transaction_active_data();
-
-  transaction_active_data(const transaction_active_data& from);
-  transaction_active_data(transaction_active_data&& from) noexcept
-    : transaction_active_data() {
-    *this = ::std::move(from);
-  }
-
-  inline transaction_active_data& operator=(const transaction_active_data& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline transaction_active_data& operator=(transaction_active_data&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const transaction_active_data& default_instance();
-
-  enum DataCase {
-    kNative = 1,
-    kBlob = 2,
-    DATA_NOT_SET = 0,
-  };
-
-  static inline const transaction_active_data* internal_default_instance() {
-    return reinterpret_cast<const transaction_active_data*>(
-               &_transaction_active_data_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    8;
-
-  friend void swap(transaction_active_data& a, transaction_active_data& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(transaction_active_data* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(transaction_active_data* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline transaction_active_data* New() const final {
-    return CreateMaybeMessage<transaction_active_data>(nullptr);
-  }
-
-  transaction_active_data* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<transaction_active_data>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const transaction_active_data& from);
-  void MergeFrom(const transaction_active_data& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(transaction_active_data* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.protocol.transaction_active_data";
-  }
-  protected:
-  explicit transaction_active_data(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto);
-    return ::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kNativeFieldNumber = 1,
-    kBlobFieldNumber = 2,
-  };
-  // .koinos.protocol.active_transaction_data native = 1;
-  bool has_native() const;
-  private:
-  bool _internal_has_native() const;
-  public:
-  void clear_native();
-  const ::koinos::protocol::active_transaction_data& native() const;
-  ::koinos::protocol::active_transaction_data* release_native();
-  ::koinos::protocol::active_transaction_data* mutable_native();
-  void set_allocated_native(::koinos::protocol::active_transaction_data* native);
-  private:
-  const ::koinos::protocol::active_transaction_data& _internal_native() const;
-  ::koinos::protocol::active_transaction_data* _internal_mutable_native();
-  public:
-  void unsafe_arena_set_allocated_native(
-      ::koinos::protocol::active_transaction_data* native);
-  ::koinos::protocol::active_transaction_data* unsafe_arena_release_native();
-
-  // bytes blob = 2;
-  private:
-  bool _internal_has_blob() const;
-  public:
-  void clear_blob();
-  const std::string& blob() const;
-  void set_blob(const std::string& value);
-  void set_blob(std::string&& value);
-  void set_blob(const char* value);
-  void set_blob(const void* value, size_t size);
-  std::string* mutable_blob();
-  std::string* release_blob();
-  void set_allocated_blob(std::string* blob);
-  private:
-  const std::string& _internal_blob() const;
-  void _internal_set_blob(const std::string& value);
-  std::string* _internal_mutable_blob();
-  public:
-
-  void clear_data();
-  DataCase data_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.protocol.transaction_active_data)
- private:
-  class _Internal;
-  void set_has_native();
-  void set_has_blob();
-
-  inline bool has_data() const;
-  inline void clear_has_data();
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  union DataUnion {
-    DataUnion() {}
-    ::koinos::protocol::active_transaction_data* native_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  } data_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
-  friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
-};
-// -------------------------------------------------------------------
-
-class transaction_passive_data PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.transaction_passive_data) */ {
- public:
-  inline transaction_passive_data() : transaction_passive_data(nullptr) {}
-  virtual ~transaction_passive_data();
-
-  transaction_passive_data(const transaction_passive_data& from);
-  transaction_passive_data(transaction_passive_data&& from) noexcept
-    : transaction_passive_data() {
-    *this = ::std::move(from);
-  }
-
-  inline transaction_passive_data& operator=(const transaction_passive_data& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline transaction_passive_data& operator=(transaction_passive_data&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const transaction_passive_data& default_instance();
-
-  enum DataCase {
-    kNative = 1,
-    kBlob = 2,
-    DATA_NOT_SET = 0,
-  };
-
-  static inline const transaction_passive_data* internal_default_instance() {
-    return reinterpret_cast<const transaction_passive_data*>(
-               &_transaction_passive_data_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    9;
-
-  friend void swap(transaction_passive_data& a, transaction_passive_data& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(transaction_passive_data* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(transaction_passive_data* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline transaction_passive_data* New() const final {
-    return CreateMaybeMessage<transaction_passive_data>(nullptr);
-  }
-
-  transaction_passive_data* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<transaction_passive_data>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const transaction_passive_data& from);
-  void MergeFrom(const transaction_passive_data& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(transaction_passive_data* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.protocol.transaction_passive_data";
-  }
-  protected:
-  explicit transaction_passive_data(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto);
-    return ::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kNativeFieldNumber = 1,
-    kBlobFieldNumber = 2,
-  };
-  // .koinos.protocol.passive_transaction_data native = 1;
-  bool has_native() const;
-  private:
-  bool _internal_has_native() const;
-  public:
-  void clear_native();
-  const ::koinos::protocol::passive_transaction_data& native() const;
-  ::koinos::protocol::passive_transaction_data* release_native();
-  ::koinos::protocol::passive_transaction_data* mutable_native();
-  void set_allocated_native(::koinos::protocol::passive_transaction_data* native);
-  private:
-  const ::koinos::protocol::passive_transaction_data& _internal_native() const;
-  ::koinos::protocol::passive_transaction_data* _internal_mutable_native();
-  public:
-  void unsafe_arena_set_allocated_native(
-      ::koinos::protocol::passive_transaction_data* native);
-  ::koinos::protocol::passive_transaction_data* unsafe_arena_release_native();
-
-  // bytes blob = 2;
-  private:
-  bool _internal_has_blob() const;
-  public:
-  void clear_blob();
-  const std::string& blob() const;
-  void set_blob(const std::string& value);
-  void set_blob(std::string&& value);
-  void set_blob(const char* value);
-  void set_blob(const void* value, size_t size);
-  std::string* mutable_blob();
-  std::string* release_blob();
-  void set_allocated_blob(std::string* blob);
-  private:
-  const std::string& _internal_blob() const;
-  void _internal_set_blob(const std::string& value);
-  std::string* _internal_mutable_blob();
-  public:
-
-  void clear_data();
-  DataCase data_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.protocol.transaction_passive_data)
- private:
-  class _Internal;
-  void set_has_native();
-  void set_has_blob();
-
-  inline bool has_data() const;
-  inline void clear_has_data();
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  union DataUnion {
-    DataUnion() {}
-    ::koinos::protocol::passive_transaction_data* native_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  } data_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
-  friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
-};
-// -------------------------------------------------------------------
-
 class transaction PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.transaction) */ {
  public:
@@ -1860,7 +1476,7 @@ class transaction PROTOBUF_FINAL :
                &_transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    8;
 
   friend void swap(transaction& a, transaction& b) {
     a.Swap(&b);
@@ -1932,9 +1548,9 @@ class transaction PROTOBUF_FINAL :
 
   enum : int {
     kIdFieldNumber = 1,
-    kSignatureDataFieldNumber = 4,
     kActiveFieldNumber = 2,
     kPassiveFieldNumber = 3,
+    kSignatureDataFieldNumber = 4,
   };
   // bytes id = 1;
   void clear_id();
@@ -1950,6 +1566,38 @@ class transaction PROTOBUF_FINAL :
   const std::string& _internal_id() const;
   void _internal_set_id(const std::string& value);
   std::string* _internal_mutable_id();
+  public:
+
+  // bytes active = 2;
+  void clear_active();
+  const std::string& active() const;
+  void set_active(const std::string& value);
+  void set_active(std::string&& value);
+  void set_active(const char* value);
+  void set_active(const void* value, size_t size);
+  std::string* mutable_active();
+  std::string* release_active();
+  void set_allocated_active(std::string* active);
+  private:
+  const std::string& _internal_active() const;
+  void _internal_set_active(const std::string& value);
+  std::string* _internal_mutable_active();
+  public:
+
+  // bytes passive = 3;
+  void clear_passive();
+  const std::string& passive() const;
+  void set_passive(const std::string& value);
+  void set_passive(std::string&& value);
+  void set_passive(const char* value);
+  void set_passive(const void* value, size_t size);
+  std::string* mutable_passive();
+  std::string* release_passive();
+  void set_allocated_passive(std::string* passive);
+  private:
+  const std::string& _internal_passive() const;
+  void _internal_set_passive(const std::string& value);
+  std::string* _internal_mutable_passive();
   public:
 
   // bytes signature_data = 4;
@@ -1968,42 +1616,6 @@ class transaction PROTOBUF_FINAL :
   std::string* _internal_mutable_signature_data();
   public:
 
-  // .koinos.protocol.transaction_active_data active = 2;
-  bool has_active() const;
-  private:
-  bool _internal_has_active() const;
-  public:
-  void clear_active();
-  const ::koinos::protocol::transaction_active_data& active() const;
-  ::koinos::protocol::transaction_active_data* release_active();
-  ::koinos::protocol::transaction_active_data* mutable_active();
-  void set_allocated_active(::koinos::protocol::transaction_active_data* active);
-  private:
-  const ::koinos::protocol::transaction_active_data& _internal_active() const;
-  ::koinos::protocol::transaction_active_data* _internal_mutable_active();
-  public:
-  void unsafe_arena_set_allocated_active(
-      ::koinos::protocol::transaction_active_data* active);
-  ::koinos::protocol::transaction_active_data* unsafe_arena_release_active();
-
-  // .koinos.protocol.transaction_passive_data passive = 3;
-  bool has_passive() const;
-  private:
-  bool _internal_has_passive() const;
-  public:
-  void clear_passive();
-  const ::koinos::protocol::transaction_passive_data& passive() const;
-  ::koinos::protocol::transaction_passive_data* release_passive();
-  ::koinos::protocol::transaction_passive_data* mutable_passive();
-  void set_allocated_passive(::koinos::protocol::transaction_passive_data* passive);
-  private:
-  const ::koinos::protocol::transaction_passive_data& _internal_passive() const;
-  ::koinos::protocol::transaction_passive_data* _internal_mutable_passive();
-  public:
-  void unsafe_arena_set_allocated_passive(
-      ::koinos::protocol::transaction_passive_data* passive);
-  ::koinos::protocol::transaction_passive_data* unsafe_arena_release_passive();
-
   // @@protoc_insertion_point(class_scope:koinos.protocol.transaction)
  private:
   class _Internal;
@@ -2012,9 +1624,9 @@ class transaction PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr active_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr passive_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_data_;
-  ::koinos::protocol::transaction_active_data* active_;
-  ::koinos::protocol::transaction_passive_data* passive_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -2061,7 +1673,7 @@ class active_block_data PROTOBUF_FINAL :
                &_active_block_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    9;
 
   friend void swap(active_block_data& a, active_block_data& b) {
     a.Swap(&b);
@@ -2240,7 +1852,7 @@ class passive_block_data PROTOBUF_FINAL :
                &_passive_block_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    10;
 
   friend void swap(passive_block_data& a, passive_block_data& b) {
     a.Swap(&b);
@@ -2363,7 +1975,7 @@ class block_header PROTOBUF_FINAL :
                &_block_header_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    11;
 
   friend void swap(block_header& a, block_header& b) {
     a.Swap(&b);
@@ -2487,374 +2099,6 @@ class block_header PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class block_active_data PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.block_active_data) */ {
- public:
-  inline block_active_data() : block_active_data(nullptr) {}
-  virtual ~block_active_data();
-
-  block_active_data(const block_active_data& from);
-  block_active_data(block_active_data&& from) noexcept
-    : block_active_data() {
-    *this = ::std::move(from);
-  }
-
-  inline block_active_data& operator=(const block_active_data& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline block_active_data& operator=(block_active_data&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const block_active_data& default_instance();
-
-  enum DataCase {
-    kNative = 1,
-    kBlob = 2,
-    DATA_NOT_SET = 0,
-  };
-
-  static inline const block_active_data* internal_default_instance() {
-    return reinterpret_cast<const block_active_data*>(
-               &_block_active_data_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    14;
-
-  friend void swap(block_active_data& a, block_active_data& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(block_active_data* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(block_active_data* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline block_active_data* New() const final {
-    return CreateMaybeMessage<block_active_data>(nullptr);
-  }
-
-  block_active_data* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<block_active_data>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const block_active_data& from);
-  void MergeFrom(const block_active_data& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(block_active_data* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.protocol.block_active_data";
-  }
-  protected:
-  explicit block_active_data(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto);
-    return ::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kNativeFieldNumber = 1,
-    kBlobFieldNumber = 2,
-  };
-  // .koinos.protocol.active_block_data native = 1;
-  bool has_native() const;
-  private:
-  bool _internal_has_native() const;
-  public:
-  void clear_native();
-  const ::koinos::protocol::active_block_data& native() const;
-  ::koinos::protocol::active_block_data* release_native();
-  ::koinos::protocol::active_block_data* mutable_native();
-  void set_allocated_native(::koinos::protocol::active_block_data* native);
-  private:
-  const ::koinos::protocol::active_block_data& _internal_native() const;
-  ::koinos::protocol::active_block_data* _internal_mutable_native();
-  public:
-  void unsafe_arena_set_allocated_native(
-      ::koinos::protocol::active_block_data* native);
-  ::koinos::protocol::active_block_data* unsafe_arena_release_native();
-
-  // bytes blob = 2;
-  private:
-  bool _internal_has_blob() const;
-  public:
-  void clear_blob();
-  const std::string& blob() const;
-  void set_blob(const std::string& value);
-  void set_blob(std::string&& value);
-  void set_blob(const char* value);
-  void set_blob(const void* value, size_t size);
-  std::string* mutable_blob();
-  std::string* release_blob();
-  void set_allocated_blob(std::string* blob);
-  private:
-  const std::string& _internal_blob() const;
-  void _internal_set_blob(const std::string& value);
-  std::string* _internal_mutable_blob();
-  public:
-
-  void clear_data();
-  DataCase data_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.protocol.block_active_data)
- private:
-  class _Internal;
-  void set_has_native();
-  void set_has_blob();
-
-  inline bool has_data() const;
-  inline void clear_has_data();
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  union DataUnion {
-    DataUnion() {}
-    ::koinos::protocol::active_block_data* native_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  } data_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
-  friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
-};
-// -------------------------------------------------------------------
-
-class block_passive_data PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.block_passive_data) */ {
- public:
-  inline block_passive_data() : block_passive_data(nullptr) {}
-  virtual ~block_passive_data();
-
-  block_passive_data(const block_passive_data& from);
-  block_passive_data(block_passive_data&& from) noexcept
-    : block_passive_data() {
-    *this = ::std::move(from);
-  }
-
-  inline block_passive_data& operator=(const block_passive_data& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline block_passive_data& operator=(block_passive_data&& from) noexcept {
-    if (GetArena() == from.GetArena()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return GetMetadataStatic().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return GetMetadataStatic().reflection;
-  }
-  static const block_passive_data& default_instance();
-
-  enum DataCase {
-    kNative = 1,
-    kBlob = 2,
-    DATA_NOT_SET = 0,
-  };
-
-  static inline const block_passive_data* internal_default_instance() {
-    return reinterpret_cast<const block_passive_data*>(
-               &_block_passive_data_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  friend void swap(block_passive_data& a, block_passive_data& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(block_passive_data* other) {
-    if (other == this) return;
-    if (GetArena() == other->GetArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(block_passive_data* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline block_passive_data* New() const final {
-    return CreateMaybeMessage<block_passive_data>(nullptr);
-  }
-
-  block_passive_data* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<block_passive_data>(arena);
-  }
-  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const block_passive_data& from);
-  void MergeFrom(const block_passive_data& from);
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  inline void SharedCtor();
-  inline void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(block_passive_data* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.protocol.block_passive_data";
-  }
-  protected:
-  explicit block_passive_data(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-  private:
-  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
-    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto);
-    return ::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto.file_level_metadata[kIndexInFileMessages];
-  }
-
-  public:
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kNativeFieldNumber = 1,
-    kBlobFieldNumber = 2,
-  };
-  // .koinos.protocol.passive_block_data native = 1;
-  bool has_native() const;
-  private:
-  bool _internal_has_native() const;
-  public:
-  void clear_native();
-  const ::koinos::protocol::passive_block_data& native() const;
-  ::koinos::protocol::passive_block_data* release_native();
-  ::koinos::protocol::passive_block_data* mutable_native();
-  void set_allocated_native(::koinos::protocol::passive_block_data* native);
-  private:
-  const ::koinos::protocol::passive_block_data& _internal_native() const;
-  ::koinos::protocol::passive_block_data* _internal_mutable_native();
-  public:
-  void unsafe_arena_set_allocated_native(
-      ::koinos::protocol::passive_block_data* native);
-  ::koinos::protocol::passive_block_data* unsafe_arena_release_native();
-
-  // bytes blob = 2;
-  private:
-  bool _internal_has_blob() const;
-  public:
-  void clear_blob();
-  const std::string& blob() const;
-  void set_blob(const std::string& value);
-  void set_blob(std::string&& value);
-  void set_blob(const char* value);
-  void set_blob(const void* value, size_t size);
-  std::string* mutable_blob();
-  std::string* release_blob();
-  void set_allocated_blob(std::string* blob);
-  private:
-  const std::string& _internal_blob() const;
-  void _internal_set_blob(const std::string& value);
-  std::string* _internal_mutable_blob();
-  public:
-
-  void clear_data();
-  DataCase data_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.protocol.block_passive_data)
- private:
-  class _Internal;
-  void set_has_native();
-  void set_has_blob();
-
-  inline bool has_data() const;
-  inline void clear_has_data();
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  union DataUnion {
-    DataUnion() {}
-    ::koinos::protocol::passive_block_data* native_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr blob_;
-  } data_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
-  friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
-};
-// -------------------------------------------------------------------
-
 class block PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.block) */ {
  public:
@@ -2896,7 +2140,7 @@ class block PROTOBUF_FINAL :
                &_block_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    12;
 
   friend void swap(block& a, block& b) {
     a.Swap(&b);
@@ -2969,10 +2213,10 @@ class block PROTOBUF_FINAL :
   enum : int {
     kTransactionsFieldNumber = 6,
     kIdFieldNumber = 1,
-    kSignatureDataFieldNumber = 5,
-    kHeaderFieldNumber = 2,
     kActiveFieldNumber = 3,
     kPassiveFieldNumber = 4,
+    kSignatureDataFieldNumber = 5,
+    kHeaderFieldNumber = 2,
   };
   // repeated .koinos.protocol.transaction transactions = 6;
   int transactions_size() const;
@@ -3006,6 +2250,38 @@ class block PROTOBUF_FINAL :
   const std::string& _internal_id() const;
   void _internal_set_id(const std::string& value);
   std::string* _internal_mutable_id();
+  public:
+
+  // bytes active = 3;
+  void clear_active();
+  const std::string& active() const;
+  void set_active(const std::string& value);
+  void set_active(std::string&& value);
+  void set_active(const char* value);
+  void set_active(const void* value, size_t size);
+  std::string* mutable_active();
+  std::string* release_active();
+  void set_allocated_active(std::string* active);
+  private:
+  const std::string& _internal_active() const;
+  void _internal_set_active(const std::string& value);
+  std::string* _internal_mutable_active();
+  public:
+
+  // bytes passive = 4;
+  void clear_passive();
+  const std::string& passive() const;
+  void set_passive(const std::string& value);
+  void set_passive(std::string&& value);
+  void set_passive(const char* value);
+  void set_passive(const void* value, size_t size);
+  std::string* mutable_passive();
+  std::string* release_passive();
+  void set_allocated_passive(std::string* passive);
+  private:
+  const std::string& _internal_passive() const;
+  void _internal_set_passive(const std::string& value);
+  std::string* _internal_mutable_passive();
   public:
 
   // bytes signature_data = 5;
@@ -3042,42 +2318,6 @@ class block PROTOBUF_FINAL :
       ::koinos::protocol::block_header* header);
   ::koinos::protocol::block_header* unsafe_arena_release_header();
 
-  // .koinos.protocol.block_active_data active = 3;
-  bool has_active() const;
-  private:
-  bool _internal_has_active() const;
-  public:
-  void clear_active();
-  const ::koinos::protocol::block_active_data& active() const;
-  ::koinos::protocol::block_active_data* release_active();
-  ::koinos::protocol::block_active_data* mutable_active();
-  void set_allocated_active(::koinos::protocol::block_active_data* active);
-  private:
-  const ::koinos::protocol::block_active_data& _internal_active() const;
-  ::koinos::protocol::block_active_data* _internal_mutable_active();
-  public:
-  void unsafe_arena_set_allocated_active(
-      ::koinos::protocol::block_active_data* active);
-  ::koinos::protocol::block_active_data* unsafe_arena_release_active();
-
-  // .koinos.protocol.block_passive_data passive = 4;
-  bool has_passive() const;
-  private:
-  bool _internal_has_passive() const;
-  public:
-  void clear_passive();
-  const ::koinos::protocol::block_passive_data& passive() const;
-  ::koinos::protocol::block_passive_data* release_passive();
-  ::koinos::protocol::block_passive_data* mutable_passive();
-  void set_allocated_passive(::koinos::protocol::block_passive_data* passive);
-  private:
-  const ::koinos::protocol::block_passive_data& _internal_passive() const;
-  ::koinos::protocol::block_passive_data* _internal_mutable_passive();
-  public:
-  void unsafe_arena_set_allocated_passive(
-      ::koinos::protocol::block_passive_data* passive);
-  ::koinos::protocol::block_passive_data* unsafe_arena_release_passive();
-
   // @@protoc_insertion_point(class_scope:koinos.protocol.block)
  private:
   class _Internal;
@@ -3087,10 +2327,10 @@ class block PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::transaction > transactions_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr active_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr passive_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_data_;
   ::koinos::protocol::block_header* header_;
-  ::koinos::protocol::block_active_data* active_;
-  ::koinos::protocol::block_passive_data* passive_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -3137,7 +2377,7 @@ class block_receipt PROTOBUF_FINAL :
                &_block_receipt_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    13;
 
   friend void swap(block_receipt& a, block_receipt& b) {
     a.Swap(&b);
@@ -4130,392 +3370,6 @@ active_transaction_data::operations() const {
 
 // -------------------------------------------------------------------
 
-// transaction_active_data
-
-// .koinos.protocol.active_transaction_data native = 1;
-inline bool transaction_active_data::_internal_has_native() const {
-  return data_case() == kNative;
-}
-inline bool transaction_active_data::has_native() const {
-  return _internal_has_native();
-}
-inline void transaction_active_data::set_has_native() {
-  _oneof_case_[0] = kNative;
-}
-inline void transaction_active_data::clear_native() {
-  if (_internal_has_native()) {
-    if (GetArena() == nullptr) {
-      delete data_.native_;
-    }
-    clear_has_data();
-  }
-}
-inline ::koinos::protocol::active_transaction_data* transaction_active_data::release_native() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_active_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-      ::koinos::protocol::active_transaction_data* temp = data_.native_;
-    if (GetArena() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::koinos::protocol::active_transaction_data& transaction_active_data::_internal_native() const {
-  return _internal_has_native()
-      ? *data_.native_
-      : reinterpret_cast< ::koinos::protocol::active_transaction_data&>(::koinos::protocol::_active_transaction_data_default_instance_);
-}
-inline const ::koinos::protocol::active_transaction_data& transaction_active_data::native() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_active_data.native)
-  return _internal_native();
-}
-inline ::koinos::protocol::active_transaction_data* transaction_active_data::unsafe_arena_release_native() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.protocol.transaction_active_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-    ::koinos::protocol::active_transaction_data* temp = data_.native_;
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void transaction_active_data::unsafe_arena_set_allocated_native(::koinos::protocol::active_transaction_data* native) {
-  clear_data();
-  if (native) {
-    set_has_native();
-    data_.native_ = native;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.transaction_active_data.native)
-}
-inline ::koinos::protocol::active_transaction_data* transaction_active_data::_internal_mutable_native() {
-  if (!_internal_has_native()) {
-    clear_data();
-    set_has_native();
-    data_.native_ = CreateMaybeMessage< ::koinos::protocol::active_transaction_data >(GetArena());
-  }
-  return data_.native_;
-}
-inline ::koinos::protocol::active_transaction_data* transaction_active_data::mutable_native() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_active_data.native)
-  return _internal_mutable_native();
-}
-
-// bytes blob = 2;
-inline bool transaction_active_data::_internal_has_blob() const {
-  return data_case() == kBlob;
-}
-inline void transaction_active_data::set_has_blob() {
-  _oneof_case_[0] = kBlob;
-}
-inline void transaction_active_data::clear_blob() {
-  if (_internal_has_blob()) {
-    data_.blob_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-    clear_has_data();
-  }
-}
-inline const std::string& transaction_active_data::blob() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_active_data.blob)
-  return _internal_blob();
-}
-inline void transaction_active_data::set_blob(const std::string& value) {
-  _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_active_data.blob)
-}
-inline std::string* transaction_active_data::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_active_data.blob)
-  return _internal_mutable_blob();
-}
-inline const std::string& transaction_active_data::_internal_blob() const {
-  if (_internal_has_blob()) {
-    return data_.blob_.Get();
-  }
-  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
-}
-inline void transaction_active_data::_internal_set_blob(const std::string& value) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void transaction_active_data::set_blob(std::string&& value) {
-  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_active_data.blob)
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.transaction_active_data.blob)
-}
-inline void transaction_active_data::set_blob(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{},
-      ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.protocol.transaction_active_data.blob)
-}
-inline void transaction_active_data::set_blob(const void* value,
-                             size_t size) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size),
-      GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.transaction_active_data.blob)
-}
-inline std::string* transaction_active_data::_internal_mutable_blob() {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  return data_.blob_.Mutable(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* transaction_active_data::release_blob() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_active_data.blob)
-  if (_internal_has_blob()) {
-    clear_has_data();
-    return data_.blob_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  } else {
-    return nullptr;
-  }
-}
-inline void transaction_active_data::set_allocated_blob(std::string* blob) {
-  if (has_data()) {
-    clear_data();
-  }
-  if (blob != nullptr) {
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(blob);
-    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena();
-    if (arena != nullptr) {
-      arena->Own(blob);
-    }
-  }
-  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_active_data.blob)
-}
-
-inline bool transaction_active_data::has_data() const {
-  return data_case() != DATA_NOT_SET;
-}
-inline void transaction_active_data::clear_has_data() {
-  _oneof_case_[0] = DATA_NOT_SET;
-}
-inline transaction_active_data::DataCase transaction_active_data::data_case() const {
-  return transaction_active_data::DataCase(_oneof_case_[0]);
-}
-// -------------------------------------------------------------------
-
-// transaction_passive_data
-
-// .koinos.protocol.passive_transaction_data native = 1;
-inline bool transaction_passive_data::_internal_has_native() const {
-  return data_case() == kNative;
-}
-inline bool transaction_passive_data::has_native() const {
-  return _internal_has_native();
-}
-inline void transaction_passive_data::set_has_native() {
-  _oneof_case_[0] = kNative;
-}
-inline void transaction_passive_data::clear_native() {
-  if (_internal_has_native()) {
-    if (GetArena() == nullptr) {
-      delete data_.native_;
-    }
-    clear_has_data();
-  }
-}
-inline ::koinos::protocol::passive_transaction_data* transaction_passive_data::release_native() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_passive_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-      ::koinos::protocol::passive_transaction_data* temp = data_.native_;
-    if (GetArena() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::koinos::protocol::passive_transaction_data& transaction_passive_data::_internal_native() const {
-  return _internal_has_native()
-      ? *data_.native_
-      : reinterpret_cast< ::koinos::protocol::passive_transaction_data&>(::koinos::protocol::_passive_transaction_data_default_instance_);
-}
-inline const ::koinos::protocol::passive_transaction_data& transaction_passive_data::native() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_passive_data.native)
-  return _internal_native();
-}
-inline ::koinos::protocol::passive_transaction_data* transaction_passive_data::unsafe_arena_release_native() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.protocol.transaction_passive_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-    ::koinos::protocol::passive_transaction_data* temp = data_.native_;
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void transaction_passive_data::unsafe_arena_set_allocated_native(::koinos::protocol::passive_transaction_data* native) {
-  clear_data();
-  if (native) {
-    set_has_native();
-    data_.native_ = native;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.transaction_passive_data.native)
-}
-inline ::koinos::protocol::passive_transaction_data* transaction_passive_data::_internal_mutable_native() {
-  if (!_internal_has_native()) {
-    clear_data();
-    set_has_native();
-    data_.native_ = CreateMaybeMessage< ::koinos::protocol::passive_transaction_data >(GetArena());
-  }
-  return data_.native_;
-}
-inline ::koinos::protocol::passive_transaction_data* transaction_passive_data::mutable_native() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_passive_data.native)
-  return _internal_mutable_native();
-}
-
-// bytes blob = 2;
-inline bool transaction_passive_data::_internal_has_blob() const {
-  return data_case() == kBlob;
-}
-inline void transaction_passive_data::set_has_blob() {
-  _oneof_case_[0] = kBlob;
-}
-inline void transaction_passive_data::clear_blob() {
-  if (_internal_has_blob()) {
-    data_.blob_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-    clear_has_data();
-  }
-}
-inline const std::string& transaction_passive_data::blob() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_passive_data.blob)
-  return _internal_blob();
-}
-inline void transaction_passive_data::set_blob(const std::string& value) {
-  _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_passive_data.blob)
-}
-inline std::string* transaction_passive_data::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_passive_data.blob)
-  return _internal_mutable_blob();
-}
-inline const std::string& transaction_passive_data::_internal_blob() const {
-  if (_internal_has_blob()) {
-    return data_.blob_.Get();
-  }
-  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
-}
-inline void transaction_passive_data::_internal_set_blob(const std::string& value) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void transaction_passive_data::set_blob(std::string&& value) {
-  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_passive_data.blob)
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.transaction_passive_data.blob)
-}
-inline void transaction_passive_data::set_blob(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{},
-      ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.protocol.transaction_passive_data.blob)
-}
-inline void transaction_passive_data::set_blob(const void* value,
-                             size_t size) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size),
-      GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.transaction_passive_data.blob)
-}
-inline std::string* transaction_passive_data::_internal_mutable_blob() {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  return data_.blob_.Mutable(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* transaction_passive_data::release_blob() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_passive_data.blob)
-  if (_internal_has_blob()) {
-    clear_has_data();
-    return data_.blob_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  } else {
-    return nullptr;
-  }
-}
-inline void transaction_passive_data::set_allocated_blob(std::string* blob) {
-  if (has_data()) {
-    clear_data();
-  }
-  if (blob != nullptr) {
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(blob);
-    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena();
-    if (arena != nullptr) {
-      arena->Own(blob);
-    }
-  }
-  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_passive_data.blob)
-}
-
-inline bool transaction_passive_data::has_data() const {
-  return data_case() != DATA_NOT_SET;
-}
-inline void transaction_passive_data::clear_has_data() {
-  _oneof_case_[0] = DATA_NOT_SET;
-}
-inline transaction_passive_data::DataCase transaction_passive_data::data_case() const {
-  return transaction_passive_data::DataCase(_oneof_case_[0]);
-}
-// -------------------------------------------------------------------
-
 // transaction
 
 // bytes id = 1;
@@ -4579,169 +3433,125 @@ inline void transaction::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction.id)
 }
 
-// .koinos.protocol.transaction_active_data active = 2;
-inline bool transaction::_internal_has_active() const {
-  return this != internal_default_instance() && active_ != nullptr;
-}
-inline bool transaction::has_active() const {
-  return _internal_has_active();
-}
+// bytes active = 2;
 inline void transaction::clear_active() {
-  if (GetArena() == nullptr && active_ != nullptr) {
-    delete active_;
-  }
-  active_ = nullptr;
+  active_.ClearToEmpty();
 }
-inline const ::koinos::protocol::transaction_active_data& transaction::_internal_active() const {
-  const ::koinos::protocol::transaction_active_data* p = active_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction_active_data&>(
-      ::koinos::protocol::_transaction_active_data_default_instance_);
-}
-inline const ::koinos::protocol::transaction_active_data& transaction::active() const {
+inline const std::string& transaction::active() const {
   // @@protoc_insertion_point(field_get:koinos.protocol.transaction.active)
   return _internal_active();
 }
-inline void transaction::unsafe_arena_set_allocated_active(
-    ::koinos::protocol::transaction_active_data* active) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(active_);
-  }
-  active_ = active;
-  if (active) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.transaction.active)
+inline void transaction::set_active(const std::string& value) {
+  _internal_set_active(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction.active)
 }
-inline ::koinos::protocol::transaction_active_data* transaction::release_active() {
-  
-  ::koinos::protocol::transaction_active_data* temp = active_;
-  active_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
-}
-inline ::koinos::protocol::transaction_active_data* transaction::unsafe_arena_release_active() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction.active)
-  
-  ::koinos::protocol::transaction_active_data* temp = active_;
-  active_ = nullptr;
-  return temp;
-}
-inline ::koinos::protocol::transaction_active_data* transaction::_internal_mutable_active() {
-  
-  if (active_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::protocol::transaction_active_data>(GetArena());
-    active_ = p;
-  }
-  return active_;
-}
-inline ::koinos::protocol::transaction_active_data* transaction::mutable_active() {
+inline std::string* transaction::mutable_active() {
   // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction.active)
   return _internal_mutable_active();
 }
-inline void transaction::set_allocated_active(::koinos::protocol::transaction_active_data* active) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete active_;
-  }
-  if (active) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(active);
-    if (message_arena != submessage_arena) {
-      active = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, active, submessage_arena);
-    }
+inline const std::string& transaction::_internal_active() const {
+  return active_.Get();
+}
+inline void transaction::_internal_set_active(const std::string& value) {
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transaction::set_active(std::string&& value) {
+  
+  active_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.transaction.active)
+}
+inline void transaction::set_active(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.transaction.active)
+}
+inline void transaction::set_active(const void* value,
+    size_t size) {
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.transaction.active)
+}
+inline std::string* transaction::_internal_mutable_active() {
+  
+  return active_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transaction::release_active() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.transaction.active)
+  return active_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transaction::set_allocated_active(std::string* active) {
+  if (active != nullptr) {
     
   } else {
     
   }
-  active_ = active;
+  active_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), active,
+      GetArena());
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction.active)
 }
 
-// .koinos.protocol.transaction_passive_data passive = 3;
-inline bool transaction::_internal_has_passive() const {
-  return this != internal_default_instance() && passive_ != nullptr;
-}
-inline bool transaction::has_passive() const {
-  return _internal_has_passive();
-}
+// bytes passive = 3;
 inline void transaction::clear_passive() {
-  if (GetArena() == nullptr && passive_ != nullptr) {
-    delete passive_;
-  }
-  passive_ = nullptr;
+  passive_.ClearToEmpty();
 }
-inline const ::koinos::protocol::transaction_passive_data& transaction::_internal_passive() const {
-  const ::koinos::protocol::transaction_passive_data* p = passive_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction_passive_data&>(
-      ::koinos::protocol::_transaction_passive_data_default_instance_);
-}
-inline const ::koinos::protocol::transaction_passive_data& transaction::passive() const {
+inline const std::string& transaction::passive() const {
   // @@protoc_insertion_point(field_get:koinos.protocol.transaction.passive)
   return _internal_passive();
 }
-inline void transaction::unsafe_arena_set_allocated_passive(
-    ::koinos::protocol::transaction_passive_data* passive) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(passive_);
-  }
-  passive_ = passive;
-  if (passive) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.transaction.passive)
+inline void transaction::set_passive(const std::string& value) {
+  _internal_set_passive(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction.passive)
 }
-inline ::koinos::protocol::transaction_passive_data* transaction::release_passive() {
-  
-  ::koinos::protocol::transaction_passive_data* temp = passive_;
-  passive_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
-}
-inline ::koinos::protocol::transaction_passive_data* transaction::unsafe_arena_release_passive() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction.passive)
-  
-  ::koinos::protocol::transaction_passive_data* temp = passive_;
-  passive_ = nullptr;
-  return temp;
-}
-inline ::koinos::protocol::transaction_passive_data* transaction::_internal_mutable_passive() {
-  
-  if (passive_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::protocol::transaction_passive_data>(GetArena());
-    passive_ = p;
-  }
-  return passive_;
-}
-inline ::koinos::protocol::transaction_passive_data* transaction::mutable_passive() {
+inline std::string* transaction::mutable_passive() {
   // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction.passive)
   return _internal_mutable_passive();
 }
-inline void transaction::set_allocated_passive(::koinos::protocol::transaction_passive_data* passive) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete passive_;
-  }
-  if (passive) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(passive);
-    if (message_arena != submessage_arena) {
-      passive = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, passive, submessage_arena);
-    }
+inline const std::string& transaction::_internal_passive() const {
+  return passive_.Get();
+}
+inline void transaction::_internal_set_passive(const std::string& value) {
+  
+  passive_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void transaction::set_passive(std::string&& value) {
+  
+  passive_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.transaction.passive)
+}
+inline void transaction::set_passive(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  passive_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.transaction.passive)
+}
+inline void transaction::set_passive(const void* value,
+    size_t size) {
+  
+  passive_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.transaction.passive)
+}
+inline std::string* transaction::_internal_mutable_passive() {
+  
+  return passive_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* transaction::release_passive() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.transaction.passive)
+  return passive_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void transaction::set_allocated_passive(std::string* passive) {
+  if (passive != nullptr) {
     
   } else {
     
   }
-  passive_ = passive;
+  passive_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), passive,
+      GetArena());
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction.passive)
 }
 
@@ -5104,392 +3914,6 @@ inline void block_header::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // -------------------------------------------------------------------
 
-// block_active_data
-
-// .koinos.protocol.active_block_data native = 1;
-inline bool block_active_data::_internal_has_native() const {
-  return data_case() == kNative;
-}
-inline bool block_active_data::has_native() const {
-  return _internal_has_native();
-}
-inline void block_active_data::set_has_native() {
-  _oneof_case_[0] = kNative;
-}
-inline void block_active_data::clear_native() {
-  if (_internal_has_native()) {
-    if (GetArena() == nullptr) {
-      delete data_.native_;
-    }
-    clear_has_data();
-  }
-}
-inline ::koinos::protocol::active_block_data* block_active_data::release_native() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.block_active_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-      ::koinos::protocol::active_block_data* temp = data_.native_;
-    if (GetArena() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::koinos::protocol::active_block_data& block_active_data::_internal_native() const {
-  return _internal_has_native()
-      ? *data_.native_
-      : reinterpret_cast< ::koinos::protocol::active_block_data&>(::koinos::protocol::_active_block_data_default_instance_);
-}
-inline const ::koinos::protocol::active_block_data& block_active_data::native() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.block_active_data.native)
-  return _internal_native();
-}
-inline ::koinos::protocol::active_block_data* block_active_data::unsafe_arena_release_native() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.protocol.block_active_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-    ::koinos::protocol::active_block_data* temp = data_.native_;
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void block_active_data::unsafe_arena_set_allocated_native(::koinos::protocol::active_block_data* native) {
-  clear_data();
-  if (native) {
-    set_has_native();
-    data_.native_ = native;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.block_active_data.native)
-}
-inline ::koinos::protocol::active_block_data* block_active_data::_internal_mutable_native() {
-  if (!_internal_has_native()) {
-    clear_data();
-    set_has_native();
-    data_.native_ = CreateMaybeMessage< ::koinos::protocol::active_block_data >(GetArena());
-  }
-  return data_.native_;
-}
-inline ::koinos::protocol::active_block_data* block_active_data::mutable_native() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_active_data.native)
-  return _internal_mutable_native();
-}
-
-// bytes blob = 2;
-inline bool block_active_data::_internal_has_blob() const {
-  return data_case() == kBlob;
-}
-inline void block_active_data::set_has_blob() {
-  _oneof_case_[0] = kBlob;
-}
-inline void block_active_data::clear_blob() {
-  if (_internal_has_blob()) {
-    data_.blob_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-    clear_has_data();
-  }
-}
-inline const std::string& block_active_data::blob() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.block_active_data.blob)
-  return _internal_blob();
-}
-inline void block_active_data::set_blob(const std::string& value) {
-  _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.block_active_data.blob)
-}
-inline std::string* block_active_data::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_active_data.blob)
-  return _internal_mutable_blob();
-}
-inline const std::string& block_active_data::_internal_blob() const {
-  if (_internal_has_blob()) {
-    return data_.blob_.Get();
-  }
-  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
-}
-inline void block_active_data::_internal_set_blob(const std::string& value) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void block_active_data::set_blob(std::string&& value) {
-  // @@protoc_insertion_point(field_set:koinos.protocol.block_active_data.blob)
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.block_active_data.blob)
-}
-inline void block_active_data::set_blob(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{},
-      ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.protocol.block_active_data.blob)
-}
-inline void block_active_data::set_blob(const void* value,
-                             size_t size) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size),
-      GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.block_active_data.blob)
-}
-inline std::string* block_active_data::_internal_mutable_blob() {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  return data_.blob_.Mutable(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* block_active_data::release_blob() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.block_active_data.blob)
-  if (_internal_has_blob()) {
-    clear_has_data();
-    return data_.blob_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  } else {
-    return nullptr;
-  }
-}
-inline void block_active_data::set_allocated_blob(std::string* blob) {
-  if (has_data()) {
-    clear_data();
-  }
-  if (blob != nullptr) {
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(blob);
-    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena();
-    if (arena != nullptr) {
-      arena->Own(blob);
-    }
-  }
-  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_active_data.blob)
-}
-
-inline bool block_active_data::has_data() const {
-  return data_case() != DATA_NOT_SET;
-}
-inline void block_active_data::clear_has_data() {
-  _oneof_case_[0] = DATA_NOT_SET;
-}
-inline block_active_data::DataCase block_active_data::data_case() const {
-  return block_active_data::DataCase(_oneof_case_[0]);
-}
-// -------------------------------------------------------------------
-
-// block_passive_data
-
-// .koinos.protocol.passive_block_data native = 1;
-inline bool block_passive_data::_internal_has_native() const {
-  return data_case() == kNative;
-}
-inline bool block_passive_data::has_native() const {
-  return _internal_has_native();
-}
-inline void block_passive_data::set_has_native() {
-  _oneof_case_[0] = kNative;
-}
-inline void block_passive_data::clear_native() {
-  if (_internal_has_native()) {
-    if (GetArena() == nullptr) {
-      delete data_.native_;
-    }
-    clear_has_data();
-  }
-}
-inline ::koinos::protocol::passive_block_data* block_passive_data::release_native() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.block_passive_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-      ::koinos::protocol::passive_block_data* temp = data_.native_;
-    if (GetArena() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::koinos::protocol::passive_block_data& block_passive_data::_internal_native() const {
-  return _internal_has_native()
-      ? *data_.native_
-      : reinterpret_cast< ::koinos::protocol::passive_block_data&>(::koinos::protocol::_passive_block_data_default_instance_);
-}
-inline const ::koinos::protocol::passive_block_data& block_passive_data::native() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.block_passive_data.native)
-  return _internal_native();
-}
-inline ::koinos::protocol::passive_block_data* block_passive_data::unsafe_arena_release_native() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.protocol.block_passive_data.native)
-  if (_internal_has_native()) {
-    clear_has_data();
-    ::koinos::protocol::passive_block_data* temp = data_.native_;
-    data_.native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void block_passive_data::unsafe_arena_set_allocated_native(::koinos::protocol::passive_block_data* native) {
-  clear_data();
-  if (native) {
-    set_has_native();
-    data_.native_ = native;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.block_passive_data.native)
-}
-inline ::koinos::protocol::passive_block_data* block_passive_data::_internal_mutable_native() {
-  if (!_internal_has_native()) {
-    clear_data();
-    set_has_native();
-    data_.native_ = CreateMaybeMessage< ::koinos::protocol::passive_block_data >(GetArena());
-  }
-  return data_.native_;
-}
-inline ::koinos::protocol::passive_block_data* block_passive_data::mutable_native() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_passive_data.native)
-  return _internal_mutable_native();
-}
-
-// bytes blob = 2;
-inline bool block_passive_data::_internal_has_blob() const {
-  return data_case() == kBlob;
-}
-inline void block_passive_data::set_has_blob() {
-  _oneof_case_[0] = kBlob;
-}
-inline void block_passive_data::clear_blob() {
-  if (_internal_has_blob()) {
-    data_.blob_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-    clear_has_data();
-  }
-}
-inline const std::string& block_passive_data::blob() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.block_passive_data.blob)
-  return _internal_blob();
-}
-inline void block_passive_data::set_blob(const std::string& value) {
-  _internal_set_blob(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.block_passive_data.blob)
-}
-inline std::string* block_passive_data::mutable_blob() {
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_passive_data.blob)
-  return _internal_mutable_blob();
-}
-inline const std::string& block_passive_data::_internal_blob() const {
-  if (_internal_has_blob()) {
-    return data_.blob_.Get();
-  }
-  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
-}
-inline void block_passive_data::_internal_set_blob(const std::string& value) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
-}
-inline void block_passive_data::set_blob(std::string&& value) {
-  // @@protoc_insertion_point(field_set:koinos.protocol.block_passive_data.blob)
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.block_passive_data.blob)
-}
-inline void block_passive_data::set_blob(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{},
-      ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.protocol.block_passive_data.blob)
-}
-inline void block_passive_data::set_blob(const void* value,
-                             size_t size) {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  data_.blob_.Set(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
-      reinterpret_cast<const char*>(value), size),
-      GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.block_passive_data.blob)
-}
-inline std::string* block_passive_data::_internal_mutable_blob() {
-  if (!_internal_has_blob()) {
-    clear_data();
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  return data_.blob_.Mutable(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
-}
-inline std::string* block_passive_data::release_blob() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.block_passive_data.blob)
-  if (_internal_has_blob()) {
-    clear_has_data();
-    return data_.blob_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  } else {
-    return nullptr;
-  }
-}
-inline void block_passive_data::set_allocated_blob(std::string* blob) {
-  if (has_data()) {
-    clear_data();
-  }
-  if (blob != nullptr) {
-    set_has_blob();
-    data_.blob_.UnsafeSetDefault(blob);
-    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena();
-    if (arena != nullptr) {
-      arena->Own(blob);
-    }
-  }
-  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_passive_data.blob)
-}
-
-inline bool block_passive_data::has_data() const {
-  return data_case() != DATA_NOT_SET;
-}
-inline void block_passive_data::clear_has_data() {
-  _oneof_case_[0] = DATA_NOT_SET;
-}
-inline block_passive_data::DataCase block_passive_data::data_case() const {
-  return block_passive_data::DataCase(_oneof_case_[0]);
-}
-// -------------------------------------------------------------------
-
 // block
 
 // bytes id = 1;
@@ -5636,169 +4060,125 @@ inline void block::set_allocated_header(::koinos::protocol::block_header* header
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block.header)
 }
 
-// .koinos.protocol.block_active_data active = 3;
-inline bool block::_internal_has_active() const {
-  return this != internal_default_instance() && active_ != nullptr;
-}
-inline bool block::has_active() const {
-  return _internal_has_active();
-}
+// bytes active = 3;
 inline void block::clear_active() {
-  if (GetArena() == nullptr && active_ != nullptr) {
-    delete active_;
-  }
-  active_ = nullptr;
+  active_.ClearToEmpty();
 }
-inline const ::koinos::protocol::block_active_data& block::_internal_active() const {
-  const ::koinos::protocol::block_active_data* p = active_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::block_active_data&>(
-      ::koinos::protocol::_block_active_data_default_instance_);
-}
-inline const ::koinos::protocol::block_active_data& block::active() const {
+inline const std::string& block::active() const {
   // @@protoc_insertion_point(field_get:koinos.protocol.block.active)
   return _internal_active();
 }
-inline void block::unsafe_arena_set_allocated_active(
-    ::koinos::protocol::block_active_data* active) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(active_);
-  }
-  active_ = active;
-  if (active) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.block.active)
+inline void block::set_active(const std::string& value) {
+  _internal_set_active(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block.active)
 }
-inline ::koinos::protocol::block_active_data* block::release_active() {
-  
-  ::koinos::protocol::block_active_data* temp = active_;
-  active_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
-}
-inline ::koinos::protocol::block_active_data* block::unsafe_arena_release_active() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.block.active)
-  
-  ::koinos::protocol::block_active_data* temp = active_;
-  active_ = nullptr;
-  return temp;
-}
-inline ::koinos::protocol::block_active_data* block::_internal_mutable_active() {
-  
-  if (active_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::protocol::block_active_data>(GetArena());
-    active_ = p;
-  }
-  return active_;
-}
-inline ::koinos::protocol::block_active_data* block::mutable_active() {
+inline std::string* block::mutable_active() {
   // @@protoc_insertion_point(field_mutable:koinos.protocol.block.active)
   return _internal_mutable_active();
 }
-inline void block::set_allocated_active(::koinos::protocol::block_active_data* active) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete active_;
-  }
-  if (active) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(active);
-    if (message_arena != submessage_arena) {
-      active = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, active, submessage_arena);
-    }
+inline const std::string& block::_internal_active() const {
+  return active_.Get();
+}
+inline void block::_internal_set_active(const std::string& value) {
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void block::set_active(std::string&& value) {
+  
+  active_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.block.active)
+}
+inline void block::set_active(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.block.active)
+}
+inline void block::set_active(const void* value,
+    size_t size) {
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.block.active)
+}
+inline std::string* block::_internal_mutable_active() {
+  
+  return active_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* block::release_active() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.block.active)
+  return active_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void block::set_allocated_active(std::string* active) {
+  if (active != nullptr) {
     
   } else {
     
   }
-  active_ = active;
+  active_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), active,
+      GetArena());
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block.active)
 }
 
-// .koinos.protocol.block_passive_data passive = 4;
-inline bool block::_internal_has_passive() const {
-  return this != internal_default_instance() && passive_ != nullptr;
-}
-inline bool block::has_passive() const {
-  return _internal_has_passive();
-}
+// bytes passive = 4;
 inline void block::clear_passive() {
-  if (GetArena() == nullptr && passive_ != nullptr) {
-    delete passive_;
-  }
-  passive_ = nullptr;
+  passive_.ClearToEmpty();
 }
-inline const ::koinos::protocol::block_passive_data& block::_internal_passive() const {
-  const ::koinos::protocol::block_passive_data* p = passive_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::block_passive_data&>(
-      ::koinos::protocol::_block_passive_data_default_instance_);
-}
-inline const ::koinos::protocol::block_passive_data& block::passive() const {
+inline const std::string& block::passive() const {
   // @@protoc_insertion_point(field_get:koinos.protocol.block.passive)
   return _internal_passive();
 }
-inline void block::unsafe_arena_set_allocated_passive(
-    ::koinos::protocol::block_passive_data* passive) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(passive_);
-  }
-  passive_ = passive;
-  if (passive) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.block.passive)
+inline void block::set_passive(const std::string& value) {
+  _internal_set_passive(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block.passive)
 }
-inline ::koinos::protocol::block_passive_data* block::release_passive() {
-  
-  ::koinos::protocol::block_passive_data* temp = passive_;
-  passive_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
-}
-inline ::koinos::protocol::block_passive_data* block::unsafe_arena_release_passive() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.block.passive)
-  
-  ::koinos::protocol::block_passive_data* temp = passive_;
-  passive_ = nullptr;
-  return temp;
-}
-inline ::koinos::protocol::block_passive_data* block::_internal_mutable_passive() {
-  
-  if (passive_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::protocol::block_passive_data>(GetArena());
-    passive_ = p;
-  }
-  return passive_;
-}
-inline ::koinos::protocol::block_passive_data* block::mutable_passive() {
+inline std::string* block::mutable_passive() {
   // @@protoc_insertion_point(field_mutable:koinos.protocol.block.passive)
   return _internal_mutable_passive();
 }
-inline void block::set_allocated_passive(::koinos::protocol::block_passive_data* passive) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete passive_;
-  }
-  if (passive) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(passive);
-    if (message_arena != submessage_arena) {
-      passive = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, passive, submessage_arena);
-    }
+inline const std::string& block::_internal_passive() const {
+  return passive_.Get();
+}
+inline void block::_internal_set_passive(const std::string& value) {
+  
+  passive_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+}
+inline void block::set_passive(std::string&& value) {
+  
+  passive_.Set(
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:koinos.protocol.block.passive)
+}
+inline void block::set_passive(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  passive_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.block.passive)
+}
+inline void block::set_passive(const void* value,
+    size_t size) {
+  
+  passive_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.block.passive)
+}
+inline std::string* block::_internal_mutable_passive() {
+  
+  return passive_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+}
+inline std::string* block::release_passive() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.block.passive)
+  return passive_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void block::set_allocated_passive(std::string* passive) {
+  if (passive != nullptr) {
     
   } else {
     
   }
-  passive_ = passive;
+  passive_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), passive,
+      GetArena());
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block.passive)
 }
 
@@ -5909,14 +4289,6 @@ block::transactions() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

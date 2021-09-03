@@ -15,8 +15,8 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 extern PROTOBUF_INTERNAL_EXPORT_koinos_2fcommon_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_block_topology_koinos_2fcommon_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_block_koinos_2fprotocol_2fprotocol_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_transaction_koinos_2fprotocol_2fprotocol_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_block_koinos_2fprotocol_2fprotocol_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_transaction_koinos_2fprotocol_2fprotocol_2eproto;
 namespace koinos {
 namespace broadcast {
 class transaction_acceptedDefaultTypeInternal {

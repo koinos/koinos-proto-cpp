@@ -1101,15 +1101,15 @@ class verify_block_signature_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // bool result = 1;
-  void clear_result();
-  bool result() const;
-  void set_result(bool value);
+  // bool value = 1;
+  void clear_value();
+  bool value() const;
+  void set_value(bool value);
   private:
-  bool _internal_result() const;
-  void _internal_set_result(bool value);
+  bool _internal_value() const;
+  void _internal_set_value(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.verify_block_signature_return)
@@ -1119,7 +1119,7 @@ class verify_block_signature_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool result_;
+  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -1406,15 +1406,15 @@ class verify_merkle_root_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // bool result = 1;
-  void clear_result();
-  bool result() const;
-  void set_result(bool value);
+  // bool value = 1;
+  void clear_value();
+  bool value() const;
+  void set_value(bool value);
   private:
-  bool _internal_result() const;
-  void _internal_set_result(bool value);
+  bool _internal_value() const;
+  void _internal_set_value(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.verify_merkle_root_return)
@@ -1424,7 +1424,7 @@ class verify_merkle_root_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool result_;
+  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -3094,15 +3094,15 @@ class db_put_object_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // bool result = 1;
-  void clear_result();
-  bool result() const;
-  void set_result(bool value);
+  // bool value = 1;
+  void clear_value();
+  bool value() const;
+  void set_value(bool value);
   private:
-  bool _internal_result() const;
-  void _internal_set_result(bool value);
+  bool _internal_value() const;
+  void _internal_set_value(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.db_put_object_return)
@@ -3112,7 +3112,7 @@ class db_put_object_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool result_;
+  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -3407,22 +3407,22 @@ class db_get_object_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 3,
+    kValueFieldNumber = 3,
   };
-  // bytes result = 3;
-  void clear_result();
-  const std::string& result() const;
-  void set_result(const std::string& value);
-  void set_result(std::string&& value);
-  void set_result(const char* value);
-  void set_result(const void* value, size_t size);
-  std::string* mutable_result();
-  std::string* release_result();
-  void set_allocated_result(std::string* result);
+  // bytes value = 3;
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const void* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  const std::string& _internal_result() const;
-  void _internal_set_result(const std::string& value);
-  std::string* _internal_mutable_result();
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.db_get_object_return)
@@ -3432,7 +3432,7 @@ class db_get_object_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -3727,22 +3727,22 @@ class db_get_next_object_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 3,
+    kValueFieldNumber = 3,
   };
-  // bytes result = 3;
-  void clear_result();
-  const std::string& result() const;
-  void set_result(const std::string& value);
-  void set_result(std::string&& value);
-  void set_result(const char* value);
-  void set_result(const void* value, size_t size);
-  std::string* mutable_result();
-  std::string* release_result();
-  void set_allocated_result(std::string* result);
+  // bytes value = 3;
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const void* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  const std::string& _internal_result() const;
-  void _internal_set_result(const std::string& value);
-  std::string* _internal_mutable_result();
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.db_get_next_object_return)
@@ -3752,7 +3752,7 @@ class db_get_next_object_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -4047,22 +4047,22 @@ class db_get_prev_object_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 3,
+    kValueFieldNumber = 3,
   };
-  // bytes result = 3;
-  void clear_result();
-  const std::string& result() const;
-  void set_result(const std::string& value);
-  void set_result(std::string&& value);
-  void set_result(const char* value);
-  void set_result(const void* value, size_t size);
-  std::string* mutable_result();
-  std::string* release_result();
-  void set_allocated_result(std::string* result);
+  // bytes value = 3;
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const void* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  const std::string& _internal_result() const;
-  void _internal_set_result(const std::string& value);
-  std::string* _internal_mutable_result();
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.db_get_prev_object_return)
@@ -4072,7 +4072,7 @@ class db_get_prev_object_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -4362,22 +4362,22 @@ class call_contract_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // bytes result = 1;
-  void clear_result();
-  const std::string& result() const;
-  void set_result(const std::string& value);
-  void set_result(std::string&& value);
-  void set_result(const char* value);
-  void set_result(const void* value, size_t size);
-  std::string* mutable_result();
-  std::string* release_result();
-  void set_allocated_result(std::string* result);
+  // bytes value = 1;
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const void* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  const std::string& _internal_result() const;
-  void _internal_set_result(const std::string& value);
-  std::string* _internal_mutable_result();
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.call_contract_return)
@@ -4387,7 +4387,7 @@ class call_contract_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -4628,15 +4628,15 @@ class get_entry_point_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEntryPointFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // uint32 entry_point = 1;
-  void clear_entry_point();
-  ::PROTOBUF_NAMESPACE_ID::uint32 entry_point() const;
-  void set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  // uint32 value = 1;
+  void clear_value();
+  ::PROTOBUF_NAMESPACE_ID::uint32 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_entry_point() const;
-  void _internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_entry_point_return)
@@ -4646,7 +4646,7 @@ class get_entry_point_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 entry_point_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -9028,15 +9028,15 @@ class get_account_nonce_return PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNonceFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // uint64 nonce = 1;
-  void clear_nonce();
-  ::PROTOBUF_NAMESPACE_ID::uint64 nonce() const;
-  void set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 value = 1;
+  void clear_value();
+  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_nonce() const;
-  void _internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_account_nonce_return)
@@ -9046,7 +9046,7 @@ class get_account_nonce_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -9558,24 +9558,24 @@ inline verify_block_signature_args::ActiveDataCase verify_block_signature_args::
 
 // verify_block_signature_return
 
-// bool result = 1;
-inline void verify_block_signature_return::clear_result() {
-  result_ = false;
+// bool value = 1;
+inline void verify_block_signature_return::clear_value() {
+  value_ = false;
 }
-inline bool verify_block_signature_return::_internal_result() const {
-  return result_;
+inline bool verify_block_signature_return::_internal_value() const {
+  return value_;
 }
-inline bool verify_block_signature_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_return.result)
-  return _internal_result();
+inline bool verify_block_signature_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_return.value)
+  return _internal_value();
 }
-inline void verify_block_signature_return::_internal_set_result(bool value) {
+inline void verify_block_signature_return::_internal_set_value(bool value) {
   
-  result_ = value;
+  value_ = value;
 }
-inline void verify_block_signature_return::set_result(bool value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_return.result)
+inline void verify_block_signature_return::set_value(bool value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -9721,24 +9721,24 @@ verify_merkle_root_args::mutable_hashes() {
 
 // verify_merkle_root_return
 
-// bool result = 1;
-inline void verify_merkle_root_return::clear_result() {
-  result_ = false;
+// bool value = 1;
+inline void verify_merkle_root_return::clear_value() {
+  value_ = false;
 }
-inline bool verify_merkle_root_return::_internal_result() const {
-  return result_;
+inline bool verify_merkle_root_return::_internal_value() const {
+  return value_;
 }
-inline bool verify_merkle_root_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_merkle_root_return.result)
-  return _internal_result();
+inline bool verify_merkle_root_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_merkle_root_return.value)
+  return _internal_value();
 }
-inline void verify_merkle_root_return::_internal_set_result(bool value) {
+inline void verify_merkle_root_return::_internal_set_value(bool value) {
   
-  result_ = value;
+  value_ = value;
 }
-inline void verify_merkle_root_return::set_result(bool value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_merkle_root_return.result)
+inline void verify_merkle_root_return::set_value(bool value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_merkle_root_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -10417,24 +10417,24 @@ inline void db_put_object_args::set_allocated_obj(std::string* obj) {
 
 // db_put_object_return
 
-// bool result = 1;
-inline void db_put_object_return::clear_result() {
-  result_ = false;
+// bool value = 1;
+inline void db_put_object_return::clear_value() {
+  value_ = false;
 }
-inline bool db_put_object_return::_internal_result() const {
-  return result_;
+inline bool db_put_object_return::_internal_value() const {
+  return value_;
 }
-inline bool db_put_object_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_put_object_return.result)
-  return _internal_result();
+inline bool db_put_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.db_put_object_return.value)
+  return _internal_value();
 }
-inline void db_put_object_return::_internal_set_result(bool value) {
+inline void db_put_object_return::_internal_set_value(bool value) {
   
-  result_ = value;
+  value_ = value;
 }
-inline void db_put_object_return::set_result(bool value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_put_object_return.result)
+inline void db_put_object_return::set_value(bool value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.db_put_object_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -10595,65 +10595,65 @@ inline void db_get_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::ui
 
 // db_get_object_return
 
-// bytes result = 3;
-inline void db_get_object_return::clear_result() {
-  result_.ClearToEmpty();
+// bytes value = 3;
+inline void db_get_object_return::clear_value() {
+  value_.ClearToEmpty();
 }
-inline const std::string& db_get_object_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_object_return.result)
-  return _internal_result();
+inline const std::string& db_get_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.db_get_object_return.value)
+  return _internal_value();
 }
-inline void db_get_object_return::set_result(const std::string& value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_object_return.result)
+inline void db_get_object_return::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.db_get_object_return.value)
 }
-inline std::string* db_get_object_return::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_object_return.result)
-  return _internal_mutable_result();
+inline std::string* db_get_object_return::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_object_return.value)
+  return _internal_mutable_value();
 }
-inline const std::string& db_get_object_return::_internal_result() const {
-  return result_.Get();
+inline const std::string& db_get_object_return::_internal_value() const {
+  return value_.Get();
 }
-inline void db_get_object_return::_internal_set_result(const std::string& value) {
+inline void db_get_object_return::_internal_set_value(const std::string& value) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void db_get_object_return::set_result(std::string&& value) {
+inline void db_get_object_return::set_value(std::string&& value) {
   
-  result_.Set(
+  value_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.db_get_object_return.result)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.db_get_object_return.value)
 }
-inline void db_get_object_return::set_result(const char* value) {
+inline void db_get_object_return::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.db_get_object_return.result)
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.chain.db_get_object_return.value)
 }
-inline void db_get_object_return::set_result(const void* value,
+inline void db_get_object_return::set_value(const void* value,
     size_t size) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.db_get_object_return.result)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.db_get_object_return.value)
 }
-inline std::string* db_get_object_return::_internal_mutable_result() {
+inline std::string* db_get_object_return::_internal_mutable_value() {
   
-  return result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* db_get_object_return::release_result() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_object_return.result)
-  return result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* db_get_object_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.db_get_object_return.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void db_get_object_return::set_allocated_result(std::string* result) {
-  if (result != nullptr) {
+inline void db_get_object_return::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result,
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_object_return.result)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_object_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -10814,65 +10814,65 @@ inline void db_get_next_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_I
 
 // db_get_next_object_return
 
-// bytes result = 3;
-inline void db_get_next_object_return::clear_result() {
-  result_.ClearToEmpty();
+// bytes value = 3;
+inline void db_get_next_object_return::clear_value() {
+  value_.ClearToEmpty();
 }
-inline const std::string& db_get_next_object_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_next_object_return.result)
-  return _internal_result();
+inline const std::string& db_get_next_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.db_get_next_object_return.value)
+  return _internal_value();
 }
-inline void db_get_next_object_return::set_result(const std::string& value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_next_object_return.result)
+inline void db_get_next_object_return::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.db_get_next_object_return.value)
 }
-inline std::string* db_get_next_object_return::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_next_object_return.result)
-  return _internal_mutable_result();
+inline std::string* db_get_next_object_return::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_next_object_return.value)
+  return _internal_mutable_value();
 }
-inline const std::string& db_get_next_object_return::_internal_result() const {
-  return result_.Get();
+inline const std::string& db_get_next_object_return::_internal_value() const {
+  return value_.Get();
 }
-inline void db_get_next_object_return::_internal_set_result(const std::string& value) {
+inline void db_get_next_object_return::_internal_set_value(const std::string& value) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void db_get_next_object_return::set_result(std::string&& value) {
+inline void db_get_next_object_return::set_value(std::string&& value) {
   
-  result_.Set(
+  value_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.db_get_next_object_return.result)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.db_get_next_object_return.value)
 }
-inline void db_get_next_object_return::set_result(const char* value) {
+inline void db_get_next_object_return::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.db_get_next_object_return.result)
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.chain.db_get_next_object_return.value)
 }
-inline void db_get_next_object_return::set_result(const void* value,
+inline void db_get_next_object_return::set_value(const void* value,
     size_t size) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.db_get_next_object_return.result)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.db_get_next_object_return.value)
 }
-inline std::string* db_get_next_object_return::_internal_mutable_result() {
+inline std::string* db_get_next_object_return::_internal_mutable_value() {
   
-  return result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* db_get_next_object_return::release_result() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_next_object_return.result)
-  return result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* db_get_next_object_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.db_get_next_object_return.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void db_get_next_object_return::set_allocated_result(std::string* result) {
-  if (result != nullptr) {
+inline void db_get_next_object_return::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result,
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_next_object_return.result)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_next_object_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -11033,65 +11033,65 @@ inline void db_get_prev_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_I
 
 // db_get_prev_object_return
 
-// bytes result = 3;
-inline void db_get_prev_object_return::clear_result() {
-  result_.ClearToEmpty();
+// bytes value = 3;
+inline void db_get_prev_object_return::clear_value() {
+  value_.ClearToEmpty();
 }
-inline const std::string& db_get_prev_object_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_prev_object_return.result)
-  return _internal_result();
+inline const std::string& db_get_prev_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.db_get_prev_object_return.value)
+  return _internal_value();
 }
-inline void db_get_prev_object_return::set_result(const std::string& value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_prev_object_return.result)
+inline void db_get_prev_object_return::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.db_get_prev_object_return.value)
 }
-inline std::string* db_get_prev_object_return::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_prev_object_return.result)
-  return _internal_mutable_result();
+inline std::string* db_get_prev_object_return::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_prev_object_return.value)
+  return _internal_mutable_value();
 }
-inline const std::string& db_get_prev_object_return::_internal_result() const {
-  return result_.Get();
+inline const std::string& db_get_prev_object_return::_internal_value() const {
+  return value_.Get();
 }
-inline void db_get_prev_object_return::_internal_set_result(const std::string& value) {
+inline void db_get_prev_object_return::_internal_set_value(const std::string& value) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void db_get_prev_object_return::set_result(std::string&& value) {
+inline void db_get_prev_object_return::set_value(std::string&& value) {
   
-  result_.Set(
+  value_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.db_get_prev_object_return.result)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.db_get_prev_object_return.value)
 }
-inline void db_get_prev_object_return::set_result(const char* value) {
+inline void db_get_prev_object_return::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.db_get_prev_object_return.result)
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.chain.db_get_prev_object_return.value)
 }
-inline void db_get_prev_object_return::set_result(const void* value,
+inline void db_get_prev_object_return::set_value(const void* value,
     size_t size) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.db_get_prev_object_return.result)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.db_get_prev_object_return.value)
 }
-inline std::string* db_get_prev_object_return::_internal_mutable_result() {
+inline std::string* db_get_prev_object_return::_internal_mutable_value() {
   
-  return result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* db_get_prev_object_return::release_result() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_prev_object_return.result)
-  return result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* db_get_prev_object_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.db_get_prev_object_return.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void db_get_prev_object_return::set_allocated_result(std::string* result) {
-  if (result != nullptr) {
+inline void db_get_prev_object_return::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result,
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_prev_object_return.result)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_prev_object_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -11244,65 +11244,65 @@ inline void call_contract_args::set_allocated_args(std::string* args) {
 
 // call_contract_return
 
-// bytes result = 1;
-inline void call_contract_return::clear_result() {
-  result_.ClearToEmpty();
+// bytes value = 1;
+inline void call_contract_return::clear_value() {
+  value_.ClearToEmpty();
 }
-inline const std::string& call_contract_return::result() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.call_contract_return.result)
-  return _internal_result();
+inline const std::string& call_contract_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.call_contract_return.value)
+  return _internal_value();
 }
-inline void call_contract_return::set_result(const std::string& value) {
-  _internal_set_result(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.call_contract_return.result)
+inline void call_contract_return::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.call_contract_return.value)
 }
-inline std::string* call_contract_return::mutable_result() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.call_contract_return.result)
-  return _internal_mutable_result();
+inline std::string* call_contract_return::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.call_contract_return.value)
+  return _internal_mutable_value();
 }
-inline const std::string& call_contract_return::_internal_result() const {
-  return result_.Get();
+inline const std::string& call_contract_return::_internal_value() const {
+  return value_.Get();
 }
-inline void call_contract_return::_internal_set_result(const std::string& value) {
+inline void call_contract_return::_internal_set_value(const std::string& value) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
-inline void call_contract_return::set_result(std::string&& value) {
+inline void call_contract_return::set_value(std::string&& value) {
   
-  result_.Set(
+  value_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.call_contract_return.result)
+  // @@protoc_insertion_point(field_set_rvalue:koinos.chain.call_contract_return.value)
 }
-inline void call_contract_return::set_result(const char* value) {
+inline void call_contract_return::set_value(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
-  // @@protoc_insertion_point(field_set_char:koinos.chain.call_contract_return.result)
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
+  // @@protoc_insertion_point(field_set_char:koinos.chain.call_contract_return.value)
 }
-inline void call_contract_return::set_result(const void* value,
+inline void call_contract_return::set_value(const void* value,
     size_t size) {
   
-  result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:koinos.chain.call_contract_return.result)
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.call_contract_return.value)
 }
-inline std::string* call_contract_return::_internal_mutable_result() {
+inline std::string* call_contract_return::_internal_mutable_value() {
   
-  return result_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
-inline std::string* call_contract_return::release_result() {
-  // @@protoc_insertion_point(field_release:koinos.chain.call_contract_return.result)
-  return result_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* call_contract_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.call_contract_return.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void call_contract_return::set_allocated_result(std::string* result) {
-  if (result != nullptr) {
+inline void call_contract_return::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  result_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), result,
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.call_contract_return.result)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.call_contract_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -11313,24 +11313,24 @@ inline void call_contract_return::set_allocated_result(std::string* result) {
 
 // get_entry_point_return
 
-// uint32 entry_point = 1;
-inline void get_entry_point_return::clear_entry_point() {
-  entry_point_ = 0u;
+// uint32 value = 1;
+inline void get_entry_point_return::clear_value() {
+  value_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 get_entry_point_return::_internal_entry_point() const {
-  return entry_point_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_entry_point_return::_internal_value() const {
+  return value_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 get_entry_point_return::entry_point() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.get_entry_point_return.entry_point)
-  return _internal_entry_point();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_entry_point_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_entry_point_return.value)
+  return _internal_value();
 }
-inline void get_entry_point_return::_internal_set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_entry_point_return::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
-  entry_point_ = value;
+  value_ = value;
 }
-inline void get_entry_point_return::set_entry_point(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_entry_point(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.get_entry_point_return.entry_point)
+inline void get_entry_point_return::set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.get_entry_point_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -12769,24 +12769,24 @@ inline void get_account_nonce_args::set_allocated_account(std::string* account) 
 
 // get_account_nonce_return
 
-// uint64 nonce = 1;
-inline void get_account_nonce_return::clear_nonce() {
-  nonce_ = PROTOBUF_ULONGLONG(0);
+// uint64 value = 1;
+inline void get_account_nonce_return::clear_value() {
+  value_ = PROTOBUF_ULONGLONG(0);
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_return::_internal_nonce() const {
-  return nonce_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_return::_internal_value() const {
+  return value_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_return::nonce() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.get_account_nonce_return.nonce)
-  return _internal_nonce();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_account_nonce_return.value)
+  return _internal_value();
 }
-inline void get_account_nonce_return::_internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void get_account_nonce_return::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  nonce_ = value;
+  value_ = value;
 }
-inline void get_account_nonce_return::set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_nonce(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.get_account_nonce_return.nonce)
+inline void get_account_nonce_return::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.get_account_nonce_return.value)
 }
 
 #ifdef __GNUC__

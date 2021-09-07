@@ -767,9 +767,8 @@ static void InitDefaultsscc_info_get_last_irreversible_block_return_koinos_2fcha
   }
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_get_last_irreversible_block_return_koinos_2fchain_2fchain_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_get_last_irreversible_block_return_koinos_2fchain_2fchain_2eproto}, {
-      &scc_info_block_topology_koinos_2fcommon_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_get_last_irreversible_block_return_koinos_2fchain_2fchain_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_get_last_irreversible_block_return_koinos_2fchain_2fchain_2eproto}, {}};
 
 static void InitDefaultsscc_info_get_max_account_resources_args_koinos_2fchain_2fchain_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -1665,22 +1664,21 @@ const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_S
   "ansction\030\001 \001(\0132\034.koinos.protocol.transac"
   "tion\"6\n%get_transaction_resource_limit_r"
   "eturn\022\r\n\005value\030\001 \001(\004\"\"\n get_last_irrever"
-  "sible_block_args\"K\n\"get_last_irreversibl"
-  "e_block_return\022%\n\005value\030\001 \001(\0132\026.koinos.b"
-  "lock_topology\"\021\n\017get_caller_args\"V\n\021get_"
-  "caller_return\022\016\n\006caller\030\001 \001(\014\0221\n\020caller_"
-  "privilege\030\002 \001(\0162\027.koinos.chain.privilege"
-  "\")\n\026require_authority_args\022\017\n\007account\030\001 "
-  "\001(\014\"\032\n\030require_authority_return\" \n\036get_t"
-  "ransaction_signature_args\"1\n get_transac"
-  "tion_signature_return\022\r\n\005value\030\001 \001(\014\"\026\n\024"
-  "get_contract_id_args\"\'\n\026get_contract_id_"
-  "return\022\r\n\005value\030\001 \001(\014\")\n\026get_account_non"
-  "ce_args\022\017\n\007account\030\001 \001(\014\")\n\030get_account_"
-  "nonce_return\022\r\n\005value\030\001 \001(\004*+\n\tprivilege"
-  "\022\017\n\013kernel_mode\020\000\022\r\n\tuser_mode\020\001B4Z2gith"
-  "ub.com/koinos/koinos-proto-golang/koinos"
-  "/chainb\006proto3"
+  "sible_block_args\"3\n\"get_last_irreversibl"
+  "e_block_return\022\r\n\005value\030\001 \001(\004\"\021\n\017get_cal"
+  "ler_args\"V\n\021get_caller_return\022\016\n\006caller\030"
+  "\001 \001(\014\0221\n\020caller_privilege\030\002 \001(\0162\027.koinos"
+  ".chain.privilege\")\n\026require_authority_ar"
+  "gs\022\017\n\007account\030\001 \001(\014\"\032\n\030require_authority"
+  "_return\" \n\036get_transaction_signature_arg"
+  "s\"1\n get_transaction_signature_return\022\r\n"
+  "\005value\030\001 \001(\014\"\026\n\024get_contract_id_args\"\'\n\026"
+  "get_contract_id_return\022\r\n\005value\030\001 \001(\014\")\n"
+  "\026get_account_nonce_args\022\017\n\007account\030\001 \001(\014"
+  "\")\n\030get_account_nonce_return\022\r\n\005value\030\001 "
+  "\001(\004*+\n\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuse"
+  "r_mode\020\001B4Z2github.com/koinos/koinos-pro"
+  "to-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -1751,7 +1749,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koi
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 3574,
+  false, false, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 3550,
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_sccs, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 61, 2,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, 61, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
@@ -12162,19 +12160,8 @@ void get_last_irreversible_block_args::InternalSwap(get_last_irreversible_block_
 
 class get_last_irreversible_block_return::_Internal {
  public:
-  static const ::koinos::block_topology& value(const get_last_irreversible_block_return* msg);
 };
 
-const ::koinos::block_topology&
-get_last_irreversible_block_return::_Internal::value(const get_last_irreversible_block_return* msg) {
-  return *msg->value_;
-}
-void get_last_irreversible_block_return::clear_value() {
-  if (GetArena() == nullptr && value_ != nullptr) {
-    delete value_;
-  }
-  value_ = nullptr;
-}
 get_last_irreversible_block_return::get_last_irreversible_block_return(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
@@ -12184,17 +12171,12 @@ get_last_irreversible_block_return::get_last_irreversible_block_return(::PROTOBU
 get_last_irreversible_block_return::get_last_irreversible_block_return(const get_last_irreversible_block_return& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_value()) {
-    value_ = new ::koinos::block_topology(*from.value_);
-  } else {
-    value_ = nullptr;
-  }
+  value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.get_last_irreversible_block_return)
 }
 
 void get_last_irreversible_block_return::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_get_last_irreversible_block_return_koinos_2fchain_2fchain_2eproto.base);
-  value_ = nullptr;
+  value_ = PROTOBUF_ULONGLONG(0);
 }
 
 get_last_irreversible_block_return::~get_last_irreversible_block_return() {
@@ -12205,7 +12187,6 @@ get_last_irreversible_block_return::~get_last_irreversible_block_return() {
 
 void get_last_irreversible_block_return::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  if (this != internal_default_instance()) delete value_;
 }
 
 void get_last_irreversible_block_return::ArenaDtor(void* object) {
@@ -12229,10 +12210,7 @@ void get_last_irreversible_block_return::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArena() == nullptr && value_ != nullptr) {
-    delete value_;
-  }
-  value_ = nullptr;
+  value_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -12243,10 +12221,10 @@ const char* get_last_irreversible_block_return::_InternalParse(const char* ptr, 
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .koinos.block_topology value = 1;
+      // uint64 value = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -12278,12 +12256,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.block_topology value = 1;
-  if (this->has_value()) {
+  // uint64 value = 1;
+  if (this->value() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::value(this), target, stream);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12302,11 +12278,11 @@ size_t get_last_irreversible_block_return::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.block_topology value = 1;
-  if (this->has_value()) {
+  // uint64 value = 1;
+  if (this->value() != 0) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *value_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_value());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -12340,8 +12316,8 @@ void get_last_irreversible_block_return::MergeFrom(const get_last_irreversible_b
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_value()) {
-    _internal_mutable_value()->::koinos::block_topology::MergeFrom(from._internal_value());
+  if (from.value() != 0) {
+    _internal_set_value(from._internal_value());
   }
 }
 

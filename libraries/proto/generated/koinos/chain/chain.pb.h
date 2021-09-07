@@ -7667,23 +7667,14 @@ class get_last_irreversible_block_return PROTOBUF_FINAL :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // .koinos.block_topology value = 1;
-  bool has_value() const;
-  private:
-  bool _internal_has_value() const;
-  public:
+  // uint64 value = 1;
   void clear_value();
-  const ::koinos::block_topology& value() const;
-  ::koinos::block_topology* release_value();
-  ::koinos::block_topology* mutable_value();
-  void set_allocated_value(::koinos::block_topology* value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  const ::koinos::block_topology& _internal_value() const;
-  ::koinos::block_topology* _internal_mutable_value();
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
-  void unsafe_arena_set_allocated_value(
-      ::koinos::block_topology* value);
-  ::koinos::block_topology* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_last_irreversible_block_return)
  private:
@@ -7692,7 +7683,7 @@ class get_last_irreversible_block_return PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::block_topology* value_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -12327,81 +12318,24 @@ inline void get_transaction_resource_limit_return::set_value(::PROTOBUF_NAMESPAC
 
 // get_last_irreversible_block_return
 
-// .koinos.block_topology value = 1;
-inline bool get_last_irreversible_block_return::_internal_has_value() const {
-  return this != internal_default_instance() && value_ != nullptr;
+// uint64 value = 1;
+inline void get_last_irreversible_block_return::clear_value() {
+  value_ = PROTOBUF_ULONGLONG(0);
 }
-inline bool get_last_irreversible_block_return::has_value() const {
-  return _internal_has_value();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 get_last_irreversible_block_return::_internal_value() const {
+  return value_;
 }
-inline const ::koinos::block_topology& get_last_irreversible_block_return::_internal_value() const {
-  const ::koinos::block_topology* p = value_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::block_topology&>(
-      ::koinos::_block_topology_default_instance_);
-}
-inline const ::koinos::block_topology& get_last_irreversible_block_return::value() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint64 get_last_irreversible_block_return::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_last_irreversible_block_return.value)
   return _internal_value();
 }
-inline void get_last_irreversible_block_return::unsafe_arena_set_allocated_value(
-    ::koinos::block_topology* value) {
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
-  }
+inline void get_last_irreversible_block_return::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
   value_ = value;
-  if (value) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_last_irreversible_block_return.value)
 }
-inline ::koinos::block_topology* get_last_irreversible_block_return::release_value() {
-  
-  ::koinos::block_topology* temp = value_;
-  value_ = nullptr;
-  if (GetArena() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-  return temp;
-}
-inline ::koinos::block_topology* get_last_irreversible_block_return::unsafe_arena_release_value() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_last_irreversible_block_return.value)
-  
-  ::koinos::block_topology* temp = value_;
-  value_ = nullptr;
-  return temp;
-}
-inline ::koinos::block_topology* get_last_irreversible_block_return::_internal_mutable_value() {
-  
-  if (value_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::block_topology>(GetArena());
-    value_ = p;
-  }
-  return value_;
-}
-inline ::koinos::block_topology* get_last_irreversible_block_return::mutable_value() {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_last_irreversible_block_return.value)
-  return _internal_mutable_value();
-}
-inline void get_last_irreversible_block_return::set_allocated_value(::koinos::block_topology* value) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
-  }
-  if (value) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, value, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  value_ = value;
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_last_irreversible_block_return.value)
+inline void get_last_irreversible_block_return::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.get_last_irreversible_block_return.value)
 }
 
 // -------------------------------------------------------------------

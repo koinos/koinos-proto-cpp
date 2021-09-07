@@ -70,12 +70,12 @@ extern get_pending_transactions_requestDefaultTypeInternal _get_pending_transact
 class get_pending_transactions_response;
 class get_pending_transactions_responseDefaultTypeInternal;
 extern get_pending_transactions_responseDefaultTypeInternal _get_pending_transactions_response_default_instance_;
-class mempool_rpc_request;
-class mempool_rpc_requestDefaultTypeInternal;
-extern mempool_rpc_requestDefaultTypeInternal _mempool_rpc_request_default_instance_;
-class mempool_rpc_response;
-class mempool_rpc_responseDefaultTypeInternal;
-extern mempool_rpc_responseDefaultTypeInternal _mempool_rpc_response_default_instance_;
+class mempool_request;
+class mempool_requestDefaultTypeInternal;
+extern mempool_requestDefaultTypeInternal _mempool_request_default_instance_;
+class mempool_response;
+class mempool_responseDefaultTypeInternal;
+extern mempool_responseDefaultTypeInternal _mempool_response_default_instance_;
 }  // namespace mempool
 }  // namespace rpc
 }  // namespace koinos
@@ -84,8 +84,8 @@ template<> ::koinos::rpc::mempool::check_pending_account_resources_request* Aren
 template<> ::koinos::rpc::mempool::check_pending_account_resources_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::check_pending_account_resources_response>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transactions_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_request>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transactions_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_response>(Arena*);
-template<> ::koinos::rpc::mempool::mempool_rpc_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::mempool_rpc_request>(Arena*);
-template<> ::koinos::rpc::mempool::mempool_rpc_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::mempool_rpc_response>(Arena*);
+template<> ::koinos::rpc::mempool::mempool_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::mempool_request>(Arena*);
+template<> ::koinos::rpc::mempool::mempool_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::mempool_response>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace rpc {
@@ -675,23 +675,23 @@ class get_pending_transactions_response PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class mempool_rpc_request PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.mempool_rpc_request) */ {
+class mempool_request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.mempool_request) */ {
  public:
-  inline mempool_rpc_request() : mempool_rpc_request(nullptr) {}
-  virtual ~mempool_rpc_request();
+  inline mempool_request() : mempool_request(nullptr) {}
+  virtual ~mempool_request();
 
-  mempool_rpc_request(const mempool_rpc_request& from);
-  mempool_rpc_request(mempool_rpc_request&& from) noexcept
-    : mempool_rpc_request() {
+  mempool_request(const mempool_request& from);
+  mempool_request(mempool_request&& from) noexcept
+    : mempool_request() {
     *this = ::std::move(from);
   }
 
-  inline mempool_rpc_request& operator=(const mempool_rpc_request& from) {
+  inline mempool_request& operator=(const mempool_request& from) {
     CopyFrom(from);
     return *this;
   }
-  inline mempool_rpc_request& operator=(mempool_rpc_request&& from) noexcept {
+  inline mempool_request& operator=(mempool_request&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -709,7 +709,7 @@ class mempool_rpc_request PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const mempool_rpc_request& default_instance();
+  static const mempool_request& default_instance();
 
   enum RequestCase {
     kReserved = 1,
@@ -718,17 +718,17 @@ class mempool_rpc_request PROTOBUF_FINAL :
     REQUEST_NOT_SET = 0,
   };
 
-  static inline const mempool_rpc_request* internal_default_instance() {
-    return reinterpret_cast<const mempool_rpc_request*>(
-               &_mempool_rpc_request_default_instance_);
+  static inline const mempool_request* internal_default_instance() {
+    return reinterpret_cast<const mempool_request*>(
+               &_mempool_request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     4;
 
-  friend void swap(mempool_rpc_request& a, mempool_rpc_request& b) {
+  friend void swap(mempool_request& a, mempool_request& b) {
     a.Swap(&b);
   }
-  inline void Swap(mempool_rpc_request* other) {
+  inline void Swap(mempool_request* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -736,7 +736,7 @@ class mempool_rpc_request PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(mempool_rpc_request* other) {
+  void UnsafeArenaSwap(mempool_request* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -744,17 +744,17 @@ class mempool_rpc_request PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline mempool_rpc_request* New() const final {
-    return CreateMaybeMessage<mempool_rpc_request>(nullptr);
+  inline mempool_request* New() const final {
+    return CreateMaybeMessage<mempool_request>(nullptr);
   }
 
-  mempool_rpc_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<mempool_rpc_request>(arena);
+  mempool_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<mempool_request>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const mempool_rpc_request& from);
-  void MergeFrom(const mempool_rpc_request& from);
+  void CopyFrom(const mempool_request& from);
+  void MergeFrom(const mempool_request& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -768,13 +768,13 @@ class mempool_rpc_request PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(mempool_rpc_request* other);
+  void InternalSwap(mempool_request* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.rpc.mempool.mempool_rpc_request";
+    return "koinos.rpc.mempool.mempool_request";
   }
   protected:
-  explicit mempool_rpc_request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit mempool_request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -854,7 +854,7 @@ class mempool_rpc_request PROTOBUF_FINAL :
 
   void clear_request();
   RequestCase request_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_rpc_request)
+  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_request)
  private:
   class _Internal;
   void set_has_reserved();
@@ -880,23 +880,23 @@ class mempool_rpc_request PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class mempool_rpc_response PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.mempool_rpc_response) */ {
+class mempool_response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.mempool_response) */ {
  public:
-  inline mempool_rpc_response() : mempool_rpc_response(nullptr) {}
-  virtual ~mempool_rpc_response();
+  inline mempool_response() : mempool_response(nullptr) {}
+  virtual ~mempool_response();
 
-  mempool_rpc_response(const mempool_rpc_response& from);
-  mempool_rpc_response(mempool_rpc_response&& from) noexcept
-    : mempool_rpc_response() {
+  mempool_response(const mempool_response& from);
+  mempool_response(mempool_response&& from) noexcept
+    : mempool_response() {
     *this = ::std::move(from);
   }
 
-  inline mempool_rpc_response& operator=(const mempool_rpc_response& from) {
+  inline mempool_response& operator=(const mempool_response& from) {
     CopyFrom(from);
     return *this;
   }
-  inline mempool_rpc_response& operator=(mempool_rpc_response&& from) noexcept {
+  inline mempool_response& operator=(mempool_response&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -914,7 +914,7 @@ class mempool_rpc_response PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const mempool_rpc_response& default_instance();
+  static const mempool_response& default_instance();
 
   enum ResponseCase {
     kReserved = 1,
@@ -924,17 +924,17 @@ class mempool_rpc_response PROTOBUF_FINAL :
     RESPONSE_NOT_SET = 0,
   };
 
-  static inline const mempool_rpc_response* internal_default_instance() {
-    return reinterpret_cast<const mempool_rpc_response*>(
-               &_mempool_rpc_response_default_instance_);
+  static inline const mempool_response* internal_default_instance() {
+    return reinterpret_cast<const mempool_response*>(
+               &_mempool_response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     5;
 
-  friend void swap(mempool_rpc_response& a, mempool_rpc_response& b) {
+  friend void swap(mempool_response& a, mempool_response& b) {
     a.Swap(&b);
   }
-  inline void Swap(mempool_rpc_response* other) {
+  inline void Swap(mempool_response* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -942,7 +942,7 @@ class mempool_rpc_response PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(mempool_rpc_response* other) {
+  void UnsafeArenaSwap(mempool_response* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -950,17 +950,17 @@ class mempool_rpc_response PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline mempool_rpc_response* New() const final {
-    return CreateMaybeMessage<mempool_rpc_response>(nullptr);
+  inline mempool_response* New() const final {
+    return CreateMaybeMessage<mempool_response>(nullptr);
   }
 
-  mempool_rpc_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<mempool_rpc_response>(arena);
+  mempool_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<mempool_response>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const mempool_rpc_response& from);
-  void MergeFrom(const mempool_rpc_response& from);
+  void CopyFrom(const mempool_response& from);
+  void MergeFrom(const mempool_response& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -974,13 +974,13 @@ class mempool_rpc_response PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(mempool_rpc_response* other);
+  void InternalSwap(mempool_response* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.rpc.mempool.mempool_rpc_response";
+    return "koinos.rpc.mempool.mempool_response";
   }
   protected:
-  explicit mempool_rpc_response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit mempool_response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -1079,7 +1079,7 @@ class mempool_rpc_response PROTOBUF_FINAL :
 
   void clear_response();
   ResponseCase response_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_rpc_response)
+  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_response)
  private:
   class _Internal;
   void set_has_reserved();
@@ -1307,20 +1307,20 @@ get_pending_transactions_response::transactions() const {
 
 // -------------------------------------------------------------------
 
-// mempool_rpc_request
+// mempool_request
 
 // .koinos.rpc.reserved_rpc reserved = 1;
-inline bool mempool_rpc_request::_internal_has_reserved() const {
+inline bool mempool_request::_internal_has_reserved() const {
   return request_case() == kReserved;
 }
-inline bool mempool_rpc_request::has_reserved() const {
+inline bool mempool_request::has_reserved() const {
   return _internal_has_reserved();
 }
-inline void mempool_rpc_request::set_has_reserved() {
+inline void mempool_request::set_has_reserved() {
   _oneof_case_[0] = kReserved;
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::release_reserved() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_request.reserved)
+inline ::koinos::rpc::reserved_rpc* mempool_request::release_reserved() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_request.reserved)
   if (_internal_has_reserved()) {
     clear_has_request();
       ::koinos::rpc::reserved_rpc* temp = request_.reserved_;
@@ -1333,17 +1333,17 @@ inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::release_reserved() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::reserved_rpc& mempool_rpc_request::_internal_reserved() const {
+inline const ::koinos::rpc::reserved_rpc& mempool_request::_internal_reserved() const {
   return _internal_has_reserved()
       ? *request_.reserved_
       : reinterpret_cast< ::koinos::rpc::reserved_rpc&>(::koinos::rpc::_reserved_rpc_default_instance_);
 }
-inline const ::koinos::rpc::reserved_rpc& mempool_rpc_request::reserved() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_request.reserved)
+inline const ::koinos::rpc::reserved_rpc& mempool_request::reserved() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_request.reserved)
   return _internal_reserved();
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::unsafe_arena_release_reserved() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_request.reserved)
+inline ::koinos::rpc::reserved_rpc* mempool_request::unsafe_arena_release_reserved() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_request.reserved)
   if (_internal_has_reserved()) {
     clear_has_request();
     ::koinos::rpc::reserved_rpc* temp = request_.reserved_;
@@ -1353,15 +1353,15 @@ inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::unsafe_arena_release_re
     return nullptr;
   }
 }
-inline void mempool_rpc_request::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
+inline void mempool_request::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
   clear_request();
   if (reserved) {
     set_has_reserved();
     request_.reserved_ = reserved;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_request.reserved)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_request.reserved)
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::_internal_mutable_reserved() {
+inline ::koinos::rpc::reserved_rpc* mempool_request::_internal_mutable_reserved() {
   if (!_internal_has_reserved()) {
     clear_request();
     set_has_reserved();
@@ -1369,22 +1369,22 @@ inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::_internal_mutable_reser
   }
   return request_.reserved_;
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_request::mutable_reserved() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_request.reserved)
+inline ::koinos::rpc::reserved_rpc* mempool_request::mutable_reserved() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.reserved)
   return _internal_mutable_reserved();
 }
 
 // .koinos.rpc.mempool.check_pending_account_resources_request check_pending_account_resources = 2;
-inline bool mempool_rpc_request::_internal_has_check_pending_account_resources() const {
+inline bool mempool_request::_internal_has_check_pending_account_resources() const {
   return request_case() == kCheckPendingAccountResources;
 }
-inline bool mempool_rpc_request::has_check_pending_account_resources() const {
+inline bool mempool_request::has_check_pending_account_resources() const {
   return _internal_has_check_pending_account_resources();
 }
-inline void mempool_rpc_request::set_has_check_pending_account_resources() {
+inline void mempool_request::set_has_check_pending_account_resources() {
   _oneof_case_[0] = kCheckPendingAccountResources;
 }
-inline void mempool_rpc_request::clear_check_pending_account_resources() {
+inline void mempool_request::clear_check_pending_account_resources() {
   if (_internal_has_check_pending_account_resources()) {
     if (GetArena() == nullptr) {
       delete request_.check_pending_account_resources_;
@@ -1392,8 +1392,8 @@ inline void mempool_rpc_request::clear_check_pending_account_resources() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_rpc_request::release_check_pending_account_resources() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_request.check_pending_account_resources)
+inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_request::release_check_pending_account_resources() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_request.check_pending_account_resources)
   if (_internal_has_check_pending_account_resources()) {
     clear_has_request();
       ::koinos::rpc::mempool::check_pending_account_resources_request* temp = request_.check_pending_account_resources_;
@@ -1406,17 +1406,17 @@ inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_
     return nullptr;
   }
 }
-inline const ::koinos::rpc::mempool::check_pending_account_resources_request& mempool_rpc_request::_internal_check_pending_account_resources() const {
+inline const ::koinos::rpc::mempool::check_pending_account_resources_request& mempool_request::_internal_check_pending_account_resources() const {
   return _internal_has_check_pending_account_resources()
       ? *request_.check_pending_account_resources_
       : reinterpret_cast< ::koinos::rpc::mempool::check_pending_account_resources_request&>(::koinos::rpc::mempool::_check_pending_account_resources_request_default_instance_);
 }
-inline const ::koinos::rpc::mempool::check_pending_account_resources_request& mempool_rpc_request::check_pending_account_resources() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_request.check_pending_account_resources)
+inline const ::koinos::rpc::mempool::check_pending_account_resources_request& mempool_request::check_pending_account_resources() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_request.check_pending_account_resources)
   return _internal_check_pending_account_resources();
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_rpc_request::unsafe_arena_release_check_pending_account_resources() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_request.check_pending_account_resources)
+inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_request::unsafe_arena_release_check_pending_account_resources() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_request.check_pending_account_resources)
   if (_internal_has_check_pending_account_resources()) {
     clear_has_request();
     ::koinos::rpc::mempool::check_pending_account_resources_request* temp = request_.check_pending_account_resources_;
@@ -1426,15 +1426,15 @@ inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_
     return nullptr;
   }
 }
-inline void mempool_rpc_request::unsafe_arena_set_allocated_check_pending_account_resources(::koinos::rpc::mempool::check_pending_account_resources_request* check_pending_account_resources) {
+inline void mempool_request::unsafe_arena_set_allocated_check_pending_account_resources(::koinos::rpc::mempool::check_pending_account_resources_request* check_pending_account_resources) {
   clear_request();
   if (check_pending_account_resources) {
     set_has_check_pending_account_resources();
     request_.check_pending_account_resources_ = check_pending_account_resources;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_request.check_pending_account_resources)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_request.check_pending_account_resources)
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_rpc_request::_internal_mutable_check_pending_account_resources() {
+inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_request::_internal_mutable_check_pending_account_resources() {
   if (!_internal_has_check_pending_account_resources()) {
     clear_request();
     set_has_check_pending_account_resources();
@@ -1442,22 +1442,22 @@ inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_
   }
   return request_.check_pending_account_resources_;
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_rpc_request::mutable_check_pending_account_resources() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_request.check_pending_account_resources)
+inline ::koinos::rpc::mempool::check_pending_account_resources_request* mempool_request::mutable_check_pending_account_resources() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.check_pending_account_resources)
   return _internal_mutable_check_pending_account_resources();
 }
 
 // .koinos.rpc.mempool.get_pending_transactions_request get_pending_transactions = 3;
-inline bool mempool_rpc_request::_internal_has_get_pending_transactions() const {
+inline bool mempool_request::_internal_has_get_pending_transactions() const {
   return request_case() == kGetPendingTransactions;
 }
-inline bool mempool_rpc_request::has_get_pending_transactions() const {
+inline bool mempool_request::has_get_pending_transactions() const {
   return _internal_has_get_pending_transactions();
 }
-inline void mempool_rpc_request::set_has_get_pending_transactions() {
+inline void mempool_request::set_has_get_pending_transactions() {
   _oneof_case_[0] = kGetPendingTransactions;
 }
-inline void mempool_rpc_request::clear_get_pending_transactions() {
+inline void mempool_request::clear_get_pending_transactions() {
   if (_internal_has_get_pending_transactions()) {
     if (GetArena() == nullptr) {
       delete request_.get_pending_transactions_;
@@ -1465,8 +1465,8 @@ inline void mempool_rpc_request::clear_get_pending_transactions() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_request::release_get_pending_transactions() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_request.get_pending_transactions)
+inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_request::release_get_pending_transactions() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_request.get_pending_transactions)
   if (_internal_has_get_pending_transactions()) {
     clear_has_request();
       ::koinos::rpc::mempool::get_pending_transactions_request* temp = request_.get_pending_transactions_;
@@ -1479,17 +1479,17 @@ inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_req
     return nullptr;
   }
 }
-inline const ::koinos::rpc::mempool::get_pending_transactions_request& mempool_rpc_request::_internal_get_pending_transactions() const {
+inline const ::koinos::rpc::mempool::get_pending_transactions_request& mempool_request::_internal_get_pending_transactions() const {
   return _internal_has_get_pending_transactions()
       ? *request_.get_pending_transactions_
       : reinterpret_cast< ::koinos::rpc::mempool::get_pending_transactions_request&>(::koinos::rpc::mempool::_get_pending_transactions_request_default_instance_);
 }
-inline const ::koinos::rpc::mempool::get_pending_transactions_request& mempool_rpc_request::get_pending_transactions() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_request.get_pending_transactions)
+inline const ::koinos::rpc::mempool::get_pending_transactions_request& mempool_request::get_pending_transactions() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_request.get_pending_transactions)
   return _internal_get_pending_transactions();
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_request::unsafe_arena_release_get_pending_transactions() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_request.get_pending_transactions)
+inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_request::unsafe_arena_release_get_pending_transactions() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_request.get_pending_transactions)
   if (_internal_has_get_pending_transactions()) {
     clear_has_request();
     ::koinos::rpc::mempool::get_pending_transactions_request* temp = request_.get_pending_transactions_;
@@ -1499,15 +1499,15 @@ inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_req
     return nullptr;
   }
 }
-inline void mempool_rpc_request::unsafe_arena_set_allocated_get_pending_transactions(::koinos::rpc::mempool::get_pending_transactions_request* get_pending_transactions) {
+inline void mempool_request::unsafe_arena_set_allocated_get_pending_transactions(::koinos::rpc::mempool::get_pending_transactions_request* get_pending_transactions) {
   clear_request();
   if (get_pending_transactions) {
     set_has_get_pending_transactions();
     request_.get_pending_transactions_ = get_pending_transactions;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_request.get_pending_transactions)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_request.get_pending_transactions)
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_request::_internal_mutable_get_pending_transactions() {
+inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_request::_internal_mutable_get_pending_transactions() {
   if (!_internal_has_get_pending_transactions()) {
     clear_request();
     set_has_get_pending_transactions();
@@ -1515,36 +1515,36 @@ inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_req
   }
   return request_.get_pending_transactions_;
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_rpc_request::mutable_get_pending_transactions() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_request.get_pending_transactions)
+inline ::koinos::rpc::mempool::get_pending_transactions_request* mempool_request::mutable_get_pending_transactions() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.get_pending_transactions)
   return _internal_mutable_get_pending_transactions();
 }
 
-inline bool mempool_rpc_request::has_request() const {
+inline bool mempool_request::has_request() const {
   return request_case() != REQUEST_NOT_SET;
 }
-inline void mempool_rpc_request::clear_has_request() {
+inline void mempool_request::clear_has_request() {
   _oneof_case_[0] = REQUEST_NOT_SET;
 }
-inline mempool_rpc_request::RequestCase mempool_rpc_request::request_case() const {
-  return mempool_rpc_request::RequestCase(_oneof_case_[0]);
+inline mempool_request::RequestCase mempool_request::request_case() const {
+  return mempool_request::RequestCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
-// mempool_rpc_response
+// mempool_response
 
 // .koinos.rpc.reserved_rpc reserved = 1;
-inline bool mempool_rpc_response::_internal_has_reserved() const {
+inline bool mempool_response::_internal_has_reserved() const {
   return response_case() == kReserved;
 }
-inline bool mempool_rpc_response::has_reserved() const {
+inline bool mempool_response::has_reserved() const {
   return _internal_has_reserved();
 }
-inline void mempool_rpc_response::set_has_reserved() {
+inline void mempool_response::set_has_reserved() {
   _oneof_case_[0] = kReserved;
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::release_reserved() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_response.reserved)
+inline ::koinos::rpc::reserved_rpc* mempool_response::release_reserved() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_response.reserved)
   if (_internal_has_reserved()) {
     clear_has_response();
       ::koinos::rpc::reserved_rpc* temp = response_.reserved_;
@@ -1557,17 +1557,17 @@ inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::release_reserved() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::reserved_rpc& mempool_rpc_response::_internal_reserved() const {
+inline const ::koinos::rpc::reserved_rpc& mempool_response::_internal_reserved() const {
   return _internal_has_reserved()
       ? *response_.reserved_
       : reinterpret_cast< ::koinos::rpc::reserved_rpc&>(::koinos::rpc::_reserved_rpc_default_instance_);
 }
-inline const ::koinos::rpc::reserved_rpc& mempool_rpc_response::reserved() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_response.reserved)
+inline const ::koinos::rpc::reserved_rpc& mempool_response::reserved() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_response.reserved)
   return _internal_reserved();
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::unsafe_arena_release_reserved() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_response.reserved)
+inline ::koinos::rpc::reserved_rpc* mempool_response::unsafe_arena_release_reserved() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_response.reserved)
   if (_internal_has_reserved()) {
     clear_has_response();
     ::koinos::rpc::reserved_rpc* temp = response_.reserved_;
@@ -1577,15 +1577,15 @@ inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::unsafe_arena_release_r
     return nullptr;
   }
 }
-inline void mempool_rpc_response::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
+inline void mempool_response::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
   clear_response();
   if (reserved) {
     set_has_reserved();
     response_.reserved_ = reserved;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_response.reserved)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_response.reserved)
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::_internal_mutable_reserved() {
+inline ::koinos::rpc::reserved_rpc* mempool_response::_internal_mutable_reserved() {
   if (!_internal_has_reserved()) {
     clear_response();
     set_has_reserved();
@@ -1593,23 +1593,23 @@ inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::_internal_mutable_rese
   }
   return response_.reserved_;
 }
-inline ::koinos::rpc::reserved_rpc* mempool_rpc_response::mutable_reserved() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_response.reserved)
+inline ::koinos::rpc::reserved_rpc* mempool_response::mutable_reserved() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_response.reserved)
   return _internal_mutable_reserved();
 }
 
 // .koinos.rpc.error_response error = 2;
-inline bool mempool_rpc_response::_internal_has_error() const {
+inline bool mempool_response::_internal_has_error() const {
   return response_case() == kError;
 }
-inline bool mempool_rpc_response::has_error() const {
+inline bool mempool_response::has_error() const {
   return _internal_has_error();
 }
-inline void mempool_rpc_response::set_has_error() {
+inline void mempool_response::set_has_error() {
   _oneof_case_[0] = kError;
 }
-inline ::koinos::rpc::error_response* mempool_rpc_response::release_error() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_response.error)
+inline ::koinos::rpc::error_response* mempool_response::release_error() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_response.error)
   if (_internal_has_error()) {
     clear_has_response();
       ::koinos::rpc::error_response* temp = response_.error_;
@@ -1622,17 +1622,17 @@ inline ::koinos::rpc::error_response* mempool_rpc_response::release_error() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::error_response& mempool_rpc_response::_internal_error() const {
+inline const ::koinos::rpc::error_response& mempool_response::_internal_error() const {
   return _internal_has_error()
       ? *response_.error_
       : reinterpret_cast< ::koinos::rpc::error_response&>(::koinos::rpc::_error_response_default_instance_);
 }
-inline const ::koinos::rpc::error_response& mempool_rpc_response::error() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_response.error)
+inline const ::koinos::rpc::error_response& mempool_response::error() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_response.error)
   return _internal_error();
 }
-inline ::koinos::rpc::error_response* mempool_rpc_response::unsafe_arena_release_error() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_response.error)
+inline ::koinos::rpc::error_response* mempool_response::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_response.error)
   if (_internal_has_error()) {
     clear_has_response();
     ::koinos::rpc::error_response* temp = response_.error_;
@@ -1642,15 +1642,15 @@ inline ::koinos::rpc::error_response* mempool_rpc_response::unsafe_arena_release
     return nullptr;
   }
 }
-inline void mempool_rpc_response::unsafe_arena_set_allocated_error(::koinos::rpc::error_response* error) {
+inline void mempool_response::unsafe_arena_set_allocated_error(::koinos::rpc::error_response* error) {
   clear_response();
   if (error) {
     set_has_error();
     response_.error_ = error;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_response.error)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_response.error)
 }
-inline ::koinos::rpc::error_response* mempool_rpc_response::_internal_mutable_error() {
+inline ::koinos::rpc::error_response* mempool_response::_internal_mutable_error() {
   if (!_internal_has_error()) {
     clear_response();
     set_has_error();
@@ -1658,22 +1658,22 @@ inline ::koinos::rpc::error_response* mempool_rpc_response::_internal_mutable_er
   }
   return response_.error_;
 }
-inline ::koinos::rpc::error_response* mempool_rpc_response::mutable_error() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_response.error)
+inline ::koinos::rpc::error_response* mempool_response::mutable_error() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_response.error)
   return _internal_mutable_error();
 }
 
 // .koinos.rpc.mempool.check_pending_account_resources_response check_pending_account_resources = 3;
-inline bool mempool_rpc_response::_internal_has_check_pending_account_resources() const {
+inline bool mempool_response::_internal_has_check_pending_account_resources() const {
   return response_case() == kCheckPendingAccountResources;
 }
-inline bool mempool_rpc_response::has_check_pending_account_resources() const {
+inline bool mempool_response::has_check_pending_account_resources() const {
   return _internal_has_check_pending_account_resources();
 }
-inline void mempool_rpc_response::set_has_check_pending_account_resources() {
+inline void mempool_response::set_has_check_pending_account_resources() {
   _oneof_case_[0] = kCheckPendingAccountResources;
 }
-inline void mempool_rpc_response::clear_check_pending_account_resources() {
+inline void mempool_response::clear_check_pending_account_resources() {
   if (_internal_has_check_pending_account_resources()) {
     if (GetArena() == nullptr) {
       delete response_.check_pending_account_resources_;
@@ -1681,8 +1681,8 @@ inline void mempool_rpc_response::clear_check_pending_account_resources() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_rpc_response::release_check_pending_account_resources() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_response.check_pending_account_resources)
+inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_response::release_check_pending_account_resources() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_response.check_pending_account_resources)
   if (_internal_has_check_pending_account_resources()) {
     clear_has_response();
       ::koinos::rpc::mempool::check_pending_account_resources_response* temp = response_.check_pending_account_resources_;
@@ -1695,17 +1695,17 @@ inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool
     return nullptr;
   }
 }
-inline const ::koinos::rpc::mempool::check_pending_account_resources_response& mempool_rpc_response::_internal_check_pending_account_resources() const {
+inline const ::koinos::rpc::mempool::check_pending_account_resources_response& mempool_response::_internal_check_pending_account_resources() const {
   return _internal_has_check_pending_account_resources()
       ? *response_.check_pending_account_resources_
       : reinterpret_cast< ::koinos::rpc::mempool::check_pending_account_resources_response&>(::koinos::rpc::mempool::_check_pending_account_resources_response_default_instance_);
 }
-inline const ::koinos::rpc::mempool::check_pending_account_resources_response& mempool_rpc_response::check_pending_account_resources() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_response.check_pending_account_resources)
+inline const ::koinos::rpc::mempool::check_pending_account_resources_response& mempool_response::check_pending_account_resources() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_response.check_pending_account_resources)
   return _internal_check_pending_account_resources();
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_rpc_response::unsafe_arena_release_check_pending_account_resources() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_response.check_pending_account_resources)
+inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_response::unsafe_arena_release_check_pending_account_resources() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_response.check_pending_account_resources)
   if (_internal_has_check_pending_account_resources()) {
     clear_has_response();
     ::koinos::rpc::mempool::check_pending_account_resources_response* temp = response_.check_pending_account_resources_;
@@ -1715,15 +1715,15 @@ inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool
     return nullptr;
   }
 }
-inline void mempool_rpc_response::unsafe_arena_set_allocated_check_pending_account_resources(::koinos::rpc::mempool::check_pending_account_resources_response* check_pending_account_resources) {
+inline void mempool_response::unsafe_arena_set_allocated_check_pending_account_resources(::koinos::rpc::mempool::check_pending_account_resources_response* check_pending_account_resources) {
   clear_response();
   if (check_pending_account_resources) {
     set_has_check_pending_account_resources();
     response_.check_pending_account_resources_ = check_pending_account_resources;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_response.check_pending_account_resources)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_response.check_pending_account_resources)
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_rpc_response::_internal_mutable_check_pending_account_resources() {
+inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_response::_internal_mutable_check_pending_account_resources() {
   if (!_internal_has_check_pending_account_resources()) {
     clear_response();
     set_has_check_pending_account_resources();
@@ -1731,22 +1731,22 @@ inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool
   }
   return response_.check_pending_account_resources_;
 }
-inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_rpc_response::mutable_check_pending_account_resources() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_response.check_pending_account_resources)
+inline ::koinos::rpc::mempool::check_pending_account_resources_response* mempool_response::mutable_check_pending_account_resources() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_response.check_pending_account_resources)
   return _internal_mutable_check_pending_account_resources();
 }
 
 // .koinos.rpc.mempool.get_pending_transactions_response get_pending_transactions = 4;
-inline bool mempool_rpc_response::_internal_has_get_pending_transactions() const {
+inline bool mempool_response::_internal_has_get_pending_transactions() const {
   return response_case() == kGetPendingTransactions;
 }
-inline bool mempool_rpc_response::has_get_pending_transactions() const {
+inline bool mempool_response::has_get_pending_transactions() const {
   return _internal_has_get_pending_transactions();
 }
-inline void mempool_rpc_response::set_has_get_pending_transactions() {
+inline void mempool_response::set_has_get_pending_transactions() {
   _oneof_case_[0] = kGetPendingTransactions;
 }
-inline void mempool_rpc_response::clear_get_pending_transactions() {
+inline void mempool_response::clear_get_pending_transactions() {
   if (_internal_has_get_pending_transactions()) {
     if (GetArena() == nullptr) {
       delete response_.get_pending_transactions_;
@@ -1754,8 +1754,8 @@ inline void mempool_rpc_response::clear_get_pending_transactions() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_response::release_get_pending_transactions() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_rpc_response.get_pending_transactions)
+inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_response::release_get_pending_transactions() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_response.get_pending_transactions)
   if (_internal_has_get_pending_transactions()) {
     clear_has_response();
       ::koinos::rpc::mempool::get_pending_transactions_response* temp = response_.get_pending_transactions_;
@@ -1768,17 +1768,17 @@ inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_re
     return nullptr;
   }
 }
-inline const ::koinos::rpc::mempool::get_pending_transactions_response& mempool_rpc_response::_internal_get_pending_transactions() const {
+inline const ::koinos::rpc::mempool::get_pending_transactions_response& mempool_response::_internal_get_pending_transactions() const {
   return _internal_has_get_pending_transactions()
       ? *response_.get_pending_transactions_
       : reinterpret_cast< ::koinos::rpc::mempool::get_pending_transactions_response&>(::koinos::rpc::mempool::_get_pending_transactions_response_default_instance_);
 }
-inline const ::koinos::rpc::mempool::get_pending_transactions_response& mempool_rpc_response::get_pending_transactions() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_rpc_response.get_pending_transactions)
+inline const ::koinos::rpc::mempool::get_pending_transactions_response& mempool_response::get_pending_transactions() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_response.get_pending_transactions)
   return _internal_get_pending_transactions();
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_response::unsafe_arena_release_get_pending_transactions() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_rpc_response.get_pending_transactions)
+inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_response::unsafe_arena_release_get_pending_transactions() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_response.get_pending_transactions)
   if (_internal_has_get_pending_transactions()) {
     clear_has_response();
     ::koinos::rpc::mempool::get_pending_transactions_response* temp = response_.get_pending_transactions_;
@@ -1788,15 +1788,15 @@ inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_re
     return nullptr;
   }
 }
-inline void mempool_rpc_response::unsafe_arena_set_allocated_get_pending_transactions(::koinos::rpc::mempool::get_pending_transactions_response* get_pending_transactions) {
+inline void mempool_response::unsafe_arena_set_allocated_get_pending_transactions(::koinos::rpc::mempool::get_pending_transactions_response* get_pending_transactions) {
   clear_response();
   if (get_pending_transactions) {
     set_has_get_pending_transactions();
     response_.get_pending_transactions_ = get_pending_transactions;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_rpc_response.get_pending_transactions)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_response.get_pending_transactions)
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_response::_internal_mutable_get_pending_transactions() {
+inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_response::_internal_mutable_get_pending_transactions() {
   if (!_internal_has_get_pending_transactions()) {
     clear_response();
     set_has_get_pending_transactions();
@@ -1804,19 +1804,19 @@ inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_re
   }
   return response_.get_pending_transactions_;
 }
-inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_rpc_response::mutable_get_pending_transactions() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_rpc_response.get_pending_transactions)
+inline ::koinos::rpc::mempool::get_pending_transactions_response* mempool_response::mutable_get_pending_transactions() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_response.get_pending_transactions)
   return _internal_mutable_get_pending_transactions();
 }
 
-inline bool mempool_rpc_response::has_response() const {
+inline bool mempool_response::has_response() const {
   return response_case() != RESPONSE_NOT_SET;
 }
-inline void mempool_rpc_response::clear_has_response() {
+inline void mempool_response::clear_has_response() {
   _oneof_case_[0] = RESPONSE_NOT_SET;
 }
-inline mempool_rpc_response::ResponseCase mempool_rpc_response::response_case() const {
-  return mempool_rpc_response::ResponseCase(_oneof_case_[0]);
+inline mempool_response::ResponseCase mempool_response::response_case() const {
+  return mempool_response::ResponseCase(_oneof_case_[0]);
 }
 #ifdef __GNUC__
   #pragma GCC diagnostic pop

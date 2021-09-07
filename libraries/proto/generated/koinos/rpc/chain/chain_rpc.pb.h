@@ -59,12 +59,12 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace koinos {
 namespace rpc {
 namespace chain {
-class chain_rpc_request;
-class chain_rpc_requestDefaultTypeInternal;
-extern chain_rpc_requestDefaultTypeInternal _chain_rpc_request_default_instance_;
-class chain_rpc_response;
-class chain_rpc_responseDefaultTypeInternal;
-extern chain_rpc_responseDefaultTypeInternal _chain_rpc_response_default_instance_;
+class chain_request;
+class chain_requestDefaultTypeInternal;
+extern chain_requestDefaultTypeInternal _chain_request_default_instance_;
+class chain_response;
+class chain_responseDefaultTypeInternal;
+extern chain_responseDefaultTypeInternal _chain_response_default_instance_;
 class get_account_nonce_request;
 class get_account_nonce_requestDefaultTypeInternal;
 extern get_account_nonce_requestDefaultTypeInternal _get_account_nonce_request_default_instance_;
@@ -111,8 +111,8 @@ extern submit_transaction_responseDefaultTypeInternal _submit_transaction_respon
 }  // namespace rpc
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
-template<> ::koinos::rpc::chain::chain_rpc_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::chain_rpc_request>(Arena*);
-template<> ::koinos::rpc::chain::chain_rpc_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::chain_rpc_response>(Arena*);
+template<> ::koinos::rpc::chain::chain_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::chain_request>(Arena*);
+template<> ::koinos::rpc::chain::chain_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::chain_response>(Arena*);
 template<> ::koinos::rpc::chain::get_account_nonce_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::get_account_nonce_request>(Arena*);
 template<> ::koinos::rpc::chain::get_account_nonce_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::get_account_nonce_response>(Arena*);
 template<> ::koinos::rpc::chain::get_chain_id_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::get_chain_id_request>(Arena*);
@@ -2170,23 +2170,23 @@ class get_account_nonce_response PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class chain_rpc_request PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.chain_rpc_request) */ {
+class chain_request PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.chain_request) */ {
  public:
-  inline chain_rpc_request() : chain_rpc_request(nullptr) {}
-  virtual ~chain_rpc_request();
+  inline chain_request() : chain_request(nullptr) {}
+  virtual ~chain_request();
 
-  chain_rpc_request(const chain_rpc_request& from);
-  chain_rpc_request(chain_rpc_request&& from) noexcept
-    : chain_rpc_request() {
+  chain_request(const chain_request& from);
+  chain_request(chain_request&& from) noexcept
+    : chain_request() {
     *this = ::std::move(from);
   }
 
-  inline chain_rpc_request& operator=(const chain_rpc_request& from) {
+  inline chain_request& operator=(const chain_request& from) {
     CopyFrom(from);
     return *this;
   }
-  inline chain_rpc_request& operator=(chain_rpc_request&& from) noexcept {
+  inline chain_request& operator=(chain_request&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -2204,7 +2204,7 @@ class chain_rpc_request PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const chain_rpc_request& default_instance();
+  static const chain_request& default_instance();
 
   enum RequestCase {
     kReserved = 1,
@@ -2218,17 +2218,17 @@ class chain_rpc_request PROTOBUF_FINAL :
     REQUEST_NOT_SET = 0,
   };
 
-  static inline const chain_rpc_request* internal_default_instance() {
-    return reinterpret_cast<const chain_rpc_request*>(
-               &_chain_rpc_request_default_instance_);
+  static inline const chain_request* internal_default_instance() {
+    return reinterpret_cast<const chain_request*>(
+               &_chain_request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     14;
 
-  friend void swap(chain_rpc_request& a, chain_rpc_request& b) {
+  friend void swap(chain_request& a, chain_request& b) {
     a.Swap(&b);
   }
-  inline void Swap(chain_rpc_request* other) {
+  inline void Swap(chain_request* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -2236,7 +2236,7 @@ class chain_rpc_request PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(chain_rpc_request* other) {
+  void UnsafeArenaSwap(chain_request* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -2244,17 +2244,17 @@ class chain_rpc_request PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline chain_rpc_request* New() const final {
-    return CreateMaybeMessage<chain_rpc_request>(nullptr);
+  inline chain_request* New() const final {
+    return CreateMaybeMessage<chain_request>(nullptr);
   }
 
-  chain_rpc_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<chain_rpc_request>(arena);
+  chain_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<chain_request>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const chain_rpc_request& from);
-  void MergeFrom(const chain_rpc_request& from);
+  void CopyFrom(const chain_request& from);
+  void MergeFrom(const chain_request& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -2268,13 +2268,13 @@ class chain_rpc_request PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(chain_rpc_request* other);
+  void InternalSwap(chain_request* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.rpc.chain.chain_rpc_request";
+    return "koinos.rpc.chain.chain_request";
   }
   protected:
-  explicit chain_rpc_request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit chain_request(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2449,7 +2449,7 @@ class chain_rpc_request PROTOBUF_FINAL :
 
   void clear_request();
   RequestCase request_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.rpc.chain.chain_rpc_request)
+  // @@protoc_insertion_point(class_scope:koinos.rpc.chain.chain_request)
  private:
   class _Internal;
   void set_has_reserved();
@@ -2485,23 +2485,23 @@ class chain_rpc_request PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class chain_rpc_response PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.chain_rpc_response) */ {
+class chain_response PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.chain_response) */ {
  public:
-  inline chain_rpc_response() : chain_rpc_response(nullptr) {}
-  virtual ~chain_rpc_response();
+  inline chain_response() : chain_response(nullptr) {}
+  virtual ~chain_response();
 
-  chain_rpc_response(const chain_rpc_response& from);
-  chain_rpc_response(chain_rpc_response&& from) noexcept
-    : chain_rpc_response() {
+  chain_response(const chain_response& from);
+  chain_response(chain_response&& from) noexcept
+    : chain_response() {
     *this = ::std::move(from);
   }
 
-  inline chain_rpc_response& operator=(const chain_rpc_response& from) {
+  inline chain_response& operator=(const chain_response& from) {
     CopyFrom(from);
     return *this;
   }
-  inline chain_rpc_response& operator=(chain_rpc_response&& from) noexcept {
+  inline chain_response& operator=(chain_response&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -2519,7 +2519,7 @@ class chain_rpc_response PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const chain_rpc_response& default_instance();
+  static const chain_response& default_instance();
 
   enum ResponseCase {
     kReserved = 1,
@@ -2534,17 +2534,17 @@ class chain_rpc_response PROTOBUF_FINAL :
     RESPONSE_NOT_SET = 0,
   };
 
-  static inline const chain_rpc_response* internal_default_instance() {
-    return reinterpret_cast<const chain_rpc_response*>(
-               &_chain_rpc_response_default_instance_);
+  static inline const chain_response* internal_default_instance() {
+    return reinterpret_cast<const chain_response*>(
+               &_chain_response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     15;
 
-  friend void swap(chain_rpc_response& a, chain_rpc_response& b) {
+  friend void swap(chain_response& a, chain_response& b) {
     a.Swap(&b);
   }
-  inline void Swap(chain_rpc_response* other) {
+  inline void Swap(chain_response* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -2552,7 +2552,7 @@ class chain_rpc_response PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(chain_rpc_response* other) {
+  void UnsafeArenaSwap(chain_response* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -2560,17 +2560,17 @@ class chain_rpc_response PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline chain_rpc_response* New() const final {
-    return CreateMaybeMessage<chain_rpc_response>(nullptr);
+  inline chain_response* New() const final {
+    return CreateMaybeMessage<chain_response>(nullptr);
   }
 
-  chain_rpc_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<chain_rpc_response>(arena);
+  chain_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<chain_response>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const chain_rpc_response& from);
-  void MergeFrom(const chain_rpc_response& from);
+  void CopyFrom(const chain_response& from);
+  void MergeFrom(const chain_response& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -2584,13 +2584,13 @@ class chain_rpc_response PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(chain_rpc_response* other);
+  void InternalSwap(chain_response* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.rpc.chain.chain_rpc_response";
+    return "koinos.rpc.chain.chain_response";
   }
   protected:
-  explicit chain_rpc_response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit chain_response(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -2784,7 +2784,7 @@ class chain_rpc_response PROTOBUF_FINAL :
 
   void clear_response();
   ResponseCase response_case() const;
-  // @@protoc_insertion_point(class_scope:koinos.rpc.chain.chain_rpc_response)
+  // @@protoc_insertion_point(class_scope:koinos.rpc.chain.chain_response)
  private:
   class _Internal;
   void set_has_reserved();
@@ -3755,20 +3755,20 @@ inline void get_account_nonce_response::set_nonce(::PROTOBUF_NAMESPACE_ID::uint6
 
 // -------------------------------------------------------------------
 
-// chain_rpc_request
+// chain_request
 
 // .koinos.rpc.reserved_rpc reserved = 1;
-inline bool chain_rpc_request::_internal_has_reserved() const {
+inline bool chain_request::_internal_has_reserved() const {
   return request_case() == kReserved;
 }
-inline bool chain_rpc_request::has_reserved() const {
+inline bool chain_request::has_reserved() const {
   return _internal_has_reserved();
 }
-inline void chain_rpc_request::set_has_reserved() {
+inline void chain_request::set_has_reserved() {
   _oneof_case_[0] = kReserved;
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_request::release_reserved() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.reserved)
+inline ::koinos::rpc::reserved_rpc* chain_request::release_reserved() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.reserved)
   if (_internal_has_reserved()) {
     clear_has_request();
       ::koinos::rpc::reserved_rpc* temp = request_.reserved_;
@@ -3781,17 +3781,17 @@ inline ::koinos::rpc::reserved_rpc* chain_rpc_request::release_reserved() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::reserved_rpc& chain_rpc_request::_internal_reserved() const {
+inline const ::koinos::rpc::reserved_rpc& chain_request::_internal_reserved() const {
   return _internal_has_reserved()
       ? *request_.reserved_
       : reinterpret_cast< ::koinos::rpc::reserved_rpc&>(::koinos::rpc::_reserved_rpc_default_instance_);
 }
-inline const ::koinos::rpc::reserved_rpc& chain_rpc_request::reserved() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.reserved)
+inline const ::koinos::rpc::reserved_rpc& chain_request::reserved() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.reserved)
   return _internal_reserved();
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_request::unsafe_arena_release_reserved() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.reserved)
+inline ::koinos::rpc::reserved_rpc* chain_request::unsafe_arena_release_reserved() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.reserved)
   if (_internal_has_reserved()) {
     clear_has_request();
     ::koinos::rpc::reserved_rpc* temp = request_.reserved_;
@@ -3801,15 +3801,15 @@ inline ::koinos::rpc::reserved_rpc* chain_rpc_request::unsafe_arena_release_rese
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
+inline void chain_request::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
   clear_request();
   if (reserved) {
     set_has_reserved();
     request_.reserved_ = reserved;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.reserved)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.reserved)
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_request::_internal_mutable_reserved() {
+inline ::koinos::rpc::reserved_rpc* chain_request::_internal_mutable_reserved() {
   if (!_internal_has_reserved()) {
     clear_request();
     set_has_reserved();
@@ -3817,22 +3817,22 @@ inline ::koinos::rpc::reserved_rpc* chain_rpc_request::_internal_mutable_reserve
   }
   return request_.reserved_;
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_request::mutable_reserved() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.reserved)
+inline ::koinos::rpc::reserved_rpc* chain_request::mutable_reserved() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.reserved)
   return _internal_mutable_reserved();
 }
 
 // .koinos.rpc.chain.submit_block_request submit_block = 2;
-inline bool chain_rpc_request::_internal_has_submit_block() const {
+inline bool chain_request::_internal_has_submit_block() const {
   return request_case() == kSubmitBlock;
 }
-inline bool chain_rpc_request::has_submit_block() const {
+inline bool chain_request::has_submit_block() const {
   return _internal_has_submit_block();
 }
-inline void chain_rpc_request::set_has_submit_block() {
+inline void chain_request::set_has_submit_block() {
   _oneof_case_[0] = kSubmitBlock;
 }
-inline void chain_rpc_request::clear_submit_block() {
+inline void chain_request::clear_submit_block() {
   if (_internal_has_submit_block()) {
     if (GetArena() == nullptr) {
       delete request_.submit_block_;
@@ -3840,8 +3840,8 @@ inline void chain_rpc_request::clear_submit_block() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::release_submit_block() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.submit_block)
+inline ::koinos::rpc::chain::submit_block_request* chain_request::release_submit_block() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.submit_block)
   if (_internal_has_submit_block()) {
     clear_has_request();
       ::koinos::rpc::chain::submit_block_request* temp = request_.submit_block_;
@@ -3854,17 +3854,17 @@ inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::release_su
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::submit_block_request& chain_rpc_request::_internal_submit_block() const {
+inline const ::koinos::rpc::chain::submit_block_request& chain_request::_internal_submit_block() const {
   return _internal_has_submit_block()
       ? *request_.submit_block_
       : reinterpret_cast< ::koinos::rpc::chain::submit_block_request&>(::koinos::rpc::chain::_submit_block_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::submit_block_request& chain_rpc_request::submit_block() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.submit_block)
+inline const ::koinos::rpc::chain::submit_block_request& chain_request::submit_block() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.submit_block)
   return _internal_submit_block();
 }
-inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::unsafe_arena_release_submit_block() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.submit_block)
+inline ::koinos::rpc::chain::submit_block_request* chain_request::unsafe_arena_release_submit_block() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.submit_block)
   if (_internal_has_submit_block()) {
     clear_has_request();
     ::koinos::rpc::chain::submit_block_request* temp = request_.submit_block_;
@@ -3874,15 +3874,15 @@ inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::unsafe_are
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_submit_block(::koinos::rpc::chain::submit_block_request* submit_block) {
+inline void chain_request::unsafe_arena_set_allocated_submit_block(::koinos::rpc::chain::submit_block_request* submit_block) {
   clear_request();
   if (submit_block) {
     set_has_submit_block();
     request_.submit_block_ = submit_block;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.submit_block)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.submit_block)
 }
-inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::_internal_mutable_submit_block() {
+inline ::koinos::rpc::chain::submit_block_request* chain_request::_internal_mutable_submit_block() {
   if (!_internal_has_submit_block()) {
     clear_request();
     set_has_submit_block();
@@ -3890,22 +3890,22 @@ inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::_internal_
   }
   return request_.submit_block_;
 }
-inline ::koinos::rpc::chain::submit_block_request* chain_rpc_request::mutable_submit_block() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.submit_block)
+inline ::koinos::rpc::chain::submit_block_request* chain_request::mutable_submit_block() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.submit_block)
   return _internal_mutable_submit_block();
 }
 
 // .koinos.rpc.chain.submit_transaction_request submit_transaction = 3;
-inline bool chain_rpc_request::_internal_has_submit_transaction() const {
+inline bool chain_request::_internal_has_submit_transaction() const {
   return request_case() == kSubmitTransaction;
 }
-inline bool chain_rpc_request::has_submit_transaction() const {
+inline bool chain_request::has_submit_transaction() const {
   return _internal_has_submit_transaction();
 }
-inline void chain_rpc_request::set_has_submit_transaction() {
+inline void chain_request::set_has_submit_transaction() {
   _oneof_case_[0] = kSubmitTransaction;
 }
-inline void chain_rpc_request::clear_submit_transaction() {
+inline void chain_request::clear_submit_transaction() {
   if (_internal_has_submit_transaction()) {
     if (GetArena() == nullptr) {
       delete request_.submit_transaction_;
@@ -3913,8 +3913,8 @@ inline void chain_rpc_request::clear_submit_transaction() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::release_submit_transaction() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.submit_transaction)
+inline ::koinos::rpc::chain::submit_transaction_request* chain_request::release_submit_transaction() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.submit_transaction)
   if (_internal_has_submit_transaction()) {
     clear_has_request();
       ::koinos::rpc::chain::submit_transaction_request* temp = request_.submit_transaction_;
@@ -3927,17 +3927,17 @@ inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::rele
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::submit_transaction_request& chain_rpc_request::_internal_submit_transaction() const {
+inline const ::koinos::rpc::chain::submit_transaction_request& chain_request::_internal_submit_transaction() const {
   return _internal_has_submit_transaction()
       ? *request_.submit_transaction_
       : reinterpret_cast< ::koinos::rpc::chain::submit_transaction_request&>(::koinos::rpc::chain::_submit_transaction_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::submit_transaction_request& chain_rpc_request::submit_transaction() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.submit_transaction)
+inline const ::koinos::rpc::chain::submit_transaction_request& chain_request::submit_transaction() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.submit_transaction)
   return _internal_submit_transaction();
 }
-inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::unsafe_arena_release_submit_transaction() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.submit_transaction)
+inline ::koinos::rpc::chain::submit_transaction_request* chain_request::unsafe_arena_release_submit_transaction() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.submit_transaction)
   if (_internal_has_submit_transaction()) {
     clear_has_request();
     ::koinos::rpc::chain::submit_transaction_request* temp = request_.submit_transaction_;
@@ -3947,15 +3947,15 @@ inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::unsa
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_submit_transaction(::koinos::rpc::chain::submit_transaction_request* submit_transaction) {
+inline void chain_request::unsafe_arena_set_allocated_submit_transaction(::koinos::rpc::chain::submit_transaction_request* submit_transaction) {
   clear_request();
   if (submit_transaction) {
     set_has_submit_transaction();
     request_.submit_transaction_ = submit_transaction;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.submit_transaction)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.submit_transaction)
 }
-inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::_internal_mutable_submit_transaction() {
+inline ::koinos::rpc::chain::submit_transaction_request* chain_request::_internal_mutable_submit_transaction() {
   if (!_internal_has_submit_transaction()) {
     clear_request();
     set_has_submit_transaction();
@@ -3963,22 +3963,22 @@ inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::_int
   }
   return request_.submit_transaction_;
 }
-inline ::koinos::rpc::chain::submit_transaction_request* chain_rpc_request::mutable_submit_transaction() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.submit_transaction)
+inline ::koinos::rpc::chain::submit_transaction_request* chain_request::mutable_submit_transaction() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.submit_transaction)
   return _internal_mutable_submit_transaction();
 }
 
 // .koinos.rpc.chain.get_head_info_request get_head_info = 4;
-inline bool chain_rpc_request::_internal_has_get_head_info() const {
+inline bool chain_request::_internal_has_get_head_info() const {
   return request_case() == kGetHeadInfo;
 }
-inline bool chain_rpc_request::has_get_head_info() const {
+inline bool chain_request::has_get_head_info() const {
   return _internal_has_get_head_info();
 }
-inline void chain_rpc_request::set_has_get_head_info() {
+inline void chain_request::set_has_get_head_info() {
   _oneof_case_[0] = kGetHeadInfo;
 }
-inline void chain_rpc_request::clear_get_head_info() {
+inline void chain_request::clear_get_head_info() {
   if (_internal_has_get_head_info()) {
     if (GetArena() == nullptr) {
       delete request_.get_head_info_;
@@ -3986,8 +3986,8 @@ inline void chain_rpc_request::clear_get_head_info() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::release_get_head_info() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.get_head_info)
+inline ::koinos::rpc::chain::get_head_info_request* chain_request::release_get_head_info() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.get_head_info)
   if (_internal_has_get_head_info()) {
     clear_has_request();
       ::koinos::rpc::chain::get_head_info_request* temp = request_.get_head_info_;
@@ -4000,17 +4000,17 @@ inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::release_g
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_head_info_request& chain_rpc_request::_internal_get_head_info() const {
+inline const ::koinos::rpc::chain::get_head_info_request& chain_request::_internal_get_head_info() const {
   return _internal_has_get_head_info()
       ? *request_.get_head_info_
       : reinterpret_cast< ::koinos::rpc::chain::get_head_info_request&>(::koinos::rpc::chain::_get_head_info_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_head_info_request& chain_rpc_request::get_head_info() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.get_head_info)
+inline const ::koinos::rpc::chain::get_head_info_request& chain_request::get_head_info() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.get_head_info)
   return _internal_get_head_info();
 }
-inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::unsafe_arena_release_get_head_info() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.get_head_info)
+inline ::koinos::rpc::chain::get_head_info_request* chain_request::unsafe_arena_release_get_head_info() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.get_head_info)
   if (_internal_has_get_head_info()) {
     clear_has_request();
     ::koinos::rpc::chain::get_head_info_request* temp = request_.get_head_info_;
@@ -4020,15 +4020,15 @@ inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::unsafe_ar
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_get_head_info(::koinos::rpc::chain::get_head_info_request* get_head_info) {
+inline void chain_request::unsafe_arena_set_allocated_get_head_info(::koinos::rpc::chain::get_head_info_request* get_head_info) {
   clear_request();
   if (get_head_info) {
     set_has_get_head_info();
     request_.get_head_info_ = get_head_info;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.get_head_info)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.get_head_info)
 }
-inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::_internal_mutable_get_head_info() {
+inline ::koinos::rpc::chain::get_head_info_request* chain_request::_internal_mutable_get_head_info() {
   if (!_internal_has_get_head_info()) {
     clear_request();
     set_has_get_head_info();
@@ -4036,22 +4036,22 @@ inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::_internal
   }
   return request_.get_head_info_;
 }
-inline ::koinos::rpc::chain::get_head_info_request* chain_rpc_request::mutable_get_head_info() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.get_head_info)
+inline ::koinos::rpc::chain::get_head_info_request* chain_request::mutable_get_head_info() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.get_head_info)
   return _internal_mutable_get_head_info();
 }
 
 // .koinos.rpc.chain.get_chain_id_request get_chain_id = 5;
-inline bool chain_rpc_request::_internal_has_get_chain_id() const {
+inline bool chain_request::_internal_has_get_chain_id() const {
   return request_case() == kGetChainId;
 }
-inline bool chain_rpc_request::has_get_chain_id() const {
+inline bool chain_request::has_get_chain_id() const {
   return _internal_has_get_chain_id();
 }
-inline void chain_rpc_request::set_has_get_chain_id() {
+inline void chain_request::set_has_get_chain_id() {
   _oneof_case_[0] = kGetChainId;
 }
-inline void chain_rpc_request::clear_get_chain_id() {
+inline void chain_request::clear_get_chain_id() {
   if (_internal_has_get_chain_id()) {
     if (GetArena() == nullptr) {
       delete request_.get_chain_id_;
@@ -4059,8 +4059,8 @@ inline void chain_rpc_request::clear_get_chain_id() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::release_get_chain_id() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.get_chain_id)
+inline ::koinos::rpc::chain::get_chain_id_request* chain_request::release_get_chain_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.get_chain_id)
   if (_internal_has_get_chain_id()) {
     clear_has_request();
       ::koinos::rpc::chain::get_chain_id_request* temp = request_.get_chain_id_;
@@ -4073,17 +4073,17 @@ inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::release_ge
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_chain_id_request& chain_rpc_request::_internal_get_chain_id() const {
+inline const ::koinos::rpc::chain::get_chain_id_request& chain_request::_internal_get_chain_id() const {
   return _internal_has_get_chain_id()
       ? *request_.get_chain_id_
       : reinterpret_cast< ::koinos::rpc::chain::get_chain_id_request&>(::koinos::rpc::chain::_get_chain_id_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_chain_id_request& chain_rpc_request::get_chain_id() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.get_chain_id)
+inline const ::koinos::rpc::chain::get_chain_id_request& chain_request::get_chain_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.get_chain_id)
   return _internal_get_chain_id();
 }
-inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::unsafe_arena_release_get_chain_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.get_chain_id)
+inline ::koinos::rpc::chain::get_chain_id_request* chain_request::unsafe_arena_release_get_chain_id() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.get_chain_id)
   if (_internal_has_get_chain_id()) {
     clear_has_request();
     ::koinos::rpc::chain::get_chain_id_request* temp = request_.get_chain_id_;
@@ -4093,15 +4093,15 @@ inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::unsafe_are
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_get_chain_id(::koinos::rpc::chain::get_chain_id_request* get_chain_id) {
+inline void chain_request::unsafe_arena_set_allocated_get_chain_id(::koinos::rpc::chain::get_chain_id_request* get_chain_id) {
   clear_request();
   if (get_chain_id) {
     set_has_get_chain_id();
     request_.get_chain_id_ = get_chain_id;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.get_chain_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.get_chain_id)
 }
-inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::_internal_mutable_get_chain_id() {
+inline ::koinos::rpc::chain::get_chain_id_request* chain_request::_internal_mutable_get_chain_id() {
   if (!_internal_has_get_chain_id()) {
     clear_request();
     set_has_get_chain_id();
@@ -4109,22 +4109,22 @@ inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::_internal_
   }
   return request_.get_chain_id_;
 }
-inline ::koinos::rpc::chain::get_chain_id_request* chain_rpc_request::mutable_get_chain_id() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.get_chain_id)
+inline ::koinos::rpc::chain::get_chain_id_request* chain_request::mutable_get_chain_id() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.get_chain_id)
   return _internal_mutable_get_chain_id();
 }
 
 // .koinos.rpc.chain.get_fork_heads_request get_fork_heads = 6;
-inline bool chain_rpc_request::_internal_has_get_fork_heads() const {
+inline bool chain_request::_internal_has_get_fork_heads() const {
   return request_case() == kGetForkHeads;
 }
-inline bool chain_rpc_request::has_get_fork_heads() const {
+inline bool chain_request::has_get_fork_heads() const {
   return _internal_has_get_fork_heads();
 }
-inline void chain_rpc_request::set_has_get_fork_heads() {
+inline void chain_request::set_has_get_fork_heads() {
   _oneof_case_[0] = kGetForkHeads;
 }
-inline void chain_rpc_request::clear_get_fork_heads() {
+inline void chain_request::clear_get_fork_heads() {
   if (_internal_has_get_fork_heads()) {
     if (GetArena() == nullptr) {
       delete request_.get_fork_heads_;
@@ -4132,8 +4132,8 @@ inline void chain_rpc_request::clear_get_fork_heads() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::release_get_fork_heads() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.get_fork_heads)
+inline ::koinos::rpc::chain::get_fork_heads_request* chain_request::release_get_fork_heads() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.get_fork_heads)
   if (_internal_has_get_fork_heads()) {
     clear_has_request();
       ::koinos::rpc::chain::get_fork_heads_request* temp = request_.get_fork_heads_;
@@ -4146,17 +4146,17 @@ inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::release_
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_fork_heads_request& chain_rpc_request::_internal_get_fork_heads() const {
+inline const ::koinos::rpc::chain::get_fork_heads_request& chain_request::_internal_get_fork_heads() const {
   return _internal_has_get_fork_heads()
       ? *request_.get_fork_heads_
       : reinterpret_cast< ::koinos::rpc::chain::get_fork_heads_request&>(::koinos::rpc::chain::_get_fork_heads_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_fork_heads_request& chain_rpc_request::get_fork_heads() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.get_fork_heads)
+inline const ::koinos::rpc::chain::get_fork_heads_request& chain_request::get_fork_heads() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.get_fork_heads)
   return _internal_get_fork_heads();
 }
-inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::unsafe_arena_release_get_fork_heads() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.get_fork_heads)
+inline ::koinos::rpc::chain::get_fork_heads_request* chain_request::unsafe_arena_release_get_fork_heads() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.get_fork_heads)
   if (_internal_has_get_fork_heads()) {
     clear_has_request();
     ::koinos::rpc::chain::get_fork_heads_request* temp = request_.get_fork_heads_;
@@ -4166,15 +4166,15 @@ inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::unsafe_a
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_get_fork_heads(::koinos::rpc::chain::get_fork_heads_request* get_fork_heads) {
+inline void chain_request::unsafe_arena_set_allocated_get_fork_heads(::koinos::rpc::chain::get_fork_heads_request* get_fork_heads) {
   clear_request();
   if (get_fork_heads) {
     set_has_get_fork_heads();
     request_.get_fork_heads_ = get_fork_heads;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.get_fork_heads)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.get_fork_heads)
 }
-inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::_internal_mutable_get_fork_heads() {
+inline ::koinos::rpc::chain::get_fork_heads_request* chain_request::_internal_mutable_get_fork_heads() {
   if (!_internal_has_get_fork_heads()) {
     clear_request();
     set_has_get_fork_heads();
@@ -4182,22 +4182,22 @@ inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::_interna
   }
   return request_.get_fork_heads_;
 }
-inline ::koinos::rpc::chain::get_fork_heads_request* chain_rpc_request::mutable_get_fork_heads() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.get_fork_heads)
+inline ::koinos::rpc::chain::get_fork_heads_request* chain_request::mutable_get_fork_heads() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.get_fork_heads)
   return _internal_mutable_get_fork_heads();
 }
 
 // .koinos.rpc.chain.read_contract_request read_contract = 7;
-inline bool chain_rpc_request::_internal_has_read_contract() const {
+inline bool chain_request::_internal_has_read_contract() const {
   return request_case() == kReadContract;
 }
-inline bool chain_rpc_request::has_read_contract() const {
+inline bool chain_request::has_read_contract() const {
   return _internal_has_read_contract();
 }
-inline void chain_rpc_request::set_has_read_contract() {
+inline void chain_request::set_has_read_contract() {
   _oneof_case_[0] = kReadContract;
 }
-inline void chain_rpc_request::clear_read_contract() {
+inline void chain_request::clear_read_contract() {
   if (_internal_has_read_contract()) {
     if (GetArena() == nullptr) {
       delete request_.read_contract_;
@@ -4205,8 +4205,8 @@ inline void chain_rpc_request::clear_read_contract() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::release_read_contract() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.read_contract)
+inline ::koinos::rpc::chain::read_contract_request* chain_request::release_read_contract() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.read_contract)
   if (_internal_has_read_contract()) {
     clear_has_request();
       ::koinos::rpc::chain::read_contract_request* temp = request_.read_contract_;
@@ -4219,17 +4219,17 @@ inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::release_r
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::read_contract_request& chain_rpc_request::_internal_read_contract() const {
+inline const ::koinos::rpc::chain::read_contract_request& chain_request::_internal_read_contract() const {
   return _internal_has_read_contract()
       ? *request_.read_contract_
       : reinterpret_cast< ::koinos::rpc::chain::read_contract_request&>(::koinos::rpc::chain::_read_contract_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::read_contract_request& chain_rpc_request::read_contract() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.read_contract)
+inline const ::koinos::rpc::chain::read_contract_request& chain_request::read_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.read_contract)
   return _internal_read_contract();
 }
-inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::unsafe_arena_release_read_contract() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.read_contract)
+inline ::koinos::rpc::chain::read_contract_request* chain_request::unsafe_arena_release_read_contract() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.read_contract)
   if (_internal_has_read_contract()) {
     clear_has_request();
     ::koinos::rpc::chain::read_contract_request* temp = request_.read_contract_;
@@ -4239,15 +4239,15 @@ inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::unsafe_ar
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_read_contract(::koinos::rpc::chain::read_contract_request* read_contract) {
+inline void chain_request::unsafe_arena_set_allocated_read_contract(::koinos::rpc::chain::read_contract_request* read_contract) {
   clear_request();
   if (read_contract) {
     set_has_read_contract();
     request_.read_contract_ = read_contract;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.read_contract)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.read_contract)
 }
-inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::_internal_mutable_read_contract() {
+inline ::koinos::rpc::chain::read_contract_request* chain_request::_internal_mutable_read_contract() {
   if (!_internal_has_read_contract()) {
     clear_request();
     set_has_read_contract();
@@ -4255,22 +4255,22 @@ inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::_internal
   }
   return request_.read_contract_;
 }
-inline ::koinos::rpc::chain::read_contract_request* chain_rpc_request::mutable_read_contract() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.read_contract)
+inline ::koinos::rpc::chain::read_contract_request* chain_request::mutable_read_contract() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.read_contract)
   return _internal_mutable_read_contract();
 }
 
 // .koinos.rpc.chain.get_account_nonce_request get_account_nonce = 8;
-inline bool chain_rpc_request::_internal_has_get_account_nonce() const {
+inline bool chain_request::_internal_has_get_account_nonce() const {
   return request_case() == kGetAccountNonce;
 }
-inline bool chain_rpc_request::has_get_account_nonce() const {
+inline bool chain_request::has_get_account_nonce() const {
   return _internal_has_get_account_nonce();
 }
-inline void chain_rpc_request::set_has_get_account_nonce() {
+inline void chain_request::set_has_get_account_nonce() {
   _oneof_case_[0] = kGetAccountNonce;
 }
-inline void chain_rpc_request::clear_get_account_nonce() {
+inline void chain_request::clear_get_account_nonce() {
   if (_internal_has_get_account_nonce()) {
     if (GetArena() == nullptr) {
       delete request_.get_account_nonce_;
@@ -4278,8 +4278,8 @@ inline void chain_rpc_request::clear_get_account_nonce() {
     clear_has_request();
   }
 }
-inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::release_get_account_nonce() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_request.get_account_nonce)
+inline ::koinos::rpc::chain::get_account_nonce_request* chain_request::release_get_account_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.get_account_nonce)
   if (_internal_has_get_account_nonce()) {
     clear_has_request();
       ::koinos::rpc::chain::get_account_nonce_request* temp = request_.get_account_nonce_;
@@ -4292,17 +4292,17 @@ inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::relea
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_account_nonce_request& chain_rpc_request::_internal_get_account_nonce() const {
+inline const ::koinos::rpc::chain::get_account_nonce_request& chain_request::_internal_get_account_nonce() const {
   return _internal_has_get_account_nonce()
       ? *request_.get_account_nonce_
       : reinterpret_cast< ::koinos::rpc::chain::get_account_nonce_request&>(::koinos::rpc::chain::_get_account_nonce_request_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_account_nonce_request& chain_rpc_request::get_account_nonce() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_request.get_account_nonce)
+inline const ::koinos::rpc::chain::get_account_nonce_request& chain_request::get_account_nonce() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.get_account_nonce)
   return _internal_get_account_nonce();
 }
-inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::unsafe_arena_release_get_account_nonce() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_request.get_account_nonce)
+inline ::koinos::rpc::chain::get_account_nonce_request* chain_request::unsafe_arena_release_get_account_nonce() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.get_account_nonce)
   if (_internal_has_get_account_nonce()) {
     clear_has_request();
     ::koinos::rpc::chain::get_account_nonce_request* temp = request_.get_account_nonce_;
@@ -4312,15 +4312,15 @@ inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::unsaf
     return nullptr;
   }
 }
-inline void chain_rpc_request::unsafe_arena_set_allocated_get_account_nonce(::koinos::rpc::chain::get_account_nonce_request* get_account_nonce) {
+inline void chain_request::unsafe_arena_set_allocated_get_account_nonce(::koinos::rpc::chain::get_account_nonce_request* get_account_nonce) {
   clear_request();
   if (get_account_nonce) {
     set_has_get_account_nonce();
     request_.get_account_nonce_ = get_account_nonce;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_request.get_account_nonce)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.get_account_nonce)
 }
-inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::_internal_mutable_get_account_nonce() {
+inline ::koinos::rpc::chain::get_account_nonce_request* chain_request::_internal_mutable_get_account_nonce() {
   if (!_internal_has_get_account_nonce()) {
     clear_request();
     set_has_get_account_nonce();
@@ -4328,36 +4328,36 @@ inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::_inte
   }
   return request_.get_account_nonce_;
 }
-inline ::koinos::rpc::chain::get_account_nonce_request* chain_rpc_request::mutable_get_account_nonce() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_request.get_account_nonce)
+inline ::koinos::rpc::chain::get_account_nonce_request* chain_request::mutable_get_account_nonce() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.get_account_nonce)
   return _internal_mutable_get_account_nonce();
 }
 
-inline bool chain_rpc_request::has_request() const {
+inline bool chain_request::has_request() const {
   return request_case() != REQUEST_NOT_SET;
 }
-inline void chain_rpc_request::clear_has_request() {
+inline void chain_request::clear_has_request() {
   _oneof_case_[0] = REQUEST_NOT_SET;
 }
-inline chain_rpc_request::RequestCase chain_rpc_request::request_case() const {
-  return chain_rpc_request::RequestCase(_oneof_case_[0]);
+inline chain_request::RequestCase chain_request::request_case() const {
+  return chain_request::RequestCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
-// chain_rpc_response
+// chain_response
 
 // .koinos.rpc.reserved_rpc reserved = 1;
-inline bool chain_rpc_response::_internal_has_reserved() const {
+inline bool chain_response::_internal_has_reserved() const {
   return response_case() == kReserved;
 }
-inline bool chain_rpc_response::has_reserved() const {
+inline bool chain_response::has_reserved() const {
   return _internal_has_reserved();
 }
-inline void chain_rpc_response::set_has_reserved() {
+inline void chain_response::set_has_reserved() {
   _oneof_case_[0] = kReserved;
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_response::release_reserved() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.reserved)
+inline ::koinos::rpc::reserved_rpc* chain_response::release_reserved() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.reserved)
   if (_internal_has_reserved()) {
     clear_has_response();
       ::koinos::rpc::reserved_rpc* temp = response_.reserved_;
@@ -4370,17 +4370,17 @@ inline ::koinos::rpc::reserved_rpc* chain_rpc_response::release_reserved() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::reserved_rpc& chain_rpc_response::_internal_reserved() const {
+inline const ::koinos::rpc::reserved_rpc& chain_response::_internal_reserved() const {
   return _internal_has_reserved()
       ? *response_.reserved_
       : reinterpret_cast< ::koinos::rpc::reserved_rpc&>(::koinos::rpc::_reserved_rpc_default_instance_);
 }
-inline const ::koinos::rpc::reserved_rpc& chain_rpc_response::reserved() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.reserved)
+inline const ::koinos::rpc::reserved_rpc& chain_response::reserved() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.reserved)
   return _internal_reserved();
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_response::unsafe_arena_release_reserved() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.reserved)
+inline ::koinos::rpc::reserved_rpc* chain_response::unsafe_arena_release_reserved() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.reserved)
   if (_internal_has_reserved()) {
     clear_has_response();
     ::koinos::rpc::reserved_rpc* temp = response_.reserved_;
@@ -4390,15 +4390,15 @@ inline ::koinos::rpc::reserved_rpc* chain_rpc_response::unsafe_arena_release_res
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
+inline void chain_response::unsafe_arena_set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
   clear_response();
   if (reserved) {
     set_has_reserved();
     response_.reserved_ = reserved;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.reserved)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.reserved)
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_response::_internal_mutable_reserved() {
+inline ::koinos::rpc::reserved_rpc* chain_response::_internal_mutable_reserved() {
   if (!_internal_has_reserved()) {
     clear_response();
     set_has_reserved();
@@ -4406,23 +4406,23 @@ inline ::koinos::rpc::reserved_rpc* chain_rpc_response::_internal_mutable_reserv
   }
   return response_.reserved_;
 }
-inline ::koinos::rpc::reserved_rpc* chain_rpc_response::mutable_reserved() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.reserved)
+inline ::koinos::rpc::reserved_rpc* chain_response::mutable_reserved() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.reserved)
   return _internal_mutable_reserved();
 }
 
 // .koinos.rpc.error_response error = 2;
-inline bool chain_rpc_response::_internal_has_error() const {
+inline bool chain_response::_internal_has_error() const {
   return response_case() == kError;
 }
-inline bool chain_rpc_response::has_error() const {
+inline bool chain_response::has_error() const {
   return _internal_has_error();
 }
-inline void chain_rpc_response::set_has_error() {
+inline void chain_response::set_has_error() {
   _oneof_case_[0] = kError;
 }
-inline ::koinos::rpc::error_response* chain_rpc_response::release_error() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.error)
+inline ::koinos::rpc::error_response* chain_response::release_error() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.error)
   if (_internal_has_error()) {
     clear_has_response();
       ::koinos::rpc::error_response* temp = response_.error_;
@@ -4435,17 +4435,17 @@ inline ::koinos::rpc::error_response* chain_rpc_response::release_error() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::error_response& chain_rpc_response::_internal_error() const {
+inline const ::koinos::rpc::error_response& chain_response::_internal_error() const {
   return _internal_has_error()
       ? *response_.error_
       : reinterpret_cast< ::koinos::rpc::error_response&>(::koinos::rpc::_error_response_default_instance_);
 }
-inline const ::koinos::rpc::error_response& chain_rpc_response::error() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.error)
+inline const ::koinos::rpc::error_response& chain_response::error() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.error)
   return _internal_error();
 }
-inline ::koinos::rpc::error_response* chain_rpc_response::unsafe_arena_release_error() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.error)
+inline ::koinos::rpc::error_response* chain_response::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.error)
   if (_internal_has_error()) {
     clear_has_response();
     ::koinos::rpc::error_response* temp = response_.error_;
@@ -4455,15 +4455,15 @@ inline ::koinos::rpc::error_response* chain_rpc_response::unsafe_arena_release_e
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_error(::koinos::rpc::error_response* error) {
+inline void chain_response::unsafe_arena_set_allocated_error(::koinos::rpc::error_response* error) {
   clear_response();
   if (error) {
     set_has_error();
     response_.error_ = error;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.error)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.error)
 }
-inline ::koinos::rpc::error_response* chain_rpc_response::_internal_mutable_error() {
+inline ::koinos::rpc::error_response* chain_response::_internal_mutable_error() {
   if (!_internal_has_error()) {
     clear_response();
     set_has_error();
@@ -4471,22 +4471,22 @@ inline ::koinos::rpc::error_response* chain_rpc_response::_internal_mutable_erro
   }
   return response_.error_;
 }
-inline ::koinos::rpc::error_response* chain_rpc_response::mutable_error() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.error)
+inline ::koinos::rpc::error_response* chain_response::mutable_error() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.error)
   return _internal_mutable_error();
 }
 
 // .koinos.rpc.chain.submit_block_response submit_block = 3;
-inline bool chain_rpc_response::_internal_has_submit_block() const {
+inline bool chain_response::_internal_has_submit_block() const {
   return response_case() == kSubmitBlock;
 }
-inline bool chain_rpc_response::has_submit_block() const {
+inline bool chain_response::has_submit_block() const {
   return _internal_has_submit_block();
 }
-inline void chain_rpc_response::set_has_submit_block() {
+inline void chain_response::set_has_submit_block() {
   _oneof_case_[0] = kSubmitBlock;
 }
-inline void chain_rpc_response::clear_submit_block() {
+inline void chain_response::clear_submit_block() {
   if (_internal_has_submit_block()) {
     if (GetArena() == nullptr) {
       delete response_.submit_block_;
@@ -4494,8 +4494,8 @@ inline void chain_rpc_response::clear_submit_block() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::release_submit_block() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.submit_block)
+inline ::koinos::rpc::chain::submit_block_response* chain_response::release_submit_block() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.submit_block)
   if (_internal_has_submit_block()) {
     clear_has_response();
       ::koinos::rpc::chain::submit_block_response* temp = response_.submit_block_;
@@ -4508,17 +4508,17 @@ inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::release_
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::submit_block_response& chain_rpc_response::_internal_submit_block() const {
+inline const ::koinos::rpc::chain::submit_block_response& chain_response::_internal_submit_block() const {
   return _internal_has_submit_block()
       ? *response_.submit_block_
       : reinterpret_cast< ::koinos::rpc::chain::submit_block_response&>(::koinos::rpc::chain::_submit_block_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::submit_block_response& chain_rpc_response::submit_block() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.submit_block)
+inline const ::koinos::rpc::chain::submit_block_response& chain_response::submit_block() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.submit_block)
   return _internal_submit_block();
 }
-inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::unsafe_arena_release_submit_block() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.submit_block)
+inline ::koinos::rpc::chain::submit_block_response* chain_response::unsafe_arena_release_submit_block() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.submit_block)
   if (_internal_has_submit_block()) {
     clear_has_response();
     ::koinos::rpc::chain::submit_block_response* temp = response_.submit_block_;
@@ -4528,15 +4528,15 @@ inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::unsafe_a
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_submit_block(::koinos::rpc::chain::submit_block_response* submit_block) {
+inline void chain_response::unsafe_arena_set_allocated_submit_block(::koinos::rpc::chain::submit_block_response* submit_block) {
   clear_response();
   if (submit_block) {
     set_has_submit_block();
     response_.submit_block_ = submit_block;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.submit_block)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.submit_block)
 }
-inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::_internal_mutable_submit_block() {
+inline ::koinos::rpc::chain::submit_block_response* chain_response::_internal_mutable_submit_block() {
   if (!_internal_has_submit_block()) {
     clear_response();
     set_has_submit_block();
@@ -4544,22 +4544,22 @@ inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::_interna
   }
   return response_.submit_block_;
 }
-inline ::koinos::rpc::chain::submit_block_response* chain_rpc_response::mutable_submit_block() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.submit_block)
+inline ::koinos::rpc::chain::submit_block_response* chain_response::mutable_submit_block() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.submit_block)
   return _internal_mutable_submit_block();
 }
 
 // .koinos.rpc.chain.submit_transaction_response submit_transaction = 4;
-inline bool chain_rpc_response::_internal_has_submit_transaction() const {
+inline bool chain_response::_internal_has_submit_transaction() const {
   return response_case() == kSubmitTransaction;
 }
-inline bool chain_rpc_response::has_submit_transaction() const {
+inline bool chain_response::has_submit_transaction() const {
   return _internal_has_submit_transaction();
 }
-inline void chain_rpc_response::set_has_submit_transaction() {
+inline void chain_response::set_has_submit_transaction() {
   _oneof_case_[0] = kSubmitTransaction;
 }
-inline void chain_rpc_response::clear_submit_transaction() {
+inline void chain_response::clear_submit_transaction() {
   if (_internal_has_submit_transaction()) {
     if (GetArena() == nullptr) {
       delete response_.submit_transaction_;
@@ -4567,8 +4567,8 @@ inline void chain_rpc_response::clear_submit_transaction() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::release_submit_transaction() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.submit_transaction)
+inline ::koinos::rpc::chain::submit_transaction_response* chain_response::release_submit_transaction() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.submit_transaction)
   if (_internal_has_submit_transaction()) {
     clear_has_response();
       ::koinos::rpc::chain::submit_transaction_response* temp = response_.submit_transaction_;
@@ -4581,17 +4581,17 @@ inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::re
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::submit_transaction_response& chain_rpc_response::_internal_submit_transaction() const {
+inline const ::koinos::rpc::chain::submit_transaction_response& chain_response::_internal_submit_transaction() const {
   return _internal_has_submit_transaction()
       ? *response_.submit_transaction_
       : reinterpret_cast< ::koinos::rpc::chain::submit_transaction_response&>(::koinos::rpc::chain::_submit_transaction_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::submit_transaction_response& chain_rpc_response::submit_transaction() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.submit_transaction)
+inline const ::koinos::rpc::chain::submit_transaction_response& chain_response::submit_transaction() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.submit_transaction)
   return _internal_submit_transaction();
 }
-inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::unsafe_arena_release_submit_transaction() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.submit_transaction)
+inline ::koinos::rpc::chain::submit_transaction_response* chain_response::unsafe_arena_release_submit_transaction() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.submit_transaction)
   if (_internal_has_submit_transaction()) {
     clear_has_response();
     ::koinos::rpc::chain::submit_transaction_response* temp = response_.submit_transaction_;
@@ -4601,15 +4601,15 @@ inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::un
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_submit_transaction(::koinos::rpc::chain::submit_transaction_response* submit_transaction) {
+inline void chain_response::unsafe_arena_set_allocated_submit_transaction(::koinos::rpc::chain::submit_transaction_response* submit_transaction) {
   clear_response();
   if (submit_transaction) {
     set_has_submit_transaction();
     response_.submit_transaction_ = submit_transaction;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.submit_transaction)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.submit_transaction)
 }
-inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::_internal_mutable_submit_transaction() {
+inline ::koinos::rpc::chain::submit_transaction_response* chain_response::_internal_mutable_submit_transaction() {
   if (!_internal_has_submit_transaction()) {
     clear_response();
     set_has_submit_transaction();
@@ -4617,22 +4617,22 @@ inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::_i
   }
   return response_.submit_transaction_;
 }
-inline ::koinos::rpc::chain::submit_transaction_response* chain_rpc_response::mutable_submit_transaction() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.submit_transaction)
+inline ::koinos::rpc::chain::submit_transaction_response* chain_response::mutable_submit_transaction() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.submit_transaction)
   return _internal_mutable_submit_transaction();
 }
 
 // .koinos.rpc.chain.get_head_info_response get_head_info = 5;
-inline bool chain_rpc_response::_internal_has_get_head_info() const {
+inline bool chain_response::_internal_has_get_head_info() const {
   return response_case() == kGetHeadInfo;
 }
-inline bool chain_rpc_response::has_get_head_info() const {
+inline bool chain_response::has_get_head_info() const {
   return _internal_has_get_head_info();
 }
-inline void chain_rpc_response::set_has_get_head_info() {
+inline void chain_response::set_has_get_head_info() {
   _oneof_case_[0] = kGetHeadInfo;
 }
-inline void chain_rpc_response::clear_get_head_info() {
+inline void chain_response::clear_get_head_info() {
   if (_internal_has_get_head_info()) {
     if (GetArena() == nullptr) {
       delete response_.get_head_info_;
@@ -4640,8 +4640,8 @@ inline void chain_rpc_response::clear_get_head_info() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::release_get_head_info() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.get_head_info)
+inline ::koinos::rpc::chain::get_head_info_response* chain_response::release_get_head_info() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.get_head_info)
   if (_internal_has_get_head_info()) {
     clear_has_response();
       ::koinos::rpc::chain::get_head_info_response* temp = response_.get_head_info_;
@@ -4654,17 +4654,17 @@ inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::release
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_head_info_response& chain_rpc_response::_internal_get_head_info() const {
+inline const ::koinos::rpc::chain::get_head_info_response& chain_response::_internal_get_head_info() const {
   return _internal_has_get_head_info()
       ? *response_.get_head_info_
       : reinterpret_cast< ::koinos::rpc::chain::get_head_info_response&>(::koinos::rpc::chain::_get_head_info_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_head_info_response& chain_rpc_response::get_head_info() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.get_head_info)
+inline const ::koinos::rpc::chain::get_head_info_response& chain_response::get_head_info() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.get_head_info)
   return _internal_get_head_info();
 }
-inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::unsafe_arena_release_get_head_info() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.get_head_info)
+inline ::koinos::rpc::chain::get_head_info_response* chain_response::unsafe_arena_release_get_head_info() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.get_head_info)
   if (_internal_has_get_head_info()) {
     clear_has_response();
     ::koinos::rpc::chain::get_head_info_response* temp = response_.get_head_info_;
@@ -4674,15 +4674,15 @@ inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::unsafe_
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_get_head_info(::koinos::rpc::chain::get_head_info_response* get_head_info) {
+inline void chain_response::unsafe_arena_set_allocated_get_head_info(::koinos::rpc::chain::get_head_info_response* get_head_info) {
   clear_response();
   if (get_head_info) {
     set_has_get_head_info();
     response_.get_head_info_ = get_head_info;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.get_head_info)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.get_head_info)
 }
-inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::_internal_mutable_get_head_info() {
+inline ::koinos::rpc::chain::get_head_info_response* chain_response::_internal_mutable_get_head_info() {
   if (!_internal_has_get_head_info()) {
     clear_response();
     set_has_get_head_info();
@@ -4690,22 +4690,22 @@ inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::_intern
   }
   return response_.get_head_info_;
 }
-inline ::koinos::rpc::chain::get_head_info_response* chain_rpc_response::mutable_get_head_info() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.get_head_info)
+inline ::koinos::rpc::chain::get_head_info_response* chain_response::mutable_get_head_info() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.get_head_info)
   return _internal_mutable_get_head_info();
 }
 
 // .koinos.rpc.chain.get_chain_id_response get_chain_id = 6;
-inline bool chain_rpc_response::_internal_has_get_chain_id() const {
+inline bool chain_response::_internal_has_get_chain_id() const {
   return response_case() == kGetChainId;
 }
-inline bool chain_rpc_response::has_get_chain_id() const {
+inline bool chain_response::has_get_chain_id() const {
   return _internal_has_get_chain_id();
 }
-inline void chain_rpc_response::set_has_get_chain_id() {
+inline void chain_response::set_has_get_chain_id() {
   _oneof_case_[0] = kGetChainId;
 }
-inline void chain_rpc_response::clear_get_chain_id() {
+inline void chain_response::clear_get_chain_id() {
   if (_internal_has_get_chain_id()) {
     if (GetArena() == nullptr) {
       delete response_.get_chain_id_;
@@ -4713,8 +4713,8 @@ inline void chain_rpc_response::clear_get_chain_id() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::release_get_chain_id() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.get_chain_id)
+inline ::koinos::rpc::chain::get_chain_id_response* chain_response::release_get_chain_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.get_chain_id)
   if (_internal_has_get_chain_id()) {
     clear_has_response();
       ::koinos::rpc::chain::get_chain_id_response* temp = response_.get_chain_id_;
@@ -4727,17 +4727,17 @@ inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::release_
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_chain_id_response& chain_rpc_response::_internal_get_chain_id() const {
+inline const ::koinos::rpc::chain::get_chain_id_response& chain_response::_internal_get_chain_id() const {
   return _internal_has_get_chain_id()
       ? *response_.get_chain_id_
       : reinterpret_cast< ::koinos::rpc::chain::get_chain_id_response&>(::koinos::rpc::chain::_get_chain_id_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_chain_id_response& chain_rpc_response::get_chain_id() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.get_chain_id)
+inline const ::koinos::rpc::chain::get_chain_id_response& chain_response::get_chain_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.get_chain_id)
   return _internal_get_chain_id();
 }
-inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::unsafe_arena_release_get_chain_id() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.get_chain_id)
+inline ::koinos::rpc::chain::get_chain_id_response* chain_response::unsafe_arena_release_get_chain_id() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.get_chain_id)
   if (_internal_has_get_chain_id()) {
     clear_has_response();
     ::koinos::rpc::chain::get_chain_id_response* temp = response_.get_chain_id_;
@@ -4747,15 +4747,15 @@ inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::unsafe_a
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_get_chain_id(::koinos::rpc::chain::get_chain_id_response* get_chain_id) {
+inline void chain_response::unsafe_arena_set_allocated_get_chain_id(::koinos::rpc::chain::get_chain_id_response* get_chain_id) {
   clear_response();
   if (get_chain_id) {
     set_has_get_chain_id();
     response_.get_chain_id_ = get_chain_id;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.get_chain_id)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.get_chain_id)
 }
-inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::_internal_mutable_get_chain_id() {
+inline ::koinos::rpc::chain::get_chain_id_response* chain_response::_internal_mutable_get_chain_id() {
   if (!_internal_has_get_chain_id()) {
     clear_response();
     set_has_get_chain_id();
@@ -4763,22 +4763,22 @@ inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::_interna
   }
   return response_.get_chain_id_;
 }
-inline ::koinos::rpc::chain::get_chain_id_response* chain_rpc_response::mutable_get_chain_id() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.get_chain_id)
+inline ::koinos::rpc::chain::get_chain_id_response* chain_response::mutable_get_chain_id() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.get_chain_id)
   return _internal_mutable_get_chain_id();
 }
 
 // .koinos.rpc.chain.get_fork_heads_response get_fork_heads = 7;
-inline bool chain_rpc_response::_internal_has_get_fork_heads() const {
+inline bool chain_response::_internal_has_get_fork_heads() const {
   return response_case() == kGetForkHeads;
 }
-inline bool chain_rpc_response::has_get_fork_heads() const {
+inline bool chain_response::has_get_fork_heads() const {
   return _internal_has_get_fork_heads();
 }
-inline void chain_rpc_response::set_has_get_fork_heads() {
+inline void chain_response::set_has_get_fork_heads() {
   _oneof_case_[0] = kGetForkHeads;
 }
-inline void chain_rpc_response::clear_get_fork_heads() {
+inline void chain_response::clear_get_fork_heads() {
   if (_internal_has_get_fork_heads()) {
     if (GetArena() == nullptr) {
       delete response_.get_fork_heads_;
@@ -4786,8 +4786,8 @@ inline void chain_rpc_response::clear_get_fork_heads() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::release_get_fork_heads() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.get_fork_heads)
+inline ::koinos::rpc::chain::get_fork_heads_response* chain_response::release_get_fork_heads() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.get_fork_heads)
   if (_internal_has_get_fork_heads()) {
     clear_has_response();
       ::koinos::rpc::chain::get_fork_heads_response* temp = response_.get_fork_heads_;
@@ -4800,17 +4800,17 @@ inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::releas
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_fork_heads_response& chain_rpc_response::_internal_get_fork_heads() const {
+inline const ::koinos::rpc::chain::get_fork_heads_response& chain_response::_internal_get_fork_heads() const {
   return _internal_has_get_fork_heads()
       ? *response_.get_fork_heads_
       : reinterpret_cast< ::koinos::rpc::chain::get_fork_heads_response&>(::koinos::rpc::chain::_get_fork_heads_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_fork_heads_response& chain_rpc_response::get_fork_heads() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.get_fork_heads)
+inline const ::koinos::rpc::chain::get_fork_heads_response& chain_response::get_fork_heads() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.get_fork_heads)
   return _internal_get_fork_heads();
 }
-inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::unsafe_arena_release_get_fork_heads() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.get_fork_heads)
+inline ::koinos::rpc::chain::get_fork_heads_response* chain_response::unsafe_arena_release_get_fork_heads() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.get_fork_heads)
   if (_internal_has_get_fork_heads()) {
     clear_has_response();
     ::koinos::rpc::chain::get_fork_heads_response* temp = response_.get_fork_heads_;
@@ -4820,15 +4820,15 @@ inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::unsafe
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_get_fork_heads(::koinos::rpc::chain::get_fork_heads_response* get_fork_heads) {
+inline void chain_response::unsafe_arena_set_allocated_get_fork_heads(::koinos::rpc::chain::get_fork_heads_response* get_fork_heads) {
   clear_response();
   if (get_fork_heads) {
     set_has_get_fork_heads();
     response_.get_fork_heads_ = get_fork_heads;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.get_fork_heads)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.get_fork_heads)
 }
-inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::_internal_mutable_get_fork_heads() {
+inline ::koinos::rpc::chain::get_fork_heads_response* chain_response::_internal_mutable_get_fork_heads() {
   if (!_internal_has_get_fork_heads()) {
     clear_response();
     set_has_get_fork_heads();
@@ -4836,22 +4836,22 @@ inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::_inter
   }
   return response_.get_fork_heads_;
 }
-inline ::koinos::rpc::chain::get_fork_heads_response* chain_rpc_response::mutable_get_fork_heads() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.get_fork_heads)
+inline ::koinos::rpc::chain::get_fork_heads_response* chain_response::mutable_get_fork_heads() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.get_fork_heads)
   return _internal_mutable_get_fork_heads();
 }
 
 // .koinos.rpc.chain.read_contract_response read_contract = 8;
-inline bool chain_rpc_response::_internal_has_read_contract() const {
+inline bool chain_response::_internal_has_read_contract() const {
   return response_case() == kReadContract;
 }
-inline bool chain_rpc_response::has_read_contract() const {
+inline bool chain_response::has_read_contract() const {
   return _internal_has_read_contract();
 }
-inline void chain_rpc_response::set_has_read_contract() {
+inline void chain_response::set_has_read_contract() {
   _oneof_case_[0] = kReadContract;
 }
-inline void chain_rpc_response::clear_read_contract() {
+inline void chain_response::clear_read_contract() {
   if (_internal_has_read_contract()) {
     if (GetArena() == nullptr) {
       delete response_.read_contract_;
@@ -4859,8 +4859,8 @@ inline void chain_rpc_response::clear_read_contract() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::release_read_contract() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.read_contract)
+inline ::koinos::rpc::chain::read_contract_response* chain_response::release_read_contract() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.read_contract)
   if (_internal_has_read_contract()) {
     clear_has_response();
       ::koinos::rpc::chain::read_contract_response* temp = response_.read_contract_;
@@ -4873,17 +4873,17 @@ inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::release
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::read_contract_response& chain_rpc_response::_internal_read_contract() const {
+inline const ::koinos::rpc::chain::read_contract_response& chain_response::_internal_read_contract() const {
   return _internal_has_read_contract()
       ? *response_.read_contract_
       : reinterpret_cast< ::koinos::rpc::chain::read_contract_response&>(::koinos::rpc::chain::_read_contract_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::read_contract_response& chain_rpc_response::read_contract() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.read_contract)
+inline const ::koinos::rpc::chain::read_contract_response& chain_response::read_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.read_contract)
   return _internal_read_contract();
 }
-inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::unsafe_arena_release_read_contract() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.read_contract)
+inline ::koinos::rpc::chain::read_contract_response* chain_response::unsafe_arena_release_read_contract() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.read_contract)
   if (_internal_has_read_contract()) {
     clear_has_response();
     ::koinos::rpc::chain::read_contract_response* temp = response_.read_contract_;
@@ -4893,15 +4893,15 @@ inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::unsafe_
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_read_contract(::koinos::rpc::chain::read_contract_response* read_contract) {
+inline void chain_response::unsafe_arena_set_allocated_read_contract(::koinos::rpc::chain::read_contract_response* read_contract) {
   clear_response();
   if (read_contract) {
     set_has_read_contract();
     response_.read_contract_ = read_contract;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.read_contract)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.read_contract)
 }
-inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::_internal_mutable_read_contract() {
+inline ::koinos::rpc::chain::read_contract_response* chain_response::_internal_mutable_read_contract() {
   if (!_internal_has_read_contract()) {
     clear_response();
     set_has_read_contract();
@@ -4909,22 +4909,22 @@ inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::_intern
   }
   return response_.read_contract_;
 }
-inline ::koinos::rpc::chain::read_contract_response* chain_rpc_response::mutable_read_contract() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.read_contract)
+inline ::koinos::rpc::chain::read_contract_response* chain_response::mutable_read_contract() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.read_contract)
   return _internal_mutable_read_contract();
 }
 
 // .koinos.rpc.chain.get_account_nonce_response get_account_nonce = 9;
-inline bool chain_rpc_response::_internal_has_get_account_nonce() const {
+inline bool chain_response::_internal_has_get_account_nonce() const {
   return response_case() == kGetAccountNonce;
 }
-inline bool chain_rpc_response::has_get_account_nonce() const {
+inline bool chain_response::has_get_account_nonce() const {
   return _internal_has_get_account_nonce();
 }
-inline void chain_rpc_response::set_has_get_account_nonce() {
+inline void chain_response::set_has_get_account_nonce() {
   _oneof_case_[0] = kGetAccountNonce;
 }
-inline void chain_rpc_response::clear_get_account_nonce() {
+inline void chain_response::clear_get_account_nonce() {
   if (_internal_has_get_account_nonce()) {
     if (GetArena() == nullptr) {
       delete response_.get_account_nonce_;
@@ -4932,8 +4932,8 @@ inline void chain_rpc_response::clear_get_account_nonce() {
     clear_has_response();
   }
 }
-inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::release_get_account_nonce() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_rpc_response.get_account_nonce)
+inline ::koinos::rpc::chain::get_account_nonce_response* chain_response::release_get_account_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.get_account_nonce)
   if (_internal_has_get_account_nonce()) {
     clear_has_response();
       ::koinos::rpc::chain::get_account_nonce_response* temp = response_.get_account_nonce_;
@@ -4946,17 +4946,17 @@ inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::rel
     return nullptr;
   }
 }
-inline const ::koinos::rpc::chain::get_account_nonce_response& chain_rpc_response::_internal_get_account_nonce() const {
+inline const ::koinos::rpc::chain::get_account_nonce_response& chain_response::_internal_get_account_nonce() const {
   return _internal_has_get_account_nonce()
       ? *response_.get_account_nonce_
       : reinterpret_cast< ::koinos::rpc::chain::get_account_nonce_response&>(::koinos::rpc::chain::_get_account_nonce_response_default_instance_);
 }
-inline const ::koinos::rpc::chain::get_account_nonce_response& chain_rpc_response::get_account_nonce() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_rpc_response.get_account_nonce)
+inline const ::koinos::rpc::chain::get_account_nonce_response& chain_response::get_account_nonce() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.get_account_nonce)
   return _internal_get_account_nonce();
 }
-inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::unsafe_arena_release_get_account_nonce() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_rpc_response.get_account_nonce)
+inline ::koinos::rpc::chain::get_account_nonce_response* chain_response::unsafe_arena_release_get_account_nonce() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.get_account_nonce)
   if (_internal_has_get_account_nonce()) {
     clear_has_response();
     ::koinos::rpc::chain::get_account_nonce_response* temp = response_.get_account_nonce_;
@@ -4966,15 +4966,15 @@ inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::uns
     return nullptr;
   }
 }
-inline void chain_rpc_response::unsafe_arena_set_allocated_get_account_nonce(::koinos::rpc::chain::get_account_nonce_response* get_account_nonce) {
+inline void chain_response::unsafe_arena_set_allocated_get_account_nonce(::koinos::rpc::chain::get_account_nonce_response* get_account_nonce) {
   clear_response();
   if (get_account_nonce) {
     set_has_get_account_nonce();
     response_.get_account_nonce_ = get_account_nonce;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_rpc_response.get_account_nonce)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.get_account_nonce)
 }
-inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::_internal_mutable_get_account_nonce() {
+inline ::koinos::rpc::chain::get_account_nonce_response* chain_response::_internal_mutable_get_account_nonce() {
   if (!_internal_has_get_account_nonce()) {
     clear_response();
     set_has_get_account_nonce();
@@ -4982,19 +4982,19 @@ inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::_in
   }
   return response_.get_account_nonce_;
 }
-inline ::koinos::rpc::chain::get_account_nonce_response* chain_rpc_response::mutable_get_account_nonce() {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_rpc_response.get_account_nonce)
+inline ::koinos::rpc::chain::get_account_nonce_response* chain_response::mutable_get_account_nonce() {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.get_account_nonce)
   return _internal_mutable_get_account_nonce();
 }
 
-inline bool chain_rpc_response::has_response() const {
+inline bool chain_response::has_response() const {
   return response_case() != RESPONSE_NOT_SET;
 }
-inline void chain_rpc_response::clear_has_response() {
+inline void chain_response::clear_has_response() {
   _oneof_case_[0] = RESPONSE_NOT_SET;
 }
-inline chain_rpc_response::ResponseCase chain_rpc_response::response_case() const {
-  return chain_rpc_response::ResponseCase(_oneof_case_[0]);
+inline chain_response::ResponseCase chain_response::response_case() const {
+  return chain_response::ResponseCase(_oneof_case_[0]);
 }
 #ifdef __GNUC__
   #pragma GCC diagnostic pop

@@ -258,12 +258,11 @@ class block_item PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr block_id_;
   ::koinos::protocol::block* block_;
   ::koinos::protocol::block_receipt* receipt_;
   ::PROTOBUF_NAMESPACE_ID::uint64 block_height_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fblock_5fstore_2fblock_5fstore_2eproto;
 };
 // -------------------------------------------------------------------
@@ -478,13 +477,12 @@ class block_record PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> previous_block_ids_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr block_id_;
   ::koinos::protocol::block* block_;
   ::koinos::protocol::block_receipt* receipt_;
   ::PROTOBUF_NAMESPACE_ID::uint64 block_height_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fblock_5fstore_2fblock_5fstore_2eproto;
 };
 // ===================================================================
@@ -581,9 +579,7 @@ inline void block_item::set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) 
 
 // .koinos.protocol.block block = 3;
 inline bool block_item::_internal_has_block() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || block_ != nullptr);
-  return value;
+  return this != internal_default_instance() && block_ != nullptr;
 }
 inline bool block_item::has_block() const {
   return _internal_has_block();
@@ -604,14 +600,14 @@ inline void block_item::unsafe_arena_set_allocated_block(
   }
   block_ = block;
   if (block) {
-    _has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000001u;
+    
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.block_store.block_item.block)
 }
 inline ::koinos::protocol::block* block_item::release_block() {
-  _has_bits_[0] &= ~0x00000001u;
+  
   ::koinos::protocol::block* temp = block_;
   block_ = nullptr;
   if (GetArena() != nullptr) {
@@ -621,13 +617,13 @@ inline ::koinos::protocol::block* block_item::release_block() {
 }
 inline ::koinos::protocol::block* block_item::unsafe_arena_release_block() {
   // @@protoc_insertion_point(field_release:koinos.block_store.block_item.block)
-  _has_bits_[0] &= ~0x00000001u;
+  
   ::koinos::protocol::block* temp = block_;
   block_ = nullptr;
   return temp;
 }
 inline ::koinos::protocol::block* block_item::_internal_mutable_block() {
-  _has_bits_[0] |= 0x00000001u;
+  
   if (block_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::protocol::block>(GetArena());
     block_ = p;
@@ -650,9 +646,9 @@ inline void block_item::set_allocated_block(::koinos::protocol::block* block) {
       block = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, block, submessage_arena);
     }
-    _has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000001u;
+    
   }
   block_ = block;
   // @@protoc_insertion_point(field_set_allocated:koinos.block_store.block_item.block)
@@ -660,9 +656,7 @@ inline void block_item::set_allocated_block(::koinos::protocol::block* block) {
 
 // .koinos.protocol.block_receipt receipt = 4;
 inline bool block_item::_internal_has_receipt() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
-  PROTOBUF_ASSUME(!value || receipt_ != nullptr);
-  return value;
+  return this != internal_default_instance() && receipt_ != nullptr;
 }
 inline bool block_item::has_receipt() const {
   return _internal_has_receipt();
@@ -683,14 +677,14 @@ inline void block_item::unsafe_arena_set_allocated_receipt(
   }
   receipt_ = receipt;
   if (receipt) {
-    _has_bits_[0] |= 0x00000002u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000002u;
+    
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.block_store.block_item.receipt)
 }
 inline ::koinos::protocol::block_receipt* block_item::release_receipt() {
-  _has_bits_[0] &= ~0x00000002u;
+  
   ::koinos::protocol::block_receipt* temp = receipt_;
   receipt_ = nullptr;
   if (GetArena() != nullptr) {
@@ -700,13 +694,13 @@ inline ::koinos::protocol::block_receipt* block_item::release_receipt() {
 }
 inline ::koinos::protocol::block_receipt* block_item::unsafe_arena_release_receipt() {
   // @@protoc_insertion_point(field_release:koinos.block_store.block_item.receipt)
-  _has_bits_[0] &= ~0x00000002u;
+  
   ::koinos::protocol::block_receipt* temp = receipt_;
   receipt_ = nullptr;
   return temp;
 }
 inline ::koinos::protocol::block_receipt* block_item::_internal_mutable_receipt() {
-  _has_bits_[0] |= 0x00000002u;
+  
   if (receipt_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::protocol::block_receipt>(GetArena());
     receipt_ = p;
@@ -729,9 +723,9 @@ inline void block_item::set_allocated_receipt(::koinos::protocol::block_receipt*
       receipt = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, receipt, submessage_arena);
     }
-    _has_bits_[0] |= 0x00000002u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000002u;
+    
   }
   receipt_ = receipt;
   // @@protoc_insertion_point(field_set_allocated:koinos.block_store.block_item.receipt)
@@ -901,9 +895,7 @@ inline void block_record::set_allocated_block(::koinos::protocol::block* block) 
 
 // .koinos.protocol.block_receipt receipt = 4;
 inline bool block_record::_internal_has_receipt() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || receipt_ != nullptr);
-  return value;
+  return this != internal_default_instance() && receipt_ != nullptr;
 }
 inline bool block_record::has_receipt() const {
   return _internal_has_receipt();
@@ -924,14 +916,14 @@ inline void block_record::unsafe_arena_set_allocated_receipt(
   }
   receipt_ = receipt;
   if (receipt) {
-    _has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000001u;
+    
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.block_store.block_record.receipt)
 }
 inline ::koinos::protocol::block_receipt* block_record::release_receipt() {
-  _has_bits_[0] &= ~0x00000001u;
+  
   ::koinos::protocol::block_receipt* temp = receipt_;
   receipt_ = nullptr;
   if (GetArena() != nullptr) {
@@ -941,13 +933,13 @@ inline ::koinos::protocol::block_receipt* block_record::release_receipt() {
 }
 inline ::koinos::protocol::block_receipt* block_record::unsafe_arena_release_receipt() {
   // @@protoc_insertion_point(field_release:koinos.block_store.block_record.receipt)
-  _has_bits_[0] &= ~0x00000001u;
+  
   ::koinos::protocol::block_receipt* temp = receipt_;
   receipt_ = nullptr;
   return temp;
 }
 inline ::koinos::protocol::block_receipt* block_record::_internal_mutable_receipt() {
-  _has_bits_[0] |= 0x00000001u;
+  
   if (receipt_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::protocol::block_receipt>(GetArena());
     receipt_ = p;
@@ -970,9 +962,9 @@ inline void block_record::set_allocated_receipt(::koinos::protocol::block_receip
       receipt = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, receipt, submessage_arena);
     }
-    _has_bits_[0] |= 0x00000001u;
+    
   } else {
-    _has_bits_[0] &= ~0x00000001u;
+    
   }
   receipt_ = receipt;
   // @@protoc_insertion_point(field_set_allocated:koinos.block_store.block_record.receipt)

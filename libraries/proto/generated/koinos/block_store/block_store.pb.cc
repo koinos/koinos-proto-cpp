@@ -63,7 +63,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fblock_5fstore_2fblock_5fstore_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_item, _has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_item, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -72,11 +72,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fblock_5fstore_2fblock
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_item, block_height_),
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_item, block_),
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_item, receipt_),
-  ~0u,
-  ~0u,
-  0,
-  1,
-  PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_record, _has_bits_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_record, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -86,15 +82,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fblock_5fstore_2fblock
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_record, block_),
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_record, receipt_),
   PROTOBUF_FIELD_OFFSET(::koinos::block_store::block_record, previous_block_ids_),
-  ~0u,
-  ~0u,
-  ~0u,
-  0,
-  ~0u,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 9, sizeof(::koinos::block_store::block_item)},
-  { 13, 23, sizeof(::koinos::block_store::block_record)},
+  { 0, -1, sizeof(::koinos::block_store::block_item)},
+  { 9, -1, sizeof(::koinos::block_store::block_record)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -105,18 +96,16 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n$koinos/block_store/block_store.proto\022\022"
   "koinos.block_store\032\036koinos/protocol/prot"
-  "ocol.proto\"\254\001\n\nblock_item\022\020\n\010block_id\030\001 "
-  "\001(\014\022\024\n\014block_height\030\002 \001(\004\022*\n\005block\030\003 \001(\013"
-  "2\026.koinos.protocol.blockH\000\210\001\001\0224\n\007receipt"
-  "\030\004 \001(\0132\036.koinos.protocol.block_receiptH\001"
-  "\210\001\001B\010\n\006_blockB\n\n\010_receipt\"\273\001\n\014block_reco"
-  "rd\022\020\n\010block_id\030\001 \001(\014\022\024\n\014block_height\030\002 \001"
-  "(\004\022%\n\005block\030\003 \001(\0132\026.koinos.protocol.bloc"
-  "k\0224\n\007receipt\030\004 \001(\0132\036.koinos.protocol.blo"
-  "ck_receiptH\000\210\001\001\022\032\n\022previous_block_ids\030\005 "
-  "\003(\014B\n\n\010_receiptB>Z<github.com/koinos/koi"
-  "nos-proto-golang/koinos/rpc/block_storeb"
-  "\006proto3"
+  "ocol.proto\"\214\001\n\nblock_item\022\020\n\010block_id\030\001 "
+  "\001(\014\022\024\n\014block_height\030\002 \001(\004\022%\n\005block\030\003 \001(\013"
+  "2\026.koinos.protocol.block\022/\n\007receipt\030\004 \001("
+  "\0132\036.koinos.protocol.block_receipt\"\252\001\n\014bl"
+  "ock_record\022\020\n\010block_id\030\001 \001(\014\022\024\n\014block_he"
+  "ight\030\002 \001(\004\022%\n\005block\030\003 \001(\0132\026.koinos.proto"
+  "col.block\022/\n\007receipt\030\004 \001(\0132\036.koinos.prot"
+  "ocol.block_receipt\022\032\n\022previous_block_ids"
+  "\030\005 \003(\014B>Z<github.com/koinos/koinos-proto"
+  "-golang/koinos/rpc/block_storeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_deps[1] = {
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
@@ -127,7 +116,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koi
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, "koinos/block_store/block_store.proto", 527,
+  false, false, descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, "koinos/block_store/block_store.proto", 478,
   &descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_once, descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_sccs, descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_koinos_2fblock_5fstore_2fblock_5fstore_2eproto::offsets,
   file_level_metadata_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, 2, file_level_enum_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, file_level_service_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,
@@ -142,15 +131,8 @@ namespace block_store {
 
 class block_item::_Internal {
  public:
-  using HasBits = decltype(std::declval<block_item>()._has_bits_);
   static const ::koinos::protocol::block& block(const block_item* msg);
-  static void set_has_block(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
   static const ::koinos::protocol::block_receipt& receipt(const block_item* msg);
-  static void set_has_receipt(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
 };
 
 const ::koinos::protocol::block&
@@ -166,14 +148,12 @@ void block_item::clear_block() {
     delete block_;
   }
   block_ = nullptr;
-  _has_bits_[0] &= ~0x00000001u;
 }
 void block_item::clear_receipt() {
   if (GetArena() == nullptr && receipt_ != nullptr) {
     delete receipt_;
   }
   receipt_ = nullptr;
-  _has_bits_[0] &= ~0x00000002u;
 }
 block_item::block_item(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
@@ -182,8 +162,7 @@ block_item::block_item(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   // @@protoc_insertion_point(arena_constructor:koinos.block_store.block_item)
 }
 block_item::block_item(const block_item& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _has_bits_(from._has_bits_) {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   block_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_block_id().empty()) {
@@ -248,29 +227,20 @@ void block_item::Clear() {
   (void) cached_has_bits;
 
   block_id_.ClearToEmpty();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      if (GetArena() == nullptr && block_ != nullptr) {
-        delete block_;
-      }
-      block_ = nullptr;
-    }
-    if (cached_has_bits & 0x00000002u) {
-      if (GetArena() == nullptr && receipt_ != nullptr) {
-        delete receipt_;
-      }
-      receipt_ = nullptr;
-    }
+  if (GetArena() == nullptr && block_ != nullptr) {
+    delete block_;
   }
+  block_ = nullptr;
+  if (GetArena() == nullptr && receipt_ != nullptr) {
+    delete receipt_;
+  }
+  receipt_ = nullptr;
   block_height_ = PROTOBUF_ULONGLONG(0);
-  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* block_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -320,7 +290,6 @@ const char* block_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -347,7 +316,7 @@ failure:
   }
 
   // .koinos.protocol.block block = 3;
-  if (_internal_has_block()) {
+  if (this->has_block()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -355,7 +324,7 @@ failure:
   }
 
   // .koinos.protocol.block_receipt receipt = 4;
-  if (_internal_has_receipt()) {
+  if (this->has_receipt()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -385,23 +354,20 @@ size_t block_item::ByteSizeLong() const {
         this->_internal_block_id());
   }
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    // .koinos.protocol.block block = 3;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *block_);
-    }
-
-    // .koinos.protocol.block_receipt receipt = 4;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *receipt_);
-    }
-
+  // .koinos.protocol.block block = 3;
+  if (this->has_block()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *block_);
   }
+
+  // .koinos.protocol.block_receipt receipt = 4;
+  if (this->has_receipt()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *receipt_);
+  }
+
   // uint64 block_height = 2;
   if (this->block_height() != 0) {
     total_size += 1 +
@@ -443,14 +409,11 @@ void block_item::MergeFrom(const block_item& from) {
   if (from.block_id().size() > 0) {
     _internal_set_block_id(from._internal_block_id());
   }
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
-    if (cached_has_bits & 0x00000001u) {
-      _internal_mutable_block()->::koinos::protocol::block::MergeFrom(from._internal_block());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _internal_mutable_receipt()->::koinos::protocol::block_receipt::MergeFrom(from._internal_receipt());
-    }
+  if (from.has_block()) {
+    _internal_mutable_block()->::koinos::protocol::block::MergeFrom(from._internal_block());
+  }
+  if (from.has_receipt()) {
+    _internal_mutable_receipt()->::koinos::protocol::block_receipt::MergeFrom(from._internal_receipt());
   }
   if (from.block_height() != 0) {
     _internal_set_block_height(from._internal_block_height());
@@ -478,7 +441,6 @@ bool block_item::IsInitialized() const {
 void block_item::InternalSwap(block_item* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   block_id_.Swap(&other->block_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(block_item, block_height_)
@@ -497,12 +459,8 @@ void block_item::InternalSwap(block_item* other) {
 
 class block_record::_Internal {
  public:
-  using HasBits = decltype(std::declval<block_record>()._has_bits_);
   static const ::koinos::protocol::block& block(const block_record* msg);
   static const ::koinos::protocol::block_receipt& receipt(const block_record* msg);
-  static void set_has_receipt(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
 };
 
 const ::koinos::protocol::block&
@@ -524,7 +482,6 @@ void block_record::clear_receipt() {
     delete receipt_;
   }
   receipt_ = nullptr;
-  _has_bits_[0] &= ~0x00000001u;
 }
 block_record::block_record(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
@@ -535,7 +492,6 @@ block_record::block_record(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 }
 block_record::block_record(const block_record& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _has_bits_(from._has_bits_),
       previous_block_ids_(from.previous_block_ids_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   block_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -606,21 +562,16 @@ void block_record::Clear() {
     delete block_;
   }
   block_ = nullptr;
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    if (GetArena() == nullptr && receipt_ != nullptr) {
-      delete receipt_;
-    }
-    receipt_ = nullptr;
+  if (GetArena() == nullptr && receipt_ != nullptr) {
+    delete receipt_;
   }
+  receipt_ = nullptr;
   block_height_ = PROTOBUF_ULONGLONG(0);
-  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* block_record::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -683,7 +634,6 @@ const char* block_record::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     }  // switch
   }  // while
 success:
-  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -718,7 +668,7 @@ failure:
   }
 
   // .koinos.protocol.block_receipt receipt = 4;
-  if (_internal_has_receipt()) {
+  if (this->has_receipt()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -770,8 +720,7 @@ size_t block_record::ByteSizeLong() const {
   }
 
   // .koinos.protocol.block_receipt receipt = 4;
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
+  if (this->has_receipt()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *receipt_);
@@ -822,7 +771,7 @@ void block_record::MergeFrom(const block_record& from) {
   if (from.has_block()) {
     _internal_mutable_block()->::koinos::protocol::block::MergeFrom(from._internal_block());
   }
-  if (from._internal_has_receipt()) {
+  if (from.has_receipt()) {
     _internal_mutable_receipt()->::koinos::protocol::block_receipt::MergeFrom(from._internal_receipt());
   }
   if (from.block_height() != 0) {
@@ -851,7 +800,6 @@ bool block_record::IsInitialized() const {
 void block_record::InternalSwap(block_record* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
   previous_block_ids_.InternalSwap(&other->previous_block_ids_);
   block_id_.Swap(&other->block_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<

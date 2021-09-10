@@ -3267,10 +3267,6 @@ class db_get_object_args PROTOBUF_FINAL :
   public:
 
   // uint32 object_size_hint = 3;
-  bool has_object_size_hint() const;
-  private:
-  bool _internal_has_object_size_hint() const;
-  public:
   void clear_object_size_hint();
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint() const;
   void set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3286,11 +3282,10 @@ class db_get_object_args PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3587,10 +3582,6 @@ class db_get_next_object_args PROTOBUF_FINAL :
   public:
 
   // uint32 object_size_hint = 3;
-  bool has_object_size_hint() const;
-  private:
-  bool _internal_has_object_size_hint() const;
-  public:
   void clear_object_size_hint();
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint() const;
   void set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3606,11 +3597,10 @@ class db_get_next_object_args PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3907,10 +3897,6 @@ class db_get_prev_object_args PROTOBUF_FINAL :
   public:
 
   // uint32 object_size_hint = 3;
-  bool has_object_size_hint() const;
-  private:
-  bool _internal_has_object_size_hint() const;
-  public:
   void clear_object_size_hint();
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint() const;
   void set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value);
@@ -3926,11 +3912,10 @@ class db_get_prev_object_args PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
 // -------------------------------------------------------------------
@@ -10555,16 +10540,8 @@ inline void db_get_object_args::set_allocated_key(std::string* key) {
 }
 
 // uint32 object_size_hint = 3;
-inline bool db_get_object_args::_internal_has_object_size_hint() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool db_get_object_args::has_object_size_hint() const {
-  return _internal_has_object_size_hint();
-}
 inline void db_get_object_args::clear_object_size_hint() {
   object_size_hint_ = 0u;
-  _has_bits_[0] &= ~0x00000001u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_object_args::_internal_object_size_hint() const {
   return object_size_hint_;
@@ -10574,7 +10551,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_object_args::object_size_hint() co
   return _internal_object_size_hint();
 }
 inline void db_get_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000001u;
+  
   object_size_hint_ = value;
 }
 inline void db_get_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -10774,16 +10751,8 @@ inline void db_get_next_object_args::set_allocated_key(std::string* key) {
 }
 
 // uint32 object_size_hint = 3;
-inline bool db_get_next_object_args::_internal_has_object_size_hint() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool db_get_next_object_args::has_object_size_hint() const {
-  return _internal_has_object_size_hint();
-}
 inline void db_get_next_object_args::clear_object_size_hint() {
   object_size_hint_ = 0u;
-  _has_bits_[0] &= ~0x00000001u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_next_object_args::_internal_object_size_hint() const {
   return object_size_hint_;
@@ -10793,7 +10762,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_next_object_args::object_size_hint
   return _internal_object_size_hint();
 }
 inline void db_get_next_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000001u;
+  
   object_size_hint_ = value;
 }
 inline void db_get_next_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -10993,16 +10962,8 @@ inline void db_get_prev_object_args::set_allocated_key(std::string* key) {
 }
 
 // uint32 object_size_hint = 3;
-inline bool db_get_prev_object_args::_internal_has_object_size_hint() const {
-  bool value = (_has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline bool db_get_prev_object_args::has_object_size_hint() const {
-  return _internal_has_object_size_hint();
-}
 inline void db_get_prev_object_args::clear_object_size_hint() {
   object_size_hint_ = 0u;
-  _has_bits_[0] &= ~0x00000001u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_prev_object_args::_internal_object_size_hint() const {
   return object_size_hint_;
@@ -11012,7 +10973,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_prev_object_args::object_size_hint
   return _internal_object_size_hint();
 }
 inline void db_get_prev_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000001u;
+  
   object_size_hint_ = value;
 }
 inline void db_get_prev_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {

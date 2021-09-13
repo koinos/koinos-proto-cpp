@@ -266,30 +266,30 @@ inline const std::string& block_topology::_internal_id() const {
   return id_.Get();
 }
 inline void block_topology::_internal_set_id(const std::string& value) {
-  
+
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
 inline void block_topology::set_id(std::string&& value) {
-  
+
   id_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
   // @@protoc_insertion_point(field_set_rvalue:koinos.block_topology.id)
 }
 inline void block_topology::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
   // @@protoc_insertion_point(field_set_char:koinos.block_topology.id)
 }
 inline void block_topology::set_id(const void* value,
     size_t size) {
-  
+
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
   // @@protoc_insertion_point(field_set_pointer:koinos.block_topology.id)
 }
 inline std::string* block_topology::_internal_mutable_id() {
-  
+
   return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
 inline std::string* block_topology::release_id() {
@@ -298,9 +298,9 @@ inline std::string* block_topology::release_id() {
 }
 inline void block_topology::set_allocated_id(std::string* id) {
   if (id != nullptr) {
-    
+
   } else {
-    
+
   }
   id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArena());
@@ -319,7 +319,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 block_topology::height() const {
   return _internal_height();
 }
 inline void block_topology::_internal_set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
+
   height_ = value;
 }
 inline void block_topology::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -347,30 +347,30 @@ inline const std::string& block_topology::_internal_previous() const {
   return previous_.Get();
 }
 inline void block_topology::_internal_set_previous(const std::string& value) {
-  
+
   previous_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArena());
 }
 inline void block_topology::set_previous(std::string&& value) {
-  
+
   previous_.Set(
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::move(value), GetArena());
   // @@protoc_insertion_point(field_set_rvalue:koinos.block_topology.previous)
 }
 inline void block_topology::set_previous(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
+
   previous_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(value), GetArena());
   // @@protoc_insertion_point(field_set_char:koinos.block_topology.previous)
 }
 inline void block_topology::set_previous(const void* value,
     size_t size) {
-  
+
   previous_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
   // @@protoc_insertion_point(field_set_pointer:koinos.block_topology.previous)
 }
 inline std::string* block_topology::_internal_mutable_previous() {
-  
+
   return previous_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArena());
 }
 inline std::string* block_topology::release_previous() {
@@ -379,9 +379,9 @@ inline std::string* block_topology::release_previous() {
 }
 inline void block_topology::set_allocated_previous(std::string* previous) {
   if (previous != nullptr) {
-    
+
   } else {
-    
+
   }
   previous_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous,
       GetArena());

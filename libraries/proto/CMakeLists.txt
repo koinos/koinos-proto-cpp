@@ -1,8 +1,11 @@
 file(GLOB_RECURSE GEN_HEADERS "*.pb.h")
 file(GLOB_RECURSE GEN_SOURCE  "*.pb.cc")
+file(GLOB HEADERS "include/koinos/*.hpp")
 add_library(koinos_proto
+            serialization.cpp
             ${GEN_SOURCE}
-            ${GEN_HEADERS})
+            ${GEN_HEADERS}
+            ${HEADERS})
 target_link_libraries(koinos_proto PUBLIC protobuf::libprotobuf)
 add_library(Koinos::proto ALIAS koinos_proto)
 

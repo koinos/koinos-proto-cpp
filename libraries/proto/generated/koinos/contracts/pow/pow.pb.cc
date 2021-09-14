@@ -84,17 +84,17 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036koinos/contracts/pow/pow.proto\022\024koinos"
-  ".contracts.pow\"q\n\023difficulty_metadata\022\016\n"
-  "\006target\030\001 \001(\014\022\027\n\017last_block_time\030\002 \001(\004\022\022"
-  "\n\ndifficulty\030\003 \001(\014\022\035\n\025target_block_inter"
-  "val\030\004 \001(\004\"B\n\022pow_signature_data\022\r\n\005nonce"
-  "\030\001 \001(\014\022\035\n\025recoverable_signature\030\002 \001(\014B<Z"
-  ":github.com/koinos/koinos-proto-golang/k"
-  "oinos/contracts/powb\006proto3"
+  ".contracts.pow\"y\n\023difficulty_metadata\022\016\n"
+  "\006target\030\001 \001(\014\022\033\n\017last_block_time\030\002 \001(\004B\002"
+  "0\001\022\022\n\ndifficulty\030\003 \001(\014\022!\n\025target_block_i"
+  "nterval\030\004 \001(\004B\0020\001\"B\n\022pow_signature_data\022"
+  "\r\n\005nonce\030\001 \001(\014\022\035\n\025recoverable_signature\030"
+  "\002 \001(\014B<Z:github.com/koinos/koinos-proto-"
+  "golang/koinos/contracts/powb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto = {
-  false, false, 307, descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto, "koinos/contracts/pow/pow.proto", 
+  false, false, 315, descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto, "koinos/contracts/pow/pow.proto", 
   &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpow_2fpow_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto,
@@ -203,7 +203,7 @@ const char* difficulty_metadata::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 last_block_time = 2;
+      // uint64 last_block_time = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           last_block_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -218,7 +218,7 @@ const char* difficulty_metadata::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 target_block_interval = 4;
+      // uint64 target_block_interval = 4 [jstype = JS_STRING];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           target_block_interval_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -260,7 +260,7 @@ failure:
         1, this->_internal_target(), target);
   }
 
-  // uint64 last_block_time = 2;
+  // uint64 last_block_time = 2 [jstype = JS_STRING];
   if (this->_internal_last_block_time() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_last_block_time(), target);
@@ -272,7 +272,7 @@ failure:
         3, this->_internal_difficulty(), target);
   }
 
-  // uint64 target_block_interval = 4;
+  // uint64 target_block_interval = 4 [jstype = JS_STRING];
   if (this->_internal_target_block_interval() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_target_block_interval(), target);
@@ -308,14 +308,14 @@ size_t difficulty_metadata::ByteSizeLong() const {
         this->_internal_difficulty());
   }
 
-  // uint64 last_block_time = 2;
+  // uint64 last_block_time = 2 [jstype = JS_STRING];
   if (this->_internal_last_block_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_last_block_time());
   }
 
-  // uint64 target_block_interval = 4;
+  // uint64 target_block_interval = 4 [jstype = JS_STRING];
   if (this->_internal_target_block_interval() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

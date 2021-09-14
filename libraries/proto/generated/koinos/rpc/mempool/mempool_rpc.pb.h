@@ -226,7 +226,7 @@ class check_pending_account_resources_request final :
   std::string* _internal_mutable_payer();
   public:
 
-  // uint64 max_payer_resources = 2;
+  // uint64 max_payer_resources = 2 [jstype = JS_STRING];
   void clear_max_payer_resources();
   ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_resources() const;
   void set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -235,7 +235,7 @@ class check_pending_account_resources_request final :
   void _internal_set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 trx_resource_limit = 3;
+  // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
   void clear_trx_resource_limit();
   ::PROTOBUF_NAMESPACE_ID::uint64 trx_resource_limit() const;
   void set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -515,7 +515,7 @@ class get_pending_transactions_request final :
   enum : int {
     kLimitFieldNumber = 1,
   };
-  // uint64 limit = 1;
+  // uint64 limit = 1 [jstype = JS_STRING];
   void clear_limit();
   ::PROTOBUF_NAMESPACE_ID::uint64 limit() const;
   void set_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -1180,7 +1180,7 @@ inline void check_pending_account_resources_request::set_allocated_payer(std::st
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.check_pending_account_resources_request.payer)
 }
 
-// uint64 max_payer_resources = 2;
+// uint64 max_payer_resources = 2 [jstype = JS_STRING];
 inline void check_pending_account_resources_request::clear_max_payer_resources() {
   max_payer_resources_ = uint64_t{0u};
 }
@@ -1200,7 +1200,7 @@ inline void check_pending_account_resources_request::set_max_payer_resources(::P
   // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.max_payer_resources)
 }
 
-// uint64 trx_resource_limit = 3;
+// uint64 trx_resource_limit = 3 [jstype = JS_STRING];
 inline void check_pending_account_resources_request::clear_trx_resource_limit() {
   trx_resource_limit_ = uint64_t{0u};
 }
@@ -1248,7 +1248,7 @@ inline void check_pending_account_resources_response::set_success(bool value) {
 
 // get_pending_transactions_request
 
-// uint64 limit = 1;
+// uint64 limit = 1 [jstype = JS_STRING];
 inline void get_pending_transactions_request::clear_limit() {
   limit_ = uint64_t{0u};
 }

@@ -395,51 +395,51 @@ const char descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto[
   "\023verify_passive_data\030\002 \001(\010\022$\n\034verify_tra"
   "nsaction_signature\030\003 \001(\010\"\035\n\033submit_trans"
   "action_response\"\027\n\025get_head_info_request"
-  "\"h\n\026get_head_info_response\022-\n\rhead_topol"
-  "ogy\030\001 \001(\0132\026.koinos.block_topology\022\037\n\027las"
-  "t_irreversible_block\030\002 \001(\004\"\026\n\024get_chain_"
-  "id_request\")\n\025get_chain_id_response\022\020\n\010c"
-  "hain_id\030\001 \001(\014\"\030\n\026get_fork_heads_request\""
-  "~\n\027get_fork_heads_response\0227\n\027last_irrev"
-  "ersible_block\030\001 \001(\0132\026.koinos.block_topol"
-  "ogy\022*\n\nfork_heads\030\002 \003(\0132\026.koinos.block_t"
-  "opology\"O\n\025read_contract_request\022\023\n\013cont"
-  "ract_id\030\001 \001(\014\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004ar"
-  "gs\030\003 \001(\014\"6\n\026read_contract_response\022\016\n\006re"
-  "sult\030\001 \001(\014\022\014\n\004logs\030\002 \001(\t\",\n\031get_account_"
-  "nonce_request\022\017\n\007account\030\001 \001(\014\"+\n\032get_ac"
-  "count_nonce_response\022\r\n\005nonce\030\001 \001(\004\"\246\004\n\r"
-  "chain_request\022,\n\010reserved\030\001 \001(\0132\030.koinos"
-  ".rpc.reserved_rpcH\000\022>\n\014submit_block\030\002 \001("
-  "\0132&.koinos.rpc.chain.submit_block_reques"
-  "tH\000\022J\n\022submit_transaction\030\003 \001(\0132,.koinos"
-  ".rpc.chain.submit_transaction_requestH\000\022"
-  "@\n\rget_head_info\030\004 \001(\0132\'.koinos.rpc.chai"
-  "n.get_head_info_requestH\000\022>\n\014get_chain_i"
-  "d\030\005 \001(\0132&.koinos.rpc.chain.get_chain_id_"
-  "requestH\000\022B\n\016get_fork_heads\030\006 \001(\0132(.koin"
-  "os.rpc.chain.get_fork_heads_requestH\000\022@\n"
-  "\rread_contract\030\007 \001(\0132\'.koinos.rpc.chain."
-  "read_contract_requestH\000\022H\n\021get_account_n"
-  "once\030\010 \001(\0132+.koinos.rpc.chain.get_accoun"
-  "t_nonce_requestH\000B\t\n\007request\"\334\004\n\016chain_r"
-  "esponse\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.r"
-  "eserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rp"
-  "c.error_responseH\000\022\?\n\014submit_block\030\003 \001(\013"
-  "2\'.koinos.rpc.chain.submit_block_respons"
-  "eH\000\022K\n\022submit_transaction\030\004 \001(\0132-.koinos"
-  ".rpc.chain.submit_transaction_responseH\000"
-  "\022A\n\rget_head_info\030\005 \001(\0132(.koinos.rpc.cha"
-  "in.get_head_info_responseH\000\022\?\n\014get_chain"
-  "_id\030\006 \001(\0132\'.koinos.rpc.chain.get_chain_i"
-  "d_responseH\000\022C\n\016get_fork_heads\030\007 \001(\0132).k"
-  "oinos.rpc.chain.get_fork_heads_responseH"
-  "\000\022A\n\rread_contract\030\010 \001(\0132(.koinos.rpc.ch"
-  "ain.read_contract_responseH\000\022I\n\021get_acco"
-  "unt_nonce\030\t \001(\0132,.koinos.rpc.chain.get_a"
-  "ccount_nonce_responseH\000B\n\n\010responseB8Z6g"
-  "ithub.com/koinos/koinos-proto-golang/koi"
-  "nos/rpc/chainb\006proto3"
+  "\"l\n\026get_head_info_response\022-\n\rhead_topol"
+  "ogy\030\001 \001(\0132\026.koinos.block_topology\022#\n\027las"
+  "t_irreversible_block\030\002 \001(\004B\0020\001\"\026\n\024get_ch"
+  "ain_id_request\")\n\025get_chain_id_response\022"
+  "\020\n\010chain_id\030\001 \001(\014\"\030\n\026get_fork_heads_requ"
+  "est\"~\n\027get_fork_heads_response\0227\n\027last_i"
+  "rreversible_block\030\001 \001(\0132\026.koinos.block_t"
+  "opology\022*\n\nfork_heads\030\002 \003(\0132\026.koinos.blo"
+  "ck_topology\"O\n\025read_contract_request\022\023\n\013"
+  "contract_id\030\001 \001(\014\022\023\n\013entry_point\030\002 \001(\r\022\014"
+  "\n\004args\030\003 \001(\014\"6\n\026read_contract_response\022\016"
+  "\n\006result\030\001 \001(\014\022\014\n\004logs\030\002 \001(\t\",\n\031get_acco"
+  "unt_nonce_request\022\017\n\007account\030\001 \001(\014\"/\n\032ge"
+  "t_account_nonce_response\022\021\n\005nonce\030\001 \001(\004B"
+  "\0020\001\"\246\004\n\rchain_request\022,\n\010reserved\030\001 \001(\0132"
+  "\030.koinos.rpc.reserved_rpcH\000\022>\n\014submit_bl"
+  "ock\030\002 \001(\0132&.koinos.rpc.chain.submit_bloc"
+  "k_requestH\000\022J\n\022submit_transaction\030\003 \001(\0132"
+  ",.koinos.rpc.chain.submit_transaction_re"
+  "questH\000\022@\n\rget_head_info\030\004 \001(\0132\'.koinos."
+  "rpc.chain.get_head_info_requestH\000\022>\n\014get"
+  "_chain_id\030\005 \001(\0132&.koinos.rpc.chain.get_c"
+  "hain_id_requestH\000\022B\n\016get_fork_heads\030\006 \001("
+  "\0132(.koinos.rpc.chain.get_fork_heads_requ"
+  "estH\000\022@\n\rread_contract\030\007 \001(\0132\'.koinos.rp"
+  "c.chain.read_contract_requestH\000\022H\n\021get_a"
+  "ccount_nonce\030\010 \001(\0132+.koinos.rpc.chain.ge"
+  "t_account_nonce_requestH\000B\t\n\007request\"\334\004\n"
+  "\016chain_response\022,\n\010reserved\030\001 \001(\0132\030.koin"
+  "os.rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.k"
+  "oinos.rpc.error_responseH\000\022\?\n\014submit_blo"
+  "ck\030\003 \001(\0132\'.koinos.rpc.chain.submit_block"
+  "_responseH\000\022K\n\022submit_transaction\030\004 \001(\0132"
+  "-.koinos.rpc.chain.submit_transaction_re"
+  "sponseH\000\022A\n\rget_head_info\030\005 \001(\0132(.koinos"
+  ".rpc.chain.get_head_info_responseH\000\022\?\n\014g"
+  "et_chain_id\030\006 \001(\0132\'.koinos.rpc.chain.get"
+  "_chain_id_responseH\000\022C\n\016get_fork_heads\030\007"
+  " \001(\0132).koinos.rpc.chain.get_fork_heads_r"
+  "esponseH\000\022A\n\rread_contract\030\010 \001(\0132(.koino"
+  "s.rpc.chain.read_contract_responseH\000\022I\n\021"
+  "get_account_nonce\030\t \001(\0132,.koinos.rpc.cha"
+  "in.get_account_nonce_responseH\000B\n\n\010respo"
+  "nseB8Z6github.com/koinos/koinos-proto-go"
+  "lang/koinos/rpc/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -448,7 +448,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto = {
-  false, false, 2301, descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, "koinos/rpc/chain/chain_rpc.proto", 
+  false, false, 2309, descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, "koinos/rpc/chain/chain_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_deps, 3, 16,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fchain_2fchain_5frpc_2eproto,
@@ -1561,7 +1561,7 @@ const char* get_head_info_response::_InternalParse(const char* ptr, ::PROTOBUF_N
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 last_irreversible_block = 2;
+      // uint64 last_irreversible_block = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           last_irreversible_block_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -1605,7 +1605,7 @@ failure:
         1, _Internal::head_topology(this), target, stream);
   }
 
-  // uint64 last_irreversible_block = 2;
+  // uint64 last_irreversible_block = 2 [jstype = JS_STRING];
   if (this->_internal_last_irreversible_block() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_last_irreversible_block(), target);
@@ -1634,7 +1634,7 @@ size_t get_head_info_response::ByteSizeLong() const {
         *head_topology_);
   }
 
-  // uint64 last_irreversible_block = 2;
+  // uint64 last_irreversible_block = 2 [jstype = JS_STRING];
   if (this->_internal_last_irreversible_block() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -3202,7 +3202,7 @@ const char* get_account_nonce_response::_InternalParse(const char* ptr, ::PROTOB
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 nonce = 1;
+      // uint64 nonce = 1 [jstype = JS_STRING];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           nonce_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -3238,7 +3238,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 nonce = 1;
+  // uint64 nonce = 1 [jstype = JS_STRING];
   if (this->_internal_nonce() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_nonce(), target);
@@ -3260,7 +3260,7 @@ size_t get_account_nonce_response::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 nonce = 1;
+  // uint64 nonce = 1 [jstype = JS_STRING];
   if (this->_internal_nonce() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

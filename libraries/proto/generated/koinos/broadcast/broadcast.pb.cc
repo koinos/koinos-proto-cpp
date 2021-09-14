@@ -125,19 +125,19 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n koinos/broadcast/broadcast.proto\022\020koin"
   "os.broadcast\032\023koinos/common.proto\032\036koino"
-  "s/protocol/protocol.proto\"\241\001\n\024transactio"
+  "s/protocol/protocol.proto\"\255\001\n\024transactio"
   "n_accepted\0221\n\013transaction\030\001 \001(\0132\034.koinos"
-  ".protocol.transaction\022\r\n\005payer\030\002 \001(\014\022\033\n\023"
-  "max_payer_resources\030\003 \001(\004\022\032\n\022trx_resourc"
-  "e_limit\030\004 \001(\004\022\016\n\006height\030\005 \001(\004\"7\n\016block_a"
-  "ccepted\022%\n\005block\030\001 \001(\0132\026.koinos.protocol"
-  ".block\">\n\022block_irreversible\022(\n\010topology"
-  "\030\001 \001(\0132\026.koinos.block_topology\"l\n\nfork_h"
-  "eads\0227\n\027last_irreversible_block\030\001 \001(\0132\026."
-  "koinos.block_topology\022%\n\005heads\030\002 \003(\0132\026.k"
-  "oinos.block_topologyB8Z6github.com/koino"
-  "s/koinos-proto-golang/koinos/broadcastb\006"
-  "proto3"
+  ".protocol.transaction\022\r\n\005payer\030\002 \001(\014\022\037\n\023"
+  "max_payer_resources\030\003 \001(\004B\0020\001\022\036\n\022trx_res"
+  "ource_limit\030\004 \001(\004B\0020\001\022\022\n\006height\030\005 \001(\004B\0020"
+  "\001\"7\n\016block_accepted\022%\n\005block\030\001 \001(\0132\026.koi"
+  "nos.protocol.block\">\n\022block_irreversible"
+  "\022(\n\010topology\030\001 \001(\0132\026.koinos.block_topolo"
+  "gy\"l\n\nfork_heads\0227\n\027last_irreversible_bl"
+  "ock\030\001 \001(\0132\026.koinos.block_topology\022%\n\005hea"
+  "ds\030\002 \003(\0132\026.koinos.block_topologyB8Z6gith"
+  "ub.com/koinos/koinos-proto-golang/koinos"
+  "/broadcastb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -145,7 +145,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto = {
-  false, false, 566, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
+  false, false, 578, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
   &descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once, descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto::offsets,
   file_level_metadata_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_enum_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_service_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto,
@@ -273,21 +273,21 @@ const char* transaction_accepted::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 max_payer_resources = 3;
+      // uint64 max_payer_resources = 3 [jstype = JS_STRING];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           max_payer_resources_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 trx_resource_limit = 4;
+      // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           trx_resource_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 height = 5;
+      // uint64 height = 5 [jstype = JS_STRING];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -337,19 +337,19 @@ failure:
         2, this->_internal_payer(), target);
   }
 
-  // uint64 max_payer_resources = 3;
+  // uint64 max_payer_resources = 3 [jstype = JS_STRING];
   if (this->_internal_max_payer_resources() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_max_payer_resources(), target);
   }
 
-  // uint64 trx_resource_limit = 4;
+  // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
   if (this->_internal_trx_resource_limit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_trx_resource_limit(), target);
   }
 
-  // uint64 height = 5;
+  // uint64 height = 5 [jstype = JS_STRING];
   if (this->_internal_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_height(), target);
@@ -385,21 +385,21 @@ size_t transaction_accepted::ByteSizeLong() const {
         *transaction_);
   }
 
-  // uint64 max_payer_resources = 3;
+  // uint64 max_payer_resources = 3 [jstype = JS_STRING];
   if (this->_internal_max_payer_resources() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_max_payer_resources());
   }
 
-  // uint64 trx_resource_limit = 4;
+  // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
   if (this->_internal_trx_resource_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_trx_resource_limit());
   }
 
-  // uint64 height = 5;
+  // uint64 height = 5 [jstype = JS_STRING];
   if (this->_internal_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

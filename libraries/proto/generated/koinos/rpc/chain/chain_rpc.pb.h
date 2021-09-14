@@ -999,7 +999,7 @@ class get_head_info_response final :
       ::koinos::block_topology* head_topology);
   ::koinos::block_topology* unsafe_arena_release_head_topology();
 
-  // uint64 last_irreversible_block = 2;
+  // uint64 last_irreversible_block = 2 [jstype = JS_STRING];
   void clear_last_irreversible_block();
   ::PROTOBUF_NAMESPACE_ID::uint64 last_irreversible_block() const;
   void set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2178,7 +2178,7 @@ class get_account_nonce_response final :
   enum : int {
     kNonceFieldNumber = 1,
   };
-  // uint64 nonce = 1;
+  // uint64 nonce = 1 [jstype = JS_STRING];
   void clear_nonce();
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce() const;
   void set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -3247,7 +3247,7 @@ inline void get_head_info_response::set_allocated_head_topology(::koinos::block_
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.get_head_info_response.head_topology)
 }
 
-// uint64 last_irreversible_block = 2;
+// uint64 last_irreversible_block = 2 [jstype = JS_STRING];
 inline void get_head_info_response::clear_last_irreversible_block() {
   last_irreversible_block_ = uint64_t{0u};
 }
@@ -3718,7 +3718,7 @@ inline void get_account_nonce_request::set_allocated_account(std::string* accoun
 
 // get_account_nonce_response
 
-// uint64 nonce = 1;
+// uint64 nonce = 1 [jstype = JS_STRING];
 inline void get_account_nonce_response::clear_nonce() {
   nonce_ = uint64_t{0u};
 }

@@ -235,7 +235,7 @@ class transaction_accepted final :
       ::koinos::protocol::transaction* transaction);
   ::koinos::protocol::transaction* unsafe_arena_release_transaction();
 
-  // uint64 max_payer_resources = 3;
+  // uint64 max_payer_resources = 3 [jstype = JS_STRING];
   void clear_max_payer_resources();
   ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_resources() const;
   void set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -244,7 +244,7 @@ class transaction_accepted final :
   void _internal_set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 trx_resource_limit = 4;
+  // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
   void clear_trx_resource_limit();
   ::PROTOBUF_NAMESPACE_ID::uint64 trx_resource_limit() const;
   void set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -253,7 +253,7 @@ class transaction_accepted final :
   void _internal_set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 height = 5;
+  // uint64 height = 5 [jstype = JS_STRING];
   void clear_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 height() const;
   void set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -884,7 +884,7 @@ inline void transaction_accepted::set_allocated_payer(std::string* payer) {
   // @@protoc_insertion_point(field_set_allocated:koinos.broadcast.transaction_accepted.payer)
 }
 
-// uint64 max_payer_resources = 3;
+// uint64 max_payer_resources = 3 [jstype = JS_STRING];
 inline void transaction_accepted::clear_max_payer_resources() {
   max_payer_resources_ = uint64_t{0u};
 }
@@ -904,7 +904,7 @@ inline void transaction_accepted::set_max_payer_resources(::PROTOBUF_NAMESPACE_I
   // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.max_payer_resources)
 }
 
-// uint64 trx_resource_limit = 4;
+// uint64 trx_resource_limit = 4 [jstype = JS_STRING];
 inline void transaction_accepted::clear_trx_resource_limit() {
   trx_resource_limit_ = uint64_t{0u};
 }
@@ -924,7 +924,7 @@ inline void transaction_accepted::set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID
   // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.trx_resource_limit)
 }
 
-// uint64 height = 5;
+// uint64 height = 5 [jstype = JS_STRING];
 inline void transaction_accepted::clear_height() {
   height_ = uint64_t{0u};
 }

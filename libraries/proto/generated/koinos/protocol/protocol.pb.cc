@@ -367,28 +367,29 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "operationH\000\022A\n\rcall_contract\030\002 \001(\0132(.koi"
   "nos.protocol.call_contract_operationH\000\022E"
   "\n\017set_system_call\030\003 \001(\0132*.koinos.protoco"
-  "l.set_system_call_operationH\000B\004\n\002op\"p\n\027a"
-  "ctive_transaction_data\022\026\n\016resource_limit"
-  "\030\001 \001(\004\022\r\n\005nonce\030\002 \001(\004\022.\n\noperations\030\003 \003("
-  "\0132\032.koinos.protocol.operation\"\032\n\030passive"
-  "_transaction_data\"R\n\013transaction\022\n\n\002id\030\001"
-  " \001(\014\022\016\n\006active\030\002 \001(\014\022\017\n\007passive\030\003 \001(\014\022\026\n"
-  "\016signature_data\030\004 \001(\014\"f\n\021active_block_da"
-  "ta\022\037\n\027transaction_merkle_root\030\001 \001(\014\022 \n\030p"
-  "assive_data_merkle_root\030\002 \001(\014\022\016\n\006signer\030"
-  "\003 \001(\014\"\024\n\022passive_block_data\"C\n\014block_hea"
-  "der\022\020\n\010previous\030\001 \001(\014\022\016\n\006height\030\002 \001(\004\022\021\n"
-  "\ttimestamp\030\003 \001(\004\"\257\001\n\005block\022\n\n\002id\030\001 \001(\014\022-"
-  "\n\006header\030\002 \001(\0132\035.koinos.protocol.block_h"
-  "eader\022\016\n\006active\030\003 \001(\014\022\017\n\007passive\030\004 \001(\014\022\026"
-  "\n\016signature_data\030\005 \001(\014\0222\n\014transactions\030\006"
-  " \003(\0132\034.koinos.protocol.transaction\"\017\n\rbl"
-  "ock_receiptB7Z5github.com/koinos/koinos-"
-  "proto-golang/koinos/protocolb\006proto3"
+  "l.set_system_call_operationH\000B\004\n\002op\"x\n\027a"
+  "ctive_transaction_data\022\032\n\016resource_limit"
+  "\030\001 \001(\004B\0020\001\022\021\n\005nonce\030\002 \001(\004B\0020\001\022.\n\noperati"
+  "ons\030\003 \003(\0132\032.koinos.protocol.operation\"\032\n"
+  "\030passive_transaction_data\"R\n\013transaction"
+  "\022\n\n\002id\030\001 \001(\014\022\016\n\006active\030\002 \001(\014\022\017\n\007passive\030"
+  "\003 \001(\014\022\026\n\016signature_data\030\004 \001(\014\"f\n\021active_"
+  "block_data\022\037\n\027transaction_merkle_root\030\001 "
+  "\001(\014\022 \n\030passive_data_merkle_root\030\002 \001(\014\022\016\n"
+  "\006signer\030\003 \001(\014\"\024\n\022passive_block_data\"K\n\014b"
+  "lock_header\022\020\n\010previous\030\001 \001(\014\022\022\n\006height\030"
+  "\002 \001(\004B\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\"\257\001\n\005blo"
+  "ck\022\n\n\002id\030\001 \001(\014\022-\n\006header\030\002 \001(\0132\035.koinos."
+  "protocol.block_header\022\016\n\006active\030\003 \001(\014\022\017\n"
+  "\007passive\030\004 \001(\014\022\026\n\016signature_data\030\005 \001(\014\0222"
+  "\n\014transactions\030\006 \003(\0132\034.koinos.protocol.t"
+  "ransaction\"\017\n\rblock_receiptB7Z5github.co"
+  "m/koinos/koinos-proto-golang/koinos/prot"
+  "ocolb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 1396, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 1412, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, nullptr, 0, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -2061,14 +2062,14 @@ const char* active_transaction_data::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 resource_limit = 1;
+      // uint64 resource_limit = 1 [jstype = JS_STRING];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           resource_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 nonce = 2;
+      // uint64 nonce = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           nonce_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -2116,13 +2117,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 resource_limit = 1;
+  // uint64 resource_limit = 1 [jstype = JS_STRING];
   if (this->_internal_resource_limit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_resource_limit(), target);
   }
 
-  // uint64 nonce = 2;
+  // uint64 nonce = 2 [jstype = JS_STRING];
   if (this->_internal_nonce() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_nonce(), target);
@@ -2159,14 +2160,14 @@ size_t active_transaction_data::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // uint64 resource_limit = 1;
+  // uint64 resource_limit = 1 [jstype = JS_STRING];
   if (this->_internal_resource_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_resource_limit());
   }
 
-  // uint64 nonce = 2;
+  // uint64 nonce = 2 [jstype = JS_STRING];
   if (this->_internal_nonce() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -3207,14 +3208,14 @@ const char* block_header::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 height = 2;
+      // uint64 height = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 timestamp = 3;
+      // uint64 timestamp = 3 [jstype = JS_STRING];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -3256,13 +3257,13 @@ failure:
         1, this->_internal_previous(), target);
   }
 
-  // uint64 height = 2;
+  // uint64 height = 2 [jstype = JS_STRING];
   if (this->_internal_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_height(), target);
   }
 
-  // uint64 timestamp = 3;
+  // uint64 timestamp = 3 [jstype = JS_STRING];
   if (this->_internal_timestamp() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_timestamp(), target);
@@ -3291,14 +3292,14 @@ size_t block_header::ByteSizeLong() const {
         this->_internal_previous());
   }
 
-  // uint64 height = 2;
+  // uint64 height = 2 [jstype = JS_STRING];
   if (this->_internal_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_height());
   }
 
-  // uint64 timestamp = 3;
+  // uint64 timestamp = 3 [jstype = JS_STRING];
   if (this->_internal_timestamp() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

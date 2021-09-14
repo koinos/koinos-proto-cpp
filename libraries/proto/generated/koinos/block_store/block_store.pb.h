@@ -243,7 +243,7 @@ class block_item final :
       ::koinos::protocol::block_receipt* receipt);
   ::koinos::protocol::block_receipt* unsafe_arena_release_receipt();
 
-  // uint64 block_height = 2;
+  // uint64 block_height = 2 [jstype = JS_STRING];
   void clear_block_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 block_height() const;
   void set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -463,7 +463,7 @@ class block_record final :
       ::koinos::protocol::block_receipt* receipt);
   ::koinos::protocol::block_receipt* unsafe_arena_release_receipt();
 
-  // uint64 block_height = 2;
+  // uint64 block_height = 2 [jstype = JS_STRING];
   void clear_block_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 block_height() const;
   void set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -544,7 +544,7 @@ inline void block_item::set_allocated_block_id(std::string* block_id) {
   // @@protoc_insertion_point(field_set_allocated:koinos.block_store.block_item.block_id)
 }
 
-// uint64 block_height = 2;
+// uint64 block_height = 2 [jstype = JS_STRING];
 inline void block_item::clear_block_height() {
   block_height_ = uint64_t{0u};
 }
@@ -786,7 +786,7 @@ inline void block_record::set_allocated_block_id(std::string* block_id) {
   // @@protoc_insertion_point(field_set_allocated:koinos.block_store.block_record.block_id)
 }
 
-// uint64 block_height = 2;
+// uint64 block_height = 2 [jstype = JS_STRING];
 inline void block_record::clear_block_height() {
   block_height_ = uint64_t{0u};
 }

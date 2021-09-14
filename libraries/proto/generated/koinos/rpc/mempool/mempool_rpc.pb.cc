@@ -168,32 +168,32 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n$koinos/rpc/mempool/mempool_rpc.proto\022\022"
   "koinos.rpc.mempool\032\036koinos/protocol/prot"
-  "ocol.proto\032\024koinos/rpc/rpc.proto\"q\n\'chec"
+  "ocol.proto\032\024koinos/rpc/rpc.proto\"y\n\'chec"
   "k_pending_account_resources_request\022\r\n\005p"
-  "ayer\030\001 \001(\014\022\033\n\023max_payer_resources\030\002 \001(\004\022"
-  "\032\n\022trx_resource_limit\030\003 \001(\004\";\n(check_pen"
-  "ding_account_resources_response\022\017\n\007succe"
-  "ss\030\001 \001(\010\"1\n get_pending_transactions_req"
-  "uest\022\r\n\005limit\030\001 \001(\004\"W\n!get_pending_trans"
-  "actions_response\0222\n\014transactions\030\001 \003(\0132\034"
-  ".koinos.protocol.transaction\"\214\002\n\017mempool"
-  "_request\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc."
-  "reserved_rpcH\000\022f\n\037check_pending_account_"
-  "resources\030\002 \001(\0132;.koinos.rpc.mempool.che"
-  "ck_pending_account_resources_requestH\000\022X"
-  "\n\030get_pending_transactions\030\003 \001(\01324.koino"
-  "s.rpc.mempool.get_pending_transactions_r"
-  "equestH\000B\t\n\007request\"\275\002\n\020mempool_response"
-  "\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved"
-  "_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.error"
-  "_responseH\000\022g\n\037check_pending_account_res"
-  "ources\030\003 \001(\0132<.koinos.rpc.mempool.check_"
-  "pending_account_resources_responseH\000\022Y\n\030"
-  "get_pending_transactions\030\004 \001(\01325.koinos."
-  "rpc.mempool.get_pending_transactions_res"
-  "ponseH\000B\n\n\010responseB:Z8github.com/koinos"
-  "/koinos-proto-golang/koinos/rpc/mempoolb"
-  "\006proto3"
+  "ayer\030\001 \001(\014\022\037\n\023max_payer_resources\030\002 \001(\004B"
+  "\0020\001\022\036\n\022trx_resource_limit\030\003 \001(\004B\0020\001\";\n(c"
+  "heck_pending_account_resources_response\022"
+  "\017\n\007success\030\001 \001(\010\"5\n get_pending_transact"
+  "ions_request\022\021\n\005limit\030\001 \001(\004B\0020\001\"W\n!get_p"
+  "ending_transactions_response\0222\n\014transact"
+  "ions\030\001 \003(\0132\034.koinos.protocol.transaction"
+  "\"\214\002\n\017mempool_request\022,\n\010reserved\030\001 \001(\0132\030"
+  ".koinos.rpc.reserved_rpcH\000\022f\n\037check_pend"
+  "ing_account_resources\030\002 \001(\0132;.koinos.rpc"
+  ".mempool.check_pending_account_resources"
+  "_requestH\000\022X\n\030get_pending_transactions\030\003"
+  " \001(\01324.koinos.rpc.mempool.get_pending_tr"
+  "ansactions_requestH\000B\t\n\007request\"\275\002\n\020memp"
+  "ool_response\022,\n\010reserved\030\001 \001(\0132\030.koinos."
+  "rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koin"
+  "os.rpc.error_responseH\000\022g\n\037check_pending"
+  "_account_resources\030\003 \001(\0132<.koinos.rpc.me"
+  "mpool.check_pending_account_resources_re"
+  "sponseH\000\022Y\n\030get_pending_transactions\030\004 \001"
+  "(\01325.koinos.rpc.mempool.get_pending_tran"
+  "sactions_responseH\000B\n\n\010responseB:Z8githu"
+  "b.com/koinos/koinos-proto-golang/koinos/"
+  "rpc/mempoolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
@@ -201,7 +201,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, 1087, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  false, false, 1099, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
@@ -302,14 +302,14 @@ const char* check_pending_account_resources_request::_InternalParse(const char* 
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 max_payer_resources = 2;
+      // uint64 max_payer_resources = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           max_payer_resources_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 trx_resource_limit = 3;
+      // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           trx_resource_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -351,13 +351,13 @@ failure:
         1, this->_internal_payer(), target);
   }
 
-  // uint64 max_payer_resources = 2;
+  // uint64 max_payer_resources = 2 [jstype = JS_STRING];
   if (this->_internal_max_payer_resources() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_max_payer_resources(), target);
   }
 
-  // uint64 trx_resource_limit = 3;
+  // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
   if (this->_internal_trx_resource_limit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_trx_resource_limit(), target);
@@ -386,14 +386,14 @@ size_t check_pending_account_resources_request::ByteSizeLong() const {
         this->_internal_payer());
   }
 
-  // uint64 max_payer_resources = 2;
+  // uint64 max_payer_resources = 2 [jstype = JS_STRING];
   if (this->_internal_max_payer_resources() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_max_payer_resources());
   }
 
-  // uint64 trx_resource_limit = 3;
+  // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
   if (this->_internal_trx_resource_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -719,7 +719,7 @@ const char* get_pending_transactions_request::_InternalParse(const char* ptr, ::
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 limit = 1;
+      // uint64 limit = 1 [jstype = JS_STRING];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -755,7 +755,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 limit = 1;
+  // uint64 limit = 1 [jstype = JS_STRING];
   if (this->_internal_limit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_limit(), target);
@@ -777,7 +777,7 @@ size_t get_pending_transactions_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 limit = 1;
+  // uint64 limit = 1 [jstype = JS_STRING];
   if (this->_internal_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

@@ -55,14 +55,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_koinos_2fcommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\023koinos/common.proto\022\006koinos\">\n\016block_t"
-  "opology\022\n\n\002id\030\001 \001(\014\022\016\n\006height\030\002 \001(\004\022\020\n\010p"
-  "revious\030\003 \001(\014B.Z,github.com/koinos/koino"
-  "s-proto-golang/koinosb\006proto3"
+  "\n\023koinos/common.proto\022\006koinos\"B\n\016block_t"
+  "opology\022\n\n\002id\030\001 \001(\014\022\022\n\006height\030\002 \001(\004B\0020\001\022"
+  "\020\n\010previous\030\003 \001(\014B.Z,github.com/koinos/k"
+  "oinos-proto-golang/koinosb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcommon_2eproto = {
-  false, false, 149, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
+  false, false, 153, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
   &descriptor_table_koinos_2fcommon_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcommon_2eproto::offsets,
   file_level_metadata_koinos_2fcommon_2eproto, file_level_enum_descriptors_koinos_2fcommon_2eproto, file_level_service_descriptors_koinos_2fcommon_2eproto,
@@ -162,7 +162,7 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 height = 2;
+      // uint64 height = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -212,7 +212,7 @@ failure:
         1, this->_internal_id(), target);
   }
 
-  // uint64 height = 2;
+  // uint64 height = 2 [jstype = JS_STRING];
   if (this->_internal_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_height(), target);
@@ -254,7 +254,7 @@ size_t block_topology::ByteSizeLong() const {
         this->_internal_previous());
   }
 
-  // uint64 height = 2;
+  // uint64 height = 2 [jstype = JS_STRING];
   if (this->_internal_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

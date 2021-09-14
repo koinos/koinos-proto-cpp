@@ -570,7 +570,7 @@ class get_blocks_by_height_request final :
   std::string* _internal_mutable_head_block_id();
   public:
 
-  // uint64 ancestor_start_height = 2;
+  // uint64 ancestor_start_height = 2 [jstype = JS_STRING];
   void clear_ancestor_start_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 ancestor_start_height() const;
   void set_ancestor_start_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2062,7 +2062,7 @@ inline void get_blocks_by_height_request::set_allocated_head_block_id(std::strin
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.block_store.get_blocks_by_height_request.head_block_id)
 }
 
-// uint64 ancestor_start_height = 2;
+// uint64 ancestor_start_height = 2 [jstype = JS_STRING];
 inline void get_blocks_by_height_request::clear_ancestor_start_height() {
   ancestor_start_height_ = uint64_t{0u};
 }

@@ -1293,7 +1293,7 @@ class active_transaction_data final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
       operations() const;
 
-  // uint64 resource_limit = 1;
+  // uint64 resource_limit = 1 [jstype = JS_STRING];
   void clear_resource_limit();
   ::PROTOBUF_NAMESPACE_ID::uint64 resource_limit() const;
   void set_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -1302,7 +1302,7 @@ class active_transaction_data final :
   void _internal_set_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 nonce = 2;
+  // uint64 nonce = 2 [jstype = JS_STRING];
   void clear_nonce();
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce() const;
   void set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2079,7 +2079,7 @@ class block_header final :
   std::string* _internal_mutable_previous();
   public:
 
-  // uint64 height = 2;
+  // uint64 height = 2 [jstype = JS_STRING];
   void clear_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 height() const;
   void set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2088,7 +2088,7 @@ class block_header final :
   void _internal_set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 timestamp = 3;
+  // uint64 timestamp = 3 [jstype = JS_STRING];
   void clear_timestamp();
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp() const;
   void set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -3235,7 +3235,7 @@ inline operation::OpCase operation::op_case() const {
 
 // active_transaction_data
 
-// uint64 resource_limit = 1;
+// uint64 resource_limit = 1 [jstype = JS_STRING];
 inline void active_transaction_data::clear_resource_limit() {
   resource_limit_ = uint64_t{0u};
 }
@@ -3255,7 +3255,7 @@ inline void active_transaction_data::set_resource_limit(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set:koinos.protocol.active_transaction_data.resource_limit)
 }
 
-// uint64 nonce = 2;
+// uint64 nonce = 2 [jstype = JS_STRING];
 inline void active_transaction_data::clear_nonce() {
   nonce_ = uint64_t{0u};
 }
@@ -3703,7 +3703,7 @@ inline void block_header::set_allocated_previous(std::string* previous) {
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_header.previous)
 }
 
-// uint64 height = 2;
+// uint64 height = 2 [jstype = JS_STRING];
 inline void block_header::clear_height() {
   height_ = uint64_t{0u};
 }
@@ -3723,7 +3723,7 @@ inline void block_header::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:koinos.protocol.block_header.height)
 }
 
-// uint64 timestamp = 3;
+// uint64 timestamp = 3 [jstype = JS_STRING];
 inline void block_header::clear_timestamp() {
   timestamp_ = uint64_t{0u};
 }

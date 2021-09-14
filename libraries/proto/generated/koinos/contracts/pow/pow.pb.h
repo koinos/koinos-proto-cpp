@@ -223,7 +223,7 @@ class difficulty_metadata final :
   std::string* _internal_mutable_difficulty();
   public:
 
-  // uint64 last_block_time = 2;
+  // uint64 last_block_time = 2 [jstype = JS_STRING];
   void clear_last_block_time();
   ::PROTOBUF_NAMESPACE_ID::uint64 last_block_time() const;
   void set_last_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -232,7 +232,7 @@ class difficulty_metadata final :
   void _internal_set_last_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 target_block_interval = 4;
+  // uint64 target_block_interval = 4 [jstype = JS_STRING];
   void clear_target_block_interval();
   ::PROTOBUF_NAMESPACE_ID::uint64 target_block_interval() const;
   void set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -472,7 +472,7 @@ inline void difficulty_metadata::set_allocated_target(std::string* target) {
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pow.difficulty_metadata.target)
 }
 
-// uint64 last_block_time = 2;
+// uint64 last_block_time = 2 [jstype = JS_STRING];
 inline void difficulty_metadata::clear_last_block_time() {
   last_block_time_ = uint64_t{0u};
 }
@@ -538,7 +538,7 @@ inline void difficulty_metadata::set_allocated_difficulty(std::string* difficult
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pow.difficulty_metadata.difficulty)
 }
 
-// uint64 target_block_interval = 4;
+// uint64 target_block_interval = 4 [jstype = JS_STRING];
 inline void difficulty_metadata::clear_target_block_interval() {
   target_block_interval_ = uint64_t{0u};
 }

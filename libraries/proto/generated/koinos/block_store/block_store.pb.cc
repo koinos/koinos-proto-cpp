@@ -89,23 +89,24 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n$koinos/block_store/block_store.proto\022\022"
   "koinos.block_store\032\036koinos/protocol/prot"
-  "ocol.proto\"\214\001\n\nblock_item\022\020\n\010block_id\030\001 "
-  "\001(\014\022\024\n\014block_height\030\002 \001(\004\022%\n\005block\030\003 \001(\013"
-  "2\026.koinos.protocol.block\022/\n\007receipt\030\004 \001("
-  "\0132\036.koinos.protocol.block_receipt\"\252\001\n\014bl"
-  "ock_record\022\020\n\010block_id\030\001 \001(\014\022\024\n\014block_he"
-  "ight\030\002 \001(\004\022%\n\005block\030\003 \001(\0132\026.koinos.proto"
-  "col.block\022/\n\007receipt\030\004 \001(\0132\036.koinos.prot"
-  "ocol.block_receipt\022\032\n\022previous_block_ids"
-  "\030\005 \003(\014B>Z<github.com/koinos/koinos-proto"
-  "-golang/koinos/rpc/block_storeb\006proto3"
+  "ocol.proto\"\220\001\n\nblock_item\022\020\n\010block_id\030\001 "
+  "\001(\014\022\030\n\014block_height\030\002 \001(\004B\0020\001\022%\n\005block\030\003"
+  " \001(\0132\026.koinos.protocol.block\022/\n\007receipt\030"
+  "\004 \001(\0132\036.koinos.protocol.block_receipt\"\256\001"
+  "\n\014block_record\022\020\n\010block_id\030\001 \001(\014\022\030\n\014bloc"
+  "k_height\030\002 \001(\004B\0020\001\022%\n\005block\030\003 \001(\0132\026.koin"
+  "os.protocol.block\022/\n\007receipt\030\004 \001(\0132\036.koi"
+  "nos.protocol.block_receipt\022\032\n\022previous_b"
+  "lock_ids\030\005 \003(\014B>Z<github.com/koinos/koin"
+  "os-proto-golang/koinos/rpc/block_storeb\006"
+  "proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_deps[1] = {
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto = {
-  false, false, 478, descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, "koinos/block_store/block_store.proto", 
+  false, false, 486, descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, "koinos/block_store/block_store.proto", 
   &descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_once, descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_koinos_2fblock_5fstore_2fblock_5fstore_2eproto::offsets,
   file_level_metadata_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, file_level_enum_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, file_level_service_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,
@@ -243,7 +244,7 @@ const char* block_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 block_height = 2;
+      // uint64 block_height = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           block_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -299,7 +300,7 @@ failure:
         1, this->_internal_block_id(), target);
   }
 
-  // uint64 block_height = 2;
+  // uint64 block_height = 2 [jstype = JS_STRING];
   if (this->_internal_block_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_block_height(), target);
@@ -358,7 +359,7 @@ size_t block_item::ByteSizeLong() const {
         *receipt_);
   }
 
-  // uint64 block_height = 2;
+  // uint64 block_height = 2 [jstype = JS_STRING];
   if (this->_internal_block_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -568,7 +569,7 @@ const char* block_record::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 block_height = 2;
+      // uint64 block_height = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           block_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -637,7 +638,7 @@ failure:
         1, this->_internal_block_id(), target);
   }
 
-  // uint64 block_height = 2;
+  // uint64 block_height = 2 [jstype = JS_STRING];
   if (this->_internal_block_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_block_height(), target);
@@ -710,7 +711,7 @@ size_t block_record::ByteSizeLong() const {
         *receipt_);
   }
 
-  // uint64 block_height = 2;
+  // uint64 block_height = 2 [jstype = JS_STRING];
   if (this->_internal_block_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

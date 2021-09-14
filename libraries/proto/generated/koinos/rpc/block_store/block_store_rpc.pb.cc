@@ -262,41 +262,41 @@ const char descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstor
   "_id_request\022\020\n\010block_id\030\001 \003(\014\022\024\n\014return_"
   "block\030\002 \001(\010\022\026\n\016return_receipt\030\003 \001(\010\"P\n\031g"
   "et_blocks_by_id_response\0223\n\013block_items\030"
-  "\001 \003(\0132\036.koinos.block_store.block_item\"\226\001"
+  "\001 \003(\0132\036.koinos.block_store.block_item\"\232\001"
   "\n\034get_blocks_by_height_request\022\025\n\rhead_b"
-  "lock_id\030\001 \001(\014\022\035\n\025ancestor_start_height\030\002"
-  " \001(\004\022\022\n\nnum_blocks\030\003 \001(\r\022\024\n\014return_block"
-  "\030\004 \001(\010\022\026\n\016return_receipt\030\005 \001(\010\"T\n\035get_bl"
-  "ocks_by_height_response\0223\n\013block_items\030\001"
-  " \003(\0132\036.koinos.block_store.block_item\"A\n\021"
-  "add_block_request\022,\n\014block_to_add\030\001 \001(\0132"
-  "\026.koinos.protocol.block\"\024\n\022add_block_res"
-  "ponse\"\033\n\031get_highest_block_request\"F\n\032ge"
-  "t_highest_block_response\022(\n\010topology\030\001 \001"
-  "(\0132\026.koinos.block_topology\"\202\003\n\023block_sto"
-  "re_request\022,\n\010reserved\030\001 \001(\0132\030.koinos.rp"
-  "c.reserved_rpcH\000\022L\n\020get_blocks_by_id\030\002 \001"
-  "(\01320.koinos.rpc.block_store.get_blocks_b"
-  "y_id_requestH\000\022T\n\024get_blocks_by_height\030\003"
-  " \001(\01324.koinos.rpc.block_store.get_blocks"
-  "_by_height_requestH\000\022>\n\tadd_block\030\004 \001(\0132"
-  ").koinos.rpc.block_store.add_block_reque"
-  "stH\000\022N\n\021get_highest_block\030\005 \001(\01321.koinos"
-  ".rpc.block_store.get_highest_block_reque"
-  "stH\000B\t\n\007request\"\265\003\n\024block_store_response"
-  "\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved"
-  "_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.error"
-  "_responseH\000\022M\n\020get_blocks_by_id\030\003 \001(\01321."
-  "koinos.rpc.block_store.get_blocks_by_id_"
-  "responseH\000\022U\n\024get_blocks_by_height\030\004 \001(\013"
-  "25.koinos.rpc.block_store.get_blocks_by_"
-  "height_responseH\000\022\?\n\tadd_block\030\005 \001(\0132*.k"
-  "oinos.rpc.block_store.add_block_response"
-  "H\000\022O\n\021get_highest_block\030\006 \001(\01322.koinos.r"
-  "pc.block_store.get_highest_block_respons"
-  "eH\000B\n\n\010responseB>Z<github.com/koinos/koi"
-  "nos-proto-golang/koinos/rpc/block_storeb"
-  "\006proto3"
+  "lock_id\030\001 \001(\014\022!\n\025ancestor_start_height\030\002"
+  " \001(\004B\0020\001\022\022\n\nnum_blocks\030\003 \001(\r\022\024\n\014return_b"
+  "lock\030\004 \001(\010\022\026\n\016return_receipt\030\005 \001(\010\"T\n\035ge"
+  "t_blocks_by_height_response\0223\n\013block_ite"
+  "ms\030\001 \003(\0132\036.koinos.block_store.block_item"
+  "\"A\n\021add_block_request\022,\n\014block_to_add\030\001 "
+  "\001(\0132\026.koinos.protocol.block\"\024\n\022add_block"
+  "_response\"\033\n\031get_highest_block_request\"F"
+  "\n\032get_highest_block_response\022(\n\010topology"
+  "\030\001 \001(\0132\026.koinos.block_topology\"\202\003\n\023block"
+  "_store_request\022,\n\010reserved\030\001 \001(\0132\030.koino"
+  "s.rpc.reserved_rpcH\000\022L\n\020get_blocks_by_id"
+  "\030\002 \001(\01320.koinos.rpc.block_store.get_bloc"
+  "ks_by_id_requestH\000\022T\n\024get_blocks_by_heig"
+  "ht\030\003 \001(\01324.koinos.rpc.block_store.get_bl"
+  "ocks_by_height_requestH\000\022>\n\tadd_block\030\004 "
+  "\001(\0132).koinos.rpc.block_store.add_block_r"
+  "equestH\000\022N\n\021get_highest_block\030\005 \001(\01321.ko"
+  "inos.rpc.block_store.get_highest_block_r"
+  "equestH\000B\t\n\007request\"\265\003\n\024block_store_resp"
+  "onse\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.rese"
+  "rved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.e"
+  "rror_responseH\000\022M\n\020get_blocks_by_id\030\003 \001("
+  "\01321.koinos.rpc.block_store.get_blocks_by"
+  "_id_responseH\000\022U\n\024get_blocks_by_height\030\004"
+  " \001(\01325.koinos.rpc.block_store.get_blocks"
+  "_by_height_responseH\000\022\?\n\tadd_block\030\005 \001(\013"
+  "2*.koinos.rpc.block_store.add_block_resp"
+  "onseH\000\022O\n\021get_highest_block\030\006 \001(\01322.koin"
+  "os.rpc.block_store.get_highest_block_res"
+  "ponseH\000B\n\n\010responseB>Z<github.com/koinos"
+  "/koinos-proto-golang/koinos/rpc/block_st"
+  "oreb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps[4] = {
   &::descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,
@@ -306,7 +306,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto = {
-  false, false, 1687, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
+  false, false, 1691, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps, 4, 10,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto,
@@ -848,7 +848,7 @@ const char* get_blocks_by_height_request::_InternalParse(const char* ptr, ::PROT
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 ancestor_start_height = 2;
+      // uint64 ancestor_start_height = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           ancestor_start_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -911,7 +911,7 @@ failure:
         1, this->_internal_head_block_id(), target);
   }
 
-  // uint64 ancestor_start_height = 2;
+  // uint64 ancestor_start_height = 2 [jstype = JS_STRING];
   if (this->_internal_ancestor_start_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_ancestor_start_height(), target);
@@ -958,7 +958,7 @@ size_t get_blocks_by_height_request::ByteSizeLong() const {
         this->_internal_head_block_id());
   }
 
-  // uint64 ancestor_start_height = 2;
+  // uint64 ancestor_start_height = 2 [jstype = JS_STRING];
   if (this->_internal_ancestor_start_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

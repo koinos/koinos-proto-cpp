@@ -212,7 +212,7 @@ class block_topology final :
   std::string* _internal_mutable_previous();
   public:
 
-  // uint64 height = 2;
+  // uint64 height = 2 [jstype = JS_STRING];
   void clear_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 height() const;
   void set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -291,7 +291,7 @@ inline void block_topology::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:koinos.block_topology.id)
 }
 
-// uint64 height = 2;
+// uint64 height = 2 [jstype = JS_STRING];
 inline void block_topology::clear_height() {
   height_ = uint64_t{0u};
 }

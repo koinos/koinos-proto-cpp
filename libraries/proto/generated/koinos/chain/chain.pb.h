@@ -94,30 +94,6 @@ extern call_contract_argsDefaultTypeInternal _call_contract_args_default_instanc
 class call_contract_return;
 struct call_contract_returnDefaultTypeInternal;
 extern call_contract_returnDefaultTypeInternal _call_contract_return_default_instance_;
-class db_get_next_object_args;
-struct db_get_next_object_argsDefaultTypeInternal;
-extern db_get_next_object_argsDefaultTypeInternal _db_get_next_object_args_default_instance_;
-class db_get_next_object_return;
-struct db_get_next_object_returnDefaultTypeInternal;
-extern db_get_next_object_returnDefaultTypeInternal _db_get_next_object_return_default_instance_;
-class db_get_object_args;
-struct db_get_object_argsDefaultTypeInternal;
-extern db_get_object_argsDefaultTypeInternal _db_get_object_args_default_instance_;
-class db_get_object_return;
-struct db_get_object_returnDefaultTypeInternal;
-extern db_get_object_returnDefaultTypeInternal _db_get_object_return_default_instance_;
-class db_get_prev_object_args;
-struct db_get_prev_object_argsDefaultTypeInternal;
-extern db_get_prev_object_argsDefaultTypeInternal _db_get_prev_object_args_default_instance_;
-class db_get_prev_object_return;
-struct db_get_prev_object_returnDefaultTypeInternal;
-extern db_get_prev_object_returnDefaultTypeInternal _db_get_prev_object_return_default_instance_;
-class db_put_object_args;
-struct db_put_object_argsDefaultTypeInternal;
-extern db_put_object_argsDefaultTypeInternal _db_put_object_args_default_instance_;
-class db_put_object_return;
-struct db_put_object_returnDefaultTypeInternal;
-extern db_put_object_returnDefaultTypeInternal _db_put_object_return_default_instance_;
 class exit_contract_args;
 struct exit_contract_argsDefaultTypeInternal;
 extern exit_contract_argsDefaultTypeInternal _exit_contract_args_default_instance_;
@@ -178,6 +154,24 @@ extern get_max_account_resources_argsDefaultTypeInternal _get_max_account_resour
 class get_max_account_resources_return;
 struct get_max_account_resources_returnDefaultTypeInternal;
 extern get_max_account_resources_returnDefaultTypeInternal _get_max_account_resources_return_default_instance_;
+class get_next_object_args;
+struct get_next_object_argsDefaultTypeInternal;
+extern get_next_object_argsDefaultTypeInternal _get_next_object_args_default_instance_;
+class get_next_object_return;
+struct get_next_object_returnDefaultTypeInternal;
+extern get_next_object_returnDefaultTypeInternal _get_next_object_return_default_instance_;
+class get_object_args;
+struct get_object_argsDefaultTypeInternal;
+extern get_object_argsDefaultTypeInternal _get_object_args_default_instance_;
+class get_object_return;
+struct get_object_returnDefaultTypeInternal;
+extern get_object_returnDefaultTypeInternal _get_object_return_default_instance_;
+class get_prev_object_args;
+struct get_prev_object_argsDefaultTypeInternal;
+extern get_prev_object_argsDefaultTypeInternal _get_prev_object_args_default_instance_;
+class get_prev_object_return;
+struct get_prev_object_returnDefaultTypeInternal;
+extern get_prev_object_returnDefaultTypeInternal _get_prev_object_return_default_instance_;
 class get_transaction_payer_args;
 struct get_transaction_payer_argsDefaultTypeInternal;
 extern get_transaction_payer_argsDefaultTypeInternal _get_transaction_payer_args_default_instance_;
@@ -211,6 +205,12 @@ extern prints_argsDefaultTypeInternal _prints_args_default_instance_;
 class prints_return;
 struct prints_returnDefaultTypeInternal;
 extern prints_returnDefaultTypeInternal _prints_return_default_instance_;
+class put_object_args;
+struct put_object_argsDefaultTypeInternal;
+extern put_object_argsDefaultTypeInternal _put_object_args_default_instance_;
+class put_object_return;
+struct put_object_returnDefaultTypeInternal;
+extern put_object_returnDefaultTypeInternal _put_object_return_default_instance_;
 class recover_public_key_args;
 struct recover_public_key_argsDefaultTypeInternal;
 extern recover_public_key_argsDefaultTypeInternal _recover_public_key_args_default_instance_;
@@ -256,14 +256,6 @@ template<> ::koinos::chain::apply_upload_contract_operation_args* Arena::CreateM
 template<> ::koinos::chain::apply_upload_contract_operation_return* Arena::CreateMaybeMessage<::koinos::chain::apply_upload_contract_operation_return>(Arena*);
 template<> ::koinos::chain::call_contract_args* Arena::CreateMaybeMessage<::koinos::chain::call_contract_args>(Arena*);
 template<> ::koinos::chain::call_contract_return* Arena::CreateMaybeMessage<::koinos::chain::call_contract_return>(Arena*);
-template<> ::koinos::chain::db_get_next_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_get_next_object_args>(Arena*);
-template<> ::koinos::chain::db_get_next_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_get_next_object_return>(Arena*);
-template<> ::koinos::chain::db_get_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_get_object_args>(Arena*);
-template<> ::koinos::chain::db_get_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_get_object_return>(Arena*);
-template<> ::koinos::chain::db_get_prev_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_get_prev_object_args>(Arena*);
-template<> ::koinos::chain::db_get_prev_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_get_prev_object_return>(Arena*);
-template<> ::koinos::chain::db_put_object_args* Arena::CreateMaybeMessage<::koinos::chain::db_put_object_args>(Arena*);
-template<> ::koinos::chain::db_put_object_return* Arena::CreateMaybeMessage<::koinos::chain::db_put_object_return>(Arena*);
 template<> ::koinos::chain::exit_contract_args* Arena::CreateMaybeMessage<::koinos::chain::exit_contract_args>(Arena*);
 template<> ::koinos::chain::exit_contract_return* Arena::CreateMaybeMessage<::koinos::chain::exit_contract_return>(Arena*);
 template<> ::koinos::chain::get_account_nonce_args* Arena::CreateMaybeMessage<::koinos::chain::get_account_nonce_args>(Arena*);
@@ -284,6 +276,12 @@ template<> ::koinos::chain::get_last_irreversible_block_args* Arena::CreateMaybe
 template<> ::koinos::chain::get_last_irreversible_block_return* Arena::CreateMaybeMessage<::koinos::chain::get_last_irreversible_block_return>(Arena*);
 template<> ::koinos::chain::get_max_account_resources_args* Arena::CreateMaybeMessage<::koinos::chain::get_max_account_resources_args>(Arena*);
 template<> ::koinos::chain::get_max_account_resources_return* Arena::CreateMaybeMessage<::koinos::chain::get_max_account_resources_return>(Arena*);
+template<> ::koinos::chain::get_next_object_args* Arena::CreateMaybeMessage<::koinos::chain::get_next_object_args>(Arena*);
+template<> ::koinos::chain::get_next_object_return* Arena::CreateMaybeMessage<::koinos::chain::get_next_object_return>(Arena*);
+template<> ::koinos::chain::get_object_args* Arena::CreateMaybeMessage<::koinos::chain::get_object_args>(Arena*);
+template<> ::koinos::chain::get_object_return* Arena::CreateMaybeMessage<::koinos::chain::get_object_return>(Arena*);
+template<> ::koinos::chain::get_prev_object_args* Arena::CreateMaybeMessage<::koinos::chain::get_prev_object_args>(Arena*);
+template<> ::koinos::chain::get_prev_object_return* Arena::CreateMaybeMessage<::koinos::chain::get_prev_object_return>(Arena*);
 template<> ::koinos::chain::get_transaction_payer_args* Arena::CreateMaybeMessage<::koinos::chain::get_transaction_payer_args>(Arena*);
 template<> ::koinos::chain::get_transaction_payer_return* Arena::CreateMaybeMessage<::koinos::chain::get_transaction_payer_return>(Arena*);
 template<> ::koinos::chain::get_transaction_resource_limit_args* Arena::CreateMaybeMessage<::koinos::chain::get_transaction_resource_limit_args>(Arena*);
@@ -295,6 +293,8 @@ template<> ::koinos::chain::hash_return* Arena::CreateMaybeMessage<::koinos::cha
 template<> ::koinos::chain::head_info* Arena::CreateMaybeMessage<::koinos::chain::head_info>(Arena*);
 template<> ::koinos::chain::prints_args* Arena::CreateMaybeMessage<::koinos::chain::prints_args>(Arena*);
 template<> ::koinos::chain::prints_return* Arena::CreateMaybeMessage<::koinos::chain::prints_return>(Arena*);
+template<> ::koinos::chain::put_object_args* Arena::CreateMaybeMessage<::koinos::chain::put_object_args>(Arena*);
+template<> ::koinos::chain::put_object_return* Arena::CreateMaybeMessage<::koinos::chain::put_object_return>(Arena*);
 template<> ::koinos::chain::recover_public_key_args* Arena::CreateMaybeMessage<::koinos::chain::recover_public_key_args>(Arena*);
 template<> ::koinos::chain::recover_public_key_return* Arena::CreateMaybeMessage<::koinos::chain::recover_public_key_return>(Arena*);
 template<> ::koinos::chain::require_authority_args* Arena::CreateMaybeMessage<::koinos::chain::require_authority_args>(Arena*);
@@ -473,7 +473,7 @@ class head_info final :
       ::koinos::block_topology* head_topology);
   ::koinos::block_topology* unsafe_arena_release_head_topology();
 
-  // uint64 head_block_time = 2;
+  // uint64 head_block_time = 2 [jstype = JS_STRING];
   void clear_head_block_time();
   ::PROTOBUF_NAMESPACE_ID::uint64 head_block_time() const;
   void set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -482,7 +482,7 @@ class head_info final :
   void _internal_set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 last_irreversible_block = 3;
+  // uint64 last_irreversible_block = 3 [jstype = JS_STRING];
   void clear_last_irreversible_block();
   ::PROTOBUF_NAMESPACE_ID::uint64 last_irreversible_block() const;
   void set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -2846,24 +2846,24 @@ class apply_set_system_call_operation_return final :
 };
 // -------------------------------------------------------------------
 
-class db_put_object_args final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_put_object_args) */ {
+class put_object_args final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.put_object_args) */ {
  public:
-  inline db_put_object_args() : db_put_object_args(nullptr) {}
-  ~db_put_object_args() override;
-  explicit constexpr db_put_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline put_object_args() : put_object_args(nullptr) {}
+  ~put_object_args() override;
+  explicit constexpr put_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_put_object_args(const db_put_object_args& from);
-  db_put_object_args(db_put_object_args&& from) noexcept
-    : db_put_object_args() {
+  put_object_args(const put_object_args& from);
+  put_object_args(put_object_args&& from) noexcept
+    : put_object_args() {
     *this = ::std::move(from);
   }
 
-  inline db_put_object_args& operator=(const db_put_object_args& from) {
+  inline put_object_args& operator=(const put_object_args& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_put_object_args& operator=(db_put_object_args&& from) noexcept {
+  inline put_object_args& operator=(put_object_args&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -2882,20 +2882,20 @@ class db_put_object_args final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_put_object_args& default_instance() {
+  static const put_object_args& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_put_object_args* internal_default_instance() {
-    return reinterpret_cast<const db_put_object_args*>(
-               &_db_put_object_args_default_instance_);
+  static inline const put_object_args* internal_default_instance() {
+    return reinterpret_cast<const put_object_args*>(
+               &_put_object_args_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     17;
 
-  friend void swap(db_put_object_args& a, db_put_object_args& b) {
+  friend void swap(put_object_args& a, put_object_args& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_put_object_args* other) {
+  inline void Swap(put_object_args* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -2903,7 +2903,7 @@ class db_put_object_args final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_put_object_args* other) {
+  void UnsafeArenaSwap(put_object_args* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2911,17 +2911,17 @@ class db_put_object_args final :
 
   // implements Message ----------------------------------------------
 
-  inline db_put_object_args* New() const final {
-    return new db_put_object_args();
+  inline put_object_args* New() const final {
+    return new put_object_args();
   }
 
-  db_put_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_put_object_args>(arena);
+  put_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<put_object_args>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_put_object_args& from);
+  void CopyFrom(const put_object_args& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_put_object_args& from);
+  void MergeFrom(const put_object_args& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -2938,13 +2938,13 @@ class db_put_object_args final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_put_object_args* other);
+  void InternalSwap(put_object_args* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_put_object_args";
+    return "koinos.chain.put_object_args";
   }
   protected:
-  explicit db_put_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit put_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3007,7 +3007,7 @@ class db_put_object_args final :
   std::string* _internal_mutable_obj();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_put_object_args)
+  // @@protoc_insertion_point(class_scope:koinos.chain.put_object_args)
  private:
   class _Internal;
 
@@ -3022,24 +3022,24 @@ class db_put_object_args final :
 };
 // -------------------------------------------------------------------
 
-class db_put_object_return final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_put_object_return) */ {
+class put_object_return final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.put_object_return) */ {
  public:
-  inline db_put_object_return() : db_put_object_return(nullptr) {}
-  ~db_put_object_return() override;
-  explicit constexpr db_put_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline put_object_return() : put_object_return(nullptr) {}
+  ~put_object_return() override;
+  explicit constexpr put_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_put_object_return(const db_put_object_return& from);
-  db_put_object_return(db_put_object_return&& from) noexcept
-    : db_put_object_return() {
+  put_object_return(const put_object_return& from);
+  put_object_return(put_object_return&& from) noexcept
+    : put_object_return() {
     *this = ::std::move(from);
   }
 
-  inline db_put_object_return& operator=(const db_put_object_return& from) {
+  inline put_object_return& operator=(const put_object_return& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_put_object_return& operator=(db_put_object_return&& from) noexcept {
+  inline put_object_return& operator=(put_object_return&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3058,20 +3058,20 @@ class db_put_object_return final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_put_object_return& default_instance() {
+  static const put_object_return& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_put_object_return* internal_default_instance() {
-    return reinterpret_cast<const db_put_object_return*>(
-               &_db_put_object_return_default_instance_);
+  static inline const put_object_return* internal_default_instance() {
+    return reinterpret_cast<const put_object_return*>(
+               &_put_object_return_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     18;
 
-  friend void swap(db_put_object_return& a, db_put_object_return& b) {
+  friend void swap(put_object_return& a, put_object_return& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_put_object_return* other) {
+  inline void Swap(put_object_return* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -3079,7 +3079,7 @@ class db_put_object_return final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_put_object_return* other) {
+  void UnsafeArenaSwap(put_object_return* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3087,17 +3087,17 @@ class db_put_object_return final :
 
   // implements Message ----------------------------------------------
 
-  inline db_put_object_return* New() const final {
-    return new db_put_object_return();
+  inline put_object_return* New() const final {
+    return new put_object_return();
   }
 
-  db_put_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_put_object_return>(arena);
+  put_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<put_object_return>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_put_object_return& from);
+  void CopyFrom(const put_object_return& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_put_object_return& from);
+  void MergeFrom(const put_object_return& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -3114,13 +3114,13 @@ class db_put_object_return final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_put_object_return* other);
+  void InternalSwap(put_object_return* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_put_object_return";
+    return "koinos.chain.put_object_return";
   }
   protected:
-  explicit db_put_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit put_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3148,7 +3148,7 @@ class db_put_object_return final :
   void _internal_set_value(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_put_object_return)
+  // @@protoc_insertion_point(class_scope:koinos.chain.put_object_return)
  private:
   class _Internal;
 
@@ -3161,24 +3161,24 @@ class db_put_object_return final :
 };
 // -------------------------------------------------------------------
 
-class db_get_object_args final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_get_object_args) */ {
+class get_object_args final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_object_args) */ {
  public:
-  inline db_get_object_args() : db_get_object_args(nullptr) {}
-  ~db_get_object_args() override;
-  explicit constexpr db_get_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline get_object_args() : get_object_args(nullptr) {}
+  ~get_object_args() override;
+  explicit constexpr get_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_get_object_args(const db_get_object_args& from);
-  db_get_object_args(db_get_object_args&& from) noexcept
-    : db_get_object_args() {
+  get_object_args(const get_object_args& from);
+  get_object_args(get_object_args&& from) noexcept
+    : get_object_args() {
     *this = ::std::move(from);
   }
 
-  inline db_get_object_args& operator=(const db_get_object_args& from) {
+  inline get_object_args& operator=(const get_object_args& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_get_object_args& operator=(db_get_object_args&& from) noexcept {
+  inline get_object_args& operator=(get_object_args&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3197,20 +3197,20 @@ class db_get_object_args final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_get_object_args& default_instance() {
+  static const get_object_args& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_get_object_args* internal_default_instance() {
-    return reinterpret_cast<const db_get_object_args*>(
-               &_db_get_object_args_default_instance_);
+  static inline const get_object_args* internal_default_instance() {
+    return reinterpret_cast<const get_object_args*>(
+               &_get_object_args_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     19;
 
-  friend void swap(db_get_object_args& a, db_get_object_args& b) {
+  friend void swap(get_object_args& a, get_object_args& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_get_object_args* other) {
+  inline void Swap(get_object_args* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -3218,7 +3218,7 @@ class db_get_object_args final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_get_object_args* other) {
+  void UnsafeArenaSwap(get_object_args* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3226,17 +3226,17 @@ class db_get_object_args final :
 
   // implements Message ----------------------------------------------
 
-  inline db_get_object_args* New() const final {
-    return new db_get_object_args();
+  inline get_object_args* New() const final {
+    return new get_object_args();
   }
 
-  db_get_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_get_object_args>(arena);
+  get_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_object_args>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_get_object_args& from);
+  void CopyFrom(const get_object_args& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_get_object_args& from);
+  void MergeFrom(const get_object_args& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -3253,13 +3253,13 @@ class db_get_object_args final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_get_object_args* other);
+  void InternalSwap(get_object_args* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_get_object_args";
+    return "koinos.chain.get_object_args";
   }
   protected:
-  explicit db_get_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit get_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3317,7 +3317,7 @@ class db_get_object_args final :
   void _internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_get_object_args)
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_object_args)
  private:
   class _Internal;
 
@@ -3332,24 +3332,24 @@ class db_get_object_args final :
 };
 // -------------------------------------------------------------------
 
-class db_get_object_return final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_get_object_return) */ {
+class get_object_return final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_object_return) */ {
  public:
-  inline db_get_object_return() : db_get_object_return(nullptr) {}
-  ~db_get_object_return() override;
-  explicit constexpr db_get_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline get_object_return() : get_object_return(nullptr) {}
+  ~get_object_return() override;
+  explicit constexpr get_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_get_object_return(const db_get_object_return& from);
-  db_get_object_return(db_get_object_return&& from) noexcept
-    : db_get_object_return() {
+  get_object_return(const get_object_return& from);
+  get_object_return(get_object_return&& from) noexcept
+    : get_object_return() {
     *this = ::std::move(from);
   }
 
-  inline db_get_object_return& operator=(const db_get_object_return& from) {
+  inline get_object_return& operator=(const get_object_return& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_get_object_return& operator=(db_get_object_return&& from) noexcept {
+  inline get_object_return& operator=(get_object_return&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3368,20 +3368,20 @@ class db_get_object_return final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_get_object_return& default_instance() {
+  static const get_object_return& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_get_object_return* internal_default_instance() {
-    return reinterpret_cast<const db_get_object_return*>(
-               &_db_get_object_return_default_instance_);
+  static inline const get_object_return* internal_default_instance() {
+    return reinterpret_cast<const get_object_return*>(
+               &_get_object_return_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     20;
 
-  friend void swap(db_get_object_return& a, db_get_object_return& b) {
+  friend void swap(get_object_return& a, get_object_return& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_get_object_return* other) {
+  inline void Swap(get_object_return* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -3389,7 +3389,7 @@ class db_get_object_return final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_get_object_return* other) {
+  void UnsafeArenaSwap(get_object_return* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3397,17 +3397,17 @@ class db_get_object_return final :
 
   // implements Message ----------------------------------------------
 
-  inline db_get_object_return* New() const final {
-    return new db_get_object_return();
+  inline get_object_return* New() const final {
+    return new get_object_return();
   }
 
-  db_get_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_get_object_return>(arena);
+  get_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_object_return>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_get_object_return& from);
+  void CopyFrom(const get_object_return& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_get_object_return& from);
+  void MergeFrom(const get_object_return& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -3424,13 +3424,13 @@ class db_get_object_return final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_get_object_return* other);
+  void InternalSwap(get_object_return* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_get_object_return";
+    return "koinos.chain.get_object_return";
   }
   protected:
-  explicit db_get_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit get_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3463,7 +3463,7 @@ class db_get_object_return final :
   std::string* _internal_mutable_value();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_get_object_return)
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_object_return)
  private:
   class _Internal;
 
@@ -3476,24 +3476,24 @@ class db_get_object_return final :
 };
 // -------------------------------------------------------------------
 
-class db_get_next_object_args final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_get_next_object_args) */ {
+class get_next_object_args final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_next_object_args) */ {
  public:
-  inline db_get_next_object_args() : db_get_next_object_args(nullptr) {}
-  ~db_get_next_object_args() override;
-  explicit constexpr db_get_next_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline get_next_object_args() : get_next_object_args(nullptr) {}
+  ~get_next_object_args() override;
+  explicit constexpr get_next_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_get_next_object_args(const db_get_next_object_args& from);
-  db_get_next_object_args(db_get_next_object_args&& from) noexcept
-    : db_get_next_object_args() {
+  get_next_object_args(const get_next_object_args& from);
+  get_next_object_args(get_next_object_args&& from) noexcept
+    : get_next_object_args() {
     *this = ::std::move(from);
   }
 
-  inline db_get_next_object_args& operator=(const db_get_next_object_args& from) {
+  inline get_next_object_args& operator=(const get_next_object_args& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_get_next_object_args& operator=(db_get_next_object_args&& from) noexcept {
+  inline get_next_object_args& operator=(get_next_object_args&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3512,20 +3512,20 @@ class db_get_next_object_args final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_get_next_object_args& default_instance() {
+  static const get_next_object_args& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_get_next_object_args* internal_default_instance() {
-    return reinterpret_cast<const db_get_next_object_args*>(
-               &_db_get_next_object_args_default_instance_);
+  static inline const get_next_object_args* internal_default_instance() {
+    return reinterpret_cast<const get_next_object_args*>(
+               &_get_next_object_args_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     21;
 
-  friend void swap(db_get_next_object_args& a, db_get_next_object_args& b) {
+  friend void swap(get_next_object_args& a, get_next_object_args& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_get_next_object_args* other) {
+  inline void Swap(get_next_object_args* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -3533,7 +3533,7 @@ class db_get_next_object_args final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_get_next_object_args* other) {
+  void UnsafeArenaSwap(get_next_object_args* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3541,17 +3541,17 @@ class db_get_next_object_args final :
 
   // implements Message ----------------------------------------------
 
-  inline db_get_next_object_args* New() const final {
-    return new db_get_next_object_args();
+  inline get_next_object_args* New() const final {
+    return new get_next_object_args();
   }
 
-  db_get_next_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_get_next_object_args>(arena);
+  get_next_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_next_object_args>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_get_next_object_args& from);
+  void CopyFrom(const get_next_object_args& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_get_next_object_args& from);
+  void MergeFrom(const get_next_object_args& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -3568,13 +3568,13 @@ class db_get_next_object_args final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_get_next_object_args* other);
+  void InternalSwap(get_next_object_args* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_get_next_object_args";
+    return "koinos.chain.get_next_object_args";
   }
   protected:
-  explicit db_get_next_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit get_next_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3632,7 +3632,7 @@ class db_get_next_object_args final :
   void _internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_get_next_object_args)
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_next_object_args)
  private:
   class _Internal;
 
@@ -3647,24 +3647,24 @@ class db_get_next_object_args final :
 };
 // -------------------------------------------------------------------
 
-class db_get_next_object_return final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_get_next_object_return) */ {
+class get_next_object_return final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_next_object_return) */ {
  public:
-  inline db_get_next_object_return() : db_get_next_object_return(nullptr) {}
-  ~db_get_next_object_return() override;
-  explicit constexpr db_get_next_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline get_next_object_return() : get_next_object_return(nullptr) {}
+  ~get_next_object_return() override;
+  explicit constexpr get_next_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_get_next_object_return(const db_get_next_object_return& from);
-  db_get_next_object_return(db_get_next_object_return&& from) noexcept
-    : db_get_next_object_return() {
+  get_next_object_return(const get_next_object_return& from);
+  get_next_object_return(get_next_object_return&& from) noexcept
+    : get_next_object_return() {
     *this = ::std::move(from);
   }
 
-  inline db_get_next_object_return& operator=(const db_get_next_object_return& from) {
+  inline get_next_object_return& operator=(const get_next_object_return& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_get_next_object_return& operator=(db_get_next_object_return&& from) noexcept {
+  inline get_next_object_return& operator=(get_next_object_return&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3683,20 +3683,20 @@ class db_get_next_object_return final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_get_next_object_return& default_instance() {
+  static const get_next_object_return& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_get_next_object_return* internal_default_instance() {
-    return reinterpret_cast<const db_get_next_object_return*>(
-               &_db_get_next_object_return_default_instance_);
+  static inline const get_next_object_return* internal_default_instance() {
+    return reinterpret_cast<const get_next_object_return*>(
+               &_get_next_object_return_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     22;
 
-  friend void swap(db_get_next_object_return& a, db_get_next_object_return& b) {
+  friend void swap(get_next_object_return& a, get_next_object_return& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_get_next_object_return* other) {
+  inline void Swap(get_next_object_return* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -3704,7 +3704,7 @@ class db_get_next_object_return final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_get_next_object_return* other) {
+  void UnsafeArenaSwap(get_next_object_return* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3712,17 +3712,17 @@ class db_get_next_object_return final :
 
   // implements Message ----------------------------------------------
 
-  inline db_get_next_object_return* New() const final {
-    return new db_get_next_object_return();
+  inline get_next_object_return* New() const final {
+    return new get_next_object_return();
   }
 
-  db_get_next_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_get_next_object_return>(arena);
+  get_next_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_next_object_return>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_get_next_object_return& from);
+  void CopyFrom(const get_next_object_return& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_get_next_object_return& from);
+  void MergeFrom(const get_next_object_return& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -3739,13 +3739,13 @@ class db_get_next_object_return final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_get_next_object_return* other);
+  void InternalSwap(get_next_object_return* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_get_next_object_return";
+    return "koinos.chain.get_next_object_return";
   }
   protected:
-  explicit db_get_next_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit get_next_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3778,7 +3778,7 @@ class db_get_next_object_return final :
   std::string* _internal_mutable_value();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_get_next_object_return)
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_next_object_return)
  private:
   class _Internal;
 
@@ -3791,24 +3791,24 @@ class db_get_next_object_return final :
 };
 // -------------------------------------------------------------------
 
-class db_get_prev_object_args final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_get_prev_object_args) */ {
+class get_prev_object_args final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_prev_object_args) */ {
  public:
-  inline db_get_prev_object_args() : db_get_prev_object_args(nullptr) {}
-  ~db_get_prev_object_args() override;
-  explicit constexpr db_get_prev_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline get_prev_object_args() : get_prev_object_args(nullptr) {}
+  ~get_prev_object_args() override;
+  explicit constexpr get_prev_object_args(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_get_prev_object_args(const db_get_prev_object_args& from);
-  db_get_prev_object_args(db_get_prev_object_args&& from) noexcept
-    : db_get_prev_object_args() {
+  get_prev_object_args(const get_prev_object_args& from);
+  get_prev_object_args(get_prev_object_args&& from) noexcept
+    : get_prev_object_args() {
     *this = ::std::move(from);
   }
 
-  inline db_get_prev_object_args& operator=(const db_get_prev_object_args& from) {
+  inline get_prev_object_args& operator=(const get_prev_object_args& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_get_prev_object_args& operator=(db_get_prev_object_args&& from) noexcept {
+  inline get_prev_object_args& operator=(get_prev_object_args&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3827,20 +3827,20 @@ class db_get_prev_object_args final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_get_prev_object_args& default_instance() {
+  static const get_prev_object_args& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_get_prev_object_args* internal_default_instance() {
-    return reinterpret_cast<const db_get_prev_object_args*>(
-               &_db_get_prev_object_args_default_instance_);
+  static inline const get_prev_object_args* internal_default_instance() {
+    return reinterpret_cast<const get_prev_object_args*>(
+               &_get_prev_object_args_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     23;
 
-  friend void swap(db_get_prev_object_args& a, db_get_prev_object_args& b) {
+  friend void swap(get_prev_object_args& a, get_prev_object_args& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_get_prev_object_args* other) {
+  inline void Swap(get_prev_object_args* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -3848,7 +3848,7 @@ class db_get_prev_object_args final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_get_prev_object_args* other) {
+  void UnsafeArenaSwap(get_prev_object_args* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -3856,17 +3856,17 @@ class db_get_prev_object_args final :
 
   // implements Message ----------------------------------------------
 
-  inline db_get_prev_object_args* New() const final {
-    return new db_get_prev_object_args();
+  inline get_prev_object_args* New() const final {
+    return new get_prev_object_args();
   }
 
-  db_get_prev_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_get_prev_object_args>(arena);
+  get_prev_object_args* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_prev_object_args>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_get_prev_object_args& from);
+  void CopyFrom(const get_prev_object_args& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_get_prev_object_args& from);
+  void MergeFrom(const get_prev_object_args& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -3883,13 +3883,13 @@ class db_get_prev_object_args final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_get_prev_object_args* other);
+  void InternalSwap(get_prev_object_args* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_get_prev_object_args";
+    return "koinos.chain.get_prev_object_args";
   }
   protected:
-  explicit db_get_prev_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit get_prev_object_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -3947,7 +3947,7 @@ class db_get_prev_object_args final :
   void _internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_get_prev_object_args)
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_prev_object_args)
  private:
   class _Internal;
 
@@ -3962,24 +3962,24 @@ class db_get_prev_object_args final :
 };
 // -------------------------------------------------------------------
 
-class db_get_prev_object_return final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.db_get_prev_object_return) */ {
+class get_prev_object_return final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_prev_object_return) */ {
  public:
-  inline db_get_prev_object_return() : db_get_prev_object_return(nullptr) {}
-  ~db_get_prev_object_return() override;
-  explicit constexpr db_get_prev_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline get_prev_object_return() : get_prev_object_return(nullptr) {}
+  ~get_prev_object_return() override;
+  explicit constexpr get_prev_object_return(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  db_get_prev_object_return(const db_get_prev_object_return& from);
-  db_get_prev_object_return(db_get_prev_object_return&& from) noexcept
-    : db_get_prev_object_return() {
+  get_prev_object_return(const get_prev_object_return& from);
+  get_prev_object_return(get_prev_object_return&& from) noexcept
+    : get_prev_object_return() {
     *this = ::std::move(from);
   }
 
-  inline db_get_prev_object_return& operator=(const db_get_prev_object_return& from) {
+  inline get_prev_object_return& operator=(const get_prev_object_return& from) {
     CopyFrom(from);
     return *this;
   }
-  inline db_get_prev_object_return& operator=(db_get_prev_object_return&& from) noexcept {
+  inline get_prev_object_return& operator=(get_prev_object_return&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -3998,20 +3998,20 @@ class db_get_prev_object_return final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const db_get_prev_object_return& default_instance() {
+  static const get_prev_object_return& default_instance() {
     return *internal_default_instance();
   }
-  static inline const db_get_prev_object_return* internal_default_instance() {
-    return reinterpret_cast<const db_get_prev_object_return*>(
-               &_db_get_prev_object_return_default_instance_);
+  static inline const get_prev_object_return* internal_default_instance() {
+    return reinterpret_cast<const get_prev_object_return*>(
+               &_get_prev_object_return_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     24;
 
-  friend void swap(db_get_prev_object_return& a, db_get_prev_object_return& b) {
+  friend void swap(get_prev_object_return& a, get_prev_object_return& b) {
     a.Swap(&b);
   }
-  inline void Swap(db_get_prev_object_return* other) {
+  inline void Swap(get_prev_object_return* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -4019,7 +4019,7 @@ class db_get_prev_object_return final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(db_get_prev_object_return* other) {
+  void UnsafeArenaSwap(get_prev_object_return* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -4027,17 +4027,17 @@ class db_get_prev_object_return final :
 
   // implements Message ----------------------------------------------
 
-  inline db_get_prev_object_return* New() const final {
-    return new db_get_prev_object_return();
+  inline get_prev_object_return* New() const final {
+    return new get_prev_object_return();
   }
 
-  db_get_prev_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<db_get_prev_object_return>(arena);
+  get_prev_object_return* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_prev_object_return>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const db_get_prev_object_return& from);
+  void CopyFrom(const get_prev_object_return& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const db_get_prev_object_return& from);
+  void MergeFrom(const get_prev_object_return& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -4054,13 +4054,13 @@ class db_get_prev_object_return final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(db_get_prev_object_return* other);
+  void InternalSwap(get_prev_object_return* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.db_get_prev_object_return";
+    return "koinos.chain.get_prev_object_return";
   }
   protected:
-  explicit db_get_prev_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit get_prev_object_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -4093,7 +4093,7 @@ class db_get_prev_object_return final :
   std::string* _internal_mutable_value();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.db_get_prev_object_return)
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_prev_object_return)
  private:
   class _Internal;
 
@@ -6163,7 +6163,7 @@ class hash_args final :
   std::string* _internal_mutable_obj();
   public:
 
-  // uint64 code = 1;
+  // uint64 code = 1 [jstype = JS_STRING];
   void clear_code();
   ::PROTOBUF_NAMESPACE_ID::uint64 code() const;
   void set_code(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -6172,7 +6172,7 @@ class hash_args final :
   void _internal_set_code(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 size = 3;
+  // uint64 size = 3 [jstype = JS_STRING];
   void clear_size();
   ::PROTOBUF_NAMESPACE_ID::uint64 size() const;
   void set_size(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -7197,7 +7197,7 @@ class get_max_account_resources_return final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // uint64 value = 1;
+  // uint64 value = 1 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -7484,7 +7484,7 @@ class get_transaction_resource_limit_return final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // uint64 value = 1;
+  // uint64 value = 1 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -7749,7 +7749,7 @@ class get_last_irreversible_block_return final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // uint64 value = 1;
+  // uint64 value = 1 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -9123,7 +9123,7 @@ class get_account_nonce_return final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // uint64 value = 1;
+  // uint64 value = 1 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -9240,7 +9240,7 @@ inline void head_info::set_allocated_head_topology(::koinos::block_topology* hea
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.head_info.head_topology)
 }
 
-// uint64 head_block_time = 2;
+// uint64 head_block_time = 2 [jstype = JS_STRING];
 inline void head_info::clear_head_block_time() {
   head_block_time_ = uint64_t{0u};
 }
@@ -9260,7 +9260,7 @@ inline void head_info::set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value
   // @@protoc_insertion_point(field_set:koinos.chain.head_info.head_block_time)
 }
 
-// uint64 last_irreversible_block = 3;
+// uint64 last_irreversible_block = 3 [jstype = JS_STRING];
 inline void head_info::clear_last_irreversible_block() {
   last_irreversible_block_ = uint64_t{0u};
 }
@@ -10292,44 +10292,44 @@ inline void apply_set_system_call_operation_args::set_allocated_op(::koinos::pro
 
 // -------------------------------------------------------------------
 
-// db_put_object_args
+// put_object_args
 
 // bytes space = 1;
-inline void db_put_object_args::clear_space() {
+inline void put_object_args::clear_space() {
   space_.ClearToEmpty();
 }
-inline const std::string& db_put_object_args::space() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_put_object_args.space)
+inline const std::string& put_object_args::space() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.put_object_args.space)
   return _internal_space();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_put_object_args::set_space(ArgT0&& arg0, ArgT... args) {
+void put_object_args::set_space(ArgT0&& arg0, ArgT... args) {
  
  space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_put_object_args.space)
+  // @@protoc_insertion_point(field_set:koinos.chain.put_object_args.space)
 }
-inline std::string* db_put_object_args::mutable_space() {
+inline std::string* put_object_args::mutable_space() {
   std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_put_object_args.space)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.put_object_args.space)
   return _s;
 }
-inline const std::string& db_put_object_args::_internal_space() const {
+inline const std::string& put_object_args::_internal_space() const {
   return space_.Get();
 }
-inline void db_put_object_args::_internal_set_space(const std::string& value) {
+inline void put_object_args::_internal_set_space(const std::string& value) {
   
   space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_put_object_args::_internal_mutable_space() {
+inline std::string* put_object_args::_internal_mutable_space() {
   
   return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_put_object_args::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_put_object_args.space)
+inline std::string* put_object_args::release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.put_object_args.space)
   return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_put_object_args::set_allocated_space(std::string* space) {
+inline void put_object_args::set_allocated_space(std::string* space) {
   if (space != nullptr) {
     
   } else {
@@ -10337,45 +10337,45 @@ inline void db_put_object_args::set_allocated_space(std::string* space) {
   }
   space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_put_object_args.space)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.put_object_args.space)
 }
 
 // bytes key = 2;
-inline void db_put_object_args::clear_key() {
+inline void put_object_args::clear_key() {
   key_.ClearToEmpty();
 }
-inline const std::string& db_put_object_args::key() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_put_object_args.key)
+inline const std::string& put_object_args::key() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.put_object_args.key)
   return _internal_key();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_put_object_args::set_key(ArgT0&& arg0, ArgT... args) {
+void put_object_args::set_key(ArgT0&& arg0, ArgT... args) {
  
  key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_put_object_args.key)
+  // @@protoc_insertion_point(field_set:koinos.chain.put_object_args.key)
 }
-inline std::string* db_put_object_args::mutable_key() {
+inline std::string* put_object_args::mutable_key() {
   std::string* _s = _internal_mutable_key();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_put_object_args.key)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.put_object_args.key)
   return _s;
 }
-inline const std::string& db_put_object_args::_internal_key() const {
+inline const std::string& put_object_args::_internal_key() const {
   return key_.Get();
 }
-inline void db_put_object_args::_internal_set_key(const std::string& value) {
+inline void put_object_args::_internal_set_key(const std::string& value) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_put_object_args::_internal_mutable_key() {
+inline std::string* put_object_args::_internal_mutable_key() {
   
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_put_object_args::release_key() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_put_object_args.key)
+inline std::string* put_object_args::release_key() {
+  // @@protoc_insertion_point(field_release:koinos.chain.put_object_args.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_put_object_args::set_allocated_key(std::string* key) {
+inline void put_object_args::set_allocated_key(std::string* key) {
   if (key != nullptr) {
     
   } else {
@@ -10383,45 +10383,45 @@ inline void db_put_object_args::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_put_object_args.key)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.put_object_args.key)
 }
 
 // bytes obj = 3;
-inline void db_put_object_args::clear_obj() {
+inline void put_object_args::clear_obj() {
   obj_.ClearToEmpty();
 }
-inline const std::string& db_put_object_args::obj() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_put_object_args.obj)
+inline const std::string& put_object_args::obj() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.put_object_args.obj)
   return _internal_obj();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_put_object_args::set_obj(ArgT0&& arg0, ArgT... args) {
+void put_object_args::set_obj(ArgT0&& arg0, ArgT... args) {
  
  obj_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_put_object_args.obj)
+  // @@protoc_insertion_point(field_set:koinos.chain.put_object_args.obj)
 }
-inline std::string* db_put_object_args::mutable_obj() {
+inline std::string* put_object_args::mutable_obj() {
   std::string* _s = _internal_mutable_obj();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_put_object_args.obj)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.put_object_args.obj)
   return _s;
 }
-inline const std::string& db_put_object_args::_internal_obj() const {
+inline const std::string& put_object_args::_internal_obj() const {
   return obj_.Get();
 }
-inline void db_put_object_args::_internal_set_obj(const std::string& value) {
+inline void put_object_args::_internal_set_obj(const std::string& value) {
   
   obj_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_put_object_args::_internal_mutable_obj() {
+inline std::string* put_object_args::_internal_mutable_obj() {
   
   return obj_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_put_object_args::release_obj() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_put_object_args.obj)
+inline std::string* put_object_args::release_obj() {
+  // @@protoc_insertion_point(field_release:koinos.chain.put_object_args.obj)
   return obj_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_put_object_args::set_allocated_obj(std::string* obj) {
+inline void put_object_args::set_allocated_obj(std::string* obj) {
   if (obj != nullptr) {
     
   } else {
@@ -10429,73 +10429,73 @@ inline void db_put_object_args::set_allocated_obj(std::string* obj) {
   }
   obj_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), obj,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_put_object_args.obj)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.put_object_args.obj)
 }
 
 // -------------------------------------------------------------------
 
-// db_put_object_return
+// put_object_return
 
 // bool value = 1;
-inline void db_put_object_return::clear_value() {
+inline void put_object_return::clear_value() {
   value_ = false;
 }
-inline bool db_put_object_return::_internal_value() const {
+inline bool put_object_return::_internal_value() const {
   return value_;
 }
-inline bool db_put_object_return::value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_put_object_return.value)
+inline bool put_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.put_object_return.value)
   return _internal_value();
 }
-inline void db_put_object_return::_internal_set_value(bool value) {
+inline void put_object_return::_internal_set_value(bool value) {
   
   value_ = value;
 }
-inline void db_put_object_return::set_value(bool value) {
+inline void put_object_return::set_value(bool value) {
   _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_put_object_return.value)
+  // @@protoc_insertion_point(field_set:koinos.chain.put_object_return.value)
 }
 
 // -------------------------------------------------------------------
 
-// db_get_object_args
+// get_object_args
 
 // bytes space = 1;
-inline void db_get_object_args::clear_space() {
+inline void get_object_args::clear_space() {
   space_.ClearToEmpty();
 }
-inline const std::string& db_get_object_args::space() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_object_args.space)
+inline const std::string& get_object_args::space() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_object_args.space)
   return _internal_space();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_object_args::set_space(ArgT0&& arg0, ArgT... args) {
+void get_object_args::set_space(ArgT0&& arg0, ArgT... args) {
  
  space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_object_args.space)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_object_args.space)
 }
-inline std::string* db_get_object_args::mutable_space() {
+inline std::string* get_object_args::mutable_space() {
   std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_object_args.space)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_object_args.space)
   return _s;
 }
-inline const std::string& db_get_object_args::_internal_space() const {
+inline const std::string& get_object_args::_internal_space() const {
   return space_.Get();
 }
-inline void db_get_object_args::_internal_set_space(const std::string& value) {
+inline void get_object_args::_internal_set_space(const std::string& value) {
   
   space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_object_args::_internal_mutable_space() {
+inline std::string* get_object_args::_internal_mutable_space() {
   
   return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_object_args::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_object_args.space)
+inline std::string* get_object_args::release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_object_args.space)
   return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_object_args::set_allocated_space(std::string* space) {
+inline void get_object_args::set_allocated_space(std::string* space) {
   if (space != nullptr) {
     
   } else {
@@ -10503,45 +10503,45 @@ inline void db_get_object_args::set_allocated_space(std::string* space) {
   }
   space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_object_args.space)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_object_args.space)
 }
 
 // bytes key = 2;
-inline void db_get_object_args::clear_key() {
+inline void get_object_args::clear_key() {
   key_.ClearToEmpty();
 }
-inline const std::string& db_get_object_args::key() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_object_args.key)
+inline const std::string& get_object_args::key() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_object_args.key)
   return _internal_key();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_object_args::set_key(ArgT0&& arg0, ArgT... args) {
+void get_object_args::set_key(ArgT0&& arg0, ArgT... args) {
  
  key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_object_args.key)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_object_args.key)
 }
-inline std::string* db_get_object_args::mutable_key() {
+inline std::string* get_object_args::mutable_key() {
   std::string* _s = _internal_mutable_key();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_object_args.key)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_object_args.key)
   return _s;
 }
-inline const std::string& db_get_object_args::_internal_key() const {
+inline const std::string& get_object_args::_internal_key() const {
   return key_.Get();
 }
-inline void db_get_object_args::_internal_set_key(const std::string& value) {
+inline void get_object_args::_internal_set_key(const std::string& value) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_object_args::_internal_mutable_key() {
+inline std::string* get_object_args::_internal_mutable_key() {
   
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_object_args::release_key() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_object_args.key)
+inline std::string* get_object_args::release_key() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_object_args.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_object_args::set_allocated_key(std::string* key) {
+inline void get_object_args::set_allocated_key(std::string* key) {
   if (key != nullptr) {
     
   } else {
@@ -10549,69 +10549,69 @@ inline void db_get_object_args::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_object_args.key)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_object_args.key)
 }
 
 // uint32 object_size_hint = 3;
-inline void db_get_object_args::clear_object_size_hint() {
+inline void get_object_args::clear_object_size_hint() {
   object_size_hint_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_object_args::_internal_object_size_hint() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_object_args::_internal_object_size_hint() const {
   return object_size_hint_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_object_args::object_size_hint() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_object_args.object_size_hint)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_object_args::object_size_hint() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_object_args.object_size_hint)
   return _internal_object_size_hint();
 }
-inline void db_get_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   object_size_hint_ = value;
 }
-inline void db_get_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_object_size_hint(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_object_args.object_size_hint)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_object_args.object_size_hint)
 }
 
 // -------------------------------------------------------------------
 
-// db_get_object_return
+// get_object_return
 
 // bytes value = 3;
-inline void db_get_object_return::clear_value() {
+inline void get_object_return::clear_value() {
   value_.ClearToEmpty();
 }
-inline const std::string& db_get_object_return::value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_object_return.value)
+inline const std::string& get_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_object_return.value)
   return _internal_value();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_object_return::set_value(ArgT0&& arg0, ArgT... args) {
+void get_object_return::set_value(ArgT0&& arg0, ArgT... args) {
  
  value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_object_return.value)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_object_return.value)
 }
-inline std::string* db_get_object_return::mutable_value() {
+inline std::string* get_object_return::mutable_value() {
   std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_object_return.value)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_object_return.value)
   return _s;
 }
-inline const std::string& db_get_object_return::_internal_value() const {
+inline const std::string& get_object_return::_internal_value() const {
   return value_.Get();
 }
-inline void db_get_object_return::_internal_set_value(const std::string& value) {
+inline void get_object_return::_internal_set_value(const std::string& value) {
   
   value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_object_return::_internal_mutable_value() {
+inline std::string* get_object_return::_internal_mutable_value() {
   
   return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_object_return::release_value() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_object_return.value)
+inline std::string* get_object_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_object_return.value)
   return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_object_return::set_allocated_value(std::string* value) {
+inline void get_object_return::set_allocated_value(std::string* value) {
   if (value != nullptr) {
     
   } else {
@@ -10619,49 +10619,49 @@ inline void db_get_object_return::set_allocated_value(std::string* value) {
   }
   value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_object_return.value)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_object_return.value)
 }
 
 // -------------------------------------------------------------------
 
-// db_get_next_object_args
+// get_next_object_args
 
 // bytes space = 1;
-inline void db_get_next_object_args::clear_space() {
+inline void get_next_object_args::clear_space() {
   space_.ClearToEmpty();
 }
-inline const std::string& db_get_next_object_args::space() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_next_object_args.space)
+inline const std::string& get_next_object_args::space() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_next_object_args.space)
   return _internal_space();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_next_object_args::set_space(ArgT0&& arg0, ArgT... args) {
+void get_next_object_args::set_space(ArgT0&& arg0, ArgT... args) {
  
  space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_next_object_args.space)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_next_object_args.space)
 }
-inline std::string* db_get_next_object_args::mutable_space() {
+inline std::string* get_next_object_args::mutable_space() {
   std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_next_object_args.space)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_next_object_args.space)
   return _s;
 }
-inline const std::string& db_get_next_object_args::_internal_space() const {
+inline const std::string& get_next_object_args::_internal_space() const {
   return space_.Get();
 }
-inline void db_get_next_object_args::_internal_set_space(const std::string& value) {
+inline void get_next_object_args::_internal_set_space(const std::string& value) {
   
   space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_next_object_args::_internal_mutable_space() {
+inline std::string* get_next_object_args::_internal_mutable_space() {
   
   return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_next_object_args::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_next_object_args.space)
+inline std::string* get_next_object_args::release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_next_object_args.space)
   return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_next_object_args::set_allocated_space(std::string* space) {
+inline void get_next_object_args::set_allocated_space(std::string* space) {
   if (space != nullptr) {
     
   } else {
@@ -10669,45 +10669,45 @@ inline void db_get_next_object_args::set_allocated_space(std::string* space) {
   }
   space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_next_object_args.space)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_next_object_args.space)
 }
 
 // bytes key = 2;
-inline void db_get_next_object_args::clear_key() {
+inline void get_next_object_args::clear_key() {
   key_.ClearToEmpty();
 }
-inline const std::string& db_get_next_object_args::key() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_next_object_args.key)
+inline const std::string& get_next_object_args::key() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_next_object_args.key)
   return _internal_key();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_next_object_args::set_key(ArgT0&& arg0, ArgT... args) {
+void get_next_object_args::set_key(ArgT0&& arg0, ArgT... args) {
  
  key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_next_object_args.key)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_next_object_args.key)
 }
-inline std::string* db_get_next_object_args::mutable_key() {
+inline std::string* get_next_object_args::mutable_key() {
   std::string* _s = _internal_mutable_key();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_next_object_args.key)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_next_object_args.key)
   return _s;
 }
-inline const std::string& db_get_next_object_args::_internal_key() const {
+inline const std::string& get_next_object_args::_internal_key() const {
   return key_.Get();
 }
-inline void db_get_next_object_args::_internal_set_key(const std::string& value) {
+inline void get_next_object_args::_internal_set_key(const std::string& value) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_next_object_args::_internal_mutable_key() {
+inline std::string* get_next_object_args::_internal_mutable_key() {
   
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_next_object_args::release_key() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_next_object_args.key)
+inline std::string* get_next_object_args::release_key() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_next_object_args.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_next_object_args::set_allocated_key(std::string* key) {
+inline void get_next_object_args::set_allocated_key(std::string* key) {
   if (key != nullptr) {
     
   } else {
@@ -10715,69 +10715,69 @@ inline void db_get_next_object_args::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_next_object_args.key)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_next_object_args.key)
 }
 
 // uint32 object_size_hint = 3;
-inline void db_get_next_object_args::clear_object_size_hint() {
+inline void get_next_object_args::clear_object_size_hint() {
   object_size_hint_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_next_object_args::_internal_object_size_hint() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_next_object_args::_internal_object_size_hint() const {
   return object_size_hint_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_next_object_args::object_size_hint() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_next_object_args.object_size_hint)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_next_object_args::object_size_hint() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_next_object_args.object_size_hint)
   return _internal_object_size_hint();
 }
-inline void db_get_next_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_next_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   object_size_hint_ = value;
 }
-inline void db_get_next_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_next_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_object_size_hint(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_next_object_args.object_size_hint)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_next_object_args.object_size_hint)
 }
 
 // -------------------------------------------------------------------
 
-// db_get_next_object_return
+// get_next_object_return
 
 // bytes value = 3;
-inline void db_get_next_object_return::clear_value() {
+inline void get_next_object_return::clear_value() {
   value_.ClearToEmpty();
 }
-inline const std::string& db_get_next_object_return::value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_next_object_return.value)
+inline const std::string& get_next_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_next_object_return.value)
   return _internal_value();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_next_object_return::set_value(ArgT0&& arg0, ArgT... args) {
+void get_next_object_return::set_value(ArgT0&& arg0, ArgT... args) {
  
  value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_next_object_return.value)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_next_object_return.value)
 }
-inline std::string* db_get_next_object_return::mutable_value() {
+inline std::string* get_next_object_return::mutable_value() {
   std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_next_object_return.value)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_next_object_return.value)
   return _s;
 }
-inline const std::string& db_get_next_object_return::_internal_value() const {
+inline const std::string& get_next_object_return::_internal_value() const {
   return value_.Get();
 }
-inline void db_get_next_object_return::_internal_set_value(const std::string& value) {
+inline void get_next_object_return::_internal_set_value(const std::string& value) {
   
   value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_next_object_return::_internal_mutable_value() {
+inline std::string* get_next_object_return::_internal_mutable_value() {
   
   return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_next_object_return::release_value() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_next_object_return.value)
+inline std::string* get_next_object_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_next_object_return.value)
   return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_next_object_return::set_allocated_value(std::string* value) {
+inline void get_next_object_return::set_allocated_value(std::string* value) {
   if (value != nullptr) {
     
   } else {
@@ -10785,49 +10785,49 @@ inline void db_get_next_object_return::set_allocated_value(std::string* value) {
   }
   value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_next_object_return.value)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_next_object_return.value)
 }
 
 // -------------------------------------------------------------------
 
-// db_get_prev_object_args
+// get_prev_object_args
 
 // bytes space = 1;
-inline void db_get_prev_object_args::clear_space() {
+inline void get_prev_object_args::clear_space() {
   space_.ClearToEmpty();
 }
-inline const std::string& db_get_prev_object_args::space() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_prev_object_args.space)
+inline const std::string& get_prev_object_args::space() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_prev_object_args.space)
   return _internal_space();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_prev_object_args::set_space(ArgT0&& arg0, ArgT... args) {
+void get_prev_object_args::set_space(ArgT0&& arg0, ArgT... args) {
  
  space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_prev_object_args.space)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_prev_object_args.space)
 }
-inline std::string* db_get_prev_object_args::mutable_space() {
+inline std::string* get_prev_object_args::mutable_space() {
   std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_prev_object_args.space)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_prev_object_args.space)
   return _s;
 }
-inline const std::string& db_get_prev_object_args::_internal_space() const {
+inline const std::string& get_prev_object_args::_internal_space() const {
   return space_.Get();
 }
-inline void db_get_prev_object_args::_internal_set_space(const std::string& value) {
+inline void get_prev_object_args::_internal_set_space(const std::string& value) {
   
   space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_prev_object_args::_internal_mutable_space() {
+inline std::string* get_prev_object_args::_internal_mutable_space() {
   
   return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_prev_object_args::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_prev_object_args.space)
+inline std::string* get_prev_object_args::release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_prev_object_args.space)
   return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_prev_object_args::set_allocated_space(std::string* space) {
+inline void get_prev_object_args::set_allocated_space(std::string* space) {
   if (space != nullptr) {
     
   } else {
@@ -10835,45 +10835,45 @@ inline void db_get_prev_object_args::set_allocated_space(std::string* space) {
   }
   space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_prev_object_args.space)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_prev_object_args.space)
 }
 
 // bytes key = 2;
-inline void db_get_prev_object_args::clear_key() {
+inline void get_prev_object_args::clear_key() {
   key_.ClearToEmpty();
 }
-inline const std::string& db_get_prev_object_args::key() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_prev_object_args.key)
+inline const std::string& get_prev_object_args::key() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_prev_object_args.key)
   return _internal_key();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_prev_object_args::set_key(ArgT0&& arg0, ArgT... args) {
+void get_prev_object_args::set_key(ArgT0&& arg0, ArgT... args) {
  
  key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_prev_object_args.key)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_prev_object_args.key)
 }
-inline std::string* db_get_prev_object_args::mutable_key() {
+inline std::string* get_prev_object_args::mutable_key() {
   std::string* _s = _internal_mutable_key();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_prev_object_args.key)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_prev_object_args.key)
   return _s;
 }
-inline const std::string& db_get_prev_object_args::_internal_key() const {
+inline const std::string& get_prev_object_args::_internal_key() const {
   return key_.Get();
 }
-inline void db_get_prev_object_args::_internal_set_key(const std::string& value) {
+inline void get_prev_object_args::_internal_set_key(const std::string& value) {
   
   key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_prev_object_args::_internal_mutable_key() {
+inline std::string* get_prev_object_args::_internal_mutable_key() {
   
   return key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_prev_object_args::release_key() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_prev_object_args.key)
+inline std::string* get_prev_object_args::release_key() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_prev_object_args.key)
   return key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_prev_object_args::set_allocated_key(std::string* key) {
+inline void get_prev_object_args::set_allocated_key(std::string* key) {
   if (key != nullptr) {
     
   } else {
@@ -10881,69 +10881,69 @@ inline void db_get_prev_object_args::set_allocated_key(std::string* key) {
   }
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_prev_object_args.key)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_prev_object_args.key)
 }
 
 // uint32 object_size_hint = 3;
-inline void db_get_prev_object_args::clear_object_size_hint() {
+inline void get_prev_object_args::clear_object_size_hint() {
   object_size_hint_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_prev_object_args::_internal_object_size_hint() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_prev_object_args::_internal_object_size_hint() const {
   return object_size_hint_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 db_get_prev_object_args::object_size_hint() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_prev_object_args.object_size_hint)
+inline ::PROTOBUF_NAMESPACE_ID::uint32 get_prev_object_args::object_size_hint() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_prev_object_args.object_size_hint)
   return _internal_object_size_hint();
 }
-inline void db_get_prev_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_prev_object_args::_internal_set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   object_size_hint_ = value;
 }
-inline void db_get_prev_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+inline void get_prev_object_args::set_object_size_hint(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_object_size_hint(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_prev_object_args.object_size_hint)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_prev_object_args.object_size_hint)
 }
 
 // -------------------------------------------------------------------
 
-// db_get_prev_object_return
+// get_prev_object_return
 
 // bytes value = 3;
-inline void db_get_prev_object_return::clear_value() {
+inline void get_prev_object_return::clear_value() {
   value_.ClearToEmpty();
 }
-inline const std::string& db_get_prev_object_return::value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.db_get_prev_object_return.value)
+inline const std::string& get_prev_object_return::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_prev_object_return.value)
   return _internal_value();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void db_get_prev_object_return::set_value(ArgT0&& arg0, ArgT... args) {
+void get_prev_object_return::set_value(ArgT0&& arg0, ArgT... args) {
  
  value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.db_get_prev_object_return.value)
+  // @@protoc_insertion_point(field_set:koinos.chain.get_prev_object_return.value)
 }
-inline std::string* db_get_prev_object_return::mutable_value() {
+inline std::string* get_prev_object_return::mutable_value() {
   std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.db_get_prev_object_return.value)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_prev_object_return.value)
   return _s;
 }
-inline const std::string& db_get_prev_object_return::_internal_value() const {
+inline const std::string& get_prev_object_return::_internal_value() const {
   return value_.Get();
 }
-inline void db_get_prev_object_return::_internal_set_value(const std::string& value) {
+inline void get_prev_object_return::_internal_set_value(const std::string& value) {
   
   value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* db_get_prev_object_return::_internal_mutable_value() {
+inline std::string* get_prev_object_return::_internal_mutable_value() {
   
   return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* db_get_prev_object_return::release_value() {
-  // @@protoc_insertion_point(field_release:koinos.chain.db_get_prev_object_return.value)
+inline std::string* get_prev_object_return::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_prev_object_return.value)
   return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void db_get_prev_object_return::set_allocated_value(std::string* value) {
+inline void get_prev_object_return::set_allocated_value(std::string* value) {
   if (value != nullptr) {
     
   } else {
@@ -10951,7 +10951,7 @@ inline void db_get_prev_object_return::set_allocated_value(std::string* value) {
   }
   value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.db_get_prev_object_return.value)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_prev_object_return.value)
 }
 
 // -------------------------------------------------------------------
@@ -11414,7 +11414,7 @@ inline void get_head_info_return::set_allocated_value(::koinos::chain::head_info
 
 // hash_args
 
-// uint64 code = 1;
+// uint64 code = 1 [jstype = JS_STRING];
 inline void hash_args::clear_code() {
   code_ = uint64_t{0u};
 }
@@ -11480,7 +11480,7 @@ inline void hash_args::set_allocated_obj(std::string* obj) {
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.hash_args.obj)
 }
 
-// uint64 size = 3;
+// uint64 size = 3 [jstype = JS_STRING];
 inline void hash_args::clear_size() {
   size_ = uint64_t{0u};
 }
@@ -11890,7 +11890,7 @@ inline void get_max_account_resources_args::set_allocated_account(std::string* a
 
 // get_max_account_resources_return
 
-// uint64 value = 1;
+// uint64 value = 1 [jstype = JS_STRING];
 inline void get_max_account_resources_return::clear_value() {
   value_ = uint64_t{0u};
 }
@@ -12004,7 +12004,7 @@ inline void get_transaction_resource_limit_args::set_allocated_transction(::koin
 
 // get_transaction_resource_limit_return
 
-// uint64 value = 1;
+// uint64 value = 1 [jstype = JS_STRING];
 inline void get_transaction_resource_limit_return::clear_value() {
   value_ = uint64_t{0u};
 }
@@ -12032,7 +12032,7 @@ inline void get_transaction_resource_limit_return::set_value(::PROTOBUF_NAMESPAC
 
 // get_last_irreversible_block_return
 
-// uint64 value = 1;
+// uint64 value = 1 [jstype = JS_STRING];
 inline void get_last_irreversible_block_return::clear_value() {
   value_ = uint64_t{0u};
 }
@@ -12342,7 +12342,7 @@ inline void get_account_nonce_args::set_allocated_account(std::string* account) 
 
 // get_account_nonce_return
 
-// uint64 value = 1;
+// uint64 value = 1 [jstype = JS_STRING];
 inline void get_account_nonce_return::clear_value() {
   value_ = uint64_t{0u};
 }

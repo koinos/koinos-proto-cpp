@@ -14,29 +14,25 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_transaction_koinos_2fprotocol_2fprotocol_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
 namespace transaction_store {
-class transaction_itemDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<transaction_item> _instance;
-} _transaction_item_default_instance_;
+constexpr transaction_item::transaction_item(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : containing_blocks_()
+  , transaction_(nullptr){}
+struct transaction_itemDefaultTypeInternal {
+  constexpr transaction_itemDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~transaction_itemDefaultTypeInternal() {}
+  union {
+    transaction_item _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transaction_itemDefaultTypeInternal _transaction_item_default_instance_;
 }  // namespace transaction_store
 }  // namespace koinos
-static void InitDefaultsscc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::transaction_store::_transaction_item_default_instance_;
-    new (ptr) ::koinos::transaction_store::transaction_item();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto}, {
-      &scc_info_transaction_koinos_2fprotocol_2fprotocol_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto = nullptr;
@@ -70,19 +66,19 @@ const char descriptor_table_protodef_koinos_2ftransaction_5fstore_2ftransaction_
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps[1] = {
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_sccs[1] = {
-  &scc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, "koinos/transaction_store/transaction_store.proto", 280,
-  &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once, descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_sccs, descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps, 1, 1,
+  false, false, 280, descriptor_table_protodef_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, "koinos/transaction_store/transaction_store.proto", 
+  &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once, descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto::offsets,
-  file_level_metadata_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, 1, file_level_enum_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, file_level_service_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto,
+  file_level_metadata_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, file_level_enum_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, file_level_service_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_getter() {
+  return &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto(&descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto);
 namespace koinos {
 namespace transaction_store {
 
@@ -98,16 +94,19 @@ transaction_item::_Internal::transaction(const transaction_item* msg) {
   return *msg->transaction_;
 }
 void transaction_item::clear_transaction() {
-  if (GetArena() == nullptr && transaction_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && transaction_ != nullptr) {
     delete transaction_;
   }
   transaction_ = nullptr;
 }
-transaction_item::transaction_item(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+transaction_item::transaction_item(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   containing_blocks_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.transaction_store.transaction_item)
 }
 transaction_item::transaction_item(const transaction_item& from)
@@ -122,19 +121,19 @@ transaction_item::transaction_item(const transaction_item& from)
   // @@protoc_insertion_point(copy_constructor:koinos.transaction_store.transaction_item)
 }
 
-void transaction_item::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto.base);
-  transaction_ = nullptr;
+inline void transaction_item::SharedCtor() {
+transaction_ = nullptr;
 }
 
 transaction_item::~transaction_item() {
   // @@protoc_insertion_point(destructor:koinos.transaction_store.transaction_item)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void transaction_item::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void transaction_item::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (this != internal_default_instance()) delete transaction_;
 }
 
@@ -147,11 +146,6 @@ void transaction_item::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void transaction_item::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const transaction_item& transaction_item::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void transaction_item::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.transaction_store.transaction_item)
@@ -160,7 +154,7 @@ void transaction_item::Clear() {
   (void) cached_has_bits;
 
   containing_blocks_.Clear();
-  if (GetArena() == nullptr && transaction_ != nullptr) {
+  if (GetArenaForAllocation() == nullptr && transaction_ != nullptr) {
     delete transaction_;
   }
   transaction_ = nullptr;
@@ -172,7 +166,6 @@ const char* transaction_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .koinos.protocol.transaction transaction = 1;
       case 1:
@@ -196,7 +189,8 @@ const char* transaction_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -223,7 +217,7 @@ failure:
   (void) cached_has_bits;
 
   // .koinos.protocol.transaction transaction = 1;
-  if (this->has_transaction()) {
+  if (this->_internal_has_transaction()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
@@ -261,7 +255,7 @@ size_t transaction_item::ByteSizeLong() const {
   }
 
   // .koinos.protocol.transaction transaction = 1;
-  if (this->has_transaction()) {
+  if (this->_internal_has_transaction()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *transaction_);
@@ -276,39 +270,30 @@ size_t transaction_item::ByteSizeLong() const {
   return total_size;
 }
 
-void transaction_item::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.transaction_store.transaction_item)
-  GOOGLE_DCHECK_NE(&from, this);
-  const transaction_item* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<transaction_item>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.transaction_store.transaction_item)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.transaction_store.transaction_item)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transaction_item::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    transaction_item::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transaction_item::GetClassData() const { return &_class_data_; }
+
+void transaction_item::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<transaction_item *>(to)->MergeFrom(
+      static_cast<const transaction_item &>(from));
 }
+
 
 void transaction_item::MergeFrom(const transaction_item& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.transaction_store.transaction_item)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   containing_blocks_.MergeFrom(from.containing_blocks_);
-  if (from.has_transaction()) {
+  if (from._internal_has_transaction()) {
     _internal_mutable_transaction()->::koinos::protocol::transaction::MergeFrom(from._internal_transaction());
   }
-}
-
-void transaction_item::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.transaction_store.transaction_item)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void transaction_item::CopyFrom(const transaction_item& from) {
@@ -324,15 +309,16 @@ bool transaction_item::IsInitialized() const {
 
 void transaction_item::InternalSwap(transaction_item* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   containing_blocks_.InternalSwap(&other->containing_blocks_);
   swap(transaction_, other->transaction_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transaction_item::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_getter, &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once,
+      file_level_metadata_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transaction_store

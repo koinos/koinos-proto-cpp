@@ -14,129 +14,88 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_transaction_koinos_2fprotocol_2fprotocol_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_error_response_koinos_2frpc_2frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_reserved_rpc_koinos_2frpc_2frpc_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
 namespace rpc {
 namespace mempool {
-class check_pending_account_resources_requestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<check_pending_account_resources_request> _instance;
-} _check_pending_account_resources_request_default_instance_;
-class check_pending_account_resources_responseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<check_pending_account_resources_response> _instance;
-} _check_pending_account_resources_response_default_instance_;
-class get_pending_transactions_requestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<get_pending_transactions_request> _instance;
-} _get_pending_transactions_request_default_instance_;
-class get_pending_transactions_responseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<get_pending_transactions_response> _instance;
-} _get_pending_transactions_response_default_instance_;
-class mempool_requestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<mempool_request> _instance;
-} _mempool_request_default_instance_;
-class mempool_responseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<mempool_response> _instance;
-} _mempool_response_default_instance_;
+constexpr check_pending_account_resources_request::check_pending_account_resources_request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : payer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , max_payer_resources_(uint64_t{0u})
+  , trx_resource_limit_(uint64_t{0u}){}
+struct check_pending_account_resources_requestDefaultTypeInternal {
+  constexpr check_pending_account_resources_requestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~check_pending_account_resources_requestDefaultTypeInternal() {}
+  union {
+    check_pending_account_resources_request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT check_pending_account_resources_requestDefaultTypeInternal _check_pending_account_resources_request_default_instance_;
+constexpr check_pending_account_resources_response::check_pending_account_resources_response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : success_(false){}
+struct check_pending_account_resources_responseDefaultTypeInternal {
+  constexpr check_pending_account_resources_responseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~check_pending_account_resources_responseDefaultTypeInternal() {}
+  union {
+    check_pending_account_resources_response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT check_pending_account_resources_responseDefaultTypeInternal _check_pending_account_resources_response_default_instance_;
+constexpr get_pending_transactions_request::get_pending_transactions_request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : limit_(uint64_t{0u}){}
+struct get_pending_transactions_requestDefaultTypeInternal {
+  constexpr get_pending_transactions_requestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~get_pending_transactions_requestDefaultTypeInternal() {}
+  union {
+    get_pending_transactions_request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_pending_transactions_requestDefaultTypeInternal _get_pending_transactions_request_default_instance_;
+constexpr get_pending_transactions_response::get_pending_transactions_response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : transactions_(){}
+struct get_pending_transactions_responseDefaultTypeInternal {
+  constexpr get_pending_transactions_responseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~get_pending_transactions_responseDefaultTypeInternal() {}
+  union {
+    get_pending_transactions_response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_pending_transactions_responseDefaultTypeInternal _get_pending_transactions_response_default_instance_;
+constexpr mempool_request::mempool_request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct mempool_requestDefaultTypeInternal {
+  constexpr mempool_requestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~mempool_requestDefaultTypeInternal() {}
+  union {
+    mempool_request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT mempool_requestDefaultTypeInternal _mempool_request_default_instance_;
+constexpr mempool_response::mempool_response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct mempool_responseDefaultTypeInternal {
+  constexpr mempool_responseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~mempool_responseDefaultTypeInternal() {}
+  union {
+    mempool_response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT mempool_responseDefaultTypeInternal _mempool_response_default_instance_;
 }  // namespace mempool
 }  // namespace rpc
 }  // namespace koinos
-static void InitDefaultsscc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::mempool::_check_pending_account_resources_request_default_instance_;
-    new (ptr) ::koinos::rpc::mempool::check_pending_account_resources_request();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::mempool::_check_pending_account_resources_response_default_instance_;
-    new (ptr) ::koinos::rpc::mempool::check_pending_account_resources_response();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::mempool::_get_pending_transactions_request_default_instance_;
-    new (ptr) ::koinos::rpc::mempool::get_pending_transactions_request();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::mempool::_get_pending_transactions_response_default_instance_;
-    new (ptr) ::koinos::rpc::mempool::get_pending_transactions_response();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto}, {
-      &scc_info_transaction_koinos_2fprotocol_2fprotocol_2eproto.base,}};
-
-static void InitDefaultsscc_info_mempool_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::mempool::_mempool_request_default_instance_;
-    new (ptr) ::koinos::rpc::mempool::mempool_request();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_mempool_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_mempool_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto}, {
-      &scc_info_reserved_rpc_koinos_2frpc_2frpc_2eproto.base,
-      &scc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-      &scc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,}};
-
-static void InitDefaultsscc_info_mempool_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::mempool::_mempool_response_default_instance_;
-    new (ptr) ::koinos::rpc::mempool::mempool_response();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<4> scc_info_mempool_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 4, 0, InitDefaultsscc_info_mempool_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto}, {
-      &scc_info_reserved_rpc_koinos_2frpc_2frpc_2eproto.base,
-      &scc_info_error_response_koinos_2frpc_2frpc_2eproto.base,
-      &scc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-      &scc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = nullptr;
@@ -240,24 +199,19 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_sccs[6] = {
-  &scc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-  &scc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-  &scc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-  &scc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-  &scc_info_mempool_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-  &scc_info_mempool_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 1087,
-  &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_sccs, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 6, 2,
+  false, false, 1087, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
-  file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, 6, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
+  file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter() {
+  return &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto(&descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto);
 namespace koinos {
 namespace rpc {
 namespace mempool {
@@ -268,10 +222,13 @@ class check_pending_account_resources_request::_Internal {
  public:
 };
 
-check_pending_account_resources_request::check_pending_account_resources_request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+check_pending_account_resources_request::check_pending_account_resources_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.check_pending_account_resources_request)
 }
 check_pending_account_resources_request::check_pending_account_resources_request(const check_pending_account_resources_request& from)
@@ -280,7 +237,7 @@ check_pending_account_resources_request::check_pending_account_resources_request
   payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_payer().empty()) {
     payer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_payer(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   ::memcpy(&max_payer_resources_, &from.max_payer_resources_,
     static_cast<size_t>(reinterpret_cast<char*>(&trx_resource_limit_) -
@@ -288,23 +245,23 @@ check_pending_account_resources_request::check_pending_account_resources_request
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.check_pending_account_resources_request)
 }
 
-void check_pending_account_resources_request::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&max_payer_resources_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&trx_resource_limit_) -
-      reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(trx_resource_limit_));
+inline void check_pending_account_resources_request::SharedCtor() {
+payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&max_payer_resources_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&trx_resource_limit_) -
+    reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(trx_resource_limit_));
 }
 
 check_pending_account_resources_request::~check_pending_account_resources_request() {
   // @@protoc_insertion_point(destructor:koinos.rpc.mempool.check_pending_account_resources_request)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void check_pending_account_resources_request::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void check_pending_account_resources_request::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   payer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -317,11 +274,6 @@ void check_pending_account_resources_request::RegisterArenaDtor(::PROTOBUF_NAMES
 void check_pending_account_resources_request::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const check_pending_account_resources_request& check_pending_account_resources_request::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_check_pending_account_resources_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void check_pending_account_resources_request::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.rpc.mempool.check_pending_account_resources_request)
@@ -341,7 +293,6 @@ const char* check_pending_account_resources_request::_InternalParse(const char* 
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes payer = 1;
       case 1:
@@ -367,7 +318,8 @@ const char* check_pending_account_resources_request::_InternalParse(const char* 
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -394,19 +346,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes payer = 1;
-  if (this->payer().size() > 0) {
+  if (!this->_internal_payer().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_payer(), target);
   }
 
   // uint64 max_payer_resources = 2;
-  if (this->max_payer_resources() != 0) {
+  if (this->_internal_max_payer_resources() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_max_payer_resources(), target);
   }
 
   // uint64 trx_resource_limit = 3;
-  if (this->trx_resource_limit() != 0) {
+  if (this->_internal_trx_resource_limit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_trx_resource_limit(), target);
   }
@@ -428,21 +380,21 @@ size_t check_pending_account_resources_request::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes payer = 1;
-  if (this->payer().size() > 0) {
+  if (!this->_internal_payer().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_payer());
   }
 
   // uint64 max_payer_resources = 2;
-  if (this->max_payer_resources() != 0) {
+  if (this->_internal_max_payer_resources() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_max_payer_resources());
   }
 
   // uint64 trx_resource_limit = 3;
-  if (this->trx_resource_limit() != 0) {
+  if (this->_internal_trx_resource_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_trx_resource_limit());
@@ -457,44 +409,35 @@ size_t check_pending_account_resources_request::ByteSizeLong() const {
   return total_size;
 }
 
-void check_pending_account_resources_request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.mempool.check_pending_account_resources_request)
-  GOOGLE_DCHECK_NE(&from, this);
-  const check_pending_account_resources_request* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<check_pending_account_resources_request>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.mempool.check_pending_account_resources_request)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.mempool.check_pending_account_resources_request)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData check_pending_account_resources_request::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    check_pending_account_resources_request::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*check_pending_account_resources_request::GetClassData() const { return &_class_data_; }
+
+void check_pending_account_resources_request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<check_pending_account_resources_request *>(to)->MergeFrom(
+      static_cast<const check_pending_account_resources_request &>(from));
 }
+
 
 void check_pending_account_resources_request::MergeFrom(const check_pending_account_resources_request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.check_pending_account_resources_request)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.payer().size() > 0) {
+  if (!from._internal_payer().empty()) {
     _internal_set_payer(from._internal_payer());
   }
-  if (from.max_payer_resources() != 0) {
+  if (from._internal_max_payer_resources() != 0) {
     _internal_set_max_payer_resources(from._internal_max_payer_resources());
   }
-  if (from.trx_resource_limit() != 0) {
+  if (from._internal_trx_resource_limit() != 0) {
     _internal_set_trx_resource_limit(from._internal_trx_resource_limit());
   }
-}
-
-void check_pending_account_resources_request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.mempool.check_pending_account_resources_request)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void check_pending_account_resources_request::CopyFrom(const check_pending_account_resources_request& from) {
@@ -510,8 +453,12 @@ bool check_pending_account_resources_request::IsInitialized() const {
 
 void check_pending_account_resources_request::InternalSwap(check_pending_account_resources_request* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  payer_.Swap(&other->payer_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &payer_, GetArenaForAllocation(),
+      &other->payer_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(check_pending_account_resources_request, trx_resource_limit_)
       + sizeof(check_pending_account_resources_request::trx_resource_limit_)
@@ -521,9 +468,10 @@ void check_pending_account_resources_request::InternalSwap(check_pending_account
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata check_pending_account_resources_request::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -531,10 +479,13 @@ class check_pending_account_resources_response::_Internal {
  public:
 };
 
-check_pending_account_resources_response::check_pending_account_resources_response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+check_pending_account_resources_response::check_pending_account_resources_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.check_pending_account_resources_response)
 }
 check_pending_account_resources_response::check_pending_account_resources_response(const check_pending_account_resources_response& from)
@@ -544,18 +495,19 @@ check_pending_account_resources_response::check_pending_account_resources_respon
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.check_pending_account_resources_response)
 }
 
-void check_pending_account_resources_response::SharedCtor() {
-  success_ = false;
+inline void check_pending_account_resources_response::SharedCtor() {
+success_ = false;
 }
 
 check_pending_account_resources_response::~check_pending_account_resources_response() {
   // @@protoc_insertion_point(destructor:koinos.rpc.mempool.check_pending_account_resources_response)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void check_pending_account_resources_response::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void check_pending_account_resources_response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void check_pending_account_resources_response::ArenaDtor(void* object) {
@@ -567,11 +519,6 @@ void check_pending_account_resources_response::RegisterArenaDtor(::PROTOBUF_NAME
 void check_pending_account_resources_response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const check_pending_account_resources_response& check_pending_account_resources_response::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_check_pending_account_resources_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void check_pending_account_resources_response::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.rpc.mempool.check_pending_account_resources_response)
@@ -588,7 +535,6 @@ const char* check_pending_account_resources_response::_InternalParse(const char*
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bool success = 1;
       case 1:
@@ -599,7 +545,8 @@ const char* check_pending_account_resources_response::_InternalParse(const char*
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -626,7 +573,7 @@ failure:
   (void) cached_has_bits;
 
   // bool success = 1;
-  if (this->success() != 0) {
+  if (this->_internal_success() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
   }
@@ -648,7 +595,7 @@ size_t check_pending_account_resources_response::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bool success = 1;
-  if (this->success() != 0) {
+  if (this->_internal_success() != 0) {
     total_size += 1 + 1;
   }
 
@@ -661,38 +608,29 @@ size_t check_pending_account_resources_response::ByteSizeLong() const {
   return total_size;
 }
 
-void check_pending_account_resources_response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.mempool.check_pending_account_resources_response)
-  GOOGLE_DCHECK_NE(&from, this);
-  const check_pending_account_resources_response* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<check_pending_account_resources_response>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.mempool.check_pending_account_resources_response)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.mempool.check_pending_account_resources_response)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData check_pending_account_resources_response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    check_pending_account_resources_response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*check_pending_account_resources_response::GetClassData() const { return &_class_data_; }
+
+void check_pending_account_resources_response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<check_pending_account_resources_response *>(to)->MergeFrom(
+      static_cast<const check_pending_account_resources_response &>(from));
 }
+
 
 void check_pending_account_resources_response::MergeFrom(const check_pending_account_resources_response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.check_pending_account_resources_response)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.success() != 0) {
+  if (from._internal_success() != 0) {
     _internal_set_success(from._internal_success());
   }
-}
-
-void check_pending_account_resources_response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.mempool.check_pending_account_resources_response)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void check_pending_account_resources_response::CopyFrom(const check_pending_account_resources_response& from) {
@@ -708,14 +646,15 @@ bool check_pending_account_resources_response::IsInitialized() const {
 
 void check_pending_account_resources_response::InternalSwap(check_pending_account_resources_response* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(success_, other->success_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata check_pending_account_resources_response::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[1]);
 }
-
 
 // ===================================================================
 
@@ -723,10 +662,13 @@ class get_pending_transactions_request::_Internal {
  public:
 };
 
-get_pending_transactions_request::get_pending_transactions_request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+get_pending_transactions_request::get_pending_transactions_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.get_pending_transactions_request)
 }
 get_pending_transactions_request::get_pending_transactions_request(const get_pending_transactions_request& from)
@@ -736,18 +678,19 @@ get_pending_transactions_request::get_pending_transactions_request(const get_pen
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.get_pending_transactions_request)
 }
 
-void get_pending_transactions_request::SharedCtor() {
-  limit_ = PROTOBUF_ULONGLONG(0);
+inline void get_pending_transactions_request::SharedCtor() {
+limit_ = uint64_t{0u};
 }
 
 get_pending_transactions_request::~get_pending_transactions_request() {
   // @@protoc_insertion_point(destructor:koinos.rpc.mempool.get_pending_transactions_request)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void get_pending_transactions_request::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void get_pending_transactions_request::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void get_pending_transactions_request::ArenaDtor(void* object) {
@@ -759,11 +702,6 @@ void get_pending_transactions_request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID
 void get_pending_transactions_request::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const get_pending_transactions_request& get_pending_transactions_request::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_get_pending_transactions_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void get_pending_transactions_request::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.rpc.mempool.get_pending_transactions_request)
@@ -771,7 +709,7 @@ void get_pending_transactions_request::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  limit_ = PROTOBUF_ULONGLONG(0);
+  limit_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -780,7 +718,6 @@ const char* get_pending_transactions_request::_InternalParse(const char* ptr, ::
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // uint64 limit = 1;
       case 1:
@@ -791,7 +728,8 @@ const char* get_pending_transactions_request::_InternalParse(const char* ptr, ::
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -818,7 +756,7 @@ failure:
   (void) cached_has_bits;
 
   // uint64 limit = 1;
-  if (this->limit() != 0) {
+  if (this->_internal_limit() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_limit(), target);
   }
@@ -840,7 +778,7 @@ size_t get_pending_transactions_request::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // uint64 limit = 1;
-  if (this->limit() != 0) {
+  if (this->_internal_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_limit());
@@ -855,38 +793,29 @@ size_t get_pending_transactions_request::ByteSizeLong() const {
   return total_size;
 }
 
-void get_pending_transactions_request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.mempool.get_pending_transactions_request)
-  GOOGLE_DCHECK_NE(&from, this);
-  const get_pending_transactions_request* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<get_pending_transactions_request>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.mempool.get_pending_transactions_request)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.mempool.get_pending_transactions_request)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData get_pending_transactions_request::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    get_pending_transactions_request::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*get_pending_transactions_request::GetClassData() const { return &_class_data_; }
+
+void get_pending_transactions_request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<get_pending_transactions_request *>(to)->MergeFrom(
+      static_cast<const get_pending_transactions_request &>(from));
 }
+
 
 void get_pending_transactions_request::MergeFrom(const get_pending_transactions_request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.get_pending_transactions_request)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.limit() != 0) {
+  if (from._internal_limit() != 0) {
     _internal_set_limit(from._internal_limit());
   }
-}
-
-void get_pending_transactions_request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.mempool.get_pending_transactions_request)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void get_pending_transactions_request::CopyFrom(const get_pending_transactions_request& from) {
@@ -902,14 +831,15 @@ bool get_pending_transactions_request::IsInitialized() const {
 
 void get_pending_transactions_request::InternalSwap(get_pending_transactions_request* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(limit_, other->limit_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_pending_transactions_request::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[2]);
 }
-
 
 // ===================================================================
 
@@ -920,11 +850,14 @@ class get_pending_transactions_response::_Internal {
 void get_pending_transactions_response::clear_transactions() {
   transactions_.Clear();
 }
-get_pending_transactions_response::get_pending_transactions_response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+get_pending_transactions_response::get_pending_transactions_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   transactions_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.get_pending_transactions_response)
 }
 get_pending_transactions_response::get_pending_transactions_response(const get_pending_transactions_response& from)
@@ -934,18 +867,18 @@ get_pending_transactions_response::get_pending_transactions_response(const get_p
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.get_pending_transactions_response)
 }
 
-void get_pending_transactions_response::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
+inline void get_pending_transactions_response::SharedCtor() {
 }
 
 get_pending_transactions_response::~get_pending_transactions_response() {
   // @@protoc_insertion_point(destructor:koinos.rpc.mempool.get_pending_transactions_response)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void get_pending_transactions_response::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void get_pending_transactions_response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void get_pending_transactions_response::ArenaDtor(void* object) {
@@ -957,11 +890,6 @@ void get_pending_transactions_response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_I
 void get_pending_transactions_response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const get_pending_transactions_response& get_pending_transactions_response::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_get_pending_transactions_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void get_pending_transactions_response::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.rpc.mempool.get_pending_transactions_response)
@@ -978,7 +906,6 @@ const char* get_pending_transactions_response::_InternalParse(const char* ptr, :
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .koinos.protocol.transaction transactions = 1;
       case 1:
@@ -994,7 +921,8 @@ const char* get_pending_transactions_response::_InternalParse(const char* ptr, :
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1060,36 +988,27 @@ size_t get_pending_transactions_response::ByteSizeLong() const {
   return total_size;
 }
 
-void get_pending_transactions_response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.mempool.get_pending_transactions_response)
-  GOOGLE_DCHECK_NE(&from, this);
-  const get_pending_transactions_response* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<get_pending_transactions_response>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.mempool.get_pending_transactions_response)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.mempool.get_pending_transactions_response)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData get_pending_transactions_response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    get_pending_transactions_response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*get_pending_transactions_response::GetClassData() const { return &_class_data_; }
+
+void get_pending_transactions_response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<get_pending_transactions_response *>(to)->MergeFrom(
+      static_cast<const get_pending_transactions_response &>(from));
 }
+
 
 void get_pending_transactions_response::MergeFrom(const get_pending_transactions_response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.get_pending_transactions_response)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   transactions_.MergeFrom(from.transactions_);
-}
-
-void get_pending_transactions_response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.mempool.get_pending_transactions_response)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void get_pending_transactions_response::CopyFrom(const get_pending_transactions_response& from) {
@@ -1105,14 +1024,15 @@ bool get_pending_transactions_response::IsInitialized() const {
 
 void get_pending_transactions_response::InternalSwap(get_pending_transactions_response* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   transactions_.InternalSwap(&other->transactions_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_pending_transactions_response::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[3]);
 }
-
 
 // ===================================================================
 
@@ -1136,11 +1056,13 @@ mempool_request::_Internal::get_pending_transactions(const mempool_request* msg)
   return *msg->request_.get_pending_transactions_;
 }
 void mempool_request::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_request();
   if (reserved) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved)->GetArena();
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved));
     if (message_arena != submessage_arena) {
       reserved = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, reserved, submessage_arena);
@@ -1152,18 +1074,18 @@ void mempool_request::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserv
 }
 void mempool_request::clear_reserved() {
   if (_internal_has_reserved()) {
-    if (GetArena() == nullptr) {
+    if (GetArenaForAllocation() == nullptr) {
       delete request_.reserved_;
     }
     clear_has_request();
   }
 }
 void mempool_request::set_allocated_check_pending_account_resources(::koinos::rpc::mempool::check_pending_account_resources_request* check_pending_account_resources) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_request();
   if (check_pending_account_resources) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(check_pending_account_resources);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::mempool::check_pending_account_resources_request>::GetOwningArena(check_pending_account_resources);
     if (message_arena != submessage_arena) {
       check_pending_account_resources = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, check_pending_account_resources, submessage_arena);
@@ -1174,11 +1096,11 @@ void mempool_request::set_allocated_check_pending_account_resources(::koinos::rp
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_request.check_pending_account_resources)
 }
 void mempool_request::set_allocated_get_pending_transactions(::koinos::rpc::mempool::get_pending_transactions_request* get_pending_transactions) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_request();
   if (get_pending_transactions) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(get_pending_transactions);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::mempool::get_pending_transactions_request>::GetOwningArena(get_pending_transactions);
     if (message_arena != submessage_arena) {
       get_pending_transactions = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, get_pending_transactions, submessage_arena);
@@ -1188,10 +1110,13 @@ void mempool_request::set_allocated_get_pending_transactions(::koinos::rpc::memp
   }
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_request.get_pending_transactions)
 }
-mempool_request::mempool_request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+mempool_request::mempool_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.mempool_request)
 }
 mempool_request::mempool_request(const mempool_request& from)
@@ -1218,19 +1143,19 @@ mempool_request::mempool_request(const mempool_request& from)
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.mempool_request)
 }
 
-void mempool_request::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_mempool_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  clear_has_request();
+inline void mempool_request::SharedCtor() {
+clear_has_request();
 }
 
 mempool_request::~mempool_request() {
   // @@protoc_insertion_point(destructor:koinos.rpc.mempool.mempool_request)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void mempool_request::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void mempool_request::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_request()) {
     clear_request();
   }
@@ -1245,29 +1170,24 @@ void mempool_request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void mempool_request::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const mempool_request& mempool_request::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_mempool_request_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void mempool_request::clear_request() {
 // @@protoc_insertion_point(one_of_clear_start:koinos.rpc.mempool.mempool_request)
   switch (request_case()) {
     case kReserved: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete request_.reserved_;
       }
       break;
     }
     case kCheckPendingAccountResources: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete request_.check_pending_account_resources_;
       }
       break;
     }
     case kGetPendingTransactions: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete request_.get_pending_transactions_;
       }
       break;
@@ -1295,7 +1215,6 @@ const char* mempool_request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .koinos.rpc.reserved_rpc reserved = 1;
       case 1:
@@ -1320,7 +1239,8 @@ const char* mempool_request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1421,25 +1341,22 @@ size_t mempool_request::ByteSizeLong() const {
   return total_size;
 }
 
-void mempool_request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.mempool.mempool_request)
-  GOOGLE_DCHECK_NE(&from, this);
-  const mempool_request* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<mempool_request>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.mempool.mempool_request)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.mempool.mempool_request)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData mempool_request::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    mempool_request::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*mempool_request::GetClassData() const { return &_class_data_; }
+
+void mempool_request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<mempool_request *>(to)->MergeFrom(
+      static_cast<const mempool_request &>(from));
 }
+
 
 void mempool_request::MergeFrom(const mempool_request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.mempool_request)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1460,13 +1377,7 @@ void mempool_request::MergeFrom(const mempool_request& from) {
       break;
     }
   }
-}
-
-void mempool_request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.mempool.mempool_request)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void mempool_request::CopyFrom(const mempool_request& from) {
@@ -1482,15 +1393,16 @@ bool mempool_request::IsInitialized() const {
 
 void mempool_request::InternalSwap(mempool_request* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(request_, other->request_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mempool_request::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[4]);
 }
-
 
 // ===================================================================
 
@@ -1519,11 +1431,13 @@ mempool_response::_Internal::get_pending_transactions(const mempool_response* ms
   return *msg->response_.get_pending_transactions_;
 }
 void mempool_response::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (reserved) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved)->GetArena();
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved));
     if (message_arena != submessage_arena) {
       reserved = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, reserved, submessage_arena);
@@ -1535,18 +1449,20 @@ void mempool_response::set_allocated_reserved(::koinos::rpc::reserved_rpc* reser
 }
 void mempool_response::clear_reserved() {
   if (_internal_has_reserved()) {
-    if (GetArena() == nullptr) {
+    if (GetArenaForAllocation() == nullptr) {
       delete response_.reserved_;
     }
     clear_has_response();
   }
 }
 void mempool_response::set_allocated_error(::koinos::rpc::error_response* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error)->GetArena();
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
     if (message_arena != submessage_arena) {
       error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, error, submessage_arena);
@@ -1558,18 +1474,18 @@ void mempool_response::set_allocated_error(::koinos::rpc::error_response* error)
 }
 void mempool_response::clear_error() {
   if (_internal_has_error()) {
-    if (GetArena() == nullptr) {
+    if (GetArenaForAllocation() == nullptr) {
       delete response_.error_;
     }
     clear_has_response();
   }
 }
 void mempool_response::set_allocated_check_pending_account_resources(::koinos::rpc::mempool::check_pending_account_resources_response* check_pending_account_resources) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (check_pending_account_resources) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(check_pending_account_resources);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::mempool::check_pending_account_resources_response>::GetOwningArena(check_pending_account_resources);
     if (message_arena != submessage_arena) {
       check_pending_account_resources = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, check_pending_account_resources, submessage_arena);
@@ -1580,11 +1496,11 @@ void mempool_response::set_allocated_check_pending_account_resources(::koinos::r
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_response.check_pending_account_resources)
 }
 void mempool_response::set_allocated_get_pending_transactions(::koinos::rpc::mempool::get_pending_transactions_response* get_pending_transactions) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (get_pending_transactions) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(get_pending_transactions);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::mempool::get_pending_transactions_response>::GetOwningArena(get_pending_transactions);
     if (message_arena != submessage_arena) {
       get_pending_transactions = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, get_pending_transactions, submessage_arena);
@@ -1594,10 +1510,13 @@ void mempool_response::set_allocated_get_pending_transactions(::koinos::rpc::mem
   }
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_response.get_pending_transactions)
 }
-mempool_response::mempool_response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+mempool_response::mempool_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.mempool_response)
 }
 mempool_response::mempool_response(const mempool_response& from)
@@ -1628,19 +1547,19 @@ mempool_response::mempool_response(const mempool_response& from)
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.mempool_response)
 }
 
-void mempool_response::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_mempool_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  clear_has_response();
+inline void mempool_response::SharedCtor() {
+clear_has_response();
 }
 
 mempool_response::~mempool_response() {
   // @@protoc_insertion_point(destructor:koinos.rpc.mempool.mempool_response)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void mempool_response::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void mempool_response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_response()) {
     clear_response();
   }
@@ -1655,35 +1574,30 @@ void mempool_response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void mempool_response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const mempool_response& mempool_response::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_mempool_response_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void mempool_response::clear_response() {
 // @@protoc_insertion_point(one_of_clear_start:koinos.rpc.mempool.mempool_response)
   switch (response_case()) {
     case kReserved: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.reserved_;
       }
       break;
     }
     case kError: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.error_;
       }
       break;
     }
     case kCheckPendingAccountResources: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.check_pending_account_resources_;
       }
       break;
     }
     case kGetPendingTransactions: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.get_pending_transactions_;
       }
       break;
@@ -1711,7 +1625,6 @@ const char* mempool_response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .koinos.rpc.reserved_rpc reserved = 1;
       case 1:
@@ -1743,7 +1656,8 @@ const char* mempool_response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1859,25 +1773,22 @@ size_t mempool_response::ByteSizeLong() const {
   return total_size;
 }
 
-void mempool_response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.mempool.mempool_response)
-  GOOGLE_DCHECK_NE(&from, this);
-  const mempool_response* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<mempool_response>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.mempool.mempool_response)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.mempool.mempool_response)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData mempool_response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    mempool_response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*mempool_response::GetClassData() const { return &_class_data_; }
+
+void mempool_response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<mempool_response *>(to)->MergeFrom(
+      static_cast<const mempool_response &>(from));
 }
+
 
 void mempool_response::MergeFrom(const mempool_response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.mempool_response)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1902,13 +1813,7 @@ void mempool_response::MergeFrom(const mempool_response& from) {
       break;
     }
   }
-}
-
-void mempool_response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.mempool.mempool_response)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void mempool_response::CopyFrom(const mempool_response& from) {
@@ -1924,15 +1829,16 @@ bool mempool_response::IsInitialized() const {
 
 void mempool_response::InternalSwap(mempool_response* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(response_, other->response_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata mempool_response::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[5]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace mempool

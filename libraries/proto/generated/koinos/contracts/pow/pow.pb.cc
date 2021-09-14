@@ -14,46 +14,42 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
 namespace contracts {
 namespace pow {
-class difficulty_metadataDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<difficulty_metadata> _instance;
-} _difficulty_metadata_default_instance_;
-class pow_signature_dataDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<pow_signature_data> _instance;
-} _pow_signature_data_default_instance_;
+constexpr difficulty_metadata::difficulty_metadata(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : target_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , difficulty_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , last_block_time_(uint64_t{0u})
+  , target_block_interval_(uint64_t{0u}){}
+struct difficulty_metadataDefaultTypeInternal {
+  constexpr difficulty_metadataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~difficulty_metadataDefaultTypeInternal() {}
+  union {
+    difficulty_metadata _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT difficulty_metadataDefaultTypeInternal _difficulty_metadata_default_instance_;
+constexpr pow_signature_data::pow_signature_data(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : nonce_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , recoverable_signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct pow_signature_dataDefaultTypeInternal {
+  constexpr pow_signature_dataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~pow_signature_dataDefaultTypeInternal() {}
+  union {
+    pow_signature_data _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT pow_signature_dataDefaultTypeInternal _pow_signature_data_default_instance_;
 }  // namespace pow
 }  // namespace contracts
 }  // namespace koinos
-static void InitDefaultsscc_info_difficulty_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::contracts::pow::_difficulty_metadata_default_instance_;
-    new (ptr) ::koinos::contracts::pow::difficulty_metadata();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_difficulty_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_difficulty_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto}, {}};
-
-static void InitDefaultsscc_info_pow_signature_data_koinos_2fcontracts_2fpow_2fpow_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::contracts::pow::_pow_signature_data_default_instance_;
-    new (ptr) ::koinos::contracts::pow::pow_signature_data();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_pow_signature_data_koinos_2fcontracts_2fpow_2fpow_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_pow_signature_data_koinos_2fcontracts_2fpow_2fpow_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto = nullptr;
@@ -96,22 +92,19 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto[] PR
   ":github.com/koinos/koinos-proto-golang/k"
   "oinos/contracts/powb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_sccs[2] = {
-  &scc_info_difficulty_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto.base,
-  &scc_info_pow_signature_data_koinos_2fcontracts_2fpow_2fpow_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto, "koinos/contracts/pow/pow.proto", 307,
-  &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once, descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_sccs, descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_deps, 2, 0,
+  false, false, 307, descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto, "koinos/contracts/pow/pow.proto", 
+  &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpow_2fpow_2eproto::offsets,
-  file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto, 2, file_level_enum_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto,
+  file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_getter() {
+  return &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_koinos_2fcontracts_2fpow_2fpow_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2fcontracts_2fpow_2fpow_2eproto(&descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto);
 namespace koinos {
 namespace contracts {
 namespace pow {
@@ -122,10 +115,13 @@ class difficulty_metadata::_Internal {
  public:
 };
 
-difficulty_metadata::difficulty_metadata(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+difficulty_metadata::difficulty_metadata(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.contracts.pow.difficulty_metadata)
 }
 difficulty_metadata::difficulty_metadata(const difficulty_metadata& from)
@@ -134,12 +130,12 @@ difficulty_metadata::difficulty_metadata(const difficulty_metadata& from)
   target_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_target().empty()) {
     target_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_target(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   difficulty_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_difficulty().empty()) {
     difficulty_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_difficulty(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   ::memcpy(&last_block_time_, &from.last_block_time_,
     static_cast<size_t>(reinterpret_cast<char*>(&target_block_interval_) -
@@ -147,24 +143,24 @@ difficulty_metadata::difficulty_metadata(const difficulty_metadata& from)
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.pow.difficulty_metadata)
 }
 
-void difficulty_metadata::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_difficulty_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto.base);
-  target_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  difficulty_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-      reinterpret_cast<char*>(&last_block_time_) - reinterpret_cast<char*>(this)),
-      0, static_cast<size_t>(reinterpret_cast<char*>(&target_block_interval_) -
-      reinterpret_cast<char*>(&last_block_time_)) + sizeof(target_block_interval_));
+inline void difficulty_metadata::SharedCtor() {
+target_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+difficulty_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&last_block_time_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&target_block_interval_) -
+    reinterpret_cast<char*>(&last_block_time_)) + sizeof(target_block_interval_));
 }
 
 difficulty_metadata::~difficulty_metadata() {
   // @@protoc_insertion_point(destructor:koinos.contracts.pow.difficulty_metadata)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void difficulty_metadata::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void difficulty_metadata::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   target_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   difficulty_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -178,11 +174,6 @@ void difficulty_metadata::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void difficulty_metadata::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const difficulty_metadata& difficulty_metadata::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_difficulty_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void difficulty_metadata::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.contracts.pow.difficulty_metadata)
@@ -203,7 +194,6 @@ const char* difficulty_metadata::_InternalParse(const char* ptr, ::PROTOBUF_NAME
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes target = 1;
       case 1:
@@ -237,7 +227,8 @@ const char* difficulty_metadata::_InternalParse(const char* ptr, ::PROTOBUF_NAME
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -264,25 +255,25 @@ failure:
   (void) cached_has_bits;
 
   // bytes target = 1;
-  if (this->target().size() > 0) {
+  if (!this->_internal_target().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_target(), target);
   }
 
   // uint64 last_block_time = 2;
-  if (this->last_block_time() != 0) {
+  if (this->_internal_last_block_time() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_last_block_time(), target);
   }
 
   // bytes difficulty = 3;
-  if (this->difficulty().size() > 0) {
+  if (!this->_internal_difficulty().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_difficulty(), target);
   }
 
   // uint64 target_block_interval = 4;
-  if (this->target_block_interval() != 0) {
+  if (this->_internal_target_block_interval() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_target_block_interval(), target);
   }
@@ -304,28 +295,28 @@ size_t difficulty_metadata::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes target = 1;
-  if (this->target().size() > 0) {
+  if (!this->_internal_target().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_target());
   }
 
   // bytes difficulty = 3;
-  if (this->difficulty().size() > 0) {
+  if (!this->_internal_difficulty().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_difficulty());
   }
 
   // uint64 last_block_time = 2;
-  if (this->last_block_time() != 0) {
+  if (this->_internal_last_block_time() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_last_block_time());
   }
 
   // uint64 target_block_interval = 4;
-  if (this->target_block_interval() != 0) {
+  if (this->_internal_target_block_interval() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_target_block_interval());
@@ -340,47 +331,38 @@ size_t difficulty_metadata::ByteSizeLong() const {
   return total_size;
 }
 
-void difficulty_metadata::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.contracts.pow.difficulty_metadata)
-  GOOGLE_DCHECK_NE(&from, this);
-  const difficulty_metadata* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<difficulty_metadata>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.contracts.pow.difficulty_metadata)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.contracts.pow.difficulty_metadata)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData difficulty_metadata::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    difficulty_metadata::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*difficulty_metadata::GetClassData() const { return &_class_data_; }
+
+void difficulty_metadata::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<difficulty_metadata *>(to)->MergeFrom(
+      static_cast<const difficulty_metadata &>(from));
 }
+
 
 void difficulty_metadata::MergeFrom(const difficulty_metadata& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.pow.difficulty_metadata)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.target().size() > 0) {
+  if (!from._internal_target().empty()) {
     _internal_set_target(from._internal_target());
   }
-  if (from.difficulty().size() > 0) {
+  if (!from._internal_difficulty().empty()) {
     _internal_set_difficulty(from._internal_difficulty());
   }
-  if (from.last_block_time() != 0) {
+  if (from._internal_last_block_time() != 0) {
     _internal_set_last_block_time(from._internal_last_block_time());
   }
-  if (from.target_block_interval() != 0) {
+  if (from._internal_target_block_interval() != 0) {
     _internal_set_target_block_interval(from._internal_target_block_interval());
   }
-}
-
-void difficulty_metadata::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.contracts.pow.difficulty_metadata)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void difficulty_metadata::CopyFrom(const difficulty_metadata& from) {
@@ -396,9 +378,17 @@ bool difficulty_metadata::IsInitialized() const {
 
 void difficulty_metadata::InternalSwap(difficulty_metadata* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  target_.Swap(&other->target_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  difficulty_.Swap(&other->difficulty_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &target_, GetArenaForAllocation(),
+      &other->target_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &difficulty_, GetArenaForAllocation(),
+      &other->difficulty_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(difficulty_metadata, target_block_interval_)
       + sizeof(difficulty_metadata::target_block_interval_)
@@ -408,9 +398,10 @@ void difficulty_metadata::InternalSwap(difficulty_metadata* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata difficulty_metadata::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_getter, &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once,
+      file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -418,10 +409,13 @@ class pow_signature_data::_Internal {
  public:
 };
 
-pow_signature_data::pow_signature_data(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+pow_signature_data::pow_signature_data(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.contracts.pow.pow_signature_data)
 }
 pow_signature_data::pow_signature_data(const pow_signature_data& from)
@@ -430,30 +424,30 @@ pow_signature_data::pow_signature_data(const pow_signature_data& from)
   nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_nonce().empty()) {
     nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nonce(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   recoverable_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_recoverable_signature().empty()) {
     recoverable_signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_recoverable_signature(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.pow.pow_signature_data)
 }
 
-void pow_signature_data::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_pow_signature_data_koinos_2fcontracts_2fpow_2fpow_2eproto.base);
-  nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  recoverable_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+inline void pow_signature_data::SharedCtor() {
+nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+recoverable_signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 pow_signature_data::~pow_signature_data() {
   // @@protoc_insertion_point(destructor:koinos.contracts.pow.pow_signature_data)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void pow_signature_data::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void pow_signature_data::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   nonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   recoverable_signature_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -467,11 +461,6 @@ void pow_signature_data::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void pow_signature_data::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const pow_signature_data& pow_signature_data::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_pow_signature_data_koinos_2fcontracts_2fpow_2fpow_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void pow_signature_data::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.contracts.pow.pow_signature_data)
@@ -489,7 +478,6 @@ const char* pow_signature_data::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes nonce = 1;
       case 1:
@@ -509,7 +497,8 @@ const char* pow_signature_data::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -536,13 +525,13 @@ failure:
   (void) cached_has_bits;
 
   // bytes nonce = 1;
-  if (this->nonce().size() > 0) {
+  if (!this->_internal_nonce().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_nonce(), target);
   }
 
   // bytes recoverable_signature = 2;
-  if (this->recoverable_signature().size() > 0) {
+  if (!this->_internal_recoverable_signature().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_recoverable_signature(), target);
   }
@@ -564,14 +553,14 @@ size_t pow_signature_data::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes nonce = 1;
-  if (this->nonce().size() > 0) {
+  if (!this->_internal_nonce().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_nonce());
   }
 
   // bytes recoverable_signature = 2;
-  if (this->recoverable_signature().size() > 0) {
+  if (!this->_internal_recoverable_signature().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_recoverable_signature());
@@ -586,41 +575,32 @@ size_t pow_signature_data::ByteSizeLong() const {
   return total_size;
 }
 
-void pow_signature_data::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.contracts.pow.pow_signature_data)
-  GOOGLE_DCHECK_NE(&from, this);
-  const pow_signature_data* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<pow_signature_data>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.contracts.pow.pow_signature_data)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.contracts.pow.pow_signature_data)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData pow_signature_data::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    pow_signature_data::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*pow_signature_data::GetClassData() const { return &_class_data_; }
+
+void pow_signature_data::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<pow_signature_data *>(to)->MergeFrom(
+      static_cast<const pow_signature_data &>(from));
 }
+
 
 void pow_signature_data::MergeFrom(const pow_signature_data& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.pow.pow_signature_data)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.nonce().size() > 0) {
+  if (!from._internal_nonce().empty()) {
     _internal_set_nonce(from._internal_nonce());
   }
-  if (from.recoverable_signature().size() > 0) {
+  if (!from._internal_recoverable_signature().empty()) {
     _internal_set_recoverable_signature(from._internal_recoverable_signature());
   }
-}
-
-void pow_signature_data::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.contracts.pow.pow_signature_data)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void pow_signature_data::CopyFrom(const pow_signature_data& from) {
@@ -636,15 +616,24 @@ bool pow_signature_data::IsInitialized() const {
 
 void pow_signature_data::InternalSwap(pow_signature_data* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  nonce_.Swap(&other->nonce_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  recoverable_signature_.Swap(&other->recoverable_signature_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &nonce_, GetArenaForAllocation(),
+      &other->nonce_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &recoverable_signature_, GetArenaForAllocation(),
+      &other->recoverable_signature_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata pow_signature_data::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_getter, &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once,
+      file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace pow

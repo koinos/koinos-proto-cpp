@@ -14,43 +14,33 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2ftest_5fmap_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_test_map_ImTheMapEntry_DoNotUse_koinos_2ftest_5fmap_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
-class test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<test_map_ImTheMapEntry_DoNotUse> _instance;
-} _test_map_ImTheMapEntry_DoNotUse_default_instance_;
-class test_mapDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<test_map> _instance;
-} _test_map_default_instance_;
+constexpr test_map_ImTheMapEntry_DoNotUse::test_map_ImTheMapEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal {
+  constexpr test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    test_map_ImTheMapEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal _test_map_ImTheMapEntry_DoNotUse_default_instance_;
+constexpr test_map::test_map(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : im_the_map_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
+struct test_mapDefaultTypeInternal {
+  constexpr test_mapDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~test_mapDefaultTypeInternal() {}
+  union {
+    test_map _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT test_mapDefaultTypeInternal _test_map_default_instance_;
 }  // namespace koinos
-static void InitDefaultsscc_info_test_map_koinos_2ftest_5fmap_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::_test_map_default_instance_;
-    new (ptr) ::koinos::test_map();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_test_map_koinos_2ftest_5fmap_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_test_map_koinos_2ftest_5fmap_2eproto}, {
-      &scc_info_test_map_ImTheMapEntry_DoNotUse_koinos_2ftest_5fmap_2eproto.base,}};
-
-static void InitDefaultsscc_info_test_map_ImTheMapEntry_DoNotUse_koinos_2ftest_5fmap_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::_test_map_ImTheMapEntry_DoNotUse_default_instance_;
-    new (ptr) ::koinos::test_map_ImTheMapEntry_DoNotUse();
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_test_map_ImTheMapEntry_DoNotUse_koinos_2ftest_5fmap_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_test_map_ImTheMapEntry_DoNotUse_koinos_2ftest_5fmap_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2ftest_5fmap_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2ftest_5fmap_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2ftest_5fmap_2eproto = nullptr;
@@ -89,22 +79,19 @@ const char descriptor_table_protodef_koinos_2ftest_5fmap_2eproto[] PROTOBUF_SECT
   "\001 \001(\004\022\r\n\005value\030\002 \001(\014:\0028\001B.Z,github.com/k"
   "oinos/koinos-proto-golang/koinosb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2ftest_5fmap_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koinos_2ftest_5fmap_2eproto_sccs[2] = {
-  &scc_info_test_map_koinos_2ftest_5fmap_2eproto.base,
-  &scc_info_test_map_ImTheMapEntry_DoNotUse_koinos_2ftest_5fmap_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2ftest_5fmap_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2ftest_5fmap_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2ftest_5fmap_2eproto, "koinos/test_map.proto", 200,
-  &descriptor_table_koinos_2ftest_5fmap_2eproto_once, descriptor_table_koinos_2ftest_5fmap_2eproto_sccs, descriptor_table_koinos_2ftest_5fmap_2eproto_deps, 2, 0,
+  false, false, 200, descriptor_table_protodef_koinos_2ftest_5fmap_2eproto, "koinos/test_map.proto",
+  &descriptor_table_koinos_2ftest_5fmap_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_koinos_2ftest_5fmap_2eproto::offsets,
-  file_level_metadata_koinos_2ftest_5fmap_2eproto, 2, file_level_enum_descriptors_koinos_2ftest_5fmap_2eproto, file_level_service_descriptors_koinos_2ftest_5fmap_2eproto,
+  file_level_metadata_koinos_2ftest_5fmap_2eproto, file_level_enum_descriptors_koinos_2ftest_5fmap_2eproto, file_level_service_descriptors_koinos_2ftest_5fmap_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_koinos_2ftest_5fmap_2eproto_getter() {
+  return &descriptor_table_koinos_2ftest_5fmap_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_koinos_2ftest_5fmap_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_koinos_2ftest_5fmap_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2ftest_5fmap_2eproto(&descriptor_table_koinos_2ftest_5fmap_2eproto);
 namespace koinos {
 
 // ===================================================================
@@ -116,13 +103,10 @@ void test_map_ImTheMapEntry_DoNotUse::MergeFrom(const test_map_ImTheMapEntry_DoN
   MergeFromInternal(other);
 }
 ::PROTOBUF_NAMESPACE_ID::Metadata test_map_ImTheMapEntry_DoNotUse::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2ftest_5fmap_2eproto_getter, &descriptor_table_koinos_2ftest_5fmap_2eproto_once,
+      file_level_metadata_koinos_2ftest_5fmap_2eproto[0]);
 }
-void test_map_ImTheMapEntry_DoNotUse::MergeFrom(
-    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
-  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
-}
-
 
 // ===================================================================
 
@@ -130,11 +114,14 @@ class test_map::_Internal {
  public:
 };
 
-test_map::test_map(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+test_map::test_map(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   im_the_map_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.test_map)
 }
 test_map::test_map(const test_map& from)
@@ -144,34 +131,33 @@ test_map::test_map(const test_map& from)
   // @@protoc_insertion_point(copy_constructor:koinos.test_map)
 }
 
-void test_map::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_test_map_koinos_2ftest_5fmap_2eproto.base);
+inline void test_map::SharedCtor() {
 }
 
 test_map::~test_map() {
   // @@protoc_insertion_point(destructor:koinos.test_map)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void test_map::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void test_map::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void test_map::ArenaDtor(void* object) {
   test_map* _this = reinterpret_cast< test_map* >(object);
   (void)_this;
+  _this->im_the_map_. ~MapField();
 }
-void test_map::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+inline void test_map::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
+  if (arena != nullptr) {
+    arena->OwnCustomDestructor(this, &test_map::ArenaDtor);
+  }
 }
 void test_map::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const test_map& test_map::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_test_map_koinos_2ftest_5fmap_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void test_map::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.test_map)
@@ -188,7 +174,6 @@ const char* test_map::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // map<uint64, bytes> im_the_map = 1;
       case 1:
@@ -204,7 +189,8 @@ const char* test_map::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -295,36 +281,27 @@ size_t test_map::ByteSizeLong() const {
   return total_size;
 }
 
-void test_map::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.test_map)
-  GOOGLE_DCHECK_NE(&from, this);
-  const test_map* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<test_map>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.test_map)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.test_map)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData test_map::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    test_map::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*test_map::GetClassData() const { return &_class_data_; }
+
+void test_map::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<test_map *>(to)->MergeFrom(
+      static_cast<const test_map &>(from));
 }
+
 
 void test_map::MergeFrom(const test_map& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.test_map)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   im_the_map_.MergeFrom(from.im_the_map_);
-}
-
-void test_map::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.test_map)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void test_map::CopyFrom(const test_map& from) {
@@ -340,14 +317,15 @@ bool test_map::IsInitialized() const {
 
 void test_map::InternalSwap(test_map* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  im_the_map_.Swap(&other->im_the_map_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  im_the_map_.InternalSwap(&other->im_the_map_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata test_map::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2ftest_5fmap_2eproto_getter, &descriptor_table_koinos_2ftest_5fmap_2eproto_once,
+      file_level_metadata_koinos_2ftest_5fmap_2eproto[1]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace koinos

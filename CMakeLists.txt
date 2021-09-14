@@ -72,6 +72,7 @@ if(COVERAGE)
      LCOV_ARGS "--quiet" "--no-external"
      EXECUTABLE koinos_proto_tests
      EXCLUDE "libraries/proto/generated/*"
+  )
 endif()
 
 if (MSVC)

@@ -64,6 +64,16 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(Boost_NO_BOOST_CMAKE ON)
 
+if(COVERAGE)
+  include(CodeCoverage)
+  append_coverage_compiler_flags()
+  setup_target_for_coverage_lcov(
+     NAME coverage
+     LCOV_ARGS "--quiet" "--no-external"
+     EXECUTABLE koinos_proto_tests
+     EXCLUDE "libraries/proto/generated/*"
+endif()
+
 if (MSVC)
     # warning level 4 and all warnings as errors
     add_compile_options(/W4 /WX)

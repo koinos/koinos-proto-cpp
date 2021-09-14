@@ -74,7 +74,7 @@ if(COVERAGE)
      NAME coverage
      LCOV_ARGS "--quiet" "--no-external"
      EXECUTABLE koinos_proto_tests
-     EXCLUDE "libraries/proto/generated/*"
+     EXCLUDE "libraries/proto/generated/*" "tests/*"
   )
 endif()
 

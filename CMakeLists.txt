@@ -47,6 +47,7 @@ set(KOINOS_LIB_CMAKE_PROJECT_CONFIG_FILE  "${KOINOS_LIB_CMAKE_CONFIG_DIR}/${PROJ
 set(KOINOS_LIB_CMAKE_PROJECT_TARGETS_FILE "${KOINOS_LIB_CMAKE_CONFIG_DIR}/${PROJECT_NAME}Targets.cmake")
 set(KOINOS_LIB_PKGCONFIG_INSTALL_DIR      "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
+option(BUILD_TESTS "Build Tests" ON)
 option(FORCE_COLORED_OUTPUT "Always produce ANSI-colored output (GNU/Clang only)." OFF)
 
 # This is to force color output when using ccache with Unix Makefiles
@@ -91,7 +92,9 @@ hunter_add_package(Protobuf)
 find_package(Protobuf CONFIG REQUIRED)
 
 add_subdirectory(libraries)
-add_subdirectory(tests)
+if (BUILD_TESTS)
+   add_subdirectory(tests)
+endif()
 
 # Install a pkg-config file, so other tools can find this.
 configure_file(

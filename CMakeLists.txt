@@ -87,8 +87,10 @@ if(${CMAKE_GENERATOR} MATCHES "Xcode")
   set(CMAKE_XCODE_GENERATE_SCHEME YES)
 endif()
 
+hunter_add_package(Boost COMPONENTS test)
 hunter_add_package(Protobuf)
 
+find_package(Boost CONFIG REQUIRED)
 find_package(Protobuf CONFIG REQUIRED)
 
 add_subdirectory(libraries)

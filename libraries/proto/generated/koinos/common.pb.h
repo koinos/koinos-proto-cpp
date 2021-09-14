@@ -256,7 +256,7 @@ inline const std::string& block_topology::id() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void block_topology::set_id(ArgT0&& arg0, ArgT... args) {
-
+ 
  id_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.block_topology.id)
 }
@@ -269,11 +269,11 @@ inline const std::string& block_topology::_internal_id() const {
   return id_.Get();
 }
 inline void block_topology::_internal_set_id(const std::string& value) {
-
+  
   id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* block_topology::_internal_mutable_id() {
-
+  
   return id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* block_topology::release_id() {
@@ -282,9 +282,9 @@ inline std::string* block_topology::release_id() {
 }
 inline void block_topology::set_allocated_id(std::string* id) {
   if (id != nullptr) {
-
+    
   } else {
-
+    
   }
   id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArenaForAllocation());
@@ -303,7 +303,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint64 block_topology::height() const {
   return _internal_height();
 }
 inline void block_topology::_internal_set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-
+  
   height_ = value;
 }
 inline void block_topology::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
@@ -322,7 +322,7 @@ inline const std::string& block_topology::previous() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void block_topology::set_previous(ArgT0&& arg0, ArgT... args) {
-
+ 
  previous_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.block_topology.previous)
 }
@@ -335,11 +335,11 @@ inline const std::string& block_topology::_internal_previous() const {
   return previous_.Get();
 }
 inline void block_topology::_internal_set_previous(const std::string& value) {
-
+  
   previous_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* block_topology::_internal_mutable_previous() {
-
+  
   return previous_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* block_topology::release_previous() {
@@ -348,9 +348,9 @@ inline std::string* block_topology::release_previous() {
 }
 inline void block_topology::set_allocated_previous(std::string* previous) {
   if (previous != nullptr) {
-
+    
   } else {
-
+    
   }
   previous_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous,
       GetArenaForAllocation());

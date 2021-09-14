@@ -10,7 +10,7 @@ bool has_map_field( const google::protobuf::Message& msg )
 {
    auto desc = msg.GetDescriptor();
 
-   for( int i = 0; i < desc->field_count(); i++ )
+   for( int i = 1; i <= desc->field_count(); i++ )
    {
       auto fd = desc->FindFieldByNumber( i );
       if ( fd != nullptr && fd->is_map() )

@@ -50,7 +50,7 @@ endfunction()
 parse_unit_tests(TEST_CASES ${UNIT_TESTS})
 
 add_boost_test(koinos_proto_tests
-   SOURCES ${UNIT_TESTS} ${TEST_FIXTURES}
+   SOURCES ${UNIT_TESTS} ${TEST_FIXTURES} tests/test_map.pb.cc
    TESTS ${TEST_CASES}
 )
 

@@ -59,6 +59,8 @@ if(${FORCE_COLORED_OUTPUT})
     endif ()
 endif ()
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -73,6 +75,7 @@ if(COVERAGE)
      LCOV_ARGS "--quiet" "--no-external"
      EXECUTABLE koinos_proto_tests
      EXCLUDE "libraries/proto/generated/*"
+  )
 endif()
 
 if (MSVC)
@@ -87,8 +90,10 @@ if(${CMAKE_GENERATOR} MATCHES "Xcode")
   set(CMAKE_XCODE_GENERATE_SCHEME YES)
 endif()
 
+hunter_add_package(Boost COMPONENTS test)
 hunter_add_package(Protobuf)
 
+find_package(Boost CONFIG REQUIRED)
 find_package(Protobuf CONFIG REQUIRED)
 
 add_subdirectory(libraries)

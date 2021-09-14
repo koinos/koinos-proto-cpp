@@ -11,11 +11,20 @@ if(CCACHE_PROGRAM)
 endif()
 
 option(HUNTER_RUN_UPLOAD "Upload Hunter packages to binary cache server" OFF)
+
+set(
+   HUNTER_CACHE_SERVERS
+   "https://github.com/koinos/hunter-cache"
+   CACHE
+   STRING
+   "Default cache server"
+)
+
 include("cmake/HunterGate.cmake")
 
 HunterGate(
-   URL "https://github.com/cpp-pm/hunter/archive/v0.23.289.tar.gz"
-   SHA1 "7d7323704780200a1575fc089d26f8a8a393a1fa"
+   URL "https://github.com/cpp-pm/hunter/archive/v0.23.313.tar.gz"
+   SHA1 "6c369e5aab2749a616917df3b23511535f413604"
    LOCAL
 )
 
@@ -38,6 +47,7 @@ set(KOINOS_LIB_CMAKE_PROJECT_CONFIG_FILE  "${KOINOS_LIB_CMAKE_CONFIG_DIR}/${PROJ
 set(KOINOS_LIB_CMAKE_PROJECT_TARGETS_FILE "${KOINOS_LIB_CMAKE_CONFIG_DIR}/${PROJECT_NAME}Targets.cmake")
 set(KOINOS_LIB_PKGCONFIG_INSTALL_DIR      "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
+option(BUILD_TESTS "Build Tests" ON)
 option(FORCE_COLORED_OUTPUT "Always produce ANSI-colored output (GNU/Clang only)." OFF)
 
 # This is to force color output when using ccache with Unix Makefiles
@@ -49,11 +59,24 @@ if(${FORCE_COLORED_OUTPUT})
     endif ()
 endif ()
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 set(Boost_NO_BOOST_CMAKE ON)
+
+if(COVERAGE)
+  include(CodeCoverage)
+  append_coverage_compiler_flags()
+  setup_target_for_coverage_lcov(
+     NAME coverage
+     LCOV_ARGS "--quiet" "--no-external"
+     EXECUTABLE koinos_proto_tests
+     EXCLUDE "libraries/proto/generated/*" "tests/*"
+  )
+endif()
 
 if (MSVC)
     # warning level 4 and all warnings as errors
@@ -67,11 +90,16 @@ if(${CMAKE_GENERATOR} MATCHES "Xcode")
   set(CMAKE_XCODE_GENERATE_SCHEME YES)
 endif()
 
+hunter_add_package(Boost COMPONENTS test)
 hunter_add_package(Protobuf)
 
+find_package(Boost CONFIG REQUIRED)
 find_package(Protobuf CONFIG REQUIRED)
 
 add_subdirectory(libraries)
+if (BUILD_TESTS)
+   add_subdirectory(tests)
+endif()
 
 # Install a pkg-config file, so other tools can find this.
 configure_file(

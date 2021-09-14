@@ -14,25 +14,24 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
-class block_topologyDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<block_topology> _instance;
-} _block_topology_default_instance_;
+constexpr block_topology::block_topology(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , previous_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , height_(uint64_t{0u}){}
+struct block_topologyDefaultTypeInternal {
+  constexpr block_topologyDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~block_topologyDefaultTypeInternal() {}
+  union {
+    block_topology _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT block_topologyDefaultTypeInternal _block_topology_default_instance_;
 }  // namespace koinos
-static void InitDefaultsscc_info_block_topology_koinos_2fcommon_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::_block_topology_default_instance_;
-    new (ptr) ::koinos::block_topology();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_block_topology_koinos_2fcommon_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_block_topology_koinos_2fcommon_2eproto}, {}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fcommon_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2fcommon_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fcommon_2eproto = nullptr;
@@ -61,21 +60,19 @@ const char descriptor_table_protodef_koinos_2fcommon_2eproto[] PROTOBUF_SECTION_
   "revious\030\003 \001(\014B.Z,github.com/koinos/koino"
   "s-proto-golang/koinosb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcommon_2eproto_deps[1] = {
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koinos_2fcommon_2eproto_sccs[1] = {
-  &scc_info_block_topology_koinos_2fcommon_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcommon_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 149,
-  &descriptor_table_koinos_2fcommon_2eproto_once, descriptor_table_koinos_2fcommon_2eproto_sccs, descriptor_table_koinos_2fcommon_2eproto_deps, 1, 0,
+  false, false, 149, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
+  &descriptor_table_koinos_2fcommon_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcommon_2eproto::offsets,
-  file_level_metadata_koinos_2fcommon_2eproto, 1, file_level_enum_descriptors_koinos_2fcommon_2eproto, file_level_service_descriptors_koinos_2fcommon_2eproto,
+  file_level_metadata_koinos_2fcommon_2eproto, file_level_enum_descriptors_koinos_2fcommon_2eproto, file_level_service_descriptors_koinos_2fcommon_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_koinos_2fcommon_2eproto_getter() {
+  return &descriptor_table_koinos_2fcommon_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_koinos_2fcommon_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_koinos_2fcommon_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2fcommon_2eproto(&descriptor_table_koinos_2fcommon_2eproto);
 namespace koinos {
 
 // ===================================================================
@@ -84,10 +81,13 @@ class block_topology::_Internal {
  public:
 };
 
-block_topology::block_topology(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+block_topology::block_topology(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.block_topology)
 }
 block_topology::block_topology(const block_topology& from)
@@ -96,32 +96,32 @@ block_topology::block_topology(const block_topology& from)
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_id().empty()) {
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   previous_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_previous().empty()) {
     previous_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_previous(), 
-      GetArena());
+      GetArenaForAllocation());
   }
   height_ = from.height_;
   // @@protoc_insertion_point(copy_constructor:koinos.block_topology)
 }
 
-void block_topology::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_block_topology_koinos_2fcommon_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  previous_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  height_ = PROTOBUF_ULONGLONG(0);
+inline void block_topology::SharedCtor() {
+id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+previous_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+height_ = uint64_t{0u};
 }
 
 block_topology::~block_topology() {
   // @@protoc_insertion_point(destructor:koinos.block_topology)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void block_topology::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void block_topology::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   previous_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -135,11 +135,6 @@ void block_topology::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 void block_topology::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const block_topology& block_topology::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_block_topology_koinos_2fcommon_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void block_topology::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.block_topology)
@@ -149,7 +144,7 @@ void block_topology::Clear() {
 
   id_.ClearToEmpty();
   previous_.ClearToEmpty();
-  height_ = PROTOBUF_ULONGLONG(0);
+  height_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -158,7 +153,6 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // bytes id = 1;
       case 1:
@@ -185,7 +179,8 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -212,19 +207,19 @@ failure:
   (void) cached_has_bits;
 
   // bytes id = 1;
-  if (this->id().size() > 0) {
+  if (!this->_internal_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_id(), target);
   }
 
   // uint64 height = 2;
-  if (this->height() != 0) {
+  if (this->_internal_height() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_height(), target);
   }
 
   // bytes previous = 3;
-  if (this->previous().size() > 0) {
+  if (!this->_internal_previous().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_previous(), target);
   }
@@ -246,21 +241,21 @@ size_t block_topology::ByteSizeLong() const {
   (void) cached_has_bits;
 
   // bytes id = 1;
-  if (this->id().size() > 0) {
+  if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_id());
   }
 
   // bytes previous = 3;
-  if (this->previous().size() > 0) {
+  if (!this->_internal_previous().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_previous());
   }
 
   // uint64 height = 2;
-  if (this->height() != 0) {
+  if (this->_internal_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_height());
@@ -275,44 +270,35 @@ size_t block_topology::ByteSizeLong() const {
   return total_size;
 }
 
-void block_topology::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.block_topology)
-  GOOGLE_DCHECK_NE(&from, this);
-  const block_topology* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<block_topology>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.block_topology)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.block_topology)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData block_topology::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    block_topology::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*block_topology::GetClassData() const { return &_class_data_; }
+
+void block_topology::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<block_topology *>(to)->MergeFrom(
+      static_cast<const block_topology &>(from));
 }
+
 
 void block_topology::MergeFrom(const block_topology& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.block_topology)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.id().size() > 0) {
+  if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
-  if (from.previous().size() > 0) {
+  if (!from._internal_previous().empty()) {
     _internal_set_previous(from._internal_previous());
   }
-  if (from.height() != 0) {
+  if (from._internal_height() != 0) {
     _internal_set_height(from._internal_height());
   }
-}
-
-void block_topology::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.block_topology)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void block_topology::CopyFrom(const block_topology& from) {
@@ -328,16 +314,25 @@ bool block_topology::IsInitialized() const {
 
 void block_topology::InternalSwap(block_topology* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  previous_.Swap(&other->previous_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &id_, GetArenaForAllocation(),
+      &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &previous_, GetArenaForAllocation(),
+      &other->previous_, other->GetArenaForAllocation()
+  );
   swap(height_, other->height_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata block_topology::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fcommon_2eproto_getter, &descriptor_table_koinos_2fcommon_2eproto_once,
+      file_level_metadata_koinos_2fcommon_2eproto[0]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace koinos

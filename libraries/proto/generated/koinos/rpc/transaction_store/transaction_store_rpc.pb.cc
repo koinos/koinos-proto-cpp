@@ -14,91 +14,62 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_error_response_koinos_2frpc_2frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_reserved_rpc_koinos_2frpc_2frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto;
+
+PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
 namespace rpc {
 namespace transaction_store {
-class get_transactions_by_id_requestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<get_transactions_by_id_request> _instance;
-} _get_transactions_by_id_request_default_instance_;
-class get_transactions_by_id_responseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<get_transactions_by_id_response> _instance;
-} _get_transactions_by_id_response_default_instance_;
-class transaction_store_requestDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<transaction_store_request> _instance;
-} _transaction_store_request_default_instance_;
-class transaction_store_responseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<transaction_store_response> _instance;
-} _transaction_store_response_default_instance_;
+constexpr get_transactions_by_id_request::get_transactions_by_id_request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : transaction_ids_(){}
+struct get_transactions_by_id_requestDefaultTypeInternal {
+  constexpr get_transactions_by_id_requestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~get_transactions_by_id_requestDefaultTypeInternal() {}
+  union {
+    get_transactions_by_id_request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_transactions_by_id_requestDefaultTypeInternal _get_transactions_by_id_request_default_instance_;
+constexpr get_transactions_by_id_response::get_transactions_by_id_response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : transactions_(){}
+struct get_transactions_by_id_responseDefaultTypeInternal {
+  constexpr get_transactions_by_id_responseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~get_transactions_by_id_responseDefaultTypeInternal() {}
+  union {
+    get_transactions_by_id_response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_transactions_by_id_responseDefaultTypeInternal _get_transactions_by_id_response_default_instance_;
+constexpr transaction_store_request::transaction_store_request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct transaction_store_requestDefaultTypeInternal {
+  constexpr transaction_store_requestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~transaction_store_requestDefaultTypeInternal() {}
+  union {
+    transaction_store_request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transaction_store_requestDefaultTypeInternal _transaction_store_request_default_instance_;
+constexpr transaction_store_response::transaction_store_response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct transaction_store_responseDefaultTypeInternal {
+  constexpr transaction_store_responseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~transaction_store_responseDefaultTypeInternal() {}
+  union {
+    transaction_store_response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transaction_store_responseDefaultTypeInternal _transaction_store_response_default_instance_;
 }  // namespace transaction_store
 }  // namespace rpc
 }  // namespace koinos
-static void InitDefaultsscc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::transaction_store::_get_transactions_by_id_request_default_instance_;
-    new (ptr) ::koinos::rpc::transaction_store::get_transactions_by_id_request();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto}, {}};
-
-static void InitDefaultsscc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::transaction_store::_get_transactions_by_id_response_default_instance_;
-    new (ptr) ::koinos::rpc::transaction_store::get_transactions_by_id_response();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto}, {
-      &scc_info_transaction_item_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto.base,}};
-
-static void InitDefaultsscc_info_transaction_store_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::transaction_store::_transaction_store_request_default_instance_;
-    new (ptr) ::koinos::rpc::transaction_store::transaction_store_request();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_transaction_store_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_transaction_store_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto}, {
-      &scc_info_reserved_rpc_koinos_2frpc_2frpc_2eproto.base,
-      &scc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base,}};
-
-static void InitDefaultsscc_info_transaction_store_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::koinos::rpc::transaction_store::_transaction_store_response_default_instance_;
-    new (ptr) ::koinos::rpc::transaction_store::transaction_store_response();
-    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
-  }
-}
-
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_transaction_store_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, 0, InitDefaultsscc_info_transaction_store_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto}, {
-      &scc_info_reserved_rpc_koinos_2frpc_2frpc_2eproto.base,
-      &scc_info_error_response_koinos_2frpc_2frpc_2eproto.base,
-      &scc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base,}};
-
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto[4];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = nullptr;
@@ -175,22 +146,19 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
   &::descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_sccs[4] = {
-  &scc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base,
-  &scc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base,
-  &scc_info_transaction_store_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base,
-  &scc_info_transaction_store_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = {
-  false, false, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 812,
-  &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_sccs, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps, 4, 2,
+  false, false, 812, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto::offsets,
-  file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, 4, file_level_enum_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto,
+  file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto,
 };
+PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable* descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_getter() {
+  return &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto;
+}
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto)), true);
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto(&descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto);
 namespace koinos {
 namespace rpc {
 namespace transaction_store {
@@ -201,11 +169,14 @@ class get_transactions_by_id_request::_Internal {
  public:
 };
 
-get_transactions_by_id_request::get_transactions_by_id_request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+get_transactions_by_id_request::get_transactions_by_id_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   transaction_ids_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.transaction_store.get_transactions_by_id_request)
 }
 get_transactions_by_id_request::get_transactions_by_id_request(const get_transactions_by_id_request& from)
@@ -215,18 +186,18 @@ get_transactions_by_id_request::get_transactions_by_id_request(const get_transac
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.transaction_store.get_transactions_by_id_request)
 }
 
-void get_transactions_by_id_request::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
+inline void get_transactions_by_id_request::SharedCtor() {
 }
 
 get_transactions_by_id_request::~get_transactions_by_id_request() {
   // @@protoc_insertion_point(destructor:koinos.rpc.transaction_store.get_transactions_by_id_request)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void get_transactions_by_id_request::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void get_transactions_by_id_request::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void get_transactions_by_id_request::ArenaDtor(void* object) {
@@ -238,11 +209,6 @@ void get_transactions_by_id_request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::
 void get_transactions_by_id_request::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const get_transactions_by_id_request& get_transactions_by_id_request::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_get_transactions_by_id_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void get_transactions_by_id_request::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.rpc.transaction_store.get_transactions_by_id_request)
@@ -259,7 +225,6 @@ const char* get_transactions_by_id_request::_InternalParse(const char* ptr, ::PR
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated bytes transaction_ids = 1;
       case 1:
@@ -276,7 +241,8 @@ const char* get_transactions_by_id_request::_InternalParse(const char* ptr, ::PR
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -341,36 +307,27 @@ size_t get_transactions_by_id_request::ByteSizeLong() const {
   return total_size;
 }
 
-void get_transactions_by_id_request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.transaction_store.get_transactions_by_id_request)
-  GOOGLE_DCHECK_NE(&from, this);
-  const get_transactions_by_id_request* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<get_transactions_by_id_request>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.transaction_store.get_transactions_by_id_request)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.transaction_store.get_transactions_by_id_request)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData get_transactions_by_id_request::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    get_transactions_by_id_request::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*get_transactions_by_id_request::GetClassData() const { return &_class_data_; }
+
+void get_transactions_by_id_request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<get_transactions_by_id_request *>(to)->MergeFrom(
+      static_cast<const get_transactions_by_id_request &>(from));
 }
+
 
 void get_transactions_by_id_request::MergeFrom(const get_transactions_by_id_request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.transaction_store.get_transactions_by_id_request)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   transaction_ids_.MergeFrom(from.transaction_ids_);
-}
-
-void get_transactions_by_id_request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.transaction_store.get_transactions_by_id_request)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void get_transactions_by_id_request::CopyFrom(const get_transactions_by_id_request& from) {
@@ -386,14 +343,15 @@ bool get_transactions_by_id_request::IsInitialized() const {
 
 void get_transactions_by_id_request::InternalSwap(get_transactions_by_id_request* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   transaction_ids_.InternalSwap(&other->transaction_ids_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_transactions_by_id_request::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto[0]);
 }
-
 
 // ===================================================================
 
@@ -404,11 +362,14 @@ class get_transactions_by_id_response::_Internal {
 void get_transactions_by_id_response::clear_transactions() {
   transactions_.Clear();
 }
-get_transactions_by_id_response::get_transactions_by_id_response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+get_transactions_by_id_response::get_transactions_by_id_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   transactions_(arena) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.transaction_store.get_transactions_by_id_response)
 }
 get_transactions_by_id_response::get_transactions_by_id_response(const get_transactions_by_id_response& from)
@@ -418,18 +379,18 @@ get_transactions_by_id_response::get_transactions_by_id_response(const get_trans
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.transaction_store.get_transactions_by_id_response)
 }
 
-void get_transactions_by_id_response::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
+inline void get_transactions_by_id_response::SharedCtor() {
 }
 
 get_transactions_by_id_response::~get_transactions_by_id_response() {
   // @@protoc_insertion_point(destructor:koinos.rpc.transaction_store.get_transactions_by_id_response)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void get_transactions_by_id_response::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void get_transactions_by_id_response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
 void get_transactions_by_id_response::ArenaDtor(void* object) {
@@ -441,11 +402,6 @@ void get_transactions_by_id_response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID:
 void get_transactions_by_id_response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const get_transactions_by_id_response& get_transactions_by_id_response::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_get_transactions_by_id_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void get_transactions_by_id_response::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.rpc.transaction_store.get_transactions_by_id_response)
@@ -462,7 +418,6 @@ const char* get_transactions_by_id_response::_InternalParse(const char* ptr, ::P
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // repeated .koinos.transaction_store.transaction_item transactions = 1;
       case 1:
@@ -478,7 +433,8 @@ const char* get_transactions_by_id_response::_InternalParse(const char* ptr, ::P
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -544,36 +500,27 @@ size_t get_transactions_by_id_response::ByteSizeLong() const {
   return total_size;
 }
 
-void get_transactions_by_id_response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.transaction_store.get_transactions_by_id_response)
-  GOOGLE_DCHECK_NE(&from, this);
-  const get_transactions_by_id_response* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<get_transactions_by_id_response>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.transaction_store.get_transactions_by_id_response)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.transaction_store.get_transactions_by_id_response)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData get_transactions_by_id_response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    get_transactions_by_id_response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*get_transactions_by_id_response::GetClassData() const { return &_class_data_; }
+
+void get_transactions_by_id_response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<get_transactions_by_id_response *>(to)->MergeFrom(
+      static_cast<const get_transactions_by_id_response &>(from));
 }
+
 
 void get_transactions_by_id_response::MergeFrom(const get_transactions_by_id_response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.transaction_store.get_transactions_by_id_response)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   transactions_.MergeFrom(from.transactions_);
-}
-
-void get_transactions_by_id_response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.transaction_store.get_transactions_by_id_response)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void get_transactions_by_id_response::CopyFrom(const get_transactions_by_id_response& from) {
@@ -589,14 +536,15 @@ bool get_transactions_by_id_response::IsInitialized() const {
 
 void get_transactions_by_id_response::InternalSwap(get_transactions_by_id_response* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   transactions_.InternalSwap(&other->transactions_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_transactions_by_id_response::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto[1]);
 }
-
 
 // ===================================================================
 
@@ -615,11 +563,13 @@ transaction_store_request::_Internal::get_transactions_by_id(const transaction_s
   return *msg->request_.get_transactions_by_id_;
 }
 void transaction_store_request::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_request();
   if (reserved) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved)->GetArena();
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved));
     if (message_arena != submessage_arena) {
       reserved = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, reserved, submessage_arena);
@@ -631,18 +581,18 @@ void transaction_store_request::set_allocated_reserved(::koinos::rpc::reserved_r
 }
 void transaction_store_request::clear_reserved() {
   if (_internal_has_reserved()) {
-    if (GetArena() == nullptr) {
+    if (GetArenaForAllocation() == nullptr) {
       delete request_.reserved_;
     }
     clear_has_request();
   }
 }
 void transaction_store_request::set_allocated_get_transactions_by_id(::koinos::rpc::transaction_store::get_transactions_by_id_request* get_transactions_by_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_request();
   if (get_transactions_by_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(get_transactions_by_id);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::transaction_store::get_transactions_by_id_request>::GetOwningArena(get_transactions_by_id);
     if (message_arena != submessage_arena) {
       get_transactions_by_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, get_transactions_by_id, submessage_arena);
@@ -652,10 +602,13 @@ void transaction_store_request::set_allocated_get_transactions_by_id(::koinos::r
   }
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.transaction_store.transaction_store_request.get_transactions_by_id)
 }
-transaction_store_request::transaction_store_request(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+transaction_store_request::transaction_store_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.transaction_store.transaction_store_request)
 }
 transaction_store_request::transaction_store_request(const transaction_store_request& from)
@@ -678,19 +631,19 @@ transaction_store_request::transaction_store_request(const transaction_store_req
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.transaction_store.transaction_store_request)
 }
 
-void transaction_store_request::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_transaction_store_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
-  clear_has_request();
+inline void transaction_store_request::SharedCtor() {
+clear_has_request();
 }
 
 transaction_store_request::~transaction_store_request() {
   // @@protoc_insertion_point(destructor:koinos.rpc.transaction_store.transaction_store_request)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void transaction_store_request::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void transaction_store_request::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_request()) {
     clear_request();
   }
@@ -705,23 +658,18 @@ void transaction_store_request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena
 void transaction_store_request::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const transaction_store_request& transaction_store_request::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_transaction_store_request_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void transaction_store_request::clear_request() {
 // @@protoc_insertion_point(one_of_clear_start:koinos.rpc.transaction_store.transaction_store_request)
   switch (request_case()) {
     case kReserved: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete request_.reserved_;
       }
       break;
     }
     case kGetTransactionsById: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete request_.get_transactions_by_id_;
       }
       break;
@@ -749,7 +697,6 @@ const char* transaction_store_request::_InternalParse(const char* ptr, ::PROTOBU
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .koinos.rpc.reserved_rpc reserved = 1;
       case 1:
@@ -767,7 +714,8 @@ const char* transaction_store_request::_InternalParse(const char* ptr, ::PROTOBU
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -853,25 +801,22 @@ size_t transaction_store_request::ByteSizeLong() const {
   return total_size;
 }
 
-void transaction_store_request::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.transaction_store.transaction_store_request)
-  GOOGLE_DCHECK_NE(&from, this);
-  const transaction_store_request* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<transaction_store_request>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.transaction_store.transaction_store_request)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.transaction_store.transaction_store_request)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transaction_store_request::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    transaction_store_request::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transaction_store_request::GetClassData() const { return &_class_data_; }
+
+void transaction_store_request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<transaction_store_request *>(to)->MergeFrom(
+      static_cast<const transaction_store_request &>(from));
 }
+
 
 void transaction_store_request::MergeFrom(const transaction_store_request& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.transaction_store.transaction_store_request)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -888,13 +833,7 @@ void transaction_store_request::MergeFrom(const transaction_store_request& from)
       break;
     }
   }
-}
-
-void transaction_store_request::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.transaction_store.transaction_store_request)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void transaction_store_request::CopyFrom(const transaction_store_request& from) {
@@ -910,15 +849,16 @@ bool transaction_store_request::IsInitialized() const {
 
 void transaction_store_request::InternalSwap(transaction_store_request* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(request_, other->request_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transaction_store_request::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto[2]);
 }
-
 
 // ===================================================================
 
@@ -942,11 +882,13 @@ transaction_store_response::_Internal::get_transactions_by_id(const transaction_
   return *msg->response_.get_transactions_by_id_;
 }
 void transaction_store_response::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (reserved) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved)->GetArena();
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(reserved));
     if (message_arena != submessage_arena) {
       reserved = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, reserved, submessage_arena);
@@ -958,18 +900,20 @@ void transaction_store_response::set_allocated_reserved(::koinos::rpc::reserved_
 }
 void transaction_store_response::clear_reserved() {
   if (_internal_has_reserved()) {
-    if (GetArena() == nullptr) {
+    if (GetArenaForAllocation() == nullptr) {
       delete response_.reserved_;
     }
     clear_has_response();
   }
 }
 void transaction_store_response::set_allocated_error(::koinos::rpc::error_response* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error)->GetArena();
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
     if (message_arena != submessage_arena) {
       error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, error, submessage_arena);
@@ -981,18 +925,18 @@ void transaction_store_response::set_allocated_error(::koinos::rpc::error_respon
 }
 void transaction_store_response::clear_error() {
   if (_internal_has_error()) {
-    if (GetArena() == nullptr) {
+    if (GetArenaForAllocation() == nullptr) {
       delete response_.error_;
     }
     clear_has_response();
   }
 }
 void transaction_store_response::set_allocated_get_transactions_by_id(::koinos::rpc::transaction_store::get_transactions_by_id_response* get_transactions_by_id) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (get_transactions_by_id) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(get_transactions_by_id);
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::transaction_store::get_transactions_by_id_response>::GetOwningArena(get_transactions_by_id);
     if (message_arena != submessage_arena) {
       get_transactions_by_id = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, get_transactions_by_id, submessage_arena);
@@ -1002,10 +946,13 @@ void transaction_store_response::set_allocated_get_transactions_by_id(::koinos::
   }
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.transaction_store.transaction_store_response.get_transactions_by_id)
 }
-transaction_store_response::transaction_store_response(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+transaction_store_response::transaction_store_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  RegisterArenaDtor(arena);
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.transaction_store.transaction_store_response)
 }
 transaction_store_response::transaction_store_response(const transaction_store_response& from)
@@ -1032,19 +979,19 @@ transaction_store_response::transaction_store_response(const transaction_store_r
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.transaction_store.transaction_store_response)
 }
 
-void transaction_store_response::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_transaction_store_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
-  clear_has_response();
+inline void transaction_store_response::SharedCtor() {
+clear_has_response();
 }
 
 transaction_store_response::~transaction_store_response() {
   // @@protoc_insertion_point(destructor:koinos.rpc.transaction_store.transaction_store_response)
+  if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-void transaction_store_response::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
+inline void transaction_store_response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   if (has_response()) {
     clear_response();
   }
@@ -1059,29 +1006,24 @@ void transaction_store_response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Aren
 void transaction_store_response::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const transaction_store_response& transaction_store_response::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_transaction_store_response_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto.base);
-  return *internal_default_instance();
-}
-
 
 void transaction_store_response::clear_response() {
 // @@protoc_insertion_point(one_of_clear_start:koinos.rpc.transaction_store.transaction_store_response)
   switch (response_case()) {
     case kReserved: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.reserved_;
       }
       break;
     }
     case kError: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.error_;
       }
       break;
     }
     case kGetTransactionsById: {
-      if (GetArena() == nullptr) {
+      if (GetArenaForAllocation() == nullptr) {
         delete response_.get_transactions_by_id_;
       }
       break;
@@ -1109,7 +1051,6 @@ const char* transaction_store_response::_InternalParse(const char* ptr, ::PROTOB
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    CHK_(ptr);
     switch (tag >> 3) {
       // .koinos.rpc.reserved_rpc reserved = 1;
       case 1:
@@ -1134,7 +1075,8 @@ const char* transaction_store_response::_InternalParse(const char* ptr, ::PROTOB
         continue;
       default: {
       handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
           ctx->SetLastTag(tag);
           goto success;
         }
@@ -1235,25 +1177,22 @@ size_t transaction_store_response::ByteSizeLong() const {
   return total_size;
 }
 
-void transaction_store_response::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:koinos.rpc.transaction_store.transaction_store_response)
-  GOOGLE_DCHECK_NE(&from, this);
-  const transaction_store_response* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<transaction_store_response>(
-          &from);
-  if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:koinos.rpc.transaction_store.transaction_store_response)
-    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:koinos.rpc.transaction_store.transaction_store_response)
-    MergeFrom(*source);
-  }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transaction_store_response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    transaction_store_response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transaction_store_response::GetClassData() const { return &_class_data_; }
+
+void transaction_store_response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<transaction_store_response *>(to)->MergeFrom(
+      static_cast<const transaction_store_response &>(from));
 }
+
 
 void transaction_store_response::MergeFrom(const transaction_store_response& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.transaction_store.transaction_store_response)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1274,13 +1213,7 @@ void transaction_store_response::MergeFrom(const transaction_store_response& fro
       break;
     }
   }
-}
-
-void transaction_store_response::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:koinos.rpc.transaction_store.transaction_store_response)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void transaction_store_response::CopyFrom(const transaction_store_response& from) {
@@ -1296,15 +1229,16 @@ bool transaction_store_response::IsInitialized() const {
 
 void transaction_store_response::InternalSwap(transaction_store_response* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(response_, other->response_);
   swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transaction_store_response::GetMetadata() const {
-  return GetMetadataStatic();
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto[3]);
 }
-
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace transaction_store

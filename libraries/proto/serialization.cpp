@@ -15,6 +15,14 @@ bool has_map_field( const google::protobuf::Message& msg )
       auto fd = desc->FindFieldByNumber( i );
       if ( fd != nullptr && fd->is_map() )
          return true;
+
+      if ( fd != nullptr && fd->type() == google::protobuf::FieldDescriptor::Type::TYPE_MESSAGE )
+      {
+         auto refl = msg.GetReflection();
+         const auto& sub_msg = refl->GetMessage( msg, fd );
+         if ( has_map_field( sub_msg ) )
+            return true;
+      }
    }
 
    return false;

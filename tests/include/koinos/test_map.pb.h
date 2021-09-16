@@ -49,7 +49,7 @@ struct TableStruct_koinos_2ftest_5fmap_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -57,6 +57,9 @@ struct TableStruct_koinos_2ftest_5fmap_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2ftest_5fmap_2eproto;
 namespace koinos {
+class map_wrapper;
+struct map_wrapperDefaultTypeInternal;
+extern map_wrapperDefaultTypeInternal _map_wrapper_default_instance_;
 class test_map;
 struct test_mapDefaultTypeInternal;
 extern test_mapDefaultTypeInternal _test_map_default_instance_;
@@ -65,6 +68,7 @@ struct test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal;
 extern test_map_ImTheMapEntry_DoNotUseDefaultTypeInternal _test_map_ImTheMapEntry_DoNotUse_default_instance_;
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
+template<> ::koinos::map_wrapper* Arena::CreateMaybeMessage<::koinos::map_wrapper>(Arena*);
 template<> ::koinos::test_map* Arena::CreateMaybeMessage<::koinos::test_map>(Arena*);
 template<> ::koinos::test_map_ImTheMapEntry_DoNotUse* Arena::CreateMaybeMessage<::koinos::test_map_ImTheMapEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -245,6 +249,154 @@ class test_map final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2ftest_5fmap_2eproto;
 };
+// -------------------------------------------------------------------
+
+class map_wrapper final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.map_wrapper) */ {
+ public:
+  inline map_wrapper() : map_wrapper(nullptr) {}
+  ~map_wrapper() override;
+  explicit constexpr map_wrapper(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  map_wrapper(const map_wrapper& from);
+  map_wrapper(map_wrapper&& from) noexcept
+    : map_wrapper() {
+    *this = ::std::move(from);
+  }
+
+  inline map_wrapper& operator=(const map_wrapper& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline map_wrapper& operator=(map_wrapper&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const map_wrapper& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const map_wrapper* internal_default_instance() {
+    return reinterpret_cast<const map_wrapper*>(
+               &_map_wrapper_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(map_wrapper& a, map_wrapper& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(map_wrapper* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(map_wrapper* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline map_wrapper* New() const final {
+    return new map_wrapper();
+  }
+
+  map_wrapper* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<map_wrapper>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const map_wrapper& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const map_wrapper& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(map_wrapper* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.map_wrapper";
+  }
+  protected:
+  explicit map_wrapper(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNestedMapFieldNumber = 1,
+  };
+  // .koinos.test_map nested_map = 1;
+  bool has_nested_map() const;
+  private:
+  bool _internal_has_nested_map() const;
+  public:
+  void clear_nested_map();
+  const ::koinos::test_map& nested_map() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::test_map* release_nested_map();
+  ::koinos::test_map* mutable_nested_map();
+  void set_allocated_nested_map(::koinos::test_map* nested_map);
+  private:
+  const ::koinos::test_map& _internal_nested_map() const;
+  ::koinos::test_map* _internal_mutable_nested_map();
+  public:
+  void unsafe_arena_set_allocated_nested_map(
+      ::koinos::test_map* nested_map);
+  ::koinos::test_map* unsafe_arena_release_nested_map();
+
+  // @@protoc_insertion_point(class_scope:koinos.map_wrapper)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::test_map* nested_map_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2ftest_5fmap_2eproto;
+};
 // ===================================================================
 
 
@@ -287,9 +439,105 @@ test_map::mutable_im_the_map() {
   return _internal_mutable_im_the_map();
 }
 
+// -------------------------------------------------------------------
+
+// map_wrapper
+
+// .koinos.test_map nested_map = 1;
+inline bool map_wrapper::_internal_has_nested_map() const {
+  return this != internal_default_instance() && nested_map_ != nullptr;
+}
+inline bool map_wrapper::has_nested_map() const {
+  return _internal_has_nested_map();
+}
+inline void map_wrapper::clear_nested_map() {
+  if (GetArenaForAllocation() == nullptr && nested_map_ != nullptr) {
+    delete nested_map_;
+  }
+  nested_map_ = nullptr;
+}
+inline const ::koinos::test_map& map_wrapper::_internal_nested_map() const {
+  const ::koinos::test_map* p = nested_map_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::test_map&>(
+      ::koinos::_test_map_default_instance_);
+}
+inline const ::koinos::test_map& map_wrapper::nested_map() const {
+  // @@protoc_insertion_point(field_get:koinos.map_wrapper.nested_map)
+  return _internal_nested_map();
+}
+inline void map_wrapper::unsafe_arena_set_allocated_nested_map(
+    ::koinos::test_map* nested_map) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nested_map_);
+  }
+  nested_map_ = nested_map;
+  if (nested_map) {
+
+  } else {
+
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.map_wrapper.nested_map)
+}
+inline ::koinos::test_map* map_wrapper::release_nested_map() {
+
+  ::koinos::test_map* temp = nested_map_;
+  nested_map_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::test_map* map_wrapper::unsafe_arena_release_nested_map() {
+  // @@protoc_insertion_point(field_release:koinos.map_wrapper.nested_map)
+
+  ::koinos::test_map* temp = nested_map_;
+  nested_map_ = nullptr;
+  return temp;
+}
+inline ::koinos::test_map* map_wrapper::_internal_mutable_nested_map() {
+
+  if (nested_map_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::test_map>(GetArenaForAllocation());
+    nested_map_ = p;
+  }
+  return nested_map_;
+}
+inline ::koinos::test_map* map_wrapper::mutable_nested_map() {
+  ::koinos::test_map* _msg = _internal_mutable_nested_map();
+  // @@protoc_insertion_point(field_mutable:koinos.map_wrapper.nested_map)
+  return _msg;
+}
+inline void map_wrapper::set_allocated_nested_map(::koinos::test_map* nested_map) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete nested_map_;
+  }
+  if (nested_map) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::test_map>::GetOwningArena(nested_map);
+    if (message_arena != submessage_arena) {
+      nested_map = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, nested_map, submessage_arena);
+    }
+
+  } else {
+
+  }
+  nested_map_ = nested_map;
+  // @@protoc_insertion_point(field_set_allocated:koinos.map_wrapper.nested_map)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

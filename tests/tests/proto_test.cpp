@@ -51,6 +51,26 @@ BOOST_AUTO_TEST_CASE( canonical_test )
       BOOST_CHECK( false );
    }
    catch( std::runtime_error& ) {}
+
+   koinos::map_wrapper mw;
+   m = mw.mutable_nested_map()->mutable_im_the_map();
+   (*m)[0] = "foo";
+   (*m)[1] = "bar";
+
+   try
+   {
+      auto ser = serialize_canonically( mw );
+      BOOST_CHECK( false );
+   }
+   catch( std::runtime_error& ) {}
+
+   try
+   {
+      std::stringstream ss;
+      serialize_canonically( ss, mw );
+      BOOST_CHECK( false );
+   }
+   catch( std::runtime_error& ) {}
 }
 
 BOOST_AUTO_TEST_SUITE_END()

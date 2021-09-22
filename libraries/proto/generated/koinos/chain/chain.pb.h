@@ -7334,25 +7334,25 @@ class get_transaction_resource_limit_args final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransctionFieldNumber = 1,
+    kTransactionFieldNumber = 1,
   };
-  // .koinos.protocol.transaction transction = 1;
-  bool has_transction() const;
+  // .koinos.protocol.transaction transaction = 1;
+  bool has_transaction() const;
   private:
-  bool _internal_has_transction() const;
+  bool _internal_has_transaction() const;
   public:
-  void clear_transction();
-  const ::koinos::protocol::transaction& transction() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_transction();
-  ::koinos::protocol::transaction* mutable_transction();
-  void set_allocated_transction(::koinos::protocol::transaction* transction);
+  void clear_transaction();
+  const ::koinos::protocol::transaction& transaction() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_transaction();
+  ::koinos::protocol::transaction* mutable_transaction();
+  void set_allocated_transaction(::koinos::protocol::transaction* transaction);
   private:
-  const ::koinos::protocol::transaction& _internal_transction() const;
-  ::koinos::protocol::transaction* _internal_mutable_transction();
+  const ::koinos::protocol::transaction& _internal_transaction() const;
+  ::koinos::protocol::transaction* _internal_mutable_transaction();
   public:
-  void unsafe_arena_set_allocated_transction(
-      ::koinos::protocol::transaction* transction);
-  ::koinos::protocol::transaction* unsafe_arena_release_transction();
+  void unsafe_arena_set_allocated_transaction(
+      ::koinos::protocol::transaction* transaction);
+  ::koinos::protocol::transaction* unsafe_arena_release_transaction();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_transaction_resource_limit_args)
  private:
@@ -7361,7 +7361,7 @@ class get_transaction_resource_limit_args final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::protocol::transaction* transction_;
+  ::koinos::protocol::transaction* transaction_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -11914,39 +11914,39 @@ inline void get_max_account_resources_return::set_value(::PROTOBUF_NAMESPACE_ID:
 
 // get_transaction_resource_limit_args
 
-// .koinos.protocol.transaction transction = 1;
-inline bool get_transaction_resource_limit_args::_internal_has_transction() const {
-  return this != internal_default_instance() && transction_ != nullptr;
+// .koinos.protocol.transaction transaction = 1;
+inline bool get_transaction_resource_limit_args::_internal_has_transaction() const {
+  return this != internal_default_instance() && transaction_ != nullptr;
 }
-inline bool get_transaction_resource_limit_args::has_transction() const {
-  return _internal_has_transction();
+inline bool get_transaction_resource_limit_args::has_transaction() const {
+  return _internal_has_transaction();
 }
-inline const ::koinos::protocol::transaction& get_transaction_resource_limit_args::_internal_transction() const {
-  const ::koinos::protocol::transaction* p = transction_;
+inline const ::koinos::protocol::transaction& get_transaction_resource_limit_args::_internal_transaction() const {
+  const ::koinos::protocol::transaction* p = transaction_;
   return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction&>(
       ::koinos::protocol::_transaction_default_instance_);
 }
-inline const ::koinos::protocol::transaction& get_transaction_resource_limit_args::transction() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.get_transaction_resource_limit_args.transction)
-  return _internal_transction();
+inline const ::koinos::protocol::transaction& get_transaction_resource_limit_args::transaction() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_transaction_resource_limit_args.transaction)
+  return _internal_transaction();
 }
-inline void get_transaction_resource_limit_args::unsafe_arena_set_allocated_transction(
-    ::koinos::protocol::transaction* transction) {
+inline void get_transaction_resource_limit_args::unsafe_arena_set_allocated_transaction(
+    ::koinos::protocol::transaction* transaction) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transction_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_);
   }
-  transction_ = transction;
-  if (transction) {
+  transaction_ = transaction;
+  if (transaction) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_transaction_resource_limit_args.transction)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_transaction_resource_limit_args.transaction)
 }
-inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::release_transction() {
+inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::release_transaction() {
   
-  ::koinos::protocol::transaction* temp = transction_;
-  transction_ = nullptr;
+  ::koinos::protocol::transaction* temp = transaction_;
+  transaction_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -11958,46 +11958,46 @@ inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::rel
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::unsafe_arena_release_transction() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_transaction_resource_limit_args.transction)
+inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::unsafe_arena_release_transaction() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_transaction_resource_limit_args.transaction)
   
-  ::koinos::protocol::transaction* temp = transction_;
-  transction_ = nullptr;
+  ::koinos::protocol::transaction* temp = transaction_;
+  transaction_ = nullptr;
   return temp;
 }
-inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::_internal_mutable_transction() {
+inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::_internal_mutable_transaction() {
   
-  if (transction_ == nullptr) {
+  if (transaction_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::protocol::transaction>(GetArenaForAllocation());
-    transction_ = p;
+    transaction_ = p;
   }
-  return transction_;
+  return transaction_;
 }
-inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::mutable_transction() {
-  ::koinos::protocol::transaction* _msg = _internal_mutable_transction();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_transaction_resource_limit_args.transction)
+inline ::koinos::protocol::transaction* get_transaction_resource_limit_args::mutable_transaction() {
+  ::koinos::protocol::transaction* _msg = _internal_mutable_transaction();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_transaction_resource_limit_args.transaction)
   return _msg;
 }
-inline void get_transaction_resource_limit_args::set_allocated_transction(::koinos::protocol::transaction* transction) {
+inline void get_transaction_resource_limit_args::set_allocated_transaction(::koinos::protocol::transaction* transaction) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transction_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_);
   }
-  if (transction) {
+  if (transaction) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transction));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction));
     if (message_arena != submessage_arena) {
-      transction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, transction, submessage_arena);
+      transaction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction, submessage_arena);
     }
     
   } else {
     
   }
-  transction_ = transction;
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_transaction_resource_limit_args.transction)
+  transaction_ = transaction;
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_transaction_resource_limit_args.transaction)
 }
 
 // -------------------------------------------------------------------

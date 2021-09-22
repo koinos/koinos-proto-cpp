@@ -593,7 +593,7 @@ struct get_max_account_resources_returnDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_max_account_resources_returnDefaultTypeInternal _get_max_account_resources_return_default_instance_;
 constexpr get_transaction_resource_limit_args::get_transaction_resource_limit_args(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : transction_(nullptr){}
+  : transaction_(nullptr){}
 struct get_transaction_resource_limit_argsDefaultTypeInternal {
   constexpr get_transaction_resource_limit_argsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1061,7 +1061,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_transaction_resource_limit_args, transction_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_transaction_resource_limit_args, transaction_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::get_transaction_resource_limit_return, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1333,26 +1333,27 @@ const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_S
   "\"-\n\034get_transaction_payer_return\022\r\n\005valu"
   "e\030\001 \001(\014\"1\n\036get_max_account_resources_arg"
   "s\022\017\n\007account\030\001 \001(\014\"5\n get_max_account_re"
-  "sources_return\022\021\n\005value\030\001 \001(\004B\0020\001\"W\n#get"
-  "_transaction_resource_limit_args\0220\n\ntran"
-  "sction\030\001 \001(\0132\034.koinos.protocol.transacti"
-  "on\":\n%get_transaction_resource_limit_ret"
-  "urn\022\021\n\005value\030\001 \001(\004B\0020\001\"\"\n get_last_irrev"
-  "ersible_block_args\"7\n\"get_last_irreversi"
-  "ble_block_return\022\021\n\005value\030\001 \001(\004B\0020\001\"\021\n\017g"
-  "et_caller_args\"V\n\021get_caller_return\022\016\n\006c"
-  "aller\030\001 \001(\014\0221\n\020caller_privilege\030\002 \001(\0162\027."
-  "koinos.chain.privilege\")\n\026require_author"
-  "ity_args\022\017\n\007account\030\001 \001(\014\"\032\n\030require_aut"
-  "hority_return\" \n\036get_transaction_signatu"
-  "re_args\"1\n get_transaction_signature_ret"
-  "urn\022\r\n\005value\030\001 \001(\014\"\026\n\024get_contract_id_ar"
-  "gs\"\'\n\026get_contract_id_return\022\r\n\005value\030\001 "
-  "\001(\014\")\n\026get_account_nonce_args\022\017\n\007account"
-  "\030\001 \001(\014\"-\n\030get_account_nonce_return\022\021\n\005va"
-  "lue\030\001 \001(\004B\0020\001*+\n\tprivilege\022\017\n\013kernel_mod"
-  "e\020\000\022\r\n\tuser_mode\020\001B4Z2github.com/koinos/"
-  "koinos-proto-golang/koinos/chainb\006proto3"
+  "sources_return\022\021\n\005value\030\001 \001(\004B\0020\001\"X\n#get"
+  "_transaction_resource_limit_args\0221\n\013tran"
+  "saction\030\001 \001(\0132\034.koinos.protocol.transact"
+  "ion\":\n%get_transaction_resource_limit_re"
+  "turn\022\021\n\005value\030\001 \001(\004B\0020\001\"\"\n get_last_irre"
+  "versible_block_args\"7\n\"get_last_irrevers"
+  "ible_block_return\022\021\n\005value\030\001 \001(\004B\0020\001\"\021\n\017"
+  "get_caller_args\"V\n\021get_caller_return\022\016\n\006"
+  "caller\030\001 \001(\014\0221\n\020caller_privilege\030\002 \001(\0162\027"
+  ".koinos.chain.privilege\")\n\026require_autho"
+  "rity_args\022\017\n\007account\030\001 \001(\014\"\032\n\030require_au"
+  "thority_return\" \n\036get_transaction_signat"
+  "ure_args\"1\n get_transaction_signature_re"
+  "turn\022\r\n\005value\030\001 \001(\014\"\026\n\024get_contract_id_a"
+  "rgs\"\'\n\026get_contract_id_return\022\r\n\005value\030\001"
+  " \001(\014\")\n\026get_account_nonce_args\022\017\n\007accoun"
+  "t\030\001 \001(\014\"-\n\030get_account_nonce_return\022\021\n\005v"
+  "alue\030\001 \001(\004B\0020\001*+\n\tprivilege\022\017\n\013kernel_mo"
+  "de\020\000\022\r\n\tuser_mode\020\001B4Z2github.com/koinos"
+  "/koinos-proto-golang/koinos/chainb\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -1360,7 +1361,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 3480, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  false, false, 3481, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 2, 61,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
@@ -10832,18 +10833,18 @@ void get_max_account_resources_return::InternalSwap(get_max_account_resources_re
 
 class get_transaction_resource_limit_args::_Internal {
  public:
-  static const ::koinos::protocol::transaction& transction(const get_transaction_resource_limit_args* msg);
+  static const ::koinos::protocol::transaction& transaction(const get_transaction_resource_limit_args* msg);
 };
 
 const ::koinos::protocol::transaction&
-get_transaction_resource_limit_args::_Internal::transction(const get_transaction_resource_limit_args* msg) {
-  return *msg->transction_;
+get_transaction_resource_limit_args::_Internal::transaction(const get_transaction_resource_limit_args* msg) {
+  return *msg->transaction_;
 }
-void get_transaction_resource_limit_args::clear_transction() {
-  if (GetArenaForAllocation() == nullptr && transction_ != nullptr) {
-    delete transction_;
+void get_transaction_resource_limit_args::clear_transaction() {
+  if (GetArenaForAllocation() == nullptr && transaction_ != nullptr) {
+    delete transaction_;
   }
-  transction_ = nullptr;
+  transaction_ = nullptr;
 }
 get_transaction_resource_limit_args::get_transaction_resource_limit_args(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -10857,16 +10858,16 @@ get_transaction_resource_limit_args::get_transaction_resource_limit_args(::PROTO
 get_transaction_resource_limit_args::get_transaction_resource_limit_args(const get_transaction_resource_limit_args& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_transction()) {
-    transction_ = new ::koinos::protocol::transaction(*from.transction_);
+  if (from._internal_has_transaction()) {
+    transaction_ = new ::koinos::protocol::transaction(*from.transaction_);
   } else {
-    transction_ = nullptr;
+    transaction_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:koinos.chain.get_transaction_resource_limit_args)
 }
 
 inline void get_transaction_resource_limit_args::SharedCtor() {
-transction_ = nullptr;
+transaction_ = nullptr;
 }
 
 get_transaction_resource_limit_args::~get_transaction_resource_limit_args() {
@@ -10878,7 +10879,7 @@ get_transaction_resource_limit_args::~get_transaction_resource_limit_args() {
 
 inline void get_transaction_resource_limit_args::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete transction_;
+  if (this != internal_default_instance()) delete transaction_;
 }
 
 void get_transaction_resource_limit_args::ArenaDtor(void* object) {
@@ -10897,10 +10898,10 @@ void get_transaction_resource_limit_args::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && transction_ != nullptr) {
-    delete transction_;
+  if (GetArenaForAllocation() == nullptr && transaction_ != nullptr) {
+    delete transaction_;
   }
-  transction_ = nullptr;
+  transaction_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -10910,10 +10911,10 @@ const char* get_transaction_resource_limit_args::_InternalParse(const char* ptr,
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.protocol.transaction transction = 1;
+      // .koinos.protocol.transaction transaction = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_transction(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_transaction(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10946,12 +10947,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.protocol.transaction transction = 1;
-  if (this->_internal_has_transction()) {
+  // .koinos.protocol.transaction transaction = 1;
+  if (this->_internal_has_transaction()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::transction(this), target, stream);
+        1, _Internal::transaction(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10970,11 +10971,11 @@ size_t get_transaction_resource_limit_args::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.protocol.transaction transction = 1;
-  if (this->_internal_has_transction()) {
+  // .koinos.protocol.transaction transaction = 1;
+  if (this->_internal_has_transaction()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *transction_);
+        *transaction_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -11005,8 +11006,8 @@ void get_transaction_resource_limit_args::MergeFrom(const get_transaction_resour
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_transction()) {
-    _internal_mutable_transction()->::koinos::protocol::transaction::MergeFrom(from._internal_transction());
+  if (from._internal_has_transaction()) {
+    _internal_mutable_transaction()->::koinos::protocol::transaction::MergeFrom(from._internal_transaction());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -11025,7 +11026,7 @@ bool get_transaction_resource_limit_args::IsInitialized() const {
 void get_transaction_resource_limit_args::InternalSwap(get_transaction_resource_limit_args* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(transction_, other->transction_);
+  swap(transaction_, other->transaction_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_transaction_resource_limit_args::GetMetadata() const {

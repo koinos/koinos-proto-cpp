@@ -149,18 +149,18 @@ struct transfer_argsDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transfer_argsDefaultTypeInternal _transfer_args_default_instance_;
-constexpr transafer_return::transafer_return(
+constexpr transfer_return::transfer_return(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : value_(false){}
-struct transafer_returnDefaultTypeInternal {
-  constexpr transafer_returnDefaultTypeInternal()
+struct transfer_returnDefaultTypeInternal {
+  constexpr transfer_returnDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~transafer_returnDefaultTypeInternal() {}
+  ~transfer_returnDefaultTypeInternal() {}
   union {
-    transafer_return _instance;
+    transfer_return _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transafer_returnDefaultTypeInternal _transafer_return_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transfer_returnDefaultTypeInternal _transfer_return_default_instance_;
 constexpr mint_args::mint_args(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : to_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -259,11 +259,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2ftoken_2ft
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::transfer_args, to_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::transfer_args, value_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::transafer_return, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::transfer_return, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::transafer_return, value_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::transfer_return, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::mint_args, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -290,7 +290,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 44, -1, sizeof(::koinos::contracts::token::balance_of_args)},
   { 50, -1, sizeof(::koinos::contracts::token::balance_of_return)},
   { 56, -1, sizeof(::koinos::contracts::token::transfer_args)},
-  { 64, -1, sizeof(::koinos::contracts::token::transafer_return)},
+  { 64, -1, sizeof(::koinos::contracts::token::transfer_return)},
   { 70, -1, sizeof(::koinos::contracts::token::mint_args)},
   { 77, -1, sizeof(::koinos::contracts::token::mint_return)},
 };
@@ -307,7 +307,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_balance_of_args_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_balance_of_return_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_transfer_args_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_transafer_return_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_transfer_return_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_mint_args_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_mint_return_default_instance_),
 };
@@ -323,15 +323,15 @@ const char descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto[
   "rgs\022\r\n\005owner\030\001 \001(\014\"&\n\021balance_of_return\022"
   "\021\n\005value\030\001 \001(\004B\0020\001\"<\n\rtransfer_args\022\014\n\004f"
   "rom\030\001 \001(\014\022\n\n\002to\030\002 \001(\014\022\021\n\005value\030\003 \001(\004B\0020\001"
-  "\"!\n\020transafer_return\022\r\n\005value\030\001 \001(\010\"*\n\tm"
-  "int_args\022\n\n\002to\030\001 \001(\014\022\021\n\005value\030\002 \001(\004B\0020\001\""
-  "\034\n\013mint_return\022\r\n\005value\030\001 \001(\010B>Z<github."
-  "com/koinos/koinos-proto-golang/koinos/co"
-  "ntracts/tokenb\006proto3"
+  "\" \n\017transfer_return\022\r\n\005value\030\001 \001(\010\"*\n\tmi"
+  "nt_args\022\n\n\002to\030\001 \001(\014\022\021\n\005value\030\002 \001(\004B\0020\001\"\034"
+  "\n\013mint_return\022\r\n\005value\030\001 \001(\010B>Z<github.c"
+  "om/koinos/koinos-proto-golang/koinos/con"
+  "tracts/tokenb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto = {
-  false, false, 581, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
+  false, false, 580, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
   &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once, nullptr, 0, 14,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_service_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto,
@@ -2369,53 +2369,53 @@ void transfer_args::InternalSwap(transfer_args* other) {
 
 // ===================================================================
 
-class transafer_return::_Internal {
+class transfer_return::_Internal {
  public:
 };
 
-transafer_return::transafer_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+transfer_return::transfer_return(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
   }
-  // @@protoc_insertion_point(arena_constructor:koinos.contracts.token.transafer_return)
+  // @@protoc_insertion_point(arena_constructor:koinos.contracts.token.transfer_return)
 }
-transafer_return::transafer_return(const transafer_return& from)
+transfer_return::transfer_return(const transfer_return& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   value_ = from.value_;
-  // @@protoc_insertion_point(copy_constructor:koinos.contracts.token.transafer_return)
+  // @@protoc_insertion_point(copy_constructor:koinos.contracts.token.transfer_return)
 }
 
-inline void transafer_return::SharedCtor() {
+inline void transfer_return::SharedCtor() {
 value_ = false;
 }
 
-transafer_return::~transafer_return() {
-  // @@protoc_insertion_point(destructor:koinos.contracts.token.transafer_return)
+transfer_return::~transfer_return() {
+  // @@protoc_insertion_point(destructor:koinos.contracts.token.transfer_return)
   if (GetArenaForAllocation() != nullptr) return;
   SharedDtor();
   _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-inline void transafer_return::SharedDtor() {
+inline void transfer_return::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
 }
 
-void transafer_return::ArenaDtor(void* object) {
-  transafer_return* _this = reinterpret_cast< transafer_return* >(object);
+void transfer_return::ArenaDtor(void* object) {
+  transfer_return* _this = reinterpret_cast< transfer_return* >(object);
   (void)_this;
 }
-void transafer_return::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+void transfer_return::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
-void transafer_return::SetCachedSize(int size) const {
+void transfer_return::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
-void transafer_return::Clear() {
-// @@protoc_insertion_point(message_clear_start:koinos.contracts.token.transafer_return)
+void transfer_return::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.contracts.token.transfer_return)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2424,7 +2424,7 @@ void transafer_return::Clear() {
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* transafer_return::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+const char* transfer_return::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
@@ -2460,9 +2460,9 @@ failure:
 #undef CHK_
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* transafer_return::_InternalSerialize(
+::PROTOBUF_NAMESPACE_ID::uint8* transfer_return::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.token.transafer_return)
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.token.transfer_return)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2476,12 +2476,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.token.transafer_return)
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.token.transfer_return)
   return target;
 }
 
-size_t transafer_return::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.token.transafer_return)
+size_t transfer_return::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.token.transfer_return)
   size_t total_size = 0;
 
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
@@ -2502,21 +2502,21 @@ size_t transafer_return::ByteSizeLong() const {
   return total_size;
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transafer_return::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData transfer_return::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    transafer_return::MergeImpl
+    transfer_return::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transafer_return::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*transfer_return::GetClassData() const { return &_class_data_; }
 
-void transafer_return::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+void transfer_return::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
                       const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<transafer_return *>(to)->MergeFrom(
-      static_cast<const transafer_return &>(from));
+  static_cast<transfer_return *>(to)->MergeFrom(
+      static_cast<const transfer_return &>(from));
 }
 
 
-void transafer_return::MergeFrom(const transafer_return& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.token.transafer_return)
+void transfer_return::MergeFrom(const transfer_return& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.token.transfer_return)
   GOOGLE_DCHECK_NE(&from, this);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2527,24 +2527,24 @@ void transafer_return::MergeFrom(const transafer_return& from) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void transafer_return::CopyFrom(const transafer_return& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.token.transafer_return)
+void transfer_return::CopyFrom(const transfer_return& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.token.transfer_return)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool transafer_return::IsInitialized() const {
+bool transfer_return::IsInitialized() const {
   return true;
 }
 
-void transafer_return::InternalSwap(transafer_return* other) {
+void transfer_return::InternalSwap(transfer_return* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(value_, other->value_);
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata transafer_return::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata transfer_return::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
       file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[11]);
@@ -2993,8 +2993,8 @@ template<> PROTOBUF_NOINLINE ::koinos::contracts::token::balance_of_return* Aren
 template<> PROTOBUF_NOINLINE ::koinos::contracts::token::transfer_args* Arena::CreateMaybeMessage< ::koinos::contracts::token::transfer_args >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::token::transfer_args >(arena);
 }
-template<> PROTOBUF_NOINLINE ::koinos::contracts::token::transafer_return* Arena::CreateMaybeMessage< ::koinos::contracts::token::transafer_return >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::koinos::contracts::token::transafer_return >(arena);
+template<> PROTOBUF_NOINLINE ::koinos::contracts::token::transfer_return* Arena::CreateMaybeMessage< ::koinos::contracts::token::transfer_return >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::contracts::token::transfer_return >(arena);
 }
 template<> PROTOBUF_NOINLINE ::koinos::contracts::token::mint_args* Arena::CreateMaybeMessage< ::koinos::contracts::token::mint_args >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::token::mint_args >(arena);

@@ -46,7 +46,7 @@ struct TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -56,6 +56,9 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace koinos {
 namespace contracts {
 namespace token {
+class balance_object;
+struct balance_objectDefaultTypeInternal;
+extern balance_objectDefaultTypeInternal _balance_object_default_instance_;
 class balance_of_args;
 struct balance_of_argsDefaultTypeInternal;
 extern balance_of_argsDefaultTypeInternal _balance_of_args_default_instance_;
@@ -102,6 +105,7 @@ extern transfer_returnDefaultTypeInternal _transfer_return_default_instance_;
 }  // namespace contracts
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
+template<> ::koinos::contracts::token::balance_object* Arena::CreateMaybeMessage<::koinos::contracts::token::balance_object>(Arena*);
 template<> ::koinos::contracts::token::balance_of_args* Arena::CreateMaybeMessage<::koinos::contracts::token::balance_of_args>(Arena*);
 template<> ::koinos::contracts::token::balance_of_return* Arena::CreateMaybeMessage<::koinos::contracts::token::balance_of_return>(Arena*);
 template<> ::koinos::contracts::token::decimals_args* Arena::CreateMaybeMessage<::koinos::contracts::token::decimals_args>(Arena*);
@@ -2078,6 +2082,145 @@ class mint_return final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
 };
+// -------------------------------------------------------------------
+
+class balance_object final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.token.balance_object) */ {
+ public:
+  inline balance_object() : balance_object(nullptr) {}
+  ~balance_object() override;
+  explicit constexpr balance_object(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  balance_object(const balance_object& from);
+  balance_object(balance_object&& from) noexcept
+    : balance_object() {
+    *this = ::std::move(from);
+  }
+
+  inline balance_object& operator=(const balance_object& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline balance_object& operator=(balance_object&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const balance_object& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const balance_object* internal_default_instance() {
+    return reinterpret_cast<const balance_object*>(
+               &_balance_object_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(balance_object& a, balance_object& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(balance_object* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(balance_object* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline balance_object* New() const final {
+    return new balance_object();
+  }
+
+  balance_object* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<balance_object>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const balance_object& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const balance_object& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(balance_object* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.token.balance_object";
+  }
+  protected:
+  explicit balance_object(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // uint64 value = 1 [jstype = JS_STRING];
+  void clear_value();
+  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.token.balance_object)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
+};
 // ===================================================================
 
 
@@ -2557,9 +2700,35 @@ inline void mint_return::set_value(bool value) {
   // @@protoc_insertion_point(field_set:koinos.contracts.token.mint_return.value)
 }
 
+// -------------------------------------------------------------------
+
+// balance_object
+
+// uint64 value = 1 [jstype = JS_STRING];
+inline void balance_object::clear_value() {
+  value_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 balance_object::_internal_value() const {
+  return value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 balance_object::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.token.balance_object.value)
+  return _internal_value();
+}
+inline void balance_object::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  value_ = value;
+}
+inline void balance_object::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.token.balance_object.value)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -815,12 +815,6 @@ class verify_block_signature_args final :
   static const verify_block_signature_args& default_instance() {
     return *internal_default_instance();
   }
-  enum ActiveDataCase {
-    kActiveNative = 2,
-    kActiveBlob = 3,
-    ACTIVE_DATA_NOT_SET = 0,
-  };
-
   static inline const verify_block_signature_args* internal_default_instance() {
     return reinterpret_cast<const verify_block_signature_args*>(
                &_verify_block_signature_args_default_instance_);
@@ -898,9 +892,8 @@ class verify_block_signature_args final :
 
   enum : int {
     kDigestFieldNumber = 1,
-    kSignatureDataFieldNumber = 4,
-    kActiveNativeFieldNumber = 2,
-    kActiveBlobFieldNumber = 3,
+    kActiveFieldNumber = 2,
+    kSignatureDataFieldNumber = 3,
   };
   // bytes digest = 1;
   void clear_digest();
@@ -916,7 +909,21 @@ class verify_block_signature_args final :
   std::string* _internal_mutable_digest();
   public:
 
-  // bytes signature_data = 4;
+  // bytes active = 2;
+  void clear_active();
+  const std::string& active() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_active(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_active();
+  PROTOBUF_MUST_USE_RESULT std::string* release_active();
+  void set_allocated_active(std::string* active);
+  private:
+  const std::string& _internal_active() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_active(const std::string& value);
+  std::string* _internal_mutable_active();
+  public:
+
+  // bytes signature_data = 3;
   void clear_signature_data();
   const std::string& signature_data() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -930,67 +937,17 @@ class verify_block_signature_args final :
   std::string* _internal_mutable_signature_data();
   public:
 
-  // .koinos.protocol.active_block_data active_native = 2;
-  bool has_active_native() const;
-  private:
-  bool _internal_has_active_native() const;
-  public:
-  void clear_active_native();
-  const ::koinos::protocol::active_block_data& active_native() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::active_block_data* release_active_native();
-  ::koinos::protocol::active_block_data* mutable_active_native();
-  void set_allocated_active_native(::koinos::protocol::active_block_data* active_native);
-  private:
-  const ::koinos::protocol::active_block_data& _internal_active_native() const;
-  ::koinos::protocol::active_block_data* _internal_mutable_active_native();
-  public:
-  void unsafe_arena_set_allocated_active_native(
-      ::koinos::protocol::active_block_data* active_native);
-  ::koinos::protocol::active_block_data* unsafe_arena_release_active_native();
-
-  // bytes active_blob = 3;
-  bool has_active_blob() const;
-  private:
-  bool _internal_has_active_blob() const;
-  public:
-  void clear_active_blob();
-  const std::string& active_blob() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_active_blob(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_active_blob();
-  PROTOBUF_MUST_USE_RESULT std::string* release_active_blob();
-  void set_allocated_active_blob(std::string* active_blob);
-  private:
-  const std::string& _internal_active_blob() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_active_blob(const std::string& value);
-  std::string* _internal_mutable_active_blob();
-  public:
-
-  void clear_active_data();
-  ActiveDataCase active_data_case() const;
   // @@protoc_insertion_point(class_scope:koinos.chain.verify_block_signature_args)
  private:
   class _Internal;
-  void set_has_active_native();
-  void set_has_active_blob();
-
-  inline bool has_active_data() const;
-  inline void clear_has_active_data();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digest_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr active_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_data_;
-  union ActiveDataUnion {
-    constexpr ActiveDataUnion() : _constinit_{} {}
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
-    ::koinos::protocol::active_block_data* active_native_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr active_blob_;
-  } active_data_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
-
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
 // -------------------------------------------------------------------
@@ -9384,155 +9341,53 @@ inline void verify_block_signature_args::set_allocated_digest(std::string* diges
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_args.digest)
 }
 
-// .koinos.protocol.active_block_data active_native = 2;
-inline bool verify_block_signature_args::_internal_has_active_native() const {
-  return active_data_case() == kActiveNative;
+// bytes active = 2;
+inline void verify_block_signature_args::clear_active() {
+  active_.ClearToEmpty();
 }
-inline bool verify_block_signature_args::has_active_native() const {
-  return _internal_has_active_native();
-}
-inline void verify_block_signature_args::set_has_active_native() {
-  _oneof_case_[0] = kActiveNative;
-}
-inline ::koinos::protocol::active_block_data* verify_block_signature_args::release_active_native() {
-  // @@protoc_insertion_point(field_release:koinos.chain.verify_block_signature_args.active_native)
-  if (_internal_has_active_native()) {
-    clear_has_active_data();
-      ::koinos::protocol::active_block_data* temp = active_data_.active_native_;
-    if (GetArenaForAllocation() != nullptr) {
-      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-    }
-    active_data_.active_native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline const ::koinos::protocol::active_block_data& verify_block_signature_args::_internal_active_native() const {
-  return _internal_has_active_native()
-      ? *active_data_.active_native_
-      : reinterpret_cast< ::koinos::protocol::active_block_data&>(::koinos::protocol::_active_block_data_default_instance_);
-}
-inline const ::koinos::protocol::active_block_data& verify_block_signature_args::active_native() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_args.active_native)
-  return _internal_active_native();
-}
-inline ::koinos::protocol::active_block_data* verify_block_signature_args::unsafe_arena_release_active_native() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.chain.verify_block_signature_args.active_native)
-  if (_internal_has_active_native()) {
-    clear_has_active_data();
-    ::koinos::protocol::active_block_data* temp = active_data_.active_native_;
-    active_data_.active_native_ = nullptr;
-    return temp;
-  } else {
-    return nullptr;
-  }
-}
-inline void verify_block_signature_args::unsafe_arena_set_allocated_active_native(::koinos::protocol::active_block_data* active_native) {
-  clear_active_data();
-  if (active_native) {
-    set_has_active_native();
-    active_data_.active_native_ = active_native;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.verify_block_signature_args.active_native)
-}
-inline ::koinos::protocol::active_block_data* verify_block_signature_args::_internal_mutable_active_native() {
-  if (!_internal_has_active_native()) {
-    clear_active_data();
-    set_has_active_native();
-    active_data_.active_native_ = CreateMaybeMessage< ::koinos::protocol::active_block_data >(GetArenaForAllocation());
-  }
-  return active_data_.active_native_;
-}
-inline ::koinos::protocol::active_block_data* verify_block_signature_args::mutable_active_native() {
-  ::koinos::protocol::active_block_data* _msg = _internal_mutable_active_native();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_block_signature_args.active_native)
-  return _msg;
-}
-
-// bytes active_blob = 3;
-inline bool verify_block_signature_args::_internal_has_active_blob() const {
-  return active_data_case() == kActiveBlob;
-}
-inline bool verify_block_signature_args::has_active_blob() const {
-  return _internal_has_active_blob();
-}
-inline void verify_block_signature_args::set_has_active_blob() {
-  _oneof_case_[0] = kActiveBlob;
-}
-inline void verify_block_signature_args::clear_active_blob() {
-  if (_internal_has_active_blob()) {
-    active_data_.active_blob_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-    clear_has_active_data();
-  }
-}
-inline const std::string& verify_block_signature_args::active_blob() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_args.active_blob)
-  return _internal_active_blob();
+inline const std::string& verify_block_signature_args::active() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_args.active)
+  return _internal_active();
 }
 template <typename ArgT0, typename... ArgT>
-inline void verify_block_signature_args::set_active_blob(ArgT0&& arg0, ArgT... args) {
-  if (!_internal_has_active_blob()) {
-    clear_active_data();
-    set_has_active_blob();
-    active_data_.active_blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  active_data_.active_blob_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_args.active_blob)
+inline PROTOBUF_ALWAYS_INLINE
+void verify_block_signature_args::set_active(ArgT0&& arg0, ArgT... args) {
+ 
+ active_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_args.active)
 }
-inline std::string* verify_block_signature_args::mutable_active_blob() {
-  std::string* _s = _internal_mutable_active_blob();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_block_signature_args.active_blob)
+inline std::string* verify_block_signature_args::mutable_active() {
+  std::string* _s = _internal_mutable_active();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_block_signature_args.active)
   return _s;
 }
-inline const std::string& verify_block_signature_args::_internal_active_blob() const {
-  if (_internal_has_active_blob()) {
-    return active_data_.active_blob_.Get();
-  }
-  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+inline const std::string& verify_block_signature_args::_internal_active() const {
+  return active_.Get();
 }
-inline void verify_block_signature_args::_internal_set_active_blob(const std::string& value) {
-  if (!_internal_has_active_blob()) {
-    clear_active_data();
-    set_has_active_blob();
-    active_data_.active_blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  active_data_.active_blob_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+inline void verify_block_signature_args::_internal_set_active(const std::string& value) {
+  
+  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_args::_internal_mutable_active_blob() {
-  if (!_internal_has_active_blob()) {
-    clear_active_data();
-    set_has_active_blob();
-    active_data_.active_blob_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  }
-  return active_data_.active_blob_.Mutable(
-      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+inline std::string* verify_block_signature_args::_internal_mutable_active() {
+  
+  return active_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_args::release_active_blob() {
-  // @@protoc_insertion_point(field_release:koinos.chain.verify_block_signature_args.active_blob)
-  if (_internal_has_active_blob()) {
-    clear_has_active_data();
-    return active_data_.active_blob_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* verify_block_signature_args::release_active() {
+  // @@protoc_insertion_point(field_release:koinos.chain.verify_block_signature_args.active)
+  return active_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void verify_block_signature_args::set_allocated_active(std::string* active) {
+  if (active != nullptr) {
+    
   } else {
-    return nullptr;
+    
   }
-}
-inline void verify_block_signature_args::set_allocated_active_blob(std::string* active_blob) {
-  if (has_active_data()) {
-    clear_active_data();
-  }
-  if (active_blob != nullptr) {
-    set_has_active_blob();
-    active_data_.active_blob_.UnsafeSetDefault(active_blob);
-    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
-    if (arena != nullptr) {
-      arena->Own(active_blob);
-    }
-  }
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_args.active_blob)
+  active_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), active,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_args.active)
 }
 
-// bytes signature_data = 4;
+// bytes signature_data = 3;
 inline void verify_block_signature_args::clear_signature_data() {
   signature_data_.ClearToEmpty();
 }
@@ -9578,15 +9433,6 @@ inline void verify_block_signature_args::set_allocated_signature_data(std::strin
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_args.signature_data)
 }
 
-inline bool verify_block_signature_args::has_active_data() const {
-  return active_data_case() != ACTIVE_DATA_NOT_SET;
-}
-inline void verify_block_signature_args::clear_has_active_data() {
-  _oneof_case_[0] = ACTIVE_DATA_NOT_SET;
-}
-inline verify_block_signature_args::ActiveDataCase verify_block_signature_args::active_data_case() const {
-  return verify_block_signature_args::ActiveDataCase(_oneof_case_[0]);
-}
 // -------------------------------------------------------------------
 
 // verify_block_signature_return

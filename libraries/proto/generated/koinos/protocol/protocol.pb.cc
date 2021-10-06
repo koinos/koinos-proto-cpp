@@ -98,7 +98,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT operationDefaultTypeInternal _o
 constexpr active_transaction_data::active_transaction_data(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : operations_()
-  , resource_limit_(uint64_t{0u})
+  , rc_limit_(uint64_t{0u})
   , nonce_(uint64_t{0u}){}
 struct active_transaction_dataDefaultTypeInternal {
   constexpr active_transaction_dataDefaultTypeInternal()
@@ -260,7 +260,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fprotocol_2fprotocol_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::protocol::active_transaction_data, resource_limit_),
+  PROTOBUF_FIELD_OFFSET(::koinos::protocol::active_transaction_data, rc_limit_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::active_transaction_data, nonce_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::active_transaction_data, operations_),
   ~0u,  // no _has_bits_
@@ -367,29 +367,29 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "operationH\000\022A\n\rcall_contract\030\002 \001(\0132(.koi"
   "nos.protocol.call_contract_operationH\000\022E"
   "\n\017set_system_call\030\003 \001(\0132*.koinos.protoco"
-  "l.set_system_call_operationH\000B\004\n\002op\"x\n\027a"
-  "ctive_transaction_data\022\032\n\016resource_limit"
-  "\030\001 \001(\004B\0020\001\022\021\n\005nonce\030\002 \001(\004B\0020\001\022.\n\noperati"
-  "ons\030\003 \003(\0132\032.koinos.protocol.operation\"\032\n"
-  "\030passive_transaction_data\"R\n\013transaction"
-  "\022\n\n\002id\030\001 \001(\014\022\016\n\006active\030\002 \001(\014\022\017\n\007passive\030"
-  "\003 \001(\014\022\026\n\016signature_data\030\004 \001(\014\"f\n\021active_"
-  "block_data\022\037\n\027transaction_merkle_root\030\001 "
-  "\001(\014\022 \n\030passive_data_merkle_root\030\002 \001(\014\022\016\n"
-  "\006signer\030\003 \001(\014\"\024\n\022passive_block_data\"K\n\014b"
-  "lock_header\022\020\n\010previous\030\001 \001(\014\022\022\n\006height\030"
-  "\002 \001(\004B\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\"\257\001\n\005blo"
-  "ck\022\n\n\002id\030\001 \001(\014\022-\n\006header\030\002 \001(\0132\035.koinos."
-  "protocol.block_header\022\016\n\006active\030\003 \001(\014\022\017\n"
-  "\007passive\030\004 \001(\014\022\026\n\016signature_data\030\005 \001(\014\0222"
-  "\n\014transactions\030\006 \003(\0132\034.koinos.protocol.t"
-  "ransaction\"\017\n\rblock_receiptB7Z5github.co"
-  "m/koinos/koinos-proto-golang/koinos/prot"
-  "ocolb\006proto3"
+  "l.set_system_call_operationH\000B\004\n\002op\"r\n\027a"
+  "ctive_transaction_data\022\024\n\010rc_limit\030\001 \001(\004"
+  "B\0020\001\022\021\n\005nonce\030\002 \001(\004B\0020\001\022.\n\noperations\030\003 "
+  "\003(\0132\032.koinos.protocol.operation\"\032\n\030passi"
+  "ve_transaction_data\"R\n\013transaction\022\n\n\002id"
+  "\030\001 \001(\014\022\016\n\006active\030\002 \001(\014\022\017\n\007passive\030\003 \001(\014\022"
+  "\026\n\016signature_data\030\004 \001(\014\"f\n\021active_block_"
+  "data\022\037\n\027transaction_merkle_root\030\001 \001(\014\022 \n"
+  "\030passive_data_merkle_root\030\002 \001(\014\022\016\n\006signe"
+  "r\030\003 \001(\014\"\024\n\022passive_block_data\"K\n\014block_h"
+  "eader\022\020\n\010previous\030\001 \001(\014\022\022\n\006height\030\002 \001(\004B"
+  "\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\"\257\001\n\005block\022\n\n\002"
+  "id\030\001 \001(\014\022-\n\006header\030\002 \001(\0132\035.koinos.protoc"
+  "ol.block_header\022\016\n\006active\030\003 \001(\014\022\017\n\007passi"
+  "ve\030\004 \001(\014\022\026\n\016signature_data\030\005 \001(\014\0222\n\014tran"
+  "sactions\030\006 \003(\0132\034.koinos.protocol.transac"
+  "tion\"\017\n\rblock_receiptB7Z5github.com/koin"
+  "os/koinos-proto-golang/koinos/protocolb\006"
+  "proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 1412, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 1406, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, nullptr, 0, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -2009,17 +2009,17 @@ active_transaction_data::active_transaction_data(const active_transaction_data& 
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       operations_(from.operations_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&resource_limit_, &from.resource_limit_,
+  ::memcpy(&rc_limit_, &from.rc_limit_,
     static_cast<size_t>(reinterpret_cast<char*>(&nonce_) -
-    reinterpret_cast<char*>(&resource_limit_)) + sizeof(nonce_));
+    reinterpret_cast<char*>(&rc_limit_)) + sizeof(nonce_));
   // @@protoc_insertion_point(copy_constructor:koinos.protocol.active_transaction_data)
 }
 
 inline void active_transaction_data::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&resource_limit_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&rc_limit_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&nonce_) -
-    reinterpret_cast<char*>(&resource_limit_)) + sizeof(nonce_));
+    reinterpret_cast<char*>(&rc_limit_)) + sizeof(nonce_));
 }
 
 active_transaction_data::~active_transaction_data() {
@@ -2050,9 +2050,9 @@ void active_transaction_data::Clear() {
   (void) cached_has_bits;
 
   operations_.Clear();
-  ::memset(&resource_limit_, 0, static_cast<size_t>(
+  ::memset(&rc_limit_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&nonce_) -
-      reinterpret_cast<char*>(&resource_limit_)) + sizeof(nonce_));
+      reinterpret_cast<char*>(&rc_limit_)) + sizeof(nonce_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2062,10 +2062,10 @@ const char* active_transaction_data::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 resource_limit = 1 [jstype = JS_STRING];
+      // uint64 rc_limit = 1 [jstype = JS_STRING];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          resource_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          rc_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2117,10 +2117,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 resource_limit = 1 [jstype = JS_STRING];
-  if (this->_internal_resource_limit() != 0) {
+  // uint64 rc_limit = 1 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_resource_limit(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_rc_limit(), target);
   }
 
   // uint64 nonce = 2 [jstype = JS_STRING];
@@ -2160,11 +2160,11 @@ size_t active_transaction_data::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // uint64 resource_limit = 1 [jstype = JS_STRING];
-  if (this->_internal_resource_limit() != 0) {
+  // uint64 rc_limit = 1 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_resource_limit());
+        this->_internal_rc_limit());
   }
 
   // uint64 nonce = 2 [jstype = JS_STRING];
@@ -2203,8 +2203,8 @@ void active_transaction_data::MergeFrom(const active_transaction_data& from) {
   (void) cached_has_bits;
 
   operations_.MergeFrom(from.operations_);
-  if (from._internal_resource_limit() != 0) {
-    _internal_set_resource_limit(from._internal_resource_limit());
+  if (from._internal_rc_limit() != 0) {
+    _internal_set_rc_limit(from._internal_rc_limit());
   }
   if (from._internal_nonce() != 0) {
     _internal_set_nonce(from._internal_nonce());
@@ -2230,9 +2230,9 @@ void active_transaction_data::InternalSwap(active_transaction_data* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(active_transaction_data, nonce_)
       + sizeof(active_transaction_data::nonce_)
-      - PROTOBUF_FIELD_OFFSET(active_transaction_data, resource_limit_)>(
-          reinterpret_cast<char*>(&resource_limit_),
-          reinterpret_cast<char*>(&other->resource_limit_));
+      - PROTOBUF_FIELD_OFFSET(active_transaction_data, rc_limit_)>(
+          reinterpret_cast<char*>(&rc_limit_),
+          reinterpret_cast<char*>(&other->rc_limit_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata active_transaction_data::GetMetadata() const {

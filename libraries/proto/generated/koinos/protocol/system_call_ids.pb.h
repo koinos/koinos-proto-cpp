@@ -72,9 +72,9 @@ enum system_call_id : int {
   get_prev_object = 11,
   call_contract = 12,
   get_entry_point = 13,
-  get_contract_args_size = 14,
-  get_contract_args = 15,
-  set_contract_return = 16,
+  get_contract_arguments_size = 14,
+  get_contract_arguments = 15,
+  set_contract_result = 16,
   exit_contract = 17,
   get_head_info = 18,
   hash = 19,
@@ -82,20 +82,23 @@ enum system_call_id : int {
   verify_block_signature = 21,
   verify_merkle_root = 22,
   get_transaction_payer = 23,
-  get_max_account_resources = 24,
-  get_transaction_resource_limit = 25,
+  get_transaction_rc_limit = 25,
   get_last_irreversible_block = 26,
   get_caller = 27,
   require_authority = 28,
   get_transaction_signature = 29,
   get_contract_id = 30,
   get_account_nonce = 31,
+  get_account_rc = 32,
+  consume_account_rc = 33,
+  get_resource_limits = 34,
+  consume_block_resources = 35,
   system_call_id_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   system_call_id_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool system_call_id_IsValid(int value);
 constexpr system_call_id system_call_id_MIN = reserved_id;
-constexpr system_call_id system_call_id_MAX = get_account_nonce;
+constexpr system_call_id system_call_id_MAX = consume_block_resources;
 constexpr int system_call_id_ARRAYSIZE = system_call_id_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_call_id_descriptor();

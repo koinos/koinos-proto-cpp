@@ -1272,7 +1272,7 @@ class active_transaction_data final :
 
   enum : int {
     kOperationsFieldNumber = 3,
-    kResourceLimitFieldNumber = 1,
+    kRcLimitFieldNumber = 1,
     kNonceFieldNumber = 2,
   };
   // repeated .koinos.protocol.operation operations = 3;
@@ -1293,13 +1293,13 @@ class active_transaction_data final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
       operations() const;
 
-  // uint64 resource_limit = 1 [jstype = JS_STRING];
-  void clear_resource_limit();
-  ::PROTOBUF_NAMESPACE_ID::uint64 resource_limit() const;
-  void set_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 rc_limit = 1 [jstype = JS_STRING];
+  void clear_rc_limit();
+  ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit() const;
+  void set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_resource_limit() const;
-  void _internal_set_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_rc_limit() const;
+  void _internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // uint64 nonce = 2 [jstype = JS_STRING];
@@ -1319,7 +1319,7 @@ class active_transaction_data final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation > operations_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 resource_limit_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit_;
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
@@ -3235,24 +3235,24 @@ inline operation::OpCase operation::op_case() const {
 
 // active_transaction_data
 
-// uint64 resource_limit = 1 [jstype = JS_STRING];
-inline void active_transaction_data::clear_resource_limit() {
-  resource_limit_ = uint64_t{0u};
+// uint64 rc_limit = 1 [jstype = JS_STRING];
+inline void active_transaction_data::clear_rc_limit() {
+  rc_limit_ = uint64_t{0u};
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 active_transaction_data::_internal_resource_limit() const {
-  return resource_limit_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 active_transaction_data::_internal_rc_limit() const {
+  return rc_limit_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 active_transaction_data::resource_limit() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.active_transaction_data.resource_limit)
-  return _internal_resource_limit();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 active_transaction_data::rc_limit() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.active_transaction_data.rc_limit)
+  return _internal_rc_limit();
 }
-inline void active_transaction_data::_internal_set_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void active_transaction_data::_internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  resource_limit_ = value;
+  rc_limit_ = value;
 }
-inline void active_transaction_data::set_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_resource_limit(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.active_transaction_data.resource_limit)
+inline void active_transaction_data::set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_rc_limit(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.active_transaction_data.rc_limit)
 }
 
 // uint64 nonce = 2 [jstype = JS_STRING];

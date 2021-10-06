@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n%koinos/protocol/system_call_ids.proto\022"
-  "\017koinos.protocol*\206\006\n\016system_call_id\022\017\n\013r"
+  "\017koinos.protocol*\315\006\n\016system_call_id\022\017\n\013r"
   "eserved_id\020\000\022\n\n\006prints\020\001\022\027\n\023verify_block"
   "_header\020\002\022\017\n\013apply_block\020\003\022\025\n\021apply_tran"
   "saction\020\004\022#\n\037apply_upload_contract_opera"
@@ -36,24 +36,26 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2ep
   "\006\022#\n\037apply_set_system_call_operation\020\007\022\016"
   "\n\nput_object\020\010\022\016\n\nget_object\020\t\022\023\n\017get_ne"
   "xt_object\020\n\022\023\n\017get_prev_object\020\013\022\021\n\rcall"
-  "_contract\020\014\022\023\n\017get_entry_point\020\r\022\032\n\026get_"
-  "contract_args_size\020\016\022\025\n\021get_contract_arg"
-  "s\020\017\022\027\n\023set_contract_return\020\020\022\021\n\rexit_con"
-  "tract\020\021\022\021\n\rget_head_info\020\022\022\010\n\004hash\020\023\022\026\n\022"
-  "recover_public_key\020\024\022\032\n\026verify_block_sig"
-  "nature\020\025\022\026\n\022verify_merkle_root\020\026\022\031\n\025get_"
-  "transaction_payer\020\027\022\035\n\031get_max_account_r"
-  "esources\020\030\022\"\n\036get_transaction_resource_l"
-  "imit\020\031\022\037\n\033get_last_irreversible_block\020\032\022"
-  "\016\n\nget_caller\020\033\022\025\n\021require_authority\020\034\022\035"
-  "\n\031get_transaction_signature\020\035\022\023\n\017get_con"
-  "tract_id\020\036\022\025\n\021get_account_nonce\020\037B7Z5git"
-  "hub.com/koinos/koinos-proto-golang/koino"
-  "s/protocolb\006proto3"
+  "_contract\020\014\022\023\n\017get_entry_point\020\r\022\037\n\033get_"
+  "contract_arguments_size\020\016\022\032\n\026get_contrac"
+  "t_arguments\020\017\022\027\n\023set_contract_result\020\020\022\021"
+  "\n\rexit_contract\020\021\022\021\n\rget_head_info\020\022\022\010\n\004"
+  "hash\020\023\022\026\n\022recover_public_key\020\024\022\032\n\026verify"
+  "_block_signature\020\025\022\026\n\022verify_merkle_root"
+  "\020\026\022\031\n\025get_transaction_payer\020\027\022\034\n\030get_tra"
+  "nsaction_rc_limit\020\031\022\037\n\033get_last_irrevers"
+  "ible_block\020\032\022\016\n\nget_caller\020\033\022\025\n\021require_"
+  "authority\020\034\022\035\n\031get_transaction_signature"
+  "\020\035\022\023\n\017get_contract_id\020\036\022\025\n\021get_account_n"
+  "once\020\037\022\022\n\016get_account_rc\020 \022\026\n\022consume_ac"
+  "count_rc\020!\022\027\n\023get_resource_limits\020\"\022\033\n\027c"
+  "onsume_block_resources\020#B7Z5github.com/k"
+  "oinos/koinos-proto-golang/koinos/protoco"
+  "lb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 898, descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, "koinos/protocol/system_call_ids.proto", 
+  false, false, 969, descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, "koinos/protocol/system_call_ids.proto", 
   &descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto,
@@ -96,7 +98,6 @@ bool system_call_id_IsValid(int value) {
     case 21:
     case 22:
     case 23:
-    case 24:
     case 25:
     case 26:
     case 27:
@@ -104,6 +105,10 @@ bool system_call_id_IsValid(int value) {
     case 29:
     case 30:
     case 31:
+    case 32:
+    case 33:
+    case 34:
+    case 35:
       return true;
     default:
       return false;

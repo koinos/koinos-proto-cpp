@@ -22,8 +22,8 @@ constexpr transaction_accepted::transaction_accepted(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : payer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , transaction_(nullptr)
-  , max_payer_resources_(uint64_t{0u})
-  , trx_resource_limit_(uint64_t{0u})
+  , max_payer_rc_(uint64_t{0u})
+  , rc_limit_(uint64_t{0u})
   , height_(uint64_t{0u}){}
 struct transaction_acceptedDefaultTypeInternal {
   constexpr transaction_acceptedDefaultTypeInternal()
@@ -85,8 +85,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fbroadcast_2fbroadcast
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, transaction_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, payer_),
-  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, max_payer_resources_),
-  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, trx_resource_limit_),
+  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, max_payer_rc_),
+  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, rc_limit_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, height_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_accepted, _internal_metadata_),
@@ -125,19 +125,19 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n koinos/broadcast/broadcast.proto\022\020koin"
   "os.broadcast\032\023koinos/common.proto\032\036koino"
-  "s/protocol/protocol.proto\"\255\001\n\024transactio"
+  "s/protocol/protocol.proto\"\234\001\n\024transactio"
   "n_accepted\0221\n\013transaction\030\001 \001(\0132\034.koinos"
-  ".protocol.transaction\022\r\n\005payer\030\002 \001(\014\022\037\n\023"
-  "max_payer_resources\030\003 \001(\004B\0020\001\022\036\n\022trx_res"
-  "ource_limit\030\004 \001(\004B\0020\001\022\022\n\006height\030\005 \001(\004B\0020"
-  "\001\"7\n\016block_accepted\022%\n\005block\030\001 \001(\0132\026.koi"
-  "nos.protocol.block\">\n\022block_irreversible"
-  "\022(\n\010topology\030\001 \001(\0132\026.koinos.block_topolo"
-  "gy\"l\n\nfork_heads\0227\n\027last_irreversible_bl"
-  "ock\030\001 \001(\0132\026.koinos.block_topology\022%\n\005hea"
-  "ds\030\002 \003(\0132\026.koinos.block_topologyB8Z6gith"
-  "ub.com/koinos/koinos-proto-golang/koinos"
-  "/broadcastb\006proto3"
+  ".protocol.transaction\022\r\n\005payer\030\002 \001(\014\022\030\n\014"
+  "max_payer_rc\030\003 \001(\004B\0020\001\022\024\n\010rc_limit\030\004 \001(\004"
+  "B\0020\001\022\022\n\006height\030\005 \001(\004B\0020\001\"7\n\016block_accept"
+  "ed\022%\n\005block\030\001 \001(\0132\026.koinos.protocol.bloc"
+  "k\">\n\022block_irreversible\022(\n\010topology\030\001 \001("
+  "\0132\026.koinos.block_topology\"l\n\nfork_heads\022"
+  "7\n\027last_irreversible_block\030\001 \001(\0132\026.koino"
+  "s.block_topology\022%\n\005heads\030\002 \003(\0132\026.koinos"
+  ".block_topologyB8Z6github.com/koinos/koi"
+  "nos-proto-golang/koinos/broadcastb\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -145,7 +145,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto = {
-  false, false, 578, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
+  false, false, 561, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
   &descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once, descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto::offsets,
   file_level_metadata_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_enum_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_service_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto,
@@ -198,9 +198,9 @@ transaction_accepted::transaction_accepted(const transaction_accepted& from)
   } else {
     transaction_ = nullptr;
   }
-  ::memcpy(&max_payer_resources_, &from.max_payer_resources_,
+  ::memcpy(&max_payer_rc_, &from.max_payer_rc_,
     static_cast<size_t>(reinterpret_cast<char*>(&height_) -
-    reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(height_));
+    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(height_));
   // @@protoc_insertion_point(copy_constructor:koinos.broadcast.transaction_accepted)
 }
 
@@ -246,9 +246,9 @@ void transaction_accepted::Clear() {
     delete transaction_;
   }
   transaction_ = nullptr;
-  ::memset(&max_payer_resources_, 0, static_cast<size_t>(
+  ::memset(&max_payer_rc_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(height_));
+      reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(height_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -273,17 +273,17 @@ const char* transaction_accepted::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 max_payer_resources = 3 [jstype = JS_STRING];
+      // uint64 max_payer_rc = 3 [jstype = JS_STRING];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          max_payer_resources_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_payer_rc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
+      // uint64 rc_limit = 4 [jstype = JS_STRING];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          trx_resource_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          rc_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -337,16 +337,16 @@ failure:
         2, this->_internal_payer(), target);
   }
 
-  // uint64 max_payer_resources = 3 [jstype = JS_STRING];
-  if (this->_internal_max_payer_resources() != 0) {
+  // uint64 max_payer_rc = 3 [jstype = JS_STRING];
+  if (this->_internal_max_payer_rc() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_max_payer_resources(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_max_payer_rc(), target);
   }
 
-  // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
-  if (this->_internal_trx_resource_limit() != 0) {
+  // uint64 rc_limit = 4 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_trx_resource_limit(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_rc_limit(), target);
   }
 
   // uint64 height = 5 [jstype = JS_STRING];
@@ -385,18 +385,18 @@ size_t transaction_accepted::ByteSizeLong() const {
         *transaction_);
   }
 
-  // uint64 max_payer_resources = 3 [jstype = JS_STRING];
-  if (this->_internal_max_payer_resources() != 0) {
+  // uint64 max_payer_rc = 3 [jstype = JS_STRING];
+  if (this->_internal_max_payer_rc() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_max_payer_resources());
+        this->_internal_max_payer_rc());
   }
 
-  // uint64 trx_resource_limit = 4 [jstype = JS_STRING];
-  if (this->_internal_trx_resource_limit() != 0) {
+  // uint64 rc_limit = 4 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_trx_resource_limit());
+        this->_internal_rc_limit());
   }
 
   // uint64 height = 5 [jstype = JS_STRING];
@@ -440,11 +440,11 @@ void transaction_accepted::MergeFrom(const transaction_accepted& from) {
   if (from._internal_has_transaction()) {
     _internal_mutable_transaction()->::koinos::protocol::transaction::MergeFrom(from._internal_transaction());
   }
-  if (from._internal_max_payer_resources() != 0) {
-    _internal_set_max_payer_resources(from._internal_max_payer_resources());
+  if (from._internal_max_payer_rc() != 0) {
+    _internal_set_max_payer_rc(from._internal_max_payer_rc());
   }
-  if (from._internal_trx_resource_limit() != 0) {
-    _internal_set_trx_resource_limit(from._internal_trx_resource_limit());
+  if (from._internal_rc_limit() != 0) {
+    _internal_set_rc_limit(from._internal_rc_limit());
   }
   if (from._internal_height() != 0) {
     _internal_set_height(from._internal_height());

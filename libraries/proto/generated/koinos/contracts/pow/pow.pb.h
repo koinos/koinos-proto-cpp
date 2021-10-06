@@ -46,7 +46,7 @@ struct TableStruct_koinos_2fcontracts_2fpow_2fpow_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,6 +59,9 @@ namespace pow {
 class difficulty_metadata;
 struct difficulty_metadataDefaultTypeInternal;
 extern difficulty_metadataDefaultTypeInternal _difficulty_metadata_default_instance_;
+class difficulty_metadata_result;
+struct difficulty_metadata_resultDefaultTypeInternal;
+extern difficulty_metadata_resultDefaultTypeInternal _difficulty_metadata_result_default_instance_;
 class pow_signature_data;
 struct pow_signature_dataDefaultTypeInternal;
 extern pow_signature_dataDefaultTypeInternal _pow_signature_data_default_instance_;
@@ -67,6 +70,7 @@ extern pow_signature_dataDefaultTypeInternal _pow_signature_data_default_instanc
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::contracts::pow::difficulty_metadata* Arena::CreateMaybeMessage<::koinos::contracts::pow::difficulty_metadata>(Arena*);
+template<> ::koinos::contracts::pow::difficulty_metadata_result* Arena::CreateMaybeMessage<::koinos::contracts::pow::difficulty_metadata_result>(Arena*);
 template<> ::koinos::contracts::pow::pow_signature_data* Arena::CreateMaybeMessage<::koinos::contracts::pow::pow_signature_data>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
@@ -257,6 +261,154 @@ class difficulty_metadata final :
 };
 // -------------------------------------------------------------------
 
+class difficulty_metadata_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.pow.difficulty_metadata_result) */ {
+ public:
+  inline difficulty_metadata_result() : difficulty_metadata_result(nullptr) {}
+  ~difficulty_metadata_result() override;
+  explicit constexpr difficulty_metadata_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  difficulty_metadata_result(const difficulty_metadata_result& from);
+  difficulty_metadata_result(difficulty_metadata_result&& from) noexcept
+    : difficulty_metadata_result() {
+    *this = ::std::move(from);
+  }
+
+  inline difficulty_metadata_result& operator=(const difficulty_metadata_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline difficulty_metadata_result& operator=(difficulty_metadata_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const difficulty_metadata_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const difficulty_metadata_result* internal_default_instance() {
+    return reinterpret_cast<const difficulty_metadata_result*>(
+               &_difficulty_metadata_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(difficulty_metadata_result& a, difficulty_metadata_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(difficulty_metadata_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(difficulty_metadata_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline difficulty_metadata_result* New() const final {
+    return new difficulty_metadata_result();
+  }
+
+  difficulty_metadata_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<difficulty_metadata_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const difficulty_metadata_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const difficulty_metadata_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(difficulty_metadata_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.pow.difficulty_metadata_result";
+  }
+  protected:
+  explicit difficulty_metadata_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // .koinos.contracts.pow.difficulty_metadata value = 1;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  const ::koinos::contracts::pow::difficulty_metadata& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::contracts::pow::difficulty_metadata* release_value();
+  ::koinos::contracts::pow::difficulty_metadata* mutable_value();
+  void set_allocated_value(::koinos::contracts::pow::difficulty_metadata* value);
+  private:
+  const ::koinos::contracts::pow::difficulty_metadata& _internal_value() const;
+  ::koinos::contracts::pow::difficulty_metadata* _internal_mutable_value();
+  public:
+  void unsafe_arena_set_allocated_value(
+      ::koinos::contracts::pow::difficulty_metadata* value);
+  ::koinos::contracts::pow::difficulty_metadata* unsafe_arena_release_value();
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.pow.difficulty_metadata_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::contracts::pow::difficulty_metadata* value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fpow_2fpow_2eproto;
+};
+// -------------------------------------------------------------------
+
 class pow_signature_data final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.pow.pow_signature_data) */ {
  public:
@@ -301,7 +453,7 @@ class pow_signature_data final :
                &_pow_signature_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(pow_signature_data& a, pow_signature_data& b) {
     a.Swap(&b);
@@ -560,6 +712,100 @@ inline void difficulty_metadata::set_target_block_interval(::PROTOBUF_NAMESPACE_
 
 // -------------------------------------------------------------------
 
+// difficulty_metadata_result
+
+// .koinos.contracts.pow.difficulty_metadata value = 1;
+inline bool difficulty_metadata_result::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
+}
+inline bool difficulty_metadata_result::has_value() const {
+  return _internal_has_value();
+}
+inline void difficulty_metadata_result::clear_value() {
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
+  }
+  value_ = nullptr;
+}
+inline const ::koinos::contracts::pow::difficulty_metadata& difficulty_metadata_result::_internal_value() const {
+  const ::koinos::contracts::pow::difficulty_metadata* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::contracts::pow::difficulty_metadata&>(
+      ::koinos::contracts::pow::_difficulty_metadata_default_instance_);
+}
+inline const ::koinos::contracts::pow::difficulty_metadata& difficulty_metadata_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pow.difficulty_metadata_result.value)
+  return _internal_value();
+}
+inline void difficulty_metadata_result::unsafe_arena_set_allocated_value(
+    ::koinos::contracts::pow::difficulty_metadata* value) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  value_ = value;
+  if (value) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.pow.difficulty_metadata_result.value)
+}
+inline ::koinos::contracts::pow::difficulty_metadata* difficulty_metadata_result::release_value() {
+  
+  ::koinos::contracts::pow::difficulty_metadata* temp = value_;
+  value_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::contracts::pow::difficulty_metadata* difficulty_metadata_result::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pow.difficulty_metadata_result.value)
+  
+  ::koinos::contracts::pow::difficulty_metadata* temp = value_;
+  value_ = nullptr;
+  return temp;
+}
+inline ::koinos::contracts::pow::difficulty_metadata* difficulty_metadata_result::_internal_mutable_value() {
+  
+  if (value_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::contracts::pow::difficulty_metadata>(GetArenaForAllocation());
+    value_ = p;
+  }
+  return value_;
+}
+inline ::koinos::contracts::pow::difficulty_metadata* difficulty_metadata_result::mutable_value() {
+  ::koinos::contracts::pow::difficulty_metadata* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pow.difficulty_metadata_result.value)
+  return _msg;
+}
+inline void difficulty_metadata_result::set_allocated_value(::koinos::contracts::pow::difficulty_metadata* value) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete value_;
+  }
+  if (value) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::contracts::pow::difficulty_metadata>::GetOwningArena(value);
+    if (message_arena != submessage_arena) {
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pow.difficulty_metadata_result.value)
+}
+
+// -------------------------------------------------------------------
+
 // pow_signature_data
 
 // bytes nonce = 1;
@@ -657,6 +903,8 @@ inline void pow_signature_data::set_allocated_recoverable_signature(std::string*
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

@@ -22,8 +22,8 @@ namespace mempool {
 constexpr check_pending_account_resources_request::check_pending_account_resources_request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : payer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , max_payer_resources_(uint64_t{0u})
-  , trx_resource_limit_(uint64_t{0u}){}
+  , max_payer_rc_(uint64_t{0u})
+  , rc_limit_(uint64_t{0u}){}
 struct check_pending_account_resources_requestDefaultTypeInternal {
   constexpr check_pending_account_resources_requestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -107,8 +107,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2frpc_2fmempool_2fmempo
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_pending_account_resources_request, payer_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_pending_account_resources_request, max_payer_resources_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_pending_account_resources_request, trx_resource_limit_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_pending_account_resources_request, max_payer_rc_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_pending_account_resources_request, rc_limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_pending_account_resources_response, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -168,32 +168,32 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n$koinos/rpc/mempool/mempool_rpc.proto\022\022"
   "koinos.rpc.mempool\032\036koinos/protocol/prot"
-  "ocol.proto\032\024koinos/rpc/rpc.proto\"y\n\'chec"
+  "ocol.proto\032\024koinos/rpc/rpc.proto\"h\n\'chec"
   "k_pending_account_resources_request\022\r\n\005p"
-  "ayer\030\001 \001(\014\022\037\n\023max_payer_resources\030\002 \001(\004B"
-  "\0020\001\022\036\n\022trx_resource_limit\030\003 \001(\004B\0020\001\";\n(c"
-  "heck_pending_account_resources_response\022"
-  "\017\n\007success\030\001 \001(\010\"5\n get_pending_transact"
-  "ions_request\022\021\n\005limit\030\001 \001(\004B\0020\001\"W\n!get_p"
-  "ending_transactions_response\0222\n\014transact"
-  "ions\030\001 \003(\0132\034.koinos.protocol.transaction"
-  "\"\214\002\n\017mempool_request\022,\n\010reserved\030\001 \001(\0132\030"
-  ".koinos.rpc.reserved_rpcH\000\022f\n\037check_pend"
-  "ing_account_resources\030\002 \001(\0132;.koinos.rpc"
-  ".mempool.check_pending_account_resources"
-  "_requestH\000\022X\n\030get_pending_transactions\030\003"
-  " \001(\01324.koinos.rpc.mempool.get_pending_tr"
-  "ansactions_requestH\000B\t\n\007request\"\275\002\n\020memp"
-  "ool_response\022,\n\010reserved\030\001 \001(\0132\030.koinos."
-  "rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koin"
-  "os.rpc.error_responseH\000\022g\n\037check_pending"
-  "_account_resources\030\003 \001(\0132<.koinos.rpc.me"
-  "mpool.check_pending_account_resources_re"
-  "sponseH\000\022Y\n\030get_pending_transactions\030\004 \001"
-  "(\01325.koinos.rpc.mempool.get_pending_tran"
-  "sactions_responseH\000B\n\n\010responseB:Z8githu"
-  "b.com/koinos/koinos-proto-golang/koinos/"
-  "rpc/mempoolb\006proto3"
+  "ayer\030\001 \001(\014\022\030\n\014max_payer_rc\030\002 \001(\004B\0020\001\022\024\n\010"
+  "rc_limit\030\003 \001(\004B\0020\001\";\n(check_pending_acco"
+  "unt_resources_response\022\017\n\007success\030\001 \001(\010\""
+  "5\n get_pending_transactions_request\022\021\n\005l"
+  "imit\030\001 \001(\004B\0020\001\"W\n!get_pending_transactio"
+  "ns_response\0222\n\014transactions\030\001 \003(\0132\034.koin"
+  "os.protocol.transaction\"\214\002\n\017mempool_requ"
+  "est\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reser"
+  "ved_rpcH\000\022f\n\037check_pending_account_resou"
+  "rces\030\002 \001(\0132;.koinos.rpc.mempool.check_pe"
+  "nding_account_resources_requestH\000\022X\n\030get"
+  "_pending_transactions\030\003 \001(\01324.koinos.rpc"
+  ".mempool.get_pending_transactions_reques"
+  "tH\000B\t\n\007request\"\275\002\n\020mempool_response\022,\n\010r"
+  "eserved\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH"
+  "\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.error_resp"
+  "onseH\000\022g\n\037check_pending_account_resource"
+  "s\030\003 \001(\0132<.koinos.rpc.mempool.check_pendi"
+  "ng_account_resources_responseH\000\022Y\n\030get_p"
+  "ending_transactions\030\004 \001(\01325.koinos.rpc.m"
+  "empool.get_pending_transactions_response"
+  "H\000B\n\n\010responseB:Z8github.com/koinos/koin"
+  "os-proto-golang/koinos/rpc/mempoolb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
@@ -201,7 +201,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, 1099, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  false, false, 1082, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 2, 6,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
@@ -239,18 +239,18 @@ check_pending_account_resources_request::check_pending_account_resources_request
     payer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_payer(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&max_payer_resources_, &from.max_payer_resources_,
-    static_cast<size_t>(reinterpret_cast<char*>(&trx_resource_limit_) -
-    reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(trx_resource_limit_));
+  ::memcpy(&max_payer_rc_, &from.max_payer_rc_,
+    static_cast<size_t>(reinterpret_cast<char*>(&rc_limit_) -
+    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(rc_limit_));
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.check_pending_account_resources_request)
 }
 
 inline void check_pending_account_resources_request::SharedCtor() {
 payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&max_payer_resources_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&trx_resource_limit_) -
-    reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(trx_resource_limit_));
+    reinterpret_cast<char*>(&max_payer_rc_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&rc_limit_) -
+    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(rc_limit_));
 }
 
 check_pending_account_resources_request::~check_pending_account_resources_request() {
@@ -282,9 +282,9 @@ void check_pending_account_resources_request::Clear() {
   (void) cached_has_bits;
 
   payer_.ClearToEmpty();
-  ::memset(&max_payer_resources_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&trx_resource_limit_) -
-      reinterpret_cast<char*>(&max_payer_resources_)) + sizeof(trx_resource_limit_));
+  ::memset(&max_payer_rc_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&rc_limit_) -
+      reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(rc_limit_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -302,17 +302,17 @@ const char* check_pending_account_resources_request::_InternalParse(const char* 
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 max_payer_resources = 2 [jstype = JS_STRING];
+      // uint64 max_payer_rc = 2 [jstype = JS_STRING];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          max_payer_resources_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          max_payer_rc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
+      // uint64 rc_limit = 3 [jstype = JS_STRING];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          trx_resource_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          rc_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -351,16 +351,16 @@ failure:
         1, this->_internal_payer(), target);
   }
 
-  // uint64 max_payer_resources = 2 [jstype = JS_STRING];
-  if (this->_internal_max_payer_resources() != 0) {
+  // uint64 max_payer_rc = 2 [jstype = JS_STRING];
+  if (this->_internal_max_payer_rc() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_max_payer_resources(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_max_payer_rc(), target);
   }
 
-  // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
-  if (this->_internal_trx_resource_limit() != 0) {
+  // uint64 rc_limit = 3 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_trx_resource_limit(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_rc_limit(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -386,18 +386,18 @@ size_t check_pending_account_resources_request::ByteSizeLong() const {
         this->_internal_payer());
   }
 
-  // uint64 max_payer_resources = 2 [jstype = JS_STRING];
-  if (this->_internal_max_payer_resources() != 0) {
+  // uint64 max_payer_rc = 2 [jstype = JS_STRING];
+  if (this->_internal_max_payer_rc() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_max_payer_resources());
+        this->_internal_max_payer_rc());
   }
 
-  // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
-  if (this->_internal_trx_resource_limit() != 0) {
+  // uint64 rc_limit = 3 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_trx_resource_limit());
+        this->_internal_rc_limit());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -431,11 +431,11 @@ void check_pending_account_resources_request::MergeFrom(const check_pending_acco
   if (!from._internal_payer().empty()) {
     _internal_set_payer(from._internal_payer());
   }
-  if (from._internal_max_payer_resources() != 0) {
-    _internal_set_max_payer_resources(from._internal_max_payer_resources());
+  if (from._internal_max_payer_rc() != 0) {
+    _internal_set_max_payer_rc(from._internal_max_payer_rc());
   }
-  if (from._internal_trx_resource_limit() != 0) {
-    _internal_set_trx_resource_limit(from._internal_trx_resource_limit());
+  if (from._internal_rc_limit() != 0) {
+    _internal_set_rc_limit(from._internal_rc_limit());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -460,11 +460,11 @@ void check_pending_account_resources_request::InternalSwap(check_pending_account
       &other->payer_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(check_pending_account_resources_request, trx_resource_limit_)
-      + sizeof(check_pending_account_resources_request::trx_resource_limit_)
-      - PROTOBUF_FIELD_OFFSET(check_pending_account_resources_request, max_payer_resources_)>(
-          reinterpret_cast<char*>(&max_payer_resources_),
-          reinterpret_cast<char*>(&other->max_payer_resources_));
+      PROTOBUF_FIELD_OFFSET(check_pending_account_resources_request, rc_limit_)
+      + sizeof(check_pending_account_resources_request::rc_limit_)
+      - PROTOBUF_FIELD_OFFSET(check_pending_account_resources_request, max_payer_rc_)>(
+          reinterpret_cast<char*>(&max_payer_rc_),
+          reinterpret_cast<char*>(&other->max_payer_rc_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata check_pending_account_resources_request::GetMetadata() const {

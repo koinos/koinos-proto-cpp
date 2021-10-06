@@ -209,8 +209,8 @@ class check_pending_account_resources_request final :
 
   enum : int {
     kPayerFieldNumber = 1,
-    kMaxPayerResourcesFieldNumber = 2,
-    kTrxResourceLimitFieldNumber = 3,
+    kMaxPayerRcFieldNumber = 2,
+    kRcLimitFieldNumber = 3,
   };
   // bytes payer = 1;
   void clear_payer();
@@ -226,22 +226,22 @@ class check_pending_account_resources_request final :
   std::string* _internal_mutable_payer();
   public:
 
-  // uint64 max_payer_resources = 2 [jstype = JS_STRING];
-  void clear_max_payer_resources();
-  ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_resources() const;
-  void set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 max_payer_rc = 2 [jstype = JS_STRING];
+  void clear_max_payer_rc();
+  ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_rc() const;
+  void set_max_payer_rc(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_max_payer_resources() const;
-  void _internal_set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_max_payer_rc() const;
+  void _internal_set_max_payer_rc(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 trx_resource_limit = 3 [jstype = JS_STRING];
-  void clear_trx_resource_limit();
-  ::PROTOBUF_NAMESPACE_ID::uint64 trx_resource_limit() const;
-  void set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  // uint64 rc_limit = 3 [jstype = JS_STRING];
+  void clear_rc_limit();
+  ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit() const;
+  void set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_trx_resource_limit() const;
-  void _internal_set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_rc_limit() const;
+  void _internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.check_pending_account_resources_request)
@@ -252,8 +252,8 @@ class check_pending_account_resources_request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payer_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_resources_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 trx_resource_limit_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_rc_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
 };
@@ -1180,44 +1180,44 @@ inline void check_pending_account_resources_request::set_allocated_payer(std::st
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.check_pending_account_resources_request.payer)
 }
 
-// uint64 max_payer_resources = 2 [jstype = JS_STRING];
-inline void check_pending_account_resources_request::clear_max_payer_resources() {
-  max_payer_resources_ = uint64_t{0u};
+// uint64 max_payer_rc = 2 [jstype = JS_STRING];
+inline void check_pending_account_resources_request::clear_max_payer_rc() {
+  max_payer_rc_ = uint64_t{0u};
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::_internal_max_payer_resources() const {
-  return max_payer_resources_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::_internal_max_payer_rc() const {
+  return max_payer_rc_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::max_payer_resources() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.check_pending_account_resources_request.max_payer_resources)
-  return _internal_max_payer_resources();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::max_payer_rc() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.check_pending_account_resources_request.max_payer_rc)
+  return _internal_max_payer_rc();
 }
-inline void check_pending_account_resources_request::_internal_set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void check_pending_account_resources_request::_internal_set_max_payer_rc(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  max_payer_resources_ = value;
+  max_payer_rc_ = value;
 }
-inline void check_pending_account_resources_request::set_max_payer_resources(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_max_payer_resources(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.max_payer_resources)
+inline void check_pending_account_resources_request::set_max_payer_rc(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_max_payer_rc(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.max_payer_rc)
 }
 
-// uint64 trx_resource_limit = 3 [jstype = JS_STRING];
-inline void check_pending_account_resources_request::clear_trx_resource_limit() {
-  trx_resource_limit_ = uint64_t{0u};
+// uint64 rc_limit = 3 [jstype = JS_STRING];
+inline void check_pending_account_resources_request::clear_rc_limit() {
+  rc_limit_ = uint64_t{0u};
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::_internal_trx_resource_limit() const {
-  return trx_resource_limit_;
+inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::_internal_rc_limit() const {
+  return rc_limit_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::trx_resource_limit() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.check_pending_account_resources_request.trx_resource_limit)
-  return _internal_trx_resource_limit();
+inline ::PROTOBUF_NAMESPACE_ID::uint64 check_pending_account_resources_request::rc_limit() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.check_pending_account_resources_request.rc_limit)
+  return _internal_rc_limit();
 }
-inline void check_pending_account_resources_request::_internal_set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void check_pending_account_resources_request::_internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   
-  trx_resource_limit_ = value;
+  rc_limit_ = value;
 }
-inline void check_pending_account_resources_request::set_trx_resource_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_trx_resource_limit(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.trx_resource_limit)
+inline void check_pending_account_resources_request::set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_rc_limit(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.rc_limit)
 }
 
 // -------------------------------------------------------------------

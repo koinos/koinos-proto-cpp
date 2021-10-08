@@ -24,7 +24,10 @@ constexpr transaction_accepted::transaction_accepted(
   , transaction_(nullptr)
   , max_payer_rc_(uint64_t{0u})
   , rc_limit_(uint64_t{0u})
-  , height_(uint64_t{0u}){}
+  , height_(uint64_t{0u})
+  , disk_storage_used_(uint64_t{0u})
+  , network_bandwidth_used_(uint64_t{0u})
+  , compute_bandwidth_used_(uint64_t{0u}){}
 struct transaction_acceptedDefaultTypeInternal {
   constexpr transaction_acceptedDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -88,6 +91,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fbroadcast_2fbroadcast
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, max_payer_rc_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, rc_limit_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, height_),
+  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, disk_storage_used_),
+  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, network_bandwidth_used_),
+  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::transaction_accepted, compute_bandwidth_used_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_accepted, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -110,9 +116,9 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fbroadcast_2fbroadcast
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::broadcast::transaction_accepted)},
-  { 10, -1, sizeof(::koinos::broadcast::block_accepted)},
-  { 16, -1, sizeof(::koinos::broadcast::block_irreversible)},
-  { 22, -1, sizeof(::koinos::broadcast::fork_heads)},
+  { 13, -1, sizeof(::koinos::broadcast::block_accepted)},
+  { 19, -1, sizeof(::koinos::broadcast::block_irreversible)},
+  { 25, -1, sizeof(::koinos::broadcast::fork_heads)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -125,19 +131,21 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n koinos/broadcast/broadcast.proto\022\020koin"
   "os.broadcast\032\023koinos/common.proto\032\036koino"
-  "s/protocol/protocol.proto\"\234\001\n\024transactio"
+  "s/protocol/protocol.proto\"\203\002\n\024transactio"
   "n_accepted\0221\n\013transaction\030\001 \001(\0132\034.koinos"
   ".protocol.transaction\022\r\n\005payer\030\002 \001(\014\022\030\n\014"
   "max_payer_rc\030\003 \001(\004B\0020\001\022\024\n\010rc_limit\030\004 \001(\004"
-  "B\0020\001\022\022\n\006height\030\005 \001(\004B\0020\001\"7\n\016block_accept"
-  "ed\022%\n\005block\030\001 \001(\0132\026.koinos.protocol.bloc"
-  "k\">\n\022block_irreversible\022(\n\010topology\030\001 \001("
-  "\0132\026.koinos.block_topology\"l\n\nfork_heads\022"
-  "7\n\027last_irreversible_block\030\001 \001(\0132\026.koino"
-  "s.block_topology\022%\n\005heads\030\002 \003(\0132\026.koinos"
-  ".block_topologyB8Z6github.com/koinos/koi"
-  "nos-proto-golang/koinos/broadcastb\006proto"
-  "3"
+  "B\0020\001\022\022\n\006height\030\005 \001(\004B\0020\001\022\035\n\021disk_storage"
+  "_used\030\006 \001(\004B\0020\001\022\"\n\026network_bandwidth_use"
+  "d\030\007 \001(\004B\0020\001\022\"\n\026compute_bandwidth_used\030\010 "
+  "\001(\004B\0020\001\"7\n\016block_accepted\022%\n\005block\030\001 \001(\013"
+  "2\026.koinos.protocol.block\">\n\022block_irreve"
+  "rsible\022(\n\010topology\030\001 \001(\0132\026.koinos.block_"
+  "topology\"l\n\nfork_heads\0227\n\027last_irreversi"
+  "ble_block\030\001 \001(\0132\026.koinos.block_topology\022"
+  "%\n\005heads\030\002 \003(\0132\026.koinos.block_topologyB8"
+  "Z6github.com/koinos/koinos-proto-golang/"
+  "koinos/broadcastb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -145,7 +153,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto = {
-  false, false, 561, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
+  false, false, 664, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
   &descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once, descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps, 2, 4,
   schemas, file_default_instances, TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto::offsets,
   file_level_metadata_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_enum_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_service_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto,
@@ -199,8 +207,8 @@ transaction_accepted::transaction_accepted(const transaction_accepted& from)
     transaction_ = nullptr;
   }
   ::memcpy(&max_payer_rc_, &from.max_payer_rc_,
-    static_cast<size_t>(reinterpret_cast<char*>(&height_) -
-    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(height_));
+    static_cast<size_t>(reinterpret_cast<char*>(&compute_bandwidth_used_) -
+    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(compute_bandwidth_used_));
   // @@protoc_insertion_point(copy_constructor:koinos.broadcast.transaction_accepted)
 }
 
@@ -208,8 +216,8 @@ inline void transaction_accepted::SharedCtor() {
 payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&transaction_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&height_) -
-    reinterpret_cast<char*>(&transaction_)) + sizeof(height_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&compute_bandwidth_used_) -
+    reinterpret_cast<char*>(&transaction_)) + sizeof(compute_bandwidth_used_));
 }
 
 transaction_accepted::~transaction_accepted() {
@@ -247,8 +255,8 @@ void transaction_accepted::Clear() {
   }
   transaction_ = nullptr;
   ::memset(&max_payer_rc_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(height_));
+      reinterpret_cast<char*>(&compute_bandwidth_used_) -
+      reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(compute_bandwidth_used_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -291,6 +299,27 @@ const char* transaction_accepted::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 disk_storage_used = 6 [jstype = JS_STRING];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          disk_storage_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 network_bandwidth_used = 7 [jstype = JS_STRING];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          network_bandwidth_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 compute_bandwidth_used = 8 [jstype = JS_STRING];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+          compute_bandwidth_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -355,6 +384,24 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_height(), target);
   }
 
+  // uint64 disk_storage_used = 6 [jstype = JS_STRING];
+  if (this->_internal_disk_storage_used() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(6, this->_internal_disk_storage_used(), target);
+  }
+
+  // uint64 network_bandwidth_used = 7 [jstype = JS_STRING];
+  if (this->_internal_network_bandwidth_used() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_network_bandwidth_used(), target);
+  }
+
+  // uint64 compute_bandwidth_used = 8 [jstype = JS_STRING];
+  if (this->_internal_compute_bandwidth_used() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(8, this->_internal_compute_bandwidth_used(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -406,6 +453,27 @@ size_t transaction_accepted::ByteSizeLong() const {
         this->_internal_height());
   }
 
+  // uint64 disk_storage_used = 6 [jstype = JS_STRING];
+  if (this->_internal_disk_storage_used() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_disk_storage_used());
+  }
+
+  // uint64 network_bandwidth_used = 7 [jstype = JS_STRING];
+  if (this->_internal_network_bandwidth_used() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_network_bandwidth_used());
+  }
+
+  // uint64 compute_bandwidth_used = 8 [jstype = JS_STRING];
+  if (this->_internal_compute_bandwidth_used() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_compute_bandwidth_used());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -449,6 +517,15 @@ void transaction_accepted::MergeFrom(const transaction_accepted& from) {
   if (from._internal_height() != 0) {
     _internal_set_height(from._internal_height());
   }
+  if (from._internal_disk_storage_used() != 0) {
+    _internal_set_disk_storage_used(from._internal_disk_storage_used());
+  }
+  if (from._internal_network_bandwidth_used() != 0) {
+    _internal_set_network_bandwidth_used(from._internal_network_bandwidth_used());
+  }
+  if (from._internal_compute_bandwidth_used() != 0) {
+    _internal_set_compute_bandwidth_used(from._internal_compute_bandwidth_used());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -472,8 +549,8 @@ void transaction_accepted::InternalSwap(transaction_accepted* other) {
       &other->payer_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(transaction_accepted, height_)
-      + sizeof(transaction_accepted::height_)
+      PROTOBUF_FIELD_OFFSET(transaction_accepted, compute_bandwidth_used_)
+      + sizeof(transaction_accepted::compute_bandwidth_used_)
       - PROTOBUF_FIELD_OFFSET(transaction_accepted, transaction_)>(
           reinterpret_cast<char*>(&transaction_),
           reinterpret_cast<char*>(&other->transaction_));

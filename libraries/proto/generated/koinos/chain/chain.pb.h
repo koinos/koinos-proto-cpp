@@ -49,7 +49,7 @@ struct TableStruct_koinos_2fchain_2fchain_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[68]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[70]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -94,6 +94,9 @@ extern call_contract_argumentsDefaultTypeInternal _call_contract_arguments_defau
 class call_contract_result;
 struct call_contract_resultDefaultTypeInternal;
 extern call_contract_resultDefaultTypeInternal _call_contract_result_default_instance_;
+class caller_data;
+struct caller_dataDefaultTypeInternal;
+extern caller_dataDefaultTypeInternal _caller_data_default_instance_;
 class consume_account_rc_arguments;
 struct consume_account_rc_argumentsDefaultTypeInternal;
 extern consume_account_rc_argumentsDefaultTypeInternal _consume_account_rc_arguments_default_instance_;
@@ -217,6 +220,9 @@ extern hash_resultDefaultTypeInternal _hash_result_default_instance_;
 class head_info;
 struct head_infoDefaultTypeInternal;
 extern head_infoDefaultTypeInternal _head_info_default_instance_;
+class object_space;
+struct object_spaceDefaultTypeInternal;
+extern object_spaceDefaultTypeInternal _object_space_default_instance_;
 class prints_arguments;
 struct prints_argumentsDefaultTypeInternal;
 extern prints_argumentsDefaultTypeInternal _prints_arguments_default_instance_;
@@ -277,6 +283,7 @@ template<> ::koinos::chain::apply_upload_contract_operation_arguments* Arena::Cr
 template<> ::koinos::chain::apply_upload_contract_operation_result* Arena::CreateMaybeMessage<::koinos::chain::apply_upload_contract_operation_result>(Arena*);
 template<> ::koinos::chain::call_contract_arguments* Arena::CreateMaybeMessage<::koinos::chain::call_contract_arguments>(Arena*);
 template<> ::koinos::chain::call_contract_result* Arena::CreateMaybeMessage<::koinos::chain::call_contract_result>(Arena*);
+template<> ::koinos::chain::caller_data* Arena::CreateMaybeMessage<::koinos::chain::caller_data>(Arena*);
 template<> ::koinos::chain::consume_account_rc_arguments* Arena::CreateMaybeMessage<::koinos::chain::consume_account_rc_arguments>(Arena*);
 template<> ::koinos::chain::consume_account_rc_result* Arena::CreateMaybeMessage<::koinos::chain::consume_account_rc_result>(Arena*);
 template<> ::koinos::chain::consume_block_resources_arguments* Arena::CreateMaybeMessage<::koinos::chain::consume_block_resources_arguments>(Arena*);
@@ -318,6 +325,7 @@ template<> ::koinos::chain::get_transaction_signature_result* Arena::CreateMaybe
 template<> ::koinos::chain::hash_arguments* Arena::CreateMaybeMessage<::koinos::chain::hash_arguments>(Arena*);
 template<> ::koinos::chain::hash_result* Arena::CreateMaybeMessage<::koinos::chain::hash_result>(Arena*);
 template<> ::koinos::chain::head_info* Arena::CreateMaybeMessage<::koinos::chain::head_info>(Arena*);
+template<> ::koinos::chain::object_space* Arena::CreateMaybeMessage<::koinos::chain::object_space>(Arena*);
 template<> ::koinos::chain::prints_arguments* Arena::CreateMaybeMessage<::koinos::chain::prints_arguments>(Arena*);
 template<> ::koinos::chain::prints_result* Arena::CreateMaybeMessage<::koinos::chain::prints_result>(Arena*);
 template<> ::koinos::chain::put_object_arguments* Arena::CreateMaybeMessage<::koinos::chain::put_object_arguments>(Arena*);
@@ -364,6 +372,172 @@ inline bool privilege_Parse(
 }
 // ===================================================================
 
+class object_space final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.object_space) */ {
+ public:
+  inline object_space() : object_space(nullptr) {}
+  ~object_space() override;
+  explicit constexpr object_space(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  object_space(const object_space& from);
+  object_space(object_space&& from) noexcept
+    : object_space() {
+    *this = ::std::move(from);
+  }
+
+  inline object_space& operator=(const object_space& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline object_space& operator=(object_space&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const object_space& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const object_space* internal_default_instance() {
+    return reinterpret_cast<const object_space*>(
+               &_object_space_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(object_space& a, object_space& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(object_space* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(object_space* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline object_space* New() const final {
+    return new object_space();
+  }
+
+  object_space* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<object_space>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const object_space& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const object_space& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(object_space* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.object_space";
+  }
+  protected:
+  explicit object_space(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kZoneFieldNumber = 2,
+    kSystemFieldNumber = 1,
+    kIdFieldNumber = 3,
+  };
+  // bytes zone = 2;
+  void clear_zone();
+  const std::string& zone() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_zone(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_zone();
+  PROTOBUF_MUST_USE_RESULT std::string* release_zone();
+  void set_allocated_zone(std::string* zone);
+  private:
+  const std::string& _internal_zone() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_zone(const std::string& value);
+  std::string* _internal_mutable_zone();
+  public:
+
+  // bool system = 1;
+  void clear_system();
+  bool system() const;
+  void set_system(bool value);
+  private:
+  bool _internal_system() const;
+  void _internal_set_system(bool value);
+  public:
+
+  // uint32 id = 3;
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::uint32 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.object_space)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr zone_;
+  bool system_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
+};
+// -------------------------------------------------------------------
+
 class head_info final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.head_info) */ {
  public:
@@ -408,7 +582,7 @@ class head_info final :
                &_head_info_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(head_info& a, head_info& b) {
     a.Swap(&b);
@@ -534,6 +708,161 @@ class head_info final :
 };
 // -------------------------------------------------------------------
 
+class caller_data final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.caller_data) */ {
+ public:
+  inline caller_data() : caller_data(nullptr) {}
+  ~caller_data() override;
+  explicit constexpr caller_data(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  caller_data(const caller_data& from);
+  caller_data(caller_data&& from) noexcept
+    : caller_data() {
+    *this = ::std::move(from);
+  }
+
+  inline caller_data& operator=(const caller_data& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline caller_data& operator=(caller_data&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const caller_data& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const caller_data* internal_default_instance() {
+    return reinterpret_cast<const caller_data*>(
+               &_caller_data_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(caller_data& a, caller_data& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(caller_data* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(caller_data* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline caller_data* New() const final {
+    return new caller_data();
+  }
+
+  caller_data* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<caller_data>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const caller_data& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const caller_data& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(caller_data* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.caller_data";
+  }
+  protected:
+  explicit caller_data(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCallerFieldNumber = 1,
+    kCallerPrivilegeFieldNumber = 2,
+  };
+  // bytes caller = 1;
+  void clear_caller();
+  const std::string& caller() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_caller(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_caller();
+  PROTOBUF_MUST_USE_RESULT std::string* release_caller();
+  void set_allocated_caller(std::string* caller);
+  private:
+  const std::string& _internal_caller() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_caller(const std::string& value);
+  std::string* _internal_mutable_caller();
+  public:
+
+  // .koinos.chain.privilege caller_privilege = 2;
+  void clear_caller_privilege();
+  ::koinos::chain::privilege caller_privilege() const;
+  void set_caller_privilege(::koinos::chain::privilege value);
+  private:
+  ::koinos::chain::privilege _internal_caller_privilege() const;
+  void _internal_set_caller_privilege(::koinos::chain::privilege value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.caller_data)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr caller_;
+  int caller_privilege_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
+};
+// -------------------------------------------------------------------
+
 class resource_limit_data final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.resource_limit_data) */ {
  public:
@@ -578,7 +907,7 @@ class resource_limit_data final :
                &_resource_limit_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(resource_limit_data& a, resource_limit_data& b) {
     a.Swap(&b);
@@ -772,7 +1101,7 @@ class prints_arguments final :
                &_prints_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(prints_arguments& a, prints_arguments& b) {
     a.Swap(&b);
@@ -916,7 +1245,7 @@ class prints_result final :
                &_prints_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(prints_result& a, prints_result& b) {
     a.Swap(&b);
@@ -1042,7 +1371,7 @@ class verify_block_signature_arguments final :
                &_verify_block_signature_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(verify_block_signature_arguments& a, verify_block_signature_arguments& b) {
     a.Swap(&b);
@@ -1218,7 +1547,7 @@ class verify_block_signature_result final :
                &_verify_block_signature_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(verify_block_signature_result& a, verify_block_signature_result& b) {
     a.Swap(&b);
@@ -1357,7 +1686,7 @@ class verify_merkle_root_arguments final :
                &_verify_merkle_root_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(verify_merkle_root_arguments& a, verify_merkle_root_arguments& b) {
     a.Swap(&b);
@@ -1527,7 +1856,7 @@ class verify_merkle_root_result final :
                &_verify_merkle_root_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(verify_merkle_root_result& a, verify_merkle_root_result& b) {
     a.Swap(&b);
@@ -1666,7 +1995,7 @@ class apply_block_arguments final :
                &_apply_block_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(apply_block_arguments& a, apply_block_arguments& b) {
     a.Swap(&b);
@@ -1847,7 +2176,7 @@ class apply_block_result final :
                &_apply_block_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(apply_block_result& a, apply_block_result& b) {
     a.Swap(&b);
@@ -1973,7 +2302,7 @@ class apply_transaction_arguments final :
                &_apply_transaction_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(apply_transaction_arguments& a, apply_transaction_arguments& b) {
     a.Swap(&b);
@@ -2121,7 +2450,7 @@ class apply_transaction_result final :
                &_apply_transaction_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(apply_transaction_result& a, apply_transaction_result& b) {
     a.Swap(&b);
@@ -2247,7 +2576,7 @@ class apply_upload_contract_operation_arguments final :
                &_apply_upload_contract_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(apply_upload_contract_operation_arguments& a, apply_upload_contract_operation_arguments& b) {
     a.Swap(&b);
@@ -2395,7 +2724,7 @@ class apply_upload_contract_operation_result final :
                &_apply_upload_contract_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(apply_upload_contract_operation_result& a, apply_upload_contract_operation_result& b) {
     a.Swap(&b);
@@ -2521,7 +2850,7 @@ class apply_call_contract_operation_arguments final :
                &_apply_call_contract_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(apply_call_contract_operation_arguments& a, apply_call_contract_operation_arguments& b) {
     a.Swap(&b);
@@ -2669,7 +2998,7 @@ class apply_call_contract_operation_result final :
                &_apply_call_contract_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(apply_call_contract_operation_result& a, apply_call_contract_operation_result& b) {
     a.Swap(&b);
@@ -2795,7 +3124,7 @@ class apply_set_system_call_operation_arguments final :
                &_apply_set_system_call_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(apply_set_system_call_operation_arguments& a, apply_set_system_call_operation_arguments& b) {
     a.Swap(&b);
@@ -2943,7 +3272,7 @@ class apply_set_system_call_operation_result final :
                &_apply_set_system_call_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(apply_set_system_call_operation_result& a, apply_set_system_call_operation_result& b) {
     a.Swap(&b);
@@ -3069,7 +3398,7 @@ class put_object_arguments final :
                &_put_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(put_object_arguments& a, put_object_arguments& b) {
     a.Swap(&b);
@@ -3140,24 +3469,10 @@ class put_object_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpaceFieldNumber = 1,
     kKeyFieldNumber = 2,
     kObjFieldNumber = 3,
+    kSpaceFieldNumber = 1,
   };
-  // bytes space = 1;
-  void clear_space();
-  const std::string& space() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_space(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_space();
-  PROTOBUF_MUST_USE_RESULT std::string* release_space();
-  void set_allocated_space(std::string* space);
-  private:
-  const std::string& _internal_space() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_space(const std::string& value);
-  std::string* _internal_mutable_space();
-  public:
-
   // bytes key = 2;
   void clear_key();
   const std::string& key() const;
@@ -3186,6 +3501,24 @@ class put_object_arguments final :
   std::string* _internal_mutable_obj();
   public:
 
+  // .koinos.chain.object_space space = 1;
+  bool has_space() const;
+  private:
+  bool _internal_has_space() const;
+  public:
+  void clear_space();
+  const ::koinos::chain::object_space& space() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::object_space* release_space();
+  ::koinos::chain::object_space* mutable_space();
+  void set_allocated_space(::koinos::chain::object_space* space);
+  private:
+  const ::koinos::chain::object_space& _internal_space() const;
+  ::koinos::chain::object_space* _internal_mutable_space();
+  public:
+  void unsafe_arena_set_allocated_space(
+      ::koinos::chain::object_space* space);
+  ::koinos::chain::object_space* unsafe_arena_release_space();
+
   // @@protoc_insertion_point(class_scope:koinos.chain.put_object_arguments)
  private:
   class _Internal;
@@ -3193,9 +3526,9 @@ class put_object_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr obj_;
+  ::koinos::chain::object_space* space_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -3245,7 +3578,7 @@ class put_object_result final :
                &_put_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(put_object_result& a, put_object_result& b) {
     a.Swap(&b);
@@ -3384,7 +3717,7 @@ class get_object_arguments final :
                &_get_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(get_object_arguments& a, get_object_arguments& b) {
     a.Swap(&b);
@@ -3455,24 +3788,10 @@ class get_object_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpaceFieldNumber = 1,
     kKeyFieldNumber = 2,
+    kSpaceFieldNumber = 1,
     kObjectSizeHintFieldNumber = 3,
   };
-  // bytes space = 1;
-  void clear_space();
-  const std::string& space() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_space(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_space();
-  PROTOBUF_MUST_USE_RESULT std::string* release_space();
-  void set_allocated_space(std::string* space);
-  private:
-  const std::string& _internal_space() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_space(const std::string& value);
-  std::string* _internal_mutable_space();
-  public:
-
   // bytes key = 2;
   void clear_key();
   const std::string& key() const;
@@ -3486,6 +3805,24 @@ class get_object_arguments final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(const std::string& value);
   std::string* _internal_mutable_key();
   public:
+
+  // .koinos.chain.object_space space = 1;
+  bool has_space() const;
+  private:
+  bool _internal_has_space() const;
+  public:
+  void clear_space();
+  const ::koinos::chain::object_space& space() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::object_space* release_space();
+  ::koinos::chain::object_space* mutable_space();
+  void set_allocated_space(::koinos::chain::object_space* space);
+  private:
+  const ::koinos::chain::object_space& _internal_space() const;
+  ::koinos::chain::object_space* _internal_mutable_space();
+  public:
+  void unsafe_arena_set_allocated_space(
+      ::koinos::chain::object_space* space);
+  ::koinos::chain::object_space* unsafe_arena_release_space();
 
   // uint32 object_size_hint = 3;
   void clear_object_size_hint();
@@ -3503,8 +3840,8 @@ class get_object_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
+  ::koinos::chain::object_space* space_;
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
@@ -3555,7 +3892,7 @@ class get_object_result final :
                &_get_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(get_object_result& a, get_object_result& b) {
     a.Swap(&b);
@@ -3699,7 +4036,7 @@ class get_next_object_arguments final :
                &_get_next_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(get_next_object_arguments& a, get_next_object_arguments& b) {
     a.Swap(&b);
@@ -3770,24 +4107,10 @@ class get_next_object_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpaceFieldNumber = 1,
     kKeyFieldNumber = 2,
+    kSpaceFieldNumber = 1,
     kObjectSizeHintFieldNumber = 3,
   };
-  // bytes space = 1;
-  void clear_space();
-  const std::string& space() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_space(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_space();
-  PROTOBUF_MUST_USE_RESULT std::string* release_space();
-  void set_allocated_space(std::string* space);
-  private:
-  const std::string& _internal_space() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_space(const std::string& value);
-  std::string* _internal_mutable_space();
-  public:
-
   // bytes key = 2;
   void clear_key();
   const std::string& key() const;
@@ -3801,6 +4124,24 @@ class get_next_object_arguments final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(const std::string& value);
   std::string* _internal_mutable_key();
   public:
+
+  // .koinos.chain.object_space space = 1;
+  bool has_space() const;
+  private:
+  bool _internal_has_space() const;
+  public:
+  void clear_space();
+  const ::koinos::chain::object_space& space() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::object_space* release_space();
+  ::koinos::chain::object_space* mutable_space();
+  void set_allocated_space(::koinos::chain::object_space* space);
+  private:
+  const ::koinos::chain::object_space& _internal_space() const;
+  ::koinos::chain::object_space* _internal_mutable_space();
+  public:
+  void unsafe_arena_set_allocated_space(
+      ::koinos::chain::object_space* space);
+  ::koinos::chain::object_space* unsafe_arena_release_space();
 
   // uint32 object_size_hint = 3;
   void clear_object_size_hint();
@@ -3818,8 +4159,8 @@ class get_next_object_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
+  ::koinos::chain::object_space* space_;
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
@@ -3870,7 +4211,7 @@ class get_next_object_result final :
                &_get_next_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(get_next_object_result& a, get_next_object_result& b) {
     a.Swap(&b);
@@ -4014,7 +4355,7 @@ class get_prev_object_arguments final :
                &_get_prev_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(get_prev_object_arguments& a, get_prev_object_arguments& b) {
     a.Swap(&b);
@@ -4085,24 +4426,10 @@ class get_prev_object_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kSpaceFieldNumber = 1,
     kKeyFieldNumber = 2,
+    kSpaceFieldNumber = 1,
     kObjectSizeHintFieldNumber = 3,
   };
-  // bytes space = 1;
-  void clear_space();
-  const std::string& space() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_space(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_space();
-  PROTOBUF_MUST_USE_RESULT std::string* release_space();
-  void set_allocated_space(std::string* space);
-  private:
-  const std::string& _internal_space() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_space(const std::string& value);
-  std::string* _internal_mutable_space();
-  public:
-
   // bytes key = 2;
   void clear_key();
   const std::string& key() const;
@@ -4116,6 +4443,24 @@ class get_prev_object_arguments final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(const std::string& value);
   std::string* _internal_mutable_key();
   public:
+
+  // .koinos.chain.object_space space = 1;
+  bool has_space() const;
+  private:
+  bool _internal_has_space() const;
+  public:
+  void clear_space();
+  const ::koinos::chain::object_space& space() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::object_space* release_space();
+  ::koinos::chain::object_space* mutable_space();
+  void set_allocated_space(::koinos::chain::object_space* space);
+  private:
+  const ::koinos::chain::object_space& _internal_space() const;
+  ::koinos::chain::object_space* _internal_mutable_space();
+  public:
+  void unsafe_arena_set_allocated_space(
+      ::koinos::chain::object_space* space);
+  ::koinos::chain::object_space* unsafe_arena_release_space();
 
   // uint32 object_size_hint = 3;
   void clear_object_size_hint();
@@ -4133,8 +4478,8 @@ class get_prev_object_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr space_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
+  ::koinos::chain::object_space* space_;
   ::PROTOBUF_NAMESPACE_ID::uint32 object_size_hint_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
@@ -4185,7 +4530,7 @@ class get_prev_object_result final :
                &_get_prev_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(get_prev_object_result& a, get_prev_object_result& b) {
     a.Swap(&b);
@@ -4329,7 +4674,7 @@ class call_contract_arguments final :
                &_call_contract_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(call_contract_arguments& a, call_contract_arguments& b) {
     a.Swap(&b);
@@ -4500,7 +4845,7 @@ class call_contract_result final :
                &_call_contract_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(call_contract_result& a, call_contract_result& b) {
     a.Swap(&b);
@@ -4644,7 +4989,7 @@ class get_entry_point_arguments final :
                &_get_entry_point_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(get_entry_point_arguments& a, get_entry_point_arguments& b) {
     a.Swap(&b);
@@ -4770,7 +5115,7 @@ class get_entry_point_result final :
                &_get_entry_point_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(get_entry_point_result& a, get_entry_point_result& b) {
     a.Swap(&b);
@@ -4909,7 +5254,7 @@ class get_contract_arguments_size_arguments final :
                &_get_contract_arguments_size_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(get_contract_arguments_size_arguments& a, get_contract_arguments_size_arguments& b) {
     a.Swap(&b);
@@ -5035,7 +5380,7 @@ class get_contract_arguments_size_result final :
                &_get_contract_arguments_size_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(get_contract_arguments_size_result& a, get_contract_arguments_size_result& b) {
     a.Swap(&b);
@@ -5174,7 +5519,7 @@ class get_contract_arguments_arguments final :
                &_get_contract_arguments_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(get_contract_arguments_arguments& a, get_contract_arguments_arguments& b) {
     a.Swap(&b);
@@ -5300,7 +5645,7 @@ class get_contract_arguments_result final :
                &_get_contract_arguments_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(get_contract_arguments_result& a, get_contract_arguments_result& b) {
     a.Swap(&b);
@@ -5444,7 +5789,7 @@ class set_contract_result_arguments final :
                &_set_contract_result_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(set_contract_result_arguments& a, set_contract_result_arguments& b) {
     a.Swap(&b);
@@ -5588,7 +5933,7 @@ class set_contract_result_result final :
                &_set_contract_result_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(set_contract_result_result& a, set_contract_result_result& b) {
     a.Swap(&b);
@@ -5714,7 +6059,7 @@ class exit_contract_arguments final :
                &_exit_contract_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(exit_contract_arguments& a, exit_contract_arguments& b) {
     a.Swap(&b);
@@ -5853,7 +6198,7 @@ class exit_contract_result final :
                &_exit_contract_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(exit_contract_result& a, exit_contract_result& b) {
     a.Swap(&b);
@@ -5979,7 +6324,7 @@ class get_head_info_arguments final :
                &_get_head_info_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(get_head_info_arguments& a, get_head_info_arguments& b) {
     a.Swap(&b);
@@ -6105,7 +6450,7 @@ class get_head_info_result final :
                &_get_head_info_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(get_head_info_result& a, get_head_info_result& b) {
     a.Swap(&b);
@@ -6253,7 +6598,7 @@ class hash_arguments final :
                &_hash_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(hash_arguments& a, hash_arguments& b) {
     a.Swap(&b);
@@ -6419,7 +6764,7 @@ class hash_result final :
                &_hash_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(hash_result& a, hash_result& b) {
     a.Swap(&b);
@@ -6563,7 +6908,7 @@ class recover_public_key_arguments final :
                &_recover_public_key_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(recover_public_key_arguments& a, recover_public_key_arguments& b) {
     a.Swap(&b);
@@ -6723,7 +7068,7 @@ class recover_public_key_result final :
                &_recover_public_key_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(recover_public_key_result& a, recover_public_key_result& b) {
     a.Swap(&b);
@@ -6867,7 +7212,7 @@ class get_transaction_payer_arguments final :
                &_get_transaction_payer_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(get_transaction_payer_arguments& a, get_transaction_payer_arguments& b) {
     a.Swap(&b);
@@ -7015,7 +7360,7 @@ class get_transaction_payer_result final :
                &_get_transaction_payer_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(get_transaction_payer_result& a, get_transaction_payer_result& b) {
     a.Swap(&b);
@@ -7159,7 +7504,7 @@ class get_account_rc_arguments final :
                &_get_account_rc_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(get_account_rc_arguments& a, get_account_rc_arguments& b) {
     a.Swap(&b);
@@ -7303,7 +7648,7 @@ class get_account_rc_result final :
                &_get_account_rc_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(get_account_rc_result& a, get_account_rc_result& b) {
     a.Swap(&b);
@@ -7442,7 +7787,7 @@ class consume_account_rc_arguments final :
                &_consume_account_rc_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(consume_account_rc_arguments& a, consume_account_rc_arguments& b) {
     a.Swap(&b);
@@ -7597,7 +7942,7 @@ class consume_account_rc_result final :
                &_consume_account_rc_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(consume_account_rc_result& a, consume_account_rc_result& b) {
     a.Swap(&b);
@@ -7736,7 +8081,7 @@ class get_resource_limits_arguments final :
                &_get_resource_limits_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(get_resource_limits_arguments& a, get_resource_limits_arguments& b) {
     a.Swap(&b);
@@ -7862,7 +8207,7 @@ class get_resource_limits_result final :
                &_get_resource_limits_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(get_resource_limits_result& a, get_resource_limits_result& b) {
     a.Swap(&b);
@@ -8010,7 +8355,7 @@ class consume_block_resources_arguments final :
                &_consume_block_resources_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(consume_block_resources_arguments& a, consume_block_resources_arguments& b) {
     a.Swap(&b);
@@ -8171,7 +8516,7 @@ class consume_block_resources_result final :
                &_consume_block_resources_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(consume_block_resources_result& a, consume_block_resources_result& b) {
     a.Swap(&b);
@@ -8310,7 +8655,7 @@ class get_transaction_rc_limit_arguments final :
                &_get_transaction_rc_limit_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(get_transaction_rc_limit_arguments& a, get_transaction_rc_limit_arguments& b) {
     a.Swap(&b);
@@ -8458,7 +8803,7 @@ class get_transaction_rc_limit_result final :
                &_get_transaction_rc_limit_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   friend void swap(get_transaction_rc_limit_result& a, get_transaction_rc_limit_result& b) {
     a.Swap(&b);
@@ -8597,7 +8942,7 @@ class get_last_irreversible_block_arguments final :
                &_get_last_irreversible_block_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   friend void swap(get_last_irreversible_block_arguments& a, get_last_irreversible_block_arguments& b) {
     a.Swap(&b);
@@ -8723,7 +9068,7 @@ class get_last_irreversible_block_result final :
                &_get_last_irreversible_block_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   friend void swap(get_last_irreversible_block_result& a, get_last_irreversible_block_result& b) {
     a.Swap(&b);
@@ -8862,7 +9207,7 @@ class get_caller_arguments final :
                &_get_caller_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   friend void swap(get_caller_arguments& a, get_caller_arguments& b) {
     a.Swap(&b);
@@ -8988,7 +9333,7 @@ class get_caller_result final :
                &_get_caller_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   friend void swap(get_caller_result& a, get_caller_result& b) {
     a.Swap(&b);
@@ -9059,31 +9404,25 @@ class get_caller_result final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCallerFieldNumber = 1,
-    kCallerPrivilegeFieldNumber = 2,
+    kValueFieldNumber = 1,
   };
-  // bytes caller = 1;
-  void clear_caller();
-  const std::string& caller() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_caller(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_caller();
-  PROTOBUF_MUST_USE_RESULT std::string* release_caller();
-  void set_allocated_caller(std::string* caller);
+  // .koinos.chain.caller_data value = 1;
+  bool has_value() const;
   private:
-  const std::string& _internal_caller() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_caller(const std::string& value);
-  std::string* _internal_mutable_caller();
+  bool _internal_has_value() const;
   public:
-
-  // .koinos.chain.privilege caller_privilege = 2;
-  void clear_caller_privilege();
-  ::koinos::chain::privilege caller_privilege() const;
-  void set_caller_privilege(::koinos::chain::privilege value);
+  void clear_value();
+  const ::koinos::chain::caller_data& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::caller_data* release_value();
+  ::koinos::chain::caller_data* mutable_value();
+  void set_allocated_value(::koinos::chain::caller_data* value);
   private:
-  ::koinos::chain::privilege _internal_caller_privilege() const;
-  void _internal_set_caller_privilege(::koinos::chain::privilege value);
+  const ::koinos::chain::caller_data& _internal_value() const;
+  ::koinos::chain::caller_data* _internal_mutable_value();
   public:
+  void unsafe_arena_set_allocated_value(
+      ::koinos::chain::caller_data* value);
+  ::koinos::chain::caller_data* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_caller_result)
  private:
@@ -9092,8 +9431,7 @@ class get_caller_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr caller_;
-  int caller_privilege_;
+  ::koinos::chain::caller_data* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -9143,7 +9481,7 @@ class require_authority_arguments final :
                &_require_authority_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   friend void swap(require_authority_arguments& a, require_authority_arguments& b) {
     a.Swap(&b);
@@ -9287,7 +9625,7 @@ class require_authority_result final :
                &_require_authority_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(require_authority_result& a, require_authority_result& b) {
     a.Swap(&b);
@@ -9413,7 +9751,7 @@ class get_transaction_signature_arguments final :
                &_get_transaction_signature_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(get_transaction_signature_arguments& a, get_transaction_signature_arguments& b) {
     a.Swap(&b);
@@ -9539,7 +9877,7 @@ class get_transaction_signature_result final :
                &_get_transaction_signature_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(get_transaction_signature_result& a, get_transaction_signature_result& b) {
     a.Swap(&b);
@@ -9683,7 +10021,7 @@ class get_contract_id_arguments final :
                &_get_contract_id_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(get_contract_id_arguments& a, get_contract_id_arguments& b) {
     a.Swap(&b);
@@ -9809,7 +10147,7 @@ class get_contract_id_result final :
                &_get_contract_id_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(get_contract_id_result& a, get_contract_id_result& b) {
     a.Swap(&b);
@@ -9953,7 +10291,7 @@ class get_account_nonce_arguments final :
                &_get_account_nonce_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(get_account_nonce_arguments& a, get_account_nonce_arguments& b) {
     a.Swap(&b);
@@ -10097,7 +10435,7 @@ class get_account_nonce_result final :
                &_get_account_nonce_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(get_account_nonce_result& a, get_account_nonce_result& b) {
     a.Swap(&b);
@@ -10199,6 +10537,96 @@ class get_account_nonce_result final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// object_space
+
+// bool system = 1;
+inline void object_space::clear_system() {
+  system_ = false;
+}
+inline bool object_space::_internal_system() const {
+  return system_;
+}
+inline bool object_space::system() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.object_space.system)
+  return _internal_system();
+}
+inline void object_space::_internal_set_system(bool value) {
+  
+  system_ = value;
+}
+inline void object_space::set_system(bool value) {
+  _internal_set_system(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.object_space.system)
+}
+
+// bytes zone = 2;
+inline void object_space::clear_zone() {
+  zone_.ClearToEmpty();
+}
+inline const std::string& object_space::zone() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.object_space.zone)
+  return _internal_zone();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void object_space::set_zone(ArgT0&& arg0, ArgT... args) {
+ 
+ zone_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.object_space.zone)
+}
+inline std::string* object_space::mutable_zone() {
+  std::string* _s = _internal_mutable_zone();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.object_space.zone)
+  return _s;
+}
+inline const std::string& object_space::_internal_zone() const {
+  return zone_.Get();
+}
+inline void object_space::_internal_set_zone(const std::string& value) {
+  
+  zone_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* object_space::_internal_mutable_zone() {
+  
+  return zone_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* object_space::release_zone() {
+  // @@protoc_insertion_point(field_release:koinos.chain.object_space.zone)
+  return zone_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void object_space::set_allocated_zone(std::string* zone) {
+  if (zone != nullptr) {
+    
+  } else {
+    
+  }
+  zone_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), zone,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.object_space.zone)
+}
+
+// uint32 id = 3;
+inline void object_space::clear_id() {
+  id_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 object_space::_internal_id() const {
+  return id_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 object_space::id() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.object_space.id)
+  return _internal_id();
+}
+inline void object_space::_internal_set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  id_ = value;
+}
+inline void object_space::set_id(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.object_space.id)
+}
+
+// -------------------------------------------------------------------
+
 // head_info
 
 // .koinos.block_topology head_topology = 1;
@@ -10325,6 +10753,76 @@ inline void head_info::_internal_set_last_irreversible_block(::PROTOBUF_NAMESPAC
 inline void head_info::set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_last_irreversible_block(value);
   // @@protoc_insertion_point(field_set:koinos.chain.head_info.last_irreversible_block)
+}
+
+// -------------------------------------------------------------------
+
+// caller_data
+
+// bytes caller = 1;
+inline void caller_data::clear_caller() {
+  caller_.ClearToEmpty();
+}
+inline const std::string& caller_data::caller() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.caller_data.caller)
+  return _internal_caller();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void caller_data::set_caller(ArgT0&& arg0, ArgT... args) {
+ 
+ caller_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.caller_data.caller)
+}
+inline std::string* caller_data::mutable_caller() {
+  std::string* _s = _internal_mutable_caller();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.caller_data.caller)
+  return _s;
+}
+inline const std::string& caller_data::_internal_caller() const {
+  return caller_.Get();
+}
+inline void caller_data::_internal_set_caller(const std::string& value) {
+  
+  caller_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* caller_data::_internal_mutable_caller() {
+  
+  return caller_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* caller_data::release_caller() {
+  // @@protoc_insertion_point(field_release:koinos.chain.caller_data.caller)
+  return caller_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void caller_data::set_allocated_caller(std::string* caller) {
+  if (caller != nullptr) {
+    
+  } else {
+    
+  }
+  caller_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), caller,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.caller_data.caller)
+}
+
+// .koinos.chain.privilege caller_privilege = 2;
+inline void caller_data::clear_caller_privilege() {
+  caller_privilege_ = 0;
+}
+inline ::koinos::chain::privilege caller_data::_internal_caller_privilege() const {
+  return static_cast< ::koinos::chain::privilege >(caller_privilege_);
+}
+inline ::koinos::chain::privilege caller_data::caller_privilege() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.caller_data.caller_privilege)
+  return _internal_caller_privilege();
+}
+inline void caller_data::_internal_set_caller_privilege(::koinos::chain::privilege value) {
+  
+  caller_privilege_ = value;
+}
+inline void caller_data::set_caller_privilege(::koinos::chain::privilege value) {
+  _internal_set_caller_privilege(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.caller_data.caller_privilege)
 }
 
 // -------------------------------------------------------------------
@@ -11354,49 +11852,93 @@ inline void apply_set_system_call_operation_arguments::set_allocated_op(::koinos
 
 // put_object_arguments
 
-// bytes space = 1;
-inline void put_object_arguments::clear_space() {
-  space_.ClearToEmpty();
+// .koinos.chain.object_space space = 1;
+inline bool put_object_arguments::_internal_has_space() const {
+  return this != internal_default_instance() && space_ != nullptr;
 }
-inline const std::string& put_object_arguments::space() const {
+inline bool put_object_arguments::has_space() const {
+  return _internal_has_space();
+}
+inline void put_object_arguments::clear_space() {
+  if (GetArenaForAllocation() == nullptr && space_ != nullptr) {
+    delete space_;
+  }
+  space_ = nullptr;
+}
+inline const ::koinos::chain::object_space& put_object_arguments::_internal_space() const {
+  const ::koinos::chain::object_space* p = space_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::object_space&>(
+      ::koinos::chain::_object_space_default_instance_);
+}
+inline const ::koinos::chain::object_space& put_object_arguments::space() const {
   // @@protoc_insertion_point(field_get:koinos.chain.put_object_arguments.space)
   return _internal_space();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void put_object_arguments::set_space(ArgT0&& arg0, ArgT... args) {
- 
- space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.put_object_arguments.space)
-}
-inline std::string* put_object_arguments::mutable_space() {
-  std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.put_object_arguments.space)
-  return _s;
-}
-inline const std::string& put_object_arguments::_internal_space() const {
-  return space_.Get();
-}
-inline void put_object_arguments::_internal_set_space(const std::string& value) {
-  
-  space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* put_object_arguments::_internal_mutable_space() {
-  
-  return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* put_object_arguments::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.put_object_arguments.space)
-  return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void put_object_arguments::set_allocated_space(std::string* space) {
-  if (space != nullptr) {
+inline void put_object_arguments::unsafe_arena_set_allocated_space(
+    ::koinos::chain::object_space* space) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(space_);
+  }
+  space_ = space;
+  if (space) {
     
   } else {
     
   }
-  space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
-      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.put_object_arguments.space)
+}
+inline ::koinos::chain::object_space* put_object_arguments::release_space() {
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::chain::object_space* put_object_arguments::unsafe_arena_release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.put_object_arguments.space)
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+  return temp;
+}
+inline ::koinos::chain::object_space* put_object_arguments::_internal_mutable_space() {
+  
+  if (space_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::object_space>(GetArenaForAllocation());
+    space_ = p;
+  }
+  return space_;
+}
+inline ::koinos::chain::object_space* put_object_arguments::mutable_space() {
+  ::koinos::chain::object_space* _msg = _internal_mutable_space();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.put_object_arguments.space)
+  return _msg;
+}
+inline void put_object_arguments::set_allocated_space(::koinos::chain::object_space* space) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete space_;
+  }
+  if (space) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::object_space>::GetOwningArena(space);
+    if (message_arena != submessage_arena) {
+      space = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, space, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  space_ = space;
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.put_object_arguments.space)
 }
 
@@ -11520,49 +12062,93 @@ inline void put_object_result::set_value(bool value) {
 
 // get_object_arguments
 
-// bytes space = 1;
-inline void get_object_arguments::clear_space() {
-  space_.ClearToEmpty();
+// .koinos.chain.object_space space = 1;
+inline bool get_object_arguments::_internal_has_space() const {
+  return this != internal_default_instance() && space_ != nullptr;
 }
-inline const std::string& get_object_arguments::space() const {
+inline bool get_object_arguments::has_space() const {
+  return _internal_has_space();
+}
+inline void get_object_arguments::clear_space() {
+  if (GetArenaForAllocation() == nullptr && space_ != nullptr) {
+    delete space_;
+  }
+  space_ = nullptr;
+}
+inline const ::koinos::chain::object_space& get_object_arguments::_internal_space() const {
+  const ::koinos::chain::object_space* p = space_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::object_space&>(
+      ::koinos::chain::_object_space_default_instance_);
+}
+inline const ::koinos::chain::object_space& get_object_arguments::space() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_object_arguments.space)
   return _internal_space();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void get_object_arguments::set_space(ArgT0&& arg0, ArgT... args) {
- 
- space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.get_object_arguments.space)
-}
-inline std::string* get_object_arguments::mutable_space() {
-  std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_object_arguments.space)
-  return _s;
-}
-inline const std::string& get_object_arguments::_internal_space() const {
-  return space_.Get();
-}
-inline void get_object_arguments::_internal_set_space(const std::string& value) {
-  
-  space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* get_object_arguments::_internal_mutable_space() {
-  
-  return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* get_object_arguments::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_object_arguments.space)
-  return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void get_object_arguments::set_allocated_space(std::string* space) {
-  if (space != nullptr) {
+inline void get_object_arguments::unsafe_arena_set_allocated_space(
+    ::koinos::chain::object_space* space) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(space_);
+  }
+  space_ = space;
+  if (space) {
     
   } else {
     
   }
-  space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
-      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_object_arguments.space)
+}
+inline ::koinos::chain::object_space* get_object_arguments::release_space() {
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::chain::object_space* get_object_arguments::unsafe_arena_release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_object_arguments.space)
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+  return temp;
+}
+inline ::koinos::chain::object_space* get_object_arguments::_internal_mutable_space() {
+  
+  if (space_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::object_space>(GetArenaForAllocation());
+    space_ = p;
+  }
+  return space_;
+}
+inline ::koinos::chain::object_space* get_object_arguments::mutable_space() {
+  ::koinos::chain::object_space* _msg = _internal_mutable_space();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_object_arguments.space)
+  return _msg;
+}
+inline void get_object_arguments::set_allocated_space(::koinos::chain::object_space* space) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete space_;
+  }
+  if (space) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::object_space>::GetOwningArena(space);
+    if (message_arena != submessage_arena) {
+      space = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, space, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  space_ = space;
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_object_arguments.space)
 }
 
@@ -11686,49 +12272,93 @@ inline void get_object_result::set_allocated_value(std::string* value) {
 
 // get_next_object_arguments
 
-// bytes space = 1;
-inline void get_next_object_arguments::clear_space() {
-  space_.ClearToEmpty();
+// .koinos.chain.object_space space = 1;
+inline bool get_next_object_arguments::_internal_has_space() const {
+  return this != internal_default_instance() && space_ != nullptr;
 }
-inline const std::string& get_next_object_arguments::space() const {
+inline bool get_next_object_arguments::has_space() const {
+  return _internal_has_space();
+}
+inline void get_next_object_arguments::clear_space() {
+  if (GetArenaForAllocation() == nullptr && space_ != nullptr) {
+    delete space_;
+  }
+  space_ = nullptr;
+}
+inline const ::koinos::chain::object_space& get_next_object_arguments::_internal_space() const {
+  const ::koinos::chain::object_space* p = space_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::object_space&>(
+      ::koinos::chain::_object_space_default_instance_);
+}
+inline const ::koinos::chain::object_space& get_next_object_arguments::space() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_next_object_arguments.space)
   return _internal_space();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void get_next_object_arguments::set_space(ArgT0&& arg0, ArgT... args) {
- 
- space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.get_next_object_arguments.space)
-}
-inline std::string* get_next_object_arguments::mutable_space() {
-  std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_next_object_arguments.space)
-  return _s;
-}
-inline const std::string& get_next_object_arguments::_internal_space() const {
-  return space_.Get();
-}
-inline void get_next_object_arguments::_internal_set_space(const std::string& value) {
-  
-  space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* get_next_object_arguments::_internal_mutable_space() {
-  
-  return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* get_next_object_arguments::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_next_object_arguments.space)
-  return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void get_next_object_arguments::set_allocated_space(std::string* space) {
-  if (space != nullptr) {
+inline void get_next_object_arguments::unsafe_arena_set_allocated_space(
+    ::koinos::chain::object_space* space) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(space_);
+  }
+  space_ = space;
+  if (space) {
     
   } else {
     
   }
-  space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
-      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_next_object_arguments.space)
+}
+inline ::koinos::chain::object_space* get_next_object_arguments::release_space() {
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::chain::object_space* get_next_object_arguments::unsafe_arena_release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_next_object_arguments.space)
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+  return temp;
+}
+inline ::koinos::chain::object_space* get_next_object_arguments::_internal_mutable_space() {
+  
+  if (space_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::object_space>(GetArenaForAllocation());
+    space_ = p;
+  }
+  return space_;
+}
+inline ::koinos::chain::object_space* get_next_object_arguments::mutable_space() {
+  ::koinos::chain::object_space* _msg = _internal_mutable_space();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_next_object_arguments.space)
+  return _msg;
+}
+inline void get_next_object_arguments::set_allocated_space(::koinos::chain::object_space* space) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete space_;
+  }
+  if (space) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::object_space>::GetOwningArena(space);
+    if (message_arena != submessage_arena) {
+      space = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, space, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  space_ = space;
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_next_object_arguments.space)
 }
 
@@ -11852,49 +12482,93 @@ inline void get_next_object_result::set_allocated_value(std::string* value) {
 
 // get_prev_object_arguments
 
-// bytes space = 1;
-inline void get_prev_object_arguments::clear_space() {
-  space_.ClearToEmpty();
+// .koinos.chain.object_space space = 1;
+inline bool get_prev_object_arguments::_internal_has_space() const {
+  return this != internal_default_instance() && space_ != nullptr;
 }
-inline const std::string& get_prev_object_arguments::space() const {
+inline bool get_prev_object_arguments::has_space() const {
+  return _internal_has_space();
+}
+inline void get_prev_object_arguments::clear_space() {
+  if (GetArenaForAllocation() == nullptr && space_ != nullptr) {
+    delete space_;
+  }
+  space_ = nullptr;
+}
+inline const ::koinos::chain::object_space& get_prev_object_arguments::_internal_space() const {
+  const ::koinos::chain::object_space* p = space_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::object_space&>(
+      ::koinos::chain::_object_space_default_instance_);
+}
+inline const ::koinos::chain::object_space& get_prev_object_arguments::space() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_prev_object_arguments.space)
   return _internal_space();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void get_prev_object_arguments::set_space(ArgT0&& arg0, ArgT... args) {
- 
- space_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.get_prev_object_arguments.space)
-}
-inline std::string* get_prev_object_arguments::mutable_space() {
-  std::string* _s = _internal_mutable_space();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_prev_object_arguments.space)
-  return _s;
-}
-inline const std::string& get_prev_object_arguments::_internal_space() const {
-  return space_.Get();
-}
-inline void get_prev_object_arguments::_internal_set_space(const std::string& value) {
-  
-  space_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* get_prev_object_arguments::_internal_mutable_space() {
-  
-  return space_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* get_prev_object_arguments::release_space() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_prev_object_arguments.space)
-  return space_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void get_prev_object_arguments::set_allocated_space(std::string* space) {
-  if (space != nullptr) {
+inline void get_prev_object_arguments::unsafe_arena_set_allocated_space(
+    ::koinos::chain::object_space* space) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(space_);
+  }
+  space_ = space;
+  if (space) {
     
   } else {
     
   }
-  space_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), space,
-      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_prev_object_arguments.space)
+}
+inline ::koinos::chain::object_space* get_prev_object_arguments::release_space() {
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::chain::object_space* get_prev_object_arguments::unsafe_arena_release_space() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_prev_object_arguments.space)
+  
+  ::koinos::chain::object_space* temp = space_;
+  space_ = nullptr;
+  return temp;
+}
+inline ::koinos::chain::object_space* get_prev_object_arguments::_internal_mutable_space() {
+  
+  if (space_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::object_space>(GetArenaForAllocation());
+    space_ = p;
+  }
+  return space_;
+}
+inline ::koinos::chain::object_space* get_prev_object_arguments::mutable_space() {
+  ::koinos::chain::object_space* _msg = _internal_mutable_space();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_prev_object_arguments.space)
+  return _msg;
+}
+inline void get_prev_object_arguments::set_allocated_space(::koinos::chain::object_space* space) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete space_;
+  }
+  if (space) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::object_space>::GetOwningArena(space);
+    if (message_arena != submessage_arena) {
+      space = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, space, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  space_ = space;
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_prev_object_arguments.space)
 }
 
@@ -13400,70 +14074,94 @@ inline void get_last_irreversible_block_result::set_value(::PROTOBUF_NAMESPACE_I
 
 // get_caller_result
 
-// bytes caller = 1;
-inline void get_caller_result::clear_caller() {
-  caller_.ClearToEmpty();
+// .koinos.chain.caller_data value = 1;
+inline bool get_caller_result::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
 }
-inline const std::string& get_caller_result::caller() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.get_caller_result.caller)
-  return _internal_caller();
+inline bool get_caller_result::has_value() const {
+  return _internal_has_value();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void get_caller_result::set_caller(ArgT0&& arg0, ArgT... args) {
- 
- caller_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.get_caller_result.caller)
+inline void get_caller_result::clear_value() {
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
+  }
+  value_ = nullptr;
 }
-inline std::string* get_caller_result::mutable_caller() {
-  std::string* _s = _internal_mutable_caller();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_caller_result.caller)
-  return _s;
+inline const ::koinos::chain::caller_data& get_caller_result::_internal_value() const {
+  const ::koinos::chain::caller_data* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::caller_data&>(
+      ::koinos::chain::_caller_data_default_instance_);
 }
-inline const std::string& get_caller_result::_internal_caller() const {
-  return caller_.Get();
+inline const ::koinos::chain::caller_data& get_caller_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_caller_result.value)
+  return _internal_value();
 }
-inline void get_caller_result::_internal_set_caller(const std::string& value) {
-  
-  caller_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* get_caller_result::_internal_mutable_caller() {
-  
-  return caller_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* get_caller_result::release_caller() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_caller_result.caller)
-  return caller_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void get_caller_result::set_allocated_caller(std::string* caller) {
-  if (caller != nullptr) {
+inline void get_caller_result::unsafe_arena_set_allocated_value(
+    ::koinos::chain::caller_data* value) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  value_ = value;
+  if (value) {
     
   } else {
     
   }
-  caller_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), caller,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_caller_result.caller)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_caller_result.value)
 }
-
-// .koinos.chain.privilege caller_privilege = 2;
-inline void get_caller_result::clear_caller_privilege() {
-  caller_privilege_ = 0;
-}
-inline ::koinos::chain::privilege get_caller_result::_internal_caller_privilege() const {
-  return static_cast< ::koinos::chain::privilege >(caller_privilege_);
-}
-inline ::koinos::chain::privilege get_caller_result::caller_privilege() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.get_caller_result.caller_privilege)
-  return _internal_caller_privilege();
-}
-inline void get_caller_result::_internal_set_caller_privilege(::koinos::chain::privilege value) {
+inline ::koinos::chain::caller_data* get_caller_result::release_value() {
   
-  caller_privilege_ = value;
+  ::koinos::chain::caller_data* temp = value_;
+  value_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline void get_caller_result::set_caller_privilege(::koinos::chain::privilege value) {
-  _internal_set_caller_privilege(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.get_caller_result.caller_privilege)
+inline ::koinos::chain::caller_data* get_caller_result::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_caller_result.value)
+  
+  ::koinos::chain::caller_data* temp = value_;
+  value_ = nullptr;
+  return temp;
+}
+inline ::koinos::chain::caller_data* get_caller_result::_internal_mutable_value() {
+  
+  if (value_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::caller_data>(GetArenaForAllocation());
+    value_ = p;
+  }
+  return value_;
+}
+inline ::koinos::chain::caller_data* get_caller_result::mutable_value() {
+  ::koinos::chain::caller_data* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_caller_result.value)
+  return _msg;
+}
+inline void get_caller_result::set_allocated_value(::koinos::chain::caller_data* value) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete value_;
+  }
+  if (value) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::caller_data>::GetOwningArena(value);
+    if (message_arena != submessage_arena) {
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_caller_result.value)
 }
 
 // -------------------------------------------------------------------
@@ -13705,6 +14403,10 @@ inline void get_account_nonce_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

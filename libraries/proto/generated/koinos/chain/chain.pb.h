@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
+#include "koinos/options.pb.h"
 #include "koinos/common.pb.h"
 #include "koinos/protocol/protocol.pb.h"
 // @@protoc_insertion_point(includes)
@@ -826,7 +827,7 @@ class caller_data final :
     kCallerFieldNumber = 1,
     kCallerPrivilegeFieldNumber = 2,
   };
-  // bytes caller = 1;
+  // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_caller();
   const std::string& caller() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4749,7 +4750,7 @@ class call_contract_arguments final :
     kArgsFieldNumber = 3,
     kEntryPointFieldNumber = 2,
   };
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7141,7 +7142,7 @@ class recover_public_key_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7433,7 +7434,7 @@ class get_transaction_payer_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7577,7 +7578,7 @@ class get_account_rc_arguments final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7861,7 +7862,7 @@ class consume_account_rc_arguments final :
     kAccountFieldNumber = 1,
     kValueFieldNumber = 2,
   };
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -9554,7 +9555,7 @@ class require_authority_arguments final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10220,7 +10221,7 @@ class get_contract_id_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10364,7 +10365,7 @@ class get_account_nonce_arguments final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10759,7 +10760,7 @@ inline void head_info::set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint
 
 // caller_data
 
-// bytes caller = 1;
+// bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void caller_data::clear_caller() {
   caller_.ClearToEmpty();
 }
@@ -12692,7 +12693,7 @@ inline void get_prev_object_result::set_allocated_value(std::string* value) {
 
 // call_contract_arguments
 
-// bytes contract_id = 1;
+// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
 inline void call_contract_arguments::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -13384,7 +13385,7 @@ inline void recover_public_key_arguments::set_allocated_digest(std::string* dige
 
 // recover_public_key_result
 
-// bytes value = 1;
+// bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void recover_public_key_result::clear_value() {
   value_.ClearToEmpty();
 }
@@ -13524,7 +13525,7 @@ inline void get_transaction_payer_arguments::set_allocated_transaction(::koinos:
 
 // get_transaction_payer_result
 
-// bytes value = 1;
+// bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void get_transaction_payer_result::clear_value() {
   value_.ClearToEmpty();
 }
@@ -13574,7 +13575,7 @@ inline void get_transaction_payer_result::set_allocated_value(std::string* value
 
 // get_account_rc_arguments
 
-// bytes account = 1;
+// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void get_account_rc_arguments::clear_account() {
   account_.ClearToEmpty();
 }
@@ -13648,7 +13649,7 @@ inline void get_account_rc_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 val
 
 // consume_account_rc_arguments
 
-// bytes account = 1;
+// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void consume_account_rc_arguments::clear_account() {
   account_.ClearToEmpty();
 }
@@ -14168,7 +14169,7 @@ inline void get_caller_result::set_allocated_value(::koinos::chain::caller_data*
 
 // require_authority_arguments
 
-// bytes account = 1;
+// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void require_authority_arguments::clear_account() {
   account_.ClearToEmpty();
 }
@@ -14280,7 +14281,7 @@ inline void get_transaction_signature_result::set_allocated_value(std::string* v
 
 // get_contract_id_result
 
-// bytes value = 1;
+// bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
 inline void get_contract_id_result::clear_value() {
   value_.ClearToEmpty();
 }
@@ -14330,7 +14331,7 @@ inline void get_contract_id_result::set_allocated_value(std::string* value) {
 
 // get_account_nonce_arguments
 
-// bytes account = 1;
+// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void get_account_nonce_arguments::clear_account() {
   account_.ClearToEmpty();
 }

@@ -193,46 +193,48 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n$koinos/rpc/mempool/mempool_rpc.proto\022\022"
-  "koinos.rpc.mempool\032\036koinos/protocol/prot"
-  "ocol.proto\032\024koinos/rpc/rpc.proto\"\257\001\n\023pen"
-  "ding_transaction\0221\n\013transaction\030\001 \001(\0132\034."
-  "koinos.protocol.transaction\022\035\n\021disk_stor"
-  "age_used\030\002 \001(\004B\0020\001\022\"\n\026network_bandwidth_"
-  "used\030\003 \001(\004B\0020\001\022\"\n\026compute_bandwidth_used"
-  "\030\004 \001(\004B\0020\001\"h\n\'check_pending_account_reso"
-  "urces_request\022\r\n\005payer\030\001 \001(\014\022\030\n\014max_paye"
-  "r_rc\030\002 \001(\004B\0020\001\022\024\n\010rc_limit\030\003 \001(\004B\0020\001\";\n("
-  "check_pending_account_resources_response"
-  "\022\017\n\007success\030\001 \001(\010\"5\n get_pending_transac"
-  "tions_request\022\021\n\005limit\030\001 \001(\004B\0020\001\"j\n!get_"
-  "pending_transactions_response\022E\n\024pending"
-  "_transactions\030\001 \003(\0132\'.koinos.rpc.mempool"
-  ".pending_transaction\"\214\002\n\017mempool_request"
-  "\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved"
-  "_rpcH\000\022f\n\037check_pending_account_resource"
-  "s\030\002 \001(\0132;.koinos.rpc.mempool.check_pendi"
-  "ng_account_resources_requestH\000\022X\n\030get_pe"
-  "nding_transactions\030\003 \001(\01324.koinos.rpc.me"
-  "mpool.get_pending_transactions_requestH\000"
-  "B\t\n\007request\"\275\002\n\020mempool_response\022,\n\010rese"
-  "rved\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022+"
-  "\n\005error\030\002 \001(\0132\032.koinos.rpc.error_respons"
-  "eH\000\022g\n\037check_pending_account_resources\030\003"
-  " \001(\0132<.koinos.rpc.mempool.check_pending_"
-  "account_resources_responseH\000\022Y\n\030get_pend"
-  "ing_transactions\030\004 \001(\01325.koinos.rpc.memp"
-  "ool.get_pending_transactions_responseH\000B"
-  "\n\n\010responseB:Z8github.com/koinos/koinos-"
-  "proto-golang/koinos/rpc/mempoolb\006proto3"
+  "koinos.rpc.mempool\032\024koinos/options.proto"
+  "\032\036koinos/protocol/protocol.proto\032\024koinos"
+  "/rpc/rpc.proto\"\257\001\n\023pending_transaction\0221"
+  "\n\013transaction\030\001 \001(\0132\034.koinos.protocol.tr"
+  "ansaction\022\035\n\021disk_storage_used\030\002 \001(\004B\0020\001"
+  "\022\"\n\026network_bandwidth_used\030\003 \001(\004B\0020\001\022\"\n\026"
+  "compute_bandwidth_used\030\004 \001(\004B\0020\001\"n\n\'chec"
+  "k_pending_account_resources_request\022\023\n\005p"
+  "ayer\030\001 \001(\014B\004\200\265\030\006\022\030\n\014max_payer_rc\030\002 \001(\004B\002"
+  "0\001\022\024\n\010rc_limit\030\003 \001(\004B\0020\001\";\n(check_pendin"
+  "g_account_resources_response\022\017\n\007success\030"
+  "\001 \001(\010\"5\n get_pending_transactions_reques"
+  "t\022\021\n\005limit\030\001 \001(\004B\0020\001\"j\n!get_pending_tran"
+  "sactions_response\022E\n\024pending_transaction"
+  "s\030\001 \003(\0132\'.koinos.rpc.mempool.pending_tra"
+  "nsaction\"\214\002\n\017mempool_request\022,\n\010reserved"
+  "\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022f\n\037ch"
+  "eck_pending_account_resources\030\002 \001(\0132;.ko"
+  "inos.rpc.mempool.check_pending_account_r"
+  "esources_requestH\000\022X\n\030get_pending_transa"
+  "ctions\030\003 \001(\01324.koinos.rpc.mempool.get_pe"
+  "nding_transactions_requestH\000B\t\n\007request\""
+  "\275\002\n\020mempool_response\022,\n\010reserved\030\001 \001(\0132\030"
+  ".koinos.rpc.reserved_rpcH\000\022+\n\005error\030\002 \001("
+  "\0132\032.koinos.rpc.error_responseH\000\022g\n\037check"
+  "_pending_account_resources\030\003 \001(\0132<.koino"
+  "s.rpc.mempool.check_pending_account_reso"
+  "urces_responseH\000\022Y\n\030get_pending_transact"
+  "ions\030\004 \001(\01325.koinos.rpc.mempool.get_pend"
+  "ing_transactions_responseH\000B\n\n\010responseB"
+  ":Z8github.com/koinos/koinos-proto-golang"
+  "/koinos/rpc/mempoolb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[3] = {
+  &::descriptor_table_koinos_2foptions_2eproto,
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, 1279, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
-  &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 2, 7,
+  false, false, 1307, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 3, 7,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
 };
@@ -613,7 +615,7 @@ const char* check_pending_account_resources_request::_InternalParse(const char* 
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes payer = 1;
+      // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_payer();
@@ -664,7 +666,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes payer = 1;
+  // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_payer().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_payer(), target);
@@ -698,7 +700,7 @@ size_t check_pending_account_resources_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes payer = 1;
+  // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_payer().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

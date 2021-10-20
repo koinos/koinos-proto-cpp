@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "koinos/options.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_koinos_2fcontracts_2ftoken_2ftoken_2eproto
@@ -1318,7 +1319,7 @@ class balance_of_arguments final :
   enum : int {
     kOwnerFieldNumber = 1,
   };
-  // bytes owner = 1;
+  // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_owner();
   const std::string& owner() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1603,7 +1604,7 @@ class transfer_arguments final :
     kToFieldNumber = 2,
     kValueFieldNumber = 3,
   };
-  // bytes from = 1;
+  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_from();
   const std::string& from() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1617,7 +1618,7 @@ class transfer_arguments final :
   std::string* _internal_mutable_from();
   public:
 
-  // bytes to = 2;
+  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_to();
   const std::string& to() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1912,7 +1913,7 @@ class mint_arguments final :
     kToFieldNumber = 1,
     kValueFieldNumber = 2,
   };
-  // bytes to = 1;
+  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_to();
   const std::string& to() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2561,7 +2562,7 @@ inline void total_supply_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value
 
 // balance_of_arguments
 
-// bytes owner = 1;
+// bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void balance_of_arguments::clear_owner() {
   owner_.ClearToEmpty();
 }
@@ -2635,7 +2636,7 @@ inline void balance_of_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) 
 
 // transfer_arguments
 
-// bytes from = 1;
+// bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void transfer_arguments::clear_from() {
   from_.ClearToEmpty();
 }
@@ -2681,7 +2682,7 @@ inline void transfer_arguments::set_allocated_from(std::string* from) {
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.token.transfer_arguments.from)
 }
 
-// bytes to = 2;
+// bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void transfer_arguments::clear_to() {
   to_.ClearToEmpty();
 }
@@ -2775,7 +2776,7 @@ inline void transfer_result::set_value(bool value) {
 
 // mint_arguments
 
-// bytes to = 1;
+// bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void mint_arguments::clear_to() {
   to_.ClearToEmpty();
 }

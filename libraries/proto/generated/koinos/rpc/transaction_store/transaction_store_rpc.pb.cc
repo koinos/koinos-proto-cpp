@@ -122,34 +122,35 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n8koinos/rpc/transaction_store/transacti"
   "on_store_rpc.proto\022\034koinos.rpc.transacti"
-  "on_store\032\024koinos/rpc/rpc.proto\0320koinos/t"
-  "ransaction_store/transaction_store.proto"
-  "\"9\n\036get_transactions_by_id_request\022\027\n\017tr"
-  "ansaction_ids\030\001 \003(\014\"c\n\037get_transactions_"
-  "by_id_response\022@\n\014transactions\030\001 \003(\0132*.k"
-  "oinos.transaction_store.transaction_item"
-  "\"\264\001\n\031transaction_store_request\022,\n\010reserv"
-  "ed\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022^\n\026"
-  "get_transactions_by_id\030\002 \001(\0132<.koinos.rp"
-  "c.transaction_store.get_transactions_by_"
-  "id_requestH\000B\t\n\007request\"\344\001\n\032transaction_"
-  "store_response\022,\n\010reserved\030\001 \001(\0132\030.koino"
-  "s.rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.ko"
-  "inos.rpc.error_responseH\000\022_\n\026get_transac"
-  "tions_by_id\030\003 \001(\0132=.koinos.rpc.transacti"
-  "on_store.get_transactions_by_id_response"
-  "H\000B\n\n\010responseBDZBgithub.com/koinos/koin"
-  "os-proto-golang/koinos/rpc/transaction_s"
-  "toreb\006proto3"
+  "on_store\032\024koinos/options.proto\032\024koinos/r"
+  "pc/rpc.proto\0320koinos/transaction_store/t"
+  "ransaction_store.proto\"\?\n\036get_transactio"
+  "ns_by_id_request\022\035\n\017transaction_ids\030\001 \003("
+  "\014B\004\200\265\030\004\"c\n\037get_transactions_by_id_respon"
+  "se\022@\n\014transactions\030\001 \003(\0132*.koinos.transa"
+  "ction_store.transaction_item\"\264\001\n\031transac"
+  "tion_store_request\022,\n\010reserved\030\001 \001(\0132\030.k"
+  "oinos.rpc.reserved_rpcH\000\022^\n\026get_transact"
+  "ions_by_id\030\002 \001(\0132<.koinos.rpc.transactio"
+  "n_store.get_transactions_by_id_requestH\000"
+  "B\t\n\007request\"\344\001\n\032transaction_store_respon"
+  "se\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserv"
+  "ed_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.err"
+  "or_responseH\000\022_\n\026get_transactions_by_id\030"
+  "\003 \001(\0132=.koinos.rpc.transaction_store.get"
+  "_transactions_by_id_responseH\000B\n\n\010respon"
+  "seBDZBgithub.com/koinos/koinos-proto-gol"
+  "ang/koinos/rpc/transaction_storeb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps[3] = {
+  &::descriptor_table_koinos_2foptions_2eproto,
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
   &::descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = {
-  false, false, 812, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
-  &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps, 2, 4,
+  false, false, 840, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto,
 };
@@ -226,7 +227,7 @@ const char* get_transactions_by_id_request::_InternalParse(const char* ptr, ::PR
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated bytes transaction_ids = 1;
+      // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -268,7 +269,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated bytes transaction_ids = 1;
+  // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
   for (int i = 0, n = this->_internal_transaction_ids_size(); i < n; i++) {
     const auto& s = this->_internal_transaction_ids(i);
     target = stream->WriteBytes(1, s, target);
@@ -290,7 +291,7 @@ size_t get_transactions_by_id_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes transaction_ids = 1;
+  // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(transaction_ids_.size());
   for (int i = 0, n = transaction_ids_.size(); i < n; i++) {

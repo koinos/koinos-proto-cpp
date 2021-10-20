@@ -55,15 +55,19 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_koinos_2fcommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\023koinos/common.proto\022\006koinos\"B\n\016block_t"
-  "opology\022\n\n\002id\030\001 \001(\014\022\022\n\006height\030\002 \001(\004B\0020\001\022"
-  "\020\n\010previous\030\003 \001(\014B.Z,github.com/koinos/k"
-  "oinos-proto-golang/koinosb\006proto3"
+  "\n\023koinos/common.proto\022\006koinos\032\024koinos/op"
+  "tions.proto\"N\n\016block_topology\022\020\n\002id\030\001 \001("
+  "\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\026\n\010previous\030"
+  "\003 \001(\014B\004\200\265\030\003B.Z,github.com/koinos/koinos-"
+  "proto-golang/koinosb\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcommon_2eproto_deps[1] = {
+  &::descriptor_table_koinos_2foptions_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcommon_2eproto = {
-  false, false, 153, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
-  &descriptor_table_koinos_2fcommon_2eproto_once, nullptr, 0, 1,
+  false, false, 187, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
+  &descriptor_table_koinos_2fcommon_2eproto_once, descriptor_table_koinos_2fcommon_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcommon_2eproto::offsets,
   file_level_metadata_koinos_2fcommon_2eproto, file_level_enum_descriptors_koinos_2fcommon_2eproto, file_level_service_descriptors_koinos_2fcommon_2eproto,
 };
@@ -154,7 +158,7 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes id = 1;
+      // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -169,7 +173,7 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes previous = 3;
+      // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_previous();
@@ -206,7 +210,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_id(), target);
@@ -218,7 +222,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_height(), target);
   }
 
-  // bytes previous = 3;
+  // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_previous(), target);
@@ -240,14 +244,14 @@ size_t block_topology::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_id());
   }
 
-  // bytes previous = 3;
+  // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

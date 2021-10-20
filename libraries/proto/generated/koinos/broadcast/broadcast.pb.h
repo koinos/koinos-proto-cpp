@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/common.pb.h"
+#include "koinos/options.pb.h"
 #include "koinos/protocol/protocol.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -206,7 +207,7 @@ class transaction_accepted final :
     kNetworkBandwidthUsedFieldNumber = 7,
     kComputeBandwidthUsedFieldNumber = 8,
   };
-  // bytes payer = 2;
+  // bytes payer = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_payer();
   const std::string& payer() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -871,7 +872,7 @@ inline void transaction_accepted::set_allocated_transaction(::koinos::protocol::
   // @@protoc_insertion_point(field_set_allocated:koinos.broadcast.transaction_accepted.transaction)
 }
 
-// bytes payer = 2;
+// bytes payer = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void transaction_accepted::clear_payer() {
   payer_.ClearToEmpty();
 }

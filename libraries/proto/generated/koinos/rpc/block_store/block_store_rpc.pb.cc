@@ -256,58 +256,60 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n,koinos/rpc/block_store/block_store_rpc"
   ".proto\022\026koinos.rpc.block_store\032$koinos/b"
-  "lock_store/block_store.proto\032\023koinos/com"
-  "mon.proto\032\036koinos/protocol/protocol.prot"
-  "o\032\024koinos/rpc/rpc.proto\"Z\n\030get_blocks_by"
-  "_id_request\022\020\n\010block_id\030\001 \003(\014\022\024\n\014return_"
-  "block\030\002 \001(\010\022\026\n\016return_receipt\030\003 \001(\010\"P\n\031g"
-  "et_blocks_by_id_response\0223\n\013block_items\030"
-  "\001 \003(\0132\036.koinos.block_store.block_item\"\232\001"
-  "\n\034get_blocks_by_height_request\022\025\n\rhead_b"
-  "lock_id\030\001 \001(\014\022!\n\025ancestor_start_height\030\002"
-  " \001(\004B\0020\001\022\022\n\nnum_blocks\030\003 \001(\r\022\024\n\014return_b"
-  "lock\030\004 \001(\010\022\026\n\016return_receipt\030\005 \001(\010\"T\n\035ge"
-  "t_blocks_by_height_response\0223\n\013block_ite"
-  "ms\030\001 \003(\0132\036.koinos.block_store.block_item"
-  "\"A\n\021add_block_request\022,\n\014block_to_add\030\001 "
-  "\001(\0132\026.koinos.protocol.block\"\024\n\022add_block"
-  "_response\"\033\n\031get_highest_block_request\"F"
-  "\n\032get_highest_block_response\022(\n\010topology"
-  "\030\001 \001(\0132\026.koinos.block_topology\"\202\003\n\023block"
-  "_store_request\022,\n\010reserved\030\001 \001(\0132\030.koino"
-  "s.rpc.reserved_rpcH\000\022L\n\020get_blocks_by_id"
-  "\030\002 \001(\01320.koinos.rpc.block_store.get_bloc"
-  "ks_by_id_requestH\000\022T\n\024get_blocks_by_heig"
-  "ht\030\003 \001(\01324.koinos.rpc.block_store.get_bl"
-  "ocks_by_height_requestH\000\022>\n\tadd_block\030\004 "
-  "\001(\0132).koinos.rpc.block_store.add_block_r"
-  "equestH\000\022N\n\021get_highest_block\030\005 \001(\01321.ko"
-  "inos.rpc.block_store.get_highest_block_r"
-  "equestH\000B\t\n\007request\"\265\003\n\024block_store_resp"
-  "onse\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.rese"
-  "rved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.e"
-  "rror_responseH\000\022M\n\020get_blocks_by_id\030\003 \001("
-  "\01321.koinos.rpc.block_store.get_blocks_by"
-  "_id_responseH\000\022U\n\024get_blocks_by_height\030\004"
-  " \001(\01325.koinos.rpc.block_store.get_blocks"
-  "_by_height_responseH\000\022\?\n\tadd_block\030\005 \001(\013"
-  "2*.koinos.rpc.block_store.add_block_resp"
-  "onseH\000\022O\n\021get_highest_block\030\006 \001(\01322.koin"
-  "os.rpc.block_store.get_highest_block_res"
-  "ponseH\000B\n\n\010responseB>Z<github.com/koinos"
-  "/koinos-proto-golang/koinos/rpc/block_st"
-  "oreb\006proto3"
+  "lock_store/block_store.proto\032\024koinos/opt"
+  "ions.proto\032\023koinos/common.proto\032\036koinos/"
+  "protocol/protocol.proto\032\024koinos/rpc/rpc."
+  "proto\"`\n\030get_blocks_by_id_request\022\026\n\010blo"
+  "ck_id\030\001 \003(\014B\004\200\265\030\003\022\024\n\014return_block\030\002 \001(\010\022"
+  "\026\n\016return_receipt\030\003 \001(\010\"P\n\031get_blocks_by"
+  "_id_response\0223\n\013block_items\030\001 \003(\0132\036.koin"
+  "os.block_store.block_item\"\240\001\n\034get_blocks"
+  "_by_height_request\022\033\n\rhead_block_id\030\001 \001("
+  "\014B\004\200\265\030\003\022!\n\025ancestor_start_height\030\002 \001(\004B\002"
+  "0\001\022\022\n\nnum_blocks\030\003 \001(\r\022\024\n\014return_block\030\004"
+  " \001(\010\022\026\n\016return_receipt\030\005 \001(\010\"T\n\035get_bloc"
+  "ks_by_height_response\0223\n\013block_items\030\001 \003"
+  "(\0132\036.koinos.block_store.block_item\"A\n\021ad"
+  "d_block_request\022,\n\014block_to_add\030\001 \001(\0132\026."
+  "koinos.protocol.block\"\024\n\022add_block_respo"
+  "nse\"\033\n\031get_highest_block_request\"F\n\032get_"
+  "highest_block_response\022(\n\010topology\030\001 \001(\013"
+  "2\026.koinos.block_topology\"\202\003\n\023block_store"
+  "_request\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc."
+  "reserved_rpcH\000\022L\n\020get_blocks_by_id\030\002 \001(\013"
+  "20.koinos.rpc.block_store.get_blocks_by_"
+  "id_requestH\000\022T\n\024get_blocks_by_height\030\003 \001"
+  "(\01324.koinos.rpc.block_store.get_blocks_b"
+  "y_height_requestH\000\022>\n\tadd_block\030\004 \001(\0132)."
+  "koinos.rpc.block_store.add_block_request"
+  "H\000\022N\n\021get_highest_block\030\005 \001(\01321.koinos.r"
+  "pc.block_store.get_highest_block_request"
+  "H\000B\t\n\007request\"\265\003\n\024block_store_response\022,"
+  "\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved_r"
+  "pcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.error_r"
+  "esponseH\000\022M\n\020get_blocks_by_id\030\003 \001(\01321.ko"
+  "inos.rpc.block_store.get_blocks_by_id_re"
+  "sponseH\000\022U\n\024get_blocks_by_height\030\004 \001(\01325"
+  ".koinos.rpc.block_store.get_blocks_by_he"
+  "ight_responseH\000\022\?\n\tadd_block\030\005 \001(\0132*.koi"
+  "nos.rpc.block_store.add_block_responseH\000"
+  "\022O\n\021get_highest_block\030\006 \001(\01322.koinos.rpc"
+  ".block_store.get_highest_block_responseH"
+  "\000B\n\n\010responseB>Z<github.com/koinos/koino"
+  "s-proto-golang/koinos/rpc/block_storeb\006p"
+  "roto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps[4] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,
   &::descriptor_table_koinos_2fcommon_2eproto,
+  &::descriptor_table_koinos_2foptions_2eproto,
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto = {
-  false, false, 1691, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
-  &descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps, 4, 10,
+  false, false, 1725, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps, 5, 10,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto,
 };
@@ -394,7 +396,7 @@ const char* get_blocks_by_id_request::_InternalParse(const char* ptr, ::PROTOBUF
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated bytes block_id = 1;
+      // repeated bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -450,7 +452,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated bytes block_id = 1;
+  // repeated bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   for (int i = 0, n = this->_internal_block_id_size(); i < n; i++) {
     const auto& s = this->_internal_block_id(i);
     target = stream->WriteBytes(1, s, target);
@@ -484,7 +486,7 @@ size_t get_blocks_by_id_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes block_id = 1;
+  // repeated bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(block_id_.size());
   for (int i = 0, n = block_id_.size(); i < n; i++) {
@@ -840,7 +842,7 @@ const char* get_blocks_by_height_request::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes head_block_id = 1;
+      // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_head_block_id();
@@ -905,7 +907,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes head_block_id = 1;
+  // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_head_block_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_head_block_id(), target);
@@ -951,7 +953,7 @@ size_t get_blocks_by_height_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes head_block_id = 1;
+  // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_head_block_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "koinos/options.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_koinos_2fprotocol_2fprotocol_2eproto
@@ -238,7 +239,7 @@ class contract_call_bundle final :
     kContractIdFieldNumber = 1,
     kEntryPointFieldNumber = 2,
   };
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -575,7 +576,7 @@ class upload_contract_operation final :
     kContractIdFieldNumber = 1,
     kBytecodeFieldNumber = 2,
   };
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -736,7 +737,7 @@ class call_contract_operation final :
     kArgsFieldNumber = 3,
     kEntryPointFieldNumber = 2,
   };
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1572,7 +1573,7 @@ class transaction final :
     kPassiveFieldNumber = 3,
     kSignatureDataFieldNumber = 4,
   };
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
   void clear_id();
   const std::string& id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2065,7 +2066,7 @@ class block_header final :
     kHeightFieldNumber = 2,
     kTimestampFieldNumber = 3,
   };
-  // bytes previous = 1;
+  // bytes previous = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   void clear_previous();
   const std::string& previous() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2252,7 +2253,7 @@ class block final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::transaction >&
       transactions() const;
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   void clear_id();
   const std::string& id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2479,7 +2480,7 @@ class block_receipt final :
 #endif  // __GNUC__
 // contract_call_bundle
 
-// bytes contract_id = 1;
+// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
 inline void contract_call_bundle::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -2674,7 +2675,7 @@ inline system_call_target::TargetCase system_call_target::target_case() const {
 
 // upload_contract_operation
 
-// bytes contract_id = 1;
+// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
 inline void upload_contract_operation::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -2770,7 +2771,7 @@ inline void upload_contract_operation::set_allocated_bytecode(std::string* bytec
 
 // call_contract_operation
 
-// bytes contract_id = 1;
+// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
 inline void call_contract_operation::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -3323,7 +3324,7 @@ active_transaction_data::operations() const {
 
 // transaction
 
-// bytes id = 1;
+// bytes id = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
 inline void transaction::clear_id() {
   id_.ClearToEmpty();
 }
@@ -3657,7 +3658,7 @@ inline void active_block_data::set_allocated_signer(std::string* signer) {
 
 // block_header
 
-// bytes previous = 1;
+// bytes previous = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
 inline void block_header::clear_previous() {
   previous_.ClearToEmpty();
 }
@@ -3747,7 +3748,7 @@ inline void block_header::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // block
 
-// bytes id = 1;
+// bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
 inline void block::clear_id() {
   id_.ClearToEmpty();
 }

@@ -1463,125 +1463,128 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/chain.proto\022\014koinos.chain"
-  "\032\023koinos/common.proto\032\036koinos/protocol/p"
-  "rotocol.proto\"8\n\014object_space\022\016\n\006system\030"
-  "\001 \001(\010\022\014\n\004zone\030\002 \001(\014\022\n\n\002id\030\003 \001(\r\"|\n\thead_"
-  "info\022-\n\rhead_topology\030\001 \001(\0132\026.koinos.blo"
-  "ck_topology\022\033\n\017head_block_time\030\002 \001(\004B\0020\001"
-  "\022#\n\027last_irreversible_block\030\003 \001(\004B\0020\001\"P\n"
-  "\013caller_data\022\016\n\006caller\030\001 \001(\014\0221\n\020caller_p"
-  "rivilege\030\002 \001(\0162\027.koinos.chain.privilege\""
-  "\346\001\n\023resource_limit_data\022\036\n\022disk_storage_"
-  "limit\030\001 \001(\004B\0020\001\022\035\n\021disk_storage_cost\030\002 \001"
-  "(\004B\0020\001\022#\n\027network_bandwidth_limit\030\003 \001(\004B"
-  "\0020\001\022\"\n\026network_bandwidth_cost\030\004 \001(\004B\0020\001\022"
-  "#\n\027compute_bandwidth_limit\030\005 \001(\004B\0020\001\022\"\n\026"
-  "compute_bandwidth_cost\030\006 \001(\004B\0020\001\"#\n\020prin"
-  "ts_arguments\022\017\n\007message\030\001 \001(\t\"\017\n\rprints_"
-  "result\"Z\n verify_block_signature_argumen"
-  "ts\022\016\n\006digest\030\001 \001(\014\022\016\n\006active\030\002 \001(\014\022\026\n\016si"
-  "gnature_data\030\003 \001(\014\".\n\035verify_block_signa"
-  "ture_result\022\r\n\005value\030\001 \001(\010\"<\n\034verify_mer"
-  "kle_root_arguments\022\014\n\004root\030\001 \001(\014\022\016\n\006hash"
-  "es\030\002 \003(\014\"*\n\031verify_merkle_root_result\022\r\n"
-  "\005value\030\001 \001(\010\"\236\001\n\025apply_block_arguments\022%"
-  "\n\005block\030\001 \001(\0132\026.koinos.protocol.block\022\032\n"
-  "\022check_passive_data\030\002 \001(\010\022\035\n\025check_block"
-  "_signature\030\003 \001(\010\022#\n\033check_transaction_si"
-  "gnature\030\004 \001(\010\"\024\n\022apply_block_result\"P\n\033a"
-  "pply_transaction_arguments\0221\n\013transactio"
-  "n\030\001 \001(\0132\034.koinos.protocol.transaction\"\032\n"
-  "\030apply_transaction_result\"c\n)apply_uploa"
-  "d_contract_operation_arguments\0226\n\002op\030\001 \001"
-  "(\0132*.koinos.protocol.upload_contract_ope"
-  "ration\"(\n&apply_upload_contract_operatio"
-  "n_result\"_\n\'apply_call_contract_operatio"
-  "n_arguments\0224\n\002op\030\001 \001(\0132(.koinos.protoco"
-  "l.call_contract_operation\"&\n$apply_call_"
-  "contract_operation_result\"c\n)apply_set_s"
-  "ystem_call_operation_arguments\0226\n\002op\030\001 \001"
-  "(\0132*.koinos.protocol.set_system_call_ope"
-  "ration\"(\n&apply_set_system_call_operatio"
-  "n_result\"[\n\024put_object_arguments\022)\n\005spac"
-  "e\030\001 \001(\0132\032.koinos.chain.object_space\022\013\n\003k"
-  "ey\030\002 \001(\014\022\013\n\003obj\030\003 \001(\014\"\"\n\021put_object_resu"
-  "lt\022\r\n\005value\030\001 \001(\010\"h\n\024get_object_argument"
-  "s\022)\n\005space\030\001 \001(\0132\032.koinos.chain.object_s"
-  "pace\022\013\n\003key\030\002 \001(\014\022\030\n\020object_size_hint\030\003 "
-  "\001(\r\"\"\n\021get_object_result\022\r\n\005value\030\003 \001(\014\""
-  "m\n\031get_next_object_arguments\022)\n\005space\030\001 "
-  "\001(\0132\032.koinos.chain.object_space\022\013\n\003key\030\002"
-  " \001(\014\022\030\n\020object_size_hint\030\003 \001(\r\"\'\n\026get_ne"
-  "xt_object_result\022\r\n\005value\030\003 \001(\014\"m\n\031get_p"
-  "rev_object_arguments\022)\n\005space\030\001 \001(\0132\032.ko"
-  "inos.chain.object_space\022\013\n\003key\030\002 \001(\014\022\030\n\020"
-  "object_size_hint\030\003 \001(\r\"\'\n\026get_prev_objec"
-  "t_result\022\r\n\005value\030\003 \001(\014\"Q\n\027call_contract"
-  "_arguments\022\023\n\013contract_id\030\001 \001(\014\022\023\n\013entry"
-  "_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"%\n\024call_contr"
-  "act_result\022\r\n\005value\030\001 \001(\014\"\033\n\031get_entry_p"
-  "oint_arguments\"\'\n\026get_entry_point_result"
-  "\022\r\n\005value\030\001 \001(\r\"\'\n%get_contract_argument"
-  "s_size_arguments\"3\n\"get_contract_argumen"
-  "ts_size_result\022\r\n\005value\030\001 \001(\r\"\"\n get_con"
-  "tract_arguments_arguments\".\n\035get_contrac"
-  "t_arguments_result\022\r\n\005value\030\001 \001(\014\".\n\035set"
-  "_contract_result_arguments\022\r\n\005value\030\001 \001("
-  "\014\"\034\n\032set_contract_result_result\",\n\027exit_"
-  "contract_arguments\022\021\n\texit_code\030\001 \001(\r\"\026\n"
-  "\024exit_contract_result\"\031\n\027get_head_info_a"
-  "rguments\">\n\024get_head_info_result\022&\n\005valu"
-  "e\030\001 \001(\0132\027.koinos.chain.head_info\"A\n\016hash"
-  "_arguments\022\020\n\004code\030\001 \001(\004B\0020\001\022\013\n\003obj\030\002 \001("
-  "\014\022\020\n\004size\030\003 \001(\004B\0020\001\"\034\n\013hash_result\022\r\n\005va"
-  "lue\030\001 \001(\014\"F\n\034recover_public_key_argument"
-  "s\022\026\n\016signature_data\030\001 \001(\014\022\016\n\006digest\030\002 \001("
-  "\014\"*\n\031recover_public_key_result\022\r\n\005value\030"
-  "\001 \001(\014\"T\n\037get_transaction_payer_arguments"
+  "\032\024koinos/options.proto\032\023koinos/common.pr"
+  "oto\032\036koinos/protocol/protocol.proto\"8\n\014o"
+  "bject_space\022\016\n\006system\030\001 \001(\010\022\014\n\004zone\030\002 \001("
+  "\014\022\n\n\002id\030\003 \001(\r\"|\n\thead_info\022-\n\rhead_topol"
+  "ogy\030\001 \001(\0132\026.koinos.block_topology\022\033\n\017hea"
+  "d_block_time\030\002 \001(\004B\0020\001\022#\n\027last_irreversi"
+  "ble_block\030\003 \001(\004B\0020\001\"V\n\013caller_data\022\024\n\006ca"
+  "ller\030\001 \001(\014B\004\200\265\030\006\0221\n\020caller_privilege\030\002 \001"
+  "(\0162\027.koinos.chain.privilege\"\346\001\n\023resource"
+  "_limit_data\022\036\n\022disk_storage_limit\030\001 \001(\004B"
+  "\0020\001\022\035\n\021disk_storage_cost\030\002 \001(\004B\0020\001\022#\n\027ne"
+  "twork_bandwidth_limit\030\003 \001(\004B\0020\001\022\"\n\026netwo"
+  "rk_bandwidth_cost\030\004 \001(\004B\0020\001\022#\n\027compute_b"
+  "andwidth_limit\030\005 \001(\004B\0020\001\022\"\n\026compute_band"
+  "width_cost\030\006 \001(\004B\0020\001\"#\n\020prints_arguments"
+  "\022\017\n\007message\030\001 \001(\t\"\017\n\rprints_result\"Z\n ve"
+  "rify_block_signature_arguments\022\016\n\006digest"
+  "\030\001 \001(\014\022\016\n\006active\030\002 \001(\014\022\026\n\016signature_data"
+  "\030\003 \001(\014\".\n\035verify_block_signature_result\022"
+  "\r\n\005value\030\001 \001(\010\"<\n\034verify_merkle_root_arg"
+  "uments\022\014\n\004root\030\001 \001(\014\022\016\n\006hashes\030\002 \003(\014\"*\n\031"
+  "verify_merkle_root_result\022\r\n\005value\030\001 \001(\010"
+  "\"\236\001\n\025apply_block_arguments\022%\n\005block\030\001 \001("
+  "\0132\026.koinos.protocol.block\022\032\n\022check_passi"
+  "ve_data\030\002 \001(\010\022\035\n\025check_block_signature\030\003"
+  " \001(\010\022#\n\033check_transaction_signature\030\004 \001("
+  "\010\"\024\n\022apply_block_result\"P\n\033apply_transac"
+  "tion_arguments\0221\n\013transaction\030\001 \001(\0132\034.ko"
+  "inos.protocol.transaction\"\032\n\030apply_trans"
+  "action_result\"c\n)apply_upload_contract_o"
+  "peration_arguments\0226\n\002op\030\001 \001(\0132*.koinos."
+  "protocol.upload_contract_operation\"(\n&ap"
+  "ply_upload_contract_operation_result\"_\n\'"
+  "apply_call_contract_operation_arguments\022"
+  "4\n\002op\030\001 \001(\0132(.koinos.protocol.call_contr"
+  "act_operation\"&\n$apply_call_contract_ope"
+  "ration_result\"c\n)apply_set_system_call_o"
+  "peration_arguments\0226\n\002op\030\001 \001(\0132*.koinos."
+  "protocol.set_system_call_operation\"(\n&ap"
+  "ply_set_system_call_operation_result\"[\n\024"
+  "put_object_arguments\022)\n\005space\030\001 \001(\0132\032.ko"
+  "inos.chain.object_space\022\013\n\003key\030\002 \001(\014\022\013\n\003"
+  "obj\030\003 \001(\014\"\"\n\021put_object_result\022\r\n\005value\030"
+  "\001 \001(\010\"h\n\024get_object_arguments\022)\n\005space\030\001"
+  " \001(\0132\032.koinos.chain.object_space\022\013\n\003key\030"
+  "\002 \001(\014\022\030\n\020object_size_hint\030\003 \001(\r\"\"\n\021get_o"
+  "bject_result\022\r\n\005value\030\003 \001(\014\"m\n\031get_next_"
+  "object_arguments\022)\n\005space\030\001 \001(\0132\032.koinos"
+  ".chain.object_space\022\013\n\003key\030\002 \001(\014\022\030\n\020obje"
+  "ct_size_hint\030\003 \001(\r\"\'\n\026get_next_object_re"
+  "sult\022\r\n\005value\030\003 \001(\014\"m\n\031get_prev_object_a"
+  "rguments\022)\n\005space\030\001 \001(\0132\032.koinos.chain.o"
+  "bject_space\022\013\n\003key\030\002 \001(\014\022\030\n\020object_size_"
+  "hint\030\003 \001(\r\"\'\n\026get_prev_object_result\022\r\n\005"
+  "value\030\003 \001(\014\"W\n\027call_contract_arguments\022\031"
+  "\n\013contract_id\030\001 \001(\014B\004\200\265\030\005\022\023\n\013entry_point"
+  "\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"%\n\024call_contract_re"
+  "sult\022\r\n\005value\030\001 \001(\014\"\033\n\031get_entry_point_a"
+  "rguments\"\'\n\026get_entry_point_result\022\r\n\005va"
+  "lue\030\001 \001(\r\"\'\n%get_contract_arguments_size"
+  "_arguments\"3\n\"get_contract_arguments_siz"
+  "e_result\022\r\n\005value\030\001 \001(\r\"\"\n get_contract_"
+  "arguments_arguments\".\n\035get_contract_argu"
+  "ments_result\022\r\n\005value\030\001 \001(\014\".\n\035set_contr"
+  "act_result_arguments\022\r\n\005value\030\001 \001(\014\"\034\n\032s"
+  "et_contract_result_result\",\n\027exit_contra"
+  "ct_arguments\022\021\n\texit_code\030\001 \001(\r\"\026\n\024exit_"
+  "contract_result\"\031\n\027get_head_info_argumen"
+  "ts\">\n\024get_head_info_result\022&\n\005value\030\001 \001("
+  "\0132\027.koinos.chain.head_info\"A\n\016hash_argum"
+  "ents\022\020\n\004code\030\001 \001(\004B\0020\001\022\013\n\003obj\030\002 \001(\014\022\020\n\004s"
+  "ize\030\003 \001(\004B\0020\001\"\034\n\013hash_result\022\r\n\005value\030\001 "
+  "\001(\014\"F\n\034recover_public_key_arguments\022\026\n\016s"
+  "ignature_data\030\001 \001(\014\022\016\n\006digest\030\002 \001(\014\"0\n\031r"
+  "ecover_public_key_result\022\023\n\005value\030\001 \001(\014B"
+  "\004\200\265\030\006\"T\n\037get_transaction_payer_arguments"
   "\0221\n\013transaction\030\001 \001(\0132\034.koinos.protocol."
-  "transaction\"-\n\034get_transaction_payer_res"
-  "ult\022\r\n\005value\030\001 \001(\014\"+\n\030get_account_rc_arg"
-  "uments\022\017\n\007account\030\001 \001(\014\"*\n\025get_account_r"
-  "c_result\022\021\n\005value\030\001 \001(\004B\0020\001\"B\n\034consume_a"
-  "ccount_rc_arguments\022\017\n\007account\030\001 \001(\014\022\021\n\005"
-  "value\030\002 \001(\004B\0020\001\"*\n\031consume_account_rc_re"
-  "sult\022\r\n\005value\030\001 \001(\010\"\037\n\035get_resource_limi"
-  "ts_arguments\"N\n\032get_resource_limits_resu"
-  "lt\0220\n\005value\030\001 \001(\0132!.koinos.chain.resourc"
-  "e_limit_data\"\226\001\n!consume_block_resources"
-  "_arguments\022!\n\025disk_storage_consumed\030\001 \001("
-  "\004B\0020\001\022&\n\032network_bandwidth_consumed\030\002 \001("
-  "\004B\0020\001\022&\n\032compute_bandwidth_consumed\030\003 \001("
-  "\004B\0020\001\"/\n\036consume_block_resources_result\022"
-  "\r\n\005value\030\001 \001(\010\"W\n\"get_transaction_rc_lim"
-  "it_arguments\0221\n\013transaction\030\001 \001(\0132\034.koin"
-  "os.protocol.transaction\"4\n\037get_transacti"
-  "on_rc_limit_result\022\021\n\005value\030\001 \001(\004B\0020\001\"\'\n"
-  "%get_last_irreversible_block_arguments\"7"
-  "\n\"get_last_irreversible_block_result\022\021\n\005"
-  "value\030\001 \001(\004B\0020\001\"\026\n\024get_caller_arguments\""
-  "=\n\021get_caller_result\022(\n\005value\030\001 \001(\0132\031.ko"
-  "inos.chain.caller_data\".\n\033require_author"
-  "ity_arguments\022\017\n\007account\030\001 \001(\014\"\032\n\030requir"
-  "e_authority_result\"%\n#get_transaction_si"
-  "gnature_arguments\"1\n get_transaction_sig"
-  "nature_result\022\r\n\005value\030\001 \001(\014\"\033\n\031get_cont"
-  "ract_id_arguments\"\'\n\026get_contract_id_res"
-  "ult\022\r\n\005value\030\001 \001(\014\".\n\033get_account_nonce_"
-  "arguments\022\017\n\007account\030\001 \001(\014\"-\n\030get_accoun"
-  "t_nonce_result\022\021\n\005value\030\001 \001(\004B\0020\001*+\n\tpri"
-  "vilege\022\017\n\013kernel_mode\020\000\022\r\n\tuser_mode\020\001B4"
-  "Z2github.com/koinos/koinos-proto-golang/"
-  "koinos/chainb\006proto3"
+  "transaction\"3\n\034get_transaction_payer_res"
+  "ult\022\023\n\005value\030\001 \001(\014B\004\200\265\030\006\"1\n\030get_account_"
+  "rc_arguments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"*\n\025g"
+  "et_account_rc_result\022\021\n\005value\030\001 \001(\004B\0020\001\""
+  "H\n\034consume_account_rc_arguments\022\025\n\007accou"
+  "nt\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"*\n\031con"
+  "sume_account_rc_result\022\r\n\005value\030\001 \001(\010\"\037\n"
+  "\035get_resource_limits_arguments\"N\n\032get_re"
+  "source_limits_result\0220\n\005value\030\001 \001(\0132!.ko"
+  "inos.chain.resource_limit_data\"\226\001\n!consu"
+  "me_block_resources_arguments\022!\n\025disk_sto"
+  "rage_consumed\030\001 \001(\004B\0020\001\022&\n\032network_bandw"
+  "idth_consumed\030\002 \001(\004B\0020\001\022&\n\032compute_bandw"
+  "idth_consumed\030\003 \001(\004B\0020\001\"/\n\036consume_block"
+  "_resources_result\022\r\n\005value\030\001 \001(\010\"W\n\"get_"
+  "transaction_rc_limit_arguments\0221\n\013transa"
+  "ction\030\001 \001(\0132\034.koinos.protocol.transactio"
+  "n\"4\n\037get_transaction_rc_limit_result\022\021\n\005"
+  "value\030\001 \001(\004B\0020\001\"\'\n%get_last_irreversible"
+  "_block_arguments\"7\n\"get_last_irreversibl"
+  "e_block_result\022\021\n\005value\030\001 \001(\004B\0020\001\"\026\n\024get"
+  "_caller_arguments\"=\n\021get_caller_result\022("
+  "\n\005value\030\001 \001(\0132\031.koinos.chain.caller_data"
+  "\"4\n\033require_authority_arguments\022\025\n\007accou"
+  "nt\030\001 \001(\014B\004\200\265\030\006\"\032\n\030require_authority_resu"
+  "lt\"%\n#get_transaction_signature_argument"
+  "s\"1\n get_transaction_signature_result\022\r\n"
+  "\005value\030\001 \001(\014\"\033\n\031get_contract_id_argument"
+  "s\"-\n\026get_contract_id_result\022\023\n\005value\030\001 \001"
+  "(\014B\004\200\265\030\005\"4\n\033get_account_nonce_arguments\022"
+  "\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"-\n\030get_account_no"
+  "nce_result\022\021\n\005value\030\001 \001(\004B\0020\001*+\n\tprivile"
+  "ge\022\017\n\013kernel_mode\020\000\022\r\n\tuser_mode\020\001B4Z2gi"
+  "thub.com/koinos/koinos-proto-golang/koin"
+  "os/chainb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
+  &::descriptor_table_koinos_2foptions_2eproto,
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 4420, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
-  &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 2, 70,
+  false, false, 4496, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 3, 70,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
 };
@@ -2200,7 +2203,7 @@ const char* caller_data::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes caller = 1;
+      // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_caller();
@@ -2245,7 +2248,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes caller = 1;
+  // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_caller().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_caller(), target);
@@ -2274,7 +2277,7 @@ size_t caller_data::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes caller = 1;
+  // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_caller().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -7682,7 +7685,7 @@ const char* call_contract_arguments::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes contract_id = 1;
+      // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_contract_id();
@@ -7734,7 +7737,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contract_id(), target);
@@ -7768,7 +7771,7 @@ size_t call_contract_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -10872,7 +10875,7 @@ const char* recover_public_key_result::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes value = 1;
+      // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
@@ -10909,7 +10912,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_value().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_value(), target);
@@ -10931,7 +10934,7 @@ size_t recover_public_key_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_value().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -11273,7 +11276,7 @@ const char* get_transaction_payer_result::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes value = 1;
+      // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
@@ -11310,7 +11313,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_value().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_value(), target);
@@ -11332,7 +11335,7 @@ size_t get_transaction_payer_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_value().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -11468,7 +11471,7 @@ const char* get_account_rc_arguments::_InternalParse(const char* ptr, ::PROTOBUF
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1;
+      // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_account();
@@ -11505,7 +11508,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_account(), target);
@@ -11527,7 +11530,7 @@ size_t get_account_rc_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -11851,7 +11854,7 @@ const char* consume_account_rc_arguments::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1;
+      // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_account();
@@ -11895,7 +11898,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_account(), target);
@@ -11923,7 +11926,7 @@ size_t consume_account_rc_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -14114,7 +14117,7 @@ const char* require_authority_arguments::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1;
+      // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_account();
@@ -14151,7 +14154,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_account(), target);
@@ -14173,7 +14176,7 @@ size_t require_authority_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -14963,7 +14966,7 @@ const char* get_contract_id_result::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes value = 1;
+      // bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_value();
@@ -15000,7 +15003,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_value().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_value(), target);
@@ -15022,7 +15025,7 @@ size_t get_contract_id_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes value = 1;
+  // bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_value().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -15158,7 +15161,7 @@ const char* get_account_nonce_arguments::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1;
+      // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_account();
@@ -15195,7 +15198,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_account(), target);
@@ -15217,7 +15220,7 @@ size_t get_account_nonce_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

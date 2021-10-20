@@ -358,29 +358,33 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"koinos/contracts/token/token.proto\022\026ko"
-  "inos.contracts.token\"\020\n\016name_arguments\"\034"
-  "\n\013name_result\022\r\n\005value\030\001 \001(\t\"\022\n\020symbol_a"
-  "rguments\"\036\n\rsymbol_result\022\r\n\005value\030\001 \001(\t"
-  "\"\024\n\022decimals_arguments\" \n\017decimals_resul"
-  "t\022\r\n\005value\030\001 \001(\r\"\030\n\026total_supply_argumen"
-  "ts\"(\n\023total_supply_result\022\021\n\005value\030\001 \001(\004"
-  "B\0020\001\"%\n\024balance_of_arguments\022\r\n\005owner\030\001 "
-  "\001(\014\"&\n\021balance_of_result\022\021\n\005value\030\001 \001(\004B"
-  "\0020\001\"A\n\022transfer_arguments\022\014\n\004from\030\001 \001(\014\022"
-  "\n\n\002to\030\002 \001(\014\022\021\n\005value\030\003 \001(\004B\0020\001\" \n\017transf"
-  "er_result\022\r\n\005value\030\001 \001(\010\"/\n\016mint_argumen"
-  "ts\022\n\n\002to\030\001 \001(\014\022\021\n\005value\030\002 \001(\004B\0020\001\"\034\n\013min"
-  "t_result\022\r\n\005value\030\001 \001(\010\"#\n\016balance_objec"
-  "t\022\021\n\005value\030\001 \001(\004B\0020\001\"Z\n\023mana_balance_obj"
-  "ect\022\023\n\007balance\030\001 \001(\004B\0020\001\022\020\n\004mana\030\002 \001(\004B\002"
-  "0\001\022\034\n\020last_mana_update\030\003 \001(\004B\0020\001B>Z<gith"
-  "ub.com/koinos/koinos-proto-golang/koinos"
-  "/contracts/tokenb\006proto3"
+  "inos.contracts.token\032\024koinos/options.pro"
+  "to\"\020\n\016name_arguments\"\034\n\013name_result\022\r\n\005v"
+  "alue\030\001 \001(\t\"\022\n\020symbol_arguments\"\036\n\rsymbol"
+  "_result\022\r\n\005value\030\001 \001(\t\"\024\n\022decimals_argum"
+  "ents\" \n\017decimals_result\022\r\n\005value\030\001 \001(\r\"\030"
+  "\n\026total_supply_arguments\"(\n\023total_supply"
+  "_result\022\021\n\005value\030\001 \001(\004B\0020\001\"+\n\024balance_of"
+  "_arguments\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\"&\n\021balan"
+  "ce_of_result\022\021\n\005value\030\001 \001(\004B\0020\001\"M\n\022trans"
+  "fer_arguments\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\020\n\002to\030"
+  "\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\" \n\017transf"
+  "er_result\022\r\n\005value\030\001 \001(\010\"5\n\016mint_argumen"
+  "ts\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\""
+  "\034\n\013mint_result\022\r\n\005value\030\001 \001(\010\"#\n\016balance"
+  "_object\022\021\n\005value\030\001 \001(\004B\0020\001\"Z\n\023mana_balan"
+  "ce_object\022\023\n\007balance\030\001 \001(\004B\0020\001\022\020\n\004mana\030\002"
+  " \001(\004B\0020\001\022\034\n\020last_mana_update\030\003 \001(\004B\0020\001B>"
+  "Z<github.com/koinos/koinos-proto-golang/"
+  "koinos/contracts/tokenb\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps[1] = {
+  &::descriptor_table_koinos_2foptions_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto = {
-  false, false, 744, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
-  &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once, nullptr, 0, 16,
+  false, false, 790, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
+  &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once, descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps, 1, 16,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_service_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto,
 };
@@ -1844,7 +1848,7 @@ const char* balance_of_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes owner = 1;
+      // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_owner();
@@ -1881,7 +1885,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes owner = 1;
+  // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_owner().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_owner(), target);
@@ -1903,7 +1907,7 @@ size_t balance_of_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes owner = 1;
+  // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_owner().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -2235,7 +2239,7 @@ const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes from = 1;
+      // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_from();
@@ -2243,7 +2247,7 @@ const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes to = 2;
+      // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_to();
@@ -2287,13 +2291,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes from = 1;
+  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_from().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_from(), target);
   }
 
-  // bytes to = 2;
+  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_to().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_to(), target);
@@ -2321,14 +2325,14 @@ size_t transfer_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes from = 1;
+  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_from().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_from());
   }
 
-  // bytes to = 2;
+  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_to().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -2669,7 +2673,7 @@ const char* mint_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes to = 1;
+      // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_to();
@@ -2713,7 +2717,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes to = 1;
+  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_to().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_to(), target);
@@ -2741,7 +2745,7 @@ size_t mint_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes to = 1;
+  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   if (!this->_internal_to().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

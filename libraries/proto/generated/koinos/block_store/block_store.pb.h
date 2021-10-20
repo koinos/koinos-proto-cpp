@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "koinos/options.pb.h"
 #include "koinos/protocol/protocol.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -193,7 +194,7 @@ class block_item final :
     kReceiptFieldNumber = 4,
     kBlockHeightFieldNumber = 2,
   };
-  // bytes block_id = 1;
+  // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   void clear_block_id();
   const std::string& block_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -389,7 +390,7 @@ class block_record final :
     kReceiptFieldNumber = 4,
     kBlockHeightFieldNumber = 2,
   };
-  // repeated bytes previous_block_ids = 5;
+  // repeated bytes previous_block_ids = 5 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   int previous_block_ids_size() const;
   private:
   int _internal_previous_block_ids_size() const;
@@ -413,7 +414,7 @@ class block_record final :
   std::string* _internal_add_previous_block_ids();
   public:
 
-  // bytes block_id = 1;
+  // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   void clear_block_id();
   const std::string& block_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -498,7 +499,7 @@ class block_record final :
 #endif  // __GNUC__
 // block_item
 
-// bytes block_id = 1;
+// bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
 inline void block_item::clear_block_id() {
   block_id_.ClearToEmpty();
 }
@@ -740,7 +741,7 @@ inline void block_item::set_allocated_receipt(::koinos::protocol::block_receipt*
 
 // block_record
 
-// bytes block_id = 1;
+// bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
 inline void block_record::clear_block_id() {
   block_id_.ClearToEmpty();
 }
@@ -978,7 +979,7 @@ inline void block_record::set_allocated_receipt(::koinos::protocol::block_receip
   // @@protoc_insertion_point(field_set_allocated:koinos.block_store.block_record.receipt)
 }
 
-// repeated bytes previous_block_ids = 5;
+// repeated bytes previous_block_ids = 5 [(.koinos.koinos_bytes_type) = BLOCK_ID];
 inline int block_record::_internal_previous_block_ids_size() const {
   return previous_block_ids_.size();
 }

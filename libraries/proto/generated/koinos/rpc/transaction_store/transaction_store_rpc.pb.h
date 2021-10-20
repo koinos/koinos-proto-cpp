@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "koinos/options.pb.h"
 #include "koinos/rpc/rpc.pb.h"
 #include "koinos/transaction_store/transaction_store.pb.h"
 // @@protoc_insertion_point(includes)
@@ -202,7 +203,7 @@ class get_transactions_by_id_request final :
   enum : int {
     kTransactionIdsFieldNumber = 1,
   };
-  // repeated bytes transaction_ids = 1;
+  // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
   int transaction_ids_size() const;
   private:
   int _internal_transaction_ids_size() const;
@@ -792,7 +793,7 @@ class transaction_store_response final :
 #endif  // __GNUC__
 // get_transactions_by_id_request
 
-// repeated bytes transaction_ids = 1;
+// repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
 inline int get_transactions_by_id_request::_internal_transaction_ids_size() const {
   return transaction_ids_.size();
 }

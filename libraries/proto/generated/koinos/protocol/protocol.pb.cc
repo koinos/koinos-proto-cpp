@@ -351,14 +351,15 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036koinos/protocol/protocol.proto\022\017koinos"
-  ".protocol\"@\n\024contract_call_bundle\022\023\n\013con"
-  "tract_id\030\001 \001(\014\022\023\n\013entry_point\030\002 \001(\r\"w\n\022s"
-  "ystem_call_target\022\022\n\010thunk_id\030\001 \001(\rH\000\022C\n"
-  "\022system_call_bundle\030\002 \001(\0132%.koinos.proto"
-  "col.contract_call_bundleH\000B\010\n\006target\"B\n\031"
-  "upload_contract_operation\022\023\n\013contract_id"
-  "\030\001 \001(\014\022\020\n\010bytecode\030\002 \001(\014\"Q\n\027call_contrac"
-  "t_operation\022\023\n\013contract_id\030\001 \001(\014\022\023\n\013entr"
+  ".protocol\032\024koinos/options.proto\"F\n\024contr"
+  "act_call_bundle\022\031\n\013contract_id\030\001 \001(\014B\004\200\265"
+  "\030\005\022\023\n\013entry_point\030\002 \001(\r\"w\n\022system_call_t"
+  "arget\022\022\n\010thunk_id\030\001 \001(\rH\000\022C\n\022system_call"
+  "_bundle\030\002 \001(\0132%.koinos.protocol.contract"
+  "_call_bundleH\000B\010\n\006target\"H\n\031upload_contr"
+  "act_operation\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030\005"
+  "\022\020\n\010bytecode\030\002 \001(\014\"W\n\027call_contract_oper"
+  "ation\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030\005\022\023\n\013entr"
   "y_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"a\n\031set_syste"
   "m_call_operation\022\017\n\007call_id\030\001 \001(\r\0223\n\006tar"
   "get\030\002 \001(\0132#.koinos.protocol.system_call_"
@@ -371,26 +372,29 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "ctive_transaction_data\022\024\n\010rc_limit\030\001 \001(\004"
   "B\0020\001\022\021\n\005nonce\030\002 \001(\004B\0020\001\022.\n\noperations\030\003 "
   "\003(\0132\032.koinos.protocol.operation\"\032\n\030passi"
-  "ve_transaction_data\"R\n\013transaction\022\n\n\002id"
-  "\030\001 \001(\014\022\016\n\006active\030\002 \001(\014\022\017\n\007passive\030\003 \001(\014\022"
-  "\026\n\016signature_data\030\004 \001(\014\"f\n\021active_block_"
-  "data\022\037\n\027transaction_merkle_root\030\001 \001(\014\022 \n"
-  "\030passive_data_merkle_root\030\002 \001(\014\022\016\n\006signe"
-  "r\030\003 \001(\014\"\024\n\022passive_block_data\"K\n\014block_h"
-  "eader\022\020\n\010previous\030\001 \001(\014\022\022\n\006height\030\002 \001(\004B"
-  "\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\"\257\001\n\005block\022\n\n\002"
-  "id\030\001 \001(\014\022-\n\006header\030\002 \001(\0132\035.koinos.protoc"
-  "ol.block_header\022\016\n\006active\030\003 \001(\014\022\017\n\007passi"
-  "ve\030\004 \001(\014\022\026\n\016signature_data\030\005 \001(\014\0222\n\014tran"
-  "sactions\030\006 \003(\0132\034.koinos.protocol.transac"
-  "tion\"\017\n\rblock_receiptB7Z5github.com/koin"
-  "os/koinos-proto-golang/koinos/protocolb\006"
-  "proto3"
+  "ve_transaction_data\"X\n\013transaction\022\020\n\002id"
+  "\030\001 \001(\014B\004\200\265\030\004\022\016\n\006active\030\002 \001(\014\022\017\n\007passive\030"
+  "\003 \001(\014\022\026\n\016signature_data\030\004 \001(\014\"f\n\021active_"
+  "block_data\022\037\n\027transaction_merkle_root\030\001 "
+  "\001(\014\022 \n\030passive_data_merkle_root\030\002 \001(\014\022\016\n"
+  "\006signer\030\003 \001(\014\"\024\n\022passive_block_data\"Q\n\014b"
+  "lock_header\022\026\n\010previous\030\001 \001(\014B\004\200\265\030\003\022\022\n\006h"
+  "eight\030\002 \001(\004B\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\"\265"
+  "\001\n\005block\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022-\n\006header\030\002 \001"
+  "(\0132\035.koinos.protocol.block_header\022\016\n\006act"
+  "ive\030\003 \001(\014\022\017\n\007passive\030\004 \001(\014\022\026\n\016signature_"
+  "data\030\005 \001(\014\0222\n\014transactions\030\006 \003(\0132\034.koino"
+  "s.protocol.transaction\"\017\n\rblock_receiptB"
+  "7Z5github.com/koinos/koinos-proto-golang"
+  "/koinos/protocolb\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
+  &::descriptor_table_koinos_2foptions_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 1406, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
-  &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, nullptr, 0, 14,
+  false, false, 1464, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
 };
@@ -474,7 +478,7 @@ const char* contract_call_bundle::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes contract_id = 1;
+      // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_contract_id();
@@ -518,7 +522,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contract_id(), target);
@@ -546,7 +550,7 @@ size_t contract_call_bundle::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -981,7 +985,7 @@ const char* upload_contract_operation::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes contract_id = 1;
+      // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_contract_id();
@@ -1026,7 +1030,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contract_id(), target);
@@ -1054,7 +1058,7 @@ size_t upload_contract_operation::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -1216,7 +1220,7 @@ const char* call_contract_operation::_InternalParse(const char* ptr, ::PROTOBUF_
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes contract_id = 1;
+      // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_contract_id();
@@ -1268,7 +1272,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contract_id(), target);
@@ -1302,7 +1306,7 @@ size_t call_contract_operation::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -2486,7 +2490,7 @@ const char* transaction::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes id = 1;
+      // bytes id = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -2547,7 +2551,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
   if (!this->_internal_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_id(), target);
@@ -2587,7 +2591,7 @@ size_t transaction::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3200,7 +3204,7 @@ const char* block_header::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes previous = 1;
+      // bytes previous = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_previous();
@@ -3251,7 +3255,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes previous = 1;
+  // bytes previous = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_previous(), target);
@@ -3285,7 +3289,7 @@ size_t block_header::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes previous = 1;
+  // bytes previous = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3490,7 +3494,7 @@ const char* block::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inte
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes id = 1;
+      // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -3570,7 +3574,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_id(), target);
@@ -3633,7 +3637,7 @@ size_t block::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // bytes id = 1;
+  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

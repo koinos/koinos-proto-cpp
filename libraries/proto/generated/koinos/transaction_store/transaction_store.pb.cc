@@ -56,20 +56,22 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n0koinos/transaction_store/transaction_s"
-  "tore.proto\022\030koinos.transaction_store\032\036ko"
-  "inos/protocol/protocol.proto\"`\n\020transact"
-  "ion_item\0221\n\013transaction\030\001 \001(\0132\034.koinos.p"
-  "rotocol.transaction\022\031\n\021containing_blocks"
-  "\030\002 \003(\014B@Z>github.com/koinos/koinos-proto"
-  "-golang/koinos/transaction_storeb\006proto3"
+  "tore.proto\022\030koinos.transaction_store\032\024ko"
+  "inos/options.proto\032\036koinos/protocol/prot"
+  "ocol.proto\"f\n\020transaction_item\0221\n\013transa"
+  "ction\030\001 \001(\0132\034.koinos.protocol.transactio"
+  "n\022\037\n\021containing_blocks\030\002 \003(\014B\004\200\265\030\003B@Z>gi"
+  "thub.com/koinos/koinos-proto-golang/koin"
+  "os/transaction_storeb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps[1] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps[2] = {
+  &::descriptor_table_koinos_2foptions_2eproto,
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto = {
-  false, false, 280, descriptor_table_protodef_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, "koinos/transaction_store/transaction_store.proto", 
-  &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once, descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps, 1, 1,
+  false, false, 308, descriptor_table_protodef_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, "koinos/transaction_store/transaction_store.proto", 
+  &descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_once, descriptor_table_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto_deps, 2, 1,
   schemas, file_default_instances, TableStruct_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto::offsets,
   file_level_metadata_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, file_level_enum_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto, file_level_service_descriptors_koinos_2ftransaction_5fstore_2ftransaction_5fstore_2eproto,
 };
@@ -174,7 +176,7 @@ const char* transaction_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated bytes containing_blocks = 2;
+      // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -224,7 +226,7 @@ failure:
         1, _Internal::transaction(this), target, stream);
   }
 
-  // repeated bytes containing_blocks = 2;
+  // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   for (int i = 0, n = this->_internal_containing_blocks_size(); i < n; i++) {
     const auto& s = this->_internal_containing_blocks(i);
     target = stream->WriteBytes(2, s, target);
@@ -246,7 +248,7 @@ size_t transaction_item::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes containing_blocks = 2;
+  // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(containing_blocks_.size());
   for (int i = 0, n = containing_blocks_.size(); i < n; i++) {

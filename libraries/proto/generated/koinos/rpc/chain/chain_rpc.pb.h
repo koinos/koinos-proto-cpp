@@ -32,6 +32,7 @@
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/common.pb.h"
+#include "koinos/options.pb.h"
 #include "koinos/chain/chain.pb.h"
 #include "koinos/protocol/protocol.pb.h"
 #include "koinos/rpc/rpc.pb.h"
@@ -1722,7 +1723,7 @@ class read_contract_request final :
     kArgsFieldNumber = 3,
     kEntryPointFieldNumber = 2,
   };
-  // bytes contract_id = 1;
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2051,7 +2052,7 @@ class get_account_nonce_request final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2334,7 +2335,7 @@ class get_account_rc_request final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1;
+  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4118,7 +4119,7 @@ get_fork_heads_response::fork_heads() const {
 
 // read_contract_request
 
-// bytes contract_id = 1;
+// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
 inline void read_contract_request::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -4330,7 +4331,7 @@ inline void read_contract_response::set_allocated_logs(std::string* logs) {
 
 // get_account_nonce_request
 
-// bytes account = 1;
+// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void get_account_nonce_request::clear_account() {
   account_.ClearToEmpty();
 }
@@ -4404,7 +4405,7 @@ inline void get_account_nonce_response::set_nonce(::PROTOBUF_NAMESPACE_ID::uint6
 
 // get_account_rc_request
 
-// bytes account = 1;
+// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
 inline void get_account_rc_request::clear_account() {
   account_.ClearToEmpty();
 }

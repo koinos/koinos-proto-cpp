@@ -447,6 +447,27 @@ class submit_block_response final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kReceiptFieldNumber = 1,
+  };
+  // .koinos.protocol.block_receipt receipt = 1;
+  bool has_receipt() const;
+  private:
+  bool _internal_has_receipt() const;
+  public:
+  void clear_receipt();
+  const ::koinos::protocol::block_receipt& receipt() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::block_receipt* release_receipt();
+  ::koinos::protocol::block_receipt* mutable_receipt();
+  void set_allocated_receipt(::koinos::protocol::block_receipt* receipt);
+  private:
+  const ::koinos::protocol::block_receipt& _internal_receipt() const;
+  ::koinos::protocol::block_receipt* _internal_mutable_receipt();
+  public:
+  void unsafe_arena_set_allocated_receipt(
+      ::koinos::protocol::block_receipt* receipt);
+  ::koinos::protocol::block_receipt* unsafe_arena_release_receipt();
+
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.submit_block_response)
  private:
   class _Internal;
@@ -454,6 +475,7 @@ class submit_block_response final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::koinos::protocol::block_receipt* receipt_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -743,6 +765,27 @@ class submit_transaction_response final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kReceiptFieldNumber = 1,
+  };
+  // .koinos.protocol.transaction_receipt receipt = 1;
+  bool has_receipt() const;
+  private:
+  bool _internal_has_receipt() const;
+  public:
+  void clear_receipt();
+  const ::koinos::protocol::transaction_receipt& receipt() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction_receipt* release_receipt();
+  ::koinos::protocol::transaction_receipt* mutable_receipt();
+  void set_allocated_receipt(::koinos::protocol::transaction_receipt* receipt);
+  private:
+  const ::koinos::protocol::transaction_receipt& _internal_receipt() const;
+  ::koinos::protocol::transaction_receipt* _internal_mutable_receipt();
+  public:
+  void unsafe_arena_set_allocated_receipt(
+      ::koinos::protocol::transaction_receipt* receipt);
+  ::koinos::protocol::transaction_receipt* unsafe_arena_release_receipt();
+
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.submit_transaction_response)
  private:
   class _Internal;
@@ -750,6 +793,7 @@ class submit_transaction_response final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::koinos::protocol::transaction_receipt* receipt_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -3682,6 +3726,92 @@ inline void submit_block_request::set_verify_transaction_signature(bool value) {
 
 // submit_block_response
 
+// .koinos.protocol.block_receipt receipt = 1;
+inline bool submit_block_response::_internal_has_receipt() const {
+  return this != internal_default_instance() && receipt_ != nullptr;
+}
+inline bool submit_block_response::has_receipt() const {
+  return _internal_has_receipt();
+}
+inline const ::koinos::protocol::block_receipt& submit_block_response::_internal_receipt() const {
+  const ::koinos::protocol::block_receipt* p = receipt_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::block_receipt&>(
+      ::koinos::protocol::_block_receipt_default_instance_);
+}
+inline const ::koinos::protocol::block_receipt& submit_block_response::receipt() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_block_response.receipt)
+  return _internal_receipt();
+}
+inline void submit_block_response::unsafe_arena_set_allocated_receipt(
+    ::koinos::protocol::block_receipt* receipt) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_);
+  }
+  receipt_ = receipt;
+  if (receipt) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.submit_block_response.receipt)
+}
+inline ::koinos::protocol::block_receipt* submit_block_response::release_receipt() {
+  
+  ::koinos::protocol::block_receipt* temp = receipt_;
+  receipt_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::protocol::block_receipt* submit_block_response::unsafe_arena_release_receipt() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.submit_block_response.receipt)
+  
+  ::koinos::protocol::block_receipt* temp = receipt_;
+  receipt_ = nullptr;
+  return temp;
+}
+inline ::koinos::protocol::block_receipt* submit_block_response::_internal_mutable_receipt() {
+  
+  if (receipt_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::protocol::block_receipt>(GetArenaForAllocation());
+    receipt_ = p;
+  }
+  return receipt_;
+}
+inline ::koinos::protocol::block_receipt* submit_block_response::mutable_receipt() {
+  ::koinos::protocol::block_receipt* _msg = _internal_mutable_receipt();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.submit_block_response.receipt)
+  return _msg;
+}
+inline void submit_block_response::set_allocated_receipt(::koinos::protocol::block_receipt* receipt) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_);
+  }
+  if (receipt) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt));
+    if (message_arena != submessage_arena) {
+      receipt = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, receipt, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  receipt_ = receipt;
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.submit_block_response.receipt)
+}
+
 // -------------------------------------------------------------------
 
 // submit_transaction_request
@@ -3815,6 +3945,92 @@ inline void submit_transaction_request::set_verify_transaction_signature(bool va
 // -------------------------------------------------------------------
 
 // submit_transaction_response
+
+// .koinos.protocol.transaction_receipt receipt = 1;
+inline bool submit_transaction_response::_internal_has_receipt() const {
+  return this != internal_default_instance() && receipt_ != nullptr;
+}
+inline bool submit_transaction_response::has_receipt() const {
+  return _internal_has_receipt();
+}
+inline const ::koinos::protocol::transaction_receipt& submit_transaction_response::_internal_receipt() const {
+  const ::koinos::protocol::transaction_receipt* p = receipt_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction_receipt&>(
+      ::koinos::protocol::_transaction_receipt_default_instance_);
+}
+inline const ::koinos::protocol::transaction_receipt& submit_transaction_response::receipt() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_transaction_response.receipt)
+  return _internal_receipt();
+}
+inline void submit_transaction_response::unsafe_arena_set_allocated_receipt(
+    ::koinos::protocol::transaction_receipt* receipt) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_);
+  }
+  receipt_ = receipt;
+  if (receipt) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.submit_transaction_response.receipt)
+}
+inline ::koinos::protocol::transaction_receipt* submit_transaction_response::release_receipt() {
+  
+  ::koinos::protocol::transaction_receipt* temp = receipt_;
+  receipt_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::protocol::transaction_receipt* submit_transaction_response::unsafe_arena_release_receipt() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.submit_transaction_response.receipt)
+  
+  ::koinos::protocol::transaction_receipt* temp = receipt_;
+  receipt_ = nullptr;
+  return temp;
+}
+inline ::koinos::protocol::transaction_receipt* submit_transaction_response::_internal_mutable_receipt() {
+  
+  if (receipt_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::protocol::transaction_receipt>(GetArenaForAllocation());
+    receipt_ = p;
+  }
+  return receipt_;
+}
+inline ::koinos::protocol::transaction_receipt* submit_transaction_response::mutable_receipt() {
+  ::koinos::protocol::transaction_receipt* _msg = _internal_mutable_receipt();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.submit_transaction_response.receipt)
+  return _msg;
+}
+inline void submit_transaction_response::set_allocated_receipt(::koinos::protocol::transaction_receipt* receipt) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_);
+  }
+  if (receipt) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt));
+    if (message_arena != submessage_arena) {
+      receipt = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, receipt, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  receipt_ = receipt;
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.submit_transaction_response.receipt)
+}
 
 // -------------------------------------------------------------------
 

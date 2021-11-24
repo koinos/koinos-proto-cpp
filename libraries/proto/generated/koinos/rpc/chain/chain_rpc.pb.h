@@ -268,9 +268,6 @@ class submit_block_request final :
 
   enum : int {
     kBlockFieldNumber = 1,
-    kVerifyPassiveDataFieldNumber = 2,
-    kVerifyBlockSignatureFieldNumber = 3,
-    kVerifyTransactionSignatureFieldNumber = 4,
   };
   // .koinos.protocol.block block = 1;
   bool has_block() const;
@@ -290,33 +287,6 @@ class submit_block_request final :
       ::koinos::protocol::block* block);
   ::koinos::protocol::block* unsafe_arena_release_block();
 
-  // bool verify_passive_data = 2;
-  void clear_verify_passive_data();
-  bool verify_passive_data() const;
-  void set_verify_passive_data(bool value);
-  private:
-  bool _internal_verify_passive_data() const;
-  void _internal_set_verify_passive_data(bool value);
-  public:
-
-  // bool verify_block_signature = 3;
-  void clear_verify_block_signature();
-  bool verify_block_signature() const;
-  void set_verify_block_signature(bool value);
-  private:
-  bool _internal_verify_block_signature() const;
-  void _internal_set_verify_block_signature(bool value);
-  public:
-
-  // bool verify_transaction_signature = 4;
-  void clear_verify_transaction_signature();
-  bool verify_transaction_signature() const;
-  void set_verify_transaction_signature(bool value);
-  private:
-  bool _internal_verify_transaction_signature() const;
-  void _internal_set_verify_transaction_signature(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.submit_block_request)
  private:
   class _Internal;
@@ -325,9 +295,6 @@ class submit_block_request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::koinos::protocol::block* block_;
-  bool verify_passive_data_;
-  bool verify_block_signature_;
-  bool verify_transaction_signature_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -597,8 +564,6 @@ class submit_transaction_request final :
 
   enum : int {
     kTransactionFieldNumber = 1,
-    kVerifyPassiveDataFieldNumber = 2,
-    kVerifyTransactionSignatureFieldNumber = 3,
   };
   // .koinos.protocol.transaction transaction = 1;
   bool has_transaction() const;
@@ -618,24 +583,6 @@ class submit_transaction_request final :
       ::koinos::protocol::transaction* transaction);
   ::koinos::protocol::transaction* unsafe_arena_release_transaction();
 
-  // bool verify_passive_data = 2;
-  void clear_verify_passive_data();
-  bool verify_passive_data() const;
-  void set_verify_passive_data(bool value);
-  private:
-  bool _internal_verify_passive_data() const;
-  void _internal_set_verify_passive_data(bool value);
-  public:
-
-  // bool verify_transaction_signature = 3;
-  void clear_verify_transaction_signature();
-  bool verify_transaction_signature() const;
-  void set_verify_transaction_signature(bool value);
-  private:
-  bool _internal_verify_transaction_signature() const;
-  void _internal_set_verify_transaction_signature(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.submit_transaction_request)
  private:
   class _Internal;
@@ -644,8 +591,6 @@ class submit_transaction_request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::koinos::protocol::transaction* transaction_;
-  bool verify_passive_data_;
-  bool verify_transaction_signature_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -3662,66 +3607,6 @@ inline void submit_block_request::set_allocated_block(::koinos::protocol::block*
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.submit_block_request.block)
 }
 
-// bool verify_passive_data = 2;
-inline void submit_block_request::clear_verify_passive_data() {
-  verify_passive_data_ = false;
-}
-inline bool submit_block_request::_internal_verify_passive_data() const {
-  return verify_passive_data_;
-}
-inline bool submit_block_request::verify_passive_data() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_block_request.verify_passive_data)
-  return _internal_verify_passive_data();
-}
-inline void submit_block_request::_internal_set_verify_passive_data(bool value) {
-  
-  verify_passive_data_ = value;
-}
-inline void submit_block_request::set_verify_passive_data(bool value) {
-  _internal_set_verify_passive_data(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.chain.submit_block_request.verify_passive_data)
-}
-
-// bool verify_block_signature = 3;
-inline void submit_block_request::clear_verify_block_signature() {
-  verify_block_signature_ = false;
-}
-inline bool submit_block_request::_internal_verify_block_signature() const {
-  return verify_block_signature_;
-}
-inline bool submit_block_request::verify_block_signature() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_block_request.verify_block_signature)
-  return _internal_verify_block_signature();
-}
-inline void submit_block_request::_internal_set_verify_block_signature(bool value) {
-  
-  verify_block_signature_ = value;
-}
-inline void submit_block_request::set_verify_block_signature(bool value) {
-  _internal_set_verify_block_signature(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.chain.submit_block_request.verify_block_signature)
-}
-
-// bool verify_transaction_signature = 4;
-inline void submit_block_request::clear_verify_transaction_signature() {
-  verify_transaction_signature_ = false;
-}
-inline bool submit_block_request::_internal_verify_transaction_signature() const {
-  return verify_transaction_signature_;
-}
-inline bool submit_block_request::verify_transaction_signature() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_block_request.verify_transaction_signature)
-  return _internal_verify_transaction_signature();
-}
-inline void submit_block_request::_internal_set_verify_transaction_signature(bool value) {
-  
-  verify_transaction_signature_ = value;
-}
-inline void submit_block_request::set_verify_transaction_signature(bool value) {
-  _internal_set_verify_transaction_signature(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.chain.submit_block_request.verify_transaction_signature)
-}
-
 // -------------------------------------------------------------------
 
 // submit_block_response
@@ -3900,46 +3785,6 @@ inline void submit_transaction_request::set_allocated_transaction(::koinos::prot
   }
   transaction_ = transaction;
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.submit_transaction_request.transaction)
-}
-
-// bool verify_passive_data = 2;
-inline void submit_transaction_request::clear_verify_passive_data() {
-  verify_passive_data_ = false;
-}
-inline bool submit_transaction_request::_internal_verify_passive_data() const {
-  return verify_passive_data_;
-}
-inline bool submit_transaction_request::verify_passive_data() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_transaction_request.verify_passive_data)
-  return _internal_verify_passive_data();
-}
-inline void submit_transaction_request::_internal_set_verify_passive_data(bool value) {
-  
-  verify_passive_data_ = value;
-}
-inline void submit_transaction_request::set_verify_passive_data(bool value) {
-  _internal_set_verify_passive_data(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.chain.submit_transaction_request.verify_passive_data)
-}
-
-// bool verify_transaction_signature = 3;
-inline void submit_transaction_request::clear_verify_transaction_signature() {
-  verify_transaction_signature_ = false;
-}
-inline bool submit_transaction_request::_internal_verify_transaction_signature() const {
-  return verify_transaction_signature_;
-}
-inline bool submit_transaction_request::verify_transaction_signature() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_transaction_request.verify_transaction_signature)
-  return _internal_verify_transaction_signature();
-}
-inline void submit_transaction_request::_internal_set_verify_transaction_signature(bool value) {
-  
-  verify_transaction_signature_ = value;
-}
-inline void submit_transaction_request::set_verify_transaction_signature(bool value) {
-  _internal_set_verify_transaction_signature(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.chain.submit_transaction_request.verify_transaction_signature)
 }
 
 // -------------------------------------------------------------------

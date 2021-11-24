@@ -21,10 +21,7 @@ namespace rpc {
 namespace chain {
 constexpr submit_block_request::submit_block_request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : block_(nullptr)
-  , verify_passive_data_(false)
-  , verify_block_signature_(false)
-  , verify_transaction_signature_(false){}
+  : block_(nullptr){}
 struct submit_block_requestDefaultTypeInternal {
   constexpr submit_block_requestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -48,9 +45,7 @@ struct submit_block_responseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT submit_block_responseDefaultTypeInternal _submit_block_response_default_instance_;
 constexpr submit_transaction_request::submit_transaction_request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : transaction_(nullptr)
-  , verify_passive_data_(false)
-  , verify_transaction_signature_(false){}
+  : transaction_(nullptr){}
 struct submit_transaction_requestDefaultTypeInternal {
   constexpr submit_transaction_requestDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -279,9 +274,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2frpc_2fchain_2fchain_5
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_block_request, block_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_block_request, verify_passive_data_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_block_request, verify_block_signature_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_block_request, verify_transaction_signature_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_block_response, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -294,8 +286,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2frpc_2fchain_2fchain_5
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_transaction_request, transaction_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_transaction_request, verify_passive_data_),
-  PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_transaction_request, verify_transaction_signature_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::chain::submit_transaction_response, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -423,25 +413,25 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2frpc_2fchain_2fchain_5
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::rpc::chain::submit_block_request)},
-  { 9, -1, sizeof(::koinos::rpc::chain::submit_block_response)},
-  { 15, -1, sizeof(::koinos::rpc::chain::submit_transaction_request)},
-  { 23, -1, sizeof(::koinos::rpc::chain::submit_transaction_response)},
-  { 29, -1, sizeof(::koinos::rpc::chain::get_head_info_request)},
-  { 34, -1, sizeof(::koinos::rpc::chain::get_head_info_response)},
-  { 41, -1, sizeof(::koinos::rpc::chain::get_chain_id_request)},
-  { 46, -1, sizeof(::koinos::rpc::chain::get_chain_id_response)},
-  { 52, -1, sizeof(::koinos::rpc::chain::get_fork_heads_request)},
-  { 57, -1, sizeof(::koinos::rpc::chain::get_fork_heads_response)},
-  { 64, -1, sizeof(::koinos::rpc::chain::read_contract_request)},
-  { 72, -1, sizeof(::koinos::rpc::chain::read_contract_response)},
-  { 79, -1, sizeof(::koinos::rpc::chain::get_account_nonce_request)},
-  { 85, -1, sizeof(::koinos::rpc::chain::get_account_nonce_response)},
-  { 91, -1, sizeof(::koinos::rpc::chain::get_account_rc_request)},
-  { 97, -1, sizeof(::koinos::rpc::chain::get_account_rc_response)},
-  { 103, -1, sizeof(::koinos::rpc::chain::get_resource_limits_request)},
-  { 108, -1, sizeof(::koinos::rpc::chain::get_resource_limits_response)},
-  { 114, -1, sizeof(::koinos::rpc::chain::chain_request)},
-  { 130, -1, sizeof(::koinos::rpc::chain::chain_response)},
+  { 6, -1, sizeof(::koinos::rpc::chain::submit_block_response)},
+  { 12, -1, sizeof(::koinos::rpc::chain::submit_transaction_request)},
+  { 18, -1, sizeof(::koinos::rpc::chain::submit_transaction_response)},
+  { 24, -1, sizeof(::koinos::rpc::chain::get_head_info_request)},
+  { 29, -1, sizeof(::koinos::rpc::chain::get_head_info_response)},
+  { 36, -1, sizeof(::koinos::rpc::chain::get_chain_id_request)},
+  { 41, -1, sizeof(::koinos::rpc::chain::get_chain_id_response)},
+  { 47, -1, sizeof(::koinos::rpc::chain::get_fork_heads_request)},
+  { 52, -1, sizeof(::koinos::rpc::chain::get_fork_heads_response)},
+  { 59, -1, sizeof(::koinos::rpc::chain::read_contract_request)},
+  { 67, -1, sizeof(::koinos::rpc::chain::read_contract_response)},
+  { 74, -1, sizeof(::koinos::rpc::chain::get_account_nonce_request)},
+  { 80, -1, sizeof(::koinos::rpc::chain::get_account_nonce_response)},
+  { 86, -1, sizeof(::koinos::rpc::chain::get_account_rc_request)},
+  { 92, -1, sizeof(::koinos::rpc::chain::get_account_rc_response)},
+  { 98, -1, sizeof(::koinos::rpc::chain::get_resource_limits_request)},
+  { 103, -1, sizeof(::koinos::rpc::chain::get_resource_limits_response)},
+  { 109, -1, sizeof(::koinos::rpc::chain::chain_request)},
+  { 125, -1, sizeof(::koinos::rpc::chain::chain_response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -472,77 +462,73 @@ const char descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto[
   "os.rpc.chain\032\023koinos/common.proto\032\024koino"
   "s/options.proto\032\030koinos/chain/chain.prot"
   "o\032\036koinos/protocol/protocol.proto\032\024koino"
-  "s/rpc/rpc.proto\"\240\001\n\024submit_block_request"
-  "\022%\n\005block\030\001 \001(\0132\026.koinos.protocol.block\022"
-  "\033\n\023verify_passive_data\030\002 \001(\010\022\036\n\026verify_b"
-  "lock_signature\030\003 \001(\010\022$\n\034verify_transacti"
-  "on_signature\030\004 \001(\010\"H\n\025submit_block_respo"
-  "nse\022/\n\007receipt\030\001 \001(\0132\036.koinos.protocol.b"
-  "lock_receipt\"\222\001\n\032submit_transaction_requ"
-  "est\0221\n\013transaction\030\001 \001(\0132\034.koinos.protoc"
-  "ol.transaction\022\033\n\023verify_passive_data\030\002 "
-  "\001(\010\022$\n\034verify_transaction_signature\030\003 \001("
-  "\010\"T\n\033submit_transaction_response\0225\n\007rece"
-  "ipt\030\001 \001(\0132$.koinos.protocol.transaction_"
-  "receipt\"\027\n\025get_head_info_request\"l\n\026get_"
-  "head_info_response\022-\n\rhead_topology\030\001 \001("
-  "\0132\026.koinos.block_topology\022#\n\027last_irreve"
-  "rsible_block\030\002 \001(\004B\0020\001\"\026\n\024get_chain_id_r"
-  "equest\")\n\025get_chain_id_response\022\020\n\010chain"
-  "_id\030\001 \001(\014\"\030\n\026get_fork_heads_request\"~\n\027g"
-  "et_fork_heads_response\0227\n\027last_irreversi"
-  "ble_block\030\001 \001(\0132\026.koinos.block_topology\022"
-  "*\n\nfork_heads\030\002 \003(\0132\026.koinos.block_topol"
-  "ogy\"U\n\025read_contract_request\022\031\n\013contract"
-  "_id\030\001 \001(\014B\004\200\265\030\005\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004"
-  "args\030\003 \001(\014\"6\n\026read_contract_response\022\016\n\006"
-  "result\030\001 \001(\014\022\014\n\004logs\030\002 \001(\t\"2\n\031get_accoun"
-  "t_nonce_request\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"/"
-  "\n\032get_account_nonce_response\022\021\n\005nonce\030\001 "
-  "\001(\004B\0020\001\"/\n\026get_account_rc_request\022\025\n\007acc"
-  "ount\030\001 \001(\014B\004\200\265\030\006\")\n\027get_account_rc_respo"
-  "nse\022\016\n\002rc\030\001 \001(\004B\0020\001\"\035\n\033get_resource_limi"
-  "ts_request\"^\n\034get_resource_limits_respon"
-  "se\022>\n\023resource_limit_data\030\001 \001(\0132!.koinos"
-  ".chain.resource_limit_data\"\270\005\n\rchain_req"
-  "uest\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.rese"
-  "rved_rpcH\000\022>\n\014submit_block\030\002 \001(\0132&.koino"
-  "s.rpc.chain.submit_block_requestH\000\022J\n\022su"
-  "bmit_transaction\030\003 \001(\0132,.koinos.rpc.chai"
-  "n.submit_transaction_requestH\000\022@\n\rget_he"
-  "ad_info\030\004 \001(\0132\'.koinos.rpc.chain.get_hea"
-  "d_info_requestH\000\022>\n\014get_chain_id\030\005 \001(\0132&"
-  ".koinos.rpc.chain.get_chain_id_requestH\000"
-  "\022B\n\016get_fork_heads\030\006 \001(\0132(.koinos.rpc.ch"
-  "ain.get_fork_heads_requestH\000\022@\n\rread_con"
-  "tract\030\007 \001(\0132\'.koinos.rpc.chain.read_cont"
-  "ract_requestH\000\022H\n\021get_account_nonce\030\010 \001("
-  "\0132+.koinos.rpc.chain.get_account_nonce_r"
-  "equestH\000\022B\n\016get_account_rc\030\t \001(\0132(.koino"
-  "s.rpc.chain.get_account_rc_requestH\000\022L\n\023"
-  "get_resource_limits\030\n \001(\0132-.koinos.rpc.c"
-  "hain.get_resource_limits_requestH\000B\t\n\007re"
-  "quest\"\360\005\n\016chain_response\022,\n\010reserved\030\001 \001"
-  "(\0132\030.koinos.rpc.reserved_rpcH\000\022+\n\005error\030"
-  "\002 \001(\0132\032.koinos.rpc.error_responseH\000\022\?\n\014s"
-  "ubmit_block\030\003 \001(\0132\'.koinos.rpc.chain.sub"
-  "mit_block_responseH\000\022K\n\022submit_transacti"
-  "on\030\004 \001(\0132-.koinos.rpc.chain.submit_trans"
-  "action_responseH\000\022A\n\rget_head_info\030\005 \001(\013"
-  "2(.koinos.rpc.chain.get_head_info_respon"
-  "seH\000\022\?\n\014get_chain_id\030\006 \001(\0132\'.koinos.rpc."
-  "chain.get_chain_id_responseH\000\022C\n\016get_for"
-  "k_heads\030\007 \001(\0132).koinos.rpc.chain.get_for"
-  "k_heads_responseH\000\022A\n\rread_contract\030\010 \001("
-  "\0132(.koinos.rpc.chain.read_contract_respo"
-  "nseH\000\022I\n\021get_account_nonce\030\t \001(\0132,.koino"
-  "s.rpc.chain.get_account_nonce_responseH\000"
-  "\022C\n\016get_account_rc\030\n \001(\0132).koinos.rpc.ch"
-  "ain.get_account_rc_responseH\000\022M\n\023get_res"
-  "ource_limits\030\013 \001(\0132..koinos.rpc.chain.ge"
-  "t_resource_limits_responseH\000B\n\n\010response"
-  "B8Z6github.com/koinos/koinos-proto-golan"
-  "g/koinos/rpc/chainb\006proto3"
+  "s/rpc/rpc.proto\"=\n\024submit_block_request\022"
+  "%\n\005block\030\001 \001(\0132\026.koinos.protocol.block\"H"
+  "\n\025submit_block_response\022/\n\007receipt\030\001 \001(\013"
+  "2\036.koinos.protocol.block_receipt\"O\n\032subm"
+  "it_transaction_request\0221\n\013transaction\030\001 "
+  "\001(\0132\034.koinos.protocol.transaction\"T\n\033sub"
+  "mit_transaction_response\0225\n\007receipt\030\001 \001("
+  "\0132$.koinos.protocol.transaction_receipt\""
+  "\027\n\025get_head_info_request\"l\n\026get_head_inf"
+  "o_response\022-\n\rhead_topology\030\001 \001(\0132\026.koin"
+  "os.block_topology\022#\n\027last_irreversible_b"
+  "lock\030\002 \001(\004B\0020\001\"\026\n\024get_chain_id_request\")"
+  "\n\025get_chain_id_response\022\020\n\010chain_id\030\001 \001("
+  "\014\"\030\n\026get_fork_heads_request\"~\n\027get_fork_"
+  "heads_response\0227\n\027last_irreversible_bloc"
+  "k\030\001 \001(\0132\026.koinos.block_topology\022*\n\nfork_"
+  "heads\030\002 \003(\0132\026.koinos.block_topology\"U\n\025r"
+  "ead_contract_request\022\031\n\013contract_id\030\001 \001("
+  "\014B\004\200\265\030\005\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003 \001"
+  "(\014\"6\n\026read_contract_response\022\016\n\006result\030\001"
+  " \001(\014\022\014\n\004logs\030\002 \001(\t\"2\n\031get_account_nonce_"
+  "request\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"/\n\032get_ac"
+  "count_nonce_response\022\021\n\005nonce\030\001 \001(\004B\0020\001\""
+  "/\n\026get_account_rc_request\022\025\n\007account\030\001 \001"
+  "(\014B\004\200\265\030\006\")\n\027get_account_rc_response\022\016\n\002r"
+  "c\030\001 \001(\004B\0020\001\"\035\n\033get_resource_limits_reque"
+  "st\"^\n\034get_resource_limits_response\022>\n\023re"
+  "source_limit_data\030\001 \001(\0132!.koinos.chain.r"
+  "esource_limit_data\"\270\005\n\rchain_request\022,\n\010"
+  "reserved\030\001 \001(\0132\030.koinos.rpc.reserved_rpc"
+  "H\000\022>\n\014submit_block\030\002 \001(\0132&.koinos.rpc.ch"
+  "ain.submit_block_requestH\000\022J\n\022submit_tra"
+  "nsaction\030\003 \001(\0132,.koinos.rpc.chain.submit"
+  "_transaction_requestH\000\022@\n\rget_head_info\030"
+  "\004 \001(\0132\'.koinos.rpc.chain.get_head_info_r"
+  "equestH\000\022>\n\014get_chain_id\030\005 \001(\0132&.koinos."
+  "rpc.chain.get_chain_id_requestH\000\022B\n\016get_"
+  "fork_heads\030\006 \001(\0132(.koinos.rpc.chain.get_"
+  "fork_heads_requestH\000\022@\n\rread_contract\030\007 "
+  "\001(\0132\'.koinos.rpc.chain.read_contract_req"
+  "uestH\000\022H\n\021get_account_nonce\030\010 \001(\0132+.koin"
+  "os.rpc.chain.get_account_nonce_requestH\000"
+  "\022B\n\016get_account_rc\030\t \001(\0132(.koinos.rpc.ch"
+  "ain.get_account_rc_requestH\000\022L\n\023get_reso"
+  "urce_limits\030\n \001(\0132-.koinos.rpc.chain.get"
+  "_resource_limits_requestH\000B\t\n\007request\"\360\005"
+  "\n\016chain_response\022,\n\010reserved\030\001 \001(\0132\030.koi"
+  "nos.rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032."
+  "koinos.rpc.error_responseH\000\022\?\n\014submit_bl"
+  "ock\030\003 \001(\0132\'.koinos.rpc.chain.submit_bloc"
+  "k_responseH\000\022K\n\022submit_transaction\030\004 \001(\013"
+  "2-.koinos.rpc.chain.submit_transaction_r"
+  "esponseH\000\022A\n\rget_head_info\030\005 \001(\0132(.koino"
+  "s.rpc.chain.get_head_info_responseH\000\022\?\n\014"
+  "get_chain_id\030\006 \001(\0132\'.koinos.rpc.chain.ge"
+  "t_chain_id_responseH\000\022C\n\016get_fork_heads\030"
+  "\007 \001(\0132).koinos.rpc.chain.get_fork_heads_"
+  "responseH\000\022A\n\rread_contract\030\010 \001(\0132(.koin"
+  "os.rpc.chain.read_contract_responseH\000\022I\n"
+  "\021get_account_nonce\030\t \001(\0132,.koinos.rpc.ch"
+  "ain.get_account_nonce_responseH\000\022C\n\016get_"
+  "account_rc\030\n \001(\0132).koinos.rpc.chain.get_"
+  "account_rc_responseH\000\022M\n\023get_resource_li"
+  "mits\030\013 \001(\0132..koinos.rpc.chain.get_resour"
+  "ce_limits_responseH\000B\n\n\010responseB8Z6gith"
+  "ub.com/koinos/koinos-proto-golang/koinos"
+  "/rpc/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fchain_2fchain_2eproto,
@@ -553,7 +539,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto = {
-  false, false, 2986, descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, "koinos/rpc/chain/chain_rpc.proto", 
+  false, false, 2818, descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, "koinos/rpc/chain/chain_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_deps, 5, 20,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fchain_2fchain_5frpc_2eproto,
@@ -602,17 +588,11 @@ submit_block_request::submit_block_request(const submit_block_request& from)
   } else {
     block_ = nullptr;
   }
-  ::memcpy(&verify_passive_data_, &from.verify_passive_data_,
-    static_cast<size_t>(reinterpret_cast<char*>(&verify_transaction_signature_) -
-    reinterpret_cast<char*>(&verify_passive_data_)) + sizeof(verify_transaction_signature_));
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.chain.submit_block_request)
 }
 
 inline void submit_block_request::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&block_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&verify_transaction_signature_) -
-    reinterpret_cast<char*>(&block_)) + sizeof(verify_transaction_signature_));
+block_ = nullptr;
 }
 
 submit_block_request::~submit_block_request() {
@@ -647,9 +627,6 @@ void submit_block_request::Clear() {
     delete block_;
   }
   block_ = nullptr;
-  ::memset(&verify_passive_data_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&verify_transaction_signature_) -
-      reinterpret_cast<char*>(&verify_passive_data_)) + sizeof(verify_transaction_signature_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -663,27 +640,6 @@ const char* submit_block_request::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_block(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool verify_passive_data = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          verify_passive_data_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool verify_block_signature = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          verify_block_signature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool verify_transaction_signature = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          verify_transaction_signature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -724,24 +680,6 @@ failure:
         1, _Internal::block(this), target, stream);
   }
 
-  // bool verify_passive_data = 2;
-  if (this->_internal_verify_passive_data() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_verify_passive_data(), target);
-  }
-
-  // bool verify_block_signature = 3;
-  if (this->_internal_verify_block_signature() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_verify_block_signature(), target);
-  }
-
-  // bool verify_transaction_signature = 4;
-  if (this->_internal_verify_transaction_signature() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_verify_transaction_signature(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -763,21 +701,6 @@ size_t submit_block_request::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *block_);
-  }
-
-  // bool verify_passive_data = 2;
-  if (this->_internal_verify_passive_data() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool verify_block_signature = 3;
-  if (this->_internal_verify_block_signature() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool verify_transaction_signature = 4;
-  if (this->_internal_verify_transaction_signature() != 0) {
-    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -811,15 +734,6 @@ void submit_block_request::MergeFrom(const submit_block_request& from) {
   if (from._internal_has_block()) {
     _internal_mutable_block()->::koinos::protocol::block::MergeFrom(from._internal_block());
   }
-  if (from._internal_verify_passive_data() != 0) {
-    _internal_set_verify_passive_data(from._internal_verify_passive_data());
-  }
-  if (from._internal_verify_block_signature() != 0) {
-    _internal_set_verify_block_signature(from._internal_verify_block_signature());
-  }
-  if (from._internal_verify_transaction_signature() != 0) {
-    _internal_set_verify_transaction_signature(from._internal_verify_transaction_signature());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -837,12 +751,7 @@ bool submit_block_request::IsInitialized() const {
 void submit_block_request::InternalSwap(submit_block_request* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(submit_block_request, verify_transaction_signature_)
-      + sizeof(submit_block_request::verify_transaction_signature_)
-      - PROTOBUF_FIELD_OFFSET(submit_block_request, block_)>(
-          reinterpret_cast<char*>(&block_),
-          reinterpret_cast<char*>(&other->block_));
+  swap(block_, other->block_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata submit_block_request::GetMetadata() const {
@@ -1091,17 +1000,11 @@ submit_transaction_request::submit_transaction_request(const submit_transaction_
   } else {
     transaction_ = nullptr;
   }
-  ::memcpy(&verify_passive_data_, &from.verify_passive_data_,
-    static_cast<size_t>(reinterpret_cast<char*>(&verify_transaction_signature_) -
-    reinterpret_cast<char*>(&verify_passive_data_)) + sizeof(verify_transaction_signature_));
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.chain.submit_transaction_request)
 }
 
 inline void submit_transaction_request::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&transaction_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&verify_transaction_signature_) -
-    reinterpret_cast<char*>(&transaction_)) + sizeof(verify_transaction_signature_));
+transaction_ = nullptr;
 }
 
 submit_transaction_request::~submit_transaction_request() {
@@ -1136,9 +1039,6 @@ void submit_transaction_request::Clear() {
     delete transaction_;
   }
   transaction_ = nullptr;
-  ::memset(&verify_passive_data_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&verify_transaction_signature_) -
-      reinterpret_cast<char*>(&verify_passive_data_)) + sizeof(verify_transaction_signature_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1152,20 +1052,6 @@ const char* submit_transaction_request::_InternalParse(const char* ptr, ::PROTOB
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_transaction(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool verify_passive_data = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          verify_passive_data_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bool verify_transaction_signature = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          verify_transaction_signature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1206,18 +1092,6 @@ failure:
         1, _Internal::transaction(this), target, stream);
   }
 
-  // bool verify_passive_data = 2;
-  if (this->_internal_verify_passive_data() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(2, this->_internal_verify_passive_data(), target);
-  }
-
-  // bool verify_transaction_signature = 3;
-  if (this->_internal_verify_transaction_signature() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_verify_transaction_signature(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1239,16 +1113,6 @@ size_t submit_transaction_request::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *transaction_);
-  }
-
-  // bool verify_passive_data = 2;
-  if (this->_internal_verify_passive_data() != 0) {
-    total_size += 1 + 1;
-  }
-
-  // bool verify_transaction_signature = 3;
-  if (this->_internal_verify_transaction_signature() != 0) {
-    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1282,12 +1146,6 @@ void submit_transaction_request::MergeFrom(const submit_transaction_request& fro
   if (from._internal_has_transaction()) {
     _internal_mutable_transaction()->::koinos::protocol::transaction::MergeFrom(from._internal_transaction());
   }
-  if (from._internal_verify_passive_data() != 0) {
-    _internal_set_verify_passive_data(from._internal_verify_passive_data());
-  }
-  if (from._internal_verify_transaction_signature() != 0) {
-    _internal_set_verify_transaction_signature(from._internal_verify_transaction_signature());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1305,12 +1163,7 @@ bool submit_transaction_request::IsInitialized() const {
 void submit_transaction_request::InternalSwap(submit_transaction_request* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(submit_transaction_request, verify_transaction_signature_)
-      + sizeof(submit_transaction_request::verify_transaction_signature_)
-      - PROTOBUF_FIELD_OFFSET(submit_transaction_request, transaction_)>(
-          reinterpret_cast<char*>(&transaction_),
-          reinterpret_cast<char*>(&other->transaction_));
+  swap(transaction_, other->transaction_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata submit_transaction_request::GetMetadata() const {

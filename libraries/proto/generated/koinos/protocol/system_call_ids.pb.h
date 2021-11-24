@@ -60,7 +60,6 @@ namespace protocol {
 enum system_call_id : int {
   reserved_id = 0,
   prints = 1,
-  verify_block_header = 2,
   apply_block = 3,
   apply_transaction = 4,
   apply_upload_contract_operation = 5,
@@ -79,7 +78,7 @@ enum system_call_id : int {
   get_head_info = 18,
   hash = 19,
   recover_public_key = 20,
-  verify_block_signature = 21,
+  process_block_signature = 21,
   verify_merkle_root = 22,
   get_transaction_payer = 23,
   get_transaction_rc_limit = 25,

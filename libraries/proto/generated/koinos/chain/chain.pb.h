@@ -239,6 +239,12 @@ extern prints_argumentsDefaultTypeInternal _prints_arguments_default_instance_;
 class prints_result;
 struct prints_resultDefaultTypeInternal;
 extern prints_resultDefaultTypeInternal _prints_result_default_instance_;
+class process_block_signature_arguments;
+struct process_block_signature_argumentsDefaultTypeInternal;
+extern process_block_signature_argumentsDefaultTypeInternal _process_block_signature_arguments_default_instance_;
+class process_block_signature_result;
+struct process_block_signature_resultDefaultTypeInternal;
+extern process_block_signature_resultDefaultTypeInternal _process_block_signature_result_default_instance_;
 class put_object_arguments;
 struct put_object_argumentsDefaultTypeInternal;
 extern put_object_argumentsDefaultTypeInternal _put_object_arguments_default_instance_;
@@ -266,12 +272,6 @@ extern set_contract_result_argumentsDefaultTypeInternal _set_contract_result_arg
 class set_contract_result_result;
 struct set_contract_result_resultDefaultTypeInternal;
 extern set_contract_result_resultDefaultTypeInternal _set_contract_result_result_default_instance_;
-class verify_block_signature_arguments;
-struct verify_block_signature_argumentsDefaultTypeInternal;
-extern verify_block_signature_argumentsDefaultTypeInternal _verify_block_signature_arguments_default_instance_;
-class verify_block_signature_result;
-struct verify_block_signature_resultDefaultTypeInternal;
-extern verify_block_signature_resultDefaultTypeInternal _verify_block_signature_result_default_instance_;
 class verify_merkle_root_arguments;
 struct verify_merkle_root_argumentsDefaultTypeInternal;
 extern verify_merkle_root_argumentsDefaultTypeInternal _verify_merkle_root_arguments_default_instance_;
@@ -341,6 +341,8 @@ template<> ::koinos::chain::head_info* Arena::CreateMaybeMessage<::koinos::chain
 template<> ::koinos::chain::object_space* Arena::CreateMaybeMessage<::koinos::chain::object_space>(Arena*);
 template<> ::koinos::chain::prints_arguments* Arena::CreateMaybeMessage<::koinos::chain::prints_arguments>(Arena*);
 template<> ::koinos::chain::prints_result* Arena::CreateMaybeMessage<::koinos::chain::prints_result>(Arena*);
+template<> ::koinos::chain::process_block_signature_arguments* Arena::CreateMaybeMessage<::koinos::chain::process_block_signature_arguments>(Arena*);
+template<> ::koinos::chain::process_block_signature_result* Arena::CreateMaybeMessage<::koinos::chain::process_block_signature_result>(Arena*);
 template<> ::koinos::chain::put_object_arguments* Arena::CreateMaybeMessage<::koinos::chain::put_object_arguments>(Arena*);
 template<> ::koinos::chain::put_object_result* Arena::CreateMaybeMessage<::koinos::chain::put_object_result>(Arena*);
 template<> ::koinos::chain::recover_public_key_arguments* Arena::CreateMaybeMessage<::koinos::chain::recover_public_key_arguments>(Arena*);
@@ -350,8 +352,6 @@ template<> ::koinos::chain::require_authority_result* Arena::CreateMaybeMessage<
 template<> ::koinos::chain::resource_limit_data* Arena::CreateMaybeMessage<::koinos::chain::resource_limit_data>(Arena*);
 template<> ::koinos::chain::set_contract_result_arguments* Arena::CreateMaybeMessage<::koinos::chain::set_contract_result_arguments>(Arena*);
 template<> ::koinos::chain::set_contract_result_result* Arena::CreateMaybeMessage<::koinos::chain::set_contract_result_result>(Arena*);
-template<> ::koinos::chain::verify_block_signature_arguments* Arena::CreateMaybeMessage<::koinos::chain::verify_block_signature_arguments>(Arena*);
-template<> ::koinos::chain::verify_block_signature_result* Arena::CreateMaybeMessage<::koinos::chain::verify_block_signature_result>(Arena*);
 template<> ::koinos::chain::verify_merkle_root_arguments* Arena::CreateMaybeMessage<::koinos::chain::verify_merkle_root_arguments>(Arena*);
 template<> ::koinos::chain::verify_merkle_root_result* Arena::CreateMaybeMessage<::koinos::chain::verify_merkle_root_result>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -1816,24 +1816,24 @@ class prints_result final :
 };
 // -------------------------------------------------------------------
 
-class verify_block_signature_arguments final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.verify_block_signature_arguments) */ {
+class process_block_signature_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.process_block_signature_arguments) */ {
  public:
-  inline verify_block_signature_arguments() : verify_block_signature_arguments(nullptr) {}
-  ~verify_block_signature_arguments() override;
-  explicit constexpr verify_block_signature_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline process_block_signature_arguments() : process_block_signature_arguments(nullptr) {}
+  ~process_block_signature_arguments() override;
+  explicit constexpr process_block_signature_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  verify_block_signature_arguments(const verify_block_signature_arguments& from);
-  verify_block_signature_arguments(verify_block_signature_arguments&& from) noexcept
-    : verify_block_signature_arguments() {
+  process_block_signature_arguments(const process_block_signature_arguments& from);
+  process_block_signature_arguments(process_block_signature_arguments&& from) noexcept
+    : process_block_signature_arguments() {
     *this = ::std::move(from);
   }
 
-  inline verify_block_signature_arguments& operator=(const verify_block_signature_arguments& from) {
+  inline process_block_signature_arguments& operator=(const process_block_signature_arguments& from) {
     CopyFrom(from);
     return *this;
   }
-  inline verify_block_signature_arguments& operator=(verify_block_signature_arguments&& from) noexcept {
+  inline process_block_signature_arguments& operator=(process_block_signature_arguments&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -1852,20 +1852,20 @@ class verify_block_signature_arguments final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const verify_block_signature_arguments& default_instance() {
+  static const process_block_signature_arguments& default_instance() {
     return *internal_default_instance();
   }
-  static inline const verify_block_signature_arguments* internal_default_instance() {
-    return reinterpret_cast<const verify_block_signature_arguments*>(
-               &_verify_block_signature_arguments_default_instance_);
+  static inline const process_block_signature_arguments* internal_default_instance() {
+    return reinterpret_cast<const process_block_signature_arguments*>(
+               &_process_block_signature_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     9;
 
-  friend void swap(verify_block_signature_arguments& a, verify_block_signature_arguments& b) {
+  friend void swap(process_block_signature_arguments& a, process_block_signature_arguments& b) {
     a.Swap(&b);
   }
-  inline void Swap(verify_block_signature_arguments* other) {
+  inline void Swap(process_block_signature_arguments* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -1873,7 +1873,7 @@ class verify_block_signature_arguments final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(verify_block_signature_arguments* other) {
+  void UnsafeArenaSwap(process_block_signature_arguments* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -1881,17 +1881,17 @@ class verify_block_signature_arguments final :
 
   // implements Message ----------------------------------------------
 
-  inline verify_block_signature_arguments* New() const final {
-    return new verify_block_signature_arguments();
+  inline process_block_signature_arguments* New() const final {
+    return new process_block_signature_arguments();
   }
 
-  verify_block_signature_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<verify_block_signature_arguments>(arena);
+  process_block_signature_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<process_block_signature_arguments>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const verify_block_signature_arguments& from);
+  void CopyFrom(const process_block_signature_arguments& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const verify_block_signature_arguments& from);
+  void MergeFrom(const process_block_signature_arguments& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -1908,13 +1908,13 @@ class verify_block_signature_arguments final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(verify_block_signature_arguments* other);
+  void InternalSwap(process_block_signature_arguments* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.verify_block_signature_arguments";
+    return "koinos.chain.process_block_signature_arguments";
   }
   protected:
-  explicit verify_block_signature_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit process_block_signature_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -1977,7 +1977,7 @@ class verify_block_signature_arguments final :
   std::string* _internal_mutable_signature_data();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.verify_block_signature_arguments)
+  // @@protoc_insertion_point(class_scope:koinos.chain.process_block_signature_arguments)
  private:
   class _Internal;
 
@@ -1992,24 +1992,24 @@ class verify_block_signature_arguments final :
 };
 // -------------------------------------------------------------------
 
-class verify_block_signature_result final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.verify_block_signature_result) */ {
+class process_block_signature_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.process_block_signature_result) */ {
  public:
-  inline verify_block_signature_result() : verify_block_signature_result(nullptr) {}
-  ~verify_block_signature_result() override;
-  explicit constexpr verify_block_signature_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline process_block_signature_result() : process_block_signature_result(nullptr) {}
+  ~process_block_signature_result() override;
+  explicit constexpr process_block_signature_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  verify_block_signature_result(const verify_block_signature_result& from);
-  verify_block_signature_result(verify_block_signature_result&& from) noexcept
-    : verify_block_signature_result() {
+  process_block_signature_result(const process_block_signature_result& from);
+  process_block_signature_result(process_block_signature_result&& from) noexcept
+    : process_block_signature_result() {
     *this = ::std::move(from);
   }
 
-  inline verify_block_signature_result& operator=(const verify_block_signature_result& from) {
+  inline process_block_signature_result& operator=(const process_block_signature_result& from) {
     CopyFrom(from);
     return *this;
   }
-  inline verify_block_signature_result& operator=(verify_block_signature_result&& from) noexcept {
+  inline process_block_signature_result& operator=(process_block_signature_result&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -2028,20 +2028,20 @@ class verify_block_signature_result final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const verify_block_signature_result& default_instance() {
+  static const process_block_signature_result& default_instance() {
     return *internal_default_instance();
   }
-  static inline const verify_block_signature_result* internal_default_instance() {
-    return reinterpret_cast<const verify_block_signature_result*>(
-               &_verify_block_signature_result_default_instance_);
+  static inline const process_block_signature_result* internal_default_instance() {
+    return reinterpret_cast<const process_block_signature_result*>(
+               &_process_block_signature_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     10;
 
-  friend void swap(verify_block_signature_result& a, verify_block_signature_result& b) {
+  friend void swap(process_block_signature_result& a, process_block_signature_result& b) {
     a.Swap(&b);
   }
-  inline void Swap(verify_block_signature_result* other) {
+  inline void Swap(process_block_signature_result* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -2049,7 +2049,7 @@ class verify_block_signature_result final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(verify_block_signature_result* other) {
+  void UnsafeArenaSwap(process_block_signature_result* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -2057,17 +2057,17 @@ class verify_block_signature_result final :
 
   // implements Message ----------------------------------------------
 
-  inline verify_block_signature_result* New() const final {
-    return new verify_block_signature_result();
+  inline process_block_signature_result* New() const final {
+    return new process_block_signature_result();
   }
 
-  verify_block_signature_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<verify_block_signature_result>(arena);
+  process_block_signature_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<process_block_signature_result>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const verify_block_signature_result& from);
+  void CopyFrom(const process_block_signature_result& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const verify_block_signature_result& from);
+  void MergeFrom(const process_block_signature_result& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -2084,13 +2084,13 @@ class verify_block_signature_result final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(verify_block_signature_result* other);
+  void InternalSwap(process_block_signature_result* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.verify_block_signature_result";
+    return "koinos.chain.process_block_signature_result";
   }
   protected:
-  explicit verify_block_signature_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit process_block_signature_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -2118,7 +2118,7 @@ class verify_block_signature_result final :
   void _internal_set_value(bool value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.verify_block_signature_result)
+  // @@protoc_insertion_point(class_scope:koinos.chain.process_block_signature_result)
  private:
   class _Internal;
 
@@ -2556,9 +2556,6 @@ class apply_block_arguments final :
 
   enum : int {
     kBlockFieldNumber = 1,
-    kCheckPassiveDataFieldNumber = 2,
-    kCheckBlockSignatureFieldNumber = 3,
-    kCheckTransactionSignatureFieldNumber = 4,
   };
   // .koinos.protocol.block block = 1;
   bool has_block() const;
@@ -2578,33 +2575,6 @@ class apply_block_arguments final :
       ::koinos::protocol::block* block);
   ::koinos::protocol::block* unsafe_arena_release_block();
 
-  // bool check_passive_data = 2;
-  void clear_check_passive_data();
-  bool check_passive_data() const;
-  void set_check_passive_data(bool value);
-  private:
-  bool _internal_check_passive_data() const;
-  void _internal_set_check_passive_data(bool value);
-  public:
-
-  // bool check_block_signature = 3;
-  void clear_check_block_signature();
-  bool check_block_signature() const;
-  void set_check_block_signature(bool value);
-  private:
-  bool _internal_check_block_signature() const;
-  void _internal_set_check_block_signature(bool value);
-  public:
-
-  // bool check_transaction_signature = 4;
-  void clear_check_transaction_signature();
-  bool check_transaction_signature() const;
-  void set_check_transaction_signature(bool value);
-  private:
-  bool _internal_check_transaction_signature() const;
-  void _internal_set_check_transaction_signature(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.chain.apply_block_arguments)
  private:
   class _Internal;
@@ -2613,9 +2583,6 @@ class apply_block_arguments final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::koinos::protocol::block* block_;
-  bool check_passive_data_;
-  bool check_block_signature_;
-  bool check_transaction_signature_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -11809,44 +11776,44 @@ inline void prints_arguments::set_allocated_message(std::string* message) {
 
 // -------------------------------------------------------------------
 
-// verify_block_signature_arguments
+// process_block_signature_arguments
 
 // bytes digest = 1;
-inline void verify_block_signature_arguments::clear_digest() {
+inline void process_block_signature_arguments::clear_digest() {
   digest_.ClearToEmpty();
 }
-inline const std::string& verify_block_signature_arguments::digest() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_arguments.digest)
+inline const std::string& process_block_signature_arguments::digest() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.digest)
   return _internal_digest();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void verify_block_signature_arguments::set_digest(ArgT0&& arg0, ArgT... args) {
+void process_block_signature_arguments::set_digest(ArgT0&& arg0, ArgT... args) {
  
  digest_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_arguments.digest)
+  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_arguments.digest)
 }
-inline std::string* verify_block_signature_arguments::mutable_digest() {
+inline std::string* process_block_signature_arguments::mutable_digest() {
   std::string* _s = _internal_mutable_digest();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_block_signature_arguments.digest)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.digest)
   return _s;
 }
-inline const std::string& verify_block_signature_arguments::_internal_digest() const {
+inline const std::string& process_block_signature_arguments::_internal_digest() const {
   return digest_.Get();
 }
-inline void verify_block_signature_arguments::_internal_set_digest(const std::string& value) {
+inline void process_block_signature_arguments::_internal_set_digest(const std::string& value) {
   
   digest_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_arguments::_internal_mutable_digest() {
+inline std::string* process_block_signature_arguments::_internal_mutable_digest() {
   
   return digest_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_arguments::release_digest() {
-  // @@protoc_insertion_point(field_release:koinos.chain.verify_block_signature_arguments.digest)
+inline std::string* process_block_signature_arguments::release_digest() {
+  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.digest)
   return digest_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void verify_block_signature_arguments::set_allocated_digest(std::string* digest) {
+inline void process_block_signature_arguments::set_allocated_digest(std::string* digest) {
   if (digest != nullptr) {
     
   } else {
@@ -11854,45 +11821,45 @@ inline void verify_block_signature_arguments::set_allocated_digest(std::string* 
   }
   digest_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), digest,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_arguments.digest)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.digest)
 }
 
 // bytes active = 2;
-inline void verify_block_signature_arguments::clear_active() {
+inline void process_block_signature_arguments::clear_active() {
   active_.ClearToEmpty();
 }
-inline const std::string& verify_block_signature_arguments::active() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_arguments.active)
+inline const std::string& process_block_signature_arguments::active() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.active)
   return _internal_active();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void verify_block_signature_arguments::set_active(ArgT0&& arg0, ArgT... args) {
+void process_block_signature_arguments::set_active(ArgT0&& arg0, ArgT... args) {
  
  active_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_arguments.active)
+  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_arguments.active)
 }
-inline std::string* verify_block_signature_arguments::mutable_active() {
+inline std::string* process_block_signature_arguments::mutable_active() {
   std::string* _s = _internal_mutable_active();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_block_signature_arguments.active)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.active)
   return _s;
 }
-inline const std::string& verify_block_signature_arguments::_internal_active() const {
+inline const std::string& process_block_signature_arguments::_internal_active() const {
   return active_.Get();
 }
-inline void verify_block_signature_arguments::_internal_set_active(const std::string& value) {
+inline void process_block_signature_arguments::_internal_set_active(const std::string& value) {
   
   active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_arguments::_internal_mutable_active() {
+inline std::string* process_block_signature_arguments::_internal_mutable_active() {
   
   return active_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_arguments::release_active() {
-  // @@protoc_insertion_point(field_release:koinos.chain.verify_block_signature_arguments.active)
+inline std::string* process_block_signature_arguments::release_active() {
+  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.active)
   return active_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void verify_block_signature_arguments::set_allocated_active(std::string* active) {
+inline void process_block_signature_arguments::set_allocated_active(std::string* active) {
   if (active != nullptr) {
     
   } else {
@@ -11900,45 +11867,45 @@ inline void verify_block_signature_arguments::set_allocated_active(std::string* 
   }
   active_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), active,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_arguments.active)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.active)
 }
 
 // bytes signature_data = 3;
-inline void verify_block_signature_arguments::clear_signature_data() {
+inline void process_block_signature_arguments::clear_signature_data() {
   signature_data_.ClearToEmpty();
 }
-inline const std::string& verify_block_signature_arguments::signature_data() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_arguments.signature_data)
+inline const std::string& process_block_signature_arguments::signature_data() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.signature_data)
   return _internal_signature_data();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void verify_block_signature_arguments::set_signature_data(ArgT0&& arg0, ArgT... args) {
+void process_block_signature_arguments::set_signature_data(ArgT0&& arg0, ArgT... args) {
  
  signature_data_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_arguments.signature_data)
+  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_arguments.signature_data)
 }
-inline std::string* verify_block_signature_arguments::mutable_signature_data() {
+inline std::string* process_block_signature_arguments::mutable_signature_data() {
   std::string* _s = _internal_mutable_signature_data();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_block_signature_arguments.signature_data)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.signature_data)
   return _s;
 }
-inline const std::string& verify_block_signature_arguments::_internal_signature_data() const {
+inline const std::string& process_block_signature_arguments::_internal_signature_data() const {
   return signature_data_.Get();
 }
-inline void verify_block_signature_arguments::_internal_set_signature_data(const std::string& value) {
+inline void process_block_signature_arguments::_internal_set_signature_data(const std::string& value) {
   
   signature_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_arguments::_internal_mutable_signature_data() {
+inline std::string* process_block_signature_arguments::_internal_mutable_signature_data() {
   
   return signature_data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* verify_block_signature_arguments::release_signature_data() {
-  // @@protoc_insertion_point(field_release:koinos.chain.verify_block_signature_arguments.signature_data)
+inline std::string* process_block_signature_arguments::release_signature_data() {
+  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.signature_data)
   return signature_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void verify_block_signature_arguments::set_allocated_signature_data(std::string* signature_data) {
+inline void process_block_signature_arguments::set_allocated_signature_data(std::string* signature_data) {
   if (signature_data != nullptr) {
     
   } else {
@@ -11946,31 +11913,31 @@ inline void verify_block_signature_arguments::set_allocated_signature_data(std::
   }
   signature_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signature_data,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_block_signature_arguments.signature_data)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.signature_data)
 }
 
 // -------------------------------------------------------------------
 
-// verify_block_signature_result
+// process_block_signature_result
 
 // bool value = 1;
-inline void verify_block_signature_result::clear_value() {
+inline void process_block_signature_result::clear_value() {
   value_ = false;
 }
-inline bool verify_block_signature_result::_internal_value() const {
+inline bool process_block_signature_result::_internal_value() const {
   return value_;
 }
-inline bool verify_block_signature_result::value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.verify_block_signature_result.value)
+inline bool process_block_signature_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_result.value)
   return _internal_value();
 }
-inline void verify_block_signature_result::_internal_set_value(bool value) {
+inline void process_block_signature_result::_internal_set_value(bool value) {
   
   value_ = value;
 }
-inline void verify_block_signature_result::set_value(bool value) {
+inline void process_block_signature_result::set_value(bool value) {
   _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.verify_block_signature_result.value)
+  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_result.value)
 }
 
 // -------------------------------------------------------------------
@@ -12210,66 +12177,6 @@ inline void apply_block_arguments::set_allocated_block(::koinos::protocol::block
   }
   block_ = block;
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.apply_block_arguments.block)
-}
-
-// bool check_passive_data = 2;
-inline void apply_block_arguments::clear_check_passive_data() {
-  check_passive_data_ = false;
-}
-inline bool apply_block_arguments::_internal_check_passive_data() const {
-  return check_passive_data_;
-}
-inline bool apply_block_arguments::check_passive_data() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.apply_block_arguments.check_passive_data)
-  return _internal_check_passive_data();
-}
-inline void apply_block_arguments::_internal_set_check_passive_data(bool value) {
-  
-  check_passive_data_ = value;
-}
-inline void apply_block_arguments::set_check_passive_data(bool value) {
-  _internal_set_check_passive_data(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.apply_block_arguments.check_passive_data)
-}
-
-// bool check_block_signature = 3;
-inline void apply_block_arguments::clear_check_block_signature() {
-  check_block_signature_ = false;
-}
-inline bool apply_block_arguments::_internal_check_block_signature() const {
-  return check_block_signature_;
-}
-inline bool apply_block_arguments::check_block_signature() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.apply_block_arguments.check_block_signature)
-  return _internal_check_block_signature();
-}
-inline void apply_block_arguments::_internal_set_check_block_signature(bool value) {
-  
-  check_block_signature_ = value;
-}
-inline void apply_block_arguments::set_check_block_signature(bool value) {
-  _internal_set_check_block_signature(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.apply_block_arguments.check_block_signature)
-}
-
-// bool check_transaction_signature = 4;
-inline void apply_block_arguments::clear_check_transaction_signature() {
-  check_transaction_signature_ = false;
-}
-inline bool apply_block_arguments::_internal_check_transaction_signature() const {
-  return check_transaction_signature_;
-}
-inline bool apply_block_arguments::check_transaction_signature() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.apply_block_arguments.check_transaction_signature)
-  return _internal_check_transaction_signature();
-}
-inline void apply_block_arguments::_internal_set_check_transaction_signature(bool value) {
-  
-  check_transaction_signature_ = value;
-}
-inline void apply_block_arguments::set_check_transaction_signature(bool value) {
-  _internal_set_check_transaction_signature(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.apply_block_arguments.check_transaction_signature)
 }
 
 // -------------------------------------------------------------------

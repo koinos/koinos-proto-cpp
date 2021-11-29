@@ -2106,6 +2106,7 @@ class active_block_data final :
   enum : int {
     kTransactionMerkleRootFieldNumber = 1,
     kSignerFieldNumber = 3,
+    kStateMerkleRootFieldNumber = 4,
   };
   // bytes transaction_merkle_root = 1;
   void clear_transaction_merkle_root();
@@ -2135,6 +2136,20 @@ class active_block_data final :
   std::string* _internal_mutable_signer();
   public:
 
+  // bytes state_merkle_root = 4;
+  void clear_state_merkle_root();
+  const std::string& state_merkle_root() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_state_merkle_root(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_state_merkle_root();
+  PROTOBUF_MUST_USE_RESULT std::string* release_state_merkle_root();
+  void set_allocated_state_merkle_root(std::string* state_merkle_root);
+  private:
+  const std::string& _internal_state_merkle_root() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_state_merkle_root(const std::string& value);
+  std::string* _internal_mutable_state_merkle_root();
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.protocol.active_block_data)
  private:
   class _Internal;
@@ -2144,6 +2159,7 @@ class active_block_data final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transaction_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_merkle_root_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -4399,6 +4415,52 @@ inline void active_block_data::set_allocated_signer(std::string* signer) {
   signer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signer,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.active_block_data.signer)
+}
+
+// bytes state_merkle_root = 4;
+inline void active_block_data::clear_state_merkle_root() {
+  state_merkle_root_.ClearToEmpty();
+}
+inline const std::string& active_block_data::state_merkle_root() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.active_block_data.state_merkle_root)
+  return _internal_state_merkle_root();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void active_block_data::set_state_merkle_root(ArgT0&& arg0, ArgT... args) {
+ 
+ state_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.active_block_data.state_merkle_root)
+}
+inline std::string* active_block_data::mutable_state_merkle_root() {
+  std::string* _s = _internal_mutable_state_merkle_root();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.active_block_data.state_merkle_root)
+  return _s;
+}
+inline const std::string& active_block_data::_internal_state_merkle_root() const {
+  return state_merkle_root_.Get();
+}
+inline void active_block_data::_internal_set_state_merkle_root(const std::string& value) {
+  
+  state_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* active_block_data::_internal_mutable_state_merkle_root() {
+  
+  return state_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* active_block_data::release_state_merkle_root() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.active_block_data.state_merkle_root)
+  return state_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void active_block_data::set_allocated_state_merkle_root(std::string* state_merkle_root) {
+  if (state_merkle_root != nullptr) {
+    
+  } else {
+    
+  }
+  state_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), state_merkle_root,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.active_block_data.state_merkle_root)
 }
 
 // -------------------------------------------------------------------

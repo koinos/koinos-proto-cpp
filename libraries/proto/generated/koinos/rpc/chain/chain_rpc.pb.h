@@ -985,9 +985,24 @@ class get_head_info_response final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kHeadStateMerkleRootFieldNumber = 3,
     kHeadTopologyFieldNumber = 1,
     kLastIrreversibleBlockFieldNumber = 2,
   };
+  // bytes head_state_merkle_root = 3;
+  void clear_head_state_merkle_root();
+  const std::string& head_state_merkle_root() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_head_state_merkle_root(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_head_state_merkle_root();
+  PROTOBUF_MUST_USE_RESULT std::string* release_head_state_merkle_root();
+  void set_allocated_head_state_merkle_root(std::string* head_state_merkle_root);
+  private:
+  const std::string& _internal_head_state_merkle_root() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_head_state_merkle_root(const std::string& value);
+  std::string* _internal_mutable_head_state_merkle_root();
+  public:
+
   // .koinos.block_topology head_topology = 1;
   bool has_head_topology() const;
   private:
@@ -1022,6 +1037,7 @@ class get_head_info_response final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr head_state_merkle_root_;
   ::koinos::block_topology* head_topology_;
   ::PROTOBUF_NAMESPACE_ID::uint64 last_irreversible_block_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -3989,6 +4005,52 @@ inline void get_head_info_response::_internal_set_last_irreversible_block(::PROT
 inline void get_head_info_response::set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_last_irreversible_block(value);
   // @@protoc_insertion_point(field_set:koinos.rpc.chain.get_head_info_response.last_irreversible_block)
+}
+
+// bytes head_state_merkle_root = 3;
+inline void get_head_info_response::clear_head_state_merkle_root() {
+  head_state_merkle_root_.ClearToEmpty();
+}
+inline const std::string& get_head_info_response::head_state_merkle_root() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.get_head_info_response.head_state_merkle_root)
+  return _internal_head_state_merkle_root();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_head_info_response::set_head_state_merkle_root(ArgT0&& arg0, ArgT... args) {
+ 
+ head_state_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.get_head_info_response.head_state_merkle_root)
+}
+inline std::string* get_head_info_response::mutable_head_state_merkle_root() {
+  std::string* _s = _internal_mutable_head_state_merkle_root();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.get_head_info_response.head_state_merkle_root)
+  return _s;
+}
+inline const std::string& get_head_info_response::_internal_head_state_merkle_root() const {
+  return head_state_merkle_root_.Get();
+}
+inline void get_head_info_response::_internal_set_head_state_merkle_root(const std::string& value) {
+  
+  head_state_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_head_info_response::_internal_mutable_head_state_merkle_root() {
+  
+  return head_state_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_head_info_response::release_head_state_merkle_root() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.get_head_info_response.head_state_merkle_root)
+  return head_state_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_head_info_response::set_allocated_head_state_merkle_root(std::string* head_state_merkle_root) {
+  if (head_state_merkle_root != nullptr) {
+    
+  } else {
+    
+  }
+  head_state_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), head_state_merkle_root,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.get_head_info_response.head_state_merkle_root)
 }
 
 // -------------------------------------------------------------------

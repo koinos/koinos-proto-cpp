@@ -2106,7 +2106,6 @@ class active_block_data final :
   enum : int {
     kTransactionMerkleRootFieldNumber = 1,
     kSignerFieldNumber = 3,
-    kPreviousStateMerkleRootFieldNumber = 4,
   };
   // bytes transaction_merkle_root = 1;
   void clear_transaction_merkle_root();
@@ -2136,20 +2135,6 @@ class active_block_data final :
   std::string* _internal_mutable_signer();
   public:
 
-  // bytes previous_state_merkle_root = 4;
-  void clear_previous_state_merkle_root();
-  const std::string& previous_state_merkle_root() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_previous_state_merkle_root(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_previous_state_merkle_root();
-  PROTOBUF_MUST_USE_RESULT std::string* release_previous_state_merkle_root();
-  void set_allocated_previous_state_merkle_root(std::string* previous_state_merkle_root);
-  private:
-  const std::string& _internal_previous_state_merkle_root() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_previous_state_merkle_root(const std::string& value);
-  std::string* _internal_mutable_previous_state_merkle_root();
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.protocol.active_block_data)
  private:
   class _Internal;
@@ -2159,7 +2144,6 @@ class active_block_data final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transaction_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signer_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_state_merkle_root_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -2281,6 +2265,7 @@ class block_header final :
 
   enum : int {
     kPreviousFieldNumber = 1,
+    kPreviousStateMerkleRootFieldNumber = 4,
     kHeightFieldNumber = 2,
     kTimestampFieldNumber = 3,
   };
@@ -2296,6 +2281,20 @@ class block_header final :
   const std::string& _internal_previous() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_previous(const std::string& value);
   std::string* _internal_mutable_previous();
+  public:
+
+  // bytes previous_state_merkle_root = 4;
+  void clear_previous_state_merkle_root();
+  const std::string& previous_state_merkle_root() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_previous_state_merkle_root(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_previous_state_merkle_root();
+  PROTOBUF_MUST_USE_RESULT std::string* release_previous_state_merkle_root();
+  void set_allocated_previous_state_merkle_root(std::string* previous_state_merkle_root);
+  private:
+  const std::string& _internal_previous_state_merkle_root() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_previous_state_merkle_root(const std::string& value);
+  std::string* _internal_mutable_previous_state_merkle_root();
   public:
 
   // uint64 height = 2 [jstype = JS_STRING];
@@ -2324,6 +2323,7 @@ class block_header final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_state_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::uint64 height_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -4417,52 +4417,6 @@ inline void active_block_data::set_allocated_signer(std::string* signer) {
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.active_block_data.signer)
 }
 
-// bytes previous_state_merkle_root = 4;
-inline void active_block_data::clear_previous_state_merkle_root() {
-  previous_state_merkle_root_.ClearToEmpty();
-}
-inline const std::string& active_block_data::previous_state_merkle_root() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.active_block_data.previous_state_merkle_root)
-  return _internal_previous_state_merkle_root();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void active_block_data::set_previous_state_merkle_root(ArgT0&& arg0, ArgT... args) {
- 
- previous_state_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.protocol.active_block_data.previous_state_merkle_root)
-}
-inline std::string* active_block_data::mutable_previous_state_merkle_root() {
-  std::string* _s = _internal_mutable_previous_state_merkle_root();
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.active_block_data.previous_state_merkle_root)
-  return _s;
-}
-inline const std::string& active_block_data::_internal_previous_state_merkle_root() const {
-  return previous_state_merkle_root_.Get();
-}
-inline void active_block_data::_internal_set_previous_state_merkle_root(const std::string& value) {
-  
-  previous_state_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* active_block_data::_internal_mutable_previous_state_merkle_root() {
-  
-  return previous_state_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* active_block_data::release_previous_state_merkle_root() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.active_block_data.previous_state_merkle_root)
-  return previous_state_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void active_block_data::set_allocated_previous_state_merkle_root(std::string* previous_state_merkle_root) {
-  if (previous_state_merkle_root != nullptr) {
-    
-  } else {
-    
-  }
-  previous_state_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous_state_merkle_root,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.active_block_data.previous_state_merkle_root)
-}
-
 // -------------------------------------------------------------------
 
 // block_header
@@ -4551,6 +4505,52 @@ inline void block_header::_internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint6
 inline void block_header::set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_timestamp(value);
   // @@protoc_insertion_point(field_set:koinos.protocol.block_header.timestamp)
+}
+
+// bytes previous_state_merkle_root = 4;
+inline void block_header::clear_previous_state_merkle_root() {
+  previous_state_merkle_root_.ClearToEmpty();
+}
+inline const std::string& block_header::previous_state_merkle_root() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_header.previous_state_merkle_root)
+  return _internal_previous_state_merkle_root();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void block_header::set_previous_state_merkle_root(ArgT0&& arg0, ArgT... args) {
+ 
+ previous_state_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_header.previous_state_merkle_root)
+}
+inline std::string* block_header::mutable_previous_state_merkle_root() {
+  std::string* _s = _internal_mutable_previous_state_merkle_root();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_header.previous_state_merkle_root)
+  return _s;
+}
+inline const std::string& block_header::_internal_previous_state_merkle_root() const {
+  return previous_state_merkle_root_.Get();
+}
+inline void block_header::_internal_set_previous_state_merkle_root(const std::string& value) {
+  
+  previous_state_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* block_header::_internal_mutable_previous_state_merkle_root() {
+  
+  return previous_state_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* block_header::release_previous_state_merkle_root() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.block_header.previous_state_merkle_root)
+  return previous_state_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void block_header::set_allocated_previous_state_merkle_root(std::string* previous_state_merkle_root) {
+  if (previous_state_merkle_root != nullptr) {
+    
+  } else {
+    
+  }
+  previous_state_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), previous_state_merkle_root,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_header.previous_state_merkle_root)
 }
 
 // -------------------------------------------------------------------

@@ -227,32 +227,32 @@ class get_blocks_by_id_request final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBlockIdFieldNumber = 1,
+    kBlockIdsFieldNumber = 1,
     kReturnBlockFieldNumber = 2,
     kReturnReceiptFieldNumber = 3,
   };
-  // repeated bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
-  int block_id_size() const;
+  // repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  int block_ids_size() const;
   private:
-  int _internal_block_id_size() const;
+  int _internal_block_ids_size() const;
   public:
-  void clear_block_id();
-  const std::string& block_id(int index) const;
-  std::string* mutable_block_id(int index);
-  void set_block_id(int index, const std::string& value);
-  void set_block_id(int index, std::string&& value);
-  void set_block_id(int index, const char* value);
-  void set_block_id(int index, const void* value, size_t size);
-  std::string* add_block_id();
-  void add_block_id(const std::string& value);
-  void add_block_id(std::string&& value);
-  void add_block_id(const char* value);
-  void add_block_id(const void* value, size_t size);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& block_id() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_block_id();
+  void clear_block_ids();
+  const std::string& block_ids(int index) const;
+  std::string* mutable_block_ids(int index);
+  void set_block_ids(int index, const std::string& value);
+  void set_block_ids(int index, std::string&& value);
+  void set_block_ids(int index, const char* value);
+  void set_block_ids(int index, const void* value, size_t size);
+  std::string* add_block_ids();
+  void add_block_ids(const std::string& value);
+  void add_block_ids(std::string&& value);
+  void add_block_ids(const char* value);
+  void add_block_ids(const void* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& block_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_block_ids();
   private:
-  const std::string& _internal_block_id(int index) const;
-  std::string* _internal_add_block_id();
+  const std::string& _internal_block_ids(int index) const;
+  std::string* _internal_add_block_ids();
   public:
 
   // bool return_block = 2;
@@ -280,7 +280,7 @@ class get_blocks_by_id_request final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> block_id_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> block_ids_;
   bool return_block_;
   bool return_receipt_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1857,79 +1857,79 @@ class block_store_response final :
 #endif  // __GNUC__
 // get_blocks_by_id_request
 
-// repeated bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
-inline int get_blocks_by_id_request::_internal_block_id_size() const {
-  return block_id_.size();
+// repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+inline int get_blocks_by_id_request::_internal_block_ids_size() const {
+  return block_ids_.size();
 }
-inline int get_blocks_by_id_request::block_id_size() const {
-  return _internal_block_id_size();
+inline int get_blocks_by_id_request::block_ids_size() const {
+  return _internal_block_ids_size();
 }
-inline void get_blocks_by_id_request::clear_block_id() {
-  block_id_.Clear();
+inline void get_blocks_by_id_request::clear_block_ids() {
+  block_ids_.Clear();
 }
-inline std::string* get_blocks_by_id_request::add_block_id() {
-  std::string* _s = _internal_add_block_id();
-  // @@protoc_insertion_point(field_add_mutable:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+inline std::string* get_blocks_by_id_request::add_block_ids() {
+  std::string* _s = _internal_add_block_ids();
+  // @@protoc_insertion_point(field_add_mutable:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
   return _s;
 }
-inline const std::string& get_blocks_by_id_request::_internal_block_id(int index) const {
-  return block_id_.Get(index);
+inline const std::string& get_blocks_by_id_request::_internal_block_ids(int index) const {
+  return block_ids_.Get(index);
 }
-inline const std::string& get_blocks_by_id_request::block_id(int index) const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
-  return _internal_block_id(index);
+inline const std::string& get_blocks_by_id_request::block_ids(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
+  return _internal_block_ids(index);
 }
-inline std::string* get_blocks_by_id_request::mutable_block_id(int index) {
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
-  return block_id_.Mutable(index);
+inline std::string* get_blocks_by_id_request::mutable_block_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
+  return block_ids_.Mutable(index);
 }
-inline void get_blocks_by_id_request::set_block_id(int index, const std::string& value) {
-  block_id_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+inline void get_blocks_by_id_request::set_block_ids(int index, const std::string& value) {
+  block_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline void get_blocks_by_id_request::set_block_id(int index, std::string&& value) {
-  block_id_.Mutable(index)->assign(std::move(value));
-  // @@protoc_insertion_point(field_set:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+inline void get_blocks_by_id_request::set_block_ids(int index, std::string&& value) {
+  block_ids_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline void get_blocks_by_id_request::set_block_id(int index, const char* value) {
+inline void get_blocks_by_id_request::set_block_ids(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  block_id_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+  block_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline void get_blocks_by_id_request::set_block_id(int index, const void* value, size_t size) {
-  block_id_.Mutable(index)->assign(
+inline void get_blocks_by_id_request::set_block_ids(int index, const void* value, size_t size) {
+  block_ids_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+  // @@protoc_insertion_point(field_set_pointer:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline std::string* get_blocks_by_id_request::_internal_add_block_id() {
-  return block_id_.Add();
+inline std::string* get_blocks_by_id_request::_internal_add_block_ids() {
+  return block_ids_.Add();
 }
-inline void get_blocks_by_id_request::add_block_id(const std::string& value) {
-  block_id_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+inline void get_blocks_by_id_request::add_block_ids(const std::string& value) {
+  block_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline void get_blocks_by_id_request::add_block_id(std::string&& value) {
-  block_id_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+inline void get_blocks_by_id_request::add_block_ids(std::string&& value) {
+  block_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline void get_blocks_by_id_request::add_block_id(const char* value) {
+inline void get_blocks_by_id_request::add_block_ids(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  block_id_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+  block_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
-inline void get_blocks_by_id_request::add_block_id(const void* value, size_t size) {
-  block_id_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
+inline void get_blocks_by_id_request::add_block_ids(const void* value, size_t size) {
+  block_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
-get_blocks_by_id_request::block_id() const {
-  // @@protoc_insertion_point(field_list:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
-  return block_id_;
+get_blocks_by_id_request::block_ids() const {
+  // @@protoc_insertion_point(field_list:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
+  return block_ids_;
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
-get_blocks_by_id_request::mutable_block_id() {
-  // @@protoc_insertion_point(field_mutable_list:koinos.rpc.block_store.get_blocks_by_id_request.block_id)
-  return &block_id_;
+get_blocks_by_id_request::mutable_block_ids() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.rpc.block_store.get_blocks_by_id_request.block_ids)
+  return &block_ids_;
 }
 
 // bool return_block = 2;

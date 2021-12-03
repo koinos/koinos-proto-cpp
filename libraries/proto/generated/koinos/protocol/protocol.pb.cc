@@ -210,6 +210,7 @@ constexpr block_receipt::block_receipt(
   : events_()
   , transaction_receipts_()
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , state_merkle_root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , height_(uint64_t{0u})
   , disk_storage_used_(uint64_t{0u})
   , network_bandwidth_used_(uint64_t{0u})
@@ -354,6 +355,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fprotocol_2fprotocol_2
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_receipt, disk_storage_used_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_receipt, network_bandwidth_used_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_receipt, compute_bandwidth_used_),
+  PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_receipt, state_merkle_root_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_receipt, events_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_receipt, transaction_receipts_),
 };
@@ -434,23 +436,24 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022-\n\006header\030\002 \001(\0132\035.koi"
   "nos.protocol.block_header\022\016\n\006active\030\003 \001("
   "\014\022\026\n\016signature_data\030\005 \001(\014\0222\n\014transaction"
-  "s\030\006 \003(\0132\034.koinos.protocol.transaction\"\215\002"
+  "s\030\006 \003(\0132\034.koinos.protocol.transaction\"\250\002"
   "\n\rblock_receipt\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022\022\n\006hei"
   "ght\030\002 \001(\004B\0020\001\022\035\n\021disk_storage_used\030\003 \001(\004"
   "B\0020\001\022\"\n\026network_bandwidth_used\030\004 \001(\004B\0020\001"
-  "\022\"\n\026compute_bandwidth_used\030\005 \001(\004B\0020\001\022+\n\006"
-  "events\030\006 \003(\0132\033.koinos.protocol.event_dat"
-  "a\022B\n\024transaction_receipts\030\007 \003(\0132$.koinos"
-  ".protocol.transaction_receiptB7Z5github."
-  "com/koinos/koinos-proto-golang/koinos/pr"
-  "otocolb\006proto3"
+  "\022\"\n\026compute_bandwidth_used\030\005 \001(\004B\0020\001\022\031\n\021"
+  "state_merkle_root\030\006 \001(\014\022+\n\006events\030\007 \003(\0132"
+  "\033.koinos.protocol.event_data\022B\n\024transact"
+  "ion_receipts\030\010 \003(\0132$.koinos.protocol.tra"
+  "nsaction_receiptB7Z5github.com/koinos/ko"
+  "inos-proto-golang/koinos/protocolb\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 2054, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 2081, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -4281,6 +4284,11 @@ block_receipt::block_receipt(const block_receipt& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
+  state_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_state_merkle_root().empty()) {
+    state_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_state_merkle_root(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&height_, &from.height_,
     static_cast<size_t>(reinterpret_cast<char*>(&compute_bandwidth_used_) -
     reinterpret_cast<char*>(&height_)) + sizeof(compute_bandwidth_used_));
@@ -4289,6 +4297,7 @@ block_receipt::block_receipt(const block_receipt& from)
 
 inline void block_receipt::SharedCtor() {
 id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+state_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&height_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&compute_bandwidth_used_) -
@@ -4305,6 +4314,7 @@ block_receipt::~block_receipt() {
 inline void block_receipt::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  state_merkle_root_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void block_receipt::ArenaDtor(void* object) {
@@ -4326,6 +4336,7 @@ void block_receipt::Clear() {
   events_.Clear();
   transaction_receipts_.Clear();
   id_.ClearToEmpty();
+  state_merkle_root_.ClearToEmpty();
   ::memset(&height_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&compute_bandwidth_used_) -
       reinterpret_cast<char*>(&height_)) + sizeof(compute_bandwidth_used_));
@@ -4374,28 +4385,36 @@ const char* block_receipt::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated .koinos.protocol.event_data events = 6;
+      // bytes state_merkle_root = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          auto str = _internal_mutable_state_merkle_root();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .koinos.protocol.event_data events = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_events(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
-      // repeated .koinos.protocol.transaction_receipt transaction_receipts = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+      // repeated .koinos.protocol.transaction_receipt transaction_receipts = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_transaction_receipts(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -4457,20 +4476,26 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_compute_bandwidth_used(), target);
   }
 
-  // repeated .koinos.protocol.event_data events = 6;
+  // bytes state_merkle_root = 6;
+  if (!this->_internal_state_merkle_root().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        6, this->_internal_state_merkle_root(), target);
+  }
+
+  // repeated .koinos.protocol.event_data events = 7;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_events_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(6, this->_internal_events(i), target, stream);
+      InternalWriteMessage(7, this->_internal_events(i), target, stream);
   }
 
-  // repeated .koinos.protocol.transaction_receipt transaction_receipts = 7;
+  // repeated .koinos.protocol.transaction_receipt transaction_receipts = 8;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->_internal_transaction_receipts_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(7, this->_internal_transaction_receipts(i), target, stream);
+      InternalWriteMessage(8, this->_internal_transaction_receipts(i), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4489,14 +4514,14 @@ size_t block_receipt::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .koinos.protocol.event_data events = 6;
+  // repeated .koinos.protocol.event_data events = 7;
   total_size += 1UL * this->_internal_events_size();
   for (const auto& msg : this->events_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // repeated .koinos.protocol.transaction_receipt transaction_receipts = 7;
+  // repeated .koinos.protocol.transaction_receipt transaction_receipts = 8;
   total_size += 1UL * this->_internal_transaction_receipts_size();
   for (const auto& msg : this->transaction_receipts_) {
     total_size +=
@@ -4508,6 +4533,13 @@ size_t block_receipt::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_id());
+  }
+
+  // bytes state_merkle_root = 6;
+  if (!this->_internal_state_merkle_root().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_state_merkle_root());
   }
 
   // uint64 height = 2 [jstype = JS_STRING];
@@ -4571,6 +4603,9 @@ void block_receipt::MergeFrom(const block_receipt& from) {
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
+  if (!from._internal_state_merkle_root().empty()) {
+    _internal_set_state_merkle_root(from._internal_state_merkle_root());
+  }
   if (from._internal_height() != 0) {
     _internal_set_height(from._internal_height());
   }
@@ -4606,6 +4641,11 @@ void block_receipt::InternalSwap(block_receipt* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, GetArenaForAllocation(),
       &other->id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &state_merkle_root_, GetArenaForAllocation(),
+      &other->state_merkle_root_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(block_receipt, compute_bandwidth_used_)

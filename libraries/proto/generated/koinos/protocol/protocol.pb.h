@@ -2662,15 +2662,16 @@ class block_receipt final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kEventsFieldNumber = 6,
-    kTransactionReceiptsFieldNumber = 7,
+    kEventsFieldNumber = 7,
+    kTransactionReceiptsFieldNumber = 8,
     kIdFieldNumber = 1,
+    kStateMerkleRootFieldNumber = 6,
     kHeightFieldNumber = 2,
     kDiskStorageUsedFieldNumber = 3,
     kNetworkBandwidthUsedFieldNumber = 4,
     kComputeBandwidthUsedFieldNumber = 5,
   };
-  // repeated .koinos.protocol.event_data events = 6;
+  // repeated .koinos.protocol.event_data events = 7;
   int events_size() const;
   private:
   int _internal_events_size() const;
@@ -2688,7 +2689,7 @@ class block_receipt final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::event_data >&
       events() const;
 
-  // repeated .koinos.protocol.transaction_receipt transaction_receipts = 7;
+  // repeated .koinos.protocol.transaction_receipt transaction_receipts = 8;
   int transaction_receipts_size() const;
   private:
   int _internal_transaction_receipts_size() const;
@@ -2718,6 +2719,20 @@ class block_receipt final :
   const std::string& _internal_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
   std::string* _internal_mutable_id();
+  public:
+
+  // bytes state_merkle_root = 6;
+  void clear_state_merkle_root();
+  const std::string& state_merkle_root() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_state_merkle_root(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_state_merkle_root();
+  PROTOBUF_MUST_USE_RESULT std::string* release_state_merkle_root();
+  void set_allocated_state_merkle_root(std::string* state_merkle_root);
+  private:
+  const std::string& _internal_state_merkle_root() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_state_merkle_root(const std::string& value);
+  std::string* _internal_mutable_state_merkle_root();
   public:
 
   // uint64 height = 2 [jstype = JS_STRING];
@@ -2766,6 +2781,7 @@ class block_receipt final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::event_data > events_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::transaction_receipt > transaction_receipts_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::uint64 height_;
   ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_used_;
   ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_used_;
@@ -4955,7 +4971,53 @@ inline void block_receipt::set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::u
   // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.compute_bandwidth_used)
 }
 
-// repeated .koinos.protocol.event_data events = 6;
+// bytes state_merkle_root = 6;
+inline void block_receipt::clear_state_merkle_root() {
+  state_merkle_root_.ClearToEmpty();
+}
+inline const std::string& block_receipt::state_merkle_root() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_receipt.state_merkle_root)
+  return _internal_state_merkle_root();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void block_receipt::set_state_merkle_root(ArgT0&& arg0, ArgT... args) {
+ 
+ state_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.state_merkle_root)
+}
+inline std::string* block_receipt::mutable_state_merkle_root() {
+  std::string* _s = _internal_mutable_state_merkle_root();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_receipt.state_merkle_root)
+  return _s;
+}
+inline const std::string& block_receipt::_internal_state_merkle_root() const {
+  return state_merkle_root_.Get();
+}
+inline void block_receipt::_internal_set_state_merkle_root(const std::string& value) {
+  
+  state_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* block_receipt::_internal_mutable_state_merkle_root() {
+  
+  return state_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* block_receipt::release_state_merkle_root() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.block_receipt.state_merkle_root)
+  return state_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void block_receipt::set_allocated_state_merkle_root(std::string* state_merkle_root) {
+  if (state_merkle_root != nullptr) {
+    
+  } else {
+    
+  }
+  state_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), state_merkle_root,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_receipt.state_merkle_root)
+}
+
+// repeated .koinos.protocol.event_data events = 7;
 inline int block_receipt::_internal_events_size() const {
   return events_.size();
 }
@@ -4995,7 +5057,7 @@ block_receipt::events() const {
   return events_;
 }
 
-// repeated .koinos.protocol.transaction_receipt transaction_receipts = 7;
+// repeated .koinos.protocol.transaction_receipt transaction_receipts = 8;
 inline int block_receipt::_internal_transaction_receipts_size() const {
   return transaction_receipts_.size();
 }

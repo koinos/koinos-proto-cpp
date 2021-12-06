@@ -93,12 +93,13 @@ enum system_call_id : int {
   get_resource_limits = 34,
   consume_block_resources = 35,
   event = 36,
+  apply_set_system_contract_operation = 37,
   system_call_id_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   system_call_id_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool system_call_id_IsValid(int value);
 constexpr system_call_id system_call_id_MIN = reserved_id;
-constexpr system_call_id system_call_id_MAX = event;
+constexpr system_call_id system_call_id_MAX = apply_set_system_contract_operation;
 constexpr int system_call_id_ARRAYSIZE = system_call_id_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_call_id_descriptor();

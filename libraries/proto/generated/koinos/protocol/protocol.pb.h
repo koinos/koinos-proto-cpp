@@ -47,7 +47,7 @@ struct TableStruct_koinos_2fprotocol_2fprotocol_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[15]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -86,6 +86,9 @@ extern operationDefaultTypeInternal _operation_default_instance_;
 class set_system_call_operation;
 struct set_system_call_operationDefaultTypeInternal;
 extern set_system_call_operationDefaultTypeInternal _set_system_call_operation_default_instance_;
+class set_system_contract_operation;
+struct set_system_contract_operationDefaultTypeInternal;
+extern set_system_contract_operationDefaultTypeInternal _set_system_contract_operation_default_instance_;
 class system_call_target;
 struct system_call_targetDefaultTypeInternal;
 extern system_call_targetDefaultTypeInternal _system_call_target_default_instance_;
@@ -111,6 +114,7 @@ template<> ::koinos::protocol::contract_call_bundle* Arena::CreateMaybeMessage<:
 template<> ::koinos::protocol::event_data* Arena::CreateMaybeMessage<::koinos::protocol::event_data>(Arena*);
 template<> ::koinos::protocol::operation* Arena::CreateMaybeMessage<::koinos::protocol::operation>(Arena*);
 template<> ::koinos::protocol::set_system_call_operation* Arena::CreateMaybeMessage<::koinos::protocol::set_system_call_operation>(Arena*);
+template<> ::koinos::protocol::set_system_contract_operation* Arena::CreateMaybeMessage<::koinos::protocol::set_system_contract_operation>(Arena*);
 template<> ::koinos::protocol::system_call_target* Arena::CreateMaybeMessage<::koinos::protocol::system_call_target>(Arena*);
 template<> ::koinos::protocol::transaction* Arena::CreateMaybeMessage<::koinos::protocol::transaction>(Arena*);
 template<> ::koinos::protocol::transaction_receipt* Arena::CreateMaybeMessage<::koinos::protocol::transaction_receipt>(Arena*);
@@ -1177,6 +1181,161 @@ class set_system_call_operation final :
 };
 // -------------------------------------------------------------------
 
+class set_system_contract_operation final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.set_system_contract_operation) */ {
+ public:
+  inline set_system_contract_operation() : set_system_contract_operation(nullptr) {}
+  ~set_system_contract_operation() override;
+  explicit constexpr set_system_contract_operation(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  set_system_contract_operation(const set_system_contract_operation& from);
+  set_system_contract_operation(set_system_contract_operation&& from) noexcept
+    : set_system_contract_operation() {
+    *this = ::std::move(from);
+  }
+
+  inline set_system_contract_operation& operator=(const set_system_contract_operation& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline set_system_contract_operation& operator=(set_system_contract_operation&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const set_system_contract_operation& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const set_system_contract_operation* internal_default_instance() {
+    return reinterpret_cast<const set_system_contract_operation*>(
+               &_set_system_contract_operation_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(set_system_contract_operation& a, set_system_contract_operation& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(set_system_contract_operation* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(set_system_contract_operation* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline set_system_contract_operation* New() const final {
+    return new set_system_contract_operation();
+  }
+
+  set_system_contract_operation* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<set_system_contract_operation>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const set_system_contract_operation& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const set_system_contract_operation& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(set_system_contract_operation* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.protocol.set_system_contract_operation";
+  }
+  protected:
+  explicit set_system_contract_operation(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kContractIdFieldNumber = 1,
+    kSystemContractFieldNumber = 2,
+  };
+  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  void clear_contract_id();
+  const std::string& contract_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_contract_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_contract_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_contract_id();
+  void set_allocated_contract_id(std::string* contract_id);
+  private:
+  const std::string& _internal_contract_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_contract_id(const std::string& value);
+  std::string* _internal_mutable_contract_id();
+  public:
+
+  // bool system_contract = 2;
+  void clear_system_contract();
+  bool system_contract() const;
+  void set_system_contract(bool value);
+  private:
+  bool _internal_system_contract() const;
+  void _internal_set_system_contract(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.protocol.set_system_contract_operation)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contract_id_;
+  bool system_contract_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
+};
+// -------------------------------------------------------------------
+
 class operation final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.protocol.operation) */ {
  public:
@@ -1220,6 +1379,7 @@ class operation final :
     kUploadContract = 1,
     kCallContract = 2,
     kSetSystemCall = 3,
+    kSetSystemContract = 4,
     OP_NOT_SET = 0,
   };
 
@@ -1228,7 +1388,7 @@ class operation final :
                &_operation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(operation& a, operation& b) {
     a.Swap(&b);
@@ -1302,6 +1462,7 @@ class operation final :
     kUploadContractFieldNumber = 1,
     kCallContractFieldNumber = 2,
     kSetSystemCallFieldNumber = 3,
+    kSetSystemContractFieldNumber = 4,
   };
   // .koinos.protocol.upload_contract_operation upload_contract = 1;
   bool has_upload_contract() const;
@@ -1357,6 +1518,24 @@ class operation final :
       ::koinos::protocol::set_system_call_operation* set_system_call);
   ::koinos::protocol::set_system_call_operation* unsafe_arena_release_set_system_call();
 
+  // .koinos.protocol.set_system_contract_operation set_system_contract = 4;
+  bool has_set_system_contract() const;
+  private:
+  bool _internal_has_set_system_contract() const;
+  public:
+  void clear_set_system_contract();
+  const ::koinos::protocol::set_system_contract_operation& set_system_contract() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::set_system_contract_operation* release_set_system_contract();
+  ::koinos::protocol::set_system_contract_operation* mutable_set_system_contract();
+  void set_allocated_set_system_contract(::koinos::protocol::set_system_contract_operation* set_system_contract);
+  private:
+  const ::koinos::protocol::set_system_contract_operation& _internal_set_system_contract() const;
+  ::koinos::protocol::set_system_contract_operation* _internal_mutable_set_system_contract();
+  public:
+  void unsafe_arena_set_allocated_set_system_contract(
+      ::koinos::protocol::set_system_contract_operation* set_system_contract);
+  ::koinos::protocol::set_system_contract_operation* unsafe_arena_release_set_system_contract();
+
   void clear_op();
   OpCase op_case() const;
   // @@protoc_insertion_point(class_scope:koinos.protocol.operation)
@@ -1365,6 +1544,7 @@ class operation final :
   void set_has_upload_contract();
   void set_has_call_contract();
   void set_has_set_system_call();
+  void set_has_set_system_contract();
 
   inline bool has_op() const;
   inline void clear_has_op();
@@ -1378,6 +1558,7 @@ class operation final :
     ::koinos::protocol::upload_contract_operation* upload_contract_;
     ::koinos::protocol::call_contract_operation* call_contract_;
     ::koinos::protocol::set_system_call_operation* set_system_call_;
+    ::koinos::protocol::set_system_contract_operation* set_system_contract_;
   } op_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1430,7 +1611,7 @@ class active_transaction_data final :
                &_active_transaction_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(active_transaction_data& a, active_transaction_data& b) {
     a.Swap(&b);
@@ -1600,7 +1781,7 @@ class transaction final :
                &_transaction_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(transaction& a, transaction& b) {
     a.Swap(&b);
@@ -1776,7 +1957,7 @@ class transaction_receipt final :
                &_transaction_receipt_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(transaction_receipt& a, transaction_receipt& b) {
     a.Swap(&b);
@@ -2033,7 +2214,7 @@ class active_block_data final :
                &_active_block_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(active_block_data& a, active_block_data& b) {
     a.Swap(&b);
@@ -2193,7 +2374,7 @@ class block_header final :
                &_block_header_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(block_header& a, block_header& b) {
     a.Swap(&b);
@@ -2375,7 +2556,7 @@ class block final :
                &_block_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(block& a, block& b) {
     a.Swap(&b);
@@ -2591,7 +2772,7 @@ class block_receipt final :
                &_block_receipt_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(block_receipt& a, block_receipt& b) {
     a.Swap(&b);
@@ -3602,6 +3783,76 @@ inline void set_system_call_operation::set_allocated_target(::koinos::protocol::
 
 // -------------------------------------------------------------------
 
+// set_system_contract_operation
+
+// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+inline void set_system_contract_operation::clear_contract_id() {
+  contract_id_.ClearToEmpty();
+}
+inline const std::string& set_system_contract_operation::contract_id() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.set_system_contract_operation.contract_id)
+  return _internal_contract_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void set_system_contract_operation::set_contract_id(ArgT0&& arg0, ArgT... args) {
+ 
+ contract_id_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.set_system_contract_operation.contract_id)
+}
+inline std::string* set_system_contract_operation::mutable_contract_id() {
+  std::string* _s = _internal_mutable_contract_id();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.set_system_contract_operation.contract_id)
+  return _s;
+}
+inline const std::string& set_system_contract_operation::_internal_contract_id() const {
+  return contract_id_.Get();
+}
+inline void set_system_contract_operation::_internal_set_contract_id(const std::string& value) {
+  
+  contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* set_system_contract_operation::_internal_mutable_contract_id() {
+  
+  return contract_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* set_system_contract_operation::release_contract_id() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.set_system_contract_operation.contract_id)
+  return contract_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void set_system_contract_operation::set_allocated_contract_id(std::string* contract_id) {
+  if (contract_id != nullptr) {
+    
+  } else {
+    
+  }
+  contract_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), contract_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.set_system_contract_operation.contract_id)
+}
+
+// bool system_contract = 2;
+inline void set_system_contract_operation::clear_system_contract() {
+  system_contract_ = false;
+}
+inline bool set_system_contract_operation::_internal_system_contract() const {
+  return system_contract_;
+}
+inline bool set_system_contract_operation::system_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.set_system_contract_operation.system_contract)
+  return _internal_system_contract();
+}
+inline void set_system_contract_operation::_internal_set_system_contract(bool value) {
+  
+  system_contract_ = value;
+}
+inline void set_system_contract_operation::set_system_contract(bool value) {
+  _internal_set_system_contract(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.set_system_contract_operation.system_contract)
+}
+
+// -------------------------------------------------------------------
+
 // operation
 
 // .koinos.protocol.upload_contract_operation upload_contract = 1;
@@ -3823,6 +4074,80 @@ inline ::koinos::protocol::set_system_call_operation* operation::_internal_mutab
 inline ::koinos::protocol::set_system_call_operation* operation::mutable_set_system_call() {
   ::koinos::protocol::set_system_call_operation* _msg = _internal_mutable_set_system_call();
   // @@protoc_insertion_point(field_mutable:koinos.protocol.operation.set_system_call)
+  return _msg;
+}
+
+// .koinos.protocol.set_system_contract_operation set_system_contract = 4;
+inline bool operation::_internal_has_set_system_contract() const {
+  return op_case() == kSetSystemContract;
+}
+inline bool operation::has_set_system_contract() const {
+  return _internal_has_set_system_contract();
+}
+inline void operation::set_has_set_system_contract() {
+  _oneof_case_[0] = kSetSystemContract;
+}
+inline void operation::clear_set_system_contract() {
+  if (_internal_has_set_system_contract()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete op_.set_system_contract_;
+    }
+    clear_has_op();
+  }
+}
+inline ::koinos::protocol::set_system_contract_operation* operation::release_set_system_contract() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.operation.set_system_contract)
+  if (_internal_has_set_system_contract()) {
+    clear_has_op();
+      ::koinos::protocol::set_system_contract_operation* temp = op_.set_system_contract_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    op_.set_system_contract_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::protocol::set_system_contract_operation& operation::_internal_set_system_contract() const {
+  return _internal_has_set_system_contract()
+      ? *op_.set_system_contract_
+      : reinterpret_cast< ::koinos::protocol::set_system_contract_operation&>(::koinos::protocol::_set_system_contract_operation_default_instance_);
+}
+inline const ::koinos::protocol::set_system_contract_operation& operation::set_system_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.operation.set_system_contract)
+  return _internal_set_system_contract();
+}
+inline ::koinos::protocol::set_system_contract_operation* operation::unsafe_arena_release_set_system_contract() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.protocol.operation.set_system_contract)
+  if (_internal_has_set_system_contract()) {
+    clear_has_op();
+    ::koinos::protocol::set_system_contract_operation* temp = op_.set_system_contract_;
+    op_.set_system_contract_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void operation::unsafe_arena_set_allocated_set_system_contract(::koinos::protocol::set_system_contract_operation* set_system_contract) {
+  clear_op();
+  if (set_system_contract) {
+    set_has_set_system_contract();
+    op_.set_system_contract_ = set_system_contract;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.protocol.operation.set_system_contract)
+}
+inline ::koinos::protocol::set_system_contract_operation* operation::_internal_mutable_set_system_contract() {
+  if (!_internal_has_set_system_contract()) {
+    clear_op();
+    set_has_set_system_contract();
+    op_.set_system_contract_ = CreateMaybeMessage< ::koinos::protocol::set_system_contract_operation >(GetArenaForAllocation());
+  }
+  return op_.set_system_contract_;
+}
+inline ::koinos::protocol::set_system_contract_operation* operation::mutable_set_system_contract() {
+  ::koinos::protocol::set_system_contract_operation* _msg = _internal_mutable_set_system_contract();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.operation.set_system_contract)
   return _msg;
 }
 
@@ -5100,6 +5425,8 @@ block_receipt::transaction_receipts() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

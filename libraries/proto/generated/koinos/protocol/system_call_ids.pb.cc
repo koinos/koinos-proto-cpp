@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n%koinos/protocol/system_call_ids.proto\022"
-  "\017koinos.protocol*\300\006\n\016system_call_id\022\017\n\013r"
+  "\017koinos.protocol*\351\006\n\016system_call_id\022\017\n\013r"
   "eserved_id\020\000\022\n\n\006prints\020\001\022\017\n\013apply_block\020"
   "\003\022\025\n\021apply_transaction\020\004\022#\n\037apply_upload"
   "_contract_operation\020\005\022!\n\035apply_call_cont"
@@ -49,12 +49,13 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2ep
   "\025\n\021get_account_nonce\020\037\022\022\n\016get_account_rc"
   "\020 \022\026\n\022consume_account_rc\020!\022\027\n\023get_resour"
   "ce_limits\020\"\022\033\n\027consume_block_resources\020#"
-  "\022\t\n\005event\020$B7Z5github.com/koinos/koinos-"
-  "proto-golang/koinos/protocolb\006proto3"
+  "\022\t\n\005event\020$\022\'\n#apply_set_system_contract"
+  "_operation\020%B7Z5github.com/koinos/koinos"
+  "-proto-golang/koinos/protocolb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 956, descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, "koinos/protocol/system_call_ids.proto", 
+  false, false, 997, descriptor_table_protodef_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, "koinos/protocol/system_call_ids.proto", 
   &descriptor_table_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fsystem_5fcall_5fids_2eproto,
@@ -108,6 +109,7 @@ bool system_call_id_IsValid(int value) {
     case 34:
     case 35:
     case 36:
+    case 37:
       return true;
     default:
       return false;

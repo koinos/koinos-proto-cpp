@@ -1897,7 +1897,7 @@ const char* balance_of_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes owner = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_owner();
@@ -1934,7 +1934,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes owner = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_owner().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_owner(), target);
@@ -1956,7 +1956,7 @@ size_t balance_of_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes owner = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_owner().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -2288,7 +2288,7 @@ const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes from = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_from();
@@ -2296,7 +2296,7 @@ const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes to = 2 [(.koinos.btype) = ADDRESS];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_to();
@@ -2340,13 +2340,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_from().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_from(), target);
   }
 
-  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 2 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_to(), target);
@@ -2374,14 +2374,14 @@ size_t transfer_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_from().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_from());
   }
 
-  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 2 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -2722,7 +2722,7 @@ const char* mint_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes to = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_to();
@@ -2766,7 +2766,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_to(), target);
@@ -2794,7 +2794,7 @@ size_t mint_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3555,7 +3555,7 @@ const char* mint_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes to = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_to();
@@ -3599,7 +3599,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_to(), target);
@@ -3627,7 +3627,7 @@ size_t mint_event::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3785,7 +3785,7 @@ const char* transfer_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes from = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_from();
@@ -3793,7 +3793,7 @@ const char* transfer_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes to = 2 [(.koinos.btype) = ADDRESS];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_to();
@@ -3837,13 +3837,13 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_from().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_from(), target);
   }
 
-  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 2 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     target = stream->WriteBytesMaybeAliased(
         2, this->_internal_to(), target);
@@ -3871,14 +3871,14 @@ size_t transfer_event::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_from().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_from());
   }
 
-  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 2 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_to().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

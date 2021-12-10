@@ -92,10 +92,10 @@ inline bool bytes_type_Parse(
 
 // ===================================================================
 
-static const int kKoinosBytesTypeFieldNumber = 50000;
+static const int kBtypeFieldNumber = 50000;
 extern ::PROTOBUF_NAMESPACE_ID::internal::ExtensionIdentifier< ::google::protobuf::FieldOptions,
     ::PROTOBUF_NAMESPACE_ID::internal::EnumTypeTraits< ::koinos::bytes_type, ::koinos::bytes_type_IsValid>, 14, false >
-  koinos_bytes_type;
+  btype;
 
 // ===================================================================
 

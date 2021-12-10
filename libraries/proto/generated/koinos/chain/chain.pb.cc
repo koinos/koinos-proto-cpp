@@ -1065,7 +1065,7 @@ const char* caller_data::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes caller = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_caller();
@@ -1110,7 +1110,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes caller = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_caller().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_caller(), target);
@@ -1139,7 +1139,7 @@ size_t caller_data::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes caller = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_caller().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

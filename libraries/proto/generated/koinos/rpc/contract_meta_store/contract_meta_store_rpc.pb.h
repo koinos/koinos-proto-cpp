@@ -203,7 +203,7 @@ class get_contract_meta_request final :
   enum : int {
     kContractIdFieldNumber = 1,
   };
-  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -783,7 +783,7 @@ class contract_meta_store_response final :
 #endif  // __GNUC__
 // get_contract_meta_request
 
-// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+// bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
 inline void get_contract_meta_request::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }

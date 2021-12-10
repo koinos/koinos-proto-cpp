@@ -176,7 +176,7 @@ const char* transaction_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // repeated bytes containing_blocks = 2 [(.koinos.btype) = BLOCK_ID];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr -= 1;
@@ -226,7 +226,7 @@ failure:
         1, _Internal::transaction(this), target, stream);
   }
 
-  // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes containing_blocks = 2 [(.koinos.btype) = BLOCK_ID];
   for (int i = 0, n = this->_internal_containing_blocks_size(); i < n; i++) {
     const auto& s = this->_internal_containing_blocks(i);
     target = stream->WriteBytes(2, s, target);
@@ -248,7 +248,7 @@ size_t transaction_item::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes containing_blocks = 2 [(.koinos.btype) = BLOCK_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(containing_blocks_.size());
   for (int i = 0, n = containing_blocks_.size(); i < n; i++) {

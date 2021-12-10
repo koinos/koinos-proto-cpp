@@ -188,7 +188,7 @@ class transaction_item final :
     kContainingBlocksFieldNumber = 2,
     kTransactionFieldNumber = 1,
   };
-  // repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes containing_blocks = 2 [(.koinos.btype) = BLOCK_ID];
   int containing_blocks_size() const;
   private:
   int _internal_containing_blocks_size() const;
@@ -339,7 +339,7 @@ inline void transaction_item::set_allocated_transaction(::koinos::protocol::tran
   // @@protoc_insertion_point(field_set_allocated:koinos.transaction_store.transaction_item.transaction)
 }
 
-// repeated bytes containing_blocks = 2 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+// repeated bytes containing_blocks = 2 [(.koinos.btype) = BLOCK_ID];
 inline int transaction_item::_internal_containing_blocks_size() const {
   return containing_blocks_.size();
 }

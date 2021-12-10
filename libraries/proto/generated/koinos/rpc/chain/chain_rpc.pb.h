@@ -1728,7 +1728,7 @@ class read_contract_request final :
     kArgsFieldNumber = 3,
     kEntryPointFieldNumber = 2,
   };
-  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2057,7 +2057,7 @@ class get_account_nonce_request final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2340,7 +2340,7 @@ class get_account_rc_request final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4242,7 +4242,7 @@ get_fork_heads_response::fork_heads() const {
 
 // read_contract_request
 
-// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+// bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
 inline void read_contract_request::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -4454,7 +4454,7 @@ inline void read_contract_response::set_allocated_logs(std::string* logs) {
 
 // get_account_nonce_request
 
-// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes account = 1 [(.koinos.btype) = ADDRESS];
 inline void get_account_nonce_request::clear_account() {
   account_.ClearToEmpty();
 }
@@ -4528,7 +4528,7 @@ inline void get_account_nonce_response::set_nonce(::PROTOBUF_NAMESPACE_ID::uint6
 
 // get_account_rc_request
 
-// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes account = 1 [(.koinos.btype) = ADDRESS];
 inline void get_account_rc_request::clear_account() {
   account_.ClearToEmpty();
 }

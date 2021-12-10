@@ -238,7 +238,7 @@ const char* block_item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // bytes block_id = 1 [(.koinos.btype) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_block_id();
@@ -296,7 +296,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes block_id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_block_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_block_id(), target);
@@ -340,7 +340,7 @@ size_t block_item::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes block_id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_block_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -563,7 +563,7 @@ const char* block_record::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // bytes block_id = 1 [(.koinos.btype) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_block_id();
@@ -592,7 +592,7 @@ const char* block_record::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // repeated bytes previous_block_ids = 5 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // repeated bytes previous_block_ids = 5 [(.koinos.btype) = BLOCK_ID];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr -= 1;
@@ -634,7 +634,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes block_id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_block_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_block_id(), target);
@@ -662,7 +662,7 @@ failure:
         4, _Internal::receipt(this), target, stream);
   }
 
-  // repeated bytes previous_block_ids = 5 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes previous_block_ids = 5 [(.koinos.btype) = BLOCK_ID];
   for (int i = 0, n = this->_internal_previous_block_ids_size(); i < n; i++) {
     const auto& s = this->_internal_previous_block_ids(i);
     target = stream->WriteBytes(5, s, target);
@@ -684,7 +684,7 @@ size_t block_record::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes previous_block_ids = 5 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes previous_block_ids = 5 [(.koinos.btype) = BLOCK_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(previous_block_ids_.size());
   for (int i = 0, n = previous_block_ids_.size(); i < n; i++) {
@@ -692,7 +692,7 @@ size_t block_record::ByteSizeLong() const {
       previous_block_ids_.Get(i));
   }
 
-  // bytes block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes block_id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_block_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

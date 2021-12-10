@@ -231,7 +231,7 @@ class get_blocks_by_id_request final :
     kReturnBlockFieldNumber = 2,
     kReturnReceiptFieldNumber = 3,
   };
-  // repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes block_ids = 1 [(.koinos.btype) = BLOCK_ID];
   int block_ids_size() const;
   private:
   int _internal_block_ids_size() const;
@@ -557,7 +557,7 @@ class get_blocks_by_height_request final :
     kReturnBlockFieldNumber = 4,
     kReturnReceiptFieldNumber = 5,
   };
-  // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes head_block_id = 1 [(.koinos.btype) = BLOCK_ID];
   void clear_head_block_id();
   const std::string& head_block_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1857,7 +1857,7 @@ class block_store_response final :
 #endif  // __GNUC__
 // get_blocks_by_id_request
 
-// repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+// repeated bytes block_ids = 1 [(.koinos.btype) = BLOCK_ID];
 inline int get_blocks_by_id_request::_internal_block_ids_size() const {
   return block_ids_.size();
 }
@@ -2017,7 +2017,7 @@ get_blocks_by_id_response::block_items() const {
 
 // get_blocks_by_height_request
 
-// bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+// bytes head_block_id = 1 [(.koinos.btype) = BLOCK_ID];
 inline void get_blocks_by_height_request::clear_head_block_id() {
   head_block_id_.ClearToEmpty();
 }

@@ -396,7 +396,7 @@ const char* get_blocks_by_id_request::_InternalParse(const char* ptr, ::PROTOBUF
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // repeated bytes block_ids = 1 [(.koinos.btype) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -452,7 +452,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes block_ids = 1 [(.koinos.btype) = BLOCK_ID];
   for (int i = 0, n = this->_internal_block_ids_size(); i < n; i++) {
     const auto& s = this->_internal_block_ids(i);
     target = stream->WriteBytes(1, s, target);
@@ -486,7 +486,7 @@ size_t get_blocks_by_id_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes block_ids = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // repeated bytes block_ids = 1 [(.koinos.btype) = BLOCK_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(block_ids_.size());
   for (int i = 0, n = block_ids_.size(); i < n; i++) {
@@ -842,7 +842,7 @@ const char* get_blocks_by_height_request::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // bytes head_block_id = 1 [(.koinos.btype) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_head_block_id();
@@ -907,7 +907,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes head_block_id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_head_block_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_head_block_id(), target);
@@ -953,7 +953,7 @@ size_t get_blocks_by_height_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes head_block_id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes head_block_id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_head_block_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

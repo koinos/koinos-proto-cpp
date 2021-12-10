@@ -185,7 +185,7 @@ class block_topology final :
     kPreviousFieldNumber = 3,
     kHeightFieldNumber = 2,
   };
-  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes id = 1 [(.koinos.btype) = BLOCK_ID];
   void clear_id();
   const std::string& id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -199,7 +199,7 @@ class block_topology final :
   std::string* _internal_mutable_id();
   public:
 
-  // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes previous = 3 [(.koinos.btype) = BLOCK_ID];
   void clear_previous();
   const std::string& previous() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -246,7 +246,7 @@ class block_topology final :
 #endif  // __GNUC__
 // block_topology
 
-// bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+// bytes id = 1 [(.koinos.btype) = BLOCK_ID];
 inline void block_topology::clear_id() {
   id_.ClearToEmpty();
 }
@@ -312,7 +312,7 @@ inline void block_topology::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:koinos.block_topology.height)
 }
 
-// bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+// bytes previous = 3 [(.koinos.btype) = BLOCK_ID];
 inline void block_topology::clear_previous() {
   previous_.ClearToEmpty();
 }

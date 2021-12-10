@@ -398,7 +398,7 @@ class check_pending_account_resources_request final :
     kMaxPayerRcFieldNumber = 2,
     kRcLimitFieldNumber = 3,
   };
-  // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes payer = 1 [(.koinos.btype) = ADDRESS];
   void clear_payer();
   const std::string& payer() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1470,7 +1470,7 @@ inline void pending_transaction::set_compute_bandwidth_used(::PROTOBUF_NAMESPACE
 
 // check_pending_account_resources_request
 
-// bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes payer = 1 [(.koinos.btype) = ADDRESS];
 inline void check_pending_account_resources_request::clear_payer() {
   payer_.ClearToEmpty();
 }

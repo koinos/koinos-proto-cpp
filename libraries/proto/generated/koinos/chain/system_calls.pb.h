@@ -467,7 +467,7 @@ class event_arguments final :
     kNameFieldNumber = 1,
     kDataFieldNumber = 2,
   };
-  // repeated bytes impacted = 3 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // repeated bytes impacted = 3 [(.koinos.btype) = ADDRESS];
   int impacted_size() const;
   private:
   int _internal_impacted_size() const;
@@ -1046,8 +1046,8 @@ class process_block_signature_arguments final :
 
   enum : int {
     kDigestFieldNumber = 1,
-    kActiveFieldNumber = 2,
-    kSignatureDataFieldNumber = 3,
+    kSignatureFieldNumber = 3,
+    kHeaderFieldNumber = 2,
   };
   // bytes digest = 1;
   void clear_digest();
@@ -1063,33 +1063,37 @@ class process_block_signature_arguments final :
   std::string* _internal_mutable_digest();
   public:
 
-  // bytes active = 2;
-  void clear_active();
-  const std::string& active() const;
+  // bytes signature = 3;
+  void clear_signature();
+  const std::string& signature() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_active(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_active();
-  PROTOBUF_MUST_USE_RESULT std::string* release_active();
-  void set_allocated_active(std::string* active);
+  void set_signature(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_signature();
+  PROTOBUF_MUST_USE_RESULT std::string* release_signature();
+  void set_allocated_signature(std::string* signature);
   private:
-  const std::string& _internal_active() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_active(const std::string& value);
-  std::string* _internal_mutable_active();
+  const std::string& _internal_signature() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_signature(const std::string& value);
+  std::string* _internal_mutable_signature();
   public:
 
-  // bytes signature_data = 3;
-  void clear_signature_data();
-  const std::string& signature_data() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_signature_data(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_signature_data();
-  PROTOBUF_MUST_USE_RESULT std::string* release_signature_data();
-  void set_allocated_signature_data(std::string* signature_data);
+  // .koinos.protocol.block_header header = 2;
+  bool has_header() const;
   private:
-  const std::string& _internal_signature_data() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_signature_data(const std::string& value);
-  std::string* _internal_mutable_signature_data();
+  bool _internal_has_header() const;
   public:
+  void clear_header();
+  const ::koinos::protocol::block_header& header() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::block_header* release_header();
+  ::koinos::protocol::block_header* mutable_header();
+  void set_allocated_header(::koinos::protocol::block_header* header);
+  private:
+  const ::koinos::protocol::block_header& _internal_header() const;
+  ::koinos::protocol::block_header* _internal_mutable_header();
+  public:
+  void unsafe_arena_set_allocated_header(
+      ::koinos::protocol::block_header* header);
+  ::koinos::protocol::block_header* unsafe_arena_release_header();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.process_block_signature_arguments)
  private:
@@ -1099,8 +1103,8 @@ class process_block_signature_arguments final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digest_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr active_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_data_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
+  ::koinos::protocol::block_header* header_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -4593,7 +4597,7 @@ class call_contract_arguments final :
     kArgsFieldNumber = 3,
     kEntryPointFieldNumber = 2,
   };
-  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
   void clear_contract_id();
   const std::string& contract_id() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -6985,7 +6989,7 @@ class recover_public_key_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes value = 1 [(.koinos.btype) = ADDRESS];
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7277,7 +7281,7 @@ class get_transaction_payer_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes value = 1 [(.koinos.btype) = ADDRESS];
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7421,7 +7425,7 @@ class get_account_rc_arguments final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -7705,7 +7709,7 @@ class consume_account_rc_arguments final :
     kAccountFieldNumber = 1,
     kValueFieldNumber = 2,
   };
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -9398,7 +9402,7 @@ class require_authority_arguments final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10064,7 +10068,7 @@ class get_contract_id_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  // bytes value = 1 [(.koinos.btype) = CONTRACT_ID];
   void clear_value();
   const std::string& value() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10208,7 +10212,7 @@ class get_account_nonce_arguments final :
   enum : int {
     kAccountFieldNumber = 1,
   };
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10475,7 +10479,7 @@ inline void event_arguments::set_allocated_data(std::string* data) {
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.event_arguments.data)
 }
 
-// repeated bytes impacted = 3 [(.koinos.koinos_bytes_type) = ADDRESS];
+// repeated bytes impacted = 3 [(.koinos.btype) = ADDRESS];
 inline int event_arguments::_internal_impacted_size() const {
   return impacted_.size();
 }
@@ -10658,96 +10662,136 @@ inline void process_block_signature_arguments::set_allocated_digest(std::string*
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.digest)
 }
 
-// bytes active = 2;
-inline void process_block_signature_arguments::clear_active() {
-  active_.ClearToEmpty();
+// .koinos.protocol.block_header header = 2;
+inline bool process_block_signature_arguments::_internal_has_header() const {
+  return this != internal_default_instance() && header_ != nullptr;
 }
-inline const std::string& process_block_signature_arguments::active() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.active)
-  return _internal_active();
+inline bool process_block_signature_arguments::has_header() const {
+  return _internal_has_header();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void process_block_signature_arguments::set_active(ArgT0&& arg0, ArgT... args) {
- 
- active_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_arguments.active)
+inline const ::koinos::protocol::block_header& process_block_signature_arguments::_internal_header() const {
+  const ::koinos::protocol::block_header* p = header_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::block_header&>(
+      ::koinos::protocol::_block_header_default_instance_);
 }
-inline std::string* process_block_signature_arguments::mutable_active() {
-  std::string* _s = _internal_mutable_active();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.active)
-  return _s;
+inline const ::koinos::protocol::block_header& process_block_signature_arguments::header() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.header)
+  return _internal_header();
 }
-inline const std::string& process_block_signature_arguments::_internal_active() const {
-  return active_.Get();
-}
-inline void process_block_signature_arguments::_internal_set_active(const std::string& value) {
-  
-  active_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* process_block_signature_arguments::_internal_mutable_active() {
-  
-  return active_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* process_block_signature_arguments::release_active() {
-  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.active)
-  return active_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void process_block_signature_arguments::set_allocated_active(std::string* active) {
-  if (active != nullptr) {
+inline void process_block_signature_arguments::unsafe_arena_set_allocated_header(
+    ::koinos::protocol::block_header* header) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(header_);
+  }
+  header_ = header;
+  if (header) {
     
   } else {
     
   }
-  active_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), active,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.active)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.process_block_signature_arguments.header)
+}
+inline ::koinos::protocol::block_header* process_block_signature_arguments::release_header() {
+  
+  ::koinos::protocol::block_header* temp = header_;
+  header_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::protocol::block_header* process_block_signature_arguments::unsafe_arena_release_header() {
+  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.header)
+  
+  ::koinos::protocol::block_header* temp = header_;
+  header_ = nullptr;
+  return temp;
+}
+inline ::koinos::protocol::block_header* process_block_signature_arguments::_internal_mutable_header() {
+  
+  if (header_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::protocol::block_header>(GetArenaForAllocation());
+    header_ = p;
+  }
+  return header_;
+}
+inline ::koinos::protocol::block_header* process_block_signature_arguments::mutable_header() {
+  ::koinos::protocol::block_header* _msg = _internal_mutable_header();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.header)
+  return _msg;
+}
+inline void process_block_signature_arguments::set_allocated_header(::koinos::protocol::block_header* header) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(header_);
+  }
+  if (header) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(header));
+    if (message_arena != submessage_arena) {
+      header = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, header, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  header_ = header;
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.header)
 }
 
-// bytes signature_data = 3;
-inline void process_block_signature_arguments::clear_signature_data() {
-  signature_data_.ClearToEmpty();
+// bytes signature = 3;
+inline void process_block_signature_arguments::clear_signature() {
+  signature_.ClearToEmpty();
 }
-inline const std::string& process_block_signature_arguments::signature_data() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.signature_data)
-  return _internal_signature_data();
+inline const std::string& process_block_signature_arguments::signature() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.process_block_signature_arguments.signature)
+  return _internal_signature();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void process_block_signature_arguments::set_signature_data(ArgT0&& arg0, ArgT... args) {
+void process_block_signature_arguments::set_signature(ArgT0&& arg0, ArgT... args) {
  
- signature_data_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_arguments.signature_data)
+ signature_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.process_block_signature_arguments.signature)
 }
-inline std::string* process_block_signature_arguments::mutable_signature_data() {
-  std::string* _s = _internal_mutable_signature_data();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.signature_data)
+inline std::string* process_block_signature_arguments::mutable_signature() {
+  std::string* _s = _internal_mutable_signature();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.process_block_signature_arguments.signature)
   return _s;
 }
-inline const std::string& process_block_signature_arguments::_internal_signature_data() const {
-  return signature_data_.Get();
+inline const std::string& process_block_signature_arguments::_internal_signature() const {
+  return signature_.Get();
 }
-inline void process_block_signature_arguments::_internal_set_signature_data(const std::string& value) {
+inline void process_block_signature_arguments::_internal_set_signature(const std::string& value) {
   
-  signature_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* process_block_signature_arguments::_internal_mutable_signature_data() {
+inline std::string* process_block_signature_arguments::_internal_mutable_signature() {
   
-  return signature_data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return signature_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* process_block_signature_arguments::release_signature_data() {
-  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.signature_data)
-  return signature_data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* process_block_signature_arguments::release_signature() {
+  // @@protoc_insertion_point(field_release:koinos.chain.process_block_signature_arguments.signature)
+  return signature_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void process_block_signature_arguments::set_allocated_signature_data(std::string* signature_data) {
-  if (signature_data != nullptr) {
+inline void process_block_signature_arguments::set_allocated_signature(std::string* signature) {
+  if (signature != nullptr) {
     
   } else {
     
   }
-  signature_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signature_data,
+  signature_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signature,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.signature_data)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.process_block_signature_arguments.signature)
 }
 
 // -------------------------------------------------------------------
@@ -12315,7 +12359,7 @@ inline void get_prev_object_result::set_allocated_value(std::string* value) {
 
 // call_contract_arguments
 
-// bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+// bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
 inline void call_contract_arguments::clear_contract_id() {
   contract_id_.ClearToEmpty();
 }
@@ -13003,7 +13047,7 @@ inline void recover_public_key_arguments::set_allocated_digest(std::string* dige
 
 // recover_public_key_result
 
-// bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes value = 1 [(.koinos.btype) = ADDRESS];
 inline void recover_public_key_result::clear_value() {
   value_.ClearToEmpty();
 }
@@ -13143,7 +13187,7 @@ inline void get_transaction_payer_arguments::set_allocated_transaction(::koinos:
 
 // get_transaction_payer_result
 
-// bytes value = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes value = 1 [(.koinos.btype) = ADDRESS];
 inline void get_transaction_payer_result::clear_value() {
   value_.ClearToEmpty();
 }
@@ -13193,7 +13237,7 @@ inline void get_transaction_payer_result::set_allocated_value(std::string* value
 
 // get_account_rc_arguments
 
-// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes account = 1 [(.koinos.btype) = ADDRESS];
 inline void get_account_rc_arguments::clear_account() {
   account_.ClearToEmpty();
 }
@@ -13267,7 +13311,7 @@ inline void get_account_rc_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 val
 
 // consume_account_rc_arguments
 
-// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes account = 1 [(.koinos.btype) = ADDRESS];
 inline void consume_account_rc_arguments::clear_account() {
   account_.ClearToEmpty();
 }
@@ -13779,7 +13823,7 @@ inline void get_caller_result::set_allocated_value(::koinos::chain::caller_data*
 
 // require_authority_arguments
 
-// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes account = 1 [(.koinos.btype) = ADDRESS];
 inline void require_authority_arguments::clear_account() {
   account_.ClearToEmpty();
 }
@@ -13891,7 +13935,7 @@ inline void get_transaction_signature_result::set_allocated_value(std::string* v
 
 // get_contract_id_result
 
-// bytes value = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+// bytes value = 1 [(.koinos.btype) = CONTRACT_ID];
 inline void get_contract_id_result::clear_value() {
   value_.ClearToEmpty();
 }
@@ -13941,7 +13985,7 @@ inline void get_contract_id_result::set_allocated_value(std::string* value) {
 
 // get_account_nonce_arguments
 
-// bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes account = 1 [(.koinos.btype) = ADDRESS];
 inline void get_account_nonce_arguments::clear_account() {
   account_.ClearToEmpty();
 }

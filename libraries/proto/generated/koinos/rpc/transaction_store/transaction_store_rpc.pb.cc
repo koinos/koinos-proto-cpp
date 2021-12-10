@@ -227,7 +227,7 @@ const char* get_transactions_by_id_request::_InternalParse(const char* ptr, ::PR
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
+      // repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr -= 1;
@@ -269,7 +269,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
+  // repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
   for (int i = 0, n = this->_internal_transaction_ids_size(); i < n; i++) {
     const auto& s = this->_internal_transaction_ids(i);
     target = stream->WriteBytes(1, s, target);
@@ -291,7 +291,7 @@ size_t get_transactions_by_id_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
+  // repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(transaction_ids_.size());
   for (int i = 0, n = transaction_ids_.size(); i < n; i++) {

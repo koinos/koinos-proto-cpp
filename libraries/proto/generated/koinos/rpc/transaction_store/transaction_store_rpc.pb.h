@@ -203,7 +203,7 @@ class get_transactions_by_id_request final :
   enum : int {
     kTransactionIdsFieldNumber = 1,
   };
-  // repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
+  // repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
   int transaction_ids_size() const;
   private:
   int _internal_transaction_ids_size() const;
@@ -793,7 +793,7 @@ class transaction_store_response final :
 #endif  // __GNUC__
 // get_transactions_by_id_request
 
-// repeated bytes transaction_ids = 1 [(.koinos.koinos_bytes_type) = TRANSACTION_ID];
+// repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
 inline int get_transactions_by_id_request::_internal_transaction_ids_size() const {
   return transaction_ids_.size();
 }

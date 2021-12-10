@@ -615,7 +615,7 @@ const char* check_pending_account_resources_request::_InternalParse(const char* 
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes payer = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_payer();
@@ -666,7 +666,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes payer = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_payer().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_payer(), target);
@@ -700,7 +700,7 @@ size_t check_pending_account_resources_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes payer = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes payer = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_payer().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

@@ -158,7 +158,7 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // bytes id = 1 [(.koinos.btype) = BLOCK_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_id();
@@ -173,7 +173,7 @@ const char* block_topology::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+      // bytes previous = 3 [(.koinos.btype) = BLOCK_ID];
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_previous();
@@ -210,7 +210,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_id(), target);
@@ -222,7 +222,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_height(), target);
   }
 
-  // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes previous = 3 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
     target = stream->WriteBytesMaybeAliased(
         3, this->_internal_previous(), target);
@@ -244,14 +244,14 @@ size_t block_topology::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes id = 1 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes id = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_id());
   }
 
-  // bytes previous = 3 [(.koinos.koinos_bytes_type) = BLOCK_ID];
+  // bytes previous = 3 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

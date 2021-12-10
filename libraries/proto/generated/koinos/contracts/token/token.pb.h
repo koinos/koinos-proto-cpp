@@ -1327,7 +1327,7 @@ class balance_of_arguments final :
   enum : int {
     kOwnerFieldNumber = 1,
   };
-  // bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes owner = 1 [(.koinos.btype) = ADDRESS];
   void clear_owner();
   const std::string& owner() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1612,7 +1612,7 @@ class transfer_arguments final :
     kToFieldNumber = 2,
     kValueFieldNumber = 3,
   };
-  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
   void clear_from();
   const std::string& from() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1626,7 +1626,7 @@ class transfer_arguments final :
   std::string* _internal_mutable_from();
   public:
 
-  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 2 [(.koinos.btype) = ADDRESS];
   void clear_to();
   const std::string& to() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1921,7 +1921,7 @@ class mint_arguments final :
     kToFieldNumber = 1,
     kValueFieldNumber = 2,
   };
-  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 1 [(.koinos.btype) = ADDRESS];
   void clear_to();
   const std::string& to() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2515,7 +2515,7 @@ class mint_event final :
     kToFieldNumber = 1,
     kValueFieldNumber = 3,
   };
-  // bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 1 [(.koinos.btype) = ADDRESS];
   void clear_to();
   const std::string& to() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2671,7 +2671,7 @@ class transfer_event final :
     kToFieldNumber = 2,
     kValueFieldNumber = 3,
   };
-  // bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
   void clear_from();
   const std::string& from() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2685,7 +2685,7 @@ class transfer_event final :
   std::string* _internal_mutable_from();
   public:
 
-  // bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes to = 2 [(.koinos.btype) = ADDRESS];
   void clear_to();
   const std::string& to() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2896,7 +2896,7 @@ inline void total_supply_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value
 
 // balance_of_arguments
 
-// bytes owner = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes owner = 1 [(.koinos.btype) = ADDRESS];
 inline void balance_of_arguments::clear_owner() {
   owner_.ClearToEmpty();
 }
@@ -2970,7 +2970,7 @@ inline void balance_of_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) 
 
 // transfer_arguments
 
-// bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes from = 1 [(.koinos.btype) = ADDRESS];
 inline void transfer_arguments::clear_from() {
   from_.ClearToEmpty();
 }
@@ -3016,7 +3016,7 @@ inline void transfer_arguments::set_allocated_from(std::string* from) {
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.token.transfer_arguments.from)
 }
 
-// bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes to = 2 [(.koinos.btype) = ADDRESS];
 inline void transfer_arguments::clear_to() {
   to_.ClearToEmpty();
 }
@@ -3110,7 +3110,7 @@ inline void transfer_result::set_value(bool value) {
 
 // mint_arguments
 
-// bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes to = 1 [(.koinos.btype) = ADDRESS];
 inline void mint_arguments::clear_to() {
   to_.ClearToEmpty();
 }
@@ -3292,7 +3292,7 @@ inline void mana_balance_object::set_last_mana_update(::PROTOBUF_NAMESPACE_ID::u
 
 // mint_event
 
-// bytes to = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes to = 1 [(.koinos.btype) = ADDRESS];
 inline void mint_event::clear_to() {
   to_.ClearToEmpty();
 }
@@ -3362,7 +3362,7 @@ inline void mint_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // transfer_event
 
-// bytes from = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes from = 1 [(.koinos.btype) = ADDRESS];
 inline void transfer_event::clear_from() {
   from_.ClearToEmpty();
 }
@@ -3408,7 +3408,7 @@ inline void transfer_event::set_allocated_from(std::string* from) {
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.token.transfer_event.from)
 }
 
-// bytes to = 2 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes to = 2 [(.koinos.btype) = ADDRESS];
 inline void transfer_event::clear_to() {
   to_.ClearToEmpty();
 }

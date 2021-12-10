@@ -2631,7 +2631,7 @@ const char* read_contract_request::_InternalParse(const char* ptr, ::PROTOBUF_NA
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+      // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_contract_id();
@@ -2683,7 +2683,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_contract_id(), target);
@@ -2717,7 +2717,7 @@ size_t read_contract_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes contract_id = 1 [(.koinos.koinos_bytes_type) = CONTRACT_ID];
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
   if (!this->_internal_contract_id().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3116,7 +3116,7 @@ const char* get_account_nonce_request::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes account = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_account();
@@ -3153,7 +3153,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_account(), target);
@@ -3175,7 +3175,7 @@ size_t get_account_nonce_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -3496,7 +3496,7 @@ const char* get_account_rc_request::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+      // bytes account = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           auto str = _internal_mutable_account();
@@ -3533,7 +3533,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
         1, this->_internal_account(), target);
@@ -3555,7 +3555,7 @@ size_t get_account_rc_request::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes account = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

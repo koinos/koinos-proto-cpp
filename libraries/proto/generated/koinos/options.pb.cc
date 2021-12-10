@@ -29,17 +29,17 @@ const char descriptor_table_protodef_koinos_2foptions_2eproto[] PROTOBUF_SECTION
   "rotobuf/descriptor.proto*m\n\nbytes_type\022\n"
   "\n\006BASE64\020\000\022\n\n\006BASE58\020\001\022\007\n\003HEX\020\002\022\014\n\010BLOCK"
   "_ID\020\003\022\022\n\016TRANSACTION_ID\020\004\022\017\n\013CONTRACT_ID"
-  "\020\005\022\013\n\007ADDRESS\020\006:Q\n\021koinos_bytes_type\022\035.g"
-  "oogle.protobuf.FieldOptions\030\320\206\003 \001(\0162\022.ko"
-  "inos.bytes_type\210\001\001B.Z,github.com/koinos/"
-  "koinos-proto-golang/koinosb\006proto3"
+  "\020\005\022\013\n\007ADDRESS\020\006:E\n\005btype\022\035.google.protob"
+  "uf.FieldOptions\030\320\206\003 \001(\0162\022.koinos.bytes_t"
+  "ype\210\001\001B.Z,github.com/koinos/koinos-proto"
+  "-golang/koinosb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2foptions_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fdescriptor_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2foptions_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2foptions_2eproto = {
-  false, false, 314, descriptor_table_protodef_koinos_2foptions_2eproto, "koinos/options.proto", 
+  false, false, 302, descriptor_table_protodef_koinos_2foptions_2eproto, "koinos/options.proto", 
   &descriptor_table_koinos_2foptions_2eproto_once, descriptor_table_koinos_2foptions_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_koinos_2foptions_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2foptions_2eproto, file_level_service_descriptors_koinos_2foptions_2eproto,
@@ -72,7 +72,7 @@ bool bytes_type_IsValid(int value) {
 
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY ::PROTOBUF_NAMESPACE_ID::internal::ExtensionIdentifier< ::google::protobuf::FieldOptions,
     ::PROTOBUF_NAMESPACE_ID::internal::EnumTypeTraits< ::koinos::bytes_type, ::koinos::bytes_type_IsValid>, 14, false >
-  koinos_bytes_type(kKoinosBytesTypeFieldNumber, static_cast< ::koinos::bytes_type >(0));
+  btype(kBtypeFieldNumber, static_cast< ::koinos::bytes_type >(0));
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace koinos

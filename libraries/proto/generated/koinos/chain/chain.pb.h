@@ -735,7 +735,7 @@ class caller_data final :
     kCallerFieldNumber = 1,
     kCallerPrivilegeFieldNumber = 2,
   };
-  // bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+  // bytes caller = 1 [(.koinos.btype) = ADDRESS];
   void clear_caller();
   const std::string& caller() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1490,7 +1490,7 @@ inline void head_info::set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint
 
 // caller_data
 
-// bytes caller = 1 [(.koinos.koinos_bytes_type) = ADDRESS];
+// bytes caller = 1 [(.koinos.btype) = ADDRESS];
 inline void caller_data::clear_caller() {
   caller_.ClearToEmpty();
 }

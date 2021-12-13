@@ -1,6 +1,7 @@
 #include <koinos/serialization.hpp>
 
 #include <google/protobuf/message.h>
+#include <google/protobuf/reflection.h>
 
 #include <stdexcept>
 
@@ -19,9 +20,19 @@ bool has_map_field( const google::protobuf::Message& msg )
       if ( fd != nullptr && fd->type() == google::protobuf::FieldDescriptor::Type::TYPE_MESSAGE )
       {
          auto refl = msg.GetReflection();
-         const auto& sub_msg = refl->GetMessage( msg, fd );
-         if ( has_map_field( sub_msg ) )
-            return true;
+
+         if ( fd->label() == google::protobuf::FieldDescriptor::Label::LABEL_REPEATED )
+         {
+            const auto sub_msg = refl->GetRepeatedFieldRef< google::protobuf::Message >( msg, fd );
+            if ( sub_msg.size() && has_map_field( *sub_msg.begin() ) )
+               return true;
+         }
+         else
+         {
+            const auto& sub_msg = refl->GetMessage( msg, fd );
+            if ( has_map_field( sub_msg ) )
+               return true;
+         }
       }
    }
 

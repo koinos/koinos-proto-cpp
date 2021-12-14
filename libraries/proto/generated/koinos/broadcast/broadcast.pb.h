@@ -49,7 +49,7 @@ struct TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -67,6 +67,9 @@ extern block_irreversibleDefaultTypeInternal _block_irreversible_default_instanc
 class fork_heads;
 struct fork_headsDefaultTypeInternal;
 extern fork_headsDefaultTypeInternal _fork_heads_default_instance_;
+class pending_transaction_failed;
+struct pending_transaction_failedDefaultTypeInternal;
+extern pending_transaction_failedDefaultTypeInternal _pending_transaction_failed_default_instance_;
 class transaction_accepted;
 struct transaction_acceptedDefaultTypeInternal;
 extern transaction_acceptedDefaultTypeInternal _transaction_accepted_default_instance_;
@@ -76,6 +79,7 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::broadcast::block_accepted* Arena::CreateMaybeMessage<::koinos::broadcast::block_accepted>(Arena*);
 template<> ::koinos::broadcast::block_irreversible* Arena::CreateMaybeMessage<::koinos::broadcast::block_irreversible>(Arena*);
 template<> ::koinos::broadcast::fork_heads* Arena::CreateMaybeMessage<::koinos::broadcast::fork_heads>(Arena*);
+template<> ::koinos::broadcast::pending_transaction_failed* Arena::CreateMaybeMessage<::koinos::broadcast::pending_transaction_failed>(Arena*);
 template<> ::koinos::broadcast::transaction_accepted* Arena::CreateMaybeMessage<::koinos::broadcast::transaction_accepted>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
@@ -262,6 +266,154 @@ class transaction_accepted final :
 };
 // -------------------------------------------------------------------
 
+class pending_transaction_failed final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.broadcast.pending_transaction_failed) */ {
+ public:
+  inline pending_transaction_failed() : pending_transaction_failed(nullptr) {}
+  ~pending_transaction_failed() override;
+  explicit constexpr pending_transaction_failed(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  pending_transaction_failed(const pending_transaction_failed& from);
+  pending_transaction_failed(pending_transaction_failed&& from) noexcept
+    : pending_transaction_failed() {
+    *this = ::std::move(from);
+  }
+
+  inline pending_transaction_failed& operator=(const pending_transaction_failed& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline pending_transaction_failed& operator=(pending_transaction_failed&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const pending_transaction_failed& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const pending_transaction_failed* internal_default_instance() {
+    return reinterpret_cast<const pending_transaction_failed*>(
+               &_pending_transaction_failed_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(pending_transaction_failed& a, pending_transaction_failed& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(pending_transaction_failed* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(pending_transaction_failed* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline pending_transaction_failed* New() const final {
+    return new pending_transaction_failed();
+  }
+
+  pending_transaction_failed* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<pending_transaction_failed>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const pending_transaction_failed& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const pending_transaction_failed& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(pending_transaction_failed* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.broadcast.pending_transaction_failed";
+  }
+  protected:
+  explicit pending_transaction_failed(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransactionFieldNumber = 1,
+  };
+  // .koinos.protocol.transaction transaction = 1;
+  bool has_transaction() const;
+  private:
+  bool _internal_has_transaction() const;
+  public:
+  void clear_transaction();
+  const ::koinos::protocol::transaction& transaction() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_transaction();
+  ::koinos::protocol::transaction* mutable_transaction();
+  void set_allocated_transaction(::koinos::protocol::transaction* transaction);
+  private:
+  const ::koinos::protocol::transaction& _internal_transaction() const;
+  ::koinos::protocol::transaction* _internal_mutable_transaction();
+  public:
+  void unsafe_arena_set_allocated_transaction(
+      ::koinos::protocol::transaction* transaction);
+  ::koinos::protocol::transaction* unsafe_arena_release_transaction();
+
+  // @@protoc_insertion_point(class_scope:koinos.broadcast.pending_transaction_failed)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::protocol::transaction* transaction_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
+};
+// -------------------------------------------------------------------
+
 class block_accepted final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.broadcast.block_accepted) */ {
  public:
@@ -306,7 +458,7 @@ class block_accepted final :
                &_block_accepted_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(block_accepted& a, block_accepted& b) {
     a.Swap(&b);
@@ -474,7 +626,7 @@ class block_irreversible final :
                &_block_irreversible_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(block_irreversible& a, block_irreversible& b) {
     a.Swap(&b);
@@ -622,7 +774,7 @@ class fork_heads final :
                &_fork_heads_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(fork_heads& a, fork_heads& b) {
     a.Swap(&b);
@@ -945,6 +1097,96 @@ inline void transaction_accepted::_internal_set_height(::PROTOBUF_NAMESPACE_ID::
 inline void transaction_accepted::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_height(value);
   // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.height)
+}
+
+// -------------------------------------------------------------------
+
+// pending_transaction_failed
+
+// .koinos.protocol.transaction transaction = 1;
+inline bool pending_transaction_failed::_internal_has_transaction() const {
+  return this != internal_default_instance() && transaction_ != nullptr;
+}
+inline bool pending_transaction_failed::has_transaction() const {
+  return _internal_has_transaction();
+}
+inline const ::koinos::protocol::transaction& pending_transaction_failed::_internal_transaction() const {
+  const ::koinos::protocol::transaction* p = transaction_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction&>(
+      ::koinos::protocol::_transaction_default_instance_);
+}
+inline const ::koinos::protocol::transaction& pending_transaction_failed::transaction() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.pending_transaction_failed.transaction)
+  return _internal_transaction();
+}
+inline void pending_transaction_failed::unsafe_arena_set_allocated_transaction(
+    ::koinos::protocol::transaction* transaction) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_);
+  }
+  transaction_ = transaction;
+  if (transaction) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.broadcast.pending_transaction_failed.transaction)
+}
+inline ::koinos::protocol::transaction* pending_transaction_failed::release_transaction() {
+  
+  ::koinos::protocol::transaction* temp = transaction_;
+  transaction_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::protocol::transaction* pending_transaction_failed::unsafe_arena_release_transaction() {
+  // @@protoc_insertion_point(field_release:koinos.broadcast.pending_transaction_failed.transaction)
+  
+  ::koinos::protocol::transaction* temp = transaction_;
+  transaction_ = nullptr;
+  return temp;
+}
+inline ::koinos::protocol::transaction* pending_transaction_failed::_internal_mutable_transaction() {
+  
+  if (transaction_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::protocol::transaction>(GetArenaForAllocation());
+    transaction_ = p;
+  }
+  return transaction_;
+}
+inline ::koinos::protocol::transaction* pending_transaction_failed::mutable_transaction() {
+  ::koinos::protocol::transaction* _msg = _internal_mutable_transaction();
+  // @@protoc_insertion_point(field_mutable:koinos.broadcast.pending_transaction_failed.transaction)
+  return _msg;
+}
+inline void pending_transaction_failed::set_allocated_transaction(::koinos::protocol::transaction* transaction) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_);
+  }
+  if (transaction) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction));
+    if (message_arena != submessage_arena) {
+      transaction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, transaction, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  transaction_ = transaction;
+  // @@protoc_insertion_point(field_set_allocated:koinos.broadcast.pending_transaction_failed.transaction)
 }
 
 // -------------------------------------------------------------------
@@ -1343,6 +1585,8 @@ fork_heads::heads() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

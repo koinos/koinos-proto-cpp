@@ -271,7 +271,7 @@ struct put_object_argumentsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT put_object_argumentsDefaultTypeInternal _put_object_arguments_default_instance_;
 constexpr put_object_result::put_object_result(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(false){}
+  : value_(0){}
 struct put_object_resultDefaultTypeInternal {
   constexpr put_object_resultDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1529,7 +1529,7 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] P
   "_operation_result\"[\n\024put_object_argument"
   "s\022)\n\005space\030\001 \001(\0132\032.koinos.chain.object_s"
   "pace\022\013\n\003key\030\002 \001(\014\022\013\n\003obj\030\003 \001(\014\"\"\n\021put_ob"
-  "ject_result\022\r\n\005value\030\001 \001(\010\"Q\n\027remove_obj"
+  "ject_result\022\r\n\005value\030\001 \001(\005\"Q\n\027remove_obj"
   "ect_arguments\022)\n\005space\030\001 \001(\0132\032.koinos.ch"
   "ain.object_space\022\013\n\003key\030\002 \001(\014\"\026\n\024remove_"
   "object_result\"N\n\024get_object_arguments\022)\n"
@@ -5730,7 +5730,7 @@ put_object_result::put_object_result(const put_object_result& from)
 }
 
 inline void put_object_result::SharedCtor() {
-value_ = false;
+value_ = 0;
 }
 
 put_object_result::~put_object_result() {
@@ -5760,7 +5760,7 @@ void put_object_result::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_ = false;
+  value_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5770,7 +5770,7 @@ const char* put_object_result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bool value = 1;
+      // int32 value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -5806,10 +5806,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bool value = 1;
+  // int32 value = 1;
   if (this->_internal_value() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5828,9 +5828,11 @@ size_t put_object_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bool value = 1;
+  // int32 value = 1;
   if (this->_internal_value() != 0) {
-    total_size += 1 + 1;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_value());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {

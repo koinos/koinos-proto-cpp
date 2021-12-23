@@ -3511,13 +3511,13 @@ class put_object_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // bool value = 1;
+  // int32 value = 1;
   void clear_value();
-  bool value() const;
-  void set_value(bool value);
+  ::PROTOBUF_NAMESPACE_ID::int32 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   private:
-  bool _internal_value() const;
-  void _internal_set_value(bool value);
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.put_object_result)
@@ -3527,7 +3527,7 @@ class put_object_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool value_;
+  ::PROTOBUF_NAMESPACE_ID::int32 value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -12169,22 +12169,22 @@ inline void put_object_arguments::set_allocated_obj(std::string* obj) {
 
 // put_object_result
 
-// bool value = 1;
+// int32 value = 1;
 inline void put_object_result::clear_value() {
-  value_ = false;
+  value_ = 0;
 }
-inline bool put_object_result::_internal_value() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 put_object_result::_internal_value() const {
   return value_;
 }
-inline bool put_object_result::value() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 put_object_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.put_object_result.value)
   return _internal_value();
 }
-inline void put_object_result::_internal_set_value(bool value) {
+inline void put_object_result::_internal_set_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   value_ = value;
 }
-inline void put_object_result::set_value(bool value) {
+inline void put_object_result::set_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_value(value);
   // @@protoc_insertion_point(field_set:koinos.chain.put_object_result.value)
 }

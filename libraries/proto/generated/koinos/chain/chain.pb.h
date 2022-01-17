@@ -50,7 +50,7 @@ struct TableStruct_koinos_2fchain_2fchain_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -77,6 +77,9 @@ extern genesis_entryDefaultTypeInternal _genesis_entry_default_instance_;
 class head_info;
 struct head_infoDefaultTypeInternal;
 extern head_infoDefaultTypeInternal _head_info_default_instance_;
+class max_account_resources;
+struct max_account_resourcesDefaultTypeInternal;
+extern max_account_resourcesDefaultTypeInternal _max_account_resources_default_instance_;
 class object_space;
 struct object_spaceDefaultTypeInternal;
 extern object_spaceDefaultTypeInternal _object_space_default_instance_;
@@ -92,6 +95,7 @@ template<> ::koinos::chain::database_key* Arena::CreateMaybeMessage<::koinos::ch
 template<> ::koinos::chain::genesis_data* Arena::CreateMaybeMessage<::koinos::chain::genesis_data>(Arena*);
 template<> ::koinos::chain::genesis_entry* Arena::CreateMaybeMessage<::koinos::chain::genesis_entry>(Arena*);
 template<> ::koinos::chain::head_info* Arena::CreateMaybeMessage<::koinos::chain::head_info>(Arena*);
+template<> ::koinos::chain::max_account_resources* Arena::CreateMaybeMessage<::koinos::chain::max_account_resources>(Arena*);
 template<> ::koinos::chain::object_space* Arena::CreateMaybeMessage<::koinos::chain::object_space>(Arena*);
 template<> ::koinos::chain::resource_limit_data* Arena::CreateMaybeMessage<::koinos::chain::resource_limit_data>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -455,6 +459,145 @@ class database_key final :
 };
 // -------------------------------------------------------------------
 
+class max_account_resources final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.max_account_resources) */ {
+ public:
+  inline max_account_resources() : max_account_resources(nullptr) {}
+  ~max_account_resources() override;
+  explicit constexpr max_account_resources(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  max_account_resources(const max_account_resources& from);
+  max_account_resources(max_account_resources&& from) noexcept
+    : max_account_resources() {
+    *this = ::std::move(from);
+  }
+
+  inline max_account_resources& operator=(const max_account_resources& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline max_account_resources& operator=(max_account_resources&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const max_account_resources& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const max_account_resources* internal_default_instance() {
+    return reinterpret_cast<const max_account_resources*>(
+               &_max_account_resources_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(max_account_resources& a, max_account_resources& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(max_account_resources* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(max_account_resources* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline max_account_resources* New() const final {
+    return new max_account_resources();
+  }
+
+  max_account_resources* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<max_account_resources>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const max_account_resources& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const max_account_resources& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(max_account_resources* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.max_account_resources";
+  }
+  protected:
+  explicit max_account_resources(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // uint64 value = 1 [jstype = JS_STRING];
+  void clear_value();
+  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.max_account_resources)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
+};
+// -------------------------------------------------------------------
+
 class head_info final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.head_info) */ {
  public:
@@ -499,7 +642,7 @@ class head_info final :
                &_head_info_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(head_info& a, head_info& b) {
     a.Swap(&b);
@@ -669,7 +812,7 @@ class caller_data final :
                &_caller_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(caller_data& a, caller_data& b) {
     a.Swap(&b);
@@ -824,7 +967,7 @@ class resource_limit_data final :
                &_resource_limit_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(resource_limit_data& a, resource_limit_data& b) {
     a.Swap(&b);
@@ -1018,7 +1161,7 @@ class contract_metadata_object final :
                &_contract_metadata_object_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(contract_metadata_object& a, contract_metadata_object& b) {
     a.Swap(&b);
@@ -1173,7 +1316,7 @@ class genesis_entry final :
                &_genesis_entry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(genesis_entry& a, genesis_entry& b) {
     a.Swap(&b);
@@ -1353,7 +1496,7 @@ class genesis_data final :
                &_genesis_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(genesis_data& a, genesis_data& b) {
     a.Swap(&b);
@@ -1690,6 +1833,30 @@ inline void database_key::set_allocated_key(std::string* key) {
   key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), key,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.database_key.key)
+}
+
+// -------------------------------------------------------------------
+
+// max_account_resources
+
+// uint64 value = 1 [jstype = JS_STRING];
+inline void max_account_resources::clear_value() {
+  value_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 max_account_resources::_internal_value() const {
+  return value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 max_account_resources::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.max_account_resources.value)
+  return _internal_value();
+}
+inline void max_account_resources::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  value_ = value;
+}
+inline void max_account_resources::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.max_account_resources.value)
 }
 
 // -------------------------------------------------------------------
@@ -2319,6 +2486,8 @@ genesis_data::entries() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

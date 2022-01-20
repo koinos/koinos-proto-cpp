@@ -1234,6 +1234,9 @@ class contract_metadata_object final :
   enum : int {
     kHashFieldNumber = 1,
     kSystemFieldNumber = 2,
+    kAuthorizesCallContractFieldNumber = 3,
+    kAuthorizesUseResourcesFieldNumber = 4,
+    kAuthorizesUploadContractFieldNumber = 5,
   };
   // bytes hash = 1;
   void clear_hash();
@@ -1258,6 +1261,33 @@ class contract_metadata_object final :
   void _internal_set_system(bool value);
   public:
 
+  // bool authorizes_call_contract = 3;
+  void clear_authorizes_call_contract();
+  bool authorizes_call_contract() const;
+  void set_authorizes_call_contract(bool value);
+  private:
+  bool _internal_authorizes_call_contract() const;
+  void _internal_set_authorizes_call_contract(bool value);
+  public:
+
+  // bool authorizes_use_resources = 4;
+  void clear_authorizes_use_resources();
+  bool authorizes_use_resources() const;
+  void set_authorizes_use_resources(bool value);
+  private:
+  bool _internal_authorizes_use_resources() const;
+  void _internal_set_authorizes_use_resources(bool value);
+  public:
+
+  // bool authorizes_upload_contract = 5;
+  void clear_authorizes_upload_contract();
+  bool authorizes_upload_contract() const;
+  void set_authorizes_upload_contract(bool value);
+  private:
+  bool _internal_authorizes_upload_contract() const;
+  void _internal_set_authorizes_upload_contract(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.chain.contract_metadata_object)
  private:
   class _Internal;
@@ -1267,6 +1297,9 @@ class contract_metadata_object final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
   bool system_;
+  bool authorizes_call_contract_;
+  bool authorizes_use_resources_;
+  bool authorizes_upload_contract_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
@@ -2251,6 +2284,66 @@ inline void contract_metadata_object::_internal_set_system(bool value) {
 inline void contract_metadata_object::set_system(bool value) {
   _internal_set_system(value);
   // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.system)
+}
+
+// bool authorizes_call_contract = 3;
+inline void contract_metadata_object::clear_authorizes_call_contract() {
+  authorizes_call_contract_ = false;
+}
+inline bool contract_metadata_object::_internal_authorizes_call_contract() const {
+  return authorizes_call_contract_;
+}
+inline bool contract_metadata_object::authorizes_call_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.contract_metadata_object.authorizes_call_contract)
+  return _internal_authorizes_call_contract();
+}
+inline void contract_metadata_object::_internal_set_authorizes_call_contract(bool value) {
+  
+  authorizes_call_contract_ = value;
+}
+inline void contract_metadata_object::set_authorizes_call_contract(bool value) {
+  _internal_set_authorizes_call_contract(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.authorizes_call_contract)
+}
+
+// bool authorizes_use_resources = 4;
+inline void contract_metadata_object::clear_authorizes_use_resources() {
+  authorizes_use_resources_ = false;
+}
+inline bool contract_metadata_object::_internal_authorizes_use_resources() const {
+  return authorizes_use_resources_;
+}
+inline bool contract_metadata_object::authorizes_use_resources() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.contract_metadata_object.authorizes_use_resources)
+  return _internal_authorizes_use_resources();
+}
+inline void contract_metadata_object::_internal_set_authorizes_use_resources(bool value) {
+  
+  authorizes_use_resources_ = value;
+}
+inline void contract_metadata_object::set_authorizes_use_resources(bool value) {
+  _internal_set_authorizes_use_resources(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.authorizes_use_resources)
+}
+
+// bool authorizes_upload_contract = 5;
+inline void contract_metadata_object::clear_authorizes_upload_contract() {
+  authorizes_upload_contract_ = false;
+}
+inline bool contract_metadata_object::_internal_authorizes_upload_contract() const {
+  return authorizes_upload_contract_;
+}
+inline bool contract_metadata_object::authorizes_upload_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.contract_metadata_object.authorizes_upload_contract)
+  return _internal_authorizes_upload_contract();
+}
+inline void contract_metadata_object::_internal_set_authorizes_upload_contract(bool value) {
+  
+  authorizes_upload_contract_ = value;
+}
+inline void contract_metadata_object::set_authorizes_upload_contract(bool value) {
+  _internal_set_authorizes_upload_contract(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.authorizes_upload_contract)
 }
 
 // -------------------------------------------------------------------

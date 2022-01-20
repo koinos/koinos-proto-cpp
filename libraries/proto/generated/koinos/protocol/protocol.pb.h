@@ -789,6 +789,9 @@ class upload_contract_operation final :
     kContractIdFieldNumber = 1,
     kBytecodeFieldNumber = 2,
     kAbiFieldNumber = 3,
+    kAuthorizesCallContractFieldNumber = 4,
+    kAuthorizesUseRcFieldNumber = 5,
+    kAuthorizesUploadContractFieldNumber = 6,
   };
   // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
   void clear_contract_id();
@@ -832,6 +835,33 @@ class upload_contract_operation final :
   std::string* _internal_mutable_abi();
   public:
 
+  // bool authorizes_call_contract = 4;
+  void clear_authorizes_call_contract();
+  bool authorizes_call_contract() const;
+  void set_authorizes_call_contract(bool value);
+  private:
+  bool _internal_authorizes_call_contract() const;
+  void _internal_set_authorizes_call_contract(bool value);
+  public:
+
+  // bool authorizes_use_rc = 5;
+  void clear_authorizes_use_rc();
+  bool authorizes_use_rc() const;
+  void set_authorizes_use_rc(bool value);
+  private:
+  bool _internal_authorizes_use_rc() const;
+  void _internal_set_authorizes_use_rc(bool value);
+  public:
+
+  // bool authorizes_upload_contract = 6;
+  void clear_authorizes_upload_contract();
+  bool authorizes_upload_contract() const;
+  void set_authorizes_upload_contract(bool value);
+  private:
+  bool _internal_authorizes_upload_contract() const;
+  void _internal_set_authorizes_upload_contract(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.protocol.upload_contract_operation)
  private:
   class _Internal;
@@ -842,6 +872,9 @@ class upload_contract_operation final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr contract_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bytecode_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr abi_;
+  bool authorizes_call_contract_;
+  bool authorizes_use_rc_;
+  bool authorizes_upload_contract_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -1679,6 +1712,8 @@ class transaction_header final :
 
   enum : int {
     kOperationMerkleRootFieldNumber = 3,
+    kPayerFieldNumber = 4,
+    kPayeeFieldNumber = 5,
     kRcLimitFieldNumber = 1,
     kNonceFieldNumber = 2,
   };
@@ -1694,6 +1729,34 @@ class transaction_header final :
   const std::string& _internal_operation_merkle_root() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_operation_merkle_root(const std::string& value);
   std::string* _internal_mutable_operation_merkle_root();
+  public:
+
+  // bytes payer = 4 [(.koinos.btype) = ADDRESS];
+  void clear_payer();
+  const std::string& payer() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_payer(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_payer();
+  PROTOBUF_MUST_USE_RESULT std::string* release_payer();
+  void set_allocated_payer(std::string* payer);
+  private:
+  const std::string& _internal_payer() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_payer(const std::string& value);
+  std::string* _internal_mutable_payer();
+  public:
+
+  // bytes payee = 5 [(.koinos.btype) = ADDRESS];
+  void clear_payee();
+  const std::string& payee() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_payee(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_payee();
+  PROTOBUF_MUST_USE_RESULT std::string* release_payee();
+  void set_allocated_payee(std::string* payee);
+  private:
+  const std::string& _internal_payee() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_payee(const std::string& value);
+  std::string* _internal_mutable_payee();
   public:
 
   // uint64 rc_limit = 1 [jstype = JS_STRING];
@@ -1722,6 +1785,8 @@ class transaction_header final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_merkle_root_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payee_;
   ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit_;
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -1845,8 +1910,8 @@ class transaction final :
 
   enum : int {
     kOperationsFieldNumber = 3,
+    kSignaturesFieldNumber = 4,
     kIdFieldNumber = 1,
-    kSignatureFieldNumber = 4,
     kHeaderFieldNumber = 2,
   };
   // repeated .koinos.protocol.operation operations = 3;
@@ -1867,6 +1932,30 @@ class transaction final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
       operations() const;
 
+  // repeated bytes signatures = 4;
+  int signatures_size() const;
+  private:
+  int _internal_signatures_size() const;
+  public:
+  void clear_signatures();
+  const std::string& signatures(int index) const;
+  std::string* mutable_signatures(int index);
+  void set_signatures(int index, const std::string& value);
+  void set_signatures(int index, std::string&& value);
+  void set_signatures(int index, const char* value);
+  void set_signatures(int index, const void* value, size_t size);
+  std::string* add_signatures();
+  void add_signatures(const std::string& value);
+  void add_signatures(std::string&& value);
+  void add_signatures(const char* value);
+  void add_signatures(const void* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& signatures() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_signatures();
+  private:
+  const std::string& _internal_signatures(int index) const;
+  std::string* _internal_add_signatures();
+  public:
+
   // bytes id = 1 [(.koinos.btype) = TRANSACTION_ID];
   void clear_id();
   const std::string& id() const;
@@ -1879,20 +1968,6 @@ class transaction final :
   const std::string& _internal_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_id(const std::string& value);
   std::string* _internal_mutable_id();
-  public:
-
-  // bytes signature = 4;
-  void clear_signature();
-  const std::string& signature() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_signature(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_signature();
-  PROTOBUF_MUST_USE_RESULT std::string* release_signature();
-  void set_allocated_signature(std::string* signature);
-  private:
-  const std::string& _internal_signature() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_signature(const std::string& value);
-  std::string* _internal_mutable_signature();
   public:
 
   // .koinos.protocol.transaction_header header = 2;
@@ -1921,8 +1996,8 @@ class transaction final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation > operations_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> signatures_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
   ::koinos::protocol::transaction_header* header_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
@@ -3423,6 +3498,66 @@ inline void upload_contract_operation::set_allocated_abi(std::string* abi) {
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.upload_contract_operation.abi)
 }
 
+// bool authorizes_call_contract = 4;
+inline void upload_contract_operation::clear_authorizes_call_contract() {
+  authorizes_call_contract_ = false;
+}
+inline bool upload_contract_operation::_internal_authorizes_call_contract() const {
+  return authorizes_call_contract_;
+}
+inline bool upload_contract_operation::authorizes_call_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.upload_contract_operation.authorizes_call_contract)
+  return _internal_authorizes_call_contract();
+}
+inline void upload_contract_operation::_internal_set_authorizes_call_contract(bool value) {
+  
+  authorizes_call_contract_ = value;
+}
+inline void upload_contract_operation::set_authorizes_call_contract(bool value) {
+  _internal_set_authorizes_call_contract(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.upload_contract_operation.authorizes_call_contract)
+}
+
+// bool authorizes_use_rc = 5;
+inline void upload_contract_operation::clear_authorizes_use_rc() {
+  authorizes_use_rc_ = false;
+}
+inline bool upload_contract_operation::_internal_authorizes_use_rc() const {
+  return authorizes_use_rc_;
+}
+inline bool upload_contract_operation::authorizes_use_rc() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.upload_contract_operation.authorizes_use_rc)
+  return _internal_authorizes_use_rc();
+}
+inline void upload_contract_operation::_internal_set_authorizes_use_rc(bool value) {
+  
+  authorizes_use_rc_ = value;
+}
+inline void upload_contract_operation::set_authorizes_use_rc(bool value) {
+  _internal_set_authorizes_use_rc(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.upload_contract_operation.authorizes_use_rc)
+}
+
+// bool authorizes_upload_contract = 6;
+inline void upload_contract_operation::clear_authorizes_upload_contract() {
+  authorizes_upload_contract_ = false;
+}
+inline bool upload_contract_operation::_internal_authorizes_upload_contract() const {
+  return authorizes_upload_contract_;
+}
+inline bool upload_contract_operation::authorizes_upload_contract() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.upload_contract_operation.authorizes_upload_contract)
+  return _internal_authorizes_upload_contract();
+}
+inline void upload_contract_operation::_internal_set_authorizes_upload_contract(bool value) {
+  
+  authorizes_upload_contract_ = value;
+}
+inline void upload_contract_operation::set_authorizes_upload_contract(bool value) {
+  _internal_set_authorizes_upload_contract(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.upload_contract_operation.authorizes_upload_contract)
+}
+
 // -------------------------------------------------------------------
 
 // call_contract_operation
@@ -4122,6 +4257,98 @@ inline void transaction_header::set_allocated_operation_merkle_root(std::string*
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.operation_merkle_root)
 }
 
+// bytes payer = 4 [(.koinos.btype) = ADDRESS];
+inline void transaction_header::clear_payer() {
+  payer_.ClearToEmpty();
+}
+inline const std::string& transaction_header::payer() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_header.payer)
+  return _internal_payer();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void transaction_header::set_payer(ArgT0&& arg0, ArgT... args) {
+ 
+ payer_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.payer)
+}
+inline std::string* transaction_header::mutable_payer() {
+  std::string* _s = _internal_mutable_payer();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_header.payer)
+  return _s;
+}
+inline const std::string& transaction_header::_internal_payer() const {
+  return payer_.Get();
+}
+inline void transaction_header::_internal_set_payer(const std::string& value) {
+  
+  payer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* transaction_header::_internal_mutable_payer() {
+  
+  return payer_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* transaction_header::release_payer() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_header.payer)
+  return payer_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void transaction_header::set_allocated_payer(std::string* payer) {
+  if (payer != nullptr) {
+    
+  } else {
+    
+  }
+  payer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), payer,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.payer)
+}
+
+// bytes payee = 5 [(.koinos.btype) = ADDRESS];
+inline void transaction_header::clear_payee() {
+  payee_.ClearToEmpty();
+}
+inline const std::string& transaction_header::payee() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_header.payee)
+  return _internal_payee();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void transaction_header::set_payee(ArgT0&& arg0, ArgT... args) {
+ 
+ payee_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.payee)
+}
+inline std::string* transaction_header::mutable_payee() {
+  std::string* _s = _internal_mutable_payee();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_header.payee)
+  return _s;
+}
+inline const std::string& transaction_header::_internal_payee() const {
+  return payee_.Get();
+}
+inline void transaction_header::_internal_set_payee(const std::string& value) {
+  
+  payee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* transaction_header::_internal_mutable_payee() {
+  
+  return payee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* transaction_header::release_payee() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_header.payee)
+  return payee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void transaction_header::set_allocated_payee(std::string* payee) {
+  if (payee != nullptr) {
+    
+  } else {
+    
+  }
+  payee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), payee,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.payee)
+}
+
 // -------------------------------------------------------------------
 
 // transaction
@@ -4302,50 +4529,79 @@ transaction::operations() const {
   return operations_;
 }
 
-// bytes signature = 4;
-inline void transaction::clear_signature() {
-  signature_.ClearToEmpty();
+// repeated bytes signatures = 4;
+inline int transaction::_internal_signatures_size() const {
+  return signatures_.size();
 }
-inline const std::string& transaction::signature() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.transaction.signature)
-  return _internal_signature();
+inline int transaction::signatures_size() const {
+  return _internal_signatures_size();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void transaction::set_signature(ArgT0&& arg0, ArgT... args) {
- 
- signature_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.protocol.transaction.signature)
+inline void transaction::clear_signatures() {
+  signatures_.Clear();
 }
-inline std::string* transaction::mutable_signature() {
-  std::string* _s = _internal_mutable_signature();
-  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction.signature)
+inline std::string* transaction::add_signatures() {
+  std::string* _s = _internal_add_signatures();
+  // @@protoc_insertion_point(field_add_mutable:koinos.protocol.transaction.signatures)
   return _s;
 }
-inline const std::string& transaction::_internal_signature() const {
-  return signature_.Get();
+inline const std::string& transaction::_internal_signatures(int index) const {
+  return signatures_.Get(index);
 }
-inline void transaction::_internal_set_signature(const std::string& value) {
-  
-  signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+inline const std::string& transaction::signatures(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.transaction.signatures)
+  return _internal_signatures(index);
 }
-inline std::string* transaction::_internal_mutable_signature() {
-  
-  return signature_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+inline std::string* transaction::mutable_signatures(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction.signatures)
+  return signatures_.Mutable(index);
 }
-inline std::string* transaction::release_signature() {
-  // @@protoc_insertion_point(field_release:koinos.protocol.transaction.signature)
-  return signature_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline void transaction::set_signatures(int index, const std::string& value) {
+  signatures_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction.signatures)
 }
-inline void transaction::set_allocated_signature(std::string* signature) {
-  if (signature != nullptr) {
-    
-  } else {
-    
-  }
-  signature_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signature,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction.signature)
+inline void transaction::set_signatures(int index, std::string&& value) {
+  signatures_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction.signatures)
+}
+inline void transaction::set_signatures(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  signatures_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.transaction.signatures)
+}
+inline void transaction::set_signatures(int index, const void* value, size_t size) {
+  signatures_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.transaction.signatures)
+}
+inline std::string* transaction::_internal_add_signatures() {
+  return signatures_.Add();
+}
+inline void transaction::add_signatures(const std::string& value) {
+  signatures_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.protocol.transaction.signatures)
+}
+inline void transaction::add_signatures(std::string&& value) {
+  signatures_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.protocol.transaction.signatures)
+}
+inline void transaction::add_signatures(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  signatures_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.protocol.transaction.signatures)
+}
+inline void transaction::add_signatures(const void* value, size_t size) {
+  signatures_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.protocol.transaction.signatures)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+transaction::signatures() const {
+  // @@protoc_insertion_point(field_list:koinos.protocol.transaction.signatures)
+  return signatures_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+transaction::mutable_signatures() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.protocol.transaction.signatures)
+  return &signatures_;
 }
 
 // -------------------------------------------------------------------

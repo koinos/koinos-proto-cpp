@@ -376,26 +376,26 @@ class authorize_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCallsFieldNumber = 2,
+    kCallFieldNumber = 2,
     kTypeFieldNumber = 1,
   };
-  // repeated .koinos.chain.call_target calls = 2;
-  int calls_size() const;
+  // optional .koinos.chain.call_target call = 2;
+  bool has_call() const;
   private:
-  int _internal_calls_size() const;
+  bool _internal_has_call() const;
   public:
-  void clear_calls();
-  ::koinos::chain::call_target* mutable_calls(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::call_target >*
-      mutable_calls();
+  void clear_call();
+  const ::koinos::chain::call_target& call() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::call_target* release_call();
+  ::koinos::chain::call_target* mutable_call();
+  void set_allocated_call(::koinos::chain::call_target* call);
   private:
-  const ::koinos::chain::call_target& _internal_calls(int index) const;
-  ::koinos::chain::call_target* _internal_add_calls();
+  const ::koinos::chain::call_target& _internal_call() const;
+  ::koinos::chain::call_target* _internal_mutable_call();
   public:
-  const ::koinos::chain::call_target& calls(int index) const;
-  ::koinos::chain::call_target* add_calls();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::call_target >&
-      calls() const;
+  void unsafe_arena_set_allocated_call(
+      ::koinos::chain::call_target* call);
+  ::koinos::chain::call_target* unsafe_arena_release_call();
 
   // .koinos.chain.authorization_type type = 1;
   void clear_type();
@@ -413,9 +413,10 @@ class authorize_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::call_target > calls_;
-  int type_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::koinos::chain::call_target* call_;
+  int type_;
   friend struct ::TableStruct_koinos_2fchain_2fauthority_2eproto;
 };
 // -------------------------------------------------------------------
@@ -658,44 +659,94 @@ inline void authorize_arguments::set_type(::koinos::chain::authorization_type va
   // @@protoc_insertion_point(field_set:koinos.chain.authorize_arguments.type)
 }
 
-// repeated .koinos.chain.call_target calls = 2;
-inline int authorize_arguments::_internal_calls_size() const {
-  return calls_.size();
+// optional .koinos.chain.call_target call = 2;
+inline bool authorize_arguments::_internal_has_call() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || call_ != nullptr);
+  return value;
 }
-inline int authorize_arguments::calls_size() const {
-  return _internal_calls_size();
+inline bool authorize_arguments::has_call() const {
+  return _internal_has_call();
 }
-inline void authorize_arguments::clear_calls() {
-  calls_.Clear();
+inline void authorize_arguments::clear_call() {
+  if (call_ != nullptr) call_->Clear();
+  _has_bits_[0] &= ~0x00000001u;
 }
-inline ::koinos::chain::call_target* authorize_arguments::mutable_calls(int index) {
-  // @@protoc_insertion_point(field_mutable:koinos.chain.authorize_arguments.calls)
-  return calls_.Mutable(index);
+inline const ::koinos::chain::call_target& authorize_arguments::_internal_call() const {
+  const ::koinos::chain::call_target* p = call_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::call_target&>(
+      ::koinos::chain::_call_target_default_instance_);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::call_target >*
-authorize_arguments::mutable_calls() {
-  // @@protoc_insertion_point(field_mutable_list:koinos.chain.authorize_arguments.calls)
-  return &calls_;
+inline const ::koinos::chain::call_target& authorize_arguments::call() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.authorize_arguments.call)
+  return _internal_call();
 }
-inline const ::koinos::chain::call_target& authorize_arguments::_internal_calls(int index) const {
-  return calls_.Get(index);
+inline void authorize_arguments::unsafe_arena_set_allocated_call(
+    ::koinos::chain::call_target* call) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(call_);
+  }
+  call_ = call;
+  if (call) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.authorize_arguments.call)
 }
-inline const ::koinos::chain::call_target& authorize_arguments::calls(int index) const {
-  // @@protoc_insertion_point(field_get:koinos.chain.authorize_arguments.calls)
-  return _internal_calls(index);
+inline ::koinos::chain::call_target* authorize_arguments::release_call() {
+  _has_bits_[0] &= ~0x00000001u;
+  ::koinos::chain::call_target* temp = call_;
+  call_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
 }
-inline ::koinos::chain::call_target* authorize_arguments::_internal_add_calls() {
-  return calls_.Add();
+inline ::koinos::chain::call_target* authorize_arguments::unsafe_arena_release_call() {
+  // @@protoc_insertion_point(field_release:koinos.chain.authorize_arguments.call)
+  _has_bits_[0] &= ~0x00000001u;
+  ::koinos::chain::call_target* temp = call_;
+  call_ = nullptr;
+  return temp;
 }
-inline ::koinos::chain::call_target* authorize_arguments::add_calls() {
-  ::koinos::chain::call_target* _add = _internal_add_calls();
-  // @@protoc_insertion_point(field_add:koinos.chain.authorize_arguments.calls)
-  return _add;
+inline ::koinos::chain::call_target* authorize_arguments::_internal_mutable_call() {
+  _has_bits_[0] |= 0x00000001u;
+  if (call_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::call_target>(GetArenaForAllocation());
+    call_ = p;
+  }
+  return call_;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::call_target >&
-authorize_arguments::calls() const {
-  // @@protoc_insertion_point(field_list:koinos.chain.authorize_arguments.calls)
-  return calls_;
+inline ::koinos::chain::call_target* authorize_arguments::mutable_call() {
+  ::koinos::chain::call_target* _msg = _internal_mutable_call();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.authorize_arguments.call)
+  return _msg;
+}
+inline void authorize_arguments::set_allocated_call(::koinos::chain::call_target* call) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete call_;
+  }
+  if (call) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::call_target>::GetOwningArena(call);
+    if (message_arena != submessage_arena) {
+      call = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, call, submessage_arena);
+    }
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  call_ = call;
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.authorize_arguments.call)
 }
 
 // -------------------------------------------------------------------

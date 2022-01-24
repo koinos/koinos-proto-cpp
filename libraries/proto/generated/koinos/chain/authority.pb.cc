@@ -33,7 +33,7 @@ struct call_targetDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT call_targetDefaultTypeInternal _call_target_default_instance_;
 constexpr authorize_arguments::authorize_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : calls_()
+  : call_(nullptr)
   , type_(0)
 {}
 struct authorize_argumentsDefaultTypeInternal {
@@ -71,13 +71,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fauthority_2ep
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::call_target, contract_id_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::call_target, entry_point_),
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::authorize_arguments, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::authorize_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::authorize_arguments, type_),
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::authorize_arguments, calls_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::authorize_arguments, call_),
+  ~0u,
+  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::authorize_result, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -87,8 +89,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fauthority_2ep
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::chain::call_target)},
-  { 7, -1, sizeof(::koinos::chain::authorize_arguments)},
-  { 14, -1, sizeof(::koinos::chain::authorize_result)},
+  { 7, 14, sizeof(::koinos::chain::authorize_arguments)},
+  { 16, -1, sizeof(::koinos::chain::authorize_result)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -102,14 +104,14 @@ const char descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto[] PROTOB
   "hain\032\024koinos/options.proto\032\023koinos/commo"
   "n.proto\032\036koinos/protocol/protocol.proto\""
   "=\n\013call_target\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030"
-  "\006\022\023\n\013entry_point\030\002 \001(\r\"o\n\023authorize_argu"
+  "\006\022\023\n\013entry_point\030\002 \001(\r\"|\n\023authorize_argu"
   "ments\022.\n\004type\030\001 \001(\0162 .koinos.chain.autho"
-  "rization_type\022(\n\005calls\030\002 \003(\0132\031.koinos.ch"
-  "ain.call_target\"!\n\020authorize_result\022\r\n\005v"
-  "alue\030\001 \001(\010*H\n\022authorization_type\022\021\n\rcall"
-  "_contract\020\000\022\n\n\006use_rc\020\001\022\023\n\017upload_contra"
-  "ct\020\002B4Z2github.com/koinos/koinos-proto-g"
-  "olang/koinos/chainb\006proto3"
+  "rization_type\022,\n\004call\030\002 \001(\0132\031.koinos.cha"
+  "in.call_targetH\000\210\001\001B\007\n\005_call\"!\n\020authoriz"
+  "e_result\022\r\n\005value\030\001 \001(\010*H\n\022authorization"
+  "_type\022\021\n\rcall_contract\020\000\022\n\n\006use_rc\020\001\022\023\n\017"
+  "upload_contract\020\002B4Z2github.com/koinos/k"
+  "oinos-proto-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fauthority_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -118,7 +120,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fauthority_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fauthority_2eproto = {
-  false, false, 466, descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto, "koinos/chain/authority.proto", 
+  false, false, 479, descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto, "koinos/chain/authority.proto", 
   &descriptor_table_koinos_2fchain_2fauthority_2eproto_once, descriptor_table_koinos_2fchain_2fauthority_2eproto_deps, 3, 3,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fauthority_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fauthority_2eproto, file_level_enum_descriptors_koinos_2fchain_2fauthority_2eproto, file_level_service_descriptors_koinos_2fchain_2fauthority_2eproto,
@@ -373,12 +375,20 @@ void call_target::InternalSwap(call_target* other) {
 
 class authorize_arguments::_Internal {
  public:
+  using HasBits = decltype(std::declval<authorize_arguments>()._has_bits_);
+  static const ::koinos::chain::call_target& call(const authorize_arguments* msg);
+  static void set_has_call(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
+const ::koinos::chain::call_target&
+authorize_arguments::_Internal::call(const authorize_arguments* msg) {
+  return *msg->call_;
+}
 authorize_arguments::authorize_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  calls_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -387,14 +397,22 @@ authorize_arguments::authorize_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 }
 authorize_arguments::authorize_arguments(const authorize_arguments& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      calls_(from.calls_) {
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_call()) {
+    call_ = new ::koinos::chain::call_target(*from.call_);
+  } else {
+    call_ = nullptr;
+  }
   type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.authorize_arguments)
 }
 
 inline void authorize_arguments::SharedCtor() {
-type_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&call_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&call_)) + sizeof(type_));
 }
 
 authorize_arguments::~authorize_arguments() {
@@ -406,6 +424,7 @@ authorize_arguments::~authorize_arguments() {
 
 inline void authorize_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete call_;
 }
 
 void authorize_arguments::ArenaDtor(void* object) {
@@ -424,13 +443,19 @@ void authorize_arguments::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  calls_.Clear();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    GOOGLE_DCHECK(call_ != nullptr);
+    call_->Clear();
+  }
   type_ = 0;
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* authorize_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -443,16 +468,11 @@ const char* authorize_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           _internal_set_type(static_cast<::koinos::chain::authorization_type>(val));
         } else goto handle_unusual;
         continue;
-      // repeated .koinos.chain.call_target calls = 2;
+      // optional .koinos.chain.call_target call = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_calls(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
+          ptr = ctx->ParseMessage(_internal_mutable_call(), ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -471,6 +491,7 @@ const char* authorize_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -491,12 +512,12 @@ failure:
       1, this->_internal_type(), target);
   }
 
-  // repeated .koinos.chain.call_target calls = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->_internal_calls_size()); i < n; i++) {
+  // optional .koinos.chain.call_target call = 2;
+  if (_internal_has_call()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(2, this->_internal_calls(i), target, stream);
+      InternalWriteMessage(
+        2, _Internal::call(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -515,11 +536,12 @@ size_t authorize_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .koinos.chain.call_target calls = 2;
-  total_size += 1UL * this->_internal_calls_size();
-  for (const auto& msg : this->calls_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  // optional .koinos.chain.call_target call = 2;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *call_);
   }
 
   // .koinos.chain.authorization_type type = 1;
@@ -556,7 +578,9 @@ void authorize_arguments::MergeFrom(const authorize_arguments& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  calls_.MergeFrom(from.calls_);
+  if (from._internal_has_call()) {
+    _internal_mutable_call()->::koinos::chain::call_target::MergeFrom(from._internal_call());
+  }
   if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
@@ -577,8 +601,13 @@ bool authorize_arguments::IsInitialized() const {
 void authorize_arguments::InternalSwap(authorize_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  calls_.InternalSwap(&other->calls_);
-  swap(type_, other->type_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(authorize_arguments, type_)
+      + sizeof(authorize_arguments::type_)
+      - PROTOBUF_FIELD_OFFSET(authorize_arguments, call_)>(
+          reinterpret_cast<char*>(&call_),
+          reinterpret_cast<char*>(&other->call_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata authorize_arguments::GetMetadata() const {

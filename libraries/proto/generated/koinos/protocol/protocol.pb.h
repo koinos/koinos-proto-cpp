@@ -30,6 +30,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/options.pb.h"
 // @@protoc_insertion_point(includes)
@@ -119,6 +120,55 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace protocol {
 
+enum dsa : int {
+  ecdsa_secp256k1 = 0,
+  dsa_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  dsa_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool dsa_IsValid(int value);
+constexpr dsa dsa_MIN = ecdsa_secp256k1;
+constexpr dsa dsa_MAX = ecdsa_secp256k1;
+constexpr int dsa_ARRAYSIZE = dsa_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor();
+template<typename T>
+inline const std::string& dsa_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, dsa>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function dsa_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    dsa_descriptor(), enum_t_value);
+}
+inline bool dsa_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, dsa* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<dsa>(
+    dsa_descriptor(), name, value);
+}
+enum system_authorization_type : int {
+  set_system_contract = 0,
+  set_system_call = 1,
+  system_authorization_type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  system_authorization_type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool system_authorization_type_IsValid(int value);
+constexpr system_authorization_type system_authorization_type_MIN = set_system_contract;
+constexpr system_authorization_type system_authorization_type_MAX = set_system_call;
+constexpr int system_authorization_type_ARRAYSIZE = system_authorization_type_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_authorization_type_descriptor();
+template<typename T>
+inline const std::string& system_authorization_type_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, system_authorization_type>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function system_authorization_type_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    system_authorization_type_descriptor(), enum_t_value);
+}
+inline bool system_authorization_type_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, system_authorization_type* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<system_authorization_type>(
+    system_authorization_type_descriptor(), name, value);
+}
 // ===================================================================
 
 class event_data final :
@@ -2120,6 +2170,7 @@ class transaction_receipt final :
 
   enum : int {
     kEventsFieldNumber = 10,
+    kLogsFieldNumber = 11,
     kIdFieldNumber = 1,
     kPayerFieldNumber = 2,
     kMaxPayerRcFieldNumber = 3,
@@ -2147,6 +2198,30 @@ class transaction_receipt final :
   ::koinos::protocol::event_data* add_events();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::event_data >&
       events() const;
+
+  // repeated string logs = 11;
+  int logs_size() const;
+  private:
+  int _internal_logs_size() const;
+  public:
+  void clear_logs();
+  const std::string& logs(int index) const;
+  std::string* mutable_logs(int index);
+  void set_logs(int index, const std::string& value);
+  void set_logs(int index, std::string&& value);
+  void set_logs(int index, const char* value);
+  void set_logs(int index, const char* value, size_t size);
+  std::string* add_logs();
+  void add_logs(const std::string& value);
+  void add_logs(std::string&& value);
+  void add_logs(const char* value);
+  void add_logs(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& logs() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_logs();
+  private:
+  const std::string& _internal_logs(int index) const;
+  std::string* _internal_add_logs();
+  public:
 
   // bytes id = 1 [(.koinos.btype) = TRANSACTION_ID];
   void clear_id();
@@ -2247,6 +2322,7 @@ class transaction_receipt final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::event_data > events_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> logs_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payer_;
   ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_rc_;
@@ -2792,6 +2868,7 @@ class block_receipt final :
   enum : int {
     kEventsFieldNumber = 7,
     kTransactionReceiptsFieldNumber = 8,
+    kLogsFieldNumber = 9,
     kIdFieldNumber = 1,
     kStateMerkleRootFieldNumber = 6,
     kHeightFieldNumber = 2,
@@ -2834,6 +2911,30 @@ class block_receipt final :
   ::koinos::protocol::transaction_receipt* add_transaction_receipts();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::transaction_receipt >&
       transaction_receipts() const;
+
+  // repeated string logs = 9;
+  int logs_size() const;
+  private:
+  int _internal_logs_size() const;
+  public:
+  void clear_logs();
+  const std::string& logs(int index) const;
+  std::string* mutable_logs(int index);
+  void set_logs(int index, const std::string& value);
+  void set_logs(int index, std::string&& value);
+  void set_logs(int index, const char* value);
+  void set_logs(int index, const char* value, size_t size);
+  std::string* add_logs();
+  void add_logs(const std::string& value);
+  void add_logs(std::string&& value);
+  void add_logs(const char* value);
+  void add_logs(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& logs() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_logs();
+  private:
+  const std::string& _internal_logs(int index) const;
+  std::string* _internal_add_logs();
+  public:
 
   // bytes id = 1 [(.koinos.btype) = BLOCK_ID];
   void clear_id();
@@ -2908,6 +3009,7 @@ class block_receipt final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::event_data > events_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::transaction_receipt > transaction_receipts_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> logs_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr state_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::uint64 height_;
@@ -4880,6 +4982,81 @@ transaction_receipt::events() const {
   return events_;
 }
 
+// repeated string logs = 11;
+inline int transaction_receipt::_internal_logs_size() const {
+  return logs_.size();
+}
+inline int transaction_receipt::logs_size() const {
+  return _internal_logs_size();
+}
+inline void transaction_receipt::clear_logs() {
+  logs_.Clear();
+}
+inline std::string* transaction_receipt::add_logs() {
+  std::string* _s = _internal_add_logs();
+  // @@protoc_insertion_point(field_add_mutable:koinos.protocol.transaction_receipt.logs)
+  return _s;
+}
+inline const std::string& transaction_receipt::_internal_logs(int index) const {
+  return logs_.Get(index);
+}
+inline const std::string& transaction_receipt::logs(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_receipt.logs)
+  return _internal_logs(index);
+}
+inline std::string* transaction_receipt::mutable_logs(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_receipt.logs)
+  return logs_.Mutable(index);
+}
+inline void transaction_receipt::set_logs(int index, const std::string& value) {
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_receipt.logs)
+}
+inline void transaction_receipt::set_logs(int index, std::string&& value) {
+  logs_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_receipt.logs)
+}
+inline void transaction_receipt::set_logs(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.transaction_receipt.logs)
+}
+inline void transaction_receipt::set_logs(int index, const char* value, size_t size) {
+  logs_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.transaction_receipt.logs)
+}
+inline std::string* transaction_receipt::_internal_add_logs() {
+  return logs_.Add();
+}
+inline void transaction_receipt::add_logs(const std::string& value) {
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.protocol.transaction_receipt.logs)
+}
+inline void transaction_receipt::add_logs(std::string&& value) {
+  logs_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.protocol.transaction_receipt.logs)
+}
+inline void transaction_receipt::add_logs(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.protocol.transaction_receipt.logs)
+}
+inline void transaction_receipt::add_logs(const char* value, size_t size) {
+  logs_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.protocol.transaction_receipt.logs)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+transaction_receipt::logs() const {
+  // @@protoc_insertion_point(field_list:koinos.protocol.transaction_receipt.logs)
+  return logs_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+transaction_receipt::mutable_logs() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.protocol.transaction_receipt.logs)
+  return &logs_;
+}
+
 // -------------------------------------------------------------------
 
 // block_header
@@ -5590,6 +5767,81 @@ block_receipt::transaction_receipts() const {
   return transaction_receipts_;
 }
 
+// repeated string logs = 9;
+inline int block_receipt::_internal_logs_size() const {
+  return logs_.size();
+}
+inline int block_receipt::logs_size() const {
+  return _internal_logs_size();
+}
+inline void block_receipt::clear_logs() {
+  logs_.Clear();
+}
+inline std::string* block_receipt::add_logs() {
+  std::string* _s = _internal_add_logs();
+  // @@protoc_insertion_point(field_add_mutable:koinos.protocol.block_receipt.logs)
+  return _s;
+}
+inline const std::string& block_receipt::_internal_logs(int index) const {
+  return logs_.Get(index);
+}
+inline const std::string& block_receipt::logs(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_receipt.logs)
+  return _internal_logs(index);
+}
+inline std::string* block_receipt::mutable_logs(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_receipt.logs)
+  return logs_.Mutable(index);
+}
+inline void block_receipt::set_logs(int index, const std::string& value) {
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.logs)
+}
+inline void block_receipt::set_logs(int index, std::string&& value) {
+  logs_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.logs)
+}
+inline void block_receipt::set_logs(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.block_receipt.logs)
+}
+inline void block_receipt::set_logs(int index, const char* value, size_t size) {
+  logs_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.block_receipt.logs)
+}
+inline std::string* block_receipt::_internal_add_logs() {
+  return logs_.Add();
+}
+inline void block_receipt::add_logs(const std::string& value) {
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.protocol.block_receipt.logs)
+}
+inline void block_receipt::add_logs(std::string&& value) {
+  logs_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.protocol.block_receipt.logs)
+}
+inline void block_receipt::add_logs(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.protocol.block_receipt.logs)
+}
+inline void block_receipt::add_logs(const char* value, size_t size) {
+  logs_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.protocol.block_receipt.logs)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+block_receipt::logs() const {
+  // @@protoc_insertion_point(field_list:koinos.protocol.block_receipt.logs)
+  return logs_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+block_receipt::mutable_logs() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.protocol.block_receipt.logs)
+  return &logs_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
@@ -5624,6 +5876,21 @@ block_receipt::transaction_receipts() const {
 
 }  // namespace protocol
 }  // namespace koinos
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::koinos::protocol::dsa> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::koinos::protocol::dsa>() {
+  return ::koinos::protocol::dsa_descriptor();
+}
+template <> struct is_proto_enum< ::koinos::protocol::system_authorization_type> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::koinos::protocol::system_authorization_type>() {
+  return ::koinos::protocol::system_authorization_type_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

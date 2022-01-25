@@ -28,16 +28,15 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2fobject_5fspaces_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n koinos/chain/object_spaces.proto\022\014koin"
-  "os.chain*\217\001\n\017system_space_id\022\017\n\013reserved"
-  "_id\020\000\022\014\n\010metadata\020\001\022\030\n\024system_call_dispa"
-  "tch\020\003\022\025\n\021contract_bytecode\020\004\022\025\n\021contract"
-  "_metadata\020\005\022\025\n\021transaction_nonce\020\006B4Z2gi"
-  "thub.com/koinos/koinos-proto-golang/koin"
-  "os/chainb\006proto3"
+  "os.chain*~\n\017system_space_id\022\014\n\010metadata\020"
+  "\000\022\030\n\024system_call_dispatch\020\001\022\025\n\021contract_"
+  "bytecode\020\002\022\025\n\021contract_metadata\020\003\022\025\n\021tra"
+  "nsaction_nonce\020\004B4Z2github.com/koinos/ko"
+  "inos-proto-golang/koinos/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fobject_5fspaces_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fobject_5fspaces_2eproto = {
-  false, false, 256, descriptor_table_protodef_koinos_2fchain_2fobject_5fspaces_2eproto, "koinos/chain/object_spaces.proto", 
+  false, false, 238, descriptor_table_protodef_koinos_2fchain_2fobject_5fspaces_2eproto, "koinos/chain/object_spaces.proto", 
   &descriptor_table_koinos_2fchain_2fobject_5fspaces_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fobject_5fspaces_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fobject_5fspaces_2eproto, file_level_service_descriptors_koinos_2fchain_2fobject_5fspaces_2eproto,
@@ -58,10 +57,9 @@ bool system_space_id_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
     case 3:
     case 4:
-    case 5:
-    case 6:
       return true;
     default:
       return false;

@@ -30,7 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/options.pb.h"
 // @@protoc_insertion_point(includes)
@@ -120,55 +119,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace protocol {
 
-enum dsa : int {
-  ecdsa_secp256k1 = 0,
-  dsa_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  dsa_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool dsa_IsValid(int value);
-constexpr dsa dsa_MIN = ecdsa_secp256k1;
-constexpr dsa dsa_MAX = ecdsa_secp256k1;
-constexpr int dsa_ARRAYSIZE = dsa_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor();
-template<typename T>
-inline const std::string& dsa_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, dsa>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function dsa_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    dsa_descriptor(), enum_t_value);
-}
-inline bool dsa_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, dsa* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<dsa>(
-    dsa_descriptor(), name, value);
-}
-enum system_authorization_type : int {
-  set_system_contract = 0,
-  set_system_call = 1,
-  system_authorization_type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  system_authorization_type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool system_authorization_type_IsValid(int value);
-constexpr system_authorization_type system_authorization_type_MIN = set_system_contract;
-constexpr system_authorization_type system_authorization_type_MAX = set_system_call;
-constexpr int system_authorization_type_ARRAYSIZE = system_authorization_type_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_authorization_type_descriptor();
-template<typename T>
-inline const std::string& system_authorization_type_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, system_authorization_type>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function system_authorization_type_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    system_authorization_type_descriptor(), enum_t_value);
-}
-inline bool system_authorization_type_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, system_authorization_type* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<system_authorization_type>(
-    system_authorization_type_descriptor(), name, value);
-}
 // ===================================================================
 
 class event_data final :
@@ -5876,21 +5826,6 @@ block_receipt::mutable_logs() {
 
 }  // namespace protocol
 }  // namespace koinos
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::koinos::protocol::dsa> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::koinos::protocol::dsa>() {
-  return ::koinos::protocol::dsa_descriptor();
-}
-template <> struct is_proto_enum< ::koinos::protocol::system_authorization_type> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::koinos::protocol::system_authorization_type>() {
-  return ::koinos::protocol::system_authorization_type_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

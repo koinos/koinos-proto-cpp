@@ -109,8 +109,8 @@ const char descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto[] PROTOB
   "rization_type\022,\n\004call\030\002 \001(\0132\031.koinos.cha"
   "in.call_targetH\000\210\001\001B\007\n\005_call\"!\n\020authoriz"
   "e_result\022\r\n\005value\030\001 \001(\010*H\n\022authorization"
-  "_type\022\021\n\rcall_contract\020\000\022\n\n\006use_rc\020\001\022\023\n\017"
-  "upload_contract\020\002B4Z2github.com/koinos/k"
+  "_type\022\021\n\rcontract_call\020\000\022\n\n\006rc_use\020\001\022\023\n\017"
+  "contract_upload\020\002B4Z2github.com/koinos/k"
   "oinos-proto-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fauthority_2eproto_deps[3] = {

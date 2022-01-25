@@ -30,12 +30,14 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
-#include <google/protobuf/any.pb.h>
 #include "koinos/options.pb.h"
 #include "koinos/common.pb.h"
 #include "koinos/protocol/protocol.pb.h"
+#include "koinos/chain/authority.pb.h"
 #include "koinos/chain/chain.pb.h"
+#include "koinos/chain/value.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_koinos_2fchain_2fsystem_5fcalls_2eproto
@@ -367,6 +369,55 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace chain {
 
+enum dsa : int {
+  ecdsa_secp256k1 = 0,
+  dsa_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  dsa_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool dsa_IsValid(int value);
+constexpr dsa dsa_MIN = ecdsa_secp256k1;
+constexpr dsa dsa_MAX = ecdsa_secp256k1;
+constexpr int dsa_ARRAYSIZE = dsa_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor();
+template<typename T>
+inline const std::string& dsa_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, dsa>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function dsa_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    dsa_descriptor(), enum_t_value);
+}
+inline bool dsa_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, dsa* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<dsa>(
+    dsa_descriptor(), name, value);
+}
+enum system_authorization_type : int {
+  set_system_contract = 0,
+  set_system_call = 1,
+  system_authorization_type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  system_authorization_type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool system_authorization_type_IsValid(int value);
+constexpr system_authorization_type system_authorization_type_MIN = set_system_contract;
+constexpr system_authorization_type system_authorization_type_MAX = set_system_call;
+constexpr int system_authorization_type_ARRAYSIZE = system_authorization_type_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_authorization_type_descriptor();
+template<typename T>
+inline const std::string& system_authorization_type_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, system_authorization_type>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function system_authorization_type_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    system_authorization_type_descriptor(), enum_t_value);
+}
+inline bool system_authorization_type_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, system_authorization_type* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<system_authorization_type>(
+    system_authorization_type_descriptor(), name, value);
+}
 // ===================================================================
 
 class authorize_system_arguments final :
@@ -486,13 +537,13 @@ class authorize_system_arguments final :
   enum : int {
     kTypeFieldNumber = 1,
   };
-  // .koinos.protocol.system_authorization_type type = 1;
+  // .koinos.chain.system_authorization_type type = 1;
   void clear_type();
-  ::koinos::protocol::system_authorization_type type() const;
-  void set_type(::koinos::protocol::system_authorization_type value);
+  ::koinos::chain::system_authorization_type type() const;
+  void set_type(::koinos::chain::system_authorization_type value);
   private:
-  ::koinos::protocol::system_authorization_type _internal_type() const;
-  void _internal_set_type(::koinos::protocol::system_authorization_type value);
+  ::koinos::chain::system_authorization_type _internal_type() const;
+  void _internal_set_type(::koinos::chain::system_authorization_type value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.authorize_system_arguments)
@@ -809,13 +860,13 @@ class verify_signature_arguments final :
   std::string* _internal_mutable_digest();
   public:
 
-  // .koinos.protocol.dsa type = 1;
+  // .koinos.chain.dsa type = 1;
   void clear_type();
-  ::koinos::protocol::dsa type() const;
-  void set_type(::koinos::protocol::dsa value);
+  ::koinos::chain::dsa type() const;
+  void set_type(::koinos::chain::dsa value);
   private:
-  ::koinos::protocol::dsa _internal_type() const;
-  void _internal_set_type(::koinos::protocol::dsa value);
+  ::koinos::chain::dsa _internal_type() const;
+  void _internal_set_type(::koinos::chain::dsa value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.verify_signature_arguments)
@@ -1120,13 +1171,13 @@ class recover_public_key_arguments final :
   std::string* _internal_mutable_digest();
   public:
 
-  // .koinos.protocol.dsa type = 1;
+  // .koinos.chain.dsa type = 1;
   void clear_type();
-  ::koinos::protocol::dsa type() const;
-  void set_type(::koinos::protocol::dsa value);
+  ::koinos::chain::dsa type() const;
+  void set_type(::koinos::chain::dsa value);
   private:
-  ::koinos::protocol::dsa _internal_type() const;
-  void _internal_set_type(::koinos::protocol::dsa value);
+  ::koinos::chain::dsa _internal_type() const;
+  void _internal_set_type(::koinos::chain::dsa value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.recover_public_key_arguments)
@@ -1549,23 +1600,23 @@ class get_transaction_field_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // .google.protobuf.Any value = 1;
+  // .koinos.chain.value value = 1;
   bool has_value() const;
   private:
   bool _internal_has_value() const;
   public:
   void clear_value();
-  const PROTOBUF_NAMESPACE_ID::Any& value() const;
-  PROTOBUF_MUST_USE_RESULT PROTOBUF_NAMESPACE_ID::Any* release_value();
-  PROTOBUF_NAMESPACE_ID::Any* mutable_value();
-  void set_allocated_value(PROTOBUF_NAMESPACE_ID::Any* value);
+  const ::koinos::chain::value& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::value* release_value();
+  ::koinos::chain::value* mutable_value();
+  void set_allocated_value(::koinos::chain::value* value);
   private:
-  const PROTOBUF_NAMESPACE_ID::Any& _internal_value() const;
-  PROTOBUF_NAMESPACE_ID::Any* _internal_mutable_value();
+  const ::koinos::chain::value& _internal_value() const;
+  ::koinos::chain::value* _internal_mutable_value();
   public:
   void unsafe_arena_set_allocated_value(
-      PROTOBUF_NAMESPACE_ID::Any* value);
-  PROTOBUF_NAMESPACE_ID::Any* unsafe_arena_release_value();
+      ::koinos::chain::value* value);
+  ::koinos::chain::value* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_transaction_field_result)
  private:
@@ -1574,7 +1625,7 @@ class get_transaction_field_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  PROTOBUF_NAMESPACE_ID::Any* value_;
+  ::koinos::chain::value* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -1841,23 +1892,23 @@ class get_block_field_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // .google.protobuf.Any value = 1;
+  // .koinos.chain.value value = 1;
   bool has_value() const;
   private:
   bool _internal_has_value() const;
   public:
   void clear_value();
-  const PROTOBUF_NAMESPACE_ID::Any& value() const;
-  PROTOBUF_MUST_USE_RESULT PROTOBUF_NAMESPACE_ID::Any* release_value();
-  PROTOBUF_NAMESPACE_ID::Any* mutable_value();
-  void set_allocated_value(PROTOBUF_NAMESPACE_ID::Any* value);
+  const ::koinos::chain::value& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::value* release_value();
+  ::koinos::chain::value* mutable_value();
+  void set_allocated_value(::koinos::chain::value* value);
   private:
-  const PROTOBUF_NAMESPACE_ID::Any& _internal_value() const;
-  PROTOBUF_NAMESPACE_ID::Any* _internal_mutable_value();
+  const ::koinos::chain::value& _internal_value() const;
+  ::koinos::chain::value* _internal_mutable_value();
   public:
   void unsafe_arena_set_allocated_value(
-      PROTOBUF_NAMESPACE_ID::Any* value);
-  PROTOBUF_NAMESPACE_ID::Any* unsafe_arena_release_value();
+      ::koinos::chain::value* value);
+  ::koinos::chain::value* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_block_field_result)
  private:
@@ -1866,7 +1917,7 @@ class get_block_field_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  PROTOBUF_NAMESPACE_ID::Any* value_;
+  ::koinos::chain::value* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -11198,22 +11249,22 @@ class get_account_nonce_result final :
 #endif  // __GNUC__
 // authorize_system_arguments
 
-// .koinos.protocol.system_authorization_type type = 1;
+// .koinos.chain.system_authorization_type type = 1;
 inline void authorize_system_arguments::clear_type() {
   type_ = 0;
 }
-inline ::koinos::protocol::system_authorization_type authorize_system_arguments::_internal_type() const {
-  return static_cast< ::koinos::protocol::system_authorization_type >(type_);
+inline ::koinos::chain::system_authorization_type authorize_system_arguments::_internal_type() const {
+  return static_cast< ::koinos::chain::system_authorization_type >(type_);
 }
-inline ::koinos::protocol::system_authorization_type authorize_system_arguments::type() const {
+inline ::koinos::chain::system_authorization_type authorize_system_arguments::type() const {
   // @@protoc_insertion_point(field_get:koinos.chain.authorize_system_arguments.type)
   return _internal_type();
 }
-inline void authorize_system_arguments::_internal_set_type(::koinos::protocol::system_authorization_type value) {
+inline void authorize_system_arguments::_internal_set_type(::koinos::chain::system_authorization_type value) {
   
   type_ = value;
 }
-inline void authorize_system_arguments::set_type(::koinos::protocol::system_authorization_type value) {
+inline void authorize_system_arguments::set_type(::koinos::chain::system_authorization_type value) {
   _internal_set_type(value);
   // @@protoc_insertion_point(field_set:koinos.chain.authorize_system_arguments.type)
 }
@@ -11246,22 +11297,22 @@ inline void authorize_system_result::set_value(bool value) {
 
 // verify_signature_arguments
 
-// .koinos.protocol.dsa type = 1;
+// .koinos.chain.dsa type = 1;
 inline void verify_signature_arguments::clear_type() {
   type_ = 0;
 }
-inline ::koinos::protocol::dsa verify_signature_arguments::_internal_type() const {
-  return static_cast< ::koinos::protocol::dsa >(type_);
+inline ::koinos::chain::dsa verify_signature_arguments::_internal_type() const {
+  return static_cast< ::koinos::chain::dsa >(type_);
 }
-inline ::koinos::protocol::dsa verify_signature_arguments::type() const {
+inline ::koinos::chain::dsa verify_signature_arguments::type() const {
   // @@protoc_insertion_point(field_get:koinos.chain.verify_signature_arguments.type)
   return _internal_type();
 }
-inline void verify_signature_arguments::_internal_set_type(::koinos::protocol::dsa value) {
+inline void verify_signature_arguments::_internal_set_type(::koinos::chain::dsa value) {
   
   type_ = value;
 }
-inline void verify_signature_arguments::set_type(::koinos::protocol::dsa value) {
+inline void verify_signature_arguments::set_type(::koinos::chain::dsa value) {
   _internal_set_type(value);
   // @@protoc_insertion_point(field_set:koinos.chain.verify_signature_arguments.type)
 }
@@ -11432,22 +11483,22 @@ inline void verify_signature_result::set_value(bool value) {
 
 // recover_public_key_arguments
 
-// .koinos.protocol.dsa type = 1;
+// .koinos.chain.dsa type = 1;
 inline void recover_public_key_arguments::clear_type() {
   type_ = 0;
 }
-inline ::koinos::protocol::dsa recover_public_key_arguments::_internal_type() const {
-  return static_cast< ::koinos::protocol::dsa >(type_);
+inline ::koinos::chain::dsa recover_public_key_arguments::_internal_type() const {
+  return static_cast< ::koinos::chain::dsa >(type_);
 }
-inline ::koinos::protocol::dsa recover_public_key_arguments::type() const {
+inline ::koinos::chain::dsa recover_public_key_arguments::type() const {
   // @@protoc_insertion_point(field_get:koinos.chain.recover_public_key_arguments.type)
   return _internal_type();
 }
-inline void recover_public_key_arguments::_internal_set_type(::koinos::protocol::dsa value) {
+inline void recover_public_key_arguments::_internal_set_type(::koinos::chain::dsa value) {
   
   type_ = value;
 }
-inline void recover_public_key_arguments::set_type(::koinos::protocol::dsa value) {
+inline void recover_public_key_arguments::set_type(::koinos::chain::dsa value) {
   _internal_set_type(value);
   // @@protoc_insertion_point(field_set:koinos.chain.recover_public_key_arguments.type)
 }
@@ -11648,24 +11699,24 @@ inline void get_transaction_field_arguments::set_allocated_field(std::string* fi
 
 // get_transaction_field_result
 
-// .google.protobuf.Any value = 1;
+// .koinos.chain.value value = 1;
 inline bool get_transaction_field_result::_internal_has_value() const {
   return this != internal_default_instance() && value_ != nullptr;
 }
 inline bool get_transaction_field_result::has_value() const {
   return _internal_has_value();
 }
-inline const PROTOBUF_NAMESPACE_ID::Any& get_transaction_field_result::_internal_value() const {
-  const PROTOBUF_NAMESPACE_ID::Any* p = value_;
-  return p != nullptr ? *p : reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Any&>(
-      PROTOBUF_NAMESPACE_ID::_Any_default_instance_);
+inline const ::koinos::chain::value& get_transaction_field_result::_internal_value() const {
+  const ::koinos::chain::value* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::value&>(
+      ::koinos::chain::_value_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Any& get_transaction_field_result::value() const {
+inline const ::koinos::chain::value& get_transaction_field_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_transaction_field_result.value)
   return _internal_value();
 }
 inline void get_transaction_field_result::unsafe_arena_set_allocated_value(
-    PROTOBUF_NAMESPACE_ID::Any* value) {
+    ::koinos::chain::value* value) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
@@ -11677,9 +11728,9 @@ inline void get_transaction_field_result::unsafe_arena_set_allocated_value(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_transaction_field_result.value)
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_transaction_field_result::release_value() {
+inline ::koinos::chain::value* get_transaction_field_result::release_value() {
   
-  PROTOBUF_NAMESPACE_ID::Any* temp = value_;
+  ::koinos::chain::value* temp = value_;
   value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -11692,27 +11743,27 @@ inline PROTOBUF_NAMESPACE_ID::Any* get_transaction_field_result::release_value()
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_transaction_field_result::unsafe_arena_release_value() {
+inline ::koinos::chain::value* get_transaction_field_result::unsafe_arena_release_value() {
   // @@protoc_insertion_point(field_release:koinos.chain.get_transaction_field_result.value)
   
-  PROTOBUF_NAMESPACE_ID::Any* temp = value_;
+  ::koinos::chain::value* temp = value_;
   value_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_transaction_field_result::_internal_mutable_value() {
+inline ::koinos::chain::value* get_transaction_field_result::_internal_mutable_value() {
   
   if (value_ == nullptr) {
-    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Any>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::koinos::chain::value>(GetArenaForAllocation());
     value_ = p;
   }
   return value_;
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_transaction_field_result::mutable_value() {
-  PROTOBUF_NAMESPACE_ID::Any* _msg = _internal_mutable_value();
+inline ::koinos::chain::value* get_transaction_field_result::mutable_value() {
+  ::koinos::chain::value* _msg = _internal_mutable_value();
   // @@protoc_insertion_point(field_mutable:koinos.chain.get_transaction_field_result.value)
   return _msg;
 }
-inline void get_transaction_field_result::set_allocated_value(PROTOBUF_NAMESPACE_ID::Any* value) {
+inline void get_transaction_field_result::set_allocated_value(::koinos::chain::value* value) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
@@ -11788,24 +11839,24 @@ inline void get_block_field_arguments::set_allocated_field(std::string* field) {
 
 // get_block_field_result
 
-// .google.protobuf.Any value = 1;
+// .koinos.chain.value value = 1;
 inline bool get_block_field_result::_internal_has_value() const {
   return this != internal_default_instance() && value_ != nullptr;
 }
 inline bool get_block_field_result::has_value() const {
   return _internal_has_value();
 }
-inline const PROTOBUF_NAMESPACE_ID::Any& get_block_field_result::_internal_value() const {
-  const PROTOBUF_NAMESPACE_ID::Any* p = value_;
-  return p != nullptr ? *p : reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Any&>(
-      PROTOBUF_NAMESPACE_ID::_Any_default_instance_);
+inline const ::koinos::chain::value& get_block_field_result::_internal_value() const {
+  const ::koinos::chain::value* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::value&>(
+      ::koinos::chain::_value_default_instance_);
 }
-inline const PROTOBUF_NAMESPACE_ID::Any& get_block_field_result::value() const {
+inline const ::koinos::chain::value& get_block_field_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_block_field_result.value)
   return _internal_value();
 }
 inline void get_block_field_result::unsafe_arena_set_allocated_value(
-    PROTOBUF_NAMESPACE_ID::Any* value) {
+    ::koinos::chain::value* value) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
@@ -11817,9 +11868,9 @@ inline void get_block_field_result::unsafe_arena_set_allocated_value(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_block_field_result.value)
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_block_field_result::release_value() {
+inline ::koinos::chain::value* get_block_field_result::release_value() {
   
-  PROTOBUF_NAMESPACE_ID::Any* temp = value_;
+  ::koinos::chain::value* temp = value_;
   value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -11832,27 +11883,27 @@ inline PROTOBUF_NAMESPACE_ID::Any* get_block_field_result::release_value() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_block_field_result::unsafe_arena_release_value() {
+inline ::koinos::chain::value* get_block_field_result::unsafe_arena_release_value() {
   // @@protoc_insertion_point(field_release:koinos.chain.get_block_field_result.value)
   
-  PROTOBUF_NAMESPACE_ID::Any* temp = value_;
+  ::koinos::chain::value* temp = value_;
   value_ = nullptr;
   return temp;
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_block_field_result::_internal_mutable_value() {
+inline ::koinos::chain::value* get_block_field_result::_internal_mutable_value() {
   
   if (value_ == nullptr) {
-    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Any>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::koinos::chain::value>(GetArenaForAllocation());
     value_ = p;
   }
   return value_;
 }
-inline PROTOBUF_NAMESPACE_ID::Any* get_block_field_result::mutable_value() {
-  PROTOBUF_NAMESPACE_ID::Any* _msg = _internal_mutable_value();
+inline ::koinos::chain::value* get_block_field_result::mutable_value() {
+  ::koinos::chain::value* _msg = _internal_mutable_value();
   // @@protoc_insertion_point(field_mutable:koinos.chain.get_block_field_result.value)
   return _msg;
 }
-inline void get_block_field_result::set_allocated_value(PROTOBUF_NAMESPACE_ID::Any* value) {
+inline void get_block_field_result::set_allocated_value(::koinos::chain::value* value) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
@@ -15576,6 +15627,21 @@ inline void get_account_nonce_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 
 
 }  // namespace chain
 }  // namespace koinos
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::koinos::chain::dsa> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::dsa>() {
+  return ::koinos::chain::dsa_descriptor();
+}
+template <> struct is_proto_enum< ::koinos::chain::system_authorization_type> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::system_authorization_type>() {
+  return ::koinos::chain::system_authorization_type_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

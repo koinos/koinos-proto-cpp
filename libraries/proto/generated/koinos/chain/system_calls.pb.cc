@@ -929,7 +929,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_account_nonce_resultDefault
 }  // namespace chain
 }  // namespace koinos
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[75];
-static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto = nullptr;
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -1547,131 +1547,135 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\037koinos/chain/system_calls.proto\022\014koino"
-  "s.chain\032\031google/protobuf/any.proto\032\024koin"
-  "os/options.proto\032\023koinos/common.proto\032\036k"
-  "oinos/protocol/protocol.proto\032\030koinos/ch"
-  "ain/chain.proto\"V\n\032authorize_system_argu"
-  "ments\0228\n\004type\030\001 \001(\0162*.koinos.protocol.sy"
-  "stem_authorization_type\"(\n\027authorize_sys"
-  "tem_result\022\r\n\005value\030\001 \001(\010\"\211\001\n\032verify_sig"
-  "nature_arguments\022\"\n\004type\030\001 \001(\0162\024.koinos."
-  "protocol.dsa\022\030\n\npublic_key\030\002 \001(\014B\004\200\265\030\000\022\027"
-  "\n\tsignature\030\003 \001(\014B\004\200\265\030\000\022\024\n\006digest\030\004 \001(\014B"
-  "\004\200\265\030\000\"(\n\027verify_signature_result\022\r\n\005valu"
-  "e\030\001 \001(\010\"e\n\034recover_public_key_arguments\022"
-  "\"\n\004type\030\001 \001(\0162\024.koinos.protocol.dsa\022\021\n\ts"
-  "ignature\030\002 \001(\014\022\016\n\006digest\030\003 \001(\014\"0\n\031recove"
-  "r_public_key_result\022\023\n\005value\030\001 \001(\014B\004\200\265\030\000"
-  "\"0\n\037get_transaction_field_arguments\022\r\n\005f"
-  "ield\030\001 \001(\t\"C\n\034get_transaction_field_resu"
-  "lt\022#\n\005value\030\001 \001(\0132\024.google.protobuf.Any\""
-  "*\n\031get_block_field_arguments\022\r\n\005field\030\001 "
-  "\001(\t\"=\n\026get_block_field_result\022#\n\005value\030\001"
-  " \001(\0132\024.google.protobuf.Any\"E\n\017event_argu"
-  "ments\022\014\n\004name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\022\026\n\010imp"
-  "acted\030\003 \003(\014B\004\200\265\030\006\"\016\n\014event_result\" \n\rlog"
-  "_arguments\022\017\n\007message\030\001 \001(\t\"\014\n\nlog_resul"
-  "t\"u\n!process_block_signature_arguments\022\016"
-  "\n\006digest\030\001 \001(\014\022-\n\006header\030\002 \001(\0132\035.koinos."
-  "protocol.block_header\022\021\n\tsignature\030\003 \001(\014"
-  "\"/\n\036process_block_signature_result\022\r\n\005va"
-  "lue\030\001 \001(\010\"<\n\034verify_merkle_root_argument"
-  "s\022\014\n\004root\030\001 \001(\014\022\016\n\006hashes\030\002 \003(\014\"*\n\031verif"
-  "y_merkle_root_result\022\r\n\005value\030\001 \001(\010\">\n\025a"
-  "pply_block_arguments\022%\n\005block\030\001 \001(\0132\026.ko"
-  "inos.protocol.block\"\024\n\022apply_block_resul"
-  "t\"P\n\033apply_transaction_arguments\0221\n\013tran"
-  "saction\030\001 \001(\0132\034.koinos.protocol.transact"
-  "ion\"\032\n\030apply_transaction_result\"c\n)apply"
-  "_upload_contract_operation_arguments\0226\n\002"
-  "op\030\001 \001(\0132*.koinos.protocol.upload_contra"
-  "ct_operation\"(\n&apply_upload_contract_op"
-  "eration_result\"_\n\'apply_call_contract_op"
-  "eration_arguments\0224\n\002op\030\001 \001(\0132(.koinos.p"
-  "rotocol.call_contract_operation\"&\n$apply"
-  "_call_contract_operation_result\"c\n)apply"
-  "_set_system_call_operation_arguments\0226\n\002"
-  "op\030\001 \001(\0132*.koinos.protocol.set_system_ca"
-  "ll_operation\"(\n&apply_set_system_call_op"
-  "eration_result\"k\n-apply_set_system_contr"
-  "act_operation_arguments\022:\n\002op\030\001 \001(\0132..ko"
-  "inos.protocol.set_system_contract_operat"
-  "ion\",\n*apply_set_system_contract_operati"
-  "on_result\"[\n\024put_object_arguments\022)\n\005spa"
-  "ce\030\001 \001(\0132\032.koinos.chain.object_space\022\013\n\003"
-  "key\030\002 \001(\014\022\013\n\003obj\030\003 \001(\014\"\"\n\021put_object_res"
-  "ult\022\r\n\005value\030\001 \001(\005\"Q\n\027remove_object_argu"
-  "ments\022)\n\005space\030\001 \001(\0132\032.koinos.chain.obje"
-  "ct_space\022\013\n\003key\030\002 \001(\014\"\026\n\024remove_object_r"
-  "esult\"N\n\024get_object_arguments\022)\n\005space\030\001"
-  " \001(\0132\032.koinos.chain.object_space\022\013\n\003key\030"
-  "\002 \001(\014\"=\n\017database_object\022\016\n\006exists\030\001 \001(\010"
-  "\022\r\n\005value\030\002 \001(\014\022\013\n\003key\030\003 \001(\014\"A\n\021get_obje"
-  "ct_result\022,\n\005value\030\001 \001(\0132\035.koinos.chain."
-  "database_object\"S\n\031get_next_object_argum"
-  "ents\022)\n\005space\030\001 \001(\0132\032.koinos.chain.objec"
-  "t_space\022\013\n\003key\030\002 \001(\014\"F\n\026get_next_object_"
-  "result\022,\n\005value\030\001 \001(\0132\035.koinos.chain.dat"
-  "abase_object\"S\n\031get_prev_object_argument"
-  "s\022)\n\005space\030\001 \001(\0132\032.koinos.chain.object_s"
-  "pace\022\013\n\003key\030\002 \001(\014\"F\n\026get_prev_object_res"
-  "ult\022,\n\005value\030\001 \001(\0132\035.koinos.chain.databa"
-  "se_object\"W\n\027call_contract_arguments\022\031\n\013"
-  "contract_id\030\001 \001(\014B\004\200\265\030\005\022\023\n\013entry_point\030\002"
-  " \001(\r\022\014\n\004args\030\003 \001(\014\"%\n\024call_contract_resu"
-  "lt\022\r\n\005value\030\001 \001(\014\"\033\n\031get_entry_point_arg"
-  "uments\"\'\n\026get_entry_point_result\022\r\n\005valu"
-  "e\030\001 \001(\r\"\'\n%get_contract_arguments_size_a"
-  "rguments\"3\n\"get_contract_arguments_size_"
-  "result\022\r\n\005value\030\001 \001(\r\"\"\n get_contract_ar"
-  "guments_arguments\".\n\035get_contract_argume"
-  "nts_result\022\r\n\005value\030\001 \001(\014\".\n\035set_contrac"
-  "t_result_arguments\022\r\n\005value\030\001 \001(\014\"\034\n\032set"
-  "_contract_result_result\",\n\027exit_contract"
-  "_arguments\022\021\n\texit_code\030\001 \001(\r\"\026\n\024exit_co"
-  "ntract_result\"\031\n\027get_head_info_arguments"
-  "\">\n\024get_head_info_result\022&\n\005value\030\001 \001(\0132"
-  "\027.koinos.chain.head_info\"A\n\016hash_argumen"
-  "ts\022\020\n\004code\030\001 \001(\004B\0020\001\022\013\n\003obj\030\002 \001(\014\022\020\n\004siz"
-  "e\030\003 \001(\004B\0020\001\"\034\n\013hash_result\022\r\n\005value\030\001 \001("
-  "\014\"1\n\030get_account_rc_arguments\022\025\n\007account"
-  "\030\001 \001(\014B\004\200\265\030\006\"*\n\025get_account_rc_result\022\021\n"
-  "\005value\030\001 \001(\004B\0020\001\"H\n\034consume_account_rc_a"
-  "rguments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value"
-  "\030\002 \001(\004B\0020\001\"*\n\031consume_account_rc_result\022"
-  "\r\n\005value\030\001 \001(\010\"\037\n\035get_resource_limits_ar"
-  "guments\"N\n\032get_resource_limits_result\0220\n"
-  "\005value\030\001 \001(\0132!.koinos.chain.resource_lim"
-  "it_data\"\226\001\n!consume_block_resources_argu"
-  "ments\022!\n\025disk_storage_consumed\030\001 \001(\004B\0020\001"
-  "\022&\n\032network_bandwidth_consumed\030\002 \001(\004B\0020\001"
-  "\022&\n\032compute_bandwidth_consumed\030\003 \001(\004B\0020\001"
-  "\"/\n\036consume_block_resources_result\022\r\n\005va"
-  "lue\030\001 \001(\010\"\'\n%get_last_irreversible_block"
-  "_arguments\"7\n\"get_last_irreversible_bloc"
-  "k_result\022\021\n\005value\030\001 \001(\004B\0020\001\"\026\n\024get_calle"
-  "r_arguments\"=\n\021get_caller_result\022(\n\005valu"
-  "e\030\001 \001(\0132\031.koinos.chain.caller_data\"4\n\033re"
-  "quire_authority_arguments\022\025\n\007account\030\001 \001"
-  "(\014B\004\200\265\030\006\"\032\n\030require_authority_result\"\033\n\031"
-  "get_contract_id_arguments\"-\n\026get_contrac"
-  "t_id_result\022\023\n\005value\030\001 \001(\014B\004\200\265\030\005\"4\n\033get_"
-  "account_nonce_arguments\022\025\n\007account\030\001 \001(\014"
-  "B\004\200\265\030\006\"-\n\030get_account_nonce_result\022\021\n\005va"
-  "lue\030\001 \001(\004B\0020\001B4Z2github.com/koinos/koino"
-  "s-proto-golang/koinos/chainb\006proto3"
+  "s.chain\032\024koinos/options.proto\032\023koinos/co"
+  "mmon.proto\032\036koinos/protocol/protocol.pro"
+  "to\032\034koinos/chain/authority.proto\032\030koinos"
+  "/chain/chain.proto\032\030koinos/chain/value.p"
+  "roto\"S\n\032authorize_system_arguments\0225\n\004ty"
+  "pe\030\001 \001(\0162\'.koinos.chain.system_authoriza"
+  "tion_type\"(\n\027authorize_system_result\022\r\n\005"
+  "value\030\001 \001(\010\"\206\001\n\032verify_signature_argumen"
+  "ts\022\037\n\004type\030\001 \001(\0162\021.koinos.chain.dsa\022\030\n\np"
+  "ublic_key\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsignature\030\003 \001(\014"
+  "B\004\200\265\030\000\022\024\n\006digest\030\004 \001(\014B\004\200\265\030\000\"(\n\027verify_s"
+  "ignature_result\022\r\n\005value\030\001 \001(\010\"b\n\034recove"
+  "r_public_key_arguments\022\037\n\004type\030\001 \001(\0162\021.k"
+  "oinos.chain.dsa\022\021\n\tsignature\030\002 \001(\014\022\016\n\006di"
+  "gest\030\003 \001(\014\"0\n\031recover_public_key_result\022"
+  "\023\n\005value\030\001 \001(\014B\004\200\265\030\000\"0\n\037get_transaction_"
+  "field_arguments\022\r\n\005field\030\001 \001(\t\"B\n\034get_tr"
+  "ansaction_field_result\022\"\n\005value\030\001 \001(\0132\023."
+  "koinos.chain.value\"*\n\031get_block_field_ar"
+  "guments\022\r\n\005field\030\001 \001(\t\"<\n\026get_block_fiel"
+  "d_result\022\"\n\005value\030\001 \001(\0132\023.koinos.chain.v"
+  "alue\"E\n\017event_arguments\022\014\n\004name\030\001 \001(\t\022\014\n"
+  "\004data\030\002 \001(\014\022\026\n\010impacted\030\003 \003(\014B\004\200\265\030\006\"\016\n\014e"
+  "vent_result\" \n\rlog_arguments\022\017\n\007message\030"
+  "\001 \001(\t\"\014\n\nlog_result\"u\n!process_block_sig"
+  "nature_arguments\022\016\n\006digest\030\001 \001(\014\022-\n\006head"
+  "er\030\002 \001(\0132\035.koinos.protocol.block_header\022"
+  "\021\n\tsignature\030\003 \001(\014\"/\n\036process_block_sign"
+  "ature_result\022\r\n\005value\030\001 \001(\010\"<\n\034verify_me"
+  "rkle_root_arguments\022\014\n\004root\030\001 \001(\014\022\016\n\006has"
+  "hes\030\002 \003(\014\"*\n\031verify_merkle_root_result\022\r"
+  "\n\005value\030\001 \001(\010\">\n\025apply_block_arguments\022%"
+  "\n\005block\030\001 \001(\0132\026.koinos.protocol.block\"\024\n"
+  "\022apply_block_result\"P\n\033apply_transaction"
+  "_arguments\0221\n\013transaction\030\001 \001(\0132\034.koinos"
+  ".protocol.transaction\"\032\n\030apply_transacti"
+  "on_result\"c\n)apply_upload_contract_opera"
+  "tion_arguments\0226\n\002op\030\001 \001(\0132*.koinos.prot"
+  "ocol.upload_contract_operation\"(\n&apply_"
+  "upload_contract_operation_result\"_\n\'appl"
+  "y_call_contract_operation_arguments\0224\n\002o"
+  "p\030\001 \001(\0132(.koinos.protocol.call_contract_"
+  "operation\"&\n$apply_call_contract_operati"
+  "on_result\"c\n)apply_set_system_call_opera"
+  "tion_arguments\0226\n\002op\030\001 \001(\0132*.koinos.prot"
+  "ocol.set_system_call_operation\"(\n&apply_"
+  "set_system_call_operation_result\"k\n-appl"
+  "y_set_system_contract_operation_argument"
+  "s\022:\n\002op\030\001 \001(\0132..koinos.protocol.set_syst"
+  "em_contract_operation\",\n*apply_set_syste"
+  "m_contract_operation_result\"[\n\024put_objec"
+  "t_arguments\022)\n\005space\030\001 \001(\0132\032.koinos.chai"
+  "n.object_space\022\013\n\003key\030\002 \001(\014\022\013\n\003obj\030\003 \001(\014"
+  "\"\"\n\021put_object_result\022\r\n\005value\030\001 \001(\005\"Q\n\027"
+  "remove_object_arguments\022)\n\005space\030\001 \001(\0132\032"
+  ".koinos.chain.object_space\022\013\n\003key\030\002 \001(\014\""
+  "\026\n\024remove_object_result\"N\n\024get_object_ar"
+  "guments\022)\n\005space\030\001 \001(\0132\032.koinos.chain.ob"
+  "ject_space\022\013\n\003key\030\002 \001(\014\"=\n\017database_obje"
+  "ct\022\016\n\006exists\030\001 \001(\010\022\r\n\005value\030\002 \001(\014\022\013\n\003key"
+  "\030\003 \001(\014\"A\n\021get_object_result\022,\n\005value\030\001 \001"
+  "(\0132\035.koinos.chain.database_object\"S\n\031get"
+  "_next_object_arguments\022)\n\005space\030\001 \001(\0132\032."
+  "koinos.chain.object_space\022\013\n\003key\030\002 \001(\014\"F"
+  "\n\026get_next_object_result\022,\n\005value\030\001 \001(\0132"
+  "\035.koinos.chain.database_object\"S\n\031get_pr"
+  "ev_object_arguments\022)\n\005space\030\001 \001(\0132\032.koi"
+  "nos.chain.object_space\022\013\n\003key\030\002 \001(\014\"F\n\026g"
+  "et_prev_object_result\022,\n\005value\030\001 \001(\0132\035.k"
+  "oinos.chain.database_object\"W\n\027call_cont"
+  "ract_arguments\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030"
+  "\005\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"%\n\024"
+  "call_contract_result\022\r\n\005value\030\001 \001(\014\"\033\n\031g"
+  "et_entry_point_arguments\"\'\n\026get_entry_po"
+  "int_result\022\r\n\005value\030\001 \001(\r\"\'\n%get_contrac"
+  "t_arguments_size_arguments\"3\n\"get_contra"
+  "ct_arguments_size_result\022\r\n\005value\030\001 \001(\r\""
+  "\"\n get_contract_arguments_arguments\".\n\035g"
+  "et_contract_arguments_result\022\r\n\005value\030\001 "
+  "\001(\014\".\n\035set_contract_result_arguments\022\r\n\005"
+  "value\030\001 \001(\014\"\034\n\032set_contract_result_resul"
+  "t\",\n\027exit_contract_arguments\022\021\n\texit_cod"
+  "e\030\001 \001(\r\"\026\n\024exit_contract_result\"\031\n\027get_h"
+  "ead_info_arguments\">\n\024get_head_info_resu"
+  "lt\022&\n\005value\030\001 \001(\0132\027.koinos.chain.head_in"
+  "fo\"A\n\016hash_arguments\022\020\n\004code\030\001 \001(\004B\0020\001\022\013"
+  "\n\003obj\030\002 \001(\014\022\020\n\004size\030\003 \001(\004B\0020\001\"\034\n\013hash_re"
+  "sult\022\r\n\005value\030\001 \001(\014\"1\n\030get_account_rc_ar"
+  "guments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"*\n\025get_ac"
+  "count_rc_result\022\021\n\005value\030\001 \001(\004B\0020\001\"H\n\034co"
+  "nsume_account_rc_arguments\022\025\n\007account\030\001 "
+  "\001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"*\n\031consume_"
+  "account_rc_result\022\r\n\005value\030\001 \001(\010\"\037\n\035get_"
+  "resource_limits_arguments\"N\n\032get_resourc"
+  "e_limits_result\0220\n\005value\030\001 \001(\0132!.koinos."
+  "chain.resource_limit_data\"\226\001\n!consume_bl"
+  "ock_resources_arguments\022!\n\025disk_storage_"
+  "consumed\030\001 \001(\004B\0020\001\022&\n\032network_bandwidth_"
+  "consumed\030\002 \001(\004B\0020\001\022&\n\032compute_bandwidth_"
+  "consumed\030\003 \001(\004B\0020\001\"/\n\036consume_block_reso"
+  "urces_result\022\r\n\005value\030\001 \001(\010\"\'\n%get_last_"
+  "irreversible_block_arguments\"7\n\"get_last"
+  "_irreversible_block_result\022\021\n\005value\030\001 \001("
+  "\004B\0020\001\"\026\n\024get_caller_arguments\"=\n\021get_cal"
+  "ler_result\022(\n\005value\030\001 \001(\0132\031.koinos.chain"
+  ".caller_data\"4\n\033require_authority_argume"
+  "nts\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"\032\n\030require_au"
+  "thority_result\"\033\n\031get_contract_id_argume"
+  "nts\"-\n\026get_contract_id_result\022\023\n\005value\030\001"
+  " \001(\014B\004\200\265\030\005\"4\n\033get_account_nonce_argument"
+  "s\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"-\n\030get_account_"
+  "nonce_result\022\021\n\005value\030\001 \001(\004B\0020\001*\032\n\003dsa\022\023"
+  "\n\017ecdsa_secp256k1\020\000*I\n\031system_authorizat"
+  "ion_type\022\027\n\023set_system_contract\020\000\022\023\n\017set"
+  "_system_call\020\001B4Z2github.com/koinos/koin"
+  "os-proto-golang/koinos/chainb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps[5] = {
-  &::descriptor_table_google_2fprotobuf_2fany_2eproto,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps[6] = {
+  &::descriptor_table_koinos_2fchain_2fauthority_2eproto,
   &::descriptor_table_koinos_2fchain_2fchain_2eproto,
+  &::descriptor_table_koinos_2fchain_2fvalue_2eproto,
   &::descriptor_table_koinos_2fcommon_2eproto,
   &::descriptor_table_koinos_2foptions_2eproto,
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto = {
-  false, false, 4555, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
-  &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 5, 75,
+  false, false, 4676, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
+  &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 6, 75,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto,
 };
@@ -1683,6 +1687,33 @@ PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_koinos_2fchain_2fsystem_5fcalls_2eproto(&descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto);
 namespace koinos {
 namespace chain {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto);
+  return file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto[0];
+}
+bool dsa_IsValid(int value) {
+  switch (value) {
+    case 0:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_authorization_type_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto);
+  return file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto[1];
+}
+bool system_authorization_type_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
 
 // ===================================================================
 
@@ -1747,12 +1778,12 @@ const char* authorize_system_arguments::_InternalParse(const char* ptr, ::PROTOB
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.protocol.system_authorization_type type = 1;
+      // .koinos.chain.system_authorization_type type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::koinos::protocol::system_authorization_type>(val));
+          _internal_set_type(static_cast<::koinos::chain::system_authorization_type>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -1784,7 +1815,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.protocol.system_authorization_type type = 1;
+  // .koinos.chain.system_authorization_type type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -1807,7 +1838,7 @@ size_t authorize_system_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.protocol.system_authorization_type type = 1;
+  // .koinos.chain.system_authorization_type type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -2140,12 +2171,12 @@ const char* verify_signature_arguments::_InternalParse(const char* ptr, ::PROTOB
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.protocol.dsa type = 1;
+      // .koinos.chain.dsa type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::koinos::protocol::dsa>(val));
+          _internal_set_type(static_cast<::koinos::chain::dsa>(val));
         } else goto handle_unusual;
         continue;
       // bytes public_key = 2 [(.koinos.btype) = BASE64];
@@ -2201,7 +2232,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.protocol.dsa type = 1;
+  // .koinos.chain.dsa type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -2263,7 +2294,7 @@ size_t verify_signature_arguments::ByteSizeLong() const {
         this->_internal_digest());
   }
 
-  // .koinos.protocol.dsa type = 1;
+  // .koinos.chain.dsa type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -2612,12 +2643,12 @@ const char* recover_public_key_arguments::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.protocol.dsa type = 1;
+      // .koinos.chain.dsa type = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_type(static_cast<::koinos::protocol::dsa>(val));
+          _internal_set_type(static_cast<::koinos::chain::dsa>(val));
         } else goto handle_unusual;
         continue;
       // bytes signature = 2;
@@ -2665,7 +2696,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.protocol.dsa type = 1;
+  // .koinos.chain.dsa type = 1;
   if (this->_internal_type() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
@@ -2714,7 +2745,7 @@ size_t recover_public_key_arguments::ByteSizeLong() const {
         this->_internal_digest());
   }
 
-  // .koinos.protocol.dsa type = 1;
+  // .koinos.chain.dsa type = 1;
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
@@ -3192,10 +3223,10 @@ void get_transaction_field_arguments::InternalSwap(get_transaction_field_argumen
 
 class get_transaction_field_result::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Any& value(const get_transaction_field_result* msg);
+  static const ::koinos::chain::value& value(const get_transaction_field_result* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Any&
+const ::koinos::chain::value&
 get_transaction_field_result::_Internal::value(const get_transaction_field_result* msg) {
   return *msg->value_;
 }
@@ -3218,7 +3249,7 @@ get_transaction_field_result::get_transaction_field_result(const get_transaction
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_value()) {
-    value_ = new PROTOBUF_NAMESPACE_ID::Any(*from.value_);
+    value_ = new ::koinos::chain::value(*from.value_);
   } else {
     value_ = nullptr;
   }
@@ -3270,7 +3301,7 @@ const char* get_transaction_field_result::_InternalParse(const char* ptr, ::PROT
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .google.protobuf.Any value = 1;
+      // .koinos.chain.value value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
@@ -3306,7 +3337,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Any value = 1;
+  // .koinos.chain.value value = 1;
   if (this->_internal_has_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3330,7 +3361,7 @@ size_t get_transaction_field_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Any value = 1;
+  // .koinos.chain.value value = 1;
   if (this->_internal_has_value()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3366,7 +3397,7 @@ void get_transaction_field_result::MergeFrom(const get_transaction_field_result&
   (void) cached_has_bits;
 
   if (from._internal_has_value()) {
-    _internal_mutable_value()->PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_value());
+    _internal_mutable_value()->::koinos::chain::value::MergeFrom(from._internal_value());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3598,10 +3629,10 @@ void get_block_field_arguments::InternalSwap(get_block_field_arguments* other) {
 
 class get_block_field_result::_Internal {
  public:
-  static const PROTOBUF_NAMESPACE_ID::Any& value(const get_block_field_result* msg);
+  static const ::koinos::chain::value& value(const get_block_field_result* msg);
 };
 
-const PROTOBUF_NAMESPACE_ID::Any&
+const ::koinos::chain::value&
 get_block_field_result::_Internal::value(const get_block_field_result* msg) {
   return *msg->value_;
 }
@@ -3624,7 +3655,7 @@ get_block_field_result::get_block_field_result(const get_block_field_result& fro
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_value()) {
-    value_ = new PROTOBUF_NAMESPACE_ID::Any(*from.value_);
+    value_ = new ::koinos::chain::value(*from.value_);
   } else {
     value_ = nullptr;
   }
@@ -3676,7 +3707,7 @@ const char* get_block_field_result::_InternalParse(const char* ptr, ::PROTOBUF_N
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .google.protobuf.Any value = 1;
+      // .koinos.chain.value value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
@@ -3712,7 +3743,7 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .google.protobuf.Any value = 1;
+  // .koinos.chain.value value = 1;
   if (this->_internal_has_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3736,7 +3767,7 @@ size_t get_block_field_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .google.protobuf.Any value = 1;
+  // .koinos.chain.value value = 1;
   if (this->_internal_has_value()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3772,7 +3803,7 @@ void get_block_field_result::MergeFrom(const get_block_field_result& from) {
   (void) cached_has_bits;
 
   if (from._internal_has_value()) {
-    _internal_mutable_value()->PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_value());
+    _internal_mutable_value()->::koinos::chain::value::MergeFrom(from._internal_value());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }

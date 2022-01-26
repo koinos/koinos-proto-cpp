@@ -1711,13 +1711,28 @@ class transaction_header final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kOperationMerkleRootFieldNumber = 3,
-    kPayerFieldNumber = 4,
-    kPayeeFieldNumber = 5,
-    kRcLimitFieldNumber = 1,
-    kNonceFieldNumber = 2,
+    kChainIdFieldNumber = 1,
+    kOperationMerkleRootFieldNumber = 4,
+    kPayerFieldNumber = 5,
+    kPayeeFieldNumber = 6,
+    kRcLimitFieldNumber = 2,
+    kNonceFieldNumber = 3,
   };
-  // bytes operation_merkle_root = 3;
+  // bytes chain_id = 1;
+  void clear_chain_id();
+  const std::string& chain_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_chain_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_chain_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_chain_id();
+  void set_allocated_chain_id(std::string* chain_id);
+  private:
+  const std::string& _internal_chain_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_chain_id(const std::string& value);
+  std::string* _internal_mutable_chain_id();
+  public:
+
+  // bytes operation_merkle_root = 4;
   void clear_operation_merkle_root();
   const std::string& operation_merkle_root() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1731,7 +1746,7 @@ class transaction_header final :
   std::string* _internal_mutable_operation_merkle_root();
   public:
 
-  // bytes payer = 4 [(.koinos.btype) = ADDRESS];
+  // bytes payer = 5 [(.koinos.btype) = ADDRESS];
   void clear_payer();
   const std::string& payer() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1745,7 +1760,7 @@ class transaction_header final :
   std::string* _internal_mutable_payer();
   public:
 
-  // bytes payee = 5 [(.koinos.btype) = ADDRESS];
+  // bytes payee = 6 [(.koinos.btype) = ADDRESS];
   void clear_payee();
   const std::string& payee() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1759,7 +1774,7 @@ class transaction_header final :
   std::string* _internal_mutable_payee();
   public:
 
-  // uint64 rc_limit = 1 [jstype = JS_STRING];
+  // uint64 rc_limit = 2 [jstype = JS_STRING];
   void clear_rc_limit();
   ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit() const;
   void set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -1768,7 +1783,7 @@ class transaction_header final :
   void _internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 nonce = 2 [jstype = JS_STRING];
+  // uint64 nonce = 3 [jstype = JS_STRING];
   void clear_nonce();
   ::PROTOBUF_NAMESPACE_ID::uint64 nonce() const;
   void set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -1784,6 +1799,7 @@ class transaction_header final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payer_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payee_;
@@ -4223,7 +4239,53 @@ inline operation::OpCase operation::op_case() const {
 
 // transaction_header
 
-// uint64 rc_limit = 1 [jstype = JS_STRING];
+// bytes chain_id = 1;
+inline void transaction_header::clear_chain_id() {
+  chain_id_.ClearToEmpty();
+}
+inline const std::string& transaction_header::chain_id() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.transaction_header.chain_id)
+  return _internal_chain_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void transaction_header::set_chain_id(ArgT0&& arg0, ArgT... args) {
+ 
+ chain_id_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.chain_id)
+}
+inline std::string* transaction_header::mutable_chain_id() {
+  std::string* _s = _internal_mutable_chain_id();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_header.chain_id)
+  return _s;
+}
+inline const std::string& transaction_header::_internal_chain_id() const {
+  return chain_id_.Get();
+}
+inline void transaction_header::_internal_set_chain_id(const std::string& value) {
+  
+  chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* transaction_header::_internal_mutable_chain_id() {
+  
+  return chain_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* transaction_header::release_chain_id() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_header.chain_id)
+  return chain_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void transaction_header::set_allocated_chain_id(std::string* chain_id) {
+  if (chain_id != nullptr) {
+    
+  } else {
+    
+  }
+  chain_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), chain_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.chain_id)
+}
+
+// uint64 rc_limit = 2 [jstype = JS_STRING];
 inline void transaction_header::clear_rc_limit() {
   rc_limit_ = uint64_t{0u};
 }
@@ -4243,7 +4305,7 @@ inline void transaction_header::set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 val
   // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.rc_limit)
 }
 
-// uint64 nonce = 2 [jstype = JS_STRING];
+// uint64 nonce = 3 [jstype = JS_STRING];
 inline void transaction_header::clear_nonce() {
   nonce_ = uint64_t{0u};
 }
@@ -4263,7 +4325,7 @@ inline void transaction_header::set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value)
   // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.nonce)
 }
 
-// bytes operation_merkle_root = 3;
+// bytes operation_merkle_root = 4;
 inline void transaction_header::clear_operation_merkle_root() {
   operation_merkle_root_.ClearToEmpty();
 }
@@ -4309,7 +4371,7 @@ inline void transaction_header::set_allocated_operation_merkle_root(std::string*
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.operation_merkle_root)
 }
 
-// bytes payer = 4 [(.koinos.btype) = ADDRESS];
+// bytes payer = 5 [(.koinos.btype) = ADDRESS];
 inline void transaction_header::clear_payer() {
   payer_.ClearToEmpty();
 }
@@ -4355,7 +4417,7 @@ inline void transaction_header::set_allocated_payer(std::string* payer) {
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.payer)
 }
 
-// bytes payee = 5 [(.koinos.btype) = ADDRESS];
+// bytes payee = 6 [(.koinos.btype) = ADDRESS];
 inline void transaction_header::clear_payee() {
   payee_.ClearToEmpty();
 }

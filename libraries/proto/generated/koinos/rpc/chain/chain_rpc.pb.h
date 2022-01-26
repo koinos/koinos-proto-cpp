@@ -1895,9 +1895,33 @@ class read_contract_response final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kResultFieldNumber = 1,
     kLogsFieldNumber = 2,
+    kResultFieldNumber = 1,
   };
+  // repeated string logs = 2;
+  int logs_size() const;
+  private:
+  int _internal_logs_size() const;
+  public:
+  void clear_logs();
+  const std::string& logs(int index) const;
+  std::string* mutable_logs(int index);
+  void set_logs(int index, const std::string& value);
+  void set_logs(int index, std::string&& value);
+  void set_logs(int index, const char* value);
+  void set_logs(int index, const char* value, size_t size);
+  std::string* add_logs();
+  void add_logs(const std::string& value);
+  void add_logs(std::string&& value);
+  void add_logs(const char* value);
+  void add_logs(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& logs() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_logs();
+  private:
+  const std::string& _internal_logs(int index) const;
+  std::string* _internal_add_logs();
+  public:
+
   // bytes result = 1;
   void clear_result();
   const std::string& result() const;
@@ -1912,20 +1936,6 @@ class read_contract_response final :
   std::string* _internal_mutable_result();
   public:
 
-  // string logs = 2;
-  void clear_logs();
-  const std::string& logs() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_logs(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_logs();
-  PROTOBUF_MUST_USE_RESULT std::string* release_logs();
-  void set_allocated_logs(std::string* logs);
-  private:
-  const std::string& _internal_logs() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_logs(const std::string& value);
-  std::string* _internal_mutable_logs();
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.read_contract_response)
  private:
   class _Internal;
@@ -1933,8 +1943,8 @@ class read_contract_response final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> logs_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr result_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr logs_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -4404,50 +4414,79 @@ inline void read_contract_response::set_allocated_result(std::string* result) {
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.read_contract_response.result)
 }
 
-// string logs = 2;
+// repeated string logs = 2;
+inline int read_contract_response::_internal_logs_size() const {
+  return logs_.size();
+}
+inline int read_contract_response::logs_size() const {
+  return _internal_logs_size();
+}
 inline void read_contract_response::clear_logs() {
-  logs_.ClearToEmpty();
+  logs_.Clear();
 }
-inline const std::string& read_contract_response::logs() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.chain.read_contract_response.logs)
-  return _internal_logs();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void read_contract_response::set_logs(ArgT0&& arg0, ArgT... args) {
- 
- logs_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.rpc.chain.read_contract_response.logs)
-}
-inline std::string* read_contract_response::mutable_logs() {
-  std::string* _s = _internal_mutable_logs();
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.read_contract_response.logs)
+inline std::string* read_contract_response::add_logs() {
+  std::string* _s = _internal_add_logs();
+  // @@protoc_insertion_point(field_add_mutable:koinos.rpc.chain.read_contract_response.logs)
   return _s;
 }
-inline const std::string& read_contract_response::_internal_logs() const {
-  return logs_.Get();
+inline const std::string& read_contract_response::_internal_logs(int index) const {
+  return logs_.Get(index);
 }
-inline void read_contract_response::_internal_set_logs(const std::string& value) {
-  
-  logs_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+inline const std::string& read_contract_response::logs(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.read_contract_response.logs)
+  return _internal_logs(index);
 }
-inline std::string* read_contract_response::_internal_mutable_logs() {
-  
-  return logs_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+inline std::string* read_contract_response::mutable_logs(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.read_contract_response.logs)
+  return logs_.Mutable(index);
 }
-inline std::string* read_contract_response::release_logs() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.chain.read_contract_response.logs)
-  return logs_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline void read_contract_response::set_logs(int index, const std::string& value) {
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.read_contract_response.logs)
 }
-inline void read_contract_response::set_allocated_logs(std::string* logs) {
-  if (logs != nullptr) {
-    
-  } else {
-    
-  }
-  logs_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), logs,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.read_contract_response.logs)
+inline void read_contract_response::set_logs(int index, std::string&& value) {
+  logs_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.read_contract_response.logs)
+}
+inline void read_contract_response::set_logs(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.rpc.chain.read_contract_response.logs)
+}
+inline void read_contract_response::set_logs(int index, const char* value, size_t size) {
+  logs_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.rpc.chain.read_contract_response.logs)
+}
+inline std::string* read_contract_response::_internal_add_logs() {
+  return logs_.Add();
+}
+inline void read_contract_response::add_logs(const std::string& value) {
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.rpc.chain.read_contract_response.logs)
+}
+inline void read_contract_response::add_logs(std::string&& value) {
+  logs_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.rpc.chain.read_contract_response.logs)
+}
+inline void read_contract_response::add_logs(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.rpc.chain.read_contract_response.logs)
+}
+inline void read_contract_response::add_logs(const char* value, size_t size) {
+  logs_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.rpc.chain.read_contract_response.logs)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+read_contract_response::logs() const {
+  // @@protoc_insertion_point(field_list:koinos.rpc.chain.read_contract_response.logs)
+  return logs_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+read_contract_response::mutable_logs() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.rpc.chain.read_contract_response.logs)
+  return &logs_;
 }
 
 // -------------------------------------------------------------------

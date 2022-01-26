@@ -155,8 +155,8 @@ struct read_contract_requestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT read_contract_requestDefaultTypeInternal _read_contract_request_default_instance_;
 constexpr read_contract_response::read_contract_response(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : result_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , logs_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : logs_()
+  , result_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct read_contract_responseDefaultTypeInternal {
   constexpr read_contract_responseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -485,7 +485,7 @@ const char descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto[
   "tract_request\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030\005"
   "\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"6\n\026r"
   "ead_contract_response\022\016\n\006result\030\001 \001(\014\022\014\n"
-  "\004logs\030\002 \001(\t\"2\n\031get_account_nonce_request"
+  "\004logs\030\002 \003(\t\"2\n\031get_account_nonce_request"
   "\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"/\n\032get_account_n"
   "once_response\022\021\n\005nonce\030\001 \001(\004B\0020\001\"/\n\026get_"
   "account_rc_request\022\025\n\007account\030\001 \001(\014B\004\200\265\030"
@@ -2819,7 +2819,8 @@ class read_contract_response::_Internal {
 
 read_contract_response::read_contract_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  logs_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -2827,16 +2828,12 @@ read_contract_response::read_contract_response(::PROTOBUF_NAMESPACE_ID::Arena* a
   // @@protoc_insertion_point(arena_constructor:koinos.rpc.chain.read_contract_response)
 }
 read_contract_response::read_contract_response(const read_contract_response& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      logs_(from.logs_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   result_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_result().empty()) {
     result_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_result(), 
-      GetArenaForAllocation());
-  }
-  logs_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_logs().empty()) {
-    logs_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_logs(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.chain.read_contract_response)
@@ -2844,7 +2841,6 @@ read_contract_response::read_contract_response(const read_contract_response& fro
 
 inline void read_contract_response::SharedCtor() {
 result_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-logs_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 read_contract_response::~read_contract_response() {
@@ -2857,7 +2853,6 @@ read_contract_response::~read_contract_response() {
 inline void read_contract_response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   result_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  logs_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void read_contract_response::ArenaDtor(void* object) {
@@ -2876,8 +2871,8 @@ void read_contract_response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  logs_.Clear();
   result_.ClearToEmpty();
-  logs_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2895,13 +2890,18 @@ const char* read_contract_response::_InternalParse(const char* ptr, ::PROTOBUF_N
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string logs = 2;
+      // repeated string logs = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_logs();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.rpc.chain.read_contract_response.logs"));
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_logs();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.rpc.chain.read_contract_response.logs"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -2939,14 +2939,14 @@ failure:
         1, this->_internal_result(), target);
   }
 
-  // string logs = 2;
-  if (!this->_internal_logs().empty()) {
+  // repeated string logs = 2;
+  for (int i = 0, n = this->_internal_logs_size(); i < n; i++) {
+    const auto& s = this->_internal_logs(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_logs().data(), static_cast<int>(this->_internal_logs().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "koinos.rpc.chain.read_contract_response.logs");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_logs(), target);
+    target = stream->WriteString(2, s, target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2965,18 +2965,19 @@ size_t read_contract_response::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated string logs = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(logs_.size());
+  for (int i = 0, n = logs_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      logs_.Get(i));
+  }
+
   // bytes result = 1;
   if (!this->_internal_result().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_result());
-  }
-
-  // string logs = 2;
-  if (!this->_internal_logs().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_logs());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3007,11 +3008,9 @@ void read_contract_response::MergeFrom(const read_contract_response& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  logs_.MergeFrom(from.logs_);
   if (!from._internal_result().empty()) {
     _internal_set_result(from._internal_result());
-  }
-  if (!from._internal_logs().empty()) {
-    _internal_set_logs(from._internal_logs());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3030,15 +3029,11 @@ bool read_contract_response::IsInitialized() const {
 void read_contract_response::InternalSwap(read_contract_response* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  logs_.InternalSwap(&other->logs_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &result_, GetArenaForAllocation(),
       &other->result_, other->GetArenaForAllocation()
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &logs_, GetArenaForAllocation(),
-      &other->logs_, other->GetArenaForAllocation()
   );
 }
 

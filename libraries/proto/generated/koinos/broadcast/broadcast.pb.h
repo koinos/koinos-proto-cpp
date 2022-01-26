@@ -49,7 +49,7 @@ struct TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[5]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -67,6 +67,9 @@ extern block_irreversibleDefaultTypeInternal _block_irreversible_default_instanc
 class fork_heads;
 struct fork_headsDefaultTypeInternal;
 extern fork_headsDefaultTypeInternal _fork_heads_default_instance_;
+class gossip_status;
+struct gossip_statusDefaultTypeInternal;
+extern gossip_statusDefaultTypeInternal _gossip_status_default_instance_;
 class transaction_accepted;
 struct transaction_acceptedDefaultTypeInternal;
 extern transaction_acceptedDefaultTypeInternal _transaction_accepted_default_instance_;
@@ -79,6 +82,7 @@ PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::broadcast::block_accepted* Arena::CreateMaybeMessage<::koinos::broadcast::block_accepted>(Arena*);
 template<> ::koinos::broadcast::block_irreversible* Arena::CreateMaybeMessage<::koinos::broadcast::block_irreversible>(Arena*);
 template<> ::koinos::broadcast::fork_heads* Arena::CreateMaybeMessage<::koinos::broadcast::fork_heads>(Arena*);
+template<> ::koinos::broadcast::gossip_status* Arena::CreateMaybeMessage<::koinos::broadcast::gossip_status>(Arena*);
 template<> ::koinos::broadcast::transaction_accepted* Arena::CreateMaybeMessage<::koinos::broadcast::transaction_accepted>(Arena*);
 template<> ::koinos::broadcast::transaction_failed* Arena::CreateMaybeMessage<::koinos::broadcast::transaction_failed>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -892,6 +896,145 @@ class fork_heads final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
 };
+// -------------------------------------------------------------------
+
+class gossip_status final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.broadcast.gossip_status) */ {
+ public:
+  inline gossip_status() : gossip_status(nullptr) {}
+  ~gossip_status() override;
+  explicit constexpr gossip_status(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  gossip_status(const gossip_status& from);
+  gossip_status(gossip_status&& from) noexcept
+    : gossip_status() {
+    *this = ::std::move(from);
+  }
+
+  inline gossip_status& operator=(const gossip_status& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline gossip_status& operator=(gossip_status&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const gossip_status& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const gossip_status* internal_default_instance() {
+    return reinterpret_cast<const gossip_status*>(
+               &_gossip_status_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(gossip_status& a, gossip_status& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(gossip_status* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(gossip_status* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline gossip_status* New() const final {
+    return new gossip_status();
+  }
+
+  gossip_status* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<gossip_status>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const gossip_status& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const gossip_status& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(gossip_status* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.broadcast.gossip_status";
+  }
+  protected:
+  explicit gossip_status(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEnabledFieldNumber = 1,
+  };
+  // bool enabled = 1;
+  void clear_enabled();
+  bool enabled() const;
+  void set_enabled(bool value);
+  private:
+  bool _internal_enabled() const;
+  void _internal_set_enabled(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.broadcast.gossip_status)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  bool enabled_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
+};
 // ===================================================================
 
 
@@ -1538,9 +1681,35 @@ fork_heads::heads() const {
   return heads_;
 }
 
+// -------------------------------------------------------------------
+
+// gossip_status
+
+// bool enabled = 1;
+inline void gossip_status::clear_enabled() {
+  enabled_ = false;
+}
+inline bool gossip_status::_internal_enabled() const {
+  return enabled_;
+}
+inline bool gossip_status::enabled() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.gossip_status.enabled)
+  return _internal_enabled();
+}
+inline void gossip_status::_internal_set_enabled(bool value) {
+  
+  enabled_ = value;
+}
+inline void gossip_status::set_enabled(bool value) {
+  _internal_set_enabled(value);
+  // @@protoc_insertion_point(field_set:koinos.broadcast.gossip_status.enabled)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

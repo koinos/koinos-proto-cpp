@@ -1600,23 +1600,23 @@ class get_transaction_field_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // .koinos.chain.value value = 1;
+  // .koinos.chain.value_type value = 1;
   bool has_value() const;
   private:
   bool _internal_has_value() const;
   public:
   void clear_value();
-  const ::koinos::chain::value& value() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::chain::value* release_value();
-  ::koinos::chain::value* mutable_value();
-  void set_allocated_value(::koinos::chain::value* value);
+  const ::koinos::chain::value_type& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::value_type* release_value();
+  ::koinos::chain::value_type* mutable_value();
+  void set_allocated_value(::koinos::chain::value_type* value);
   private:
-  const ::koinos::chain::value& _internal_value() const;
-  ::koinos::chain::value* _internal_mutable_value();
+  const ::koinos::chain::value_type& _internal_value() const;
+  ::koinos::chain::value_type* _internal_mutable_value();
   public:
   void unsafe_arena_set_allocated_value(
-      ::koinos::chain::value* value);
-  ::koinos::chain::value* unsafe_arena_release_value();
+      ::koinos::chain::value_type* value);
+  ::koinos::chain::value_type* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_transaction_field_result)
  private:
@@ -1625,7 +1625,7 @@ class get_transaction_field_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::chain::value* value_;
+  ::koinos::chain::value_type* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -1892,23 +1892,23 @@ class get_block_field_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // .koinos.chain.value value = 1;
+  // .koinos.chain.value_type value = 1;
   bool has_value() const;
   private:
   bool _internal_has_value() const;
   public:
   void clear_value();
-  const ::koinos::chain::value& value() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::chain::value* release_value();
-  ::koinos::chain::value* mutable_value();
-  void set_allocated_value(::koinos::chain::value* value);
+  const ::koinos::chain::value_type& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::value_type* release_value();
+  ::koinos::chain::value_type* mutable_value();
+  void set_allocated_value(::koinos::chain::value_type* value);
   private:
-  const ::koinos::chain::value& _internal_value() const;
-  ::koinos::chain::value* _internal_mutable_value();
+  const ::koinos::chain::value_type& _internal_value() const;
+  ::koinos::chain::value_type* _internal_mutable_value();
   public:
   void unsafe_arena_set_allocated_value(
-      ::koinos::chain::value* value);
-  ::koinos::chain::value* unsafe_arena_release_value();
+      ::koinos::chain::value_type* value);
+  ::koinos::chain::value_type* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_block_field_result)
  private:
@@ -1917,7 +1917,7 @@ class get_block_field_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::chain::value* value_;
+  ::koinos::chain::value_type* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -11699,24 +11699,24 @@ inline void get_transaction_field_arguments::set_allocated_field(std::string* fi
 
 // get_transaction_field_result
 
-// .koinos.chain.value value = 1;
+// .koinos.chain.value_type value = 1;
 inline bool get_transaction_field_result::_internal_has_value() const {
   return this != internal_default_instance() && value_ != nullptr;
 }
 inline bool get_transaction_field_result::has_value() const {
   return _internal_has_value();
 }
-inline const ::koinos::chain::value& get_transaction_field_result::_internal_value() const {
-  const ::koinos::chain::value* p = value_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::value&>(
-      ::koinos::chain::_value_default_instance_);
+inline const ::koinos::chain::value_type& get_transaction_field_result::_internal_value() const {
+  const ::koinos::chain::value_type* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::value_type&>(
+      ::koinos::chain::_value_type_default_instance_);
 }
-inline const ::koinos::chain::value& get_transaction_field_result::value() const {
+inline const ::koinos::chain::value_type& get_transaction_field_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_transaction_field_result.value)
   return _internal_value();
 }
 inline void get_transaction_field_result::unsafe_arena_set_allocated_value(
-    ::koinos::chain::value* value) {
+    ::koinos::chain::value_type* value) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
@@ -11728,9 +11728,9 @@ inline void get_transaction_field_result::unsafe_arena_set_allocated_value(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_transaction_field_result.value)
 }
-inline ::koinos::chain::value* get_transaction_field_result::release_value() {
+inline ::koinos::chain::value_type* get_transaction_field_result::release_value() {
   
-  ::koinos::chain::value* temp = value_;
+  ::koinos::chain::value_type* temp = value_;
   value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -11743,27 +11743,27 @@ inline ::koinos::chain::value* get_transaction_field_result::release_value() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::koinos::chain::value* get_transaction_field_result::unsafe_arena_release_value() {
+inline ::koinos::chain::value_type* get_transaction_field_result::unsafe_arena_release_value() {
   // @@protoc_insertion_point(field_release:koinos.chain.get_transaction_field_result.value)
   
-  ::koinos::chain::value* temp = value_;
+  ::koinos::chain::value_type* temp = value_;
   value_ = nullptr;
   return temp;
 }
-inline ::koinos::chain::value* get_transaction_field_result::_internal_mutable_value() {
+inline ::koinos::chain::value_type* get_transaction_field_result::_internal_mutable_value() {
   
   if (value_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::chain::value>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::koinos::chain::value_type>(GetArenaForAllocation());
     value_ = p;
   }
   return value_;
 }
-inline ::koinos::chain::value* get_transaction_field_result::mutable_value() {
-  ::koinos::chain::value* _msg = _internal_mutable_value();
+inline ::koinos::chain::value_type* get_transaction_field_result::mutable_value() {
+  ::koinos::chain::value_type* _msg = _internal_mutable_value();
   // @@protoc_insertion_point(field_mutable:koinos.chain.get_transaction_field_result.value)
   return _msg;
 }
-inline void get_transaction_field_result::set_allocated_value(::koinos::chain::value* value) {
+inline void get_transaction_field_result::set_allocated_value(::koinos::chain::value_type* value) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
@@ -11839,24 +11839,24 @@ inline void get_block_field_arguments::set_allocated_field(std::string* field) {
 
 // get_block_field_result
 
-// .koinos.chain.value value = 1;
+// .koinos.chain.value_type value = 1;
 inline bool get_block_field_result::_internal_has_value() const {
   return this != internal_default_instance() && value_ != nullptr;
 }
 inline bool get_block_field_result::has_value() const {
   return _internal_has_value();
 }
-inline const ::koinos::chain::value& get_block_field_result::_internal_value() const {
-  const ::koinos::chain::value* p = value_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::value&>(
-      ::koinos::chain::_value_default_instance_);
+inline const ::koinos::chain::value_type& get_block_field_result::_internal_value() const {
+  const ::koinos::chain::value_type* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::value_type&>(
+      ::koinos::chain::_value_type_default_instance_);
 }
-inline const ::koinos::chain::value& get_block_field_result::value() const {
+inline const ::koinos::chain::value_type& get_block_field_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_block_field_result.value)
   return _internal_value();
 }
 inline void get_block_field_result::unsafe_arena_set_allocated_value(
-    ::koinos::chain::value* value) {
+    ::koinos::chain::value_type* value) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
@@ -11868,9 +11868,9 @@ inline void get_block_field_result::unsafe_arena_set_allocated_value(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_block_field_result.value)
 }
-inline ::koinos::chain::value* get_block_field_result::release_value() {
+inline ::koinos::chain::value_type* get_block_field_result::release_value() {
   
-  ::koinos::chain::value* temp = value_;
+  ::koinos::chain::value_type* temp = value_;
   value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -11883,27 +11883,27 @@ inline ::koinos::chain::value* get_block_field_result::release_value() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::koinos::chain::value* get_block_field_result::unsafe_arena_release_value() {
+inline ::koinos::chain::value_type* get_block_field_result::unsafe_arena_release_value() {
   // @@protoc_insertion_point(field_release:koinos.chain.get_block_field_result.value)
   
-  ::koinos::chain::value* temp = value_;
+  ::koinos::chain::value_type* temp = value_;
   value_ = nullptr;
   return temp;
 }
-inline ::koinos::chain::value* get_block_field_result::_internal_mutable_value() {
+inline ::koinos::chain::value_type* get_block_field_result::_internal_mutable_value() {
   
   if (value_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::chain::value>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::koinos::chain::value_type>(GetArenaForAllocation());
     value_ = p;
   }
   return value_;
 }
-inline ::koinos::chain::value* get_block_field_result::mutable_value() {
-  ::koinos::chain::value* _msg = _internal_mutable_value();
+inline ::koinos::chain::value_type* get_block_field_result::mutable_value() {
+  ::koinos::chain::value_type* _msg = _internal_mutable_value();
   // @@protoc_insertion_point(field_mutable:koinos.chain.get_block_field_result.value)
   return _msg;
 }
-inline void get_block_field_result::set_allocated_value(::koinos::chain::value* value) {
+inline void get_block_field_result::set_allocated_value(::koinos::chain::value_type* value) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);

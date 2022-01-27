@@ -858,7 +858,9 @@ struct get_caller_resultDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_caller_resultDefaultTypeInternal _get_caller_result_default_instance_;
 constexpr require_authority_arguments::require_authority_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : account_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : account_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , type_(0)
+{}
 struct require_authority_argumentsDefaultTypeInternal {
   constexpr require_authority_argumentsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1359,6 +1361,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fsystem_5fcall
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::require_authority_arguments, type_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::require_authority_arguments, account_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::require_authority_result, _internal_metadata_),
@@ -1460,11 +1463,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 410, -1, sizeof(::koinos::chain::get_caller_arguments)},
   { 415, -1, sizeof(::koinos::chain::get_caller_result)},
   { 421, -1, sizeof(::koinos::chain::require_authority_arguments)},
-  { 427, -1, sizeof(::koinos::chain::require_authority_result)},
-  { 432, -1, sizeof(::koinos::chain::get_contract_id_arguments)},
-  { 437, -1, sizeof(::koinos::chain::get_contract_id_result)},
-  { 443, -1, sizeof(::koinos::chain::get_account_nonce_arguments)},
-  { 449, -1, sizeof(::koinos::chain::get_account_nonce_result)},
+  { 428, -1, sizeof(::koinos::chain::require_authority_result)},
+  { 433, -1, sizeof(::koinos::chain::get_contract_id_arguments)},
+  { 438, -1, sizeof(::koinos::chain::get_contract_id_result)},
+  { 444, -1, sizeof(::koinos::chain::get_account_nonce_arguments)},
+  { 450, -1, sizeof(::koinos::chain::get_account_nonce_result)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1652,18 +1655,19 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] P
   "\n\"get_last_irreversible_block_result\022\021\n\005"
   "value\030\001 \001(\004B\0020\001\"\026\n\024get_caller_arguments\""
   "=\n\021get_caller_result\022(\n\005value\030\001 \001(\0132\031.ko"
-  "inos.chain.caller_data\"4\n\033require_author"
-  "ity_arguments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"\032\n\030"
-  "require_authority_result\"\033\n\031get_contract"
-  "_id_arguments\"-\n\026get_contract_id_result\022"
-  "\023\n\005value\030\001 \001(\014B\004\200\265\030\005\"4\n\033get_account_nonc"
-  "e_arguments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"-\n\030ge"
-  "t_account_nonce_result\022\021\n\005value\030\001 \001(\004B\0020"
-  "\001*\032\n\003dsa\022\023\n\017ecdsa_secp256k1\020\000*I\n\031system_"
-  "authorization_type\022\027\n\023set_system_contrac"
-  "t\020\000\022\023\n\017set_system_call\020\001B4Z2github.com/k"
-  "oinos/koinos-proto-golang/koinos/chainb\006"
-  "proto3"
+  "inos.chain.caller_data\"d\n\033require_author"
+  "ity_arguments\022.\n\004type\030\001 \001(\0162 .koinos.cha"
+  "in.authorization_type\022\025\n\007account\030\002 \001(\014B\004"
+  "\200\265\030\006\"\032\n\030require_authority_result\"\033\n\031get_"
+  "contract_id_arguments\"-\n\026get_contract_id"
+  "_result\022\023\n\005value\030\001 \001(\014B\004\200\265\030\005\"4\n\033get_acco"
+  "unt_nonce_arguments\022\025\n\007account\030\001 \001(\014B\004\200\265"
+  "\030\006\"-\n\030get_account_nonce_result\022\021\n\005value\030"
+  "\001 \001(\004B\0020\001*\032\n\003dsa\022\023\n\017ecdsa_secp256k1\020\000*I\n"
+  "\031system_authorization_type\022\027\n\023set_system"
+  "_contract\020\000\022\023\n\017set_system_call\020\001B4Z2gith"
+  "ub.com/koinos/koinos-proto-golang/koinos"
+  "/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps[6] = {
   &::descriptor_table_koinos_2fchain_2fauthority_2eproto,
@@ -1675,7 +1679,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto = {
-  false, false, 4686, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
+  false, false, 4734, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 6, 75,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto,
@@ -15346,11 +15350,13 @@ require_authority_arguments::require_authority_arguments(const require_authority
     account_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_account(), 
       GetArenaForAllocation());
   }
+  type_ = from.type_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.require_authority_arguments)
 }
 
 inline void require_authority_arguments::SharedCtor() {
 account_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+type_ = 0;
 }
 
 require_authority_arguments::~require_authority_arguments() {
@@ -15382,6 +15388,7 @@ void require_authority_arguments::Clear() {
   (void) cached_has_bits;
 
   account_.ClearToEmpty();
+  type_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15391,9 +15398,17 @@ const char* require_authority_arguments::_InternalParse(const char* ptr, ::PROTO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes account = 1 [(.koinos.btype) = ADDRESS];
+      // .koinos.chain.authorization_type type = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_type(static_cast<::koinos::chain::authorization_type>(val));
+        } else goto handle_unusual;
+        continue;
+      // bytes account = 2 [(.koinos.btype) = ADDRESS];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_account();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -15428,10 +15443,17 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes account = 1 [(.koinos.btype) = ADDRESS];
+  // .koinos.chain.authorization_type type = 1;
+  if (this->_internal_type() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_type(), target);
+  }
+
+  // bytes account = 2 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_account().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_account(), target);
+        2, this->_internal_account(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15450,11 +15472,17 @@ size_t require_authority_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes account = 1 [(.koinos.btype) = ADDRESS];
+  // bytes account = 2 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_account().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_account());
+  }
+
+  // .koinos.chain.authorization_type type = 1;
+  if (this->_internal_type() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -15488,6 +15516,9 @@ void require_authority_arguments::MergeFrom(const require_authority_arguments& f
   if (!from._internal_account().empty()) {
     _internal_set_account(from._internal_account());
   }
+  if (from._internal_type() != 0) {
+    _internal_set_type(from._internal_type());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -15510,6 +15541,7 @@ void require_authority_arguments::InternalSwap(require_authority_arguments* othe
       &account_, GetArenaForAllocation(),
       &other->account_, other->GetArenaForAllocation()
   );
+  swap(type_, other->type_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata require_authority_arguments::GetMetadata() const {

@@ -10532,9 +10532,10 @@ class require_authority_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAccountFieldNumber = 1,
+    kAccountFieldNumber = 2,
+    kTypeFieldNumber = 1,
   };
-  // bytes account = 1 [(.koinos.btype) = ADDRESS];
+  // bytes account = 2 [(.koinos.btype) = ADDRESS];
   void clear_account();
   const std::string& account() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -10548,6 +10549,15 @@ class require_authority_arguments final :
   std::string* _internal_mutable_account();
   public:
 
+  // .koinos.chain.authorization_type type = 1;
+  void clear_type();
+  ::koinos::chain::authorization_type type() const;
+  void set_type(::koinos::chain::authorization_type value);
+  private:
+  ::koinos::chain::authorization_type _internal_type() const;
+  void _internal_set_type(::koinos::chain::authorization_type value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.chain.require_authority_arguments)
  private:
   class _Internal;
@@ -10556,6 +10566,7 @@ class require_authority_arguments final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -15293,7 +15304,27 @@ inline void get_caller_result::set_allocated_value(::koinos::chain::caller_data*
 
 // require_authority_arguments
 
-// bytes account = 1 [(.koinos.btype) = ADDRESS];
+// .koinos.chain.authorization_type type = 1;
+inline void require_authority_arguments::clear_type() {
+  type_ = 0;
+}
+inline ::koinos::chain::authorization_type require_authority_arguments::_internal_type() const {
+  return static_cast< ::koinos::chain::authorization_type >(type_);
+}
+inline ::koinos::chain::authorization_type require_authority_arguments::type() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.require_authority_arguments.type)
+  return _internal_type();
+}
+inline void require_authority_arguments::_internal_set_type(::koinos::chain::authorization_type value) {
+  
+  type_ = value;
+}
+inline void require_authority_arguments::set_type(::koinos::chain::authorization_type value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.require_authority_arguments.type)
+}
+
+// bytes account = 2 [(.koinos.btype) = ADDRESS];
 inline void require_authority_arguments::clear_account() {
   account_.ClearToEmpty();
 }

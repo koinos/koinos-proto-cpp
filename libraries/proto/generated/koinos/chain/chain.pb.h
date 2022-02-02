@@ -50,7 +50,7 @@ struct TableStruct_koinos_2fchain_2fchain_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +62,12 @@ namespace chain {
 class caller_data;
 struct caller_dataDefaultTypeInternal;
 extern caller_dataDefaultTypeInternal _caller_data_default_instance_;
+class compute_bandwidth_entry;
+struct compute_bandwidth_entryDefaultTypeInternal;
+extern compute_bandwidth_entryDefaultTypeInternal _compute_bandwidth_entry_default_instance_;
+class compute_bandwidth_registry;
+struct compute_bandwidth_registryDefaultTypeInternal;
+extern compute_bandwidth_registryDefaultTypeInternal _compute_bandwidth_registry_default_instance_;
 class contract_metadata_object;
 struct contract_metadata_objectDefaultTypeInternal;
 extern contract_metadata_objectDefaultTypeInternal _contract_metadata_object_default_instance_;
@@ -90,6 +96,8 @@ extern resource_limit_dataDefaultTypeInternal _resource_limit_data_default_insta
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::chain::caller_data* Arena::CreateMaybeMessage<::koinos::chain::caller_data>(Arena*);
+template<> ::koinos::chain::compute_bandwidth_entry* Arena::CreateMaybeMessage<::koinos::chain::compute_bandwidth_entry>(Arena*);
+template<> ::koinos::chain::compute_bandwidth_registry* Arena::CreateMaybeMessage<::koinos::chain::compute_bandwidth_registry>(Arena*);
 template<> ::koinos::chain::contract_metadata_object* Arena::CreateMaybeMessage<::koinos::chain::contract_metadata_object>(Arena*);
 template<> ::koinos::chain::database_key* Arena::CreateMaybeMessage<::koinos::chain::database_key>(Arena*);
 template<> ::koinos::chain::genesis_data* Arena::CreateMaybeMessage<::koinos::chain::genesis_data>(Arena*);
@@ -1305,6 +1313,309 @@ class contract_metadata_object final :
 };
 // -------------------------------------------------------------------
 
+class compute_bandwidth_entry final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.compute_bandwidth_entry) */ {
+ public:
+  inline compute_bandwidth_entry() : compute_bandwidth_entry(nullptr) {}
+  ~compute_bandwidth_entry() override;
+  explicit constexpr compute_bandwidth_entry(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  compute_bandwidth_entry(const compute_bandwidth_entry& from);
+  compute_bandwidth_entry(compute_bandwidth_entry&& from) noexcept
+    : compute_bandwidth_entry() {
+    *this = ::std::move(from);
+  }
+
+  inline compute_bandwidth_entry& operator=(const compute_bandwidth_entry& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline compute_bandwidth_entry& operator=(compute_bandwidth_entry&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const compute_bandwidth_entry& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const compute_bandwidth_entry* internal_default_instance() {
+    return reinterpret_cast<const compute_bandwidth_entry*>(
+               &_compute_bandwidth_entry_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(compute_bandwidth_entry& a, compute_bandwidth_entry& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(compute_bandwidth_entry* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(compute_bandwidth_entry* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline compute_bandwidth_entry* New() const final {
+    return new compute_bandwidth_entry();
+  }
+
+  compute_bandwidth_entry* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<compute_bandwidth_entry>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const compute_bandwidth_entry& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const compute_bandwidth_entry& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(compute_bandwidth_entry* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.compute_bandwidth_entry";
+  }
+  protected:
+  explicit compute_bandwidth_entry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kComputeFieldNumber = 2,
+  };
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // uint64 compute = 2;
+  void clear_compute();
+  ::PROTOBUF_NAMESPACE_ID::uint64 compute() const;
+  void set_compute(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_compute() const;
+  void _internal_set_compute(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.compute_bandwidth_entry)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 compute_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
+};
+// -------------------------------------------------------------------
+
+class compute_bandwidth_registry final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.compute_bandwidth_registry) */ {
+ public:
+  inline compute_bandwidth_registry() : compute_bandwidth_registry(nullptr) {}
+  ~compute_bandwidth_registry() override;
+  explicit constexpr compute_bandwidth_registry(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  compute_bandwidth_registry(const compute_bandwidth_registry& from);
+  compute_bandwidth_registry(compute_bandwidth_registry&& from) noexcept
+    : compute_bandwidth_registry() {
+    *this = ::std::move(from);
+  }
+
+  inline compute_bandwidth_registry& operator=(const compute_bandwidth_registry& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline compute_bandwidth_registry& operator=(compute_bandwidth_registry&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const compute_bandwidth_registry& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const compute_bandwidth_registry* internal_default_instance() {
+    return reinterpret_cast<const compute_bandwidth_registry*>(
+               &_compute_bandwidth_registry_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(compute_bandwidth_registry& a, compute_bandwidth_registry& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(compute_bandwidth_registry* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(compute_bandwidth_registry* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline compute_bandwidth_registry* New() const final {
+    return new compute_bandwidth_registry();
+  }
+
+  compute_bandwidth_registry* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<compute_bandwidth_registry>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const compute_bandwidth_registry& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const compute_bandwidth_registry& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(compute_bandwidth_registry* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.compute_bandwidth_registry";
+  }
+  protected:
+  explicit compute_bandwidth_registry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kEntriesFieldNumber = 1,
+  };
+  // repeated .koinos.chain.compute_bandwidth_entry entries = 1;
+  int entries_size() const;
+  private:
+  int _internal_entries_size() const;
+  public:
+  void clear_entries();
+  ::koinos::chain::compute_bandwidth_entry* mutable_entries(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::compute_bandwidth_entry >*
+      mutable_entries();
+  private:
+  const ::koinos::chain::compute_bandwidth_entry& _internal_entries(int index) const;
+  ::koinos::chain::compute_bandwidth_entry* _internal_add_entries();
+  public:
+  const ::koinos::chain::compute_bandwidth_entry& entries(int index) const;
+  ::koinos::chain::compute_bandwidth_entry* add_entries();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::compute_bandwidth_entry >&
+      entries() const;
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.compute_bandwidth_registry)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::compute_bandwidth_entry > entries_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
+};
+// -------------------------------------------------------------------
+
 class genesis_entry final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.genesis_entry) */ {
  public:
@@ -1349,7 +1660,7 @@ class genesis_entry final :
                &_genesis_entry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(genesis_entry& a, genesis_entry& b) {
     a.Swap(&b);
@@ -1529,7 +1840,7 @@ class genesis_data final :
                &_genesis_data_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(genesis_data& a, genesis_data& b) {
     a.Swap(&b);
@@ -2348,6 +2659,120 @@ inline void contract_metadata_object::set_authorizes_upload_contract(bool value)
 
 // -------------------------------------------------------------------
 
+// compute_bandwidth_entry
+
+// string name = 1;
+inline void compute_bandwidth_entry::clear_name() {
+  name_.ClearToEmpty();
+}
+inline const std::string& compute_bandwidth_entry::name() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.compute_bandwidth_entry.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void compute_bandwidth_entry::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.compute_bandwidth_entry.name)
+}
+inline std::string* compute_bandwidth_entry::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.compute_bandwidth_entry.name)
+  return _s;
+}
+inline const std::string& compute_bandwidth_entry::_internal_name() const {
+  return name_.Get();
+}
+inline void compute_bandwidth_entry::_internal_set_name(const std::string& value) {
+  
+  name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* compute_bandwidth_entry::_internal_mutable_name() {
+  
+  return name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* compute_bandwidth_entry::release_name() {
+  // @@protoc_insertion_point(field_release:koinos.chain.compute_bandwidth_entry.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void compute_bandwidth_entry::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.compute_bandwidth_entry.name)
+}
+
+// uint64 compute = 2;
+inline void compute_bandwidth_entry::clear_compute() {
+  compute_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_entry::_internal_compute() const {
+  return compute_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_entry::compute() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.compute_bandwidth_entry.compute)
+  return _internal_compute();
+}
+inline void compute_bandwidth_entry::_internal_set_compute(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  compute_ = value;
+}
+inline void compute_bandwidth_entry::set_compute(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_compute(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.compute_bandwidth_entry.compute)
+}
+
+// -------------------------------------------------------------------
+
+// compute_bandwidth_registry
+
+// repeated .koinos.chain.compute_bandwidth_entry entries = 1;
+inline int compute_bandwidth_registry::_internal_entries_size() const {
+  return entries_.size();
+}
+inline int compute_bandwidth_registry::entries_size() const {
+  return _internal_entries_size();
+}
+inline void compute_bandwidth_registry::clear_entries() {
+  entries_.Clear();
+}
+inline ::koinos::chain::compute_bandwidth_entry* compute_bandwidth_registry::mutable_entries(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.compute_bandwidth_registry.entries)
+  return entries_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::compute_bandwidth_entry >*
+compute_bandwidth_registry::mutable_entries() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.chain.compute_bandwidth_registry.entries)
+  return &entries_;
+}
+inline const ::koinos::chain::compute_bandwidth_entry& compute_bandwidth_registry::_internal_entries(int index) const {
+  return entries_.Get(index);
+}
+inline const ::koinos::chain::compute_bandwidth_entry& compute_bandwidth_registry::entries(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.chain.compute_bandwidth_registry.entries)
+  return _internal_entries(index);
+}
+inline ::koinos::chain::compute_bandwidth_entry* compute_bandwidth_registry::_internal_add_entries() {
+  return entries_.Add();
+}
+inline ::koinos::chain::compute_bandwidth_entry* compute_bandwidth_registry::add_entries() {
+  ::koinos::chain::compute_bandwidth_entry* _add = _internal_add_entries();
+  // @@protoc_insertion_point(field_add:koinos.chain.compute_bandwidth_registry.entries)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::chain::compute_bandwidth_entry >&
+compute_bandwidth_registry::entries() const {
+  // @@protoc_insertion_point(field_list:koinos.chain.compute_bandwidth_registry.entries)
+  return entries_;
+}
+
+// -------------------------------------------------------------------
+
 // genesis_entry
 
 // .koinos.chain.object_space space = 1;
@@ -2579,6 +3004,10 @@ genesis_data::entries() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

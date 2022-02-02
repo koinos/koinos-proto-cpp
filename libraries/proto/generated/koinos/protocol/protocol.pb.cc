@@ -131,11 +131,11 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT operationDefaultTypeInternal _o
 constexpr transaction_header::transaction_header(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : chain_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , nonce_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , operation_merkle_root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , payer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , payee_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , rc_limit_(uint64_t{0u})
-  , nonce_(uint64_t{0u}){}
+  , rc_limit_(uint64_t{0u}){}
 struct transaction_headerDefaultTypeInternal {
   constexpr transaction_headerDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -443,47 +443,47 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "\003 \001(\0132*.koinos.protocol.set_system_call_"
   "operationH\000\022M\n\023set_system_contract\030\004 \001(\013"
   "2..koinos.protocol.set_system_contract_o"
-  "perationH\000B\004\n\002op\"\230\001\n\022transaction_header\022"
+  "perationH\000B\004\n\002op\"\224\001\n\022transaction_header\022"
   "\020\n\010chain_id\030\001 \001(\014\022\024\n\010rc_limit\030\002 \001(\004B\0020\001\022"
-  "\021\n\005nonce\030\003 \001(\004B\0020\001\022\035\n\025operation_merkle_r"
-  "oot\030\004 \001(\014\022\023\n\005payer\030\005 \001(\014B\004\200\265\030\006\022\023\n\005payee\030"
-  "\006 \001(\014B\004\200\265\030\006\"\230\001\n\013transaction\022\020\n\002id\030\001 \001(\014B"
-  "\004\200\265\030\004\0223\n\006header\030\002 \001(\0132#.koinos.protocol."
-  "transaction_header\022.\n\noperations\030\003 \003(\0132\032"
-  ".koinos.protocol.operation\022\022\n\nsignatures"
-  "\030\004 \003(\014\"\265\002\n\023transaction_receipt\022\020\n\002id\030\001 \001"
-  "(\014B\004\200\265\030\004\022\023\n\005payer\030\002 \001(\014B\004\200\265\030\006\022\030\n\014max_pay"
-  "er_rc\030\003 \001(\004B\0020\001\022\024\n\010rc_limit\030\004 \001(\004B\0020\001\022\023\n"
-  "\007rc_used\030\005 \001(\004B\0020\001\022\035\n\021disk_storage_used\030"
-  "\006 \001(\004B\0020\001\022\"\n\026network_bandwidth_used\030\007 \001("
-  "\004B\0020\001\022\"\n\026compute_bandwidth_used\030\010 \001(\004B\0020"
-  "\001\022\020\n\010reverted\030\t \001(\010\022+\n\006events\030\n \003(\0132\033.ko"
-  "inos.protocol.event_data\022\014\n\004logs\030\013 \003(\t\"\246"
-  "\001\n\014block_header\022\026\n\010previous\030\001 \001(\014B\004\200\265\030\003\022"
-  "\022\n\006height\030\002 \001(\004B\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\002"
-  "0\001\022\"\n\032previous_state_merkle_root\030\004 \001(\014\022\037"
-  "\n\027transaction_merkle_root\030\005 \001(\014\022\016\n\006signe"
-  "r\030\006 \001(\014\"\217\001\n\005block\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022-\n\006h"
-  "eader\030\002 \001(\0132\035.koinos.protocol.block_head"
-  "er\0222\n\014transactions\030\003 \003(\0132\034.koinos.protoc"
-  "ol.transaction\022\021\n\tsignature\030\004 \001(\014\"\266\002\n\rbl"
-  "ock_receipt\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022\022\n\006height\030"
-  "\002 \001(\004B\0020\001\022\035\n\021disk_storage_used\030\003 \001(\004B\0020\001"
-  "\022\"\n\026network_bandwidth_used\030\004 \001(\004B\0020\001\022\"\n\026"
-  "compute_bandwidth_used\030\005 \001(\004B\0020\001\022\031\n\021stat"
-  "e_merkle_root\030\006 \001(\014\022+\n\006events\030\007 \003(\0132\033.ko"
-  "inos.protocol.event_data\022B\n\024transaction_"
-  "receipts\030\010 \003(\0132$.koinos.protocol.transac"
-  "tion_receipt\022\014\n\004logs\030\t \003(\tB7Z5github.com"
-  "/koinos/koinos-proto-golang/koinos/proto"
-  "colb\006proto3"
+  "\r\n\005nonce\030\003 \001(\014\022\035\n\025operation_merkle_root\030"
+  "\004 \001(\014\022\023\n\005payer\030\005 \001(\014B\004\200\265\030\006\022\023\n\005payee\030\006 \001("
+  "\014B\004\200\265\030\006\"\230\001\n\013transaction\022\020\n\002id\030\001 \001(\014B\004\200\265\030"
+  "\004\0223\n\006header\030\002 \001(\0132#.koinos.protocol.tran"
+  "saction_header\022.\n\noperations\030\003 \003(\0132\032.koi"
+  "nos.protocol.operation\022\022\n\nsignatures\030\004 \003"
+  "(\014\"\265\002\n\023transaction_receipt\022\020\n\002id\030\001 \001(\014B\004"
+  "\200\265\030\004\022\023\n\005payer\030\002 \001(\014B\004\200\265\030\006\022\030\n\014max_payer_r"
+  "c\030\003 \001(\004B\0020\001\022\024\n\010rc_limit\030\004 \001(\004B\0020\001\022\023\n\007rc_"
+  "used\030\005 \001(\004B\0020\001\022\035\n\021disk_storage_used\030\006 \001("
+  "\004B\0020\001\022\"\n\026network_bandwidth_used\030\007 \001(\004B\0020"
+  "\001\022\"\n\026compute_bandwidth_used\030\010 \001(\004B\0020\001\022\020\n"
+  "\010reverted\030\t \001(\010\022+\n\006events\030\n \003(\0132\033.koinos"
+  ".protocol.event_data\022\014\n\004logs\030\013 \003(\t\"\246\001\n\014b"
+  "lock_header\022\026\n\010previous\030\001 \001(\014B\004\200\265\030\003\022\022\n\006h"
+  "eight\030\002 \001(\004B\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\022\""
+  "\n\032previous_state_merkle_root\030\004 \001(\014\022\037\n\027tr"
+  "ansaction_merkle_root\030\005 \001(\014\022\016\n\006signer\030\006 "
+  "\001(\014\"\217\001\n\005block\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022-\n\006heade"
+  "r\030\002 \001(\0132\035.koinos.protocol.block_header\0222"
+  "\n\014transactions\030\003 \003(\0132\034.koinos.protocol.t"
+  "ransaction\022\021\n\tsignature\030\004 \001(\014\"\266\002\n\rblock_"
+  "receipt\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001("
+  "\004B\0020\001\022\035\n\021disk_storage_used\030\003 \001(\004B\0020\001\022\"\n\026"
+  "network_bandwidth_used\030\004 \001(\004B\0020\001\022\"\n\026comp"
+  "ute_bandwidth_used\030\005 \001(\004B\0020\001\022\031\n\021state_me"
+  "rkle_root\030\006 \001(\014\022+\n\006events\030\007 \003(\0132\033.koinos"
+  ".protocol.event_data\022B\n\024transaction_rece"
+  "ipts\030\010 \003(\0132$.koinos.protocol.transaction"
+  "_receipt\022\014\n\004logs\030\t \003(\tB7Z5github.com/koi"
+  "nos/koinos-proto-golang/koinos/protocolb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 2451, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 2447, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -2836,6 +2836,11 @@ transaction_header::transaction_header(const transaction_header& from)
     chain_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_chain_id(), 
       GetArenaForAllocation());
   }
+  nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_nonce().empty()) {
+    nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nonce(), 
+      GetArenaForAllocation());
+  }
   operation_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_operation_merkle_root().empty()) {
     operation_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_operation_merkle_root(), 
@@ -2851,21 +2856,17 @@ transaction_header::transaction_header(const transaction_header& from)
     payee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_payee(), 
       GetArenaForAllocation());
   }
-  ::memcpy(&rc_limit_, &from.rc_limit_,
-    static_cast<size_t>(reinterpret_cast<char*>(&nonce_) -
-    reinterpret_cast<char*>(&rc_limit_)) + sizeof(nonce_));
+  rc_limit_ = from.rc_limit_;
   // @@protoc_insertion_point(copy_constructor:koinos.protocol.transaction_header)
 }
 
 inline void transaction_header::SharedCtor() {
 chain_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 operation_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 payee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&rc_limit_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&nonce_) -
-    reinterpret_cast<char*>(&rc_limit_)) + sizeof(nonce_));
+rc_limit_ = uint64_t{0u};
 }
 
 transaction_header::~transaction_header() {
@@ -2878,6 +2879,7 @@ transaction_header::~transaction_header() {
 inline void transaction_header::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   chain_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  nonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   operation_merkle_root_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   payer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   payee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -2900,12 +2902,11 @@ void transaction_header::Clear() {
   (void) cached_has_bits;
 
   chain_id_.ClearToEmpty();
+  nonce_.ClearToEmpty();
   operation_merkle_root_.ClearToEmpty();
   payer_.ClearToEmpty();
   payee_.ClearToEmpty();
-  ::memset(&rc_limit_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&nonce_) -
-      reinterpret_cast<char*>(&rc_limit_)) + sizeof(nonce_));
+  rc_limit_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2930,10 +2931,11 @@ const char* transaction_header::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 nonce = 3 [jstype = JS_STRING];
+      // bytes nonce = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          nonce_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_nonce();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3002,10 +3004,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_rc_limit(), target);
   }
 
-  // uint64 nonce = 3 [jstype = JS_STRING];
-  if (this->_internal_nonce() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_nonce(), target);
+  // bytes nonce = 3;
+  if (!this->_internal_nonce().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_nonce(), target);
   }
 
   // bytes operation_merkle_root = 4;
@@ -3049,6 +3051,13 @@ size_t transaction_header::ByteSizeLong() const {
         this->_internal_chain_id());
   }
 
+  // bytes nonce = 3;
+  if (!this->_internal_nonce().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_nonce());
+  }
+
   // bytes operation_merkle_root = 4;
   if (!this->_internal_operation_merkle_root().empty()) {
     total_size += 1 +
@@ -3075,13 +3084,6 @@ size_t transaction_header::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_rc_limit());
-  }
-
-  // uint64 nonce = 3 [jstype = JS_STRING];
-  if (this->_internal_nonce() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_nonce());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3115,6 +3117,9 @@ void transaction_header::MergeFrom(const transaction_header& from) {
   if (!from._internal_chain_id().empty()) {
     _internal_set_chain_id(from._internal_chain_id());
   }
+  if (!from._internal_nonce().empty()) {
+    _internal_set_nonce(from._internal_nonce());
+  }
   if (!from._internal_operation_merkle_root().empty()) {
     _internal_set_operation_merkle_root(from._internal_operation_merkle_root());
   }
@@ -3126,9 +3131,6 @@ void transaction_header::MergeFrom(const transaction_header& from) {
   }
   if (from._internal_rc_limit() != 0) {
     _internal_set_rc_limit(from._internal_rc_limit());
-  }
-  if (from._internal_nonce() != 0) {
-    _internal_set_nonce(from._internal_nonce());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3154,6 +3156,11 @@ void transaction_header::InternalSwap(transaction_header* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &nonce_, GetArenaForAllocation(),
+      &other->nonce_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &operation_merkle_root_, GetArenaForAllocation(),
       &other->operation_merkle_root_, other->GetArenaForAllocation()
   );
@@ -3167,12 +3174,7 @@ void transaction_header::InternalSwap(transaction_header* other) {
       &payee_, GetArenaForAllocation(),
       &other->payee_, other->GetArenaForAllocation()
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(transaction_header, nonce_)
-      + sizeof(transaction_header::nonce_)
-      - PROTOBUF_FIELD_OFFSET(transaction_header, rc_limit_)>(
-          reinterpret_cast<char*>(&rc_limit_),
-          reinterpret_cast<char*>(&other->rc_limit_));
+  swap(rc_limit_, other->rc_limit_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata transaction_header::GetMetadata() const {

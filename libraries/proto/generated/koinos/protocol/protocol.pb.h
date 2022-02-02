@@ -1712,11 +1712,11 @@ class transaction_header final :
 
   enum : int {
     kChainIdFieldNumber = 1,
+    kNonceFieldNumber = 3,
     kOperationMerkleRootFieldNumber = 4,
     kPayerFieldNumber = 5,
     kPayeeFieldNumber = 6,
     kRcLimitFieldNumber = 2,
-    kNonceFieldNumber = 3,
   };
   // bytes chain_id = 1;
   void clear_chain_id();
@@ -1730,6 +1730,20 @@ class transaction_header final :
   const std::string& _internal_chain_id() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_chain_id(const std::string& value);
   std::string* _internal_mutable_chain_id();
+  public:
+
+  // bytes nonce = 3;
+  void clear_nonce();
+  const std::string& nonce() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nonce(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nonce();
+  PROTOBUF_MUST_USE_RESULT std::string* release_nonce();
+  void set_allocated_nonce(std::string* nonce);
+  private:
+  const std::string& _internal_nonce() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nonce(const std::string& value);
+  std::string* _internal_mutable_nonce();
   public:
 
   // bytes operation_merkle_root = 4;
@@ -1783,15 +1797,6 @@ class transaction_header final :
   void _internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 nonce = 3 [jstype = JS_STRING];
-  void clear_nonce();
-  ::PROTOBUF_NAMESPACE_ID::uint64 nonce() const;
-  void set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_nonce() const;
-  void _internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.protocol.transaction_header)
  private:
   class _Internal;
@@ -1800,11 +1805,11 @@ class transaction_header final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr chain_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nonce_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payer_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payee_;
   ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -4305,24 +4310,50 @@ inline void transaction_header::set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 val
   // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.rc_limit)
 }
 
-// uint64 nonce = 3 [jstype = JS_STRING];
+// bytes nonce = 3;
 inline void transaction_header::clear_nonce() {
-  nonce_ = uint64_t{0u};
+  nonce_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_header::_internal_nonce() const {
-  return nonce_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_header::nonce() const {
+inline const std::string& transaction_header::nonce() const {
   // @@protoc_insertion_point(field_get:koinos.protocol.transaction_header.nonce)
   return _internal_nonce();
 }
-inline void transaction_header::_internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  nonce_ = value;
-}
-inline void transaction_header::set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_nonce(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void transaction_header::set_nonce(ArgT0&& arg0, ArgT... args) {
+ 
+ nonce_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.protocol.transaction_header.nonce)
+}
+inline std::string* transaction_header::mutable_nonce() {
+  std::string* _s = _internal_mutable_nonce();
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.transaction_header.nonce)
+  return _s;
+}
+inline const std::string& transaction_header::_internal_nonce() const {
+  return nonce_.Get();
+}
+inline void transaction_header::_internal_set_nonce(const std::string& value) {
+  
+  nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* transaction_header::_internal_mutable_nonce() {
+  
+  return nonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* transaction_header::release_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.protocol.transaction_header.nonce)
+  return nonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void transaction_header::set_allocated_nonce(std::string* nonce) {
+  if (nonce != nullptr) {
+    
+  } else {
+    
+  }
+  nonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), nonce,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.protocol.transaction_header.nonce)
 }
 
 // bytes operation_merkle_root = 4;

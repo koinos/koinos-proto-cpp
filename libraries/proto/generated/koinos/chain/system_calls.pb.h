@@ -5379,13 +5379,18 @@ class get_account_nonce_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // uint64 value = 1 [jstype = JS_STRING];
+  // bytes value = 1;
   void clear_value();
-  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
-  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_value();
+  PROTOBUF_MUST_USE_RESULT std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
-  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_account_nonce_result)
@@ -5395,7 +5400,7 @@ class get_account_nonce_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -14621,24 +14626,50 @@ inline void get_account_nonce_arguments::set_allocated_account(std::string* acco
 
 // get_account_nonce_result
 
-// uint64 value = 1 [jstype = JS_STRING];
+// bytes value = 1;
 inline void get_account_nonce_result::clear_value() {
-  value_ = uint64_t{0u};
+  value_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_result::_internal_value() const {
-  return value_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_result::value() const {
+inline const std::string& get_account_nonce_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.get_account_nonce_result.value)
   return _internal_value();
 }
-inline void get_account_nonce_result::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  value_ = value;
-}
-inline void get_account_nonce_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_value(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_account_nonce_result::set_value(ArgT0&& arg0, ArgT... args) {
+ 
+ value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.chain.get_account_nonce_result.value)
+}
+inline std::string* get_account_nonce_result::mutable_value() {
+  std::string* _s = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_account_nonce_result.value)
+  return _s;
+}
+inline const std::string& get_account_nonce_result::_internal_value() const {
+  return value_.Get();
+}
+inline void get_account_nonce_result::_internal_set_value(const std::string& value) {
+  
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_account_nonce_result::_internal_mutable_value() {
+  
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_account_nonce_result::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_account_nonce_result.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_account_nonce_result::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
+    
+  } else {
+    
+  }
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_account_nonce_result.value)
 }
 
 // -------------------------------------------------------------------

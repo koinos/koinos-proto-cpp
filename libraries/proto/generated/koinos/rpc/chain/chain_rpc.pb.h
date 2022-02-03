@@ -2211,13 +2211,18 @@ class get_account_nonce_response final :
   enum : int {
     kNonceFieldNumber = 1,
   };
-  // uint64 nonce = 1 [jstype = JS_STRING];
+  // bytes nonce = 1;
   void clear_nonce();
-  ::PROTOBUF_NAMESPACE_ID::uint64 nonce() const;
-  void set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& nonce() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nonce(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nonce();
+  PROTOBUF_MUST_USE_RESULT std::string* release_nonce();
+  void set_allocated_nonce(std::string* nonce);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_nonce() const;
-  void _internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  const std::string& _internal_nonce() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nonce(const std::string& value);
+  std::string* _internal_mutable_nonce();
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.get_account_nonce_response)
@@ -2227,7 +2232,7 @@ class get_account_nonce_response final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 nonce_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nonce_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -4543,24 +4548,50 @@ inline void get_account_nonce_request::set_allocated_account(std::string* accoun
 
 // get_account_nonce_response
 
-// uint64 nonce = 1 [jstype = JS_STRING];
+// bytes nonce = 1;
 inline void get_account_nonce_response::clear_nonce() {
-  nonce_ = uint64_t{0u};
+  nonce_.ClearToEmpty();
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_response::_internal_nonce() const {
-  return nonce_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 get_account_nonce_response::nonce() const {
+inline const std::string& get_account_nonce_response::nonce() const {
   // @@protoc_insertion_point(field_get:koinos.rpc.chain.get_account_nonce_response.nonce)
   return _internal_nonce();
 }
-inline void get_account_nonce_response::_internal_set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  nonce_ = value;
-}
-inline void get_account_nonce_response::set_nonce(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_nonce(value);
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_account_nonce_response::set_nonce(ArgT0&& arg0, ArgT... args) {
+ 
+ nonce_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.rpc.chain.get_account_nonce_response.nonce)
+}
+inline std::string* get_account_nonce_response::mutable_nonce() {
+  std::string* _s = _internal_mutable_nonce();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.get_account_nonce_response.nonce)
+  return _s;
+}
+inline const std::string& get_account_nonce_response::_internal_nonce() const {
+  return nonce_.Get();
+}
+inline void get_account_nonce_response::_internal_set_nonce(const std::string& value) {
+  
+  nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_account_nonce_response::_internal_mutable_nonce() {
+  
+  return nonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_account_nonce_response::release_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.get_account_nonce_response.nonce)
+  return nonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_account_nonce_response::set_allocated_nonce(std::string* nonce) {
+  if (nonce != nullptr) {
+    
+  } else {
+    
+  }
+  nonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), nonce,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.get_account_nonce_response.nonce)
 }
 
 // -------------------------------------------------------------------

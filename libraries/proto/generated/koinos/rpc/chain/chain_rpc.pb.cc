@@ -180,7 +180,7 @@ struct get_account_nonce_requestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_account_nonce_requestDefaultTypeInternal _get_account_nonce_request_default_instance_;
 constexpr get_account_nonce_response::get_account_nonce_response(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : nonce_(uint64_t{0u}){}
+  : nonce_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct get_account_nonce_responseDefaultTypeInternal {
   constexpr get_account_nonce_responseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -486,52 +486,52 @@ const char descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto[
   "\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"6\n\026r"
   "ead_contract_response\022\016\n\006result\030\001 \001(\014\022\014\n"
   "\004logs\030\002 \003(\t\"2\n\031get_account_nonce_request"
-  "\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"/\n\032get_account_n"
-  "once_response\022\021\n\005nonce\030\001 \001(\004B\0020\001\"/\n\026get_"
-  "account_rc_request\022\025\n\007account\030\001 \001(\014B\004\200\265\030"
-  "\006\")\n\027get_account_rc_response\022\016\n\002rc\030\001 \001(\004"
-  "B\0020\001\"\035\n\033get_resource_limits_request\"^\n\034g"
-  "et_resource_limits_response\022>\n\023resource_"
-  "limit_data\030\001 \001(\0132!.koinos.chain.resource"
-  "_limit_data\"\270\005\n\rchain_request\022,\n\010reserve"
-  "d\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022>\n\014s"
-  "ubmit_block\030\002 \001(\0132&.koinos.rpc.chain.sub"
-  "mit_block_requestH\000\022J\n\022submit_transactio"
-  "n\030\003 \001(\0132,.koinos.rpc.chain.submit_transa"
-  "ction_requestH\000\022@\n\rget_head_info\030\004 \001(\0132\'"
-  ".koinos.rpc.chain.get_head_info_requestH"
-  "\000\022>\n\014get_chain_id\030\005 \001(\0132&.koinos.rpc.cha"
-  "in.get_chain_id_requestH\000\022B\n\016get_fork_he"
-  "ads\030\006 \001(\0132(.koinos.rpc.chain.get_fork_he"
-  "ads_requestH\000\022@\n\rread_contract\030\007 \001(\0132\'.k"
-  "oinos.rpc.chain.read_contract_requestH\000\022"
-  "H\n\021get_account_nonce\030\010 \001(\0132+.koinos.rpc."
-  "chain.get_account_nonce_requestH\000\022B\n\016get"
-  "_account_rc\030\t \001(\0132(.koinos.rpc.chain.get"
-  "_account_rc_requestH\000\022L\n\023get_resource_li"
-  "mits\030\n \001(\0132-.koinos.rpc.chain.get_resour"
-  "ce_limits_requestH\000B\t\n\007request\"\360\005\n\016chain"
-  "_response\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc"
-  ".reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos."
-  "rpc.error_responseH\000\022\?\n\014submit_block\030\003 \001"
-  "(\0132\'.koinos.rpc.chain.submit_block_respo"
-  "nseH\000\022K\n\022submit_transaction\030\004 \001(\0132-.koin"
-  "os.rpc.chain.submit_transaction_response"
-  "H\000\022A\n\rget_head_info\030\005 \001(\0132(.koinos.rpc.c"
-  "hain.get_head_info_responseH\000\022\?\n\014get_cha"
-  "in_id\030\006 \001(\0132\'.koinos.rpc.chain.get_chain"
-  "_id_responseH\000\022C\n\016get_fork_heads\030\007 \001(\0132)"
-  ".koinos.rpc.chain.get_fork_heads_respons"
-  "eH\000\022A\n\rread_contract\030\010 \001(\0132(.koinos.rpc."
-  "chain.read_contract_responseH\000\022I\n\021get_ac"
-  "count_nonce\030\t \001(\0132,.koinos.rpc.chain.get"
-  "_account_nonce_responseH\000\022C\n\016get_account"
-  "_rc\030\n \001(\0132).koinos.rpc.chain.get_account"
-  "_rc_responseH\000\022M\n\023get_resource_limits\030\013 "
-  "\001(\0132..koinos.rpc.chain.get_resource_limi"
-  "ts_responseH\000B\n\n\010responseB8Z6github.com/"
-  "koinos/koinos-proto-golang/koinos/rpc/ch"
-  "ainb\006proto3"
+  "\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"+\n\032get_account_n"
+  "once_response\022\r\n\005nonce\030\001 \001(\014\"/\n\026get_acco"
+  "unt_rc_request\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\")\n"
+  "\027get_account_rc_response\022\016\n\002rc\030\001 \001(\004B\0020\001"
+  "\"\035\n\033get_resource_limits_request\"^\n\034get_r"
+  "esource_limits_response\022>\n\023resource_limi"
+  "t_data\030\001 \001(\0132!.koinos.chain.resource_lim"
+  "it_data\"\270\005\n\rchain_request\022,\n\010reserved\030\001 "
+  "\001(\0132\030.koinos.rpc.reserved_rpcH\000\022>\n\014submi"
+  "t_block\030\002 \001(\0132&.koinos.rpc.chain.submit_"
+  "block_requestH\000\022J\n\022submit_transaction\030\003 "
+  "\001(\0132,.koinos.rpc.chain.submit_transactio"
+  "n_requestH\000\022@\n\rget_head_info\030\004 \001(\0132\'.koi"
+  "nos.rpc.chain.get_head_info_requestH\000\022>\n"
+  "\014get_chain_id\030\005 \001(\0132&.koinos.rpc.chain.g"
+  "et_chain_id_requestH\000\022B\n\016get_fork_heads\030"
+  "\006 \001(\0132(.koinos.rpc.chain.get_fork_heads_"
+  "requestH\000\022@\n\rread_contract\030\007 \001(\0132\'.koino"
+  "s.rpc.chain.read_contract_requestH\000\022H\n\021g"
+  "et_account_nonce\030\010 \001(\0132+.koinos.rpc.chai"
+  "n.get_account_nonce_requestH\000\022B\n\016get_acc"
+  "ount_rc\030\t \001(\0132(.koinos.rpc.chain.get_acc"
+  "ount_rc_requestH\000\022L\n\023get_resource_limits"
+  "\030\n \001(\0132-.koinos.rpc.chain.get_resource_l"
+  "imits_requestH\000B\t\n\007request\"\360\005\n\016chain_res"
+  "ponse\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.res"
+  "erved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc."
+  "error_responseH\000\022\?\n\014submit_block\030\003 \001(\0132\'"
+  ".koinos.rpc.chain.submit_block_responseH"
+  "\000\022K\n\022submit_transaction\030\004 \001(\0132-.koinos.r"
+  "pc.chain.submit_transaction_responseH\000\022A"
+  "\n\rget_head_info\030\005 \001(\0132(.koinos.rpc.chain"
+  ".get_head_info_responseH\000\022\?\n\014get_chain_i"
+  "d\030\006 \001(\0132\'.koinos.rpc.chain.get_chain_id_"
+  "responseH\000\022C\n\016get_fork_heads\030\007 \001(\0132).koi"
+  "nos.rpc.chain.get_fork_heads_responseH\000\022"
+  "A\n\rread_contract\030\010 \001(\0132(.koinos.rpc.chai"
+  "n.read_contract_responseH\000\022I\n\021get_accoun"
+  "t_nonce\030\t \001(\0132,.koinos.rpc.chain.get_acc"
+  "ount_nonce_responseH\000\022C\n\016get_account_rc\030"
+  "\n \001(\0132).koinos.rpc.chain.get_account_rc_"
+  "responseH\000\022M\n\023get_resource_limits\030\013 \001(\0132"
+  "..koinos.rpc.chain.get_resource_limits_r"
+  "esponseH\000B\n\n\010responseB8Z6github.com/koin"
+  "os/koinos-proto-golang/koinos/rpc/chainb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fchain_2fchain_2eproto,
@@ -542,7 +542,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto = {
-  false, false, 2851, descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, "koinos/rpc/chain/chain_rpc.proto", 
+  false, false, 2847, descriptor_table_protodef_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, "koinos/rpc/chain/chain_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fchain_2fchain_5frpc_2eproto_deps, 5, 20,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fchain_2fchain_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fchain_2fchain_5frpc_2eproto,
@@ -3256,12 +3256,16 @@ get_account_nonce_response::get_account_nonce_response(::PROTOBUF_NAMESPACE_ID::
 get_account_nonce_response::get_account_nonce_response(const get_account_nonce_response& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  nonce_ = from.nonce_;
+  nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_nonce().empty()) {
+    nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nonce(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:koinos.rpc.chain.get_account_nonce_response)
 }
 
 inline void get_account_nonce_response::SharedCtor() {
-nonce_ = uint64_t{0u};
+nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 get_account_nonce_response::~get_account_nonce_response() {
@@ -3273,6 +3277,7 @@ get_account_nonce_response::~get_account_nonce_response() {
 
 inline void get_account_nonce_response::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  nonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void get_account_nonce_response::ArenaDtor(void* object) {
@@ -3291,7 +3296,7 @@ void get_account_nonce_response::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  nonce_ = uint64_t{0u};
+  nonce_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3301,10 +3306,11 @@ const char* get_account_nonce_response::_InternalParse(const char* ptr, ::PROTOB
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 nonce = 1 [jstype = JS_STRING];
+      // bytes nonce = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          nonce_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_nonce();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3337,10 +3343,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 nonce = 1 [jstype = JS_STRING];
-  if (this->_internal_nonce() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(1, this->_internal_nonce(), target);
+  // bytes nonce = 1;
+  if (!this->_internal_nonce().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_nonce(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3359,10 +3365,10 @@ size_t get_account_nonce_response::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // uint64 nonce = 1 [jstype = JS_STRING];
-  if (this->_internal_nonce() != 0) {
+  // bytes nonce = 1;
+  if (!this->_internal_nonce().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_nonce());
   }
 
@@ -3394,7 +3400,7 @@ void get_account_nonce_response::MergeFrom(const get_account_nonce_response& fro
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_nonce() != 0) {
+  if (!from._internal_nonce().empty()) {
     _internal_set_nonce(from._internal_nonce());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3414,7 +3420,11 @@ bool get_account_nonce_response::IsInitialized() const {
 void get_account_nonce_response::InternalSwap(get_account_nonce_response* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(nonce_, other->nonce_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &nonce_, GetArenaForAllocation(),
+      &other->nonce_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_account_nonce_response::GetMetadata() const {

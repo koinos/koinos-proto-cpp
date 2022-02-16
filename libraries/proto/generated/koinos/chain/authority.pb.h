@@ -80,15 +80,14 @@ namespace chain {
 
 enum authorization_type : int {
   contract_call = 0,
-  rc_use = 1,
+  transaction_application = 1,
   contract_upload = 2,
-  signature_exists = 3,
   authorization_type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   authorization_type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool authorization_type_IsValid(int value);
 constexpr authorization_type authorization_type_MIN = contract_call;
-constexpr authorization_type authorization_type_MAX = signature_exists;
+constexpr authorization_type authorization_type_MAX = contract_upload;
 constexpr int authorization_type_ARRAYSIZE = authorization_type_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* authorization_type_descriptor();

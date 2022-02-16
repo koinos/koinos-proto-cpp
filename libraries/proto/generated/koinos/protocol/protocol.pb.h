@@ -790,7 +790,7 @@ class upload_contract_operation final :
     kBytecodeFieldNumber = 2,
     kAbiFieldNumber = 3,
     kAuthorizesCallContractFieldNumber = 4,
-    kAuthorizesUseRcFieldNumber = 5,
+    kAuthorizesTransactionApplicationFieldNumber = 5,
     kAuthorizesUploadContractFieldNumber = 6,
   };
   // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
@@ -844,13 +844,13 @@ class upload_contract_operation final :
   void _internal_set_authorizes_call_contract(bool value);
   public:
 
-  // bool authorizes_use_rc = 5;
-  void clear_authorizes_use_rc();
-  bool authorizes_use_rc() const;
-  void set_authorizes_use_rc(bool value);
+  // bool authorizes_transaction_application = 5;
+  void clear_authorizes_transaction_application();
+  bool authorizes_transaction_application() const;
+  void set_authorizes_transaction_application(bool value);
   private:
-  bool _internal_authorizes_use_rc() const;
-  void _internal_set_authorizes_use_rc(bool value);
+  bool _internal_authorizes_transaction_application() const;
+  void _internal_set_authorizes_transaction_application(bool value);
   public:
 
   // bool authorizes_upload_contract = 6;
@@ -873,7 +873,7 @@ class upload_contract_operation final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr bytecode_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr abi_;
   bool authorizes_call_contract_;
-  bool authorizes_use_rc_;
+  bool authorizes_transaction_application_;
   bool authorizes_upload_contract_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
@@ -3591,24 +3591,24 @@ inline void upload_contract_operation::set_authorizes_call_contract(bool value) 
   // @@protoc_insertion_point(field_set:koinos.protocol.upload_contract_operation.authorizes_call_contract)
 }
 
-// bool authorizes_use_rc = 5;
-inline void upload_contract_operation::clear_authorizes_use_rc() {
-  authorizes_use_rc_ = false;
+// bool authorizes_transaction_application = 5;
+inline void upload_contract_operation::clear_authorizes_transaction_application() {
+  authorizes_transaction_application_ = false;
 }
-inline bool upload_contract_operation::_internal_authorizes_use_rc() const {
-  return authorizes_use_rc_;
+inline bool upload_contract_operation::_internal_authorizes_transaction_application() const {
+  return authorizes_transaction_application_;
 }
-inline bool upload_contract_operation::authorizes_use_rc() const {
-  // @@protoc_insertion_point(field_get:koinos.protocol.upload_contract_operation.authorizes_use_rc)
-  return _internal_authorizes_use_rc();
+inline bool upload_contract_operation::authorizes_transaction_application() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.upload_contract_operation.authorizes_transaction_application)
+  return _internal_authorizes_transaction_application();
 }
-inline void upload_contract_operation::_internal_set_authorizes_use_rc(bool value) {
+inline void upload_contract_operation::_internal_set_authorizes_transaction_application(bool value) {
   
-  authorizes_use_rc_ = value;
+  authorizes_transaction_application_ = value;
 }
-inline void upload_contract_operation::set_authorizes_use_rc(bool value) {
-  _internal_set_authorizes_use_rc(value);
-  // @@protoc_insertion_point(field_set:koinos.protocol.upload_contract_operation.authorizes_use_rc)
+inline void upload_contract_operation::set_authorizes_transaction_application(bool value) {
+  _internal_set_authorizes_transaction_application(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.upload_contract_operation.authorizes_transaction_application)
 }
 
 // bool authorizes_upload_contract = 6;

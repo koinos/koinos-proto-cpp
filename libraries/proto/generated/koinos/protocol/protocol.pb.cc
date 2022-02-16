@@ -65,7 +65,7 @@ constexpr upload_contract_operation::upload_contract_operation(
   , bytecode_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , abi_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , authorizes_call_contract_(false)
-  , authorizes_use_rc_(false)
+  , authorizes_transaction_application_(false)
   , authorizes_upload_contract_(false){}
 struct upload_contract_operationDefaultTypeInternal {
   constexpr upload_contract_operationDefaultTypeInternal()
@@ -275,7 +275,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fprotocol_2fprotocol_2
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::upload_contract_operation, bytecode_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::upload_contract_operation, abi_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::upload_contract_operation, authorizes_call_contract_),
-  PROTOBUF_FIELD_OFFSET(::koinos::protocol::upload_contract_operation, authorizes_use_rc_),
+  PROTOBUF_FIELD_OFFSET(::koinos::protocol::upload_contract_operation, authorizes_transaction_application_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::upload_contract_operation, authorizes_upload_contract_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::call_contract_operation, _internal_metadata_),
@@ -424,66 +424,66 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "int\030\002 \001(\r\"w\n\022system_call_target\022\022\n\010thunk"
   "_id\030\001 \001(\rH\000\022C\n\022system_call_bundle\030\002 \001(\0132"
   "%.koinos.protocol.contract_call_bundleH\000"
-  "B\010\n\006target\"\266\001\n\031upload_contract_operation"
+  "B\010\n\006target\"\307\001\n\031upload_contract_operation"
   "\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030\005\022\020\n\010bytecode\030"
   "\002 \001(\014\022\013\n\003abi\030\003 \001(\t\022 \n\030authorizes_call_co"
-  "ntract\030\004 \001(\010\022\031\n\021authorizes_use_rc\030\005 \001(\010\022"
-  "\"\n\032authorizes_upload_contract\030\006 \001(\010\"W\n\027c"
-  "all_contract_operation\022\031\n\013contract_id\030\001 "
-  "\001(\014B\004\200\265\030\005\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003"
-  " \001(\014\"a\n\031set_system_call_operation\022\017\n\007cal"
-  "l_id\030\001 \001(\r\0223\n\006target\030\002 \001(\0132#.koinos.prot"
-  "ocol.system_call_target\"S\n\035set_system_co"
-  "ntract_operation\022\031\n\013contract_id\030\001 \001(\014B\004\200"
-  "\265\030\005\022\027\n\017system_contract\030\002 \001(\010\"\261\002\n\toperati"
-  "on\022E\n\017upload_contract\030\001 \001(\0132*.koinos.pro"
-  "tocol.upload_contract_operationH\000\022A\n\rcal"
-  "l_contract\030\002 \001(\0132(.koinos.protocol.call_"
-  "contract_operationH\000\022E\n\017set_system_call\030"
-  "\003 \001(\0132*.koinos.protocol.set_system_call_"
-  "operationH\000\022M\n\023set_system_contract\030\004 \001(\013"
-  "2..koinos.protocol.set_system_contract_o"
-  "perationH\000B\004\n\002op\"\224\001\n\022transaction_header\022"
-  "\020\n\010chain_id\030\001 \001(\014\022\024\n\010rc_limit\030\002 \001(\004B\0020\001\022"
-  "\r\n\005nonce\030\003 \001(\014\022\035\n\025operation_merkle_root\030"
-  "\004 \001(\014\022\023\n\005payer\030\005 \001(\014B\004\200\265\030\006\022\023\n\005payee\030\006 \001("
-  "\014B\004\200\265\030\006\"\230\001\n\013transaction\022\020\n\002id\030\001 \001(\014B\004\200\265\030"
-  "\004\0223\n\006header\030\002 \001(\0132#.koinos.protocol.tran"
-  "saction_header\022.\n\noperations\030\003 \003(\0132\032.koi"
-  "nos.protocol.operation\022\022\n\nsignatures\030\004 \003"
-  "(\014\"\265\002\n\023transaction_receipt\022\020\n\002id\030\001 \001(\014B\004"
-  "\200\265\030\004\022\023\n\005payer\030\002 \001(\014B\004\200\265\030\006\022\030\n\014max_payer_r"
-  "c\030\003 \001(\004B\0020\001\022\024\n\010rc_limit\030\004 \001(\004B\0020\001\022\023\n\007rc_"
-  "used\030\005 \001(\004B\0020\001\022\035\n\021disk_storage_used\030\006 \001("
-  "\004B\0020\001\022\"\n\026network_bandwidth_used\030\007 \001(\004B\0020"
-  "\001\022\"\n\026compute_bandwidth_used\030\010 \001(\004B\0020\001\022\020\n"
-  "\010reverted\030\t \001(\010\022+\n\006events\030\n \003(\0132\033.koinos"
-  ".protocol.event_data\022\014\n\004logs\030\013 \003(\t\"\246\001\n\014b"
-  "lock_header\022\026\n\010previous\030\001 \001(\014B\004\200\265\030\003\022\022\n\006h"
-  "eight\030\002 \001(\004B\0020\001\022\025\n\ttimestamp\030\003 \001(\004B\0020\001\022\""
-  "\n\032previous_state_merkle_root\030\004 \001(\014\022\037\n\027tr"
-  "ansaction_merkle_root\030\005 \001(\014\022\016\n\006signer\030\006 "
-  "\001(\014\"\217\001\n\005block\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022-\n\006heade"
-  "r\030\002 \001(\0132\035.koinos.protocol.block_header\0222"
-  "\n\014transactions\030\003 \003(\0132\034.koinos.protocol.t"
-  "ransaction\022\021\n\tsignature\030\004 \001(\014\"\266\002\n\rblock_"
-  "receipt\022\020\n\002id\030\001 \001(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001("
-  "\004B\0020\001\022\035\n\021disk_storage_used\030\003 \001(\004B\0020\001\022\"\n\026"
-  "network_bandwidth_used\030\004 \001(\004B\0020\001\022\"\n\026comp"
-  "ute_bandwidth_used\030\005 \001(\004B\0020\001\022\031\n\021state_me"
-  "rkle_root\030\006 \001(\014\022+\n\006events\030\007 \003(\0132\033.koinos"
-  ".protocol.event_data\022B\n\024transaction_rece"
-  "ipts\030\010 \003(\0132$.koinos.protocol.transaction"
-  "_receipt\022\014\n\004logs\030\t \003(\tB7Z5github.com/koi"
-  "nos/koinos-proto-golang/koinos/protocolb"
-  "\006proto3"
+  "ntract\030\004 \001(\010\022*\n\"authorizes_transaction_a"
+  "pplication\030\005 \001(\010\022\"\n\032authorizes_upload_co"
+  "ntract\030\006 \001(\010\"W\n\027call_contract_operation\022"
+  "\031\n\013contract_id\030\001 \001(\014B\004\200\265\030\005\022\023\n\013entry_poin"
+  "t\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"a\n\031set_system_call"
+  "_operation\022\017\n\007call_id\030\001 \001(\r\0223\n\006target\030\002 "
+  "\001(\0132#.koinos.protocol.system_call_target"
+  "\"S\n\035set_system_contract_operation\022\031\n\013con"
+  "tract_id\030\001 \001(\014B\004\200\265\030\005\022\027\n\017system_contract\030"
+  "\002 \001(\010\"\261\002\n\toperation\022E\n\017upload_contract\030\001"
+  " \001(\0132*.koinos.protocol.upload_contract_o"
+  "perationH\000\022A\n\rcall_contract\030\002 \001(\0132(.koin"
+  "os.protocol.call_contract_operationH\000\022E\n"
+  "\017set_system_call\030\003 \001(\0132*.koinos.protocol"
+  ".set_system_call_operationH\000\022M\n\023set_syst"
+  "em_contract\030\004 \001(\0132..koinos.protocol.set_"
+  "system_contract_operationH\000B\004\n\002op\"\224\001\n\022tr"
+  "ansaction_header\022\020\n\010chain_id\030\001 \001(\014\022\024\n\010rc"
+  "_limit\030\002 \001(\004B\0020\001\022\r\n\005nonce\030\003 \001(\014\022\035\n\025opera"
+  "tion_merkle_root\030\004 \001(\014\022\023\n\005payer\030\005 \001(\014B\004\200"
+  "\265\030\006\022\023\n\005payee\030\006 \001(\014B\004\200\265\030\006\"\230\001\n\013transaction"
+  "\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\0223\n\006header\030\002 \001(\0132#.koi"
+  "nos.protocol.transaction_header\022.\n\nopera"
+  "tions\030\003 \003(\0132\032.koinos.protocol.operation\022"
+  "\022\n\nsignatures\030\004 \003(\014\"\265\002\n\023transaction_rece"
+  "ipt\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\022\023\n\005payer\030\002 \001(\014B\004\200\265"
+  "\030\006\022\030\n\014max_payer_rc\030\003 \001(\004B\0020\001\022\024\n\010rc_limit"
+  "\030\004 \001(\004B\0020\001\022\023\n\007rc_used\030\005 \001(\004B\0020\001\022\035\n\021disk_"
+  "storage_used\030\006 \001(\004B\0020\001\022\"\n\026network_bandwi"
+  "dth_used\030\007 \001(\004B\0020\001\022\"\n\026compute_bandwidth_"
+  "used\030\010 \001(\004B\0020\001\022\020\n\010reverted\030\t \001(\010\022+\n\006even"
+  "ts\030\n \003(\0132\033.koinos.protocol.event_data\022\014\n"
+  "\004logs\030\013 \003(\t\"\246\001\n\014block_header\022\026\n\010previous"
+  "\030\001 \001(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\025\n\ttime"
+  "stamp\030\003 \001(\004B\0020\001\022\"\n\032previous_state_merkle"
+  "_root\030\004 \001(\014\022\037\n\027transaction_merkle_root\030\005"
+  " \001(\014\022\016\n\006signer\030\006 \001(\014\"\217\001\n\005block\022\020\n\002id\030\001 \001"
+  "(\014B\004\200\265\030\003\022-\n\006header\030\002 \001(\0132\035.koinos.protoc"
+  "ol.block_header\0222\n\014transactions\030\003 \003(\0132\034."
+  "koinos.protocol.transaction\022\021\n\tsignature"
+  "\030\004 \001(\014\"\266\002\n\rblock_receipt\022\020\n\002id\030\001 \001(\014B\004\200\265"
+  "\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\035\n\021disk_storage_u"
+  "sed\030\003 \001(\004B\0020\001\022\"\n\026network_bandwidth_used\030"
+  "\004 \001(\004B\0020\001\022\"\n\026compute_bandwidth_used\030\005 \001("
+  "\004B\0020\001\022\031\n\021state_merkle_root\030\006 \001(\014\022+\n\006even"
+  "ts\030\007 \003(\0132\033.koinos.protocol.event_data\022B\n"
+  "\024transaction_receipts\030\010 \003(\0132$.koinos.pro"
+  "tocol.transaction_receipt\022\014\n\004logs\030\t \003(\tB"
+  "7Z5github.com/koinos/koinos-proto-golang"
+  "/koinos/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 2447, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 2464, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -1458,10 +1458,10 @@ const char* upload_contract_operation::_InternalParse(const char* ptr, ::PROTOBU
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool authorizes_use_rc = 5;
+      // bool authorizes_transaction_application = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          authorizes_use_rc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          authorizes_transaction_application_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1529,10 +1529,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_authorizes_call_contract(), target);
   }
 
-  // bool authorizes_use_rc = 5;
-  if (this->_internal_authorizes_use_rc() != 0) {
+  // bool authorizes_transaction_application = 5;
+  if (this->_internal_authorizes_transaction_application() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_authorizes_use_rc(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_authorizes_transaction_application(), target);
   }
 
   // bool authorizes_upload_contract = 6;
@@ -1583,8 +1583,8 @@ size_t upload_contract_operation::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  // bool authorizes_use_rc = 5;
-  if (this->_internal_authorizes_use_rc() != 0) {
+  // bool authorizes_transaction_application = 5;
+  if (this->_internal_authorizes_transaction_application() != 0) {
     total_size += 1 + 1;
   }
 
@@ -1633,8 +1633,8 @@ void upload_contract_operation::MergeFrom(const upload_contract_operation& from)
   if (from._internal_authorizes_call_contract() != 0) {
     _internal_set_authorizes_call_contract(from._internal_authorizes_call_contract());
   }
-  if (from._internal_authorizes_use_rc() != 0) {
-    _internal_set_authorizes_use_rc(from._internal_authorizes_use_rc());
+  if (from._internal_authorizes_transaction_application() != 0) {
+    _internal_set_authorizes_transaction_application(from._internal_authorizes_transaction_application());
   }
   if (from._internal_authorizes_upload_contract() != 0) {
     _internal_set_authorizes_upload_contract(from._internal_authorizes_upload_contract());

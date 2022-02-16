@@ -108,11 +108,11 @@ const char descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto[] PROTOB
   "ments\022.\n\004type\030\001 \001(\0162 .koinos.chain.autho"
   "rization_type\022,\n\004call\030\002 \001(\0132\031.koinos.cha"
   "in.call_targetH\000\210\001\001B\007\n\005_call\"!\n\020authoriz"
-  "e_result\022\r\n\005value\030\001 \001(\010*^\n\022authorization"
-  "_type\022\021\n\rcontract_call\020\000\022\n\n\006rc_use\020\001\022\023\n\017"
-  "contract_upload\020\002\022\024\n\020signature_exists\020\003B"
-  "4Z2github.com/koinos/koinos-proto-golang"
-  "/koinos/chainb\006proto3"
+  "e_result\022\r\n\005value\030\001 \001(\010*Y\n\022authorization"
+  "_type\022\021\n\rcontract_call\020\000\022\033\n\027transaction_"
+  "application\020\001\022\023\n\017contract_upload\020\002B4Z2gi"
+  "thub.com/koinos/koinos-proto-golang/koin"
+  "os/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fauthority_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -121,7 +121,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fauthority_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fauthority_2eproto = {
-  false, false, 501, descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto, "koinos/chain/authority.proto", 
+  false, false, 496, descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto, "koinos/chain/authority.proto", 
   &descriptor_table_koinos_2fchain_2fauthority_2eproto_once, descriptor_table_koinos_2fchain_2fauthority_2eproto_deps, 3, 3,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fauthority_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fauthority_2eproto, file_level_enum_descriptors_koinos_2fchain_2fauthority_2eproto, file_level_service_descriptors_koinos_2fchain_2fauthority_2eproto,
@@ -143,7 +143,6 @@ bool authorization_type_IsValid(int value) {
     case 0:
     case 1:
     case 2:
-    case 3:
       return true;
     default:
       return false;

@@ -1243,7 +1243,7 @@ class contract_metadata_object final :
     kHashFieldNumber = 1,
     kSystemFieldNumber = 2,
     kAuthorizesCallContractFieldNumber = 3,
-    kAuthorizesTransacionApplicationFieldNumber = 4,
+    kAuthorizesTransactionApplicationFieldNumber = 4,
     kAuthorizesUploadContractFieldNumber = 5,
   };
   // bytes hash = 1;
@@ -1278,13 +1278,13 @@ class contract_metadata_object final :
   void _internal_set_authorizes_call_contract(bool value);
   public:
 
-  // bool authorizes_transacion_application = 4;
-  void clear_authorizes_transacion_application();
-  bool authorizes_transacion_application() const;
-  void set_authorizes_transacion_application(bool value);
+  // bool authorizes_transaction_application = 4;
+  void clear_authorizes_transaction_application();
+  bool authorizes_transaction_application() const;
+  void set_authorizes_transaction_application(bool value);
   private:
-  bool _internal_authorizes_transacion_application() const;
-  void _internal_set_authorizes_transacion_application(bool value);
+  bool _internal_authorizes_transaction_application() const;
+  void _internal_set_authorizes_transaction_application(bool value);
   public:
 
   // bool authorizes_upload_contract = 5;
@@ -1306,7 +1306,7 @@ class contract_metadata_object final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
   bool system_;
   bool authorizes_call_contract_;
-  bool authorizes_transacion_application_;
+  bool authorizes_transaction_application_;
   bool authorizes_upload_contract_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
@@ -2617,24 +2617,24 @@ inline void contract_metadata_object::set_authorizes_call_contract(bool value) {
   // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.authorizes_call_contract)
 }
 
-// bool authorizes_transacion_application = 4;
-inline void contract_metadata_object::clear_authorizes_transacion_application() {
-  authorizes_transacion_application_ = false;
+// bool authorizes_transaction_application = 4;
+inline void contract_metadata_object::clear_authorizes_transaction_application() {
+  authorizes_transaction_application_ = false;
 }
-inline bool contract_metadata_object::_internal_authorizes_transacion_application() const {
-  return authorizes_transacion_application_;
+inline bool contract_metadata_object::_internal_authorizes_transaction_application() const {
+  return authorizes_transaction_application_;
 }
-inline bool contract_metadata_object::authorizes_transacion_application() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.contract_metadata_object.authorizes_transacion_application)
-  return _internal_authorizes_transacion_application();
+inline bool contract_metadata_object::authorizes_transaction_application() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.contract_metadata_object.authorizes_transaction_application)
+  return _internal_authorizes_transaction_application();
 }
-inline void contract_metadata_object::_internal_set_authorizes_transacion_application(bool value) {
+inline void contract_metadata_object::_internal_set_authorizes_transaction_application(bool value) {
   
-  authorizes_transacion_application_ = value;
+  authorizes_transaction_application_ = value;
 }
-inline void contract_metadata_object::set_authorizes_transacion_application(bool value) {
-  _internal_set_authorizes_transacion_application(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.authorizes_transacion_application)
+inline void contract_metadata_object::set_authorizes_transaction_application(bool value) {
+  _internal_set_authorizes_transaction_application(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.contract_metadata_object.authorizes_transaction_application)
 }
 
 // bool authorizes_upload_contract = 5;

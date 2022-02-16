@@ -107,7 +107,7 @@ constexpr contract_metadata_object::contract_metadata_object(
   : hash_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , system_(false)
   , authorizes_call_contract_(false)
-  , authorizes_transacion_application_(false)
+  , authorizes_transaction_application_(false)
   , authorizes_upload_contract_(false){}
 struct contract_metadata_objectDefaultTypeInternal {
   constexpr contract_metadata_objectDefaultTypeInternal()
@@ -231,7 +231,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto
   PROTOBUF_FIELD_OFFSET(::koinos::chain::contract_metadata_object, hash_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::contract_metadata_object, system_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::contract_metadata_object, authorizes_call_contract_),
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::contract_metadata_object, authorizes_transacion_application_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::contract_metadata_object, authorizes_transaction_application_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::contract_metadata_object, authorizes_upload_contract_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::compute_bandwidth_entry, _internal_metadata_),
@@ -308,21 +308,21 @@ const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_S
   "k_bandwidth_limit\030\003 \001(\004B\0020\001\022\"\n\026network_b"
   "andwidth_cost\030\004 \001(\004B\0020\001\022#\n\027compute_bandw"
   "idth_limit\030\005 \001(\004B\0020\001\022\"\n\026compute_bandwidt"
-  "h_cost\030\006 \001(\004B\0020\001\"\251\001\n\030contract_metadata_o"
+  "h_cost\030\006 \001(\004B\0020\001\"\252\001\n\030contract_metadata_o"
   "bject\022\014\n\004hash\030\001 \001(\014\022\016\n\006system\030\002 \001(\010\022 \n\030a"
-  "uthorizes_call_contract\030\003 \001(\010\022)\n!authori"
-  "zes_transacion_application\030\004 \001(\010\022\"\n\032auth"
-  "orizes_upload_contract\030\005 \001(\010\"8\n\027compute_"
-  "bandwidth_entry\022\014\n\004name\030\001 \001(\t\022\017\n\007compute"
-  "\030\002 \001(\004\"T\n\032compute_bandwidth_registry\0226\n\007"
-  "entries\030\001 \003(\0132%.koinos.chain.compute_ban"
-  "dwidth_entry\"V\n\rgenesis_entry\022)\n\005space\030\001"
-  " \001(\0132\032.koinos.chain.object_space\022\013\n\003key\030"
-  "\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n\014genesis_data\022,\n\007"
-  "entries\030\001 \003(\0132\033.koinos.chain.genesis_ent"
-  "ry*+\n\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuser"
-  "_mode\020\001B4Z2github.com/koinos/koinos-prot"
-  "o-golang/koinos/chainb\006proto3"
+  "uthorizes_call_contract\030\003 \001(\010\022*\n\"authori"
+  "zes_transaction_application\030\004 \001(\010\022\"\n\032aut"
+  "horizes_upload_contract\030\005 \001(\010\"8\n\027compute"
+  "_bandwidth_entry\022\014\n\004name\030\001 \001(\t\022\017\n\007comput"
+  "e\030\002 \001(\004\"T\n\032compute_bandwidth_registry\0226\n"
+  "\007entries\030\001 \003(\0132%.koinos.chain.compute_ba"
+  "ndwidth_entry\"V\n\rgenesis_entry\022)\n\005space\030"
+  "\001 \001(\0132\032.koinos.chain.object_space\022\013\n\003key"
+  "\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n\014genesis_data\022,\n"
+  "\007entries\030\001 \003(\0132\033.koinos.chain.genesis_en"
+  "try*+\n\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuse"
+  "r_mode\020\001B4Z2github.com/koinos/koinos-pro"
+  "to-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -331,7 +331,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 1309, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  false, false, 1310, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 3, 11,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
@@ -1937,10 +1937,10 @@ const char* contract_metadata_object::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool authorizes_transacion_application = 4;
+      // bool authorizes_transaction_application = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          authorizes_transacion_application_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          authorizes_transaction_application_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1998,10 +1998,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_authorizes_call_contract(), target);
   }
 
-  // bool authorizes_transacion_application = 4;
-  if (this->_internal_authorizes_transacion_application() != 0) {
+  // bool authorizes_transaction_application = 4;
+  if (this->_internal_authorizes_transaction_application() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_authorizes_transacion_application(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_authorizes_transaction_application(), target);
   }
 
   // bool authorizes_upload_contract = 5;
@@ -2043,8 +2043,8 @@ size_t contract_metadata_object::ByteSizeLong() const {
     total_size += 1 + 1;
   }
 
-  // bool authorizes_transacion_application = 4;
-  if (this->_internal_authorizes_transacion_application() != 0) {
+  // bool authorizes_transaction_application = 4;
+  if (this->_internal_authorizes_transaction_application() != 0) {
     total_size += 1 + 1;
   }
 
@@ -2090,8 +2090,8 @@ void contract_metadata_object::MergeFrom(const contract_metadata_object& from) {
   if (from._internal_authorizes_call_contract() != 0) {
     _internal_set_authorizes_call_contract(from._internal_authorizes_call_contract());
   }
-  if (from._internal_authorizes_transacion_application() != 0) {
-    _internal_set_authorizes_transacion_application(from._internal_authorizes_transacion_application());
+  if (from._internal_authorizes_transaction_application() != 0) {
+    _internal_set_authorizes_transaction_application(from._internal_authorizes_transaction_application());
   }
   if (from._internal_authorizes_upload_contract() != 0) {
     _internal_set_authorizes_upload_contract(from._internal_authorizes_upload_contract());

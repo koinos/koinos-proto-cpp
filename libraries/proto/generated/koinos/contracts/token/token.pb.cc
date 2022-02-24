@@ -422,7 +422,7 @@ const char descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto[
   "ce_object\022\023\n\007balance\030\001 \001(\004B\0020\001\022\020\n\004mana\030\002"
   " \001(\004B\0020\001\022\034\n\020last_mana_update\030\003 \001(\004B\0020\001\"1"
   "\n\nmint_event\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030"
-  "\003 \001(\004B\0020\001\"I\n\016transfer_event\022\022\n\004from\030\001 \001("
+  "\002 \001(\004B\0020\001\"I\n\016transfer_event\022\022\n\004from\030\001 \001("
   "\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004"
   "B\0020\001B>Z<github.com/koinos/koinos-proto-g"
   "olang/koinos/contracts/tokenb\006proto3"
@@ -3563,9 +3563,9 @@ const char* mint_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 value = 3 [jstype = JS_STRING];
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // uint64 value = 2 [jstype = JS_STRING];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3605,10 +3605,10 @@ failure:
         1, this->_internal_to(), target);
   }
 
-  // uint64 value = 3 [jstype = JS_STRING];
+  // uint64 value = 2 [jstype = JS_STRING];
   if (this->_internal_value() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3634,7 +3634,7 @@ size_t mint_event::ByteSizeLong() const {
         this->_internal_to());
   }
 
-  // uint64 value = 3 [jstype = JS_STRING];
+  // uint64 value = 2 [jstype = JS_STRING];
   if (this->_internal_value() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(

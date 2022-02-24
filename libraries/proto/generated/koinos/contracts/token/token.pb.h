@@ -2513,7 +2513,7 @@ class mint_event final :
 
   enum : int {
     kToFieldNumber = 1,
-    kValueFieldNumber = 3,
+    kValueFieldNumber = 2,
   };
   // bytes to = 1 [(.koinos.btype) = ADDRESS];
   void clear_to();
@@ -2529,7 +2529,7 @@ class mint_event final :
   std::string* _internal_mutable_to();
   public:
 
-  // uint64 value = 3 [jstype = JS_STRING];
+  // uint64 value = 2 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
   void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -3338,7 +3338,7 @@ inline void mint_event::set_allocated_to(std::string* to) {
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.token.mint_event.to)
 }
 
-// uint64 value = 3 [jstype = JS_STRING];
+// uint64 value = 2 [jstype = JS_STRING];
 inline void mint_event::clear_value() {
   value_ = uint64_t{0u};
 }

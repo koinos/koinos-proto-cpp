@@ -888,6 +888,7 @@ class add_block_request final :
 
   enum : int {
     kBlockToAddFieldNumber = 1,
+    kReceiptToAddFieldNumber = 2,
   };
   // .koinos.protocol.block block_to_add = 1;
   bool has_block_to_add() const;
@@ -907,6 +908,24 @@ class add_block_request final :
       ::koinos::protocol::block* block_to_add);
   ::koinos::protocol::block* unsafe_arena_release_block_to_add();
 
+  // .koinos.protocol.block_receipt receipt_to_add = 2;
+  bool has_receipt_to_add() const;
+  private:
+  bool _internal_has_receipt_to_add() const;
+  public:
+  void clear_receipt_to_add();
+  const ::koinos::protocol::block_receipt& receipt_to_add() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::block_receipt* release_receipt_to_add();
+  ::koinos::protocol::block_receipt* mutable_receipt_to_add();
+  void set_allocated_receipt_to_add(::koinos::protocol::block_receipt* receipt_to_add);
+  private:
+  const ::koinos::protocol::block_receipt& _internal_receipt_to_add() const;
+  ::koinos::protocol::block_receipt* _internal_mutable_receipt_to_add();
+  public:
+  void unsafe_arena_set_allocated_receipt_to_add(
+      ::koinos::protocol::block_receipt* receipt_to_add);
+  ::koinos::protocol::block_receipt* unsafe_arena_release_receipt_to_add();
+
   // @@protoc_insertion_point(class_scope:koinos.rpc.block_store.add_block_request)
  private:
   class _Internal;
@@ -915,6 +934,7 @@ class add_block_request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::koinos::protocol::block* block_to_add_;
+  ::koinos::protocol::block_receipt* receipt_to_add_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto;
 };
@@ -2272,6 +2292,92 @@ inline void add_block_request::set_allocated_block_to_add(::koinos::protocol::bl
   }
   block_to_add_ = block_to_add;
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.block_store.add_block_request.block_to_add)
+}
+
+// .koinos.protocol.block_receipt receipt_to_add = 2;
+inline bool add_block_request::_internal_has_receipt_to_add() const {
+  return this != internal_default_instance() && receipt_to_add_ != nullptr;
+}
+inline bool add_block_request::has_receipt_to_add() const {
+  return _internal_has_receipt_to_add();
+}
+inline const ::koinos::protocol::block_receipt& add_block_request::_internal_receipt_to_add() const {
+  const ::koinos::protocol::block_receipt* p = receipt_to_add_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::block_receipt&>(
+      ::koinos::protocol::_block_receipt_default_instance_);
+}
+inline const ::koinos::protocol::block_receipt& add_block_request::receipt_to_add() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.block_store.add_block_request.receipt_to_add)
+  return _internal_receipt_to_add();
+}
+inline void add_block_request::unsafe_arena_set_allocated_receipt_to_add(
+    ::koinos::protocol::block_receipt* receipt_to_add) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_to_add_);
+  }
+  receipt_to_add_ = receipt_to_add;
+  if (receipt_to_add) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.block_store.add_block_request.receipt_to_add)
+}
+inline ::koinos::protocol::block_receipt* add_block_request::release_receipt_to_add() {
+  
+  ::koinos::protocol::block_receipt* temp = receipt_to_add_;
+  receipt_to_add_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::protocol::block_receipt* add_block_request::unsafe_arena_release_receipt_to_add() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.block_store.add_block_request.receipt_to_add)
+  
+  ::koinos::protocol::block_receipt* temp = receipt_to_add_;
+  receipt_to_add_ = nullptr;
+  return temp;
+}
+inline ::koinos::protocol::block_receipt* add_block_request::_internal_mutable_receipt_to_add() {
+  
+  if (receipt_to_add_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::protocol::block_receipt>(GetArenaForAllocation());
+    receipt_to_add_ = p;
+  }
+  return receipt_to_add_;
+}
+inline ::koinos::protocol::block_receipt* add_block_request::mutable_receipt_to_add() {
+  ::koinos::protocol::block_receipt* _msg = _internal_mutable_receipt_to_add();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.block_store.add_block_request.receipt_to_add)
+  return _msg;
+}
+inline void add_block_request::set_allocated_receipt_to_add(::koinos::protocol::block_receipt* receipt_to_add) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_to_add_);
+  }
+  if (receipt_to_add) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(receipt_to_add));
+    if (message_arena != submessage_arena) {
+      receipt_to_add = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, receipt_to_add, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  receipt_to_add_ = receipt_to_add;
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.block_store.add_block_request.receipt_to_add)
 }
 
 // -------------------------------------------------------------------

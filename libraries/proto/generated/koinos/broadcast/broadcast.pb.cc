@@ -47,7 +47,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transaction_failedDefaultTypeIn
 constexpr block_accepted::block_accepted(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : block_(nullptr)
-  , receipt_(nullptr){}
+  , receipt_(nullptr)
+  , live_(false){}
 struct block_acceptedDefaultTypeInternal {
   constexpr block_acceptedDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -137,6 +138,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fbroadcast_2fbroadcast
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_accepted, block_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_accepted, receipt_),
+  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_accepted, live_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_irreversible, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -174,10 +176,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::koinos::broadcast::transaction_accepted)},
   { 8, -1, sizeof(::koinos::broadcast::transaction_failed)},
   { 14, -1, sizeof(::koinos::broadcast::block_accepted)},
-  { 21, -1, sizeof(::koinos::broadcast::block_irreversible)},
-  { 27, -1, sizeof(::koinos::broadcast::fork_heads)},
-  { 34, -1, sizeof(::koinos::broadcast::gossip_status)},
-  { 40, 49, sizeof(::koinos::broadcast::event_parcel)},
+  { 22, -1, sizeof(::koinos::broadcast::block_irreversible)},
+  { 28, -1, sizeof(::koinos::broadcast::fork_heads)},
+  { 35, -1, sizeof(::koinos::broadcast::gossip_status)},
+  { 41, 50, sizeof(::koinos::broadcast::event_parcel)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -198,21 +200,21 @@ const char descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto[] PR
   "saction\030\001 \001(\0132\034.koinos.protocol.transact"
   "ion\0225\n\007receipt\030\002 \001(\0132$.koinos.protocol.t"
   "ransaction_receipt\022\022\n\006height\030\003 \001(\004B\0020\001\"&"
-  "\n\022transaction_failed\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\"h"
+  "\n\022transaction_failed\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\"v"
   "\n\016block_accepted\022%\n\005block\030\001 \001(\0132\026.koinos"
   ".protocol.block\022/\n\007receipt\030\002 \001(\0132\036.koino"
-  "s.protocol.block_receipt\">\n\022block_irreve"
-  "rsible\022(\n\010topology\030\001 \001(\0132\026.koinos.block_"
-  "topology\"l\n\nfork_heads\0227\n\027last_irreversi"
-  "ble_block\030\001 \001(\0132\026.koinos.block_topology\022"
-  "%\n\005heads\030\002 \003(\0132\026.koinos.block_topology\" "
-  "\n\rgossip_status\022\017\n\007enabled\030\001 \001(\010\"\230\001\n\014eve"
-  "nt_parcel\022\026\n\010block_id\030\001 \001(\014B\004\200\265\030\003\022\016\n\006hei"
-  "ght\030\002 \001(\004\022!\n\016transaction_id\030\003 \001(\014B\004\200\265\030\004H"
-  "\000\210\001\001\022*\n\005event\030\004 \001(\0132\033.koinos.protocol.ev"
-  "ent_dataB\021\n\017_transaction_idB8Z6github.co"
-  "m/koinos/koinos-proto-golang/koinos/broa"
-  "dcastb\006proto3"
+  "s.protocol.block_receipt\022\014\n\004live\030\003 \001(\010\">"
+  "\n\022block_irreversible\022(\n\010topology\030\001 \001(\0132\026"
+  ".koinos.block_topology\"l\n\nfork_heads\0227\n\027"
+  "last_irreversible_block\030\001 \001(\0132\026.koinos.b"
+  "lock_topology\022%\n\005heads\030\002 \003(\0132\026.koinos.bl"
+  "ock_topology\" \n\rgossip_status\022\017\n\007enabled"
+  "\030\001 \001(\010\"\230\001\n\014event_parcel\022\026\n\010block_id\030\001 \001("
+  "\014B\004\200\265\030\003\022\016\n\006height\030\002 \001(\004\022!\n\016transaction_i"
+  "d\030\003 \001(\014B\004\200\265\030\004H\000\210\001\001\022*\n\005event\030\004 \001(\0132\033.koin"
+  "os.protocol.event_dataB\021\n\017_transaction_i"
+  "dB8Z6github.com/koinos/koinos-proto-gola"
+  "ng/koinos/broadcastb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -221,7 +223,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto = {
-  false, false, 853, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
+  false, false, 867, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
   &descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once, descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps, 3, 7,
   schemas, file_default_instances, TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto::offsets,
   file_level_metadata_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_enum_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_service_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto,
@@ -765,14 +767,15 @@ block_accepted::block_accepted(const block_accepted& from)
   } else {
     receipt_ = nullptr;
   }
+  live_ = from.live_;
   // @@protoc_insertion_point(copy_constructor:koinos.broadcast.block_accepted)
 }
 
 inline void block_accepted::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&block_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&receipt_) -
-    reinterpret_cast<char*>(&block_)) + sizeof(receipt_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&live_) -
+    reinterpret_cast<char*>(&block_)) + sizeof(live_));
 }
 
 block_accepted::~block_accepted() {
@@ -812,6 +815,7 @@ void block_accepted::Clear() {
     delete receipt_;
   }
   receipt_ = nullptr;
+  live_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -832,6 +836,13 @@ const char* block_accepted::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_receipt(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool live = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          live_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -880,6 +891,12 @@ failure:
         2, _Internal::receipt(this), target, stream);
   }
 
+  // bool live = 3;
+  if (this->_internal_live() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->_internal_live(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -908,6 +925,11 @@ size_t block_accepted::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *receipt_);
+  }
+
+  // bool live = 3;
+  if (this->_internal_live() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -944,6 +966,9 @@ void block_accepted::MergeFrom(const block_accepted& from) {
   if (from._internal_has_receipt()) {
     _internal_mutable_receipt()->::koinos::protocol::block_receipt::MergeFrom(from._internal_receipt());
   }
+  if (from._internal_live() != 0) {
+    _internal_set_live(from._internal_live());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -962,8 +987,8 @@ void block_accepted::InternalSwap(block_accepted* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(block_accepted, receipt_)
-      + sizeof(block_accepted::receipt_)
+      PROTOBUF_FIELD_OFFSET(block_accepted, live_)
+      + sizeof(block_accepted::live_)
       - PROTOBUF_FIELD_OFFSET(block_accepted, block_)>(
           reinterpret_cast<char*>(&block_),
           reinterpret_cast<char*>(&other->block_));

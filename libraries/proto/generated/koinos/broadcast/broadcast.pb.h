@@ -535,6 +535,7 @@ class block_accepted final :
   enum : int {
     kBlockFieldNumber = 1,
     kReceiptFieldNumber = 2,
+    kLiveFieldNumber = 3,
   };
   // .koinos.protocol.block block = 1;
   bool has_block() const;
@@ -572,6 +573,15 @@ class block_accepted final :
       ::koinos::protocol::block_receipt* receipt);
   ::koinos::protocol::block_receipt* unsafe_arena_release_receipt();
 
+  // bool live = 3;
+  void clear_live();
+  bool live() const;
+  void set_live(bool value);
+  private:
+  bool _internal_live() const;
+  void _internal_set_live(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.broadcast.block_accepted)
  private:
   class _Internal;
@@ -581,6 +591,7 @@ class block_accepted final :
   typedef void DestructorSkippable_;
   ::koinos::protocol::block* block_;
   ::koinos::protocol::block_receipt* receipt_;
+  bool live_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
 };
@@ -1662,6 +1673,26 @@ inline void block_accepted::set_allocated_receipt(::koinos::protocol::block_rece
   }
   receipt_ = receipt;
   // @@protoc_insertion_point(field_set_allocated:koinos.broadcast.block_accepted.receipt)
+}
+
+// bool live = 3;
+inline void block_accepted::clear_live() {
+  live_ = false;
+}
+inline bool block_accepted::_internal_live() const {
+  return live_;
+}
+inline bool block_accepted::live() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.block_accepted.live)
+  return _internal_live();
+}
+inline void block_accepted::_internal_set_live(bool value) {
+  
+  live_ = value;
+}
+inline void block_accepted::set_live(bool value) {
+  _internal_set_live(value);
+  // @@protoc_insertion_point(field_set:koinos.broadcast.block_accepted.live)
 }
 
 // -------------------------------------------------------------------

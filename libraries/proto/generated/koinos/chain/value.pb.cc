@@ -112,29 +112,29 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fchain_2fvalue_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/value.proto\022\014koinos.chain"
-  "\032\031google/protobuf/any.proto\"\253\003\n\nvalue_ty"
+  "\032\031google/protobuf/any.proto\"\277\003\n\nvalue_ty"
   "pe\022-\n\rmessage_value\030\001 \001(\0132\024.google.proto"
   "buf.AnyH\000\022\026\n\014double_value\030\002 \001(\001H\000\022\025\n\013flo"
   "at_value\030\003 \001(\002H\000\022\025\n\013int32_value\030\004 \001(\005H\000\022"
-  "\025\n\013int64_value\030\005 \001(\003H\000\022\026\n\014uint32_value\030\006"
-  " \001(\rH\000\022\026\n\014uint64_value\030\007 \001(\004H\000\022\026\n\014sint32"
-  "_value\030\010 \001(\021H\000\022\026\n\014sint64_value\030\t \001(\022H\000\022\027"
-  "\n\rfixed32_value\030\n \001(\007H\000\022\027\n\rfixed64_value"
-  "\030\013 \001(\006H\000\022\030\n\016sfixed32_value\030\014 \001(\017H\000\022\030\n\016sf"
-  "ixed64_value\030\r \001(\020H\000\022\024\n\nbool_value\030\016 \001(\010"
-  "H\000\022\026\n\014string_value\030\017 \001(\tH\000\022\025\n\013bytes_valu"
-  "e\030\020 \001(\014H\000B\006\n\004kind\")\n\tenum_type\022\014\n\004name\030\001"
-  " \001(\t\022\016\n\006number\030\002 \001(\005\"5\n\tlist_type\022(\n\006val"
-  "ues\030\001 \003(\0132\030.koinos.chain.value_typeB7Z5g"
-  "ithub.com/koinos/koinos-proto-golang/koi"
-  "nos/protocolb\006proto3"
+  "\031\n\013int64_value\030\005 \001(\003B\0020\001H\000\022\026\n\014uint32_val"
+  "ue\030\006 \001(\rH\000\022\032\n\014uint64_value\030\007 \001(\004B\0020\001H\000\022\026"
+  "\n\014sint32_value\030\010 \001(\021H\000\022\032\n\014sint64_value\030\t"
+  " \001(\022B\0020\001H\000\022\027\n\rfixed32_value\030\n \001(\007H\000\022\033\n\rf"
+  "ixed64_value\030\013 \001(\006B\0020\001H\000\022\030\n\016sfixed32_val"
+  "ue\030\014 \001(\017H\000\022\034\n\016sfixed64_value\030\r \001(\020B\0020\001H\000"
+  "\022\024\n\nbool_value\030\016 \001(\010H\000\022\026\n\014string_value\030\017"
+  " \001(\tH\000\022\025\n\013bytes_value\030\020 \001(\014H\000B\006\n\004kind\")\n"
+  "\tenum_type\022\014\n\004name\030\001 \001(\t\022\016\n\006number\030\002 \001(\005"
+  "\"5\n\tlist_type\022(\n\006values\030\001 \003(\0132\030.koinos.c"
+  "hain.value_typeB7Z5github.com/koinos/koi"
+  "nos-proto-golang/koinos/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fvalue_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fvalue_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fvalue_2eproto = {
-  false, false, 660, descriptor_table_protodef_koinos_2fchain_2fvalue_2eproto, "koinos/chain/value.proto", 
+  false, false, 680, descriptor_table_protodef_koinos_2fchain_2fvalue_2eproto, "koinos/chain/value.proto", 
   &descriptor_table_koinos_2fchain_2fvalue_2eproto_once, descriptor_table_koinos_2fchain_2fvalue_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fvalue_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fvalue_2eproto, file_level_enum_descriptors_koinos_2fchain_2fvalue_2eproto, file_level_service_descriptors_koinos_2fchain_2fvalue_2eproto,
@@ -418,7 +418,7 @@ const char* value_type::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 int64_value = 5;
+      // int64 int64_value = 5 [jstype = JS_STRING];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           _internal_set_int64_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
@@ -432,7 +432,7 @@ const char* value_type::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 uint64_value = 7;
+      // uint64 uint64_value = 7 [jstype = JS_STRING];
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           _internal_set_uint64_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
@@ -446,7 +446,7 @@ const char* value_type::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // sint64 sint64_value = 9;
+      // sint64 sint64_value = 9 [jstype = JS_STRING];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           _internal_set_sint64_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag64(&ptr));
@@ -460,7 +460,7 @@ const char* value_type::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ptr += sizeof(::PROTOBUF_NAMESPACE_ID::uint32);
         } else goto handle_unusual;
         continue;
-      // fixed64 fixed64_value = 11;
+      // fixed64 fixed64_value = 11 [jstype = JS_STRING];
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 89)) {
           _internal_set_fixed64_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint64>(ptr));
@@ -474,7 +474,7 @@ const char* value_type::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ptr += sizeof(::PROTOBUF_NAMESPACE_ID::int32);
         } else goto handle_unusual;
         continue;
-      // sfixed64 sfixed64_value = 13;
+      // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 105)) {
           _internal_set_sfixed64_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::int64>(ptr));
@@ -560,7 +560,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_int32_value(), target);
   }
 
-  // int64 int64_value = 5;
+  // int64 int64_value = 5 [jstype = JS_STRING];
   if (_internal_has_int64_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_int64_value(), target);
@@ -572,7 +572,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_uint32_value(), target);
   }
 
-  // uint64 uint64_value = 7;
+  // uint64 uint64_value = 7 [jstype = JS_STRING];
   if (_internal_has_uint64_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_uint64_value(), target);
@@ -584,7 +584,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(8, this->_internal_sint32_value(), target);
   }
 
-  // sint64 sint64_value = 9;
+  // sint64 sint64_value = 9 [jstype = JS_STRING];
   if (_internal_has_sint64_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt64ToArray(9, this->_internal_sint64_value(), target);
@@ -596,7 +596,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(10, this->_internal_fixed32_value(), target);
   }
 
-  // fixed64 fixed64_value = 11;
+  // fixed64 fixed64_value = 11 [jstype = JS_STRING];
   if (_internal_has_fixed64_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed64ToArray(11, this->_internal_fixed64_value(), target);
@@ -608,7 +608,7 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSFixed32ToArray(12, this->_internal_sfixed32_value(), target);
   }
 
-  // sfixed64 sfixed64_value = 13;
+  // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
   if (_internal_has_sfixed64_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSFixed64ToArray(13, this->_internal_sfixed64_value(), target);
@@ -677,7 +677,7 @@ size_t value_type::ByteSizeLong() const {
           this->_internal_int32_value());
       break;
     }
-    // int64 int64_value = 5;
+    // int64 int64_value = 5 [jstype = JS_STRING];
     case kInt64Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
@@ -691,7 +691,7 @@ size_t value_type::ByteSizeLong() const {
           this->_internal_uint32_value());
       break;
     }
-    // uint64 uint64_value = 7;
+    // uint64 uint64_value = 7 [jstype = JS_STRING];
     case kUint64Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -705,7 +705,7 @@ size_t value_type::ByteSizeLong() const {
           this->_internal_sint32_value());
       break;
     }
-    // sint64 sint64_value = 9;
+    // sint64 sint64_value = 9 [jstype = JS_STRING];
     case kSint64Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt64Size(
@@ -717,7 +717,7 @@ size_t value_type::ByteSizeLong() const {
       total_size += 1 + 4;
       break;
     }
-    // fixed64 fixed64_value = 11;
+    // fixed64 fixed64_value = 11 [jstype = JS_STRING];
     case kFixed64Value: {
       total_size += 1 + 8;
       break;
@@ -727,7 +727,7 @@ size_t value_type::ByteSizeLong() const {
       total_size += 1 + 4;
       break;
     }
-    // sfixed64 sfixed64_value = 13;
+    // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
     case kSfixed64Value: {
       total_size += 1 + 8;
       break;

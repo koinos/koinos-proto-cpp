@@ -286,7 +286,7 @@ class value_type final :
   void _internal_set_int32_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int64 int64_value = 5;
+  // int64 int64_value = 5 [jstype = JS_STRING];
   bool has_int64_value() const;
   private:
   bool _internal_has_int64_value() const;
@@ -312,7 +312,7 @@ class value_type final :
   void _internal_set_uint32_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 uint64_value = 7;
+  // uint64 uint64_value = 7 [jstype = JS_STRING];
   bool has_uint64_value() const;
   private:
   bool _internal_has_uint64_value() const;
@@ -338,7 +338,7 @@ class value_type final :
   void _internal_set_sint32_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // sint64 sint64_value = 9;
+  // sint64 sint64_value = 9 [jstype = JS_STRING];
   bool has_sint64_value() const;
   private:
   bool _internal_has_sint64_value() const;
@@ -364,7 +364,7 @@ class value_type final :
   void _internal_set_fixed32_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // fixed64 fixed64_value = 11;
+  // fixed64 fixed64_value = 11 [jstype = JS_STRING];
   bool has_fixed64_value() const;
   private:
   bool _internal_has_fixed64_value() const;
@@ -390,7 +390,7 @@ class value_type final :
   void _internal_set_sfixed32_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // sfixed64 sfixed64_value = 13;
+  // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
   bool has_sfixed64_value() const;
   private:
   bool _internal_has_sfixed64_value() const;
@@ -999,7 +999,7 @@ inline void value_type::set_int32_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.int32_value)
 }
 
-// int64 int64_value = 5;
+// int64 int64_value = 5 [jstype = JS_STRING];
 inline bool value_type::_internal_has_int64_value() const {
   return kind_case() == kInt64Value;
 }
@@ -1075,7 +1075,7 @@ inline void value_type::set_uint32_value(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.uint32_value)
 }
 
-// uint64 uint64_value = 7;
+// uint64 uint64_value = 7 [jstype = JS_STRING];
 inline bool value_type::_internal_has_uint64_value() const {
   return kind_case() == kUint64Value;
 }
@@ -1151,7 +1151,7 @@ inline void value_type::set_sint32_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.sint32_value)
 }
 
-// sint64 sint64_value = 9;
+// sint64 sint64_value = 9 [jstype = JS_STRING];
 inline bool value_type::_internal_has_sint64_value() const {
   return kind_case() == kSint64Value;
 }
@@ -1227,7 +1227,7 @@ inline void value_type::set_fixed32_value(::PROTOBUF_NAMESPACE_ID::uint32 value)
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.fixed32_value)
 }
 
-// fixed64 fixed64_value = 11;
+// fixed64 fixed64_value = 11 [jstype = JS_STRING];
 inline bool value_type::_internal_has_fixed64_value() const {
   return kind_case() == kFixed64Value;
 }
@@ -1303,7 +1303,7 @@ inline void value_type::set_sfixed32_value(::PROTOBUF_NAMESPACE_ID::int32 value)
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.sfixed32_value)
 }
 
-// sfixed64 sfixed64_value = 13;
+// sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
 inline bool value_type::_internal_has_sfixed64_value() const {
   return kind_case() == kSfixed64Value;
 }

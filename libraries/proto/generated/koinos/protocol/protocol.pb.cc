@@ -459,31 +459,31 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "dth_used\030\007 \001(\004B\0020\001\022\"\n\026compute_bandwidth_"
   "used\030\010 \001(\004B\0020\001\022\020\n\010reverted\030\t \001(\010\022+\n\006even"
   "ts\030\n \003(\0132\033.koinos.protocol.event_data\022\014\n"
-  "\004logs\030\013 \003(\t\"\246\001\n\014block_header\022\026\n\010previous"
+  "\004logs\030\013 \003(\t\"\254\001\n\014block_header\022\026\n\010previous"
   "\030\001 \001(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\025\n\ttime"
   "stamp\030\003 \001(\004B\0020\001\022\"\n\032previous_state_merkle"
   "_root\030\004 \001(\014\022\037\n\027transaction_merkle_root\030\005"
-  " \001(\014\022\016\n\006signer\030\006 \001(\014\"\217\001\n\005block\022\020\n\002id\030\001 \001"
-  "(\014B\004\200\265\030\003\022-\n\006header\030\002 \001(\0132\035.koinos.protoc"
-  "ol.block_header\0222\n\014transactions\030\003 \003(\0132\034."
-  "koinos.protocol.transaction\022\021\n\tsignature"
-  "\030\004 \001(\014\"\266\002\n\rblock_receipt\022\020\n\002id\030\001 \001(\014B\004\200\265"
-  "\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\035\n\021disk_storage_u"
-  "sed\030\003 \001(\004B\0020\001\022\"\n\026network_bandwidth_used\030"
-  "\004 \001(\004B\0020\001\022\"\n\026compute_bandwidth_used\030\005 \001("
-  "\004B\0020\001\022\031\n\021state_merkle_root\030\006 \001(\014\022+\n\006even"
-  "ts\030\007 \003(\0132\033.koinos.protocol.event_data\022B\n"
-  "\024transaction_receipts\030\010 \003(\0132$.koinos.pro"
-  "tocol.transaction_receipt\022\014\n\004logs\030\t \003(\tB"
-  "7Z5github.com/koinos/koinos-proto-golang"
-  "/koinos/protocolb\006proto3"
+  " \001(\014\022\024\n\006signer\030\006 \001(\014B\004\200\265\030\006\"\217\001\n\005block\022\020\n\002"
+  "id\030\001 \001(\014B\004\200\265\030\003\022-\n\006header\030\002 \001(\0132\035.koinos."
+  "protocol.block_header\0222\n\014transactions\030\003 "
+  "\003(\0132\034.koinos.protocol.transaction\022\021\n\tsig"
+  "nature\030\004 \001(\014\"\266\002\n\rblock_receipt\022\020\n\002id\030\001 \001"
+  "(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\035\n\021disk_sto"
+  "rage_used\030\003 \001(\004B\0020\001\022\"\n\026network_bandwidth"
+  "_used\030\004 \001(\004B\0020\001\022\"\n\026compute_bandwidth_use"
+  "d\030\005 \001(\004B\0020\001\022\031\n\021state_merkle_root\030\006 \001(\014\022+"
+  "\n\006events\030\007 \003(\0132\033.koinos.protocol.event_d"
+  "ata\022B\n\024transaction_receipts\030\010 \003(\0132$.koin"
+  "os.protocol.transaction_receipt\022\014\n\004logs\030"
+  "\t \003(\tB7Z5github.com/koinos/koinos-proto-"
+  "golang/koinos/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 2464, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 2470, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -4100,7 +4100,7 @@ const char* block_header::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes signer = 6;
+      // bytes signer = 6 [(.koinos.btype) = ADDRESS];
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
           auto str = _internal_mutable_signer();
@@ -4167,7 +4167,7 @@ failure:
         5, this->_internal_transaction_merkle_root(), target);
   }
 
-  // bytes signer = 6;
+  // bytes signer = 6 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_signer().empty()) {
     target = stream->WriteBytesMaybeAliased(
         6, this->_internal_signer(), target);
@@ -4210,7 +4210,7 @@ size_t block_header::ByteSizeLong() const {
         this->_internal_transaction_merkle_root());
   }
 
-  // bytes signer = 6;
+  // bytes signer = 6 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_signer().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(

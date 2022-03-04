@@ -2472,7 +2472,7 @@ class block_header final :
   std::string* _internal_mutable_transaction_merkle_root();
   public:
 
-  // bytes signer = 6;
+  // bytes signer = 6 [(.koinos.btype) = ADDRESS];
   void clear_signer();
   const std::string& signer() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -5282,7 +5282,7 @@ inline void block_header::set_allocated_transaction_merkle_root(std::string* tra
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_header.transaction_merkle_root)
 }
 
-// bytes signer = 6;
+// bytes signer = 6 [(.koinos.btype) = ADDRESS];
 inline void block_header::clear_signer() {
   signer_.ClearToEmpty();
 }

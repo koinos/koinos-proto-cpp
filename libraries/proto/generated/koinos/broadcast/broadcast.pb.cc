@@ -49,8 +49,7 @@ constexpr mempool_accepted::mempool_accepted(
   : transaction_(nullptr)
   , receipt_(nullptr)
   , height_(uint64_t{0u})
-  , pending_rc_used_(uint64_t{0u})
-  , rc_limit_(uint64_t{0u}){}
+  , pending_rc_used_(uint64_t{0u}){}
 struct mempool_acceptedDefaultTypeInternal {
   constexpr mempool_acceptedDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -156,7 +155,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fbroadcast_2fbroadcast
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::mempool_accepted, receipt_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::mempool_accepted, height_),
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::mempool_accepted, pending_rc_used_),
-  PROTOBUF_FIELD_OFFSET(::koinos::broadcast::mempool_accepted, rc_limit_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::broadcast::block_accepted, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -202,11 +200,11 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::koinos::broadcast::transaction_accepted)},
   { 8, -1, sizeof(::koinos::broadcast::transaction_failed)},
   { 14, -1, sizeof(::koinos::broadcast::mempool_accepted)},
-  { 24, -1, sizeof(::koinos::broadcast::block_accepted)},
-  { 32, -1, sizeof(::koinos::broadcast::block_irreversible)},
-  { 38, -1, sizeof(::koinos::broadcast::fork_heads)},
-  { 45, -1, sizeof(::koinos::broadcast::gossip_status)},
-  { 51, 60, sizeof(::koinos::broadcast::event_parcel)},
+  { 23, -1, sizeof(::koinos::broadcast::block_accepted)},
+  { 31, -1, sizeof(::koinos::broadcast::block_irreversible)},
+  { 37, -1, sizeof(::koinos::broadcast::fork_heads)},
+  { 44, -1, sizeof(::koinos::broadcast::gossip_status)},
+  { 50, 59, sizeof(::koinos::broadcast::event_parcel)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -228,26 +226,26 @@ const char descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto[] PR
   "saction\030\001 \001(\0132\034.koinos.protocol.transact"
   "ion\0225\n\007receipt\030\002 \001(\0132$.koinos.protocol.t"
   "ransaction_receipt\022\022\n\006height\030\003 \001(\004B\0020\001\"&"
-  "\n\022transaction_failed\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\"\303"
+  "\n\022transaction_failed\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\"\255"
   "\001\n\020mempool_accepted\0221\n\013transaction\030\001 \001(\013"
   "2\034.koinos.protocol.transaction\0225\n\007receip"
   "t\030\002 \001(\0132$.koinos.protocol.transaction_re"
   "ceipt\022\022\n\006height\030\003 \001(\004B\0020\001\022\033\n\017pending_rc_"
-  "used\030\004 \001(\004B\0020\001\022\024\n\010rc_limit\030\005 \001(\004B\0020\001\"v\n\016"
-  "block_accepted\022%\n\005block\030\001 \001(\0132\026.koinos.p"
-  "rotocol.block\022/\n\007receipt\030\002 \001(\0132\036.koinos."
-  "protocol.block_receipt\022\014\n\004live\030\003 \001(\010\">\n\022"
-  "block_irreversible\022(\n\010topology\030\001 \001(\0132\026.k"
-  "oinos.block_topology\"l\n\nfork_heads\0227\n\027la"
-  "st_irreversible_block\030\001 \001(\0132\026.koinos.blo"
-  "ck_topology\022%\n\005heads\030\002 \003(\0132\026.koinos.bloc"
-  "k_topology\" \n\rgossip_status\022\017\n\007enabled\030\001"
-  " \001(\010\"\230\001\n\014event_parcel\022\026\n\010block_id\030\001 \001(\014B"
-  "\004\200\265\030\003\022\016\n\006height\030\002 \001(\004\022!\n\016transaction_id\030"
-  "\003 \001(\014B\004\200\265\030\004H\000\210\001\001\022*\n\005event\030\004 \001(\0132\033.koinos"
-  ".protocol.event_dataB\021\n\017_transaction_idB"
-  "8Z6github.com/koinos/koinos-proto-golang"
-  "/koinos/broadcastb\006proto3"
+  "used\030\004 \001(\004B\0020\001\"v\n\016block_accepted\022%\n\005bloc"
+  "k\030\001 \001(\0132\026.koinos.protocol.block\022/\n\007recei"
+  "pt\030\002 \001(\0132\036.koinos.protocol.block_receipt"
+  "\022\014\n\004live\030\003 \001(\010\">\n\022block_irreversible\022(\n\010"
+  "topology\030\001 \001(\0132\026.koinos.block_topology\"l"
+  "\n\nfork_heads\0227\n\027last_irreversible_block\030"
+  "\001 \001(\0132\026.koinos.block_topology\022%\n\005heads\030\002"
+  " \003(\0132\026.koinos.block_topology\" \n\rgossip_s"
+  "tatus\022\017\n\007enabled\030\001 \001(\010\"\230\001\n\014event_parcel\022"
+  "\026\n\010block_id\030\001 \001(\014B\004\200\265\030\003\022\016\n\006height\030\002 \001(\004\022"
+  "!\n\016transaction_id\030\003 \001(\014B\004\200\265\030\004H\000\210\001\001\022*\n\005ev"
+  "ent\030\004 \001(\0132\033.koinos.protocol.event_dataB\021"
+  "\n\017_transaction_idB8Z6github.com/koinos/k"
+  "oinos-proto-golang/koinos/broadcastb\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -256,7 +254,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto = {
-  false, false, 1065, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
+  false, false, 1043, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
   &descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once, descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps, 3, 8,
   schemas, file_default_instances, TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto::offsets,
   file_level_metadata_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_enum_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_service_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto,
@@ -801,16 +799,16 @@ mempool_accepted::mempool_accepted(const mempool_accepted& from)
     receipt_ = nullptr;
   }
   ::memcpy(&height_, &from.height_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rc_limit_) -
-    reinterpret_cast<char*>(&height_)) + sizeof(rc_limit_));
+    static_cast<size_t>(reinterpret_cast<char*>(&pending_rc_used_) -
+    reinterpret_cast<char*>(&height_)) + sizeof(pending_rc_used_));
   // @@protoc_insertion_point(copy_constructor:koinos.broadcast.mempool_accepted)
 }
 
 inline void mempool_accepted::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&transaction_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&rc_limit_) -
-    reinterpret_cast<char*>(&transaction_)) + sizeof(rc_limit_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&pending_rc_used_) -
+    reinterpret_cast<char*>(&transaction_)) + sizeof(pending_rc_used_));
 }
 
 mempool_accepted::~mempool_accepted() {
@@ -851,8 +849,8 @@ void mempool_accepted::Clear() {
   }
   receipt_ = nullptr;
   ::memset(&height_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rc_limit_) -
-      reinterpret_cast<char*>(&height_)) + sizeof(rc_limit_));
+      reinterpret_cast<char*>(&pending_rc_used_) -
+      reinterpret_cast<char*>(&height_)) + sizeof(pending_rc_used_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -887,13 +885,6 @@ const char* mempool_accepted::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           pending_rc_used_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint64 rc_limit = 5 [jstype = JS_STRING];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          rc_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -954,12 +945,6 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_pending_rc_used(), target);
   }
 
-  // uint64 rc_limit = 5 [jstype = JS_STRING];
-  if (this->_internal_rc_limit() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_rc_limit(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1004,13 +989,6 @@ size_t mempool_accepted::ByteSizeLong() const {
         this->_internal_pending_rc_used());
   }
 
-  // uint64 rc_limit = 5 [jstype = JS_STRING];
-  if (this->_internal_rc_limit() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_rc_limit());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1051,9 +1029,6 @@ void mempool_accepted::MergeFrom(const mempool_accepted& from) {
   if (from._internal_pending_rc_used() != 0) {
     _internal_set_pending_rc_used(from._internal_pending_rc_used());
   }
-  if (from._internal_rc_limit() != 0) {
-    _internal_set_rc_limit(from._internal_rc_limit());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1072,8 +1047,8 @@ void mempool_accepted::InternalSwap(mempool_accepted* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(mempool_accepted, rc_limit_)
-      + sizeof(mempool_accepted::rc_limit_)
+      PROTOBUF_FIELD_OFFSET(mempool_accepted, pending_rc_used_)
+      + sizeof(mempool_accepted::pending_rc_used_)
       - PROTOBUF_FIELD_OFFSET(mempool_accepted, transaction_)>(
           reinterpret_cast<char*>(&transaction_),
           reinterpret_cast<char*>(&other->transaction_));

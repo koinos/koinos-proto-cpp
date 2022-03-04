@@ -541,7 +541,6 @@ class mempool_accepted final :
     kReceiptFieldNumber = 2,
     kHeightFieldNumber = 3,
     kPendingRcUsedFieldNumber = 4,
-    kRcLimitFieldNumber = 5,
   };
   // .koinos.protocol.transaction transaction = 1;
   bool has_transaction() const;
@@ -597,15 +596,6 @@ class mempool_accepted final :
   void _internal_set_pending_rc_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 rc_limit = 5 [jstype = JS_STRING];
-  void clear_rc_limit();
-  ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit() const;
-  void set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_rc_limit() const;
-  void _internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.broadcast.mempool_accepted)
  private:
   class _Internal;
@@ -617,7 +607,6 @@ class mempool_accepted final :
   ::koinos::protocol::transaction_receipt* receipt_;
   ::PROTOBUF_NAMESPACE_ID::uint64 height_;
   ::PROTOBUF_NAMESPACE_ID::uint64 pending_rc_used_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
 };
@@ -1918,26 +1907,6 @@ inline void mempool_accepted::_internal_set_pending_rc_used(::PROTOBUF_NAMESPACE
 inline void mempool_accepted::set_pending_rc_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_pending_rc_used(value);
   // @@protoc_insertion_point(field_set:koinos.broadcast.mempool_accepted.pending_rc_used)
-}
-
-// uint64 rc_limit = 5 [jstype = JS_STRING];
-inline void mempool_accepted::clear_rc_limit() {
-  rc_limit_ = uint64_t{0u};
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 mempool_accepted::_internal_rc_limit() const {
-  return rc_limit_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 mempool_accepted::rc_limit() const {
-  // @@protoc_insertion_point(field_get:koinos.broadcast.mempool_accepted.rc_limit)
-  return _internal_rc_limit();
-}
-inline void mempool_accepted::_internal_set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  rc_limit_ = value;
-}
-inline void mempool_accepted::set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_rc_limit(value);
-  // @@protoc_insertion_point(field_set:koinos.broadcast.mempool_accepted.rc_limit)
 }
 
 // -------------------------------------------------------------------

@@ -184,7 +184,8 @@ struct transaction_receiptDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transaction_receiptDefaultTypeInternal _transaction_receipt_default_instance_;
 constexpr block_header::block_header(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : previous_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : approved_proposals_()
+  , previous_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , previous_state_merkle_root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , transaction_merkle_root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , signer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -356,6 +357,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fprotocol_2fprotocol_2
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_header, previous_state_merkle_root_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_header, transaction_merkle_root_),
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_header, signer_),
+  PROTOBUF_FIELD_OFFSET(::koinos::protocol::block_header, approved_proposals_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::protocol::block, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -393,8 +395,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 79, -1, sizeof(::koinos::protocol::transaction)},
   { 88, -1, sizeof(::koinos::protocol::transaction_receipt)},
   { 104, -1, sizeof(::koinos::protocol::block_header)},
-  { 115, -1, sizeof(::koinos::protocol::block)},
-  { 124, -1, sizeof(::koinos::protocol::block_receipt)},
+  { 116, -1, sizeof(::koinos::protocol::block)},
+  { 125, -1, sizeof(::koinos::protocol::block_receipt)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -459,31 +461,32 @@ const char descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto[] PROT
   "dth_used\030\007 \001(\004B\0020\001\022\"\n\026compute_bandwidth_"
   "used\030\010 \001(\004B\0020\001\022\020\n\010reverted\030\t \001(\010\022+\n\006even"
   "ts\030\n \003(\0132\033.koinos.protocol.event_data\022\014\n"
-  "\004logs\030\013 \003(\t\"\254\001\n\014block_header\022\026\n\010previous"
+  "\004logs\030\013 \003(\t\"\316\001\n\014block_header\022\026\n\010previous"
   "\030\001 \001(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\025\n\ttime"
   "stamp\030\003 \001(\004B\0020\001\022\"\n\032previous_state_merkle"
   "_root\030\004 \001(\014\022\037\n\027transaction_merkle_root\030\005"
-  " \001(\014\022\024\n\006signer\030\006 \001(\014B\004\200\265\030\006\"\217\001\n\005block\022\020\n\002"
-  "id\030\001 \001(\014B\004\200\265\030\003\022-\n\006header\030\002 \001(\0132\035.koinos."
-  "protocol.block_header\0222\n\014transactions\030\003 "
-  "\003(\0132\034.koinos.protocol.transaction\022\021\n\tsig"
-  "nature\030\004 \001(\014\"\266\002\n\rblock_receipt\022\020\n\002id\030\001 \001"
-  "(\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\035\n\021disk_sto"
-  "rage_used\030\003 \001(\004B\0020\001\022\"\n\026network_bandwidth"
-  "_used\030\004 \001(\004B\0020\001\022\"\n\026compute_bandwidth_use"
-  "d\030\005 \001(\004B\0020\001\022\031\n\021state_merkle_root\030\006 \001(\014\022+"
-  "\n\006events\030\007 \003(\0132\033.koinos.protocol.event_d"
-  "ata\022B\n\024transaction_receipts\030\010 \003(\0132$.koin"
-  "os.protocol.transaction_receipt\022\014\n\004logs\030"
-  "\t \003(\tB7Z5github.com/koinos/koinos-proto-"
-  "golang/koinos/protocolb\006proto3"
+  " \001(\014\022\024\n\006signer\030\006 \001(\014B\004\200\265\030\006\022 \n\022approved_p"
+  "roposals\030\007 \003(\014B\004\200\265\030\004\"\217\001\n\005block\022\020\n\002id\030\001 \001"
+  "(\014B\004\200\265\030\003\022-\n\006header\030\002 \001(\0132\035.koinos.protoc"
+  "ol.block_header\0222\n\014transactions\030\003 \003(\0132\034."
+  "koinos.protocol.transaction\022\021\n\tsignature"
+  "\030\004 \001(\014\"\266\002\n\rblock_receipt\022\020\n\002id\030\001 \001(\014B\004\200\265"
+  "\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\035\n\021disk_storage_u"
+  "sed\030\003 \001(\004B\0020\001\022\"\n\026network_bandwidth_used\030"
+  "\004 \001(\004B\0020\001\022\"\n\026compute_bandwidth_used\030\005 \001("
+  "\004B\0020\001\022\031\n\021state_merkle_root\030\006 \001(\014\022+\n\006even"
+  "ts\030\007 \003(\0132\033.koinos.protocol.event_data\022B\n"
+  "\024transaction_receipts\030\010 \003(\0132$.koinos.pro"
+  "tocol.transaction_receipt\022\014\n\004logs\030\t \003(\tB"
+  "7Z5github.com/koinos/koinos-proto-golang"
+  "/koinos/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fprotocol_2fprotocol_2eproto = {
-  false, false, 2470, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
+  false, false, 2504, descriptor_table_protodef_koinos_2fprotocol_2fprotocol_2eproto, "koinos/protocol/protocol.proto", 
   &descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_once, descriptor_table_koinos_2fprotocol_2fprotocol_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fprotocol_2fprotocol_2eproto::offsets,
   file_level_metadata_koinos_2fprotocol_2fprotocol_2eproto, file_level_enum_descriptors_koinos_2fprotocol_2fprotocol_2eproto, file_level_service_descriptors_koinos_2fprotocol_2fprotocol_2eproto,
@@ -3968,7 +3971,8 @@ class block_header::_Internal {
 
 block_header::block_header(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  approved_proposals_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -3976,7 +3980,8 @@ block_header::block_header(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.protocol.block_header)
 }
 block_header::block_header(const block_header& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      approved_proposals_(from.approved_proposals_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   previous_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_previous().empty()) {
@@ -4046,6 +4051,7 @@ void block_header::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  approved_proposals_.Clear();
   previous_.ClearToEmpty();
   previous_state_merkle_root_.ClearToEmpty();
   transaction_merkle_root_.ClearToEmpty();
@@ -4106,6 +4112,19 @@ const char* block_header::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           auto str = _internal_mutable_signer();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated bytes approved_proposals = 7 [(.koinos.btype) = TRANSACTION_ID];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_approved_proposals();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -4173,6 +4192,12 @@ failure:
         6, this->_internal_signer(), target);
   }
 
+  // repeated bytes approved_proposals = 7 [(.koinos.btype) = TRANSACTION_ID];
+  for (int i = 0, n = this->_internal_approved_proposals_size(); i < n; i++) {
+    const auto& s = this->_internal_approved_proposals(i);
+    target = stream->WriteBytes(7, s, target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4188,6 +4213,14 @@ size_t block_header::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated bytes approved_proposals = 7 [(.koinos.btype) = TRANSACTION_ID];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(approved_proposals_.size());
+  for (int i = 0, n = approved_proposals_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+      approved_proposals_.Get(i));
+  }
 
   // bytes previous = 1 [(.koinos.btype) = BLOCK_ID];
   if (!this->_internal_previous().empty()) {
@@ -4259,6 +4292,7 @@ void block_header::MergeFrom(const block_header& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  approved_proposals_.MergeFrom(from.approved_proposals_);
   if (!from._internal_previous().empty()) {
     _internal_set_previous(from._internal_previous());
   }
@@ -4294,6 +4328,7 @@ bool block_header::IsInitialized() const {
 void block_header::InternalSwap(block_header* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  approved_proposals_.InternalSwap(&other->approved_proposals_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &previous_, GetArenaForAllocation(),

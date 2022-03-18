@@ -2423,6 +2423,7 @@ class block_header final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kApprovedProposalsFieldNumber = 7,
     kPreviousFieldNumber = 1,
     kPreviousStateMerkleRootFieldNumber = 4,
     kTransactionMerkleRootFieldNumber = 5,
@@ -2430,6 +2431,30 @@ class block_header final :
     kHeightFieldNumber = 2,
     kTimestampFieldNumber = 3,
   };
+  // repeated bytes approved_proposals = 7 [(.koinos.btype) = TRANSACTION_ID];
+  int approved_proposals_size() const;
+  private:
+  int _internal_approved_proposals_size() const;
+  public:
+  void clear_approved_proposals();
+  const std::string& approved_proposals(int index) const;
+  std::string* mutable_approved_proposals(int index);
+  void set_approved_proposals(int index, const std::string& value);
+  void set_approved_proposals(int index, std::string&& value);
+  void set_approved_proposals(int index, const char* value);
+  void set_approved_proposals(int index, const void* value, size_t size);
+  std::string* add_approved_proposals();
+  void add_approved_proposals(const std::string& value);
+  void add_approved_proposals(std::string&& value);
+  void add_approved_proposals(const char* value);
+  void add_approved_proposals(const void* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& approved_proposals() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_approved_proposals();
+  private:
+  const std::string& _internal_approved_proposals(int index) const;
+  std::string* _internal_add_approved_proposals();
+  public:
+
   // bytes previous = 1 [(.koinos.btype) = BLOCK_ID];
   void clear_previous();
   const std::string& previous() const;
@@ -2511,6 +2536,7 @@ class block_header final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> approved_proposals_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr previous_state_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr transaction_merkle_root_;
@@ -5326,6 +5352,81 @@ inline void block_header::set_allocated_signer(std::string* signer) {
   signer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signer,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.protocol.block_header.signer)
+}
+
+// repeated bytes approved_proposals = 7 [(.koinos.btype) = TRANSACTION_ID];
+inline int block_header::_internal_approved_proposals_size() const {
+  return approved_proposals_.size();
+}
+inline int block_header::approved_proposals_size() const {
+  return _internal_approved_proposals_size();
+}
+inline void block_header::clear_approved_proposals() {
+  approved_proposals_.Clear();
+}
+inline std::string* block_header::add_approved_proposals() {
+  std::string* _s = _internal_add_approved_proposals();
+  // @@protoc_insertion_point(field_add_mutable:koinos.protocol.block_header.approved_proposals)
+  return _s;
+}
+inline const std::string& block_header::_internal_approved_proposals(int index) const {
+  return approved_proposals_.Get(index);
+}
+inline const std::string& block_header::approved_proposals(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_header.approved_proposals)
+  return _internal_approved_proposals(index);
+}
+inline std::string* block_header::mutable_approved_proposals(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.protocol.block_header.approved_proposals)
+  return approved_proposals_.Mutable(index);
+}
+inline void block_header::set_approved_proposals(int index, const std::string& value) {
+  approved_proposals_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_header.approved_proposals)
+}
+inline void block_header::set_approved_proposals(int index, std::string&& value) {
+  approved_proposals_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_header.approved_proposals)
+}
+inline void block_header::set_approved_proposals(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  approved_proposals_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.protocol.block_header.approved_proposals)
+}
+inline void block_header::set_approved_proposals(int index, const void* value, size_t size) {
+  approved_proposals_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.protocol.block_header.approved_proposals)
+}
+inline std::string* block_header::_internal_add_approved_proposals() {
+  return approved_proposals_.Add();
+}
+inline void block_header::add_approved_proposals(const std::string& value) {
+  approved_proposals_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.protocol.block_header.approved_proposals)
+}
+inline void block_header::add_approved_proposals(std::string&& value) {
+  approved_proposals_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.protocol.block_header.approved_proposals)
+}
+inline void block_header::add_approved_proposals(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  approved_proposals_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.protocol.block_header.approved_proposals)
+}
+inline void block_header::add_approved_proposals(const void* value, size_t size) {
+  approved_proposals_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.protocol.block_header.approved_proposals)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+block_header::approved_proposals() const {
+  // @@protoc_insertion_point(field_list:koinos.protocol.block_header.approved_proposals)
+  return approved_proposals_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+block_header::mutable_approved_proposals() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.protocol.block_header.approved_proposals)
+  return &approved_proposals_;
 }
 
 // -------------------------------------------------------------------

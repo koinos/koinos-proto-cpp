@@ -53,7 +53,7 @@ struct TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[89]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[91]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -329,6 +329,12 @@ extern verify_signature_argumentsDefaultTypeInternal _verify_signature_arguments
 class verify_signature_result;
 struct verify_signature_resultDefaultTypeInternal;
 extern verify_signature_resultDefaultTypeInternal _verify_signature_result_default_instance_;
+class verify_vrf_proof_arguments;
+struct verify_vrf_proof_argumentsDefaultTypeInternal;
+extern verify_vrf_proof_argumentsDefaultTypeInternal _verify_vrf_proof_arguments_default_instance_;
+class verify_vrf_proof_result;
+struct verify_vrf_proof_resultDefaultTypeInternal;
+extern verify_vrf_proof_resultDefaultTypeInternal _verify_vrf_proof_result_default_instance_;
 }  // namespace chain
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
@@ -421,34 +427,12 @@ template<> ::koinos::chain::verify_merkle_root_arguments* Arena::CreateMaybeMess
 template<> ::koinos::chain::verify_merkle_root_result* Arena::CreateMaybeMessage<::koinos::chain::verify_merkle_root_result>(Arena*);
 template<> ::koinos::chain::verify_signature_arguments* Arena::CreateMaybeMessage<::koinos::chain::verify_signature_arguments>(Arena*);
 template<> ::koinos::chain::verify_signature_result* Arena::CreateMaybeMessage<::koinos::chain::verify_signature_result>(Arena*);
+template<> ::koinos::chain::verify_vrf_proof_arguments* Arena::CreateMaybeMessage<::koinos::chain::verify_vrf_proof_arguments>(Arena*);
+template<> ::koinos::chain::verify_vrf_proof_result* Arena::CreateMaybeMessage<::koinos::chain::verify_vrf_proof_result>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace chain {
 
-enum dsa : int {
-  ecdsa_secp256k1 = 0,
-  dsa_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  dsa_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool dsa_IsValid(int value);
-constexpr dsa dsa_MIN = ecdsa_secp256k1;
-constexpr dsa dsa_MAX = ecdsa_secp256k1;
-constexpr int dsa_ARRAYSIZE = dsa_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor();
-template<typename T>
-inline const std::string& dsa_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, dsa>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function dsa_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    dsa_descriptor(), enum_t_value);
-}
-inline bool dsa_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, dsa* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<dsa>(
-    dsa_descriptor(), name, value);
-}
 enum system_authorization_type : int {
   set_system_contract = 0,
   set_system_call = 1,
@@ -10965,6 +10949,348 @@ class verify_signature_result final :
 };
 // -------------------------------------------------------------------
 
+class verify_vrf_proof_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.verify_vrf_proof_arguments) */ {
+ public:
+  inline verify_vrf_proof_arguments() : verify_vrf_proof_arguments(nullptr) {}
+  ~verify_vrf_proof_arguments() override;
+  explicit constexpr verify_vrf_proof_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  verify_vrf_proof_arguments(const verify_vrf_proof_arguments& from);
+  verify_vrf_proof_arguments(verify_vrf_proof_arguments&& from) noexcept
+    : verify_vrf_proof_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline verify_vrf_proof_arguments& operator=(const verify_vrf_proof_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline verify_vrf_proof_arguments& operator=(verify_vrf_proof_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const verify_vrf_proof_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const verify_vrf_proof_arguments* internal_default_instance() {
+    return reinterpret_cast<const verify_vrf_proof_arguments*>(
+               &_verify_vrf_proof_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    73;
+
+  friend void swap(verify_vrf_proof_arguments& a, verify_vrf_proof_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(verify_vrf_proof_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(verify_vrf_proof_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline verify_vrf_proof_arguments* New() const final {
+    return new verify_vrf_proof_arguments();
+  }
+
+  verify_vrf_proof_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<verify_vrf_proof_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const verify_vrf_proof_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const verify_vrf_proof_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(verify_vrf_proof_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.verify_vrf_proof_arguments";
+  }
+  protected:
+  explicit verify_vrf_proof_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPublicKeyFieldNumber = 2,
+    kProofFieldNumber = 3,
+    kHashFieldNumber = 4,
+    kMessageFieldNumber = 5,
+    kTypeFieldNumber = 1,
+  };
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
+  void clear_public_key();
+  const std::string& public_key() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_public_key(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_public_key();
+  PROTOBUF_MUST_USE_RESULT std::string* release_public_key();
+  void set_allocated_public_key(std::string* public_key);
+  private:
+  const std::string& _internal_public_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_public_key(const std::string& value);
+  std::string* _internal_mutable_public_key();
+  public:
+
+  // bytes proof = 3 [(.koinos.btype) = BASE64];
+  void clear_proof();
+  const std::string& proof() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_proof(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_proof();
+  PROTOBUF_MUST_USE_RESULT std::string* release_proof();
+  void set_allocated_proof(std::string* proof);
+  private:
+  const std::string& _internal_proof() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_proof(const std::string& value);
+  std::string* _internal_mutable_proof();
+  public:
+
+  // bytes hash = 4 [(.koinos.btype) = BASE64];
+  void clear_hash();
+  const std::string& hash() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_hash(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_hash();
+  PROTOBUF_MUST_USE_RESULT std::string* release_hash();
+  void set_allocated_hash(std::string* hash);
+  private:
+  const std::string& _internal_hash() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_hash(const std::string& value);
+  std::string* _internal_mutable_hash();
+  public:
+
+  // bytes message = 5 [(.koinos.btype) = BASE64];
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // .koinos.chain.dsa type = 1;
+  void clear_type();
+  ::koinos::chain::dsa type() const;
+  void set_type(::koinos::chain::dsa value);
+  private:
+  ::koinos::chain::dsa _internal_type() const;
+  void _internal_set_type(::koinos::chain::dsa value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.verify_vrf_proof_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr public_key_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr proof_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hash_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  int type_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
+};
+// -------------------------------------------------------------------
+
+class verify_vrf_proof_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.verify_vrf_proof_result) */ {
+ public:
+  inline verify_vrf_proof_result() : verify_vrf_proof_result(nullptr) {}
+  ~verify_vrf_proof_result() override;
+  explicit constexpr verify_vrf_proof_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  verify_vrf_proof_result(const verify_vrf_proof_result& from);
+  verify_vrf_proof_result(verify_vrf_proof_result&& from) noexcept
+    : verify_vrf_proof_result() {
+    *this = ::std::move(from);
+  }
+
+  inline verify_vrf_proof_result& operator=(const verify_vrf_proof_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline verify_vrf_proof_result& operator=(verify_vrf_proof_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const verify_vrf_proof_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const verify_vrf_proof_result* internal_default_instance() {
+    return reinterpret_cast<const verify_vrf_proof_result*>(
+               &_verify_vrf_proof_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    74;
+
+  friend void swap(verify_vrf_proof_result& a, verify_vrf_proof_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(verify_vrf_proof_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(verify_vrf_proof_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline verify_vrf_proof_result* New() const final {
+    return new verify_vrf_proof_result();
+  }
+
+  verify_vrf_proof_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<verify_vrf_proof_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const verify_vrf_proof_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const verify_vrf_proof_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(verify_vrf_proof_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.verify_vrf_proof_result";
+  }
+  protected:
+  explicit verify_vrf_proof_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // bool value = 1;
+  void clear_value();
+  bool value() const;
+  void set_value(bool value);
+  private:
+  bool _internal_value() const;
+  void _internal_set_value(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.verify_vrf_proof_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  bool value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
+};
+// -------------------------------------------------------------------
+
 class call_contract_arguments final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.call_contract_arguments) */ {
  public:
@@ -11009,7 +11335,7 @@ class call_contract_arguments final :
                &_call_contract_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(call_contract_arguments& a, call_contract_arguments& b) {
     a.Swap(&b);
@@ -11180,7 +11506,7 @@ class call_contract_result final :
                &_call_contract_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(call_contract_result& a, call_contract_result& b) {
     a.Swap(&b);
@@ -11324,7 +11650,7 @@ class get_entry_point_arguments final :
                &_get_entry_point_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(get_entry_point_arguments& a, get_entry_point_arguments& b) {
     a.Swap(&b);
@@ -11450,7 +11776,7 @@ class get_entry_point_result final :
                &_get_entry_point_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(get_entry_point_result& a, get_entry_point_result& b) {
     a.Swap(&b);
@@ -11589,7 +11915,7 @@ class get_contract_arguments_arguments final :
                &_get_contract_arguments_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(get_contract_arguments_arguments& a, get_contract_arguments_arguments& b) {
     a.Swap(&b);
@@ -11715,7 +12041,7 @@ class get_contract_arguments_result final :
                &_get_contract_arguments_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(get_contract_arguments_result& a, get_contract_arguments_result& b) {
     a.Swap(&b);
@@ -11859,7 +12185,7 @@ class set_contract_result_arguments final :
                &_set_contract_result_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(set_contract_result_arguments& a, set_contract_result_arguments& b) {
     a.Swap(&b);
@@ -12003,7 +12329,7 @@ class set_contract_result_result final :
                &_set_contract_result_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(set_contract_result_result& a, set_contract_result_result& b) {
     a.Swap(&b);
@@ -12129,7 +12455,7 @@ class exit_contract_arguments final :
                &_exit_contract_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(exit_contract_arguments& a, exit_contract_arguments& b) {
     a.Swap(&b);
@@ -12268,7 +12594,7 @@ class exit_contract_result final :
                &_exit_contract_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(exit_contract_result& a, exit_contract_result& b) {
     a.Swap(&b);
@@ -12394,7 +12720,7 @@ class get_contract_id_arguments final :
                &_get_contract_id_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(get_contract_id_arguments& a, get_contract_id_arguments& b) {
     a.Swap(&b);
@@ -12520,7 +12846,7 @@ class get_contract_id_result final :
                &_get_contract_id_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(get_contract_id_result& a, get_contract_id_result& b) {
     a.Swap(&b);
@@ -12664,7 +12990,7 @@ class get_caller_arguments final :
                &_get_caller_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(get_caller_arguments& a, get_caller_arguments& b) {
     a.Swap(&b);
@@ -12790,7 +13116,7 @@ class get_caller_result final :
                &_get_caller_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(get_caller_result& a, get_caller_result& b) {
     a.Swap(&b);
@@ -12938,7 +13264,7 @@ class require_authority_arguments final :
                &_require_authority_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(require_authority_arguments& a, require_authority_arguments& b) {
     a.Swap(&b);
@@ -13093,7 +13419,7 @@ class require_authority_result final :
                &_require_authority_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(require_authority_result& a, require_authority_result& b) {
     a.Swap(&b);
@@ -17294,6 +17620,238 @@ inline void verify_signature_result::set_value(bool value) {
 
 // -------------------------------------------------------------------
 
+// verify_vrf_proof_arguments
+
+// .koinos.chain.dsa type = 1;
+inline void verify_vrf_proof_arguments::clear_type() {
+  type_ = 0;
+}
+inline ::koinos::chain::dsa verify_vrf_proof_arguments::_internal_type() const {
+  return static_cast< ::koinos::chain::dsa >(type_);
+}
+inline ::koinos::chain::dsa verify_vrf_proof_arguments::type() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_vrf_proof_arguments.type)
+  return _internal_type();
+}
+inline void verify_vrf_proof_arguments::_internal_set_type(::koinos::chain::dsa value) {
+  
+  type_ = value;
+}
+inline void verify_vrf_proof_arguments::set_type(::koinos::chain::dsa value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_vrf_proof_arguments.type)
+}
+
+// bytes public_key = 2 [(.koinos.btype) = BASE64];
+inline void verify_vrf_proof_arguments::clear_public_key() {
+  public_key_.ClearToEmpty();
+}
+inline const std::string& verify_vrf_proof_arguments::public_key() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_vrf_proof_arguments.public_key)
+  return _internal_public_key();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void verify_vrf_proof_arguments::set_public_key(ArgT0&& arg0, ArgT... args) {
+ 
+ public_key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_vrf_proof_arguments.public_key)
+}
+inline std::string* verify_vrf_proof_arguments::mutable_public_key() {
+  std::string* _s = _internal_mutable_public_key();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_vrf_proof_arguments.public_key)
+  return _s;
+}
+inline const std::string& verify_vrf_proof_arguments::_internal_public_key() const {
+  return public_key_.Get();
+}
+inline void verify_vrf_proof_arguments::_internal_set_public_key(const std::string& value) {
+  
+  public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::_internal_mutable_public_key() {
+  
+  return public_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::release_public_key() {
+  // @@protoc_insertion_point(field_release:koinos.chain.verify_vrf_proof_arguments.public_key)
+  return public_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void verify_vrf_proof_arguments::set_allocated_public_key(std::string* public_key) {
+  if (public_key != nullptr) {
+    
+  } else {
+    
+  }
+  public_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), public_key,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_vrf_proof_arguments.public_key)
+}
+
+// bytes proof = 3 [(.koinos.btype) = BASE64];
+inline void verify_vrf_proof_arguments::clear_proof() {
+  proof_.ClearToEmpty();
+}
+inline const std::string& verify_vrf_proof_arguments::proof() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_vrf_proof_arguments.proof)
+  return _internal_proof();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void verify_vrf_proof_arguments::set_proof(ArgT0&& arg0, ArgT... args) {
+ 
+ proof_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_vrf_proof_arguments.proof)
+}
+inline std::string* verify_vrf_proof_arguments::mutable_proof() {
+  std::string* _s = _internal_mutable_proof();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_vrf_proof_arguments.proof)
+  return _s;
+}
+inline const std::string& verify_vrf_proof_arguments::_internal_proof() const {
+  return proof_.Get();
+}
+inline void verify_vrf_proof_arguments::_internal_set_proof(const std::string& value) {
+  
+  proof_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::_internal_mutable_proof() {
+  
+  return proof_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::release_proof() {
+  // @@protoc_insertion_point(field_release:koinos.chain.verify_vrf_proof_arguments.proof)
+  return proof_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void verify_vrf_proof_arguments::set_allocated_proof(std::string* proof) {
+  if (proof != nullptr) {
+    
+  } else {
+    
+  }
+  proof_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), proof,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_vrf_proof_arguments.proof)
+}
+
+// bytes hash = 4 [(.koinos.btype) = BASE64];
+inline void verify_vrf_proof_arguments::clear_hash() {
+  hash_.ClearToEmpty();
+}
+inline const std::string& verify_vrf_proof_arguments::hash() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_vrf_proof_arguments.hash)
+  return _internal_hash();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void verify_vrf_proof_arguments::set_hash(ArgT0&& arg0, ArgT... args) {
+ 
+ hash_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_vrf_proof_arguments.hash)
+}
+inline std::string* verify_vrf_proof_arguments::mutable_hash() {
+  std::string* _s = _internal_mutable_hash();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_vrf_proof_arguments.hash)
+  return _s;
+}
+inline const std::string& verify_vrf_proof_arguments::_internal_hash() const {
+  return hash_.Get();
+}
+inline void verify_vrf_proof_arguments::_internal_set_hash(const std::string& value) {
+  
+  hash_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::_internal_mutable_hash() {
+  
+  return hash_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::release_hash() {
+  // @@protoc_insertion_point(field_release:koinos.chain.verify_vrf_proof_arguments.hash)
+  return hash_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void verify_vrf_proof_arguments::set_allocated_hash(std::string* hash) {
+  if (hash != nullptr) {
+    
+  } else {
+    
+  }
+  hash_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hash,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_vrf_proof_arguments.hash)
+}
+
+// bytes message = 5 [(.koinos.btype) = BASE64];
+inline void verify_vrf_proof_arguments::clear_message() {
+  message_.ClearToEmpty();
+}
+inline const std::string& verify_vrf_proof_arguments::message() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_vrf_proof_arguments.message)
+  return _internal_message();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void verify_vrf_proof_arguments::set_message(ArgT0&& arg0, ArgT... args) {
+ 
+ message_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_vrf_proof_arguments.message)
+}
+inline std::string* verify_vrf_proof_arguments::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.verify_vrf_proof_arguments.message)
+  return _s;
+}
+inline const std::string& verify_vrf_proof_arguments::_internal_message() const {
+  return message_.Get();
+}
+inline void verify_vrf_proof_arguments::_internal_set_message(const std::string& value) {
+  
+  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::_internal_mutable_message() {
+  
+  return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* verify_vrf_proof_arguments::release_message() {
+  // @@protoc_insertion_point(field_release:koinos.chain.verify_vrf_proof_arguments.message)
+  return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void verify_vrf_proof_arguments::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
+    
+  } else {
+    
+  }
+  message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_vrf_proof_arguments.message)
+}
+
+// -------------------------------------------------------------------
+
+// verify_vrf_proof_result
+
+// bool value = 1;
+inline void verify_vrf_proof_result::clear_value() {
+  value_ = false;
+}
+inline bool verify_vrf_proof_result::_internal_value() const {
+  return value_;
+}
+inline bool verify_vrf_proof_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_vrf_proof_result.value)
+  return _internal_value();
+}
+inline void verify_vrf_proof_result::_internal_set_value(bool value) {
+  
+  value_ = value;
+}
+inline void verify_vrf_proof_result::set_value(bool value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_vrf_proof_result.value)
+}
+
+// -------------------------------------------------------------------
+
 // call_contract_arguments
 
 // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
@@ -18023,6 +18581,10 @@ inline void require_authority_arguments::set_allocated_account(std::string* acco
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -18031,11 +18593,6 @@ inline void require_authority_arguments::set_allocated_account(std::string* acco
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::koinos::chain::dsa> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::dsa>() {
-  return ::koinos::chain::dsa_descriptor();
-}
 template <> struct is_proto_enum< ::koinos::chain::system_authorization_type> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::system_authorization_type>() {

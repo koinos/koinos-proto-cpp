@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"koinos/chain/system_call_ids.proto\022\014ko"
-  "inos.chain*\276\010\n\016system_call_id\022\017\n\013reserve"
+  "inos.chain*\325\010\n\016system_call_id\022\017\n\013reserve"
   "d_id\020\000\022\021\n\rget_head_info\020\001\022\017\n\013apply_block"
   "\020\002\022\025\n\021apply_transaction\020\003\022#\n\037apply_uploa"
   "d_contract_operation\020\004\022!\n\035apply_call_con"
@@ -51,17 +51,17 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eprot
   "rev_object\020\261\002\022\010\n\003log\020\221\003\022\n\n\005event\020\222\003\022\t\n\004h"
   "ash\020\365\003\022\027\n\022recover_public_key\020\366\003\022\027\n\022verif"
   "y_merkle_root\020\367\003\022\025\n\020verify_signature\020\370\003\022"
-  "\022\n\rcall_contract\020\331\004\022\024\n\017get_entry_point\020\332"
-  "\004\022\033\n\026get_contract_arguments\020\333\004\022\030\n\023set_co"
-  "ntract_result\020\334\004\022\022\n\rexit_contract\020\335\004\022\024\n\017"
-  "get_contract_id\020\336\004\022\017\n\nget_caller\020\337\004\022\026\n\021r"
-  "equire_authority\020\340\004B4Z2github.com/koinos"
-  "/koinos-proto-golang/koinos/chainb\006proto"
-  "3"
+  "\025\n\020verify_vrf_proof\020\371\003\022\022\n\rcall_contract\020"
+  "\331\004\022\024\n\017get_entry_point\020\332\004\022\033\n\026get_contract"
+  "_arguments\020\333\004\022\030\n\023set_contract_result\020\334\004\022"
+  "\022\n\rexit_contract\020\335\004\022\024\n\017get_contract_id\020\336"
+  "\004\022\017\n\nget_caller\020\337\004\022\026\n\021require_authority\020"
+  "\340\004B4Z2github.com/koinos/koinos-proto-gol"
+  "ang/koinos/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 1201, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
+  false, false, 1224, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto,
@@ -117,6 +117,7 @@ bool system_call_id_IsValid(int value) {
     case 502:
     case 503:
     case 504:
+    case 505:
     case 601:
     case 602:
     case 603:

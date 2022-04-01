@@ -172,7 +172,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT genesis_dataDefaultTypeInternal
 }  // namespace chain
 }  // namespace koinos
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fchain_2fchain_2eproto[11];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto[1];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fchain_2fchain_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -321,8 +321,9 @@ const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_S
   "\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n\014genesis_data\022,\n"
   "\007entries\030\001 \003(\0132\033.koinos.chain.genesis_en"
   "try*+\n\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuse"
-  "r_mode\020\001B4Z2github.com/koinos/koinos-pro"
-  "to-golang/koinos/chainb\006proto3"
+  "r_mode\020\001*\032\n\003dsa\022\023\n\017ecdsa_secp256k1\020\000B4Z2"
+  "github.com/koinos/koinos-proto-golang/ko"
+  "inos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -331,7 +332,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 1310, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  false, false, 1338, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 3, 11,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
@@ -352,6 +353,19 @@ bool privilege_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_koinos_2fchain_2fchain_2eproto);
+  return file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto[1];
+}
+bool dsa_IsValid(int value) {
+  switch (value) {
+    case 0:
       return true;
     default:
       return false;

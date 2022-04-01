@@ -135,6 +135,30 @@ inline bool privilege_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<privilege>(
     privilege_descriptor(), name, value);
 }
+enum dsa : int {
+  ecdsa_secp256k1 = 0,
+  dsa_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  dsa_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool dsa_IsValid(int value);
+constexpr dsa dsa_MIN = ecdsa_secp256k1;
+constexpr dsa dsa_MAX = ecdsa_secp256k1;
+constexpr int dsa_ARRAYSIZE = dsa_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* dsa_descriptor();
+template<typename T>
+inline const std::string& dsa_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, dsa>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function dsa_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    dsa_descriptor(), enum_t_value);
+}
+inline bool dsa_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, dsa* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<dsa>(
+    dsa_descriptor(), name, value);
+}
 // ===================================================================
 
 class object_space final :
@@ -3036,6 +3060,11 @@ template <> struct is_proto_enum< ::koinos::chain::privilege> : ::std::true_type
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::privilege>() {
   return ::koinos::chain::privilege_descriptor();
+}
+template <> struct is_proto_enum< ::koinos::chain::dsa> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::dsa>() {
+  return ::koinos::chain::dsa_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

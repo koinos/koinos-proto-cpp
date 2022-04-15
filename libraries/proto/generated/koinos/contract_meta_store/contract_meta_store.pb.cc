@@ -55,20 +55,14 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n4koinos/contract_meta_store/contract_me"
   "ta_store.proto\022\032koinos.contract_meta_sto"
-  "re\032\024koinos/options.proto\032\036koinos/protoco"
-  "l/protocol.proto\"!\n\022contract_meta_item\022\013"
-  "\n\003abi\030\001 \001(\tBBZ@github.com/koinos/koinos-"
-  "proto-golang/koinos/contract_meta_storeb"
-  "\006proto3"
+  "re\"!\n\022contract_meta_item\022\013\n\003abi\030\001 \001(\tBBZ"
+  "@github.com/koinos/koinos-proto-golang/k"
+  "oinos/contract_meta_storeb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_deps[2] = {
-  &::descriptor_table_koinos_2foptions_2eproto,
-  &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto = {
-  false, false, 247, descriptor_table_protodef_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, "koinos/contract_meta_store/contract_meta_store.proto", 
-  &descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_once, descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_deps, 2, 1,
+  false, false, 193, descriptor_table_protodef_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, "koinos/contract_meta_store/contract_meta_store.proto", 
+  &descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto::offsets,
   file_level_metadata_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, file_level_enum_descriptors_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, file_level_service_descriptors_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto,
 };

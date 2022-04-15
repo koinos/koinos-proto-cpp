@@ -33,8 +33,6 @@
 #include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/options.pb.h"
-#include "koinos/common.pb.h"
-#include "koinos/protocol/protocol.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_koinos_2fchain_2fauthority_2eproto

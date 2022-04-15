@@ -119,29 +119,27 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034koinos/rpc/p2p/p2p_rpc.proto\022\016koinos.r"
-  "pc.p2p\032\024koinos/options.proto\032\024koinos/rpc"
-  "/rpc.proto\"\033\n\031get_gossip_status_request\""
-  "-\n\032get_gossip_status_response\022\017\n\007enabled"
-  "\030\001 \001(\010\"\216\001\n\013p2p_request\022,\n\010reserved\030\001 \001(\013"
-  "2\030.koinos.rpc.reserved_rpcH\000\022F\n\021get_goss"
-  "ip_status\030\002 \001(\0132).koinos.rpc.p2p.get_gos"
-  "sip_status_requestH\000B\t\n\007request\"\276\001\n\014p2p_"
-  "response\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc."
-  "reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.r"
-  "pc.error_responseH\000\022G\n\021get_gossip_status"
-  "\030\003 \001(\0132*.koinos.rpc.p2p.get_gossip_statu"
-  "s_responseH\000B\n\n\010responseB6Z4github.com/k"
-  "oinos/koinos-proto-golang/koinos/rpc/p2p"
-  "b\006proto3"
+  "pc.p2p\032\024koinos/rpc/rpc.proto\"\033\n\031get_goss"
+  "ip_status_request\"-\n\032get_gossip_status_r"
+  "esponse\022\017\n\007enabled\030\001 \001(\010\"\216\001\n\013p2p_request"
+  "\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved"
+  "_rpcH\000\022F\n\021get_gossip_status\030\002 \001(\0132).koin"
+  "os.rpc.p2p.get_gossip_status_requestH\000B\t"
+  "\n\007request\"\276\001\n\014p2p_response\022,\n\010reserved\030\001"
+  " \001(\0132\030.koinos.rpc.reserved_rpcH\000\022+\n\005erro"
+  "r\030\002 \001(\0132\032.koinos.rpc.error_responseH\000\022G\n"
+  "\021get_gossip_status\030\003 \001(\0132*.koinos.rpc.p2"
+  "p.get_gossip_status_responseH\000B\n\n\010respon"
+  "seB6Z4github.com/koinos/koinos-proto-gol"
+  "ang/koinos/rpc/p2pb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_deps[2] = {
-  &::descriptor_table_koinos_2foptions_2eproto,
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_deps[1] = {
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto = {
-  false, false, 568, descriptor_table_protodef_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto, "koinos/rpc/p2p/p2p_rpc.proto", 
-  &descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_deps, 2, 4,
+  false, false, 546, descriptor_table_protodef_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto, "koinos/rpc/p2p/p2p_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fp2p_2fp2p_5frpc_2eproto,
 };

@@ -292,48 +292,46 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/chain.proto\022\014koinos.chain"
   "\032\024koinos/options.proto\032\023koinos/common.pr"
-  "oto\032\036koinos/protocol/protocol.proto\"8\n\014o"
-  "bject_space\022\016\n\006system\030\001 \001(\010\022\014\n\004zone\030\002 \001("
-  "\014\022\n\n\002id\030\003 \001(\r\"F\n\014database_key\022)\n\005space\030\001"
-  " \001(\0132\032.koinos.chain.object_space\022\013\n\003key\030"
-  "\002 \001(\014\"*\n\025max_account_resources\022\021\n\005value\030"
-  "\001 \001(\004B\0020\001\"|\n\thead_info\022-\n\rhead_topology\030"
-  "\001 \001(\0132\026.koinos.block_topology\022\033\n\017head_bl"
-  "ock_time\030\002 \001(\004B\0020\001\022#\n\027last_irreversible_"
-  "block\030\003 \001(\004B\0020\001\"V\n\013caller_data\022\024\n\006caller"
-  "\030\001 \001(\014B\004\200\265\030\006\0221\n\020caller_privilege\030\002 \001(\0162\027"
-  ".koinos.chain.privilege\"\346\001\n\023resource_lim"
-  "it_data\022\036\n\022disk_storage_limit\030\001 \001(\004B\0020\001\022"
-  "\035\n\021disk_storage_cost\030\002 \001(\004B\0020\001\022#\n\027networ"
-  "k_bandwidth_limit\030\003 \001(\004B\0020\001\022\"\n\026network_b"
-  "andwidth_cost\030\004 \001(\004B\0020\001\022#\n\027compute_bandw"
-  "idth_limit\030\005 \001(\004B\0020\001\022\"\n\026compute_bandwidt"
-  "h_cost\030\006 \001(\004B\0020\001\"\252\001\n\030contract_metadata_o"
-  "bject\022\014\n\004hash\030\001 \001(\014\022\016\n\006system\030\002 \001(\010\022 \n\030a"
-  "uthorizes_call_contract\030\003 \001(\010\022*\n\"authori"
-  "zes_transaction_application\030\004 \001(\010\022\"\n\032aut"
-  "horizes_upload_contract\030\005 \001(\010\"8\n\027compute"
-  "_bandwidth_entry\022\014\n\004name\030\001 \001(\t\022\017\n\007comput"
-  "e\030\002 \001(\004\"T\n\032compute_bandwidth_registry\0226\n"
-  "\007entries\030\001 \003(\0132%.koinos.chain.compute_ba"
-  "ndwidth_entry\"V\n\rgenesis_entry\022)\n\005space\030"
-  "\001 \001(\0132\032.koinos.chain.object_space\022\013\n\003key"
-  "\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n\014genesis_data\022,\n"
-  "\007entries\030\001 \003(\0132\033.koinos.chain.genesis_en"
-  "try*+\n\tprivilege\022\017\n\013kernel_mode\020\000\022\r\n\tuse"
-  "r_mode\020\001*\032\n\003dsa\022\023\n\017ecdsa_secp256k1\020\000B4Z2"
-  "github.com/koinos/koinos-proto-golang/ko"
-  "inos/chainb\006proto3"
+  "oto\"8\n\014object_space\022\016\n\006system\030\001 \001(\010\022\014\n\004z"
+  "one\030\002 \001(\014\022\n\n\002id\030\003 \001(\r\"F\n\014database_key\022)\n"
+  "\005space\030\001 \001(\0132\032.koinos.chain.object_space"
+  "\022\013\n\003key\030\002 \001(\014\"*\n\025max_account_resources\022\021"
+  "\n\005value\030\001 \001(\004B\0020\001\"|\n\thead_info\022-\n\rhead_t"
+  "opology\030\001 \001(\0132\026.koinos.block_topology\022\033\n"
+  "\017head_block_time\030\002 \001(\004B\0020\001\022#\n\027last_irrev"
+  "ersible_block\030\003 \001(\004B\0020\001\"V\n\013caller_data\022\024"
+  "\n\006caller\030\001 \001(\014B\004\200\265\030\006\0221\n\020caller_privilege"
+  "\030\002 \001(\0162\027.koinos.chain.privilege\"\346\001\n\023reso"
+  "urce_limit_data\022\036\n\022disk_storage_limit\030\001 "
+  "\001(\004B\0020\001\022\035\n\021disk_storage_cost\030\002 \001(\004B\0020\001\022#"
+  "\n\027network_bandwidth_limit\030\003 \001(\004B\0020\001\022\"\n\026n"
+  "etwork_bandwidth_cost\030\004 \001(\004B\0020\001\022#\n\027compu"
+  "te_bandwidth_limit\030\005 \001(\004B\0020\001\022\"\n\026compute_"
+  "bandwidth_cost\030\006 \001(\004B\0020\001\"\252\001\n\030contract_me"
+  "tadata_object\022\014\n\004hash\030\001 \001(\014\022\016\n\006system\030\002 "
+  "\001(\010\022 \n\030authorizes_call_contract\030\003 \001(\010\022*\n"
+  "\"authorizes_transaction_application\030\004 \001("
+  "\010\022\"\n\032authorizes_upload_contract\030\005 \001(\010\"8\n"
+  "\027compute_bandwidth_entry\022\014\n\004name\030\001 \001(\t\022\017"
+  "\n\007compute\030\002 \001(\004\"T\n\032compute_bandwidth_reg"
+  "istry\0226\n\007entries\030\001 \003(\0132%.koinos.chain.co"
+  "mpute_bandwidth_entry\"V\n\rgenesis_entry\022)"
+  "\n\005space\030\001 \001(\0132\032.koinos.chain.object_spac"
+  "e\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n\014genesis"
+  "_data\022,\n\007entries\030\001 \003(\0132\033.koinos.chain.ge"
+  "nesis_entry*+\n\tprivilege\022\017\n\013kernel_mode\020"
+  "\000\022\r\n\tuser_mode\020\001*\032\n\003dsa\022\023\n\017ecdsa_secp256"
+  "k1\020\000B4Z2github.com/koinos/koinos-proto-g"
+  "olang/koinos/chainb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[3] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
   &::descriptor_table_koinos_2foptions_2eproto,
-  &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 1338, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
-  &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 3, 11,
+  false, false, 1306, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 2, 11,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
 };

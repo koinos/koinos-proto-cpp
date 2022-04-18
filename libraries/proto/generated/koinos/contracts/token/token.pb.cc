@@ -186,6 +186,31 @@ struct mint_resultDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT mint_resultDefaultTypeInternal _mint_result_default_instance_;
+constexpr burn_arguments::burn_arguments(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : from_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(uint64_t{0u}){}
+struct burn_argumentsDefaultTypeInternal {
+  constexpr burn_argumentsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~burn_argumentsDefaultTypeInternal() {}
+  union {
+    burn_arguments _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT burn_argumentsDefaultTypeInternal _burn_arguments_default_instance_;
+constexpr burn_result::burn_result(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : value_(false){}
+struct burn_resultDefaultTypeInternal {
+  constexpr burn_resultDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~burn_resultDefaultTypeInternal() {}
+  union {
+    burn_result _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT burn_resultDefaultTypeInternal _burn_result_default_instance_;
 constexpr balance_object::balance_object(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : value_(uint64_t{0u}){}
@@ -212,6 +237,19 @@ struct mana_balance_objectDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT mana_balance_objectDefaultTypeInternal _mana_balance_object_default_instance_;
+constexpr burn_event::burn_event(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : from_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , value_(uint64_t{0u}){}
+struct burn_eventDefaultTypeInternal {
+  constexpr burn_eventDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~burn_eventDefaultTypeInternal() {}
+  union {
+    burn_event _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT burn_eventDefaultTypeInternal _burn_event_default_instance_;
 constexpr mint_event::mint_event(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : to_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -242,7 +280,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transfer_eventDefaultTypeIntern
 }  // namespace token
 }  // namespace contracts
 }  // namespace koinos
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[18];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[21];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto = nullptr;
 
@@ -331,6 +369,19 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2ftoken_2ft
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::mint_result, value_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_arguments, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_arguments, from_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_arguments, value_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_result, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_result, value_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::balance_object, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -344,6 +395,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2ftoken_2ft
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::mana_balance_object, balance_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::mana_balance_object, mana_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::mana_balance_object, last_mana_update_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_event, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_event, from_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::burn_event, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::token::mint_event, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -375,10 +433,13 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 64, -1, sizeof(::koinos::contracts::token::transfer_result)},
   { 70, -1, sizeof(::koinos::contracts::token::mint_arguments)},
   { 77, -1, sizeof(::koinos::contracts::token::mint_result)},
-  { 83, -1, sizeof(::koinos::contracts::token::balance_object)},
-  { 89, -1, sizeof(::koinos::contracts::token::mana_balance_object)},
-  { 97, -1, sizeof(::koinos::contracts::token::mint_event)},
-  { 104, -1, sizeof(::koinos::contracts::token::transfer_event)},
+  { 83, -1, sizeof(::koinos::contracts::token::burn_arguments)},
+  { 90, -1, sizeof(::koinos::contracts::token::burn_result)},
+  { 96, -1, sizeof(::koinos::contracts::token::balance_object)},
+  { 102, -1, sizeof(::koinos::contracts::token::mana_balance_object)},
+  { 110, -1, sizeof(::koinos::contracts::token::burn_event)},
+  { 117, -1, sizeof(::koinos::contracts::token::mint_event)},
+  { 124, -1, sizeof(::koinos::contracts::token::transfer_event)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -396,8 +457,11 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_transfer_result_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_mint_arguments_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_mint_result_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_burn_arguments_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_burn_result_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_balance_object_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_mana_balance_object_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_burn_event_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_mint_event_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::token::_transfer_event_default_instance_),
 };
@@ -417,23 +481,27 @@ const char descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto[
   "\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\" \n\017transf"
   "er_result\022\r\n\005value\030\001 \001(\010\"5\n\016mint_argumen"
   "ts\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\""
-  "\034\n\013mint_result\022\r\n\005value\030\001 \001(\010\"#\n\016balance"
-  "_object\022\021\n\005value\030\001 \001(\004B\0020\001\"Z\n\023mana_balan"
-  "ce_object\022\023\n\007balance\030\001 \001(\004B\0020\001\022\020\n\004mana\030\002"
-  " \001(\004B\0020\001\022\034\n\020last_mana_update\030\003 \001(\004B\0020\001\"1"
-  "\n\nmint_event\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030"
-  "\002 \001(\004B\0020\001\"I\n\016transfer_event\022\022\n\004from\030\001 \001("
-  "\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004"
-  "B\0020\001B>Z<github.com/koinos/koinos-proto-g"
-  "olang/koinos/contracts/tokenb\006proto3"
+  "\034\n\013mint_result\022\r\n\005value\030\001 \001(\010\"7\n\016burn_ar"
+  "guments\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001"
+  "(\004B\0020\001\"\034\n\013burn_result\022\r\n\005value\030\001 \001(\010\"#\n\016"
+  "balance_object\022\021\n\005value\030\001 \001(\004B\0020\001\"Z\n\023man"
+  "a_balance_object\022\023\n\007balance\030\001 \001(\004B\0020\001\022\020\n"
+  "\004mana\030\002 \001(\004B\0020\001\022\034\n\020last_mana_update\030\003 \001("
+  "\004B\0020\001\"3\n\nburn_event\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022"
+  "\021\n\005value\030\002 \001(\004B\0020\001\"1\n\nmint_event\022\020\n\002to\030\001"
+  " \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"I\n\016transfe"
+  "r_event\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B"
+  "\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001B>Z<github.com/k"
+  "oinos/koinos-proto-golang/koinos/contrac"
+  "ts/tokenb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto = {
-  false, false, 916, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
-  &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once, descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps, 1, 18,
+  false, false, 1056, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
+  &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once, descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps, 1, 21,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_service_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto,
 };
@@ -3058,6 +3126,411 @@ void mint_result::InternalSwap(mint_result* other) {
 
 // ===================================================================
 
+class burn_arguments::_Internal {
+ public:
+};
+
+burn_arguments::burn_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.contracts.token.burn_arguments)
+}
+burn_arguments::burn_arguments(const burn_arguments& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_from().empty()) {
+    from_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_from(), 
+      GetArenaForAllocation());
+  }
+  value_ = from.value_;
+  // @@protoc_insertion_point(copy_constructor:koinos.contracts.token.burn_arguments)
+}
+
+inline void burn_arguments::SharedCtor() {
+from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_ = uint64_t{0u};
+}
+
+burn_arguments::~burn_arguments() {
+  // @@protoc_insertion_point(destructor:koinos.contracts.token.burn_arguments)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void burn_arguments::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  from_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void burn_arguments::ArenaDtor(void* object) {
+  burn_arguments* _this = reinterpret_cast< burn_arguments* >(object);
+  (void)_this;
+}
+void burn_arguments::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void burn_arguments::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void burn_arguments::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.contracts.token.burn_arguments)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  from_.ClearToEmpty();
+  value_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* burn_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes from = 1 [(.koinos.btype) = ADDRESS];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_from();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 value = 2 [jstype = JS_STRING];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* burn_arguments::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.token.burn_arguments)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_from().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_from(), target);
+  }
+
+  // uint64 value = 2 [jstype = JS_STRING];
+  if (this->_internal_value() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.token.burn_arguments)
+  return target;
+}
+
+size_t burn_arguments::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.token.burn_arguments)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_from().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_from());
+  }
+
+  // uint64 value = 2 [jstype = JS_STRING];
+  if (this->_internal_value() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_value());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData burn_arguments::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    burn_arguments::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*burn_arguments::GetClassData() const { return &_class_data_; }
+
+void burn_arguments::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<burn_arguments *>(to)->MergeFrom(
+      static_cast<const burn_arguments &>(from));
+}
+
+
+void burn_arguments::MergeFrom(const burn_arguments& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.token.burn_arguments)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_from().empty()) {
+    _internal_set_from(from._internal_from());
+  }
+  if (from._internal_value() != 0) {
+    _internal_set_value(from._internal_value());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void burn_arguments::CopyFrom(const burn_arguments& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.token.burn_arguments)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool burn_arguments::IsInitialized() const {
+  return true;
+}
+
+void burn_arguments::InternalSwap(burn_arguments* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &from_, GetArenaForAllocation(),
+      &other->from_, other->GetArenaForAllocation()
+  );
+  swap(value_, other->value_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata burn_arguments::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[14]);
+}
+
+// ===================================================================
+
+class burn_result::_Internal {
+ public:
+};
+
+burn_result::burn_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.contracts.token.burn_result)
+}
+burn_result::burn_result(const burn_result& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  value_ = from.value_;
+  // @@protoc_insertion_point(copy_constructor:koinos.contracts.token.burn_result)
+}
+
+inline void burn_result::SharedCtor() {
+value_ = false;
+}
+
+burn_result::~burn_result() {
+  // @@protoc_insertion_point(destructor:koinos.contracts.token.burn_result)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void burn_result::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void burn_result::ArenaDtor(void* object) {
+  burn_result* _this = reinterpret_cast< burn_result* >(object);
+  (void)_this;
+}
+void burn_result::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void burn_result::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void burn_result::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.contracts.token.burn_result)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  value_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* burn_result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool value = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* burn_result::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.token.burn_result)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool value = 1;
+  if (this->_internal_value() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_value(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.token.burn_result)
+  return target;
+}
+
+size_t burn_result::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.token.burn_result)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool value = 1;
+  if (this->_internal_value() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData burn_result::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    burn_result::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*burn_result::GetClassData() const { return &_class_data_; }
+
+void burn_result::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<burn_result *>(to)->MergeFrom(
+      static_cast<const burn_result &>(from));
+}
+
+
+void burn_result::MergeFrom(const burn_result& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.token.burn_result)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_value() != 0) {
+    _internal_set_value(from._internal_value());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void burn_result::CopyFrom(const burn_result& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.token.burn_result)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool burn_result::IsInitialized() const {
+  return true;
+}
+
+void burn_result::InternalSwap(burn_result* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(value_, other->value_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata burn_result::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[15]);
+}
+
+// ===================================================================
+
 class balance_object::_Internal {
  public:
 };
@@ -3238,7 +3711,7 @@ void balance_object::InternalSwap(balance_object* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata balance_object::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
-      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[14]);
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[16]);
 }
 
 // ===================================================================
@@ -3481,7 +3954,229 @@ void mana_balance_object::InternalSwap(mana_balance_object* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata mana_balance_object::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
-      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[15]);
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[17]);
+}
+
+// ===================================================================
+
+class burn_event::_Internal {
+ public:
+};
+
+burn_event::burn_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.contracts.token.burn_event)
+}
+burn_event::burn_event(const burn_event& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_from().empty()) {
+    from_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_from(), 
+      GetArenaForAllocation());
+  }
+  value_ = from.value_;
+  // @@protoc_insertion_point(copy_constructor:koinos.contracts.token.burn_event)
+}
+
+inline void burn_event::SharedCtor() {
+from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+value_ = uint64_t{0u};
+}
+
+burn_event::~burn_event() {
+  // @@protoc_insertion_point(destructor:koinos.contracts.token.burn_event)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void burn_event::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  from_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void burn_event::ArenaDtor(void* object) {
+  burn_event* _this = reinterpret_cast< burn_event* >(object);
+  (void)_this;
+}
+void burn_event::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void burn_event::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void burn_event::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.contracts.token.burn_event)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  from_.ClearToEmpty();
+  value_ = uint64_t{0u};
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* burn_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes from = 1 [(.koinos.btype) = ADDRESS];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_from();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 value = 2 [jstype = JS_STRING];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* burn_event::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.token.burn_event)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_from().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_from(), target);
+  }
+
+  // uint64 value = 2 [jstype = JS_STRING];
+  if (this->_internal_value() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.token.burn_event)
+  return target;
+}
+
+size_t burn_event::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.token.burn_event)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes from = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_from().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_from());
+  }
+
+  // uint64 value = 2 [jstype = JS_STRING];
+  if (this->_internal_value() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_value());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData burn_event::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    burn_event::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*burn_event::GetClassData() const { return &_class_data_; }
+
+void burn_event::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<burn_event *>(to)->MergeFrom(
+      static_cast<const burn_event &>(from));
+}
+
+
+void burn_event::MergeFrom(const burn_event& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.token.burn_event)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_from().empty()) {
+    _internal_set_from(from._internal_from());
+  }
+  if (from._internal_value() != 0) {
+    _internal_set_value(from._internal_value());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void burn_event::CopyFrom(const burn_event& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.token.burn_event)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool burn_event::IsInitialized() const {
+  return true;
+}
+
+void burn_event::InternalSwap(burn_event* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &from_, GetArenaForAllocation(),
+      &other->from_, other->GetArenaForAllocation()
+  );
+  swap(value_, other->value_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata burn_event::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[18]);
 }
 
 // ===================================================================
@@ -3703,7 +4398,7 @@ void mint_event::InternalSwap(mint_event* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata mint_event::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
-      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[16]);
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[19]);
 }
 
 // ===================================================================
@@ -3962,7 +4657,7 @@ void transfer_event::InternalSwap(transfer_event* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata transfer_event::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_getter, &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once,
-      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[17]);
+      file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto[20]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -4012,11 +4707,20 @@ template<> PROTOBUF_NOINLINE ::koinos::contracts::token::mint_arguments* Arena::
 template<> PROTOBUF_NOINLINE ::koinos::contracts::token::mint_result* Arena::CreateMaybeMessage< ::koinos::contracts::token::mint_result >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::token::mint_result >(arena);
 }
+template<> PROTOBUF_NOINLINE ::koinos::contracts::token::burn_arguments* Arena::CreateMaybeMessage< ::koinos::contracts::token::burn_arguments >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::contracts::token::burn_arguments >(arena);
+}
+template<> PROTOBUF_NOINLINE ::koinos::contracts::token::burn_result* Arena::CreateMaybeMessage< ::koinos::contracts::token::burn_result >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::contracts::token::burn_result >(arena);
+}
 template<> PROTOBUF_NOINLINE ::koinos::contracts::token::balance_object* Arena::CreateMaybeMessage< ::koinos::contracts::token::balance_object >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::token::balance_object >(arena);
 }
 template<> PROTOBUF_NOINLINE ::koinos::contracts::token::mana_balance_object* Arena::CreateMaybeMessage< ::koinos::contracts::token::mana_balance_object >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::token::mana_balance_object >(arena);
+}
+template<> PROTOBUF_NOINLINE ::koinos::contracts::token::burn_event* Arena::CreateMaybeMessage< ::koinos::contracts::token::burn_event >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::contracts::token::burn_event >(arena);
 }
 template<> PROTOBUF_NOINLINE ::koinos::contracts::token::mint_event* Arena::CreateMaybeMessage< ::koinos::contracts::token::mint_event >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::token::mint_event >(arena);

@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"koinos/chain/system_call_ids.proto\022\014ko"
-  "inos.chain*\325\010\n\016system_call_id\022\017\n\013reserve"
+  "inos.chain*\234\010\n\016system_call_id\022\017\n\013reserve"
   "d_id\020\000\022\021\n\rget_head_info\020\001\022\017\n\013apply_block"
   "\020\002\022\025\n\021apply_transaction\020\003\022#\n\037apply_uploa"
   "d_contract_operation\020\004\022!\n\035apply_call_con"
@@ -42,26 +42,25 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eprot
   "\020g\022\r\n\tget_block\020h\022\023\n\017get_block_field\020i\022\037"
   "\n\033get_last_irreversible_block\020j\022\025\n\021get_a"
   "ccount_nonce\020k\022\030\n\024verify_account_nonce\020l"
-  "\022\025\n\021set_account_nonce\020m\022\034\n\030require_syste"
-  "m_authority\020n\022\023\n\016get_account_rc\020\311\001\022\027\n\022co"
-  "nsume_account_rc\020\312\001\022\030\n\023get_resource_limi"
-  "ts\020\313\001\022\034\n\027consume_block_resources\020\314\001\022\017\n\np"
-  "ut_object\020\255\002\022\022\n\rremove_object\020\256\002\022\017\n\nget_"
-  "object\020\257\002\022\024\n\017get_next_object\020\260\002\022\024\n\017get_p"
-  "rev_object\020\261\002\022\010\n\003log\020\221\003\022\n\n\005event\020\222\003\022\t\n\004h"
-  "ash\020\365\003\022\027\n\022recover_public_key\020\366\003\022\027\n\022verif"
-  "y_merkle_root\020\367\003\022\025\n\020verify_signature\020\370\003\022"
-  "\025\n\020verify_vrf_proof\020\371\003\022\022\n\rcall_contract\020"
-  "\331\004\022\024\n\017get_entry_point\020\332\004\022\033\n\026get_contract"
-  "_arguments\020\333\004\022\030\n\023set_contract_result\020\334\004\022"
-  "\022\n\rexit_contract\020\335\004\022\024\n\017get_contract_id\020\336"
-  "\004\022\017\n\nget_caller\020\337\004\022\026\n\021require_authority\020"
-  "\340\004B4Z2github.com/koinos/koinos-proto-gol"
-  "ang/koinos/chainb\006proto3"
+  "\022\025\n\021set_account_nonce\020m\022\032\n\026check_system_"
+  "authority\020n\022\023\n\016get_account_rc\020\311\001\022\027\n\022cons"
+  "ume_account_rc\020\312\001\022\030\n\023get_resource_limits"
+  "\020\313\001\022\034\n\027consume_block_resources\020\314\001\022\017\n\nput"
+  "_object\020\255\002\022\022\n\rremove_object\020\256\002\022\017\n\nget_ob"
+  "ject\020\257\002\022\024\n\017get_next_object\020\260\002\022\024\n\017get_pre"
+  "v_object\020\261\002\022\010\n\003log\020\221\003\022\n\n\005event\020\222\003\022\t\n\004has"
+  "h\020\365\003\022\027\n\022recover_public_key\020\366\003\022\027\n\022verify_"
+  "merkle_root\020\367\003\022\025\n\020verify_signature\020\370\003\022\025\n"
+  "\020verify_vrf_proof\020\371\003\022\t\n\004call\020\331\004\022\024\n\017get_e"
+  "ntry_point\020\332\004\022\022\n\rget_arguments\020\333\004\022\t\n\004exi"
+  "t\020\334\004\022\024\n\017get_contract_id\020\335\004\022\017\n\nget_caller"
+  "\020\336\004\022\024\n\017check_authority\020\337\004B4Z2github.com/"
+  "koinos/koinos-proto-golang/koinos/chainb"
+  "\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 1224, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
+  false, false, 1167, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto,
@@ -125,7 +124,6 @@ bool system_call_id_IsValid(int value) {
     case 605:
     case 606:
     case 607:
-    case 608:
       return true;
     default:
       return false;

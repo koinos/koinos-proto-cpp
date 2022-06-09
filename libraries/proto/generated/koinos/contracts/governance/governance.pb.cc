@@ -21,14 +21,16 @@ namespace contracts {
 namespace governance {
 constexpr proposal_record::proposal_record(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : proposal_(nullptr)
+  : operations_()
+  , operation_merkle_root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , vote_start_height_(uint64_t{0u})
   , vote_tally_(uint64_t{0u})
   , vote_threshold_(uint64_t{0u})
   , shall_authorize_(false)
   , updates_governance_(false)
   , status_(0)
-{}
+
+  , fee_(uint64_t{0u}){}
 struct proposal_recordDefaultTypeInternal {
   constexpr proposal_recordDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -40,7 +42,8 @@ struct proposal_recordDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT proposal_recordDefaultTypeInternal _proposal_record_default_instance_;
 constexpr submit_proposal_arguments::submit_proposal_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : proposal_(nullptr)
+  : operations_()
+  , operation_merkle_root_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , fee_(uint64_t{0u}){}
 struct submit_proposal_argumentsDefaultTypeInternal {
   constexpr submit_proposal_argumentsDefaultTypeInternal()
@@ -52,8 +55,7 @@ struct submit_proposal_argumentsDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT submit_proposal_argumentsDefaultTypeInternal _submit_proposal_arguments_default_instance_;
 constexpr submit_proposal_result::submit_proposal_result(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(false){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct submit_proposal_resultDefaultTypeInternal {
   constexpr submit_proposal_resultDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -179,32 +181,10 @@ struct proposal_vote_eventDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT proposal_vote_eventDefaultTypeInternal _proposal_vote_event_default_instance_;
-constexpr block_callback_arguments::block_callback_arguments(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct block_callback_argumentsDefaultTypeInternal {
-  constexpr block_callback_argumentsDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~block_callback_argumentsDefaultTypeInternal() {}
-  union {
-    block_callback_arguments _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT block_callback_argumentsDefaultTypeInternal _block_callback_arguments_default_instance_;
-constexpr block_callback_result::block_callback_result(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct block_callback_resultDefaultTypeInternal {
-  constexpr block_callback_resultDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~block_callback_resultDefaultTypeInternal() {}
-  union {
-    block_callback_result _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT block_callback_resultDefaultTypeInternal _block_callback_result_default_instance_;
 }  // namespace governance
 }  // namespace contracts
 }  // namespace koinos
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[14];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[12];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto = nullptr;
 
@@ -214,26 +194,28 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fgovernanc
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, proposal_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, operations_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, operation_merkle_root_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, vote_start_height_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, vote_tally_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, vote_threshold_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, shall_authorize_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, updates_governance_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, status_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_record, fee_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_arguments, proposal_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_arguments, operations_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_arguments, operation_merkle_root_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_arguments, fee_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_result, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::submit_proposal_result, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::get_proposal_by_id_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -294,32 +276,20 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fgovernanc
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_vote_event, id_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_vote_event, vote_tally_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::proposal_vote_event, vote_threshold_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::block_callback_arguments, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::governance::block_callback_result, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::contracts::governance::proposal_record)},
-  { 12, -1, sizeof(::koinos::contracts::governance::submit_proposal_arguments)},
-  { 19, -1, sizeof(::koinos::contracts::governance::submit_proposal_result)},
-  { 25, -1, sizeof(::koinos::contracts::governance::get_proposal_by_id_arguments)},
-  { 31, -1, sizeof(::koinos::contracts::governance::get_proposal_by_id_result)},
-  { 37, -1, sizeof(::koinos::contracts::governance::get_proposals_by_status_arguments)},
-  { 45, -1, sizeof(::koinos::contracts::governance::get_proposals_by_status_result)},
-  { 51, -1, sizeof(::koinos::contracts::governance::get_proposals_arguments)},
-  { 58, -1, sizeof(::koinos::contracts::governance::get_proposals_result)},
-  { 64, -1, sizeof(::koinos::contracts::governance::proposal_submission_event)},
-  { 70, -1, sizeof(::koinos::contracts::governance::proposal_status_event)},
-  { 77, -1, sizeof(::koinos::contracts::governance::proposal_vote_event)},
-  { 85, -1, sizeof(::koinos::contracts::governance::block_callback_arguments)},
-  { 90, -1, sizeof(::koinos::contracts::governance::block_callback_result)},
+  { 14, -1, sizeof(::koinos::contracts::governance::submit_proposal_arguments)},
+  { 22, -1, sizeof(::koinos::contracts::governance::submit_proposal_result)},
+  { 27, -1, sizeof(::koinos::contracts::governance::get_proposal_by_id_arguments)},
+  { 33, -1, sizeof(::koinos::contracts::governance::get_proposal_by_id_result)},
+  { 39, -1, sizeof(::koinos::contracts::governance::get_proposals_by_status_arguments)},
+  { 47, -1, sizeof(::koinos::contracts::governance::get_proposals_by_status_result)},
+  { 53, -1, sizeof(::koinos::contracts::governance::get_proposals_arguments)},
+  { 60, -1, sizeof(::koinos::contracts::governance::get_proposals_result)},
+  { 66, -1, sizeof(::koinos::contracts::governance::proposal_submission_event)},
+  { 72, -1, sizeof(::koinos::contracts::governance::proposal_status_event)},
+  { 79, -1, sizeof(::koinos::contracts::governance::proposal_vote_event)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -335,50 +305,49 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::governance::_proposal_submission_event_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::governance::_proposal_status_event_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::governance::_proposal_vote_event_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::governance::_block_callback_arguments_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::contracts::governance::_block_callback_result_default_instance_),
 };
 
 const char descriptor_table_protodef_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n,koinos/contracts/governance/governance"
   ".proto\022\033koinos.contracts.governance\032\024koi"
   "nos/options.proto\032\036koinos/protocol/proto"
-  "col.proto\"\373\001\n\017proposal_record\022.\n\010proposa"
-  "l\030\001 \001(\0132\034.koinos.protocol.transaction\022\031\n"
-  "\021vote_start_height\030\002 \001(\004\022\022\n\nvote_tally\030\003"
-  " \001(\004\022\026\n\016vote_threshold\030\004 \001(\004\022\027\n\017shall_au"
-  "thorize\030\005 \001(\010\022\032\n\022updates_governance\030\006 \001("
-  "\010\022<\n\006status\030\007 \001(\0162,.koinos.contracts.gov"
-  "ernance.proposal_status\"X\n\031submit_propos"
-  "al_arguments\022.\n\010proposal\030\001 \001(\0132\034.koinos."
-  "protocol.transaction\022\013\n\003fee\030\002 \001(\004\"\'\n\026sub"
-  "mit_proposal_result\022\r\n\005value\030\001 \001(\010\"9\n\034ge"
-  "t_proposal_by_id_arguments\022\031\n\013proposal_i"
-  "d\030\001 \001(\014B\004\200\265\030\004\"X\n\031get_proposal_by_id_resu"
-  "lt\022;\n\005value\030\001 \001(\0132,.koinos.contracts.gov"
-  "ernance.proposal_record\"\216\001\n!get_proposal"
-  "s_by_status_arguments\022\034\n\016start_proposal\030"
-  "\001 \001(\014B\004\200\265\030\004\022\r\n\005limit\030\002 \001(\004\022<\n\006status\030\003 \001"
-  "(\0162,.koinos.contracts.governance.proposa"
-  "l_status\"]\n\036get_proposals_by_status_resu"
-  "lt\022;\n\005value\030\001 \003(\0132,.koinos.contracts.gov"
-  "ernance.proposal_record\"F\n\027get_proposals"
-  "_arguments\022\034\n\016start_proposal\030\001 \001(\014B\004\200\265\030\004"
-  "\022\r\n\005limit\030\002 \001(\004\"S\n\024get_proposals_result\022"
-  ";\n\005value\030\001 \003(\0132,.koinos.contracts.govern"
-  "ance.proposal_record\"[\n\031proposal_submiss"
-  "ion_event\022>\n\010proposal\030\001 \001(\0132,.koinos.con"
-  "tracts.governance.proposal_record\"g\n\025pro"
-  "posal_status_event\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\022<\n\006"
-  "status\030\002 \001(\0162,.koinos.contracts.governan"
-  "ce.proposal_status\"S\n\023proposal_vote_even"
-  "t\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\022\022\n\nvote_tally\030\002 \001(\004\022"
-  "\026\n\016vote_threshold\030\003 \001(\004\"\032\n\030block_callbac"
-  "k_arguments\"\027\n\025block_callback_result*R\n\017"
-  "proposal_status\022\013\n\007pending\020\000\022\n\n\006active\020\001"
-  "\022\014\n\010approved\020\002\022\013\n\007expired\020\003\022\013\n\007applied\020\004"
-  "BCZAgithub.com/koinos/koinos-proto-golan"
-  "g/koinos/contracts/governanceb\006proto3"
+  "col.proto\"\247\002\n\017proposal_record\022.\n\noperati"
+  "ons\030\001 \003(\0132\032.koinos.protocol.operation\022\035\n"
+  "\025operation_merkle_root\030\002 \001(\014\022\031\n\021vote_sta"
+  "rt_height\030\003 \001(\004\022\022\n\nvote_tally\030\004 \001(\004\022\026\n\016v"
+  "ote_threshold\030\005 \001(\004\022\027\n\017shall_authorize\030\006"
+  " \001(\010\022\032\n\022updates_governance\030\007 \001(\010\022<\n\006stat"
+  "us\030\010 \001(\0162,.koinos.contracts.governance.p"
+  "roposal_status\022\013\n\003fee\030\t \001(\004\"w\n\031submit_pr"
+  "oposal_arguments\022.\n\noperations\030\001 \003(\0132\032.k"
+  "oinos.protocol.operation\022\035\n\025operation_me"
+  "rkle_root\030\002 \001(\014\022\013\n\003fee\030\003 \001(\004\"\030\n\026submit_p"
+  "roposal_result\"9\n\034get_proposal_by_id_arg"
+  "uments\022\031\n\013proposal_id\030\001 \001(\014B\004\200\265\030\004\"X\n\031get"
+  "_proposal_by_id_result\022;\n\005value\030\001 \001(\0132,."
+  "koinos.contracts.governance.proposal_rec"
+  "ord\"\216\001\n!get_proposals_by_status_argument"
+  "s\022\034\n\016start_proposal\030\001 \001(\014B\004\200\265\030\004\022\r\n\005limit"
+  "\030\002 \001(\004\022<\n\006status\030\003 \001(\0162,.koinos.contract"
+  "s.governance.proposal_status\"]\n\036get_prop"
+  "osals_by_status_result\022;\n\005value\030\001 \003(\0132,."
+  "koinos.contracts.governance.proposal_rec"
+  "ord\"F\n\027get_proposals_arguments\022\034\n\016start_"
+  "proposal\030\001 \001(\014B\004\200\265\030\004\022\r\n\005limit\030\002 \001(\004\"S\n\024g"
+  "et_proposals_result\022;\n\005value\030\001 \003(\0132,.koi"
+  "nos.contracts.governance.proposal_record"
+  "\"[\n\031proposal_submission_event\022>\n\010proposa"
+  "l\030\001 \001(\0132,.koinos.contracts.governance.pr"
+  "oposal_record\"g\n\025proposal_status_event\022\020"
+  "\n\002id\030\001 \001(\014B\004\200\265\030\004\022<\n\006status\030\002 \001(\0162,.koino"
+  "s.contracts.governance.proposal_status\"S"
+  "\n\023proposal_vote_event\022\020\n\002id\030\001 \001(\014B\004\200\265\030\004\022"
+  "\022\n\nvote_tally\030\002 \001(\004\022\026\n\016vote_threshold\030\003 "
+  "\001(\004*l\n\017proposal_status\022\013\n\007pending\020\000\022\n\n\006a"
+  "ctive\020\001\022\014\n\010approved\020\002\022\013\n\007expired\020\003\022\013\n\007ap"
+  "plied\020\004\022\n\n\006failed\020\005\022\014\n\010reverted\020\006BCZAgit"
+  "hub.com/koinos/koinos-proto-golang/koino"
+  "s/contracts/governanceb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_deps[2] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -386,8 +355,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto = {
-  false, false, 1557, descriptor_table_protodef_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto, "koinos/contracts/governance/governance.proto", 
-  &descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_once, descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_deps, 2, 14,
+  false, false, 1590, descriptor_table_protodef_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto, "koinos/contracts/governance/governance.proto", 
+  &descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_once, descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_deps, 2, 12,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto,
 };
@@ -411,6 +380,8 @@ bool proposal_status_IsValid(int value) {
     case 2:
     case 3:
     case 4:
+    case 5:
+    case 6:
       return true;
     default:
       return false;
@@ -422,22 +393,15 @@ bool proposal_status_IsValid(int value) {
 
 class proposal_record::_Internal {
  public:
-  static const ::koinos::protocol::transaction& proposal(const proposal_record* msg);
 };
 
-const ::koinos::protocol::transaction&
-proposal_record::_Internal::proposal(const proposal_record* msg) {
-  return *msg->proposal_;
-}
-void proposal_record::clear_proposal() {
-  if (GetArenaForAllocation() == nullptr && proposal_ != nullptr) {
-    delete proposal_;
-  }
-  proposal_ = nullptr;
+void proposal_record::clear_operations() {
+  operations_.Clear();
 }
 proposal_record::proposal_record(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  operations_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -445,24 +409,26 @@ proposal_record::proposal_record(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.contracts.governance.proposal_record)
 }
 proposal_record::proposal_record(const proposal_record& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      operations_(from.operations_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_proposal()) {
-    proposal_ = new ::koinos::protocol::transaction(*from.proposal_);
-  } else {
-    proposal_ = nullptr;
+  operation_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_operation_merkle_root().empty()) {
+    operation_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_operation_merkle_root(), 
+      GetArenaForAllocation());
   }
   ::memcpy(&vote_start_height_, &from.vote_start_height_,
-    static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&vote_start_height_)) + sizeof(status_));
+    static_cast<size_t>(reinterpret_cast<char*>(&fee_) -
+    reinterpret_cast<char*>(&vote_start_height_)) + sizeof(fee_));
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.governance.proposal_record)
 }
 
 inline void proposal_record::SharedCtor() {
+operation_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&proposal_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&status_) -
-    reinterpret_cast<char*>(&proposal_)) + sizeof(status_));
+    reinterpret_cast<char*>(&vote_start_height_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&fee_) -
+    reinterpret_cast<char*>(&vote_start_height_)) + sizeof(fee_));
 }
 
 proposal_record::~proposal_record() {
@@ -474,7 +440,7 @@ proposal_record::~proposal_record() {
 
 inline void proposal_record::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete proposal_;
+  operation_merkle_root_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void proposal_record::ArenaDtor(void* object) {
@@ -493,13 +459,11 @@ void proposal_record::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && proposal_ != nullptr) {
-    delete proposal_;
-  }
-  proposal_ = nullptr;
+  operations_.Clear();
+  operation_merkle_root_.ClearToEmpty();
   ::memset(&vote_start_height_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&status_) -
-      reinterpret_cast<char*>(&vote_start_height_)) + sizeof(status_));
+      reinterpret_cast<char*>(&fee_) -
+      reinterpret_cast<char*>(&vote_start_height_)) + sizeof(fee_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -509,54 +473,74 @@ const char* proposal_record::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.protocol.transaction proposal = 1;
+      // repeated .koinos.protocol.operation operations = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_proposal(), ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_operations(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bytes operation_merkle_root = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_operation_merkle_root();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 vote_start_height = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint64 vote_start_height = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           vote_start_height_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 vote_tally = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+      // uint64 vote_tally = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           vote_tally_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 vote_threshold = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+      // uint64 vote_threshold = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           vote_threshold_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool shall_authorize = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // bool shall_authorize = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           shall_authorize_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bool updates_governance = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+      // bool updates_governance = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           updates_governance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.contracts.governance.proposal_status status = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+      // .koinos.contracts.governance.proposal_status status = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::koinos::contracts::governance::proposal_status>(val));
+        } else goto handle_unusual;
+        continue;
+      // uint64 fee = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          fee_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -588,49 +572,61 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.protocol.transaction proposal = 1;
-  if (this->_internal_has_proposal()) {
+  // repeated .koinos.protocol.operation operations = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_operations_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::proposal(this), target, stream);
+      InternalWriteMessage(1, this->_internal_operations(i), target, stream);
   }
 
-  // uint64 vote_start_height = 2;
+  // bytes operation_merkle_root = 2;
+  if (!this->_internal_operation_merkle_root().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_operation_merkle_root(), target);
+  }
+
+  // uint64 vote_start_height = 3;
   if (this->_internal_vote_start_height() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_vote_start_height(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_vote_start_height(), target);
   }
 
-  // uint64 vote_tally = 3;
+  // uint64 vote_tally = 4;
   if (this->_internal_vote_tally() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_vote_tally(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_vote_tally(), target);
   }
 
-  // uint64 vote_threshold = 4;
+  // uint64 vote_threshold = 5;
   if (this->_internal_vote_threshold() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_vote_threshold(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_vote_threshold(), target);
   }
 
-  // bool shall_authorize = 5;
+  // bool shall_authorize = 6;
   if (this->_internal_shall_authorize() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_shall_authorize(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_shall_authorize(), target);
   }
 
-  // bool updates_governance = 6;
+  // bool updates_governance = 7;
   if (this->_internal_updates_governance() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(6, this->_internal_updates_governance(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_updates_governance(), target);
   }
 
-  // .koinos.contracts.governance.proposal_status status = 7;
+  // .koinos.contracts.governance.proposal_status status = 8;
   if (this->_internal_status() != 0) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      7, this->_internal_status(), target);
+      8, this->_internal_status(), target);
+  }
+
+  // uint64 fee = 9;
+  if (this->_internal_fee() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(9, this->_internal_fee(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -649,48 +645,62 @@ size_t proposal_record::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.protocol.transaction proposal = 1;
-  if (this->_internal_has_proposal()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *proposal_);
+  // repeated .koinos.protocol.operation operations = 1;
+  total_size += 1UL * this->_internal_operations_size();
+  for (const auto& msg : this->operations_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // uint64 vote_start_height = 2;
+  // bytes operation_merkle_root = 2;
+  if (!this->_internal_operation_merkle_root().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_operation_merkle_root());
+  }
+
+  // uint64 vote_start_height = 3;
   if (this->_internal_vote_start_height() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_vote_start_height());
   }
 
-  // uint64 vote_tally = 3;
+  // uint64 vote_tally = 4;
   if (this->_internal_vote_tally() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_vote_tally());
   }
 
-  // uint64 vote_threshold = 4;
+  // uint64 vote_threshold = 5;
   if (this->_internal_vote_threshold() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
         this->_internal_vote_threshold());
   }
 
-  // bool shall_authorize = 5;
+  // bool shall_authorize = 6;
   if (this->_internal_shall_authorize() != 0) {
     total_size += 1 + 1;
   }
 
-  // bool updates_governance = 6;
+  // bool updates_governance = 7;
   if (this->_internal_updates_governance() != 0) {
     total_size += 1 + 1;
   }
 
-  // .koinos.contracts.governance.proposal_status status = 7;
+  // .koinos.contracts.governance.proposal_status status = 8;
   if (this->_internal_status() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_status());
+  }
+
+  // uint64 fee = 9;
+  if (this->_internal_fee() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_fee());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -721,8 +731,9 @@ void proposal_record::MergeFrom(const proposal_record& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_proposal()) {
-    _internal_mutable_proposal()->::koinos::protocol::transaction::MergeFrom(from._internal_proposal());
+  operations_.MergeFrom(from.operations_);
+  if (!from._internal_operation_merkle_root().empty()) {
+    _internal_set_operation_merkle_root(from._internal_operation_merkle_root());
   }
   if (from._internal_vote_start_height() != 0) {
     _internal_set_vote_start_height(from._internal_vote_start_height());
@@ -742,6 +753,9 @@ void proposal_record::MergeFrom(const proposal_record& from) {
   if (from._internal_status() != 0) {
     _internal_set_status(from._internal_status());
   }
+  if (from._internal_fee() != 0) {
+    _internal_set_fee(from._internal_fee());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -759,12 +773,18 @@ bool proposal_record::IsInitialized() const {
 void proposal_record::InternalSwap(proposal_record* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  operations_.InternalSwap(&other->operations_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &operation_merkle_root_, GetArenaForAllocation(),
+      &other->operation_merkle_root_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(proposal_record, status_)
-      + sizeof(proposal_record::status_)
-      - PROTOBUF_FIELD_OFFSET(proposal_record, proposal_)>(
-          reinterpret_cast<char*>(&proposal_),
-          reinterpret_cast<char*>(&other->proposal_));
+      PROTOBUF_FIELD_OFFSET(proposal_record, fee_)
+      + sizeof(proposal_record::fee_)
+      - PROTOBUF_FIELD_OFFSET(proposal_record, vote_start_height_)>(
+          reinterpret_cast<char*>(&vote_start_height_),
+          reinterpret_cast<char*>(&other->vote_start_height_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata proposal_record::GetMetadata() const {
@@ -777,22 +797,15 @@ void proposal_record::InternalSwap(proposal_record* other) {
 
 class submit_proposal_arguments::_Internal {
  public:
-  static const ::koinos::protocol::transaction& proposal(const submit_proposal_arguments* msg);
 };
 
-const ::koinos::protocol::transaction&
-submit_proposal_arguments::_Internal::proposal(const submit_proposal_arguments* msg) {
-  return *msg->proposal_;
-}
-void submit_proposal_arguments::clear_proposal() {
-  if (GetArenaForAllocation() == nullptr && proposal_ != nullptr) {
-    delete proposal_;
-  }
-  proposal_ = nullptr;
+void submit_proposal_arguments::clear_operations() {
+  operations_.Clear();
 }
 submit_proposal_arguments::submit_proposal_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  operations_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -800,22 +813,21 @@ submit_proposal_arguments::submit_proposal_arguments(::PROTOBUF_NAMESPACE_ID::Ar
   // @@protoc_insertion_point(arena_constructor:koinos.contracts.governance.submit_proposal_arguments)
 }
 submit_proposal_arguments::submit_proposal_arguments(const submit_proposal_arguments& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      operations_(from.operations_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_proposal()) {
-    proposal_ = new ::koinos::protocol::transaction(*from.proposal_);
-  } else {
-    proposal_ = nullptr;
+  operation_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_operation_merkle_root().empty()) {
+    operation_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_operation_merkle_root(), 
+      GetArenaForAllocation());
   }
   fee_ = from.fee_;
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.governance.submit_proposal_arguments)
 }
 
 inline void submit_proposal_arguments::SharedCtor() {
-::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&proposal_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&fee_) -
-    reinterpret_cast<char*>(&proposal_)) + sizeof(fee_));
+operation_merkle_root_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+fee_ = uint64_t{0u};
 }
 
 submit_proposal_arguments::~submit_proposal_arguments() {
@@ -827,7 +839,7 @@ submit_proposal_arguments::~submit_proposal_arguments() {
 
 inline void submit_proposal_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete proposal_;
+  operation_merkle_root_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void submit_proposal_arguments::ArenaDtor(void* object) {
@@ -846,10 +858,8 @@ void submit_proposal_arguments::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && proposal_ != nullptr) {
-    delete proposal_;
-  }
-  proposal_ = nullptr;
+  operations_.Clear();
+  operation_merkle_root_.ClearToEmpty();
   fee_ = uint64_t{0u};
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -860,16 +870,29 @@ const char* submit_proposal_arguments::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.protocol.transaction proposal = 1;
+      // repeated .koinos.protocol.operation operations = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_proposal(), ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_operations(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bytes operation_merkle_root = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_operation_merkle_root();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 fee = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+      // uint64 fee = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           fee_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -903,18 +926,24 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.protocol.transaction proposal = 1;
-  if (this->_internal_has_proposal()) {
+  // repeated .koinos.protocol.operation operations = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_operations_size()); i < n; i++) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::proposal(this), target, stream);
+      InternalWriteMessage(1, this->_internal_operations(i), target, stream);
   }
 
-  // uint64 fee = 2;
+  // bytes operation_merkle_root = 2;
+  if (!this->_internal_operation_merkle_root().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_operation_merkle_root(), target);
+  }
+
+  // uint64 fee = 3;
   if (this->_internal_fee() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_fee(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_fee(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -933,14 +962,21 @@ size_t submit_proposal_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.protocol.transaction proposal = 1;
-  if (this->_internal_has_proposal()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *proposal_);
+  // repeated .koinos.protocol.operation operations = 1;
+  total_size += 1UL * this->_internal_operations_size();
+  for (const auto& msg : this->operations_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // uint64 fee = 2;
+  // bytes operation_merkle_root = 2;
+  if (!this->_internal_operation_merkle_root().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_operation_merkle_root());
+  }
+
+  // uint64 fee = 3;
   if (this->_internal_fee() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
@@ -975,8 +1011,9 @@ void submit_proposal_arguments::MergeFrom(const submit_proposal_arguments& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_proposal()) {
-    _internal_mutable_proposal()->::koinos::protocol::transaction::MergeFrom(from._internal_proposal());
+  operations_.MergeFrom(from.operations_);
+  if (!from._internal_operation_merkle_root().empty()) {
+    _internal_set_operation_merkle_root(from._internal_operation_merkle_root());
   }
   if (from._internal_fee() != 0) {
     _internal_set_fee(from._internal_fee());
@@ -998,12 +1035,13 @@ bool submit_proposal_arguments::IsInitialized() const {
 void submit_proposal_arguments::InternalSwap(submit_proposal_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(submit_proposal_arguments, fee_)
-      + sizeof(submit_proposal_arguments::fee_)
-      - PROTOBUF_FIELD_OFFSET(submit_proposal_arguments, proposal_)>(
-          reinterpret_cast<char*>(&proposal_),
-          reinterpret_cast<char*>(&other->proposal_));
+  operations_.InternalSwap(&other->operations_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &operation_merkle_root_, GetArenaForAllocation(),
+      &other->operation_merkle_root_, other->GetArenaForAllocation()
+  );
+  swap(fee_, other->fee_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata submit_proposal_arguments::GetMetadata() const {
@@ -1030,12 +1068,10 @@ submit_proposal_result::submit_proposal_result(::PROTOBUF_NAMESPACE_ID::Arena* a
 submit_proposal_result::submit_proposal_result(const submit_proposal_result& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.governance.submit_proposal_result)
 }
 
 inline void submit_proposal_result::SharedCtor() {
-value_ = false;
 }
 
 submit_proposal_result::~submit_proposal_result() {
@@ -1065,7 +1101,6 @@ void submit_proposal_result::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_ = false;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1074,16 +1109,6 @@ const char* submit_proposal_result::_InternalParse(const char* ptr, ::PROTOBUF_N
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // bool value = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
           CHK_(ptr);
           ctx->SetLastTag(tag);
@@ -1094,8 +1119,6 @@ const char* submit_proposal_result::_InternalParse(const char* ptr, ::PROTOBUF_N
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
-      }
-    }  // switch
   }  // while
 success:
   return ptr;
@@ -1110,12 +1133,6 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.governance.submit_proposal_result)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
-
-  // bool value = 1;
-  if (this->_internal_value() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_value(), target);
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1132,11 +1149,6 @@ size_t submit_proposal_result::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // bool value = 1;
-  if (this->_internal_value() != 0) {
-    total_size += 1 + 1;
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -1166,9 +1178,6 @@ void submit_proposal_result::MergeFrom(const submit_proposal_result& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_value() != 0) {
-    _internal_set_value(from._internal_value());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -1186,7 +1195,6 @@ bool submit_proposal_result::IsInitialized() const {
 void submit_proposal_result::InternalSwap(submit_proposal_result* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(value_, other->value_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata submit_proposal_result::GetMetadata() const {
@@ -3130,312 +3138,6 @@ void proposal_vote_event::InternalSwap(proposal_vote_event* other) {
       file_level_metadata_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[11]);
 }
 
-// ===================================================================
-
-class block_callback_arguments::_Internal {
- public:
-};
-
-block_callback_arguments::block_callback_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:koinos.contracts.governance.block_callback_arguments)
-}
-block_callback_arguments::block_callback_arguments(const block_callback_arguments& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:koinos.contracts.governance.block_callback_arguments)
-}
-
-inline void block_callback_arguments::SharedCtor() {
-}
-
-block_callback_arguments::~block_callback_arguments() {
-  // @@protoc_insertion_point(destructor:koinos.contracts.governance.block_callback_arguments)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void block_callback_arguments::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void block_callback_arguments::ArenaDtor(void* object) {
-  block_callback_arguments* _this = reinterpret_cast< block_callback_arguments* >(object);
-  (void)_this;
-}
-void block_callback_arguments::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void block_callback_arguments::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void block_callback_arguments::Clear() {
-// @@protoc_insertion_point(message_clear_start:koinos.contracts.governance.block_callback_arguments)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* block_callback_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* block_callback_arguments::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.governance.block_callback_arguments)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.governance.block_callback_arguments)
-  return target;
-}
-
-size_t block_callback_arguments::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.governance.block_callback_arguments)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData block_callback_arguments::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    block_callback_arguments::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*block_callback_arguments::GetClassData() const { return &_class_data_; }
-
-void block_callback_arguments::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<block_callback_arguments *>(to)->MergeFrom(
-      static_cast<const block_callback_arguments &>(from));
-}
-
-
-void block_callback_arguments::MergeFrom(const block_callback_arguments& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.governance.block_callback_arguments)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void block_callback_arguments::CopyFrom(const block_callback_arguments& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.governance.block_callback_arguments)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool block_callback_arguments::IsInitialized() const {
-  return true;
-}
-
-void block_callback_arguments::InternalSwap(block_callback_arguments* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata block_callback_arguments::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_getter, &descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_once,
-      file_level_metadata_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[12]);
-}
-
-// ===================================================================
-
-class block_callback_result::_Internal {
- public:
-};
-
-block_callback_result::block_callback_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:koinos.contracts.governance.block_callback_result)
-}
-block_callback_result::block_callback_result(const block_callback_result& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:koinos.contracts.governance.block_callback_result)
-}
-
-inline void block_callback_result::SharedCtor() {
-}
-
-block_callback_result::~block_callback_result() {
-  // @@protoc_insertion_point(destructor:koinos.contracts.governance.block_callback_result)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void block_callback_result::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void block_callback_result::ArenaDtor(void* object) {
-  block_callback_result* _this = reinterpret_cast< block_callback_result* >(object);
-  (void)_this;
-}
-void block_callback_result::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void block_callback_result::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void block_callback_result::Clear() {
-// @@protoc_insertion_point(message_clear_start:koinos.contracts.governance.block_callback_result)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* block_callback_result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* block_callback_result::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:koinos.contracts.governance.block_callback_result)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:koinos.contracts.governance.block_callback_result)
-  return target;
-}
-
-size_t block_callback_result::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:koinos.contracts.governance.block_callback_result)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData block_callback_result::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    block_callback_result::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*block_callback_result::GetClassData() const { return &_class_data_; }
-
-void block_callback_result::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<block_callback_result *>(to)->MergeFrom(
-      static_cast<const block_callback_result &>(from));
-}
-
-
-void block_callback_result::MergeFrom(const block_callback_result& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:koinos.contracts.governance.block_callback_result)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void block_callback_result::CopyFrom(const block_callback_result& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:koinos.contracts.governance.block_callback_result)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool block_callback_result::IsInitialized() const {
-  return true;
-}
-
-void block_callback_result::InternalSwap(block_callback_result* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata block_callback_result::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_getter, &descriptor_table_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto_once,
-      file_level_metadata_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto[13]);
-}
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace governance
 }  // namespace contracts
@@ -3476,12 +3178,6 @@ template<> PROTOBUF_NOINLINE ::koinos::contracts::governance::proposal_status_ev
 }
 template<> PROTOBUF_NOINLINE ::koinos::contracts::governance::proposal_vote_event* Arena::CreateMaybeMessage< ::koinos::contracts::governance::proposal_vote_event >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::contracts::governance::proposal_vote_event >(arena);
-}
-template<> PROTOBUF_NOINLINE ::koinos::contracts::governance::block_callback_arguments* Arena::CreateMaybeMessage< ::koinos::contracts::governance::block_callback_arguments >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::koinos::contracts::governance::block_callback_arguments >(arena);
-}
-template<> PROTOBUF_NOINLINE ::koinos::contracts::governance::block_callback_result* Arena::CreateMaybeMessage< ::koinos::contracts::governance::block_callback_result >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::koinos::contracts::governance::block_callback_result >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

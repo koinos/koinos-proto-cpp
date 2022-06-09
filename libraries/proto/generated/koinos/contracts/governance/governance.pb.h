@@ -49,7 +49,7 @@ struct TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,12 +59,6 @@ extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table
 namespace koinos {
 namespace contracts {
 namespace governance {
-class block_callback_arguments;
-struct block_callback_argumentsDefaultTypeInternal;
-extern block_callback_argumentsDefaultTypeInternal _block_callback_arguments_default_instance_;
-class block_callback_result;
-struct block_callback_resultDefaultTypeInternal;
-extern block_callback_resultDefaultTypeInternal _block_callback_result_default_instance_;
 class get_proposal_by_id_arguments;
 struct get_proposal_by_id_argumentsDefaultTypeInternal;
 extern get_proposal_by_id_argumentsDefaultTypeInternal _get_proposal_by_id_arguments_default_instance_;
@@ -105,8 +99,6 @@ extern submit_proposal_resultDefaultTypeInternal _submit_proposal_result_default
 }  // namespace contracts
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
-template<> ::koinos::contracts::governance::block_callback_arguments* Arena::CreateMaybeMessage<::koinos::contracts::governance::block_callback_arguments>(Arena*);
-template<> ::koinos::contracts::governance::block_callback_result* Arena::CreateMaybeMessage<::koinos::contracts::governance::block_callback_result>(Arena*);
 template<> ::koinos::contracts::governance::get_proposal_by_id_arguments* Arena::CreateMaybeMessage<::koinos::contracts::governance::get_proposal_by_id_arguments>(Arena*);
 template<> ::koinos::contracts::governance::get_proposal_by_id_result* Arena::CreateMaybeMessage<::koinos::contracts::governance::get_proposal_by_id_result>(Arena*);
 template<> ::koinos::contracts::governance::get_proposals_arguments* Arena::CreateMaybeMessage<::koinos::contracts::governance::get_proposals_arguments>(Arena*);
@@ -130,12 +122,14 @@ enum proposal_status : int {
   approved = 2,
   expired = 3,
   applied = 4,
+  failed = 5,
+  reverted = 6,
   proposal_status_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   proposal_status_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool proposal_status_IsValid(int value);
 constexpr proposal_status proposal_status_MIN = pending;
-constexpr proposal_status proposal_status_MAX = applied;
+constexpr proposal_status proposal_status_MAX = reverted;
 constexpr int proposal_status_ARRAYSIZE = proposal_status_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* proposal_status_descriptor();
@@ -269,33 +263,49 @@ class proposal_record final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kProposalFieldNumber = 1,
-    kVoteStartHeightFieldNumber = 2,
-    kVoteTallyFieldNumber = 3,
-    kVoteThresholdFieldNumber = 4,
-    kShallAuthorizeFieldNumber = 5,
-    kUpdatesGovernanceFieldNumber = 6,
-    kStatusFieldNumber = 7,
+    kOperationsFieldNumber = 1,
+    kOperationMerkleRootFieldNumber = 2,
+    kVoteStartHeightFieldNumber = 3,
+    kVoteTallyFieldNumber = 4,
+    kVoteThresholdFieldNumber = 5,
+    kShallAuthorizeFieldNumber = 6,
+    kUpdatesGovernanceFieldNumber = 7,
+    kStatusFieldNumber = 8,
+    kFeeFieldNumber = 9,
   };
-  // .koinos.protocol.transaction proposal = 1;
-  bool has_proposal() const;
+  // repeated .koinos.protocol.operation operations = 1;
+  int operations_size() const;
   private:
-  bool _internal_has_proposal() const;
+  int _internal_operations_size() const;
   public:
-  void clear_proposal();
-  const ::koinos::protocol::transaction& proposal() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_proposal();
-  ::koinos::protocol::transaction* mutable_proposal();
-  void set_allocated_proposal(::koinos::protocol::transaction* proposal);
+  void clear_operations();
+  ::koinos::protocol::operation* mutable_operations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >*
+      mutable_operations();
   private:
-  const ::koinos::protocol::transaction& _internal_proposal() const;
-  ::koinos::protocol::transaction* _internal_mutable_proposal();
+  const ::koinos::protocol::operation& _internal_operations(int index) const;
+  ::koinos::protocol::operation* _internal_add_operations();
   public:
-  void unsafe_arena_set_allocated_proposal(
-      ::koinos::protocol::transaction* proposal);
-  ::koinos::protocol::transaction* unsafe_arena_release_proposal();
+  const ::koinos::protocol::operation& operations(int index) const;
+  ::koinos::protocol::operation* add_operations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
+      operations() const;
 
-  // uint64 vote_start_height = 2;
+  // bytes operation_merkle_root = 2;
+  void clear_operation_merkle_root();
+  const std::string& operation_merkle_root() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_operation_merkle_root(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_operation_merkle_root();
+  PROTOBUF_MUST_USE_RESULT std::string* release_operation_merkle_root();
+  void set_allocated_operation_merkle_root(std::string* operation_merkle_root);
+  private:
+  const std::string& _internal_operation_merkle_root() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_operation_merkle_root(const std::string& value);
+  std::string* _internal_mutable_operation_merkle_root();
+  public:
+
+  // uint64 vote_start_height = 3;
   void clear_vote_start_height();
   ::PROTOBUF_NAMESPACE_ID::uint64 vote_start_height() const;
   void set_vote_start_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -304,7 +314,7 @@ class proposal_record final :
   void _internal_set_vote_start_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 vote_tally = 3;
+  // uint64 vote_tally = 4;
   void clear_vote_tally();
   ::PROTOBUF_NAMESPACE_ID::uint64 vote_tally() const;
   void set_vote_tally(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -313,7 +323,7 @@ class proposal_record final :
   void _internal_set_vote_tally(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 vote_threshold = 4;
+  // uint64 vote_threshold = 5;
   void clear_vote_threshold();
   ::PROTOBUF_NAMESPACE_ID::uint64 vote_threshold() const;
   void set_vote_threshold(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -322,7 +332,7 @@ class proposal_record final :
   void _internal_set_vote_threshold(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // bool shall_authorize = 5;
+  // bool shall_authorize = 6;
   void clear_shall_authorize();
   bool shall_authorize() const;
   void set_shall_authorize(bool value);
@@ -331,7 +341,7 @@ class proposal_record final :
   void _internal_set_shall_authorize(bool value);
   public:
 
-  // bool updates_governance = 6;
+  // bool updates_governance = 7;
   void clear_updates_governance();
   bool updates_governance() const;
   void set_updates_governance(bool value);
@@ -340,13 +350,22 @@ class proposal_record final :
   void _internal_set_updates_governance(bool value);
   public:
 
-  // .koinos.contracts.governance.proposal_status status = 7;
+  // .koinos.contracts.governance.proposal_status status = 8;
   void clear_status();
   ::koinos::contracts::governance::proposal_status status() const;
   void set_status(::koinos::contracts::governance::proposal_status value);
   private:
   ::koinos::contracts::governance::proposal_status _internal_status() const;
   void _internal_set_status(::koinos::contracts::governance::proposal_status value);
+  public:
+
+  // uint64 fee = 9;
+  void clear_fee();
+  ::PROTOBUF_NAMESPACE_ID::uint64 fee() const;
+  void set_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_fee() const;
+  void _internal_set_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.contracts.governance.proposal_record)
@@ -356,13 +375,15 @@ class proposal_record final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::protocol::transaction* proposal_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation > operations_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::uint64 vote_start_height_;
   ::PROTOBUF_NAMESPACE_ID::uint64 vote_tally_;
   ::PROTOBUF_NAMESPACE_ID::uint64 vote_threshold_;
   bool shall_authorize_;
   bool updates_governance_;
   int status_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 fee_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto;
 };
@@ -483,28 +504,43 @@ class submit_proposal_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kProposalFieldNumber = 1,
-    kFeeFieldNumber = 2,
+    kOperationsFieldNumber = 1,
+    kOperationMerkleRootFieldNumber = 2,
+    kFeeFieldNumber = 3,
   };
-  // .koinos.protocol.transaction proposal = 1;
-  bool has_proposal() const;
+  // repeated .koinos.protocol.operation operations = 1;
+  int operations_size() const;
   private:
-  bool _internal_has_proposal() const;
+  int _internal_operations_size() const;
   public:
-  void clear_proposal();
-  const ::koinos::protocol::transaction& proposal() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_proposal();
-  ::koinos::protocol::transaction* mutable_proposal();
-  void set_allocated_proposal(::koinos::protocol::transaction* proposal);
+  void clear_operations();
+  ::koinos::protocol::operation* mutable_operations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >*
+      mutable_operations();
   private:
-  const ::koinos::protocol::transaction& _internal_proposal() const;
-  ::koinos::protocol::transaction* _internal_mutable_proposal();
+  const ::koinos::protocol::operation& _internal_operations(int index) const;
+  ::koinos::protocol::operation* _internal_add_operations();
   public:
-  void unsafe_arena_set_allocated_proposal(
-      ::koinos::protocol::transaction* proposal);
-  ::koinos::protocol::transaction* unsafe_arena_release_proposal();
+  const ::koinos::protocol::operation& operations(int index) const;
+  ::koinos::protocol::operation* add_operations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
+      operations() const;
 
-  // uint64 fee = 2;
+  // bytes operation_merkle_root = 2;
+  void clear_operation_merkle_root();
+  const std::string& operation_merkle_root() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_operation_merkle_root(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_operation_merkle_root();
+  PROTOBUF_MUST_USE_RESULT std::string* release_operation_merkle_root();
+  void set_allocated_operation_merkle_root(std::string* operation_merkle_root);
+  private:
+  const std::string& _internal_operation_merkle_root() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_operation_merkle_root(const std::string& value);
+  std::string* _internal_mutable_operation_merkle_root();
+  public:
+
+  // uint64 fee = 3;
   void clear_fee();
   ::PROTOBUF_NAMESPACE_ID::uint64 fee() const;
   void set_fee(::PROTOBUF_NAMESPACE_ID::uint64 value);
@@ -520,7 +556,8 @@ class submit_proposal_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::protocol::transaction* proposal_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation > operations_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr operation_merkle_root_;
   ::PROTOBUF_NAMESPACE_ID::uint64 fee_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto;
@@ -641,18 +678,6 @@ class submit_proposal_result final :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kValueFieldNumber = 1,
-  };
-  // bool value = 1;
-  void clear_value();
-  bool value() const;
-  void set_value(bool value);
-  private:
-  bool _internal_value() const;
-  void _internal_set_value(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.contracts.governance.submit_proposal_result)
  private:
   class _Internal;
@@ -660,7 +685,6 @@ class submit_proposal_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto;
 };
@@ -2042,258 +2066,6 @@ class proposal_vote_event final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto;
 };
-// -------------------------------------------------------------------
-
-class block_callback_arguments final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.governance.block_callback_arguments) */ {
- public:
-  inline block_callback_arguments() : block_callback_arguments(nullptr) {}
-  ~block_callback_arguments() override;
-  explicit constexpr block_callback_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  block_callback_arguments(const block_callback_arguments& from);
-  block_callback_arguments(block_callback_arguments&& from) noexcept
-    : block_callback_arguments() {
-    *this = ::std::move(from);
-  }
-
-  inline block_callback_arguments& operator=(const block_callback_arguments& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline block_callback_arguments& operator=(block_callback_arguments&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const block_callback_arguments& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const block_callback_arguments* internal_default_instance() {
-    return reinterpret_cast<const block_callback_arguments*>(
-               &_block_callback_arguments_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    12;
-
-  friend void swap(block_callback_arguments& a, block_callback_arguments& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(block_callback_arguments* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(block_callback_arguments* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline block_callback_arguments* New() const final {
-    return new block_callback_arguments();
-  }
-
-  block_callback_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<block_callback_arguments>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const block_callback_arguments& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const block_callback_arguments& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(block_callback_arguments* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.contracts.governance.block_callback_arguments";
-  }
-  protected:
-  explicit block_callback_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:koinos.contracts.governance.block_callback_arguments)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto;
-};
-// -------------------------------------------------------------------
-
-class block_callback_result final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.governance.block_callback_result) */ {
- public:
-  inline block_callback_result() : block_callback_result(nullptr) {}
-  ~block_callback_result() override;
-  explicit constexpr block_callback_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  block_callback_result(const block_callback_result& from);
-  block_callback_result(block_callback_result&& from) noexcept
-    : block_callback_result() {
-    *this = ::std::move(from);
-  }
-
-  inline block_callback_result& operator=(const block_callback_result& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline block_callback_result& operator=(block_callback_result&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const block_callback_result& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const block_callback_result* internal_default_instance() {
-    return reinterpret_cast<const block_callback_result*>(
-               &_block_callback_result_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    13;
-
-  friend void swap(block_callback_result& a, block_callback_result& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(block_callback_result* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(block_callback_result* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline block_callback_result* New() const final {
-    return new block_callback_result();
-  }
-
-  block_callback_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<block_callback_result>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const block_callback_result& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const block_callback_result& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(block_callback_result* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.contracts.governance.block_callback_result";
-  }
-  protected:
-  explicit block_callback_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // @@protoc_insertion_point(class_scope:koinos.contracts.governance.block_callback_result)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_koinos_2fcontracts_2fgovernance_2fgovernance_2eproto;
-};
 // ===================================================================
 
 
@@ -2305,93 +2077,90 @@ class block_callback_result final :
 #endif  // __GNUC__
 // proposal_record
 
-// .koinos.protocol.transaction proposal = 1;
-inline bool proposal_record::_internal_has_proposal() const {
-  return this != internal_default_instance() && proposal_ != nullptr;
+// repeated .koinos.protocol.operation operations = 1;
+inline int proposal_record::_internal_operations_size() const {
+  return operations_.size();
 }
-inline bool proposal_record::has_proposal() const {
-  return _internal_has_proposal();
+inline int proposal_record::operations_size() const {
+  return _internal_operations_size();
 }
-inline const ::koinos::protocol::transaction& proposal_record::_internal_proposal() const {
-  const ::koinos::protocol::transaction* p = proposal_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction&>(
-      ::koinos::protocol::_transaction_default_instance_);
+inline ::koinos::protocol::operation* proposal_record::mutable_operations(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.governance.proposal_record.operations)
+  return operations_.Mutable(index);
 }
-inline const ::koinos::protocol::transaction& proposal_record::proposal() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.governance.proposal_record.proposal)
-  return _internal_proposal();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >*
+proposal_record::mutable_operations() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.contracts.governance.proposal_record.operations)
+  return &operations_;
 }
-inline void proposal_record::unsafe_arena_set_allocated_proposal(
-    ::koinos::protocol::transaction* proposal) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal_);
-  }
-  proposal_ = proposal;
-  if (proposal) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.governance.proposal_record.proposal)
+inline const ::koinos::protocol::operation& proposal_record::_internal_operations(int index) const {
+  return operations_.Get(index);
 }
-inline ::koinos::protocol::transaction* proposal_record::release_proposal() {
-  
-  ::koinos::protocol::transaction* temp = proposal_;
-  proposal_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+inline const ::koinos::protocol::operation& proposal_record::operations(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.governance.proposal_record.operations)
+  return _internal_operations(index);
 }
-inline ::koinos::protocol::transaction* proposal_record::unsafe_arena_release_proposal() {
-  // @@protoc_insertion_point(field_release:koinos.contracts.governance.proposal_record.proposal)
-  
-  ::koinos::protocol::transaction* temp = proposal_;
-  proposal_ = nullptr;
-  return temp;
+inline ::koinos::protocol::operation* proposal_record::_internal_add_operations() {
+  return operations_.Add();
 }
-inline ::koinos::protocol::transaction* proposal_record::_internal_mutable_proposal() {
-  
-  if (proposal_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::protocol::transaction>(GetArenaForAllocation());
-    proposal_ = p;
-  }
-  return proposal_;
+inline ::koinos::protocol::operation* proposal_record::add_operations() {
+  ::koinos::protocol::operation* _add = _internal_add_operations();
+  // @@protoc_insertion_point(field_add:koinos.contracts.governance.proposal_record.operations)
+  return _add;
 }
-inline ::koinos::protocol::transaction* proposal_record::mutable_proposal() {
-  ::koinos::protocol::transaction* _msg = _internal_mutable_proposal();
-  // @@protoc_insertion_point(field_mutable:koinos.contracts.governance.proposal_record.proposal)
-  return _msg;
-}
-inline void proposal_record::set_allocated_proposal(::koinos::protocol::transaction* proposal) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal_);
-  }
-  if (proposal) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal));
-    if (message_arena != submessage_arena) {
-      proposal = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, proposal, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  proposal_ = proposal;
-  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.governance.proposal_record.proposal)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
+proposal_record::operations() const {
+  // @@protoc_insertion_point(field_list:koinos.contracts.governance.proposal_record.operations)
+  return operations_;
 }
 
-// uint64 vote_start_height = 2;
+// bytes operation_merkle_root = 2;
+inline void proposal_record::clear_operation_merkle_root() {
+  operation_merkle_root_.ClearToEmpty();
+}
+inline const std::string& proposal_record::operation_merkle_root() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.governance.proposal_record.operation_merkle_root)
+  return _internal_operation_merkle_root();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void proposal_record::set_operation_merkle_root(ArgT0&& arg0, ArgT... args) {
+ 
+ operation_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.operation_merkle_root)
+}
+inline std::string* proposal_record::mutable_operation_merkle_root() {
+  std::string* _s = _internal_mutable_operation_merkle_root();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.governance.proposal_record.operation_merkle_root)
+  return _s;
+}
+inline const std::string& proposal_record::_internal_operation_merkle_root() const {
+  return operation_merkle_root_.Get();
+}
+inline void proposal_record::_internal_set_operation_merkle_root(const std::string& value) {
+  
+  operation_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* proposal_record::_internal_mutable_operation_merkle_root() {
+  
+  return operation_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* proposal_record::release_operation_merkle_root() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.governance.proposal_record.operation_merkle_root)
+  return operation_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void proposal_record::set_allocated_operation_merkle_root(std::string* operation_merkle_root) {
+  if (operation_merkle_root != nullptr) {
+    
+  } else {
+    
+  }
+  operation_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operation_merkle_root,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.governance.proposal_record.operation_merkle_root)
+}
+
+// uint64 vote_start_height = 3;
 inline void proposal_record::clear_vote_start_height() {
   vote_start_height_ = uint64_t{0u};
 }
@@ -2411,7 +2180,7 @@ inline void proposal_record::set_vote_start_height(::PROTOBUF_NAMESPACE_ID::uint
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.vote_start_height)
 }
 
-// uint64 vote_tally = 3;
+// uint64 vote_tally = 4;
 inline void proposal_record::clear_vote_tally() {
   vote_tally_ = uint64_t{0u};
 }
@@ -2431,7 +2200,7 @@ inline void proposal_record::set_vote_tally(::PROTOBUF_NAMESPACE_ID::uint64 valu
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.vote_tally)
 }
 
-// uint64 vote_threshold = 4;
+// uint64 vote_threshold = 5;
 inline void proposal_record::clear_vote_threshold() {
   vote_threshold_ = uint64_t{0u};
 }
@@ -2451,7 +2220,7 @@ inline void proposal_record::set_vote_threshold(::PROTOBUF_NAMESPACE_ID::uint64 
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.vote_threshold)
 }
 
-// bool shall_authorize = 5;
+// bool shall_authorize = 6;
 inline void proposal_record::clear_shall_authorize() {
   shall_authorize_ = false;
 }
@@ -2471,7 +2240,7 @@ inline void proposal_record::set_shall_authorize(bool value) {
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.shall_authorize)
 }
 
-// bool updates_governance = 6;
+// bool updates_governance = 7;
 inline void proposal_record::clear_updates_governance() {
   updates_governance_ = false;
 }
@@ -2491,7 +2260,7 @@ inline void proposal_record::set_updates_governance(bool value) {
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.updates_governance)
 }
 
-// .koinos.contracts.governance.proposal_status status = 7;
+// .koinos.contracts.governance.proposal_status status = 8;
 inline void proposal_record::clear_status() {
   status_ = 0;
 }
@@ -2511,97 +2280,114 @@ inline void proposal_record::set_status(::koinos::contracts::governance::proposa
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.status)
 }
 
+// uint64 fee = 9;
+inline void proposal_record::clear_fee() {
+  fee_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 proposal_record::_internal_fee() const {
+  return fee_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 proposal_record::fee() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.governance.proposal_record.fee)
+  return _internal_fee();
+}
+inline void proposal_record::_internal_set_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  fee_ = value;
+}
+inline void proposal_record::set_fee(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_fee(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_record.fee)
+}
+
 // -------------------------------------------------------------------
 
 // submit_proposal_arguments
 
-// .koinos.protocol.transaction proposal = 1;
-inline bool submit_proposal_arguments::_internal_has_proposal() const {
-  return this != internal_default_instance() && proposal_ != nullptr;
+// repeated .koinos.protocol.operation operations = 1;
+inline int submit_proposal_arguments::_internal_operations_size() const {
+  return operations_.size();
 }
-inline bool submit_proposal_arguments::has_proposal() const {
-  return _internal_has_proposal();
+inline int submit_proposal_arguments::operations_size() const {
+  return _internal_operations_size();
 }
-inline const ::koinos::protocol::transaction& submit_proposal_arguments::_internal_proposal() const {
-  const ::koinos::protocol::transaction* p = proposal_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction&>(
-      ::koinos::protocol::_transaction_default_instance_);
+inline ::koinos::protocol::operation* submit_proposal_arguments::mutable_operations(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.governance.submit_proposal_arguments.operations)
+  return operations_.Mutable(index);
 }
-inline const ::koinos::protocol::transaction& submit_proposal_arguments::proposal() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.governance.submit_proposal_arguments.proposal)
-  return _internal_proposal();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >*
+submit_proposal_arguments::mutable_operations() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.contracts.governance.submit_proposal_arguments.operations)
+  return &operations_;
 }
-inline void submit_proposal_arguments::unsafe_arena_set_allocated_proposal(
-    ::koinos::protocol::transaction* proposal) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal_);
-  }
-  proposal_ = proposal;
-  if (proposal) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.governance.submit_proposal_arguments.proposal)
+inline const ::koinos::protocol::operation& submit_proposal_arguments::_internal_operations(int index) const {
+  return operations_.Get(index);
 }
-inline ::koinos::protocol::transaction* submit_proposal_arguments::release_proposal() {
-  
-  ::koinos::protocol::transaction* temp = proposal_;
-  proposal_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
+inline const ::koinos::protocol::operation& submit_proposal_arguments::operations(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.governance.submit_proposal_arguments.operations)
+  return _internal_operations(index);
 }
-inline ::koinos::protocol::transaction* submit_proposal_arguments::unsafe_arena_release_proposal() {
-  // @@protoc_insertion_point(field_release:koinos.contracts.governance.submit_proposal_arguments.proposal)
-  
-  ::koinos::protocol::transaction* temp = proposal_;
-  proposal_ = nullptr;
-  return temp;
+inline ::koinos::protocol::operation* submit_proposal_arguments::_internal_add_operations() {
+  return operations_.Add();
 }
-inline ::koinos::protocol::transaction* submit_proposal_arguments::_internal_mutable_proposal() {
-  
-  if (proposal_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::protocol::transaction>(GetArenaForAllocation());
-    proposal_ = p;
-  }
-  return proposal_;
+inline ::koinos::protocol::operation* submit_proposal_arguments::add_operations() {
+  ::koinos::protocol::operation* _add = _internal_add_operations();
+  // @@protoc_insertion_point(field_add:koinos.contracts.governance.submit_proposal_arguments.operations)
+  return _add;
 }
-inline ::koinos::protocol::transaction* submit_proposal_arguments::mutable_proposal() {
-  ::koinos::protocol::transaction* _msg = _internal_mutable_proposal();
-  // @@protoc_insertion_point(field_mutable:koinos.contracts.governance.submit_proposal_arguments.proposal)
-  return _msg;
-}
-inline void submit_proposal_arguments::set_allocated_proposal(::koinos::protocol::transaction* proposal) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal_);
-  }
-  if (proposal) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(proposal));
-    if (message_arena != submessage_arena) {
-      proposal = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, proposal, submessage_arena);
-    }
-    
-  } else {
-    
-  }
-  proposal_ = proposal;
-  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.governance.submit_proposal_arguments.proposal)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::protocol::operation >&
+submit_proposal_arguments::operations() const {
+  // @@protoc_insertion_point(field_list:koinos.contracts.governance.submit_proposal_arguments.operations)
+  return operations_;
 }
 
-// uint64 fee = 2;
+// bytes operation_merkle_root = 2;
+inline void submit_proposal_arguments::clear_operation_merkle_root() {
+  operation_merkle_root_.ClearToEmpty();
+}
+inline const std::string& submit_proposal_arguments::operation_merkle_root() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.governance.submit_proposal_arguments.operation_merkle_root)
+  return _internal_operation_merkle_root();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void submit_proposal_arguments::set_operation_merkle_root(ArgT0&& arg0, ArgT... args) {
+ 
+ operation_merkle_root_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.governance.submit_proposal_arguments.operation_merkle_root)
+}
+inline std::string* submit_proposal_arguments::mutable_operation_merkle_root() {
+  std::string* _s = _internal_mutable_operation_merkle_root();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.governance.submit_proposal_arguments.operation_merkle_root)
+  return _s;
+}
+inline const std::string& submit_proposal_arguments::_internal_operation_merkle_root() const {
+  return operation_merkle_root_.Get();
+}
+inline void submit_proposal_arguments::_internal_set_operation_merkle_root(const std::string& value) {
+  
+  operation_merkle_root_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* submit_proposal_arguments::_internal_mutable_operation_merkle_root() {
+  
+  return operation_merkle_root_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* submit_proposal_arguments::release_operation_merkle_root() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.governance.submit_proposal_arguments.operation_merkle_root)
+  return operation_merkle_root_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void submit_proposal_arguments::set_allocated_operation_merkle_root(std::string* operation_merkle_root) {
+  if (operation_merkle_root != nullptr) {
+    
+  } else {
+    
+  }
+  operation_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), operation_merkle_root,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.governance.submit_proposal_arguments.operation_merkle_root)
+}
+
+// uint64 fee = 3;
 inline void submit_proposal_arguments::clear_fee() {
   fee_ = uint64_t{0u};
 }
@@ -2624,26 +2410,6 @@ inline void submit_proposal_arguments::set_fee(::PROTOBUF_NAMESPACE_ID::uint64 v
 // -------------------------------------------------------------------
 
 // submit_proposal_result
-
-// bool value = 1;
-inline void submit_proposal_result::clear_value() {
-  value_ = false;
-}
-inline bool submit_proposal_result::_internal_value() const {
-  return value_;
-}
-inline bool submit_proposal_result::value() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.governance.submit_proposal_result.value)
-  return _internal_value();
-}
-inline void submit_proposal_result::_internal_set_value(bool value) {
-  
-  value_ = value;
-}
-inline void submit_proposal_result::set_value(bool value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.contracts.governance.submit_proposal_result.value)
-}
 
 // -------------------------------------------------------------------
 
@@ -3291,21 +3057,9 @@ inline void proposal_vote_event::set_vote_threshold(::PROTOBUF_NAMESPACE_ID::uin
   // @@protoc_insertion_point(field_set:koinos.contracts.governance.proposal_vote_event.vote_threshold)
 }
 
-// -------------------------------------------------------------------
-
-// block_callback_arguments
-
-// -------------------------------------------------------------------
-
-// block_callback_result
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

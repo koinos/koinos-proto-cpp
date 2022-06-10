@@ -76,9 +76,9 @@ extern contract_metadata_objectDefaultTypeInternal _contract_metadata_object_def
 class database_key;
 struct database_keyDefaultTypeInternal;
 extern database_keyDefaultTypeInternal _database_key_default_instance_;
-class error_info;
-struct error_infoDefaultTypeInternal;
-extern error_infoDefaultTypeInternal _error_info_default_instance_;
+class error_data;
+struct error_dataDefaultTypeInternal;
+extern error_dataDefaultTypeInternal _error_data_default_instance_;
 class genesis_data;
 struct genesis_dataDefaultTypeInternal;
 extern genesis_dataDefaultTypeInternal _genesis_data_default_instance_;
@@ -109,7 +109,7 @@ template<> ::koinos::chain::compute_bandwidth_entry* Arena::CreateMaybeMessage<:
 template<> ::koinos::chain::compute_bandwidth_registry* Arena::CreateMaybeMessage<::koinos::chain::compute_bandwidth_registry>(Arena*);
 template<> ::koinos::chain::contract_metadata_object* Arena::CreateMaybeMessage<::koinos::chain::contract_metadata_object>(Arena*);
 template<> ::koinos::chain::database_key* Arena::CreateMaybeMessage<::koinos::chain::database_key>(Arena*);
-template<> ::koinos::chain::error_info* Arena::CreateMaybeMessage<::koinos::chain::error_info>(Arena*);
+template<> ::koinos::chain::error_data* Arena::CreateMaybeMessage<::koinos::chain::error_data>(Arena*);
 template<> ::koinos::chain::genesis_data* Arena::CreateMaybeMessage<::koinos::chain::genesis_data>(Arena*);
 template<> ::koinos::chain::genesis_entry* Arena::CreateMaybeMessage<::koinos::chain::genesis_entry>(Arena*);
 template<> ::koinos::chain::head_info* Arena::CreateMaybeMessage<::koinos::chain::head_info>(Arena*);
@@ -172,6 +172,150 @@ inline bool dsa_Parse(
 }
 // ===================================================================
 
+class error_data final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.error_data) */ {
+ public:
+  inline error_data() : error_data(nullptr) {}
+  ~error_data() override;
+  explicit constexpr error_data(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  error_data(const error_data& from);
+  error_data(error_data&& from) noexcept
+    : error_data() {
+    *this = ::std::move(from);
+  }
+
+  inline error_data& operator=(const error_data& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline error_data& operator=(error_data&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const error_data& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const error_data* internal_default_instance() {
+    return reinterpret_cast<const error_data*>(
+               &_error_data_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(error_data& a, error_data& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(error_data* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(error_data* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline error_data* New() const final {
+    return new error_data();
+  }
+
+  error_data* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<error_data>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const error_data& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const error_data& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(error_data* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.error_data";
+  }
+  protected:
+  explicit error_data(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kMessageFieldNumber = 1,
+  };
+  // string message = 1;
+  void clear_message();
+  const std::string& message() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_MUST_USE_RESULT std::string* release_message();
+  void set_allocated_message(std::string* message);
+  private:
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.error_data)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
+};
+// -------------------------------------------------------------------
+
 class result final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.result) */ {
  public:
@@ -211,12 +355,18 @@ class result final :
   static const result& default_instance() {
     return *internal_default_instance();
   }
+  enum ValueCase {
+    kObject = 1,
+    kError = 2,
+    VALUE_NOT_SET = 0,
+  };
+
   static inline const result* internal_default_instance() {
     return reinterpret_cast<const result*>(
                &_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(result& a, result& b) {
     a.Swap(&b);
@@ -287,186 +437,68 @@ class result final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kValueFieldNumber = 2,
-    kCodeFieldNumber = 1,
+    kObjectFieldNumber = 1,
+    kErrorFieldNumber = 2,
   };
-  // bytes value = 2;
-  void clear_value();
-  const std::string& value() const;
+  // bytes object = 1;
+  bool has_object() const;
+  private:
+  bool _internal_has_object() const;
+  public:
+  void clear_object();
+  const std::string& object() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_value(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_value();
-  PROTOBUF_MUST_USE_RESULT std::string* release_value();
-  void set_allocated_value(std::string* value);
+  void set_object(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_object();
+  PROTOBUF_MUST_USE_RESULT std::string* release_object();
+  void set_allocated_object(std::string* object);
   private:
-  const std::string& _internal_value() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
-  std::string* _internal_mutable_value();
+  const std::string& _internal_object() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_object(const std::string& value);
+  std::string* _internal_mutable_object();
   public:
 
-  // int32 code = 1;
-  void clear_code();
-  ::PROTOBUF_NAMESPACE_ID::int32 code() const;
-  void set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // .koinos.chain.error_data error = 2;
+  bool has_error() const;
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_code() const;
-  void _internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  bool _internal_has_error() const;
   public:
+  void clear_error();
+  const ::koinos::chain::error_data& error() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::error_data* release_error();
+  ::koinos::chain::error_data* mutable_error();
+  void set_allocated_error(::koinos::chain::error_data* error);
+  private:
+  const ::koinos::chain::error_data& _internal_error() const;
+  ::koinos::chain::error_data* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::koinos::chain::error_data* error);
+  ::koinos::chain::error_data* unsafe_arena_release_error();
 
+  void clear_value();
+  ValueCase value_case() const;
   // @@protoc_insertion_point(class_scope:koinos.chain.result)
  private:
   class _Internal;
+  void set_has_object();
+  void set_has_error();
+
+  inline bool has_value() const;
+  inline void clear_has_value();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
-  ::PROTOBUF_NAMESPACE_ID::int32 code_;
+  union ValueUnion {
+    constexpr ValueUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr object_;
+    ::koinos::chain::error_data* error_;
+  } value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
-};
-// -------------------------------------------------------------------
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
 
-class error_info final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.error_info) */ {
- public:
-  inline error_info() : error_info(nullptr) {}
-  ~error_info() override;
-  explicit constexpr error_info(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  error_info(const error_info& from);
-  error_info(error_info&& from) noexcept
-    : error_info() {
-    *this = ::std::move(from);
-  }
-
-  inline error_info& operator=(const error_info& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline error_info& operator=(error_info&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const error_info& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const error_info* internal_default_instance() {
-    return reinterpret_cast<const error_info*>(
-               &_error_info_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(error_info& a, error_info& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(error_info* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(error_info* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline error_info* New() const final {
-    return new error_info();
-  }
-
-  error_info* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<error_info>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const error_info& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const error_info& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(error_info* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.error_info";
-  }
-  protected:
-  explicit error_info(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kMessageFieldNumber = 1,
-  };
-  // string message = 1;
-  void clear_message();
-  const std::string& message() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_message(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_message();
-  PROTOBUF_MUST_USE_RESULT std::string* release_message();
-  void set_allocated_message(std::string* message);
-  private:
-  const std::string& _internal_message() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
-  std::string* _internal_mutable_message();
-  public:
-
-  // @@protoc_insertion_point(class_scope:koinos.chain.error_info)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fchain_2eproto;
 };
 // -------------------------------------------------------------------
@@ -2440,114 +2472,44 @@ class genesis_data final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// result
-
-// int32 code = 1;
-inline void result::clear_code() {
-  code_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 result::_internal_code() const {
-  return code_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 result::code() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.result.code)
-  return _internal_code();
-}
-inline void result::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  code_ = value;
-}
-inline void result::set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.result.code)
-}
-
-// bytes value = 2;
-inline void result::clear_value() {
-  value_.ClearToEmpty();
-}
-inline const std::string& result::value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.result.value)
-  return _internal_value();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void result::set_value(ArgT0&& arg0, ArgT... args) {
- 
- value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.result.value)
-}
-inline std::string* result::mutable_value() {
-  std::string* _s = _internal_mutable_value();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.result.value)
-  return _s;
-}
-inline const std::string& result::_internal_value() const {
-  return value_.Get();
-}
-inline void result::_internal_set_value(const std::string& value) {
-  
-  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* result::_internal_mutable_value() {
-  
-  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* result::release_value() {
-  // @@protoc_insertion_point(field_release:koinos.chain.result.value)
-  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void result::set_allocated_value(std::string* value) {
-  if (value != nullptr) {
-    
-  } else {
-    
-  }
-  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.result.value)
-}
-
-// -------------------------------------------------------------------
-
-// error_info
+// error_data
 
 // string message = 1;
-inline void error_info::clear_message() {
+inline void error_data::clear_message() {
   message_.ClearToEmpty();
 }
-inline const std::string& error_info::message() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.error_info.message)
+inline const std::string& error_data::message() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.error_data.message)
   return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void error_info::set_message(ArgT0&& arg0, ArgT... args) {
+void error_data::set_message(ArgT0&& arg0, ArgT... args) {
  
  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.chain.error_info.message)
+  // @@protoc_insertion_point(field_set:koinos.chain.error_data.message)
 }
-inline std::string* error_info::mutable_message() {
+inline std::string* error_data::mutable_message() {
   std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.error_info.message)
+  // @@protoc_insertion_point(field_mutable:koinos.chain.error_data.message)
   return _s;
 }
-inline const std::string& error_info::_internal_message() const {
+inline const std::string& error_data::_internal_message() const {
   return message_.Get();
 }
-inline void error_info::_internal_set_message(const std::string& value) {
+inline void error_data::_internal_set_message(const std::string& value) {
   
   message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* error_info::_internal_mutable_message() {
+inline std::string* error_data::_internal_mutable_message() {
   
   return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* error_info::release_message() {
-  // @@protoc_insertion_point(field_release:koinos.chain.error_info.message)
+inline std::string* error_data::release_message() {
+  // @@protoc_insertion_point(field_release:koinos.chain.error_data.message)
   return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void error_info::set_allocated_message(std::string* message) {
+inline void error_data::set_allocated_message(std::string* message) {
   if (message != nullptr) {
     
   } else {
@@ -2555,9 +2517,178 @@ inline void error_info::set_allocated_message(std::string* message) {
   }
   message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.error_info.message)
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.error_data.message)
 }
 
+// -------------------------------------------------------------------
+
+// result
+
+// bytes object = 1;
+inline bool result::_internal_has_object() const {
+  return value_case() == kObject;
+}
+inline bool result::has_object() const {
+  return _internal_has_object();
+}
+inline void result::set_has_object() {
+  _oneof_case_[0] = kObject;
+}
+inline void result::clear_object() {
+  if (_internal_has_object()) {
+    value_.object_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+    clear_has_value();
+  }
+}
+inline const std::string& result::object() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.result.object)
+  return _internal_object();
+}
+template <typename ArgT0, typename... ArgT>
+inline void result::set_object(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_object()) {
+    clear_value();
+    set_has_object();
+    value_.object_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.object_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.result.object)
+}
+inline std::string* result::mutable_object() {
+  std::string* _s = _internal_mutable_object();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.result.object)
+  return _s;
+}
+inline const std::string& result::_internal_object() const {
+  if (_internal_has_object()) {
+    return value_.object_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void result::_internal_set_object(const std::string& value) {
+  if (!_internal_has_object()) {
+    clear_value();
+    set_has_object();
+    value_.object_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  value_.object_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* result::_internal_mutable_object() {
+  if (!_internal_has_object()) {
+    clear_value();
+    set_has_object();
+    value_.object_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return value_.object_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* result::release_object() {
+  // @@protoc_insertion_point(field_release:koinos.chain.result.object)
+  if (_internal_has_object()) {
+    clear_has_value();
+    return value_.object_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void result::set_allocated_object(std::string* object) {
+  if (has_value()) {
+    clear_value();
+  }
+  if (object != nullptr) {
+    set_has_object();
+    value_.object_.UnsafeSetDefault(object);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(object);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.result.object)
+}
+
+// .koinos.chain.error_data error = 2;
+inline bool result::_internal_has_error() const {
+  return value_case() == kError;
+}
+inline bool result::has_error() const {
+  return _internal_has_error();
+}
+inline void result::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline void result::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete value_.error_;
+    }
+    clear_has_value();
+  }
+}
+inline ::koinos::chain::error_data* result::release_error() {
+  // @@protoc_insertion_point(field_release:koinos.chain.result.error)
+  if (_internal_has_error()) {
+    clear_has_value();
+      ::koinos::chain::error_data* temp = value_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    value_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::chain::error_data& result::_internal_error() const {
+  return _internal_has_error()
+      ? *value_.error_
+      : reinterpret_cast< ::koinos::chain::error_data&>(::koinos::chain::_error_data_default_instance_);
+}
+inline const ::koinos::chain::error_data& result::error() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.result.error)
+  return _internal_error();
+}
+inline ::koinos::chain::error_data* result::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.chain.result.error)
+  if (_internal_has_error()) {
+    clear_has_value();
+    ::koinos::chain::error_data* temp = value_.error_;
+    value_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void result::unsafe_arena_set_allocated_error(::koinos::chain::error_data* error) {
+  clear_value();
+  if (error) {
+    set_has_error();
+    value_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.result.error)
+}
+inline ::koinos::chain::error_data* result::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_value();
+    set_has_error();
+    value_.error_ = CreateMaybeMessage< ::koinos::chain::error_data >(GetArenaForAllocation());
+  }
+  return value_.error_;
+}
+inline ::koinos::chain::error_data* result::mutable_error() {
+  ::koinos::chain::error_data* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.result.error)
+  return _msg;
+}
+
+inline bool result::has_value() const {
+  return value_case() != VALUE_NOT_SET;
+}
+inline void result::clear_has_value() {
+  _oneof_case_[0] = VALUE_NOT_SET;
+}
+inline result::ValueCase result::value_case() const {
+  return result::ValueCase(_oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // object_space

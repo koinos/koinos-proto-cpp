@@ -18,10 +18,21 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace koinos {
 namespace chain {
+constexpr error_data::error_data(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct error_dataDefaultTypeInternal {
+  constexpr error_dataDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~error_dataDefaultTypeInternal() {}
+  union {
+    error_data _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT error_dataDefaultTypeInternal _error_data_default_instance_;
 constexpr result::result(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , code_(0){}
+  : _oneof_case_{}{}
 struct resultDefaultTypeInternal {
   constexpr resultDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -31,18 +42,6 @@ struct resultDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT resultDefaultTypeInternal _result_default_instance_;
-constexpr error_info::error_info(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct error_infoDefaultTypeInternal {
-  constexpr error_infoDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~error_infoDefaultTypeInternal() {}
-  union {
-    error_info _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT error_infoDefaultTypeInternal _error_info_default_instance_;
 constexpr object_space::object_space(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : zone_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -215,18 +214,19 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_s
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::error_data, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::error_data, message_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::result, _internal_metadata_),
   ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::result, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::result, code_),
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::koinos::chain::result, value_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::error_info, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::chain::error_info, message_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::object_space, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -320,25 +320,25 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fchain_2eproto
   PROTOBUF_FIELD_OFFSET(::koinos::chain::genesis_data, entries_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::koinos::chain::result)},
-  { 7, -1, sizeof(::koinos::chain::error_info)},
-  { 13, -1, sizeof(::koinos::chain::object_space)},
-  { 21, -1, sizeof(::koinos::chain::database_key)},
-  { 28, -1, sizeof(::koinos::chain::max_account_resources)},
-  { 34, -1, sizeof(::koinos::chain::head_info)},
-  { 42, -1, sizeof(::koinos::chain::caller_data)},
-  { 49, -1, sizeof(::koinos::chain::argument_data)},
-  { 56, -1, sizeof(::koinos::chain::resource_limit_data)},
-  { 67, -1, sizeof(::koinos::chain::contract_metadata_object)},
-  { 77, -1, sizeof(::koinos::chain::compute_bandwidth_entry)},
-  { 84, -1, sizeof(::koinos::chain::compute_bandwidth_registry)},
-  { 90, -1, sizeof(::koinos::chain::genesis_entry)},
-  { 98, -1, sizeof(::koinos::chain::genesis_data)},
+  { 0, -1, sizeof(::koinos::chain::error_data)},
+  { 6, -1, sizeof(::koinos::chain::result)},
+  { 14, -1, sizeof(::koinos::chain::object_space)},
+  { 22, -1, sizeof(::koinos::chain::database_key)},
+  { 29, -1, sizeof(::koinos::chain::max_account_resources)},
+  { 35, -1, sizeof(::koinos::chain::head_info)},
+  { 43, -1, sizeof(::koinos::chain::caller_data)},
+  { 50, -1, sizeof(::koinos::chain::argument_data)},
+  { 57, -1, sizeof(::koinos::chain::resource_limit_data)},
+  { 68, -1, sizeof(::koinos::chain::contract_metadata_object)},
+  { 78, -1, sizeof(::koinos::chain::compute_bandwidth_entry)},
+  { 85, -1, sizeof(::koinos::chain::compute_bandwidth_registry)},
+  { 91, -1, sizeof(::koinos::chain::genesis_entry)},
+  { 99, -1, sizeof(::koinos::chain::genesis_data)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_error_data_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_result_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_error_info_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_object_space_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_database_key_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_max_account_resources_default_instance_),
@@ -356,40 +356,41 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/chain.proto\022\014koinos.chain"
   "\032\024koinos/options.proto\032\023koinos/common.pr"
-  "oto\"%\n\006result\022\014\n\004code\030\001 \001(\005\022\r\n\005value\030\002 \001"
-  "(\014\"\035\n\nerror_info\022\017\n\007message\030\001 \001(\t\"8\n\014obj"
-  "ect_space\022\016\n\006system\030\001 \001(\010\022\014\n\004zone\030\002 \001(\014\022"
-  "\n\n\002id\030\003 \001(\r\"F\n\014database_key\022)\n\005space\030\001 \001"
-  "(\0132\032.koinos.chain.object_space\022\013\n\003key\030\002 "
-  "\001(\014\"*\n\025max_account_resources\022\021\n\005value\030\001 "
-  "\001(\004B\0020\001\"|\n\thead_info\022-\n\rhead_topology\030\001 "
-  "\001(\0132\026.koinos.block_topology\022\033\n\017head_bloc"
-  "k_time\030\002 \001(\004B\0020\001\022#\n\027last_irreversible_bl"
-  "ock\030\003 \001(\004B\0020\001\"V\n\013caller_data\022\024\n\006caller\030\001"
-  " \001(\014B\004\200\265\030\006\0221\n\020caller_privilege\030\002 \001(\0162\027.k"
-  "oinos.chain.privilege\"7\n\rargument_data\022\023"
-  "\n\013entry_point\030\001 \001(\r\022\021\n\targuments\030\002 \001(\014\"\346"
-  "\001\n\023resource_limit_data\022\036\n\022disk_storage_l"
-  "imit\030\001 \001(\004B\0020\001\022\035\n\021disk_storage_cost\030\002 \001("
-  "\004B\0020\001\022#\n\027network_bandwidth_limit\030\003 \001(\004B\002"
-  "0\001\022\"\n\026network_bandwidth_cost\030\004 \001(\004B\0020\001\022#"
-  "\n\027compute_bandwidth_limit\030\005 \001(\004B\0020\001\022\"\n\026c"
-  "ompute_bandwidth_cost\030\006 \001(\004B\0020\001\"\252\001\n\030cont"
-  "ract_metadata_object\022\014\n\004hash\030\001 \001(\014\022\016\n\006sy"
-  "stem\030\002 \001(\010\022 \n\030authorizes_call_contract\030\003"
-  " \001(\010\022*\n\"authorizes_transaction_applicati"
-  "on\030\004 \001(\010\022\"\n\032authorizes_upload_contract\030\005"
-  " \001(\010\"8\n\027compute_bandwidth_entry\022\014\n\004name\030"
-  "\001 \001(\t\022\017\n\007compute\030\002 \001(\004\"T\n\032compute_bandwi"
-  "dth_registry\0226\n\007entries\030\001 \003(\0132%.koinos.c"
-  "hain.compute_bandwidth_entry\"V\n\rgenesis_"
-  "entry\022)\n\005space\030\001 \001(\0132\032.koinos.chain.obje"
-  "ct_space\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n\014"
-  "genesis_data\022,\n\007entries\030\001 \003(\0132\033.koinos.c"
-  "hain.genesis_entry*+\n\tprivilege\022\017\n\013kerne"
-  "l_mode\020\000\022\r\n\tuser_mode\020\001*\032\n\003dsa\022\023\n\017ecdsa_"
-  "secp256k1\020\000B4Z2github.com/koinos/koinos-"
-  "proto-golang/koinos/chainb\006proto3"
+  "oto\"\035\n\nerror_data\022\017\n\007message\030\001 \001(\t\"N\n\006re"
+  "sult\022\020\n\006object\030\001 \001(\014H\000\022)\n\005error\030\002 \001(\0132\030."
+  "koinos.chain.error_dataH\000B\007\n\005value\"8\n\014ob"
+  "ject_space\022\016\n\006system\030\001 \001(\010\022\014\n\004zone\030\002 \001(\014"
+  "\022\n\n\002id\030\003 \001(\r\"F\n\014database_key\022)\n\005space\030\001 "
+  "\001(\0132\032.koinos.chain.object_space\022\013\n\003key\030\002"
+  " \001(\014\"*\n\025max_account_resources\022\021\n\005value\030\001"
+  " \001(\004B\0020\001\"|\n\thead_info\022-\n\rhead_topology\030\001"
+  " \001(\0132\026.koinos.block_topology\022\033\n\017head_blo"
+  "ck_time\030\002 \001(\004B\0020\001\022#\n\027last_irreversible_b"
+  "lock\030\003 \001(\004B\0020\001\"V\n\013caller_data\022\024\n\006caller\030"
+  "\001 \001(\014B\004\200\265\030\006\0221\n\020caller_privilege\030\002 \001(\0162\027."
+  "koinos.chain.privilege\"7\n\rargument_data\022"
+  "\023\n\013entry_point\030\001 \001(\r\022\021\n\targuments\030\002 \001(\014\""
+  "\346\001\n\023resource_limit_data\022\036\n\022disk_storage_"
+  "limit\030\001 \001(\004B\0020\001\022\035\n\021disk_storage_cost\030\002 \001"
+  "(\004B\0020\001\022#\n\027network_bandwidth_limit\030\003 \001(\004B"
+  "\0020\001\022\"\n\026network_bandwidth_cost\030\004 \001(\004B\0020\001\022"
+  "#\n\027compute_bandwidth_limit\030\005 \001(\004B\0020\001\022\"\n\026"
+  "compute_bandwidth_cost\030\006 \001(\004B\0020\001\"\252\001\n\030con"
+  "tract_metadata_object\022\014\n\004hash\030\001 \001(\014\022\016\n\006s"
+  "ystem\030\002 \001(\010\022 \n\030authorizes_call_contract\030"
+  "\003 \001(\010\022*\n\"authorizes_transaction_applicat"
+  "ion\030\004 \001(\010\022\"\n\032authorizes_upload_contract\030"
+  "\005 \001(\010\"8\n\027compute_bandwidth_entry\022\014\n\004name"
+  "\030\001 \001(\t\022\017\n\007compute\030\002 \001(\004\"T\n\032compute_bandw"
+  "idth_registry\0226\n\007entries\030\001 \003(\0132%.koinos."
+  "chain.compute_bandwidth_entry\"V\n\rgenesis"
+  "_entry\022)\n\005space\030\001 \001(\0132\032.koinos.chain.obj"
+  "ect_space\022\013\n\003key\030\002 \001(\014\022\r\n\005value\030\003 \001(\014\"<\n"
+  "\014genesis_data\022,\n\007entries\030\001 \003(\0132\033.koinos."
+  "chain.genesis_entry*+\n\tprivilege\022\017\n\013kern"
+  "el_mode\020\000\022\r\n\tuser_mode\020\001*\032\n\003dsa\022\023\n\017ecdsa"
+  "_secp256k1\020\000B4Z2github.com/koinos/koinos"
+  "-proto-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -397,7 +398,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 1433, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  false, false, 1474, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 2, 14,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,
@@ -440,10 +441,230 @@ bool dsa_IsValid(int value) {
 
 // ===================================================================
 
-class result::_Internal {
+class error_data::_Internal {
  public:
 };
 
+error_data::error_data(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.chain.error_data)
+}
+error_data::error_data(const error_data& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_message().empty()) {
+    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:koinos.chain.error_data)
+}
+
+inline void error_data::SharedCtor() {
+message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+error_data::~error_data() {
+  // @@protoc_insertion_point(destructor:koinos.chain.error_data)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void error_data::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void error_data::ArenaDtor(void* object) {
+  error_data* _this = reinterpret_cast< error_data* >(object);
+  (void)_this;
+}
+void error_data::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void error_data::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void error_data::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.chain.error_data)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  message_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* error_data::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string message = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_message();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.chain.error_data.message"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* error_data::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.chain.error_data)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string message = 1;
+  if (!this->_internal_message().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.chain.error_data.message");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_message(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.chain.error_data)
+  return target;
+}
+
+size_t error_data::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.chain.error_data)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string message = 1;
+  if (!this->_internal_message().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_message());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData error_data::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    error_data::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*error_data::GetClassData() const { return &_class_data_; }
+
+void error_data::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<error_data *>(to)->MergeFrom(
+      static_cast<const error_data &>(from));
+}
+
+
+void error_data::MergeFrom(const error_data& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.chain.error_data)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_message().empty()) {
+    _internal_set_message(from._internal_message());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void error_data::CopyFrom(const error_data& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.chain.error_data)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool error_data::IsInitialized() const {
+  return true;
+}
+
+void error_data::InternalSwap(error_data* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &message_, GetArenaForAllocation(),
+      &other->message_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata error_data::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fchain_2fchain_2eproto_getter, &descriptor_table_koinos_2fchain_2fchain_2eproto_once,
+      file_level_metadata_koinos_2fchain_2fchain_2eproto[0]);
+}
+
+// ===================================================================
+
+class result::_Internal {
+ public:
+  static const ::koinos::chain::error_data& error(const result* msg);
+};
+
+const ::koinos::chain::error_data&
+result::_Internal::error(const result* msg) {
+  return *msg->value_.error_;
+}
+void result::set_allocated_error(::koinos::chain::error_data* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_value();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::chain::error_data>::GetOwningArena(error);
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    value_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.result.error)
+}
 result::result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -456,18 +677,25 @@ result::result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 result::result(const result& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_value().empty()) {
-    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
-      GetArenaForAllocation());
+  clear_has_value();
+  switch (from.value_case()) {
+    case kObject: {
+      _internal_set_object(from._internal_object());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::koinos::chain::error_data::MergeFrom(from._internal_error());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
   }
-  code_ = from.code_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.result)
 }
 
 inline void result::SharedCtor() {
-value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-code_ = 0;
+clear_has_value();
 }
 
 result::~result() {
@@ -479,7 +707,9 @@ result::~result() {
 
 inline void result::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (has_value()) {
+    clear_value();
+  }
 }
 
 void result::ArenaDtor(void* object) {
@@ -492,14 +722,34 @@ void result::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
 
+void result::clear_value() {
+// @@protoc_insertion_point(one_of_clear_start:koinos.chain.result)
+  switch (value_case()) {
+    case kObject: {
+      value_.object_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete value_.error_;
+      }
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = VALUE_NOT_SET;
+}
+
+
 void result::Clear() {
 // @@protoc_insertion_point(message_clear_start:koinos.chain.result)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  value_.ClearToEmpty();
-  code_ = 0;
+  clear_value();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -509,18 +759,18 @@ const char* result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 code = 1;
+      // bytes object = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_object();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes value = 2;
+      // .koinos.chain.error_data error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_value();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -553,16 +803,18 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 code = 1;
-  if (this->_internal_code() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_code(), target);
+  // bytes object = 1;
+  if (_internal_has_object()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_object(), target);
   }
 
-  // bytes value = 2;
-  if (!this->_internal_value().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_value(), target);
+  // .koinos.chain.error_data error = 2;
+  if (_internal_has_error()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -581,20 +833,25 @@ size_t result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes value = 2;
-  if (!this->_internal_value().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_value());
+  switch (value_case()) {
+    // bytes object = 1;
+    case kObject: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+          this->_internal_object());
+      break;
+    }
+    // .koinos.chain.error_data error = 2;
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *value_.error_);
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
   }
-
-  // int32 code = 1;
-  if (this->_internal_code() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_code());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -623,11 +880,18 @@ void result::MergeFrom(const result& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_value().empty()) {
-    _internal_set_value(from._internal_value());
-  }
-  if (from._internal_code() != 0) {
-    _internal_set_code(from._internal_code());
+  switch (from.value_case()) {
+    case kObject: {
+      _internal_set_object(from._internal_object());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::koinos::chain::error_data::MergeFrom(from._internal_error());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -646,215 +910,11 @@ bool result::IsInitialized() const {
 void result::InternalSwap(result* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &value_, GetArenaForAllocation(),
-      &other->value_, other->GetArenaForAllocation()
-  );
-  swap(code_, other->code_);
+  swap(value_, other->value_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata result::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_koinos_2fchain_2fchain_2eproto_getter, &descriptor_table_koinos_2fchain_2fchain_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fchain_2eproto[0]);
-}
-
-// ===================================================================
-
-class error_info::_Internal {
- public:
-};
-
-error_info::error_info(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:koinos.chain.error_info)
-}
-error_info::error_info(const error_info& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_message().empty()) {
-    message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_message(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:koinos.chain.error_info)
-}
-
-inline void error_info::SharedCtor() {
-message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-error_info::~error_info() {
-  // @@protoc_insertion_point(destructor:koinos.chain.error_info)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void error_info::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void error_info::ArenaDtor(void* object) {
-  error_info* _this = reinterpret_cast< error_info* >(object);
-  (void)_this;
-}
-void error_info::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void error_info::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void error_info::Clear() {
-// @@protoc_insertion_point(message_clear_start:koinos.chain.error_info)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  message_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* error_info::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string message = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_message();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.chain.error_info.message"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag == 0) || ((tag & 7) == 4)) {
-          CHK_(ptr);
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
-      }
-    }  // switch
-  }  // while
-success:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto success;
-#undef CHK_
-}
-
-::PROTOBUF_NAMESPACE_ID::uint8* error_info::_InternalSerialize(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:koinos.chain.error_info)
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string message = 1;
-  if (!this->_internal_message().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "koinos.chain.error_info.message");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_message(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:koinos.chain.error_info)
-  return target;
-}
-
-size_t error_info::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:koinos.chain.error_info)
-  size_t total_size = 0;
-
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string message = 1;
-  if (!this->_internal_message().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_message());
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
-        _internal_metadata_, total_size, &_cached_size_);
-  }
-  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData error_info::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    error_info::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*error_info::GetClassData() const { return &_class_data_; }
-
-void error_info::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
-  static_cast<error_info *>(to)->MergeFrom(
-      static_cast<const error_info &>(from));
-}
-
-
-void error_info::MergeFrom(const error_info& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:koinos.chain.error_info)
-  GOOGLE_DCHECK_NE(&from, this);
-  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_message().empty()) {
-    _internal_set_message(from._internal_message());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void error_info::CopyFrom(const error_info& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:koinos.chain.error_info)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool error_info::IsInitialized() const {
-  return true;
-}
-
-void error_info::InternalSwap(error_info* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &message_, GetArenaForAllocation(),
-      &other->message_, other->GetArenaForAllocation()
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata error_info::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fchain_2eproto_getter, &descriptor_table_koinos_2fchain_2fchain_2eproto_once,
       file_level_metadata_koinos_2fchain_2fchain_2eproto[1]);
@@ -3740,11 +3800,11 @@ void genesis_data::InternalSwap(genesis_data* other) {
 }  // namespace chain
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::koinos::chain::error_data* Arena::CreateMaybeMessage< ::koinos::chain::error_data >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::chain::error_data >(arena);
+}
 template<> PROTOBUF_NOINLINE ::koinos::chain::result* Arena::CreateMaybeMessage< ::koinos::chain::result >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::chain::result >(arena);
-}
-template<> PROTOBUF_NOINLINE ::koinos::chain::error_info* Arena::CreateMaybeMessage< ::koinos::chain::error_info >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::koinos::chain::error_info >(arena);
 }
 template<> PROTOBUF_NOINLINE ::koinos::chain::object_space* Arena::CreateMaybeMessage< ::koinos::chain::object_space >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::chain::object_space >(arena);

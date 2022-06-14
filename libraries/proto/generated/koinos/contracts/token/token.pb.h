@@ -1790,18 +1790,6 @@ class transfer_result final :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kValueFieldNumber = 1,
-  };
-  // bool value = 1;
-  void clear_value();
-  bool value() const;
-  void set_value(bool value);
-  private:
-  bool _internal_value() const;
-  void _internal_set_value(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.contracts.token.transfer_result)
  private:
   class _Internal;
@@ -1809,7 +1797,6 @@ class transfer_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
 };
@@ -2084,18 +2071,6 @@ class mint_result final :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kValueFieldNumber = 1,
-  };
-  // bool value = 1;
-  void clear_value();
-  bool value() const;
-  void set_value(bool value);
-  private:
-  bool _internal_value() const;
-  void _internal_set_value(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.contracts.token.mint_result)
  private:
   class _Internal;
@@ -2103,7 +2078,6 @@ class mint_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
 };
@@ -2378,18 +2352,6 @@ class burn_result final :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kValueFieldNumber = 1,
-  };
-  // bool value = 1;
-  void clear_value();
-  bool value() const;
-  void set_value(bool value);
-  private:
-  bool _internal_value() const;
-  void _internal_set_value(bool value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.contracts.token.burn_result)
  private:
   class _Internal;
@@ -2397,7 +2359,6 @@ class burn_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  bool value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
 };
@@ -3547,26 +3508,6 @@ inline void transfer_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value)
 
 // transfer_result
 
-// bool value = 1;
-inline void transfer_result::clear_value() {
-  value_ = false;
-}
-inline bool transfer_result::_internal_value() const {
-  return value_;
-}
-inline bool transfer_result::value() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.token.transfer_result.value)
-  return _internal_value();
-}
-inline void transfer_result::_internal_set_value(bool value) {
-  
-  value_ = value;
-}
-inline void transfer_result::set_value(bool value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.contracts.token.transfer_result.value)
-}
-
 // -------------------------------------------------------------------
 
 // mint_arguments
@@ -3641,26 +3582,6 @@ inline void mint_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // mint_result
 
-// bool value = 1;
-inline void mint_result::clear_value() {
-  value_ = false;
-}
-inline bool mint_result::_internal_value() const {
-  return value_;
-}
-inline bool mint_result::value() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.token.mint_result.value)
-  return _internal_value();
-}
-inline void mint_result::_internal_set_value(bool value) {
-  
-  value_ = value;
-}
-inline void mint_result::set_value(bool value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.contracts.token.mint_result.value)
-}
-
 // -------------------------------------------------------------------
 
 // burn_arguments
@@ -3734,26 +3655,6 @@ inline void burn_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 // -------------------------------------------------------------------
 
 // burn_result
-
-// bool value = 1;
-inline void burn_result::clear_value() {
-  value_ = false;
-}
-inline bool burn_result::_internal_value() const {
-  return value_;
-}
-inline bool burn_result::value() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.token.burn_result.value)
-  return _internal_value();
-}
-inline void burn_result::_internal_set_value(bool value) {
-  
-  value_ = value;
-}
-inline void burn_result::set_value(bool value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.contracts.token.burn_result.value)
-}
 
 // -------------------------------------------------------------------
 

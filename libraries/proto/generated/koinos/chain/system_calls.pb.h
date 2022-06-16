@@ -52,7 +52,7 @@ struct TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[89]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[91]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -214,6 +214,12 @@ extern get_object_argumentsDefaultTypeInternal _get_object_arguments_default_ins
 class get_object_result;
 struct get_object_resultDefaultTypeInternal;
 extern get_object_resultDefaultTypeInternal _get_object_result_default_instance_;
+class get_operation_arguments;
+struct get_operation_argumentsDefaultTypeInternal;
+extern get_operation_argumentsDefaultTypeInternal _get_operation_arguments_default_instance_;
+class get_operation_result;
+struct get_operation_resultDefaultTypeInternal;
+extern get_operation_resultDefaultTypeInternal _get_operation_result_default_instance_;
 class get_prev_object_arguments;
 struct get_prev_object_argumentsDefaultTypeInternal;
 extern get_prev_object_argumentsDefaultTypeInternal _get_prev_object_arguments_default_instance_;
@@ -382,6 +388,8 @@ template<> ::koinos::chain::get_next_object_arguments* Arena::CreateMaybeMessage
 template<> ::koinos::chain::get_next_object_result* Arena::CreateMaybeMessage<::koinos::chain::get_next_object_result>(Arena*);
 template<> ::koinos::chain::get_object_arguments* Arena::CreateMaybeMessage<::koinos::chain::get_object_arguments>(Arena*);
 template<> ::koinos::chain::get_object_result* Arena::CreateMaybeMessage<::koinos::chain::get_object_result>(Arena*);
+template<> ::koinos::chain::get_operation_arguments* Arena::CreateMaybeMessage<::koinos::chain::get_operation_arguments>(Arena*);
+template<> ::koinos::chain::get_operation_result* Arena::CreateMaybeMessage<::koinos::chain::get_operation_result>(Arena*);
 template<> ::koinos::chain::get_prev_object_arguments* Arena::CreateMaybeMessage<::koinos::chain::get_prev_object_arguments>(Arena*);
 template<> ::koinos::chain::get_prev_object_result* Arena::CreateMaybeMessage<::koinos::chain::get_prev_object_result>(Arena*);
 template<> ::koinos::chain::get_resource_limits_arguments* Arena::CreateMaybeMessage<::koinos::chain::get_resource_limits_arguments>(Arena*);
@@ -6514,6 +6522,280 @@ class check_system_authority_result final :
 };
 // -------------------------------------------------------------------
 
+class get_operation_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_operation_arguments) */ {
+ public:
+  inline get_operation_arguments() : get_operation_arguments(nullptr) {}
+  ~get_operation_arguments() override;
+  explicit constexpr get_operation_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_operation_arguments(const get_operation_arguments& from);
+  get_operation_arguments(get_operation_arguments&& from) noexcept
+    : get_operation_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline get_operation_arguments& operator=(const get_operation_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_operation_arguments& operator=(get_operation_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_operation_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_operation_arguments* internal_default_instance() {
+    return reinterpret_cast<const get_operation_arguments*>(
+               &_get_operation_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    44;
+
+  friend void swap(get_operation_arguments& a, get_operation_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_operation_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_operation_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_operation_arguments* New() const final {
+    return new get_operation_arguments();
+  }
+
+  get_operation_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_operation_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_operation_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_operation_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_operation_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.get_operation_arguments";
+  }
+  protected:
+  explicit get_operation_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_operation_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
+};
+// -------------------------------------------------------------------
+
+class get_operation_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_operation_result) */ {
+ public:
+  inline get_operation_result() : get_operation_result(nullptr) {}
+  ~get_operation_result() override;
+  explicit constexpr get_operation_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_operation_result(const get_operation_result& from);
+  get_operation_result(get_operation_result&& from) noexcept
+    : get_operation_result() {
+    *this = ::std::move(from);
+  }
+
+  inline get_operation_result& operator=(const get_operation_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_operation_result& operator=(get_operation_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_operation_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_operation_result* internal_default_instance() {
+    return reinterpret_cast<const get_operation_result*>(
+               &_get_operation_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    45;
+
+  friend void swap(get_operation_result& a, get_operation_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_operation_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_operation_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_operation_result* New() const final {
+    return new get_operation_result();
+  }
+
+  get_operation_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_operation_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_operation_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_operation_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_operation_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.get_operation_result";
+  }
+  protected:
+  explicit get_operation_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // .koinos.protocol.operation value = 1;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  const ::koinos::protocol::operation& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::operation* release_value();
+  ::koinos::protocol::operation* mutable_value();
+  void set_allocated_value(::koinos::protocol::operation* value);
+  private:
+  const ::koinos::protocol::operation& _internal_value() const;
+  ::koinos::protocol::operation* _internal_mutable_value();
+  public:
+  void unsafe_arena_set_allocated_value(
+      ::koinos::protocol::operation* value);
+  ::koinos::protocol::operation* unsafe_arena_release_value();
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.get_operation_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::protocol::operation* value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
+};
+// -------------------------------------------------------------------
+
 class get_account_rc_arguments final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_account_rc_arguments) */ {
  public:
@@ -6558,7 +6840,7 @@ class get_account_rc_arguments final :
                &_get_account_rc_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(get_account_rc_arguments& a, get_account_rc_arguments& b) {
     a.Swap(&b);
@@ -6702,7 +6984,7 @@ class get_account_rc_result final :
                &_get_account_rc_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(get_account_rc_result& a, get_account_rc_result& b) {
     a.Swap(&b);
@@ -6841,7 +7123,7 @@ class consume_account_rc_arguments final :
                &_consume_account_rc_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(consume_account_rc_arguments& a, consume_account_rc_arguments& b) {
     a.Swap(&b);
@@ -6996,7 +7278,7 @@ class consume_account_rc_result final :
                &_consume_account_rc_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(consume_account_rc_result& a, consume_account_rc_result& b) {
     a.Swap(&b);
@@ -7135,7 +7417,7 @@ class get_resource_limits_arguments final :
                &_get_resource_limits_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(get_resource_limits_arguments& a, get_resource_limits_arguments& b) {
     a.Swap(&b);
@@ -7261,7 +7543,7 @@ class get_resource_limits_result final :
                &_get_resource_limits_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(get_resource_limits_result& a, get_resource_limits_result& b) {
     a.Swap(&b);
@@ -7409,7 +7691,7 @@ class consume_block_resources_arguments final :
                &_consume_block_resources_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(consume_block_resources_arguments& a, consume_block_resources_arguments& b) {
     a.Swap(&b);
@@ -7570,7 +7852,7 @@ class consume_block_resources_result final :
                &_consume_block_resources_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(consume_block_resources_result& a, consume_block_resources_result& b) {
     a.Swap(&b);
@@ -7709,7 +7991,7 @@ class put_object_arguments final :
                &_put_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(put_object_arguments& a, put_object_arguments& b) {
     a.Swap(&b);
@@ -7889,7 +8171,7 @@ class put_object_result final :
                &_put_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(put_object_result& a, put_object_result& b) {
     a.Swap(&b);
@@ -8015,7 +8297,7 @@ class remove_object_arguments final :
                &_remove_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(remove_object_arguments& a, remove_object_arguments& b) {
     a.Swap(&b);
@@ -8179,7 +8461,7 @@ class remove_object_result final :
                &_remove_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   friend void swap(remove_object_result& a, remove_object_result& b) {
     a.Swap(&b);
@@ -8305,7 +8587,7 @@ class get_object_arguments final :
                &_get_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   friend void swap(get_object_arguments& a, get_object_arguments& b) {
     a.Swap(&b);
@@ -8469,7 +8751,7 @@ class database_object final :
                &_database_object_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   friend void swap(database_object& a, database_object& b) {
     a.Swap(&b);
@@ -8640,7 +8922,7 @@ class get_object_result final :
                &_get_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   friend void swap(get_object_result& a, get_object_result& b) {
     a.Swap(&b);
@@ -8788,7 +9070,7 @@ class get_next_object_arguments final :
                &_get_next_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   friend void swap(get_next_object_arguments& a, get_next_object_arguments& b) {
     a.Swap(&b);
@@ -8952,7 +9234,7 @@ class get_next_object_result final :
                &_get_next_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   friend void swap(get_next_object_result& a, get_next_object_result& b) {
     a.Swap(&b);
@@ -9100,7 +9382,7 @@ class get_prev_object_arguments final :
                &_get_prev_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(get_prev_object_arguments& a, get_prev_object_arguments& b) {
     a.Swap(&b);
@@ -9264,7 +9546,7 @@ class get_prev_object_result final :
                &_get_prev_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(get_prev_object_result& a, get_prev_object_result& b) {
     a.Swap(&b);
@@ -9412,7 +9694,7 @@ class log_arguments final :
                &_log_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(log_arguments& a, log_arguments& b) {
     a.Swap(&b);
@@ -9556,7 +9838,7 @@ class log_result final :
                &_log_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(log_result& a, log_result& b) {
     a.Swap(&b);
@@ -9682,7 +9964,7 @@ class event_arguments final :
                &_event_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(event_arguments& a, event_arguments& b) {
     a.Swap(&b);
@@ -9868,7 +10150,7 @@ class event_result final :
                &_event_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(event_result& a, event_result& b) {
     a.Swap(&b);
@@ -9994,7 +10276,7 @@ class hash_arguments final :
                &_hash_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(hash_arguments& a, hash_arguments& b) {
     a.Swap(&b);
@@ -10160,7 +10442,7 @@ class hash_result final :
                &_hash_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   friend void swap(hash_result& a, hash_result& b) {
     a.Swap(&b);
@@ -10304,7 +10586,7 @@ class recover_public_key_arguments final :
                &_recover_public_key_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   friend void swap(recover_public_key_arguments& a, recover_public_key_arguments& b) {
     a.Swap(&b);
@@ -10475,7 +10757,7 @@ class recover_public_key_result final :
                &_recover_public_key_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   friend void swap(recover_public_key_result& a, recover_public_key_result& b) {
     a.Swap(&b);
@@ -10619,7 +10901,7 @@ class verify_merkle_root_arguments final :
                &_verify_merkle_root_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(verify_merkle_root_arguments& a, verify_merkle_root_arguments& b) {
     a.Swap(&b);
@@ -10789,7 +11071,7 @@ class verify_merkle_root_result final :
                &_verify_merkle_root_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(verify_merkle_root_result& a, verify_merkle_root_result& b) {
     a.Swap(&b);
@@ -10928,7 +11210,7 @@ class verify_signature_arguments final :
                &_verify_signature_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(verify_signature_arguments& a, verify_signature_arguments& b) {
     a.Swap(&b);
@@ -11115,7 +11397,7 @@ class verify_signature_result final :
                &_verify_signature_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(verify_signature_result& a, verify_signature_result& b) {
     a.Swap(&b);
@@ -11254,7 +11536,7 @@ class verify_vrf_proof_arguments final :
                &_verify_vrf_proof_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(verify_vrf_proof_arguments& a, verify_vrf_proof_arguments& b) {
     a.Swap(&b);
@@ -11457,7 +11739,7 @@ class verify_vrf_proof_result final :
                &_verify_vrf_proof_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(verify_vrf_proof_result& a, verify_vrf_proof_result& b) {
     a.Swap(&b);
@@ -11596,7 +11878,7 @@ class call_arguments final :
                &_call_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(call_arguments& a, call_arguments& b) {
     a.Swap(&b);
@@ -11767,7 +12049,7 @@ class call_result final :
                &_call_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(call_result& a, call_result& b) {
     a.Swap(&b);
@@ -11915,7 +12197,7 @@ class get_arguments_arguments final :
                &_get_arguments_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(get_arguments_arguments& a, get_arguments_arguments& b) {
     a.Swap(&b);
@@ -12041,7 +12323,7 @@ class get_arguments_result final :
                &_get_arguments_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(get_arguments_result& a, get_arguments_result& b) {
     a.Swap(&b);
@@ -12189,7 +12471,7 @@ class exit_arguments final :
                &_exit_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(exit_arguments& a, exit_arguments& b) {
     a.Swap(&b);
@@ -12348,7 +12630,7 @@ class exit_result final :
                &_exit_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(exit_result& a, exit_result& b) {
     a.Swap(&b);
@@ -12474,7 +12756,7 @@ class get_contract_id_arguments final :
                &_get_contract_id_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(get_contract_id_arguments& a, get_contract_id_arguments& b) {
     a.Swap(&b);
@@ -12600,7 +12882,7 @@ class get_contract_id_result final :
                &_get_contract_id_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(get_contract_id_result& a, get_contract_id_result& b) {
     a.Swap(&b);
@@ -12744,7 +13026,7 @@ class get_caller_arguments final :
                &_get_caller_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(get_caller_arguments& a, get_caller_arguments& b) {
     a.Swap(&b);
@@ -12870,7 +13152,7 @@ class get_caller_result final :
                &_get_caller_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(get_caller_result& a, get_caller_result& b) {
     a.Swap(&b);
@@ -13018,7 +13300,7 @@ class check_authority_arguments final :
                &_check_authority_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(check_authority_arguments& a, check_authority_arguments& b) {
     a.Swap(&b);
@@ -13173,7 +13455,7 @@ class check_authority_result final :
                &_check_authority_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(check_authority_result& a, check_authority_result& b) {
     a.Swap(&b);
@@ -15085,6 +15367,100 @@ inline void check_system_authority_result::_internal_set_value(bool value) {
 inline void check_system_authority_result::set_value(bool value) {
   _internal_set_value(value);
   // @@protoc_insertion_point(field_set:koinos.chain.check_system_authority_result.value)
+}
+
+// -------------------------------------------------------------------
+
+// get_operation_arguments
+
+// -------------------------------------------------------------------
+
+// get_operation_result
+
+// .koinos.protocol.operation value = 1;
+inline bool get_operation_result::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
+}
+inline bool get_operation_result::has_value() const {
+  return _internal_has_value();
+}
+inline const ::koinos::protocol::operation& get_operation_result::_internal_value() const {
+  const ::koinos::protocol::operation* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::operation&>(
+      ::koinos::protocol::_operation_default_instance_);
+}
+inline const ::koinos::protocol::operation& get_operation_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_operation_result.value)
+  return _internal_value();
+}
+inline void get_operation_result::unsafe_arena_set_allocated_value(
+    ::koinos::protocol::operation* value) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  value_ = value;
+  if (value) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_operation_result.value)
+}
+inline ::koinos::protocol::operation* get_operation_result::release_value() {
+  
+  ::koinos::protocol::operation* temp = value_;
+  value_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::protocol::operation* get_operation_result::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_operation_result.value)
+  
+  ::koinos::protocol::operation* temp = value_;
+  value_ = nullptr;
+  return temp;
+}
+inline ::koinos::protocol::operation* get_operation_result::_internal_mutable_value() {
+  
+  if (value_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::protocol::operation>(GetArenaForAllocation());
+    value_ = p;
+  }
+  return value_;
+}
+inline ::koinos::protocol::operation* get_operation_result::mutable_value() {
+  ::koinos::protocol::operation* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_operation_result.value)
+  return _msg;
+}
+inline void get_operation_result::set_allocated_value(::koinos::protocol::operation* value) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  if (value) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value));
+    if (message_arena != submessage_arena) {
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_operation_result.value)
 }
 
 // -------------------------------------------------------------------
@@ -18330,6 +18706,10 @@ inline void check_authority_result::set_value(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

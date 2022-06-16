@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/error.proto\022\014koinos.chain"
-  "*\336\004\n\nerror_code\022\013\n\007success\020\000\022\r\n\treversio"
+  "*\200\005\n\nerror_code\022\013\n\007success\020\000\022\r\n\treversio"
   "n\020\001\022\022\n\016internal_error\020d\022 \n\034system_author"
   "ization_failure\020e\022\024\n\020invalid_contract\020f\022"
   "\033\n\027insufficient_privileges\020g\022\023\n\017insuffic"
@@ -38,17 +38,18 @@ const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_S
   "\377\377\377\377\377\377\377\001\022\034\n\017field_not_found\020\234\377\377\377\377\377\377\377\377\001\022\036"
   "\n\021unknown_hash_code\020\233\377\377\377\377\377\377\377\377\001\022\030\n\013unknow"
   "n_dsa\020\232\377\377\377\377\377\377\377\377\001\022 \n\023unknown_system_call\020"
-  "\231\377\377\377\377\377\377\377\377\001\022\"\n\025authorization_failure\020\270\376\377\377"
-  "\377\377\377\377\377\001\022\032\n\rinvalid_nonce\020\267\376\377\377\377\377\377\377\377\001\022\036\n\021in"
-  "valid_signature\020\266\376\377\377\377\377\377\377\377\001\022\034\n\017malformed_"
-  "block\020\265\376\377\377\377\377\377\377\377\001\022\"\n\025malformed_transactio"
-  "n\020\264\376\377\377\377\377\377\377\377\001\022#\n\026block_resource_failure\020\263"
-  "\376\377\377\377\377\377\377\377\001B4Z2github.com/koinos/koinos-pr"
-  "oto-golang/koinos/chainb\006proto3"
+  "\231\377\377\377\377\377\377\377\377\001\022 \n\023operation_not_found\020\230\377\377\377\377\377"
+  "\377\377\377\001\022\"\n\025authorization_failure\020\270\376\377\377\377\377\377\377\377\001"
+  "\022\032\n\rinvalid_nonce\020\267\376\377\377\377\377\377\377\377\001\022\036\n\021invalid_"
+  "signature\020\266\376\377\377\377\377\377\377\377\001\022\034\n\017malformed_block\020"
+  "\265\376\377\377\377\377\377\377\377\001\022\"\n\025malformed_transaction\020\264\376\377\377"
+  "\377\377\377\377\377\001\022#\n\026block_resource_failure\020\263\376\377\377\377\377\377"
+  "\377\377\001B4Z2github.com/koinos/koinos-proto-go"
+  "lang/koinos/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2ferror_2eproto = {
-  false, false, 711, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
+  false, false, 745, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
   &descriptor_table_koinos_2fchain_2ferror_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2ferror_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2ferror_2eproto, file_level_service_descriptors_koinos_2fchain_2ferror_2eproto,
@@ -73,6 +74,7 @@ bool error_code_IsValid(int value) {
     case -202:
     case -201:
     case -200:
+    case -104:
     case -103:
     case -102:
     case -101:

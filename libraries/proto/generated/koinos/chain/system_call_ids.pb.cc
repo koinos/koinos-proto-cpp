@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"koinos/chain/system_call_ids.proto\022\014ko"
-  "inos.chain*\230\010\n\016system_call_id\022\017\n\013reserve"
+  "inos.chain*\253\010\n\016system_call_id\022\017\n\013reserve"
   "d_id\020\000\022\021\n\rget_head_info\020\001\022\017\n\013apply_block"
   "\020\002\022\025\n\021apply_transaction\020\003\022#\n\037apply_uploa"
   "d_contract_operation\020\004\022!\n\035apply_call_con"
@@ -43,24 +43,24 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eprot
   "et_block_field\020i\022\037\n\033get_last_irreversibl"
   "e_block\020j\022\025\n\021get_account_nonce\020k\022\030\n\024veri"
   "fy_account_nonce\020l\022\025\n\021set_account_nonce\020"
-  "m\022\032\n\026check_system_authority\020n\022\023\n\016get_acc"
-  "ount_rc\020\311\001\022\027\n\022consume_account_rc\020\312\001\022\030\n\023g"
-  "et_resource_limits\020\313\001\022\034\n\027consume_block_r"
-  "esources\020\314\001\022\017\n\nput_object\020\255\002\022\022\n\rremove_o"
-  "bject\020\256\002\022\017\n\nget_object\020\257\002\022\024\n\017get_next_ob"
-  "ject\020\260\002\022\024\n\017get_prev_object\020\261\002\022\010\n\003log\020\221\003\022"
-  "\n\n\005event\020\222\003\022\t\n\004hash\020\365\003\022\027\n\022recover_public"
-  "_key\020\366\003\022\027\n\022verify_merkle_root\020\367\003\022\025\n\020veri"
-  "fy_signature\020\370\003\022\025\n\020verify_vrf_proof\020\371\003\022\t"
-  "\n\004call\020\331\004\022\t\n\004exit\020\332\004\022\022\n\rget_arguments\020\333\004"
-  "\022\024\n\017get_contract_id\020\334\004\022\017\n\nget_caller\020\335\004\022"
-  "\024\n\017check_authority\020\336\004B4Z2github.com/koin"
-  "os/koinos-proto-golang/koinos/chainb\006pro"
-  "to3"
+  "m\022\032\n\026check_system_authority\020n\022\021\n\rget_ope"
+  "ration\020o\022\023\n\016get_account_rc\020\311\001\022\027\n\022consume"
+  "_account_rc\020\312\001\022\030\n\023get_resource_limits\020\313\001"
+  "\022\034\n\027consume_block_resources\020\314\001\022\017\n\nput_ob"
+  "ject\020\255\002\022\022\n\rremove_object\020\256\002\022\017\n\nget_objec"
+  "t\020\257\002\022\024\n\017get_next_object\020\260\002\022\024\n\017get_prev_o"
+  "bject\020\261\002\022\010\n\003log\020\221\003\022\n\n\005event\020\222\003\022\t\n\004hash\020\365"
+  "\003\022\027\n\022recover_public_key\020\366\003\022\027\n\022verify_mer"
+  "kle_root\020\367\003\022\025\n\020verify_signature\020\370\003\022\025\n\020ve"
+  "rify_vrf_proof\020\371\003\022\t\n\004call\020\331\004\022\t\n\004exit\020\332\004\022"
+  "\022\n\rget_arguments\020\333\004\022\024\n\017get_contract_id\020\334"
+  "\004\022\017\n\nget_caller\020\335\004\022\024\n\017check_authority\020\336\004"
+  "B4Z2github.com/koinos/koinos-proto-golan"
+  "g/koinos/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 1163, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
+  false, false, 1182, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto,
@@ -102,6 +102,7 @@ bool system_call_id_IsValid(int value) {
     case 108:
     case 109:
     case 110:
+    case 111:
     case 201:
     case 202:
     case 203:

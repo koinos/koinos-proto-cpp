@@ -74,6 +74,7 @@ enum error_code : int {
   unknown_hash_code = -101,
   unknown_dsa = -102,
   unknown_system_call = -103,
+  operation_not_found = -104,
   authorization_failure = -200,
   invalid_nonce = -201,
   invalid_signature = -202,

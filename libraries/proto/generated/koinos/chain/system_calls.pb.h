@@ -12122,23 +12122,19 @@ class call_result final :
   enum : int {
     kValueFieldNumber = 1,
   };
-  // .koinos.chain.result value = 1;
-  bool has_value() const;
-  private:
-  bool _internal_has_value() const;
-  public:
+  // bytes value = 1;
   void clear_value();
-  const ::koinos::chain::result& value() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::chain::result* release_value();
-  ::koinos::chain::result* mutable_value();
-  void set_allocated_value(::koinos::chain::result* value);
+  const std::string& value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_value();
+  PROTOBUF_MUST_USE_RESULT std::string* release_value();
+  void set_allocated_value(std::string* value);
   private:
-  const ::koinos::chain::result& _internal_value() const;
-  ::koinos::chain::result* _internal_mutable_value();
+  const std::string& _internal_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
   public:
-  void unsafe_arena_set_allocated_value(
-      ::koinos::chain::result* value);
-  ::koinos::chain::result* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.call_result)
  private:
@@ -12147,7 +12143,7 @@ class call_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::chain::result* value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -18167,89 +18163,49 @@ inline void call_arguments::set_allocated_args(std::string* args) {
 
 // call_result
 
-// .koinos.chain.result value = 1;
-inline bool call_result::_internal_has_value() const {
-  return this != internal_default_instance() && value_ != nullptr;
+// bytes value = 1;
+inline void call_result::clear_value() {
+  value_.ClearToEmpty();
 }
-inline bool call_result::has_value() const {
-  return _internal_has_value();
-}
-inline const ::koinos::chain::result& call_result::_internal_value() const {
-  const ::koinos::chain::result* p = value_;
-  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::result&>(
-      ::koinos::chain::_result_default_instance_);
-}
-inline const ::koinos::chain::result& call_result::value() const {
+inline const std::string& call_result::value() const {
   // @@protoc_insertion_point(field_get:koinos.chain.call_result.value)
   return _internal_value();
 }
-inline void call_result::unsafe_arena_set_allocated_value(
-    ::koinos::chain::result* value) {
-  if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
-  }
-  value_ = value;
-  if (value) {
-    
-  } else {
-    
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.call_result.value)
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void call_result::set_value(ArgT0&& arg0, ArgT... args) {
+ 
+ value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.call_result.value)
 }
-inline ::koinos::chain::result* call_result::release_value() {
-  
-  ::koinos::chain::result* temp = value_;
-  value_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
-  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  if (GetArenaForAllocation() == nullptr) { delete old; }
-#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArenaForAllocation() != nullptr) {
-    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return temp;
-}
-inline ::koinos::chain::result* call_result::unsafe_arena_release_value() {
-  // @@protoc_insertion_point(field_release:koinos.chain.call_result.value)
-  
-  ::koinos::chain::result* temp = value_;
-  value_ = nullptr;
-  return temp;
-}
-inline ::koinos::chain::result* call_result::_internal_mutable_value() {
-  
-  if (value_ == nullptr) {
-    auto* p = CreateMaybeMessage<::koinos::chain::result>(GetArenaForAllocation());
-    value_ = p;
-  }
-  return value_;
-}
-inline ::koinos::chain::result* call_result::mutable_value() {
-  ::koinos::chain::result* _msg = _internal_mutable_value();
+inline std::string* call_result::mutable_value() {
+  std::string* _s = _internal_mutable_value();
   // @@protoc_insertion_point(field_mutable:koinos.chain.call_result.value)
-  return _msg;
+  return _s;
 }
-inline void call_result::set_allocated_value(::koinos::chain::result* value) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
-  }
-  if (value) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value));
-    if (message_arena != submessage_arena) {
-      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, value, submessage_arena);
-    }
+inline const std::string& call_result::_internal_value() const {
+  return value_.Get();
+}
+inline void call_result::_internal_set_value(const std::string& value) {
+  
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* call_result::_internal_mutable_value() {
+  
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* call_result::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.call_result.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void call_result::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
     
   } else {
     
   }
-  value_ = value;
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
+      GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.call_result.value)
 }
 

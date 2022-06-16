@@ -989,7 +989,7 @@ struct call_argumentsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT call_argumentsDefaultTypeInternal _call_arguments_default_instance_;
 constexpr call_result::call_result(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : value_(nullptr){}
+  : value_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct call_resultDefaultTypeInternal {
   constexpr call_resultDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1984,24 +1984,23 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] P
   "\030\000\022\025\n\007message\030\005 \001(\014B\004\200\265\030\000\"(\n\027verify_vrf_"
   "proof_result\022\r\n\005value\030\001 \001(\010\"N\n\016call_argu"
   "ments\022\031\n\013contract_id\030\001 \001(\014B\004\200\265\030\005\022\023\n\013entr"
-  "y_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"2\n\013call_resu"
-  "lt\022#\n\005value\030\001 \001(\0132\024.koinos.chain.result\""
-  "\031\n\027get_arguments_arguments\"B\n\024get_argume"
-  "nts_result\022*\n\005value\030\001 \001(\0132\033.koinos.chain"
-  ".argument_data\"A\n\016exit_arguments\022\014\n\004code"
-  "\030\001 \001(\005\022!\n\003res\030\002 \001(\0132\024.koinos.chain.resul"
-  "t\"\r\n\013exit_result\"\033\n\031get_contract_id_argu"
-  "ments\"-\n\026get_contract_id_result\022\023\n\005value"
-  "\030\001 \001(\014B\004\200\265\030\005\"\026\n\024get_caller_arguments\"=\n\021"
-  "get_caller_result\022(\n\005value\030\001 \001(\0132\031.koino"
-  "s.chain.caller_data\"b\n\031check_authority_a"
-  "rguments\022.\n\004type\030\001 \001(\0162 .koinos.chain.au"
-  "thorization_type\022\025\n\007account\030\002 \001(\014B\004\200\265\030\006\""
-  "\'\n\026check_authority_result\022\r\n\005value\030\001 \001(\010"
-  "*I\n\031system_authorization_type\022\027\n\023set_sys"
-  "tem_contract\020\000\022\023\n\017set_system_call\020\001B4Z2g"
-  "ithub.com/koinos/koinos-proto-golang/koi"
-  "nos/chainb\006proto3"
+  "y_point\030\002 \001(\r\022\014\n\004args\030\003 \001(\014\"\034\n\013call_resu"
+  "lt\022\r\n\005value\030\001 \001(\014\"\031\n\027get_arguments_argum"
+  "ents\"B\n\024get_arguments_result\022*\n\005value\030\001 "
+  "\001(\0132\033.koinos.chain.argument_data\"A\n\016exit"
+  "_arguments\022\014\n\004code\030\001 \001(\005\022!\n\003res\030\002 \001(\0132\024."
+  "koinos.chain.result\"\r\n\013exit_result\"\033\n\031ge"
+  "t_contract_id_arguments\"-\n\026get_contract_"
+  "id_result\022\023\n\005value\030\001 \001(\014B\004\200\265\030\005\"\026\n\024get_ca"
+  "ller_arguments\"=\n\021get_caller_result\022(\n\005v"
+  "alue\030\001 \001(\0132\031.koinos.chain.caller_data\"b\n"
+  "\031check_authority_arguments\022.\n\004type\030\001 \001(\016"
+  "2 .koinos.chain.authorization_type\022\025\n\007ac"
+  "count\030\002 \001(\014B\004\200\265\030\006\"\'\n\026check_authority_res"
+  "ult\022\r\n\005value\030\001 \001(\010*I\n\031system_authorizati"
+  "on_type\022\027\n\023set_system_contract\020\000\022\023\n\017set_"
+  "system_call\020\001B4Z2github.com/koinos/koino"
+  "s-proto-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fchain_2fauthority_2eproto,
@@ -2012,7 +2011,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto = {
-  false, false, 5497, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
+  false, false, 5475, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 5, 91,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto,
@@ -17711,19 +17710,8 @@ void call_arguments::InternalSwap(call_arguments* other) {
 
 class call_result::_Internal {
  public:
-  static const ::koinos::chain::result& value(const call_result* msg);
 };
 
-const ::koinos::chain::result&
-call_result::_Internal::value(const call_result* msg) {
-  return *msg->value_;
-}
-void call_result::clear_value() {
-  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
-    delete value_;
-  }
-  value_ = nullptr;
-}
 call_result::call_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -17736,16 +17724,16 @@ call_result::call_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 call_result::call_result(const call_result& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_value()) {
-    value_ = new ::koinos::chain::result(*from.value_);
-  } else {
-    value_ = nullptr;
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_value(), 
+      GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:koinos.chain.call_result)
 }
 
 inline void call_result::SharedCtor() {
-value_ = nullptr;
+value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 call_result::~call_result() {
@@ -17757,7 +17745,7 @@ call_result::~call_result() {
 
 inline void call_result::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete value_;
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void call_result::ArenaDtor(void* object) {
@@ -17776,10 +17764,7 @@ void call_result::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
-    delete value_;
-  }
-  value_ = nullptr;
+  value_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -17789,10 +17774,11 @@ const char* call_result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.chain.result value = 1;
+      // bytes value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
+          auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -17825,12 +17811,10 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.chain.result value = 1;
-  if (this->_internal_has_value()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::value(this), target, stream);
+  // bytes value = 1;
+  if (!this->_internal_value().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17849,11 +17833,11 @@ size_t call_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.chain.result value = 1;
-  if (this->_internal_has_value()) {
+  // bytes value = 1;
+  if (!this->_internal_value().empty()) {
     total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *value_);
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_value());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -17884,8 +17868,8 @@ void call_result::MergeFrom(const call_result& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_value()) {
-    _internal_mutable_value()->::koinos::chain::result::MergeFrom(from._internal_value());
+  if (!from._internal_value().empty()) {
+    _internal_set_value(from._internal_value());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -17904,7 +17888,11 @@ bool call_result::IsInitialized() const {
 void call_result::InternalSwap(call_result* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(value_, other->value_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &value_, GetArenaForAllocation(),
+      &other->value_, other->GetArenaForAllocation()
+  );
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata call_result::GetMetadata() const {

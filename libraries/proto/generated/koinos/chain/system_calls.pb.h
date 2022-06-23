@@ -13368,6 +13368,7 @@ class check_authority_arguments final :
 
   enum : int {
     kAccountFieldNumber = 2,
+    kDataFieldNumber = 3,
     kTypeFieldNumber = 1,
   };
   // bytes account = 2 [(.koinos.btype) = ADDRESS];
@@ -13382,6 +13383,20 @@ class check_authority_arguments final :
   const std::string& _internal_account() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_account(const std::string& value);
   std::string* _internal_mutable_account();
+  public:
+
+  // bytes data = 3;
+  void clear_data();
+  const std::string& data() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_data(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_data();
+  PROTOBUF_MUST_USE_RESULT std::string* release_data();
+  void set_allocated_data(std::string* data);
+  private:
+  const std::string& _internal_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
   public:
 
   // .koinos.chain.authorization_type type = 1;
@@ -13401,6 +13416,7 @@ class check_authority_arguments final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr account_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
   int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
@@ -18633,6 +18649,52 @@ inline void check_authority_arguments::set_allocated_account(std::string* accoun
   account_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), account,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.check_authority_arguments.account)
+}
+
+// bytes data = 3;
+inline void check_authority_arguments::clear_data() {
+  data_.ClearToEmpty();
+}
+inline const std::string& check_authority_arguments::data() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.check_authority_arguments.data)
+  return _internal_data();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void check_authority_arguments::set_data(ArgT0&& arg0, ArgT... args) {
+ 
+ data_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.chain.check_authority_arguments.data)
+}
+inline std::string* check_authority_arguments::mutable_data() {
+  std::string* _s = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.check_authority_arguments.data)
+  return _s;
+}
+inline const std::string& check_authority_arguments::_internal_data() const {
+  return data_.Get();
+}
+inline void check_authority_arguments::_internal_set_data(const std::string& value) {
+  
+  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* check_authority_arguments::_internal_mutable_data() {
+  
+  return data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* check_authority_arguments::release_data() {
+  // @@protoc_insertion_point(field_release:koinos.chain.check_authority_arguments.data)
+  return data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void check_authority_arguments::set_allocated_data(std::string* data) {
+  if (data != nullptr) {
+    
+  } else {
+    
+  }
+  data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.check_authority_arguments.data)
 }
 
 // -------------------------------------------------------------------

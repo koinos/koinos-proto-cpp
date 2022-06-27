@@ -134,7 +134,7 @@ struct get_metadata_argumentsDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_metadata_argumentsDefaultTypeInternal _get_metadata_arguments_default_instance_;
 constexpr get_metadata_result::get_metadata_result(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : metadata_(nullptr){}
+  : value_(nullptr){}
 struct get_metadata_resultDefaultTypeInternal {
   constexpr get_metadata_resultDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -229,7 +229,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fpob_2fpob
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::get_metadata_result, metadata_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::get_metadata_result, value_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_event, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -282,20 +282,20 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto[] PR
   "esult\"a\n\016burn_arguments\022\030\n\014token_amount\030"
   "\001 \001(\004B\0020\001\022\032\n\014burn_address\030\002 \001(\014B\004\200\265\030\006\022\031\n"
   "\013vhp_address\030\003 \001(\014B\004\200\265\030\006\"\r\n\013burn_result\""
-  "\030\n\026get_metadata_arguments\"G\n\023get_metadat"
-  "a_result\0220\n\010metadata\030\001 \001(\0132\036.koinos.cont"
-  "racts.pob.metadata\"L\n\031register_public_ke"
-  "y_event\022\030\n\npublic_key\030\001 \001(\014B\004\200\265\030\000\022\025\n\007add"
-  "ress\030\002 \001(\014B\004\200\265\030\006B<Z:github.com/koinos/ko"
-  "inos-proto-golang/koinos/contracts/pobb\006"
-  "proto3"
+  "\030\n\026get_metadata_arguments\"D\n\023get_metadat"
+  "a_result\022-\n\005value\030\001 \001(\0132\036.koinos.contrac"
+  "ts.pob.metadata\"L\n\031register_public_key_e"
+  "vent\022\030\n\npublic_key\030\001 \001(\014B\004\200\265\030\000\022\025\n\007addres"
+  "s\030\002 \001(\014B\004\200\265\030\006B<Z:github.com/koinos/koino"
+  "s-proto-golang/koinos/contracts/pobb\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto = {
-  false, false, 846, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
+  false, false, 843, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
   &descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once, descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps, 1, 11,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto,
@@ -2207,12 +2207,12 @@ void get_metadata_arguments::InternalSwap(get_metadata_arguments* other) {
 
 class get_metadata_result::_Internal {
  public:
-  static const ::koinos::contracts::pob::metadata& metadata(const get_metadata_result* msg);
+  static const ::koinos::contracts::pob::metadata& value(const get_metadata_result* msg);
 };
 
 const ::koinos::contracts::pob::metadata&
-get_metadata_result::_Internal::metadata(const get_metadata_result* msg) {
-  return *msg->metadata_;
+get_metadata_result::_Internal::value(const get_metadata_result* msg) {
+  return *msg->value_;
 }
 get_metadata_result::get_metadata_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -2226,16 +2226,16 @@ get_metadata_result::get_metadata_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 get_metadata_result::get_metadata_result(const get_metadata_result& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_metadata()) {
-    metadata_ = new ::koinos::contracts::pob::metadata(*from.metadata_);
+  if (from._internal_has_value()) {
+    value_ = new ::koinos::contracts::pob::metadata(*from.value_);
   } else {
-    metadata_ = nullptr;
+    value_ = nullptr;
   }
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.pob.get_metadata_result)
 }
 
 inline void get_metadata_result::SharedCtor() {
-metadata_ = nullptr;
+value_ = nullptr;
 }
 
 get_metadata_result::~get_metadata_result() {
@@ -2247,7 +2247,7 @@ get_metadata_result::~get_metadata_result() {
 
 inline void get_metadata_result::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete metadata_;
+  if (this != internal_default_instance()) delete value_;
 }
 
 void get_metadata_result::ArenaDtor(void* object) {
@@ -2266,10 +2266,10 @@ void get_metadata_result::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
-    delete metadata_;
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
   }
-  metadata_ = nullptr;
+  value_ = nullptr;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2279,10 +2279,10 @@ const char* get_metadata_result::_InternalParse(const char* ptr, ::PROTOBUF_NAME
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .koinos.contracts.pob.metadata metadata = 1;
+      // .koinos.contracts.pob.metadata value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_metadata(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2315,12 +2315,12 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .koinos.contracts.pob.metadata metadata = 1;
-  if (this->_internal_has_metadata()) {
+  // .koinos.contracts.pob.metadata value = 1;
+  if (this->_internal_has_value()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(
-        1, _Internal::metadata(this), target, stream);
+        1, _Internal::value(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2339,11 +2339,11 @@ size_t get_metadata_result::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // .koinos.contracts.pob.metadata metadata = 1;
-  if (this->_internal_has_metadata()) {
+  // .koinos.contracts.pob.metadata value = 1;
+  if (this->_internal_has_value()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *metadata_);
+        *value_);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2374,8 +2374,8 @@ void get_metadata_result::MergeFrom(const get_metadata_result& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_metadata()) {
-    _internal_mutable_metadata()->::koinos::contracts::pob::metadata::MergeFrom(from._internal_metadata());
+  if (from._internal_has_value()) {
+    _internal_mutable_value()->::koinos::contracts::pob::metadata::MergeFrom(from._internal_value());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2394,7 +2394,7 @@ bool get_metadata_result::IsInitialized() const {
 void get_metadata_result::InternalSwap(get_metadata_result* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(metadata_, other->metadata_);
+  swap(value_, other->value_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_metadata_result::GetMetadata() const {

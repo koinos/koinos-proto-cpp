@@ -1577,25 +1577,25 @@ class get_metadata_result final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kMetadataFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // .koinos.contracts.pob.metadata metadata = 1;
-  bool has_metadata() const;
+  // .koinos.contracts.pob.metadata value = 1;
+  bool has_value() const;
   private:
-  bool _internal_has_metadata() const;
+  bool _internal_has_value() const;
   public:
-  void clear_metadata();
-  const ::koinos::contracts::pob::metadata& metadata() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::contracts::pob::metadata* release_metadata();
-  ::koinos::contracts::pob::metadata* mutable_metadata();
-  void set_allocated_metadata(::koinos::contracts::pob::metadata* metadata);
+  void clear_value();
+  const ::koinos::contracts::pob::metadata& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::contracts::pob::metadata* release_value();
+  ::koinos::contracts::pob::metadata* mutable_value();
+  void set_allocated_value(::koinos::contracts::pob::metadata* value);
   private:
-  const ::koinos::contracts::pob::metadata& _internal_metadata() const;
-  ::koinos::contracts::pob::metadata* _internal_mutable_metadata();
+  const ::koinos::contracts::pob::metadata& _internal_value() const;
+  ::koinos::contracts::pob::metadata* _internal_mutable_value();
   public:
-  void unsafe_arena_set_allocated_metadata(
-      ::koinos::contracts::pob::metadata* metadata);
-  ::koinos::contracts::pob::metadata* unsafe_arena_release_metadata();
+  void unsafe_arena_set_allocated_value(
+      ::koinos::contracts::pob::metadata* value);
+  ::koinos::contracts::pob::metadata* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.contracts.pob.get_metadata_result)
  private:
@@ -1604,7 +1604,7 @@ class get_metadata_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::contracts::pob::metadata* metadata_;
+  ::koinos::contracts::pob::metadata* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
@@ -2355,45 +2355,45 @@ inline void burn_arguments::set_allocated_vhp_address(std::string* vhp_address) 
 
 // get_metadata_result
 
-// .koinos.contracts.pob.metadata metadata = 1;
-inline bool get_metadata_result::_internal_has_metadata() const {
-  return this != internal_default_instance() && metadata_ != nullptr;
+// .koinos.contracts.pob.metadata value = 1;
+inline bool get_metadata_result::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
 }
-inline bool get_metadata_result::has_metadata() const {
-  return _internal_has_metadata();
+inline bool get_metadata_result::has_value() const {
+  return _internal_has_value();
 }
-inline void get_metadata_result::clear_metadata() {
-  if (GetArenaForAllocation() == nullptr && metadata_ != nullptr) {
-    delete metadata_;
+inline void get_metadata_result::clear_value() {
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
   }
-  metadata_ = nullptr;
+  value_ = nullptr;
 }
-inline const ::koinos::contracts::pob::metadata& get_metadata_result::_internal_metadata() const {
-  const ::koinos::contracts::pob::metadata* p = metadata_;
+inline const ::koinos::contracts::pob::metadata& get_metadata_result::_internal_value() const {
+  const ::koinos::contracts::pob::metadata* p = value_;
   return p != nullptr ? *p : reinterpret_cast<const ::koinos::contracts::pob::metadata&>(
       ::koinos::contracts::pob::_metadata_default_instance_);
 }
-inline const ::koinos::contracts::pob::metadata& get_metadata_result::metadata() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.pob.get_metadata_result.metadata)
-  return _internal_metadata();
+inline const ::koinos::contracts::pob::metadata& get_metadata_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.get_metadata_result.value)
+  return _internal_value();
 }
-inline void get_metadata_result::unsafe_arena_set_allocated_metadata(
-    ::koinos::contracts::pob::metadata* metadata) {
+inline void get_metadata_result::unsafe_arena_set_allocated_value(
+    ::koinos::contracts::pob::metadata* value) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(metadata_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
-  metadata_ = metadata;
-  if (metadata) {
+  value_ = value;
+  if (value) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.pob.get_metadata_result.metadata)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.pob.get_metadata_result.value)
 }
-inline ::koinos::contracts::pob::metadata* get_metadata_result::release_metadata() {
+inline ::koinos::contracts::pob::metadata* get_metadata_result::release_value() {
   
-  ::koinos::contracts::pob::metadata* temp = metadata_;
-  metadata_ = nullptr;
+  ::koinos::contracts::pob::metadata* temp = value_;
+  value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -2405,44 +2405,44 @@ inline ::koinos::contracts::pob::metadata* get_metadata_result::release_metadata
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::koinos::contracts::pob::metadata* get_metadata_result::unsafe_arena_release_metadata() {
-  // @@protoc_insertion_point(field_release:koinos.contracts.pob.get_metadata_result.metadata)
+inline ::koinos::contracts::pob::metadata* get_metadata_result::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pob.get_metadata_result.value)
   
-  ::koinos::contracts::pob::metadata* temp = metadata_;
-  metadata_ = nullptr;
+  ::koinos::contracts::pob::metadata* temp = value_;
+  value_ = nullptr;
   return temp;
 }
-inline ::koinos::contracts::pob::metadata* get_metadata_result::_internal_mutable_metadata() {
+inline ::koinos::contracts::pob::metadata* get_metadata_result::_internal_mutable_value() {
   
-  if (metadata_ == nullptr) {
+  if (value_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::contracts::pob::metadata>(GetArenaForAllocation());
-    metadata_ = p;
+    value_ = p;
   }
-  return metadata_;
+  return value_;
 }
-inline ::koinos::contracts::pob::metadata* get_metadata_result::mutable_metadata() {
-  ::koinos::contracts::pob::metadata* _msg = _internal_mutable_metadata();
-  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.get_metadata_result.metadata)
+inline ::koinos::contracts::pob::metadata* get_metadata_result::mutable_value() {
+  ::koinos::contracts::pob::metadata* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.get_metadata_result.value)
   return _msg;
 }
-inline void get_metadata_result::set_allocated_metadata(::koinos::contracts::pob::metadata* metadata) {
+inline void get_metadata_result::set_allocated_value(::koinos::contracts::pob::metadata* value) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete metadata_;
+    delete value_;
   }
-  if (metadata) {
+  if (value) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::contracts::pob::metadata>::GetOwningArena(metadata);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::contracts::pob::metadata>::GetOwningArena(value);
     if (message_arena != submessage_arena) {
-      metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, metadata, submessage_arena);
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
     }
     
   } else {
     
   }
-  metadata_ = metadata;
-  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.get_metadata_result.metadata)
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.get_metadata_result.value)
 }
 
 // -------------------------------------------------------------------

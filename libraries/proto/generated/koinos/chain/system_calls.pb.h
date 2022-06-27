@@ -52,7 +52,7 @@ struct TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[91]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[93]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -256,6 +256,12 @@ extern log_argumentsDefaultTypeInternal _log_arguments_default_instance_;
 class log_result;
 struct log_resultDefaultTypeInternal;
 extern log_resultDefaultTypeInternal _log_result_default_instance_;
+class nop_arguments;
+struct nop_argumentsDefaultTypeInternal;
+extern nop_argumentsDefaultTypeInternal _nop_arguments_default_instance_;
+class nop_result;
+struct nop_resultDefaultTypeInternal;
+extern nop_resultDefaultTypeInternal _nop_result_default_instance_;
 class post_block_callback_arguments;
 struct post_block_callback_argumentsDefaultTypeInternal;
 extern post_block_callback_argumentsDefaultTypeInternal _post_block_callback_arguments_default_instance_;
@@ -402,6 +408,8 @@ template<> ::koinos::chain::hash_arguments* Arena::CreateMaybeMessage<::koinos::
 template<> ::koinos::chain::hash_result* Arena::CreateMaybeMessage<::koinos::chain::hash_result>(Arena*);
 template<> ::koinos::chain::log_arguments* Arena::CreateMaybeMessage<::koinos::chain::log_arguments>(Arena*);
 template<> ::koinos::chain::log_result* Arena::CreateMaybeMessage<::koinos::chain::log_result>(Arena*);
+template<> ::koinos::chain::nop_arguments* Arena::CreateMaybeMessage<::koinos::chain::nop_arguments>(Arena*);
+template<> ::koinos::chain::nop_result* Arena::CreateMaybeMessage<::koinos::chain::nop_result>(Arena*);
 template<> ::koinos::chain::post_block_callback_arguments* Arena::CreateMaybeMessage<::koinos::chain::post_block_callback_arguments>(Arena*);
 template<> ::koinos::chain::post_block_callback_result* Arena::CreateMaybeMessage<::koinos::chain::post_block_callback_result>(Arena*);
 template<> ::koinos::chain::post_transaction_callback_arguments* Arena::CreateMaybeMessage<::koinos::chain::post_transaction_callback_arguments>(Arena*);
@@ -459,6 +467,258 @@ inline bool system_authorization_type_Parse(
 }
 // ===================================================================
 
+class nop_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.nop_arguments) */ {
+ public:
+  inline nop_arguments() : nop_arguments(nullptr) {}
+  ~nop_arguments() override;
+  explicit constexpr nop_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  nop_arguments(const nop_arguments& from);
+  nop_arguments(nop_arguments&& from) noexcept
+    : nop_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline nop_arguments& operator=(const nop_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline nop_arguments& operator=(nop_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const nop_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const nop_arguments* internal_default_instance() {
+    return reinterpret_cast<const nop_arguments*>(
+               &_nop_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(nop_arguments& a, nop_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(nop_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(nop_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline nop_arguments* New() const final {
+    return new nop_arguments();
+  }
+
+  nop_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<nop_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const nop_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const nop_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(nop_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.nop_arguments";
+  }
+  protected:
+  explicit nop_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.nop_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
+};
+// -------------------------------------------------------------------
+
+class nop_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.nop_result) */ {
+ public:
+  inline nop_result() : nop_result(nullptr) {}
+  ~nop_result() override;
+  explicit constexpr nop_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  nop_result(const nop_result& from);
+  nop_result(nop_result&& from) noexcept
+    : nop_result() {
+    *this = ::std::move(from);
+  }
+
+  inline nop_result& operator=(const nop_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline nop_result& operator=(nop_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const nop_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const nop_result* internal_default_instance() {
+    return reinterpret_cast<const nop_result*>(
+               &_nop_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(nop_result& a, nop_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(nop_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(nop_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline nop_result* New() const final {
+    return new nop_result();
+  }
+
+  nop_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<nop_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const nop_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const nop_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(nop_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.chain.nop_result";
+  }
+  protected:
+  explicit nop_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:koinos.chain.nop_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
+};
+// -------------------------------------------------------------------
+
 class get_head_info_arguments final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.get_head_info_arguments) */ {
  public:
@@ -503,7 +763,7 @@ class get_head_info_arguments final :
                &_get_head_info_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(get_head_info_arguments& a, get_head_info_arguments& b) {
     a.Swap(&b);
@@ -629,7 +889,7 @@ class get_head_info_result final :
                &_get_head_info_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(get_head_info_result& a, get_head_info_result& b) {
     a.Swap(&b);
@@ -777,7 +1037,7 @@ class apply_block_arguments final :
                &_apply_block_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(apply_block_arguments& a, apply_block_arguments& b) {
     a.Swap(&b);
@@ -925,7 +1185,7 @@ class apply_block_result final :
                &_apply_block_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   friend void swap(apply_block_result& a, apply_block_result& b) {
     a.Swap(&b);
@@ -1051,7 +1311,7 @@ class apply_transaction_arguments final :
                &_apply_transaction_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   friend void swap(apply_transaction_arguments& a, apply_transaction_arguments& b) {
     a.Swap(&b);
@@ -1199,7 +1459,7 @@ class apply_transaction_result final :
                &_apply_transaction_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   friend void swap(apply_transaction_result& a, apply_transaction_result& b) {
     a.Swap(&b);
@@ -1325,7 +1585,7 @@ class apply_upload_contract_operation_arguments final :
                &_apply_upload_contract_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(apply_upload_contract_operation_arguments& a, apply_upload_contract_operation_arguments& b) {
     a.Swap(&b);
@@ -1473,7 +1733,7 @@ class apply_upload_contract_operation_result final :
                &_apply_upload_contract_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   friend void swap(apply_upload_contract_operation_result& a, apply_upload_contract_operation_result& b) {
     a.Swap(&b);
@@ -1599,7 +1859,7 @@ class apply_call_contract_operation_arguments final :
                &_apply_call_contract_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   friend void swap(apply_call_contract_operation_arguments& a, apply_call_contract_operation_arguments& b) {
     a.Swap(&b);
@@ -1747,7 +2007,7 @@ class apply_call_contract_operation_result final :
                &_apply_call_contract_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(apply_call_contract_operation_result& a, apply_call_contract_operation_result& b) {
     a.Swap(&b);
@@ -1873,7 +2133,7 @@ class apply_set_system_call_operation_arguments final :
                &_apply_set_system_call_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(apply_set_system_call_operation_arguments& a, apply_set_system_call_operation_arguments& b) {
     a.Swap(&b);
@@ -2021,7 +2281,7 @@ class apply_set_system_call_operation_result final :
                &_apply_set_system_call_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(apply_set_system_call_operation_result& a, apply_set_system_call_operation_result& b) {
     a.Swap(&b);
@@ -2147,7 +2407,7 @@ class apply_set_system_contract_operation_arguments final :
                &_apply_set_system_contract_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(apply_set_system_contract_operation_arguments& a, apply_set_system_contract_operation_arguments& b) {
     a.Swap(&b);
@@ -2295,7 +2555,7 @@ class apply_set_system_contract_operation_result final :
                &_apply_set_system_contract_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(apply_set_system_contract_operation_result& a, apply_set_system_contract_operation_result& b) {
     a.Swap(&b);
@@ -2421,7 +2681,7 @@ class pre_block_callback_arguments final :
                &_pre_block_callback_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(pre_block_callback_arguments& a, pre_block_callback_arguments& b) {
     a.Swap(&b);
@@ -2547,7 +2807,7 @@ class pre_block_callback_result final :
                &_pre_block_callback_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(pre_block_callback_result& a, pre_block_callback_result& b) {
     a.Swap(&b);
@@ -2673,7 +2933,7 @@ class post_block_callback_arguments final :
                &_post_block_callback_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(post_block_callback_arguments& a, post_block_callback_arguments& b) {
     a.Swap(&b);
@@ -2799,7 +3059,7 @@ class post_block_callback_result final :
                &_post_block_callback_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(post_block_callback_result& a, post_block_callback_result& b) {
     a.Swap(&b);
@@ -2925,7 +3185,7 @@ class pre_transaction_callback_arguments final :
                &_pre_transaction_callback_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(pre_transaction_callback_arguments& a, pre_transaction_callback_arguments& b) {
     a.Swap(&b);
@@ -3051,7 +3311,7 @@ class pre_transaction_callback_result final :
                &_pre_transaction_callback_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(pre_transaction_callback_result& a, pre_transaction_callback_result& b) {
     a.Swap(&b);
@@ -3177,7 +3437,7 @@ class post_transaction_callback_arguments final :
                &_post_transaction_callback_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   friend void swap(post_transaction_callback_arguments& a, post_transaction_callback_arguments& b) {
     a.Swap(&b);
@@ -3303,7 +3563,7 @@ class post_transaction_callback_result final :
                &_post_transaction_callback_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   friend void swap(post_transaction_callback_result& a, post_transaction_callback_result& b) {
     a.Swap(&b);
@@ -3429,7 +3689,7 @@ class get_chain_id_arguments final :
                &_get_chain_id_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    24;
 
   friend void swap(get_chain_id_arguments& a, get_chain_id_arguments& b) {
     a.Swap(&b);
@@ -3555,7 +3815,7 @@ class get_chain_id_result final :
                &_get_chain_id_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    25;
 
   friend void swap(get_chain_id_result& a, get_chain_id_result& b) {
     a.Swap(&b);
@@ -3699,7 +3959,7 @@ class process_block_signature_arguments final :
                &_process_block_signature_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    26;
 
   friend void swap(process_block_signature_arguments& a, process_block_signature_arguments& b) {
     a.Swap(&b);
@@ -3879,7 +4139,7 @@ class process_block_signature_result final :
                &_process_block_signature_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    27;
 
   friend void swap(process_block_signature_result& a, process_block_signature_result& b) {
     a.Swap(&b);
@@ -4018,7 +4278,7 @@ class get_transaction_arguments final :
                &_get_transaction_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    28;
 
   friend void swap(get_transaction_arguments& a, get_transaction_arguments& b) {
     a.Swap(&b);
@@ -4144,7 +4404,7 @@ class get_transaction_result final :
                &_get_transaction_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    29;
 
   friend void swap(get_transaction_result& a, get_transaction_result& b) {
     a.Swap(&b);
@@ -4292,7 +4552,7 @@ class get_transaction_field_arguments final :
                &_get_transaction_field_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    30;
 
   friend void swap(get_transaction_field_arguments& a, get_transaction_field_arguments& b) {
     a.Swap(&b);
@@ -4436,7 +4696,7 @@ class get_transaction_field_result final :
                &_get_transaction_field_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    31;
 
   friend void swap(get_transaction_field_result& a, get_transaction_field_result& b) {
     a.Swap(&b);
@@ -4584,7 +4844,7 @@ class get_block_arguments final :
                &_get_block_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    32;
 
   friend void swap(get_block_arguments& a, get_block_arguments& b) {
     a.Swap(&b);
@@ -4710,7 +4970,7 @@ class get_block_result final :
                &_get_block_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    33;
 
   friend void swap(get_block_result& a, get_block_result& b) {
     a.Swap(&b);
@@ -4858,7 +5118,7 @@ class get_block_field_arguments final :
                &_get_block_field_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    34;
 
   friend void swap(get_block_field_arguments& a, get_block_field_arguments& b) {
     a.Swap(&b);
@@ -5002,7 +5262,7 @@ class get_block_field_result final :
                &_get_block_field_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    35;
 
   friend void swap(get_block_field_result& a, get_block_field_result& b) {
     a.Swap(&b);
@@ -5150,7 +5410,7 @@ class get_last_irreversible_block_arguments final :
                &_get_last_irreversible_block_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    36;
 
   friend void swap(get_last_irreversible_block_arguments& a, get_last_irreversible_block_arguments& b) {
     a.Swap(&b);
@@ -5276,7 +5536,7 @@ class get_last_irreversible_block_result final :
                &_get_last_irreversible_block_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    37;
 
   friend void swap(get_last_irreversible_block_result& a, get_last_irreversible_block_result& b) {
     a.Swap(&b);
@@ -5415,7 +5675,7 @@ class get_account_nonce_arguments final :
                &_get_account_nonce_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    38;
 
   friend void swap(get_account_nonce_arguments& a, get_account_nonce_arguments& b) {
     a.Swap(&b);
@@ -5559,7 +5819,7 @@ class get_account_nonce_result final :
                &_get_account_nonce_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    39;
 
   friend void swap(get_account_nonce_result& a, get_account_nonce_result& b) {
     a.Swap(&b);
@@ -5703,7 +5963,7 @@ class verify_account_nonce_arguments final :
                &_verify_account_nonce_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    40;
 
   friend void swap(verify_account_nonce_arguments& a, verify_account_nonce_arguments& b) {
     a.Swap(&b);
@@ -5863,7 +6123,7 @@ class verify_account_nonce_result final :
                &_verify_account_nonce_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    41;
 
   friend void swap(verify_account_nonce_result& a, verify_account_nonce_result& b) {
     a.Swap(&b);
@@ -6002,7 +6262,7 @@ class set_account_nonce_arguments final :
                &_set_account_nonce_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    42;
 
   friend void swap(set_account_nonce_arguments& a, set_account_nonce_arguments& b) {
     a.Swap(&b);
@@ -6162,7 +6422,7 @@ class set_account_nonce_result final :
                &_set_account_nonce_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    43;
 
   friend void swap(set_account_nonce_result& a, set_account_nonce_result& b) {
     a.Swap(&b);
@@ -6288,7 +6548,7 @@ class check_system_authority_arguments final :
                &_check_system_authority_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    44;
 
   friend void swap(check_system_authority_arguments& a, check_system_authority_arguments& b) {
     a.Swap(&b);
@@ -6427,7 +6687,7 @@ class check_system_authority_result final :
                &_check_system_authority_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    45;
 
   friend void swap(check_system_authority_result& a, check_system_authority_result& b) {
     a.Swap(&b);
@@ -6566,7 +6826,7 @@ class get_operation_arguments final :
                &_get_operation_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    46;
 
   friend void swap(get_operation_arguments& a, get_operation_arguments& b) {
     a.Swap(&b);
@@ -6692,7 +6952,7 @@ class get_operation_result final :
                &_get_operation_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    47;
 
   friend void swap(get_operation_result& a, get_operation_result& b) {
     a.Swap(&b);
@@ -6840,7 +7100,7 @@ class get_account_rc_arguments final :
                &_get_account_rc_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    48;
 
   friend void swap(get_account_rc_arguments& a, get_account_rc_arguments& b) {
     a.Swap(&b);
@@ -6984,7 +7244,7 @@ class get_account_rc_result final :
                &_get_account_rc_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    49;
 
   friend void swap(get_account_rc_result& a, get_account_rc_result& b) {
     a.Swap(&b);
@@ -7123,7 +7383,7 @@ class consume_account_rc_arguments final :
                &_consume_account_rc_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    50;
 
   friend void swap(consume_account_rc_arguments& a, consume_account_rc_arguments& b) {
     a.Swap(&b);
@@ -7278,7 +7538,7 @@ class consume_account_rc_result final :
                &_consume_account_rc_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    51;
 
   friend void swap(consume_account_rc_result& a, consume_account_rc_result& b) {
     a.Swap(&b);
@@ -7417,7 +7677,7 @@ class get_resource_limits_arguments final :
                &_get_resource_limits_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    52;
 
   friend void swap(get_resource_limits_arguments& a, get_resource_limits_arguments& b) {
     a.Swap(&b);
@@ -7543,7 +7803,7 @@ class get_resource_limits_result final :
                &_get_resource_limits_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    53;
 
   friend void swap(get_resource_limits_result& a, get_resource_limits_result& b) {
     a.Swap(&b);
@@ -7691,7 +7951,7 @@ class consume_block_resources_arguments final :
                &_consume_block_resources_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    54;
 
   friend void swap(consume_block_resources_arguments& a, consume_block_resources_arguments& b) {
     a.Swap(&b);
@@ -7852,7 +8112,7 @@ class consume_block_resources_result final :
                &_consume_block_resources_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    55;
 
   friend void swap(consume_block_resources_result& a, consume_block_resources_result& b) {
     a.Swap(&b);
@@ -7991,7 +8251,7 @@ class put_object_arguments final :
                &_put_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    56;
 
   friend void swap(put_object_arguments& a, put_object_arguments& b) {
     a.Swap(&b);
@@ -8171,7 +8431,7 @@ class put_object_result final :
                &_put_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    57;
 
   friend void swap(put_object_result& a, put_object_result& b) {
     a.Swap(&b);
@@ -8297,7 +8557,7 @@ class remove_object_arguments final :
                &_remove_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    58;
 
   friend void swap(remove_object_arguments& a, remove_object_arguments& b) {
     a.Swap(&b);
@@ -8461,7 +8721,7 @@ class remove_object_result final :
                &_remove_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    59;
 
   friend void swap(remove_object_result& a, remove_object_result& b) {
     a.Swap(&b);
@@ -8587,7 +8847,7 @@ class get_object_arguments final :
                &_get_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    60;
 
   friend void swap(get_object_arguments& a, get_object_arguments& b) {
     a.Swap(&b);
@@ -8751,7 +9011,7 @@ class database_object final :
                &_database_object_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    61;
 
   friend void swap(database_object& a, database_object& b) {
     a.Swap(&b);
@@ -8922,7 +9182,7 @@ class get_object_result final :
                &_get_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    62;
 
   friend void swap(get_object_result& a, get_object_result& b) {
     a.Swap(&b);
@@ -9070,7 +9330,7 @@ class get_next_object_arguments final :
                &_get_next_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    63;
 
   friend void swap(get_next_object_arguments& a, get_next_object_arguments& b) {
     a.Swap(&b);
@@ -9234,7 +9494,7 @@ class get_next_object_result final :
                &_get_next_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    64;
 
   friend void swap(get_next_object_result& a, get_next_object_result& b) {
     a.Swap(&b);
@@ -9382,7 +9642,7 @@ class get_prev_object_arguments final :
                &_get_prev_object_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    65;
 
   friend void swap(get_prev_object_arguments& a, get_prev_object_arguments& b) {
     a.Swap(&b);
@@ -9546,7 +9806,7 @@ class get_prev_object_result final :
                &_get_prev_object_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    66;
 
   friend void swap(get_prev_object_result& a, get_prev_object_result& b) {
     a.Swap(&b);
@@ -9694,7 +9954,7 @@ class log_arguments final :
                &_log_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    67;
 
   friend void swap(log_arguments& a, log_arguments& b) {
     a.Swap(&b);
@@ -9838,7 +10098,7 @@ class log_result final :
                &_log_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    68;
 
   friend void swap(log_result& a, log_result& b) {
     a.Swap(&b);
@@ -9964,7 +10224,7 @@ class event_arguments final :
                &_event_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    69;
 
   friend void swap(event_arguments& a, event_arguments& b) {
     a.Swap(&b);
@@ -10150,7 +10410,7 @@ class event_result final :
                &_event_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    70;
 
   friend void swap(event_result& a, event_result& b) {
     a.Swap(&b);
@@ -10276,7 +10536,7 @@ class hash_arguments final :
                &_hash_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    71;
 
   friend void swap(hash_arguments& a, hash_arguments& b) {
     a.Swap(&b);
@@ -10442,7 +10702,7 @@ class hash_result final :
                &_hash_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    72;
 
   friend void swap(hash_result& a, hash_result& b) {
     a.Swap(&b);
@@ -10586,7 +10846,7 @@ class recover_public_key_arguments final :
                &_recover_public_key_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    73;
 
   friend void swap(recover_public_key_arguments& a, recover_public_key_arguments& b) {
     a.Swap(&b);
@@ -10757,7 +11017,7 @@ class recover_public_key_result final :
                &_recover_public_key_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    74;
 
   friend void swap(recover_public_key_result& a, recover_public_key_result& b) {
     a.Swap(&b);
@@ -10901,7 +11161,7 @@ class verify_merkle_root_arguments final :
                &_verify_merkle_root_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    75;
 
   friend void swap(verify_merkle_root_arguments& a, verify_merkle_root_arguments& b) {
     a.Swap(&b);
@@ -11071,7 +11331,7 @@ class verify_merkle_root_result final :
                &_verify_merkle_root_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    76;
 
   friend void swap(verify_merkle_root_result& a, verify_merkle_root_result& b) {
     a.Swap(&b);
@@ -11210,7 +11470,7 @@ class verify_signature_arguments final :
                &_verify_signature_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    77;
 
   friend void swap(verify_signature_arguments& a, verify_signature_arguments& b) {
     a.Swap(&b);
@@ -11397,7 +11657,7 @@ class verify_signature_result final :
                &_verify_signature_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    78;
 
   friend void swap(verify_signature_result& a, verify_signature_result& b) {
     a.Swap(&b);
@@ -11536,7 +11796,7 @@ class verify_vrf_proof_arguments final :
                &_verify_vrf_proof_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    79;
 
   friend void swap(verify_vrf_proof_arguments& a, verify_vrf_proof_arguments& b) {
     a.Swap(&b);
@@ -11739,7 +11999,7 @@ class verify_vrf_proof_result final :
                &_verify_vrf_proof_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    78;
+    80;
 
   friend void swap(verify_vrf_proof_result& a, verify_vrf_proof_result& b) {
     a.Swap(&b);
@@ -11878,7 +12138,7 @@ class call_arguments final :
                &_call_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    79;
+    81;
 
   friend void swap(call_arguments& a, call_arguments& b) {
     a.Swap(&b);
@@ -12049,7 +12309,7 @@ class call_result final :
                &_call_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    82;
 
   friend void swap(call_result& a, call_result& b) {
     a.Swap(&b);
@@ -12193,7 +12453,7 @@ class get_arguments_arguments final :
                &_get_arguments_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    81;
+    83;
 
   friend void swap(get_arguments_arguments& a, get_arguments_arguments& b) {
     a.Swap(&b);
@@ -12319,7 +12579,7 @@ class get_arguments_result final :
                &_get_arguments_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    82;
+    84;
 
   friend void swap(get_arguments_result& a, get_arguments_result& b) {
     a.Swap(&b);
@@ -12467,7 +12727,7 @@ class exit_arguments final :
                &_exit_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    83;
+    85;
 
   friend void swap(exit_arguments& a, exit_arguments& b) {
     a.Swap(&b);
@@ -12626,7 +12886,7 @@ class exit_result final :
                &_exit_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    84;
+    86;
 
   friend void swap(exit_result& a, exit_result& b) {
     a.Swap(&b);
@@ -12752,7 +13012,7 @@ class get_contract_id_arguments final :
                &_get_contract_id_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    85;
+    87;
 
   friend void swap(get_contract_id_arguments& a, get_contract_id_arguments& b) {
     a.Swap(&b);
@@ -12878,7 +13138,7 @@ class get_contract_id_result final :
                &_get_contract_id_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    86;
+    88;
 
   friend void swap(get_contract_id_result& a, get_contract_id_result& b) {
     a.Swap(&b);
@@ -13022,7 +13282,7 @@ class get_caller_arguments final :
                &_get_caller_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    87;
+    89;
 
   friend void swap(get_caller_arguments& a, get_caller_arguments& b) {
     a.Swap(&b);
@@ -13148,7 +13408,7 @@ class get_caller_result final :
                &_get_caller_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    88;
+    90;
 
   friend void swap(get_caller_result& a, get_caller_result& b) {
     a.Swap(&b);
@@ -13296,7 +13556,7 @@ class check_authority_arguments final :
                &_check_authority_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    89;
+    91;
 
   friend void swap(check_authority_arguments& a, check_authority_arguments& b) {
     a.Swap(&b);
@@ -13467,7 +13727,7 @@ class check_authority_result final :
                &_check_authority_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    90;
+    92;
 
   friend void swap(check_authority_result& a, check_authority_result& b) {
     a.Swap(&b);
@@ -13569,6 +13829,14 @@ class check_authority_result final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// nop_arguments
+
+// -------------------------------------------------------------------
+
+// nop_result
+
+// -------------------------------------------------------------------
+
 // get_head_info_arguments
 
 // -------------------------------------------------------------------
@@ -18724,6 +18992,10 @@ inline void check_authority_result::set_value(bool value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

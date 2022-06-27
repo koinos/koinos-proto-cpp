@@ -58,7 +58,7 @@ namespace koinos {
 namespace chain {
 
 enum system_call_id : int {
-  reserved_id = 0,
+  nop = 0,
   get_head_info = 1,
   apply_block = 2,
   apply_transaction = 3,
@@ -108,7 +108,7 @@ enum system_call_id : int {
   system_call_id_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool system_call_id_IsValid(int value);
-constexpr system_call_id system_call_id_MIN = reserved_id;
+constexpr system_call_id system_call_id_MIN = nop;
 constexpr system_call_id system_call_id_MAX = check_authority;
 constexpr int system_call_id_ARRAYSIZE = system_call_id_MAX + 1;
 

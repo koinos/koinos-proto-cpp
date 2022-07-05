@@ -730,6 +730,7 @@ class block_accepted final :
     kBlockFieldNumber = 1,
     kReceiptFieldNumber = 2,
     kLiveFieldNumber = 3,
+    kHeadFieldNumber = 4,
   };
   // .koinos.protocol.block block = 1;
   bool has_block() const;
@@ -776,6 +777,15 @@ class block_accepted final :
   void _internal_set_live(bool value);
   public:
 
+  // bool head = 4;
+  void clear_head();
+  bool head() const;
+  void set_head(bool value);
+  private:
+  bool _internal_head() const;
+  void _internal_set_head(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.broadcast.block_accepted)
  private:
   class _Internal;
@@ -786,6 +796,7 @@ class block_accepted final :
   ::koinos::protocol::block* block_;
   ::koinos::protocol::block_receipt* receipt_;
   bool live_;
+  bool head_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
 };
@@ -2103,6 +2114,26 @@ inline void block_accepted::_internal_set_live(bool value) {
 inline void block_accepted::set_live(bool value) {
   _internal_set_live(value);
   // @@protoc_insertion_point(field_set:koinos.broadcast.block_accepted.live)
+}
+
+// bool head = 4;
+inline void block_accepted::clear_head() {
+  head_ = false;
+}
+inline bool block_accepted::_internal_head() const {
+  return head_;
+}
+inline bool block_accepted::head() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.block_accepted.head)
+  return _internal_head();
+}
+inline void block_accepted::_internal_set_head(bool value) {
+  
+  head_ = value;
+}
+inline void block_accepted::set_head(bool value) {
+  _internal_set_head(value);
+  // @@protoc_insertion_point(field_set:koinos.broadcast.block_accepted.head)
 }
 
 // -------------------------------------------------------------------

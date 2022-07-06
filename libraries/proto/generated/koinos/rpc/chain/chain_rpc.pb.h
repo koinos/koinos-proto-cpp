@@ -988,6 +988,7 @@ class get_head_info_response final :
     kHeadStateMerkleRootFieldNumber = 3,
     kHeadTopologyFieldNumber = 1,
     kLastIrreversibleBlockFieldNumber = 2,
+    kHeadBlockTimeFieldNumber = 4,
   };
   // bytes head_state_merkle_root = 3;
   void clear_head_state_merkle_root();
@@ -1030,6 +1031,15 @@ class get_head_info_response final :
   void _internal_set_last_irreversible_block(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
+  // uint64 head_block_time = 4 [jstype = JS_STRING];
+  void clear_head_block_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 head_block_time() const;
+  void set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_head_block_time() const;
+  void _internal_set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.get_head_info_response)
  private:
   class _Internal;
@@ -1040,6 +1050,7 @@ class get_head_info_response final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr head_state_merkle_root_;
   ::koinos::block_topology* head_topology_;
   ::PROTOBUF_NAMESPACE_ID::uint64 last_irreversible_block_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 head_block_time_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -4066,6 +4077,26 @@ inline void get_head_info_response::set_allocated_head_state_merkle_root(std::st
   head_state_merkle_root_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), head_state_merkle_root,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.get_head_info_response.head_state_merkle_root)
+}
+
+// uint64 head_block_time = 4 [jstype = JS_STRING];
+inline void get_head_info_response::clear_head_block_time() {
+  head_block_time_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 get_head_info_response::_internal_head_block_time() const {
+  return head_block_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 get_head_info_response::head_block_time() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.get_head_info_response.head_block_time)
+  return _internal_head_block_time();
+}
+inline void get_head_info_response::_internal_set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  head_block_time_ = value;
+}
+inline void get_head_info_response::set_head_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_head_block_time(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.get_head_info_response.head_block_time)
 }
 
 // -------------------------------------------------------------------

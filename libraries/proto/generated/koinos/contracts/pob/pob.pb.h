@@ -1057,9 +1057,24 @@ class register_public_key_arguments final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPublicKeyFieldNumber = 1,
+    kProducerFieldNumber = 1,
+    kPublicKeyFieldNumber = 2,
   };
-  // bytes public_key = 1 [(.koinos.btype) = BASE64];
+  // bytes producer = 1 [(.koinos.btype) = ADDRESS];
+  void clear_producer();
+  const std::string& producer() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_producer(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_producer();
+  PROTOBUF_MUST_USE_RESULT std::string* release_producer();
+  void set_allocated_producer(std::string* producer);
+  private:
+  const std::string& _internal_producer() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_producer(const std::string& value);
+  std::string* _internal_mutable_producer();
+  public:
+
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
   void clear_public_key();
   const std::string& public_key() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -1080,6 +1095,7 @@ class register_public_key_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr producer_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr public_key_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
@@ -2688,7 +2704,53 @@ inline void vrf_payload::set_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 
 // register_public_key_arguments
 
-// bytes public_key = 1 [(.koinos.btype) = BASE64];
+// bytes producer = 1 [(.koinos.btype) = ADDRESS];
+inline void register_public_key_arguments::clear_producer() {
+  producer_.ClearToEmpty();
+}
+inline const std::string& register_public_key_arguments::producer() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.register_public_key_arguments.producer)
+  return _internal_producer();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void register_public_key_arguments::set_producer(ArgT0&& arg0, ArgT... args) {
+ 
+ producer_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.register_public_key_arguments.producer)
+}
+inline std::string* register_public_key_arguments::mutable_producer() {
+  std::string* _s = _internal_mutable_producer();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.register_public_key_arguments.producer)
+  return _s;
+}
+inline const std::string& register_public_key_arguments::_internal_producer() const {
+  return producer_.Get();
+}
+inline void register_public_key_arguments::_internal_set_producer(const std::string& value) {
+  
+  producer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* register_public_key_arguments::_internal_mutable_producer() {
+  
+  return producer_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* register_public_key_arguments::release_producer() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pob.register_public_key_arguments.producer)
+  return producer_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void register_public_key_arguments::set_allocated_producer(std::string* producer) {
+  if (producer != nullptr) {
+    
+  } else {
+    
+  }
+  producer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), producer,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.register_public_key_arguments.producer)
+}
+
+// bytes public_key = 2 [(.koinos.btype) = BASE64];
 inline void register_public_key_arguments::clear_public_key() {
   public_key_.ClearToEmpty();
 }

@@ -89,7 +89,8 @@ struct vrf_payloadDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT vrf_payloadDefaultTypeInternal _vrf_payload_default_instance_;
 constexpr register_public_key_arguments::register_public_key_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : public_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : producer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , public_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct register_public_key_argumentsDefaultTypeInternal {
   constexpr register_public_key_argumentsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -245,6 +246,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fpob_2fpob
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_arguments, producer_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_arguments, public_key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_result, _internal_metadata_),
@@ -301,14 +303,14 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 23, -1, sizeof(::koinos::contracts::pob::signature_data)},
   { 31, -1, sizeof(::koinos::contracts::pob::vrf_payload)},
   { 38, -1, sizeof(::koinos::contracts::pob::register_public_key_arguments)},
-  { 44, -1, sizeof(::koinos::contracts::pob::register_public_key_result)},
-  { 49, -1, sizeof(::koinos::contracts::pob::burn_arguments)},
-  { 57, -1, sizeof(::koinos::contracts::pob::burn_result)},
-  { 62, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_arguments)},
-  { 67, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_result)},
-  { 73, -1, sizeof(::koinos::contracts::pob::get_metadata_arguments)},
-  { 78, -1, sizeof(::koinos::contracts::pob::get_metadata_result)},
-  { 84, -1, sizeof(::koinos::contracts::pob::register_public_key_event)},
+  { 45, -1, sizeof(::koinos::contracts::pob::register_public_key_result)},
+  { 50, -1, sizeof(::koinos::contracts::pob::burn_arguments)},
+  { 58, -1, sizeof(::koinos::contracts::pob::burn_result)},
+  { 63, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_arguments)},
+  { 68, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_result)},
+  { 74, -1, sizeof(::koinos::contracts::pob::get_metadata_arguments)},
+  { 79, -1, sizeof(::koinos::contracts::pob::get_metadata_result)},
+  { 85, -1, sizeof(::koinos::contracts::pob::register_public_key_event)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -341,29 +343,29 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto[] PR
   "\016signature_data\022\027\n\tvrf_proof\030\001 \001(\014B\004\200\265\030\000"
   "\022\026\n\010vrf_hash\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsignature\030\003 "
   "\001(\014B\004\200\265\030\000\"9\n\013vrf_payload\022\022\n\004seed\030\001 \001(\014B\004"
-  "\200\265\030\000\022\026\n\nblock_time\030\002 \001(\004B\0020\001\"9\n\035register"
-  "_public_key_arguments\022\030\n\npublic_key\030\001 \001("
-  "\014B\004\200\265\030\000\"\034\n\032register_public_key_result\"a\n"
-  "\016burn_arguments\022\030\n\014token_amount\030\001 \001(\004B\0020"
-  "\001\022\032\n\014burn_address\030\002 \001(\014B\004\200\265\030\006\022\031\n\013vhp_add"
-  "ress\030\003 \001(\014B\004\200\265\030\006\"\r\n\013burn_result\"$\n\"get_c"
-  "onsensus_parameters_arguments\"\\\n\037get_con"
-  "sensus_parameters_result\0229\n\005value\030\001 \001(\0132"
-  "*.koinos.contracts.pob.consensus_paramet"
-  "ers\"\030\n\026get_metadata_arguments\"D\n\023get_met"
-  "adata_result\022-\n\005value\030\001 \001(\0132\036.koinos.con"
-  "tracts.pob.metadata\"L\n\031register_public_k"
-  "ey_event\022\030\n\npublic_key\030\001 \001(\014B\004\200\265\030\000\022\025\n\007ad"
-  "dress\030\002 \001(\014B\004\200\265\030\006B<Z:github.com/koinos/k"
-  "oinos-proto-golang/koinos/contracts/pobb"
-  "\006proto3"
+  "\200\265\030\000\022\026\n\nblock_time\030\002 \001(\004B\0020\001\"Q\n\035register"
+  "_public_key_arguments\022\026\n\010producer\030\001 \001(\014B"
+  "\004\200\265\030\006\022\030\n\npublic_key\030\002 \001(\014B\004\200\265\030\000\"\034\n\032regis"
+  "ter_public_key_result\"a\n\016burn_arguments\022"
+  "\030\n\014token_amount\030\001 \001(\004B\0020\001\022\032\n\014burn_addres"
+  "s\030\002 \001(\014B\004\200\265\030\006\022\031\n\013vhp_address\030\003 \001(\014B\004\200\265\030\006"
+  "\"\r\n\013burn_result\"$\n\"get_consensus_paramet"
+  "ers_arguments\"\\\n\037get_consensus_parameter"
+  "s_result\0229\n\005value\030\001 \001(\0132*.koinos.contrac"
+  "ts.pob.consensus_parameters\"\030\n\026get_metad"
+  "ata_arguments\"D\n\023get_metadata_result\022-\n\005"
+  "value\030\001 \001(\0132\036.koinos.contracts.pob.metad"
+  "ata\"L\n\031register_public_key_event\022\030\n\npubl"
+  "ic_key\030\001 \001(\014B\004\200\265\030\000\022\025\n\007address\030\002 \001(\014B\004\200\265\030"
+  "\006B<Z:github.com/koinos/koinos-proto-gola"
+  "ng/koinos/contracts/pobb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto = {
-  false, false, 1087, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
+  false, false, 1111, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
   &descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once, descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps, 1, 14,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto,
@@ -1607,6 +1609,11 @@ register_public_key_arguments::register_public_key_arguments(::PROTOBUF_NAMESPAC
 register_public_key_arguments::register_public_key_arguments(const register_public_key_arguments& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  producer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_producer().empty()) {
+    producer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_producer(), 
+      GetArenaForAllocation());
+  }
   public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_public_key().empty()) {
     public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_public_key(), 
@@ -1616,6 +1623,7 @@ register_public_key_arguments::register_public_key_arguments(const register_publ
 }
 
 inline void register_public_key_arguments::SharedCtor() {
+producer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1628,6 +1636,7 @@ register_public_key_arguments::~register_public_key_arguments() {
 
 inline void register_public_key_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  producer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   public_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1647,6 +1656,7 @@ void register_public_key_arguments::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  producer_.ClearToEmpty();
   public_key_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1657,9 +1667,17 @@ const char* register_public_key_arguments::_InternalParse(const char* ptr, ::PRO
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes public_key = 1 [(.koinos.btype) = BASE64];
+      // bytes producer = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_producer();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes public_key = 2 [(.koinos.btype) = BASE64];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_public_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -1694,10 +1712,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes public_key = 1 [(.koinos.btype) = BASE64];
+  // bytes producer = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_producer().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_producer(), target);
+  }
+
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
   if (!this->_internal_public_key().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_public_key(), target);
+        2, this->_internal_public_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1716,7 +1740,14 @@ size_t register_public_key_arguments::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes public_key = 1 [(.koinos.btype) = BASE64];
+  // bytes producer = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_producer().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_producer());
+  }
+
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
   if (!this->_internal_public_key().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
@@ -1751,6 +1782,9 @@ void register_public_key_arguments::MergeFrom(const register_public_key_argument
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (!from._internal_producer().empty()) {
+    _internal_set_producer(from._internal_producer());
+  }
   if (!from._internal_public_key().empty()) {
     _internal_set_public_key(from._internal_public_key());
   }
@@ -1771,6 +1805,11 @@ bool register_public_key_arguments::IsInitialized() const {
 void register_public_key_arguments::InternalSwap(register_public_key_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &producer_, GetArenaForAllocation(),
+      &other->producer_, other->GetArenaForAllocation()
+  );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &public_key_, GetArenaForAllocation(),

@@ -242,32 +242,42 @@ class consensus_parameters final :
     kTargetAnnualInflationRateFieldNumber = 1,
     kTargetBurnPercentFieldNumber = 2,
     kTargetBlockIntervalFieldNumber = 3,
+    kQuantumLengthFieldNumber = 4,
   };
-  // uint64 target_annual_inflation_rate = 1 [jstype = JS_STRING];
+  // uint32 target_annual_inflation_rate = 1;
   void clear_target_annual_inflation_rate();
-  ::PROTOBUF_NAMESPACE_ID::uint64 target_annual_inflation_rate() const;
-  void set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 target_annual_inflation_rate() const;
+  void set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_target_annual_inflation_rate() const;
-  void _internal_set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_target_annual_inflation_rate() const;
+  void _internal_set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 target_burn_percent = 2 [jstype = JS_STRING];
+  // uint32 target_burn_percent = 2;
   void clear_target_burn_percent();
-  ::PROTOBUF_NAMESPACE_ID::uint64 target_burn_percent() const;
-  void set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 target_burn_percent() const;
+  void set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_target_burn_percent() const;
-  void _internal_set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_target_burn_percent() const;
+  void _internal_set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 target_block_interval = 3 [jstype = JS_STRING];
+  // uint32 target_block_interval = 3;
   void clear_target_block_interval();
-  ::PROTOBUF_NAMESPACE_ID::uint64 target_block_interval() const;
-  void set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 target_block_interval() const;
+  void set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_target_block_interval() const;
-  void _internal_set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_target_block_interval() const;
+  void _internal_set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 quantum_length = 4;
+  void clear_quantum_length();
+  ::PROTOBUF_NAMESPACE_ID::uint32 quantum_length() const;
+  void set_quantum_length(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_quantum_length() const;
+  void _internal_set_quantum_length(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.contracts.pob.consensus_parameters)
@@ -277,9 +287,10 @@ class consensus_parameters final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 target_annual_inflation_rate_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 target_burn_percent_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 target_block_interval_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 target_annual_inflation_rate_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 target_burn_percent_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 target_block_interval_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 quantum_length_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
@@ -2215,64 +2226,84 @@ class register_public_key_event final :
 #endif  // __GNUC__
 // consensus_parameters
 
-// uint64 target_annual_inflation_rate = 1 [jstype = JS_STRING];
+// uint32 target_annual_inflation_rate = 1;
 inline void consensus_parameters::clear_target_annual_inflation_rate() {
-  target_annual_inflation_rate_ = uint64_t{0u};
+  target_annual_inflation_rate_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::_internal_target_annual_inflation_rate() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::_internal_target_annual_inflation_rate() const {
   return target_annual_inflation_rate_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::target_annual_inflation_rate() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::target_annual_inflation_rate() const {
   // @@protoc_insertion_point(field_get:koinos.contracts.pob.consensus_parameters.target_annual_inflation_rate)
   return _internal_target_annual_inflation_rate();
 }
-inline void consensus_parameters::_internal_set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void consensus_parameters::_internal_set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   target_annual_inflation_rate_ = value;
 }
-inline void consensus_parameters::set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void consensus_parameters::set_target_annual_inflation_rate(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_target_annual_inflation_rate(value);
   // @@protoc_insertion_point(field_set:koinos.contracts.pob.consensus_parameters.target_annual_inflation_rate)
 }
 
-// uint64 target_burn_percent = 2 [jstype = JS_STRING];
+// uint32 target_burn_percent = 2;
 inline void consensus_parameters::clear_target_burn_percent() {
-  target_burn_percent_ = uint64_t{0u};
+  target_burn_percent_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::_internal_target_burn_percent() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::_internal_target_burn_percent() const {
   return target_burn_percent_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::target_burn_percent() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::target_burn_percent() const {
   // @@protoc_insertion_point(field_get:koinos.contracts.pob.consensus_parameters.target_burn_percent)
   return _internal_target_burn_percent();
 }
-inline void consensus_parameters::_internal_set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void consensus_parameters::_internal_set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   target_burn_percent_ = value;
 }
-inline void consensus_parameters::set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void consensus_parameters::set_target_burn_percent(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_target_burn_percent(value);
   // @@protoc_insertion_point(field_set:koinos.contracts.pob.consensus_parameters.target_burn_percent)
 }
 
-// uint64 target_block_interval = 3 [jstype = JS_STRING];
+// uint32 target_block_interval = 3;
 inline void consensus_parameters::clear_target_block_interval() {
-  target_block_interval_ = uint64_t{0u};
+  target_block_interval_ = 0u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::_internal_target_block_interval() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::_internal_target_block_interval() const {
   return target_block_interval_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::target_block_interval() const {
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::target_block_interval() const {
   // @@protoc_insertion_point(field_get:koinos.contracts.pob.consensus_parameters.target_block_interval)
   return _internal_target_block_interval();
 }
-inline void consensus_parameters::_internal_set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void consensus_parameters::_internal_set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   
   target_block_interval_ = value;
 }
-inline void consensus_parameters::set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+inline void consensus_parameters::set_target_block_interval(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_target_block_interval(value);
   // @@protoc_insertion_point(field_set:koinos.contracts.pob.consensus_parameters.target_block_interval)
+}
+
+// uint32 quantum_length = 4;
+inline void consensus_parameters::clear_quantum_length() {
+  quantum_length_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::_internal_quantum_length() const {
+  return quantum_length_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 consensus_parameters::quantum_length() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.consensus_parameters.quantum_length)
+  return _internal_quantum_length();
+}
+inline void consensus_parameters::_internal_set_quantum_length(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  quantum_length_ = value;
+}
+inline void consensus_parameters::set_quantum_length(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_quantum_length(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.consensus_parameters.quantum_length)
 }
 
 // -------------------------------------------------------------------

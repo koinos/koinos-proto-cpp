@@ -564,6 +564,7 @@ class submit_transaction_request final :
 
   enum : int {
     kTransactionFieldNumber = 1,
+    kBroadcastFieldNumber = 2,
   };
   // .koinos.protocol.transaction transaction = 1;
   bool has_transaction() const;
@@ -583,6 +584,15 @@ class submit_transaction_request final :
       ::koinos::protocol::transaction* transaction);
   ::koinos::protocol::transaction* unsafe_arena_release_transaction();
 
+  // bool broadcast = 2;
+  void clear_broadcast();
+  bool broadcast() const;
+  void set_broadcast(bool value);
+  private:
+  bool _internal_broadcast() const;
+  void _internal_set_broadcast(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.submit_transaction_request)
  private:
   class _Internal;
@@ -591,6 +601,7 @@ class submit_transaction_request final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::koinos::protocol::transaction* transaction_;
+  bool broadcast_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
 };
@@ -3827,6 +3838,26 @@ inline void submit_transaction_request::set_allocated_transaction(::koinos::prot
   }
   transaction_ = transaction;
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.submit_transaction_request.transaction)
+}
+
+// bool broadcast = 2;
+inline void submit_transaction_request::clear_broadcast() {
+  broadcast_ = false;
+}
+inline bool submit_transaction_request::_internal_broadcast() const {
+  return broadcast_;
+}
+inline bool submit_transaction_request::broadcast() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.submit_transaction_request.broadcast)
+  return _internal_broadcast();
+}
+inline void submit_transaction_request::_internal_set_broadcast(bool value) {
+  
+  broadcast_ = value;
+}
+inline void submit_transaction_request::set_broadcast(bool value) {
+  _internal_set_broadcast(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.submit_transaction_request.broadcast)
 }
 
 // -------------------------------------------------------------------

@@ -346,6 +346,7 @@ class claim_arguments final :
 
   enum : int {
     kEthAddressFieldNumber = 1,
+    kKoinAddressFieldNumber = 2,
   };
   // bytes eth_address = 1 [(.koinos.btype) = HEX];
   void clear_eth_address();
@@ -361,6 +362,20 @@ class claim_arguments final :
   std::string* _internal_mutable_eth_address();
   public:
 
+  // bytes koin_address = 2 [(.koinos.btype) = ADDRESS];
+  void clear_koin_address();
+  const std::string& koin_address() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_koin_address(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_koin_address();
+  PROTOBUF_MUST_USE_RESULT std::string* release_koin_address();
+  void set_allocated_koin_address(std::string* koin_address);
+  private:
+  const std::string& _internal_koin_address() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_koin_address(const std::string& value);
+  std::string* _internal_mutable_koin_address();
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.contracts.claim.claim_arguments)
  private:
   class _Internal;
@@ -369,6 +384,7 @@ class claim_arguments final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr eth_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr koin_address_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto;
 };
@@ -597,6 +613,52 @@ inline void claim_arguments::set_allocated_eth_address(std::string* eth_address)
   eth_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), eth_address,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.claim.claim_arguments.eth_address)
+}
+
+// bytes koin_address = 2 [(.koinos.btype) = ADDRESS];
+inline void claim_arguments::clear_koin_address() {
+  koin_address_.ClearToEmpty();
+}
+inline const std::string& claim_arguments::koin_address() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.claim_arguments.koin_address)
+  return _internal_koin_address();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void claim_arguments::set_koin_address(ArgT0&& arg0, ArgT... args) {
+ 
+ koin_address_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.claim.claim_arguments.koin_address)
+}
+inline std::string* claim_arguments::mutable_koin_address() {
+  std::string* _s = _internal_mutable_koin_address();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.claim.claim_arguments.koin_address)
+  return _s;
+}
+inline const std::string& claim_arguments::_internal_koin_address() const {
+  return koin_address_.Get();
+}
+inline void claim_arguments::_internal_set_koin_address(const std::string& value) {
+  
+  koin_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* claim_arguments::_internal_mutable_koin_address() {
+  
+  return koin_address_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* claim_arguments::release_koin_address() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.claim.claim_arguments.koin_address)
+  return koin_address_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void claim_arguments::set_allocated_koin_address(std::string* koin_address) {
+  if (koin_address != nullptr) {
+    
+  } else {
+    
+  }
+  koin_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), koin_address,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.claim.claim_arguments.koin_address)
 }
 
 // -------------------------------------------------------------------

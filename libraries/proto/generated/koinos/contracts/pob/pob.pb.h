@@ -47,7 +47,7 @@ struct TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -78,6 +78,12 @@ extern get_metadata_argumentsDefaultTypeInternal _get_metadata_arguments_default
 class get_metadata_result;
 struct get_metadata_resultDefaultTypeInternal;
 extern get_metadata_resultDefaultTypeInternal _get_metadata_result_default_instance_;
+class get_public_key_arguments;
+struct get_public_key_argumentsDefaultTypeInternal;
+extern get_public_key_argumentsDefaultTypeInternal _get_public_key_arguments_default_instance_;
+class get_public_key_result;
+struct get_public_key_resultDefaultTypeInternal;
+extern get_public_key_resultDefaultTypeInternal _get_public_key_result_default_instance_;
 class metadata;
 struct metadataDefaultTypeInternal;
 extern metadataDefaultTypeInternal _metadata_default_instance_;
@@ -110,6 +116,8 @@ template<> ::koinos::contracts::pob::get_consensus_parameters_arguments* Arena::
 template<> ::koinos::contracts::pob::get_consensus_parameters_result* Arena::CreateMaybeMessage<::koinos::contracts::pob::get_consensus_parameters_result>(Arena*);
 template<> ::koinos::contracts::pob::get_metadata_arguments* Arena::CreateMaybeMessage<::koinos::contracts::pob::get_metadata_arguments>(Arena*);
 template<> ::koinos::contracts::pob::get_metadata_result* Arena::CreateMaybeMessage<::koinos::contracts::pob::get_metadata_result>(Arena*);
+template<> ::koinos::contracts::pob::get_public_key_arguments* Arena::CreateMaybeMessage<::koinos::contracts::pob::get_public_key_arguments>(Arena*);
+template<> ::koinos::contracts::pob::get_public_key_result* Arena::CreateMaybeMessage<::koinos::contracts::pob::get_public_key_result>(Arena*);
 template<> ::koinos::contracts::pob::metadata* Arena::CreateMaybeMessage<::koinos::contracts::pob::metadata>(Arena*);
 template<> ::koinos::contracts::pob::public_key_record* Arena::CreateMaybeMessage<::koinos::contracts::pob::public_key_record>(Arena*);
 template<> ::koinos::contracts::pob::register_public_key_arguments* Arena::CreateMaybeMessage<::koinos::contracts::pob::register_public_key_arguments>(Arena*);
@@ -2231,6 +2239,294 @@ class register_public_key_event final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
+// -------------------------------------------------------------------
+
+class get_public_key_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.pob.get_public_key_arguments) */ {
+ public:
+  inline get_public_key_arguments() : get_public_key_arguments(nullptr) {}
+  ~get_public_key_arguments() override;
+  explicit constexpr get_public_key_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_public_key_arguments(const get_public_key_arguments& from);
+  get_public_key_arguments(get_public_key_arguments&& from) noexcept
+    : get_public_key_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline get_public_key_arguments& operator=(const get_public_key_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_public_key_arguments& operator=(get_public_key_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_public_key_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_public_key_arguments* internal_default_instance() {
+    return reinterpret_cast<const get_public_key_arguments*>(
+               &_get_public_key_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    14;
+
+  friend void swap(get_public_key_arguments& a, get_public_key_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_public_key_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_public_key_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_public_key_arguments* New() const final {
+    return new get_public_key_arguments();
+  }
+
+  get_public_key_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_public_key_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_public_key_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_public_key_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_public_key_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.pob.get_public_key_arguments";
+  }
+  protected:
+  explicit get_public_key_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kProducerFieldNumber = 1,
+  };
+  // bytes producer = 1 [(.koinos.btype) = ADDRESS];
+  void clear_producer();
+  const std::string& producer() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_producer(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_producer();
+  PROTOBUF_MUST_USE_RESULT std::string* release_producer();
+  void set_allocated_producer(std::string* producer);
+  private:
+  const std::string& _internal_producer() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_producer(const std::string& value);
+  std::string* _internal_mutable_producer();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.pob.get_public_key_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr producer_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
+};
+// -------------------------------------------------------------------
+
+class get_public_key_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.pob.get_public_key_result) */ {
+ public:
+  inline get_public_key_result() : get_public_key_result(nullptr) {}
+  ~get_public_key_result() override;
+  explicit constexpr get_public_key_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_public_key_result(const get_public_key_result& from);
+  get_public_key_result(get_public_key_result&& from) noexcept
+    : get_public_key_result() {
+    *this = ::std::move(from);
+  }
+
+  inline get_public_key_result& operator=(const get_public_key_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_public_key_result& operator=(get_public_key_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_public_key_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_public_key_result* internal_default_instance() {
+    return reinterpret_cast<const get_public_key_result*>(
+               &_get_public_key_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    15;
+
+  friend void swap(get_public_key_result& a, get_public_key_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_public_key_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_public_key_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_public_key_result* New() const final {
+    return new get_public_key_result();
+  }
+
+  get_public_key_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_public_key_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_public_key_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_public_key_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_public_key_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.pob.get_public_key_result";
+  }
+  protected:
+  explicit get_public_key_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // bytes value = 1 [(.koinos.btype) = BASE64];
+  void clear_value();
+  const std::string& value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_value();
+  PROTOBUF_MUST_USE_RESULT std::string* release_value();
+  void set_allocated_value(std::string* value);
+  private:
+  const std::string& _internal_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.pob.get_public_key_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
+};
 // ===================================================================
 
 
@@ -3212,9 +3508,113 @@ inline void register_public_key_event::set_allocated_address(std::string* addres
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.register_public_key_event.address)
 }
 
+// -------------------------------------------------------------------
+
+// get_public_key_arguments
+
+// bytes producer = 1 [(.koinos.btype) = ADDRESS];
+inline void get_public_key_arguments::clear_producer() {
+  producer_.ClearToEmpty();
+}
+inline const std::string& get_public_key_arguments::producer() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.get_public_key_arguments.producer)
+  return _internal_producer();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_public_key_arguments::set_producer(ArgT0&& arg0, ArgT... args) {
+ 
+ producer_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.get_public_key_arguments.producer)
+}
+inline std::string* get_public_key_arguments::mutable_producer() {
+  std::string* _s = _internal_mutable_producer();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.get_public_key_arguments.producer)
+  return _s;
+}
+inline const std::string& get_public_key_arguments::_internal_producer() const {
+  return producer_.Get();
+}
+inline void get_public_key_arguments::_internal_set_producer(const std::string& value) {
+  
+  producer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_public_key_arguments::_internal_mutable_producer() {
+  
+  return producer_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_public_key_arguments::release_producer() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pob.get_public_key_arguments.producer)
+  return producer_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_public_key_arguments::set_allocated_producer(std::string* producer) {
+  if (producer != nullptr) {
+    
+  } else {
+    
+  }
+  producer_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), producer,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.get_public_key_arguments.producer)
+}
+
+// -------------------------------------------------------------------
+
+// get_public_key_result
+
+// bytes value = 1 [(.koinos.btype) = BASE64];
+inline void get_public_key_result::clear_value() {
+  value_.ClearToEmpty();
+}
+inline const std::string& get_public_key_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.get_public_key_result.value)
+  return _internal_value();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_public_key_result::set_value(ArgT0&& arg0, ArgT... args) {
+ 
+ value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.get_public_key_result.value)
+}
+inline std::string* get_public_key_result::mutable_value() {
+  std::string* _s = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.get_public_key_result.value)
+  return _s;
+}
+inline const std::string& get_public_key_result::_internal_value() const {
+  return value_.Get();
+}
+inline void get_public_key_result::_internal_set_value(const std::string& value) {
+  
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_public_key_result::_internal_mutable_value() {
+  
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_public_key_result::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pob.get_public_key_result.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_public_key_result::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
+    
+  } else {
+    
+  }
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.get_public_key_result.value)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

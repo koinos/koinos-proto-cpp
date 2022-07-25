@@ -47,7 +47,7 @@ struct TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -60,25 +60,209 @@ namespace claim {
 class claim_arguments;
 struct claim_argumentsDefaultTypeInternal;
 extern claim_argumentsDefaultTypeInternal _claim_arguments_default_instance_;
+class claim_info;
+struct claim_infoDefaultTypeInternal;
+extern claim_infoDefaultTypeInternal _claim_info_default_instance_;
 class claim_result;
 struct claim_resultDefaultTypeInternal;
 extern claim_resultDefaultTypeInternal _claim_result_default_instance_;
 class claim_status;
 struct claim_statusDefaultTypeInternal;
 extern claim_statusDefaultTypeInternal _claim_status_default_instance_;
+class get_info_arguments;
+struct get_info_argumentsDefaultTypeInternal;
+extern get_info_argumentsDefaultTypeInternal _get_info_arguments_default_instance_;
+class get_info_result;
+struct get_info_resultDefaultTypeInternal;
+extern get_info_resultDefaultTypeInternal _get_info_result_default_instance_;
 }  // namespace claim
 }  // namespace contracts
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::contracts::claim::claim_arguments* Arena::CreateMaybeMessage<::koinos::contracts::claim::claim_arguments>(Arena*);
+template<> ::koinos::contracts::claim::claim_info* Arena::CreateMaybeMessage<::koinos::contracts::claim::claim_info>(Arena*);
 template<> ::koinos::contracts::claim::claim_result* Arena::CreateMaybeMessage<::koinos::contracts::claim::claim_result>(Arena*);
 template<> ::koinos::contracts::claim::claim_status* Arena::CreateMaybeMessage<::koinos::contracts::claim::claim_status>(Arena*);
+template<> ::koinos::contracts::claim::get_info_arguments* Arena::CreateMaybeMessage<::koinos::contracts::claim::get_info_arguments>(Arena*);
+template<> ::koinos::contracts::claim::get_info_result* Arena::CreateMaybeMessage<::koinos::contracts::claim::get_info_result>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace contracts {
 namespace claim {
 
 // ===================================================================
+
+class claim_info final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.claim.claim_info) */ {
+ public:
+  inline claim_info() : claim_info(nullptr) {}
+  ~claim_info() override;
+  explicit constexpr claim_info(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  claim_info(const claim_info& from);
+  claim_info(claim_info&& from) noexcept
+    : claim_info() {
+    *this = ::std::move(from);
+  }
+
+  inline claim_info& operator=(const claim_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline claim_info& operator=(claim_info&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const claim_info& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const claim_info* internal_default_instance() {
+    return reinterpret_cast<const claim_info*>(
+               &_claim_info_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(claim_info& a, claim_info& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(claim_info* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(claim_info* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline claim_info* New() const final {
+    return new claim_info();
+  }
+
+  claim_info* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<claim_info>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const claim_info& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const claim_info& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(claim_info* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.claim.claim_info";
+  }
+  protected:
+  explicit claim_info(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTotalEthAccountsFieldNumber = 1,
+    kEthAccountsClaimedFieldNumber = 2,
+    kTotalKoinFieldNumber = 3,
+    kKoinClaimedFieldNumber = 4,
+  };
+  // uint32 total_eth_accounts = 1;
+  void clear_total_eth_accounts();
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_eth_accounts() const;
+  void set_total_eth_accounts(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_total_eth_accounts() const;
+  void _internal_set_total_eth_accounts(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint32 eth_accounts_claimed = 2;
+  void clear_eth_accounts_claimed();
+  ::PROTOBUF_NAMESPACE_ID::uint32 eth_accounts_claimed() const;
+  void set_eth_accounts_claimed(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_eth_accounts_claimed() const;
+  void _internal_set_eth_accounts_claimed(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // uint64 total_koin = 3;
+  void clear_total_koin();
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_koin() const;
+  void set_total_koin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_total_koin() const;
+  void _internal_set_total_koin(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 koin_claimed = 4;
+  void clear_koin_claimed();
+  ::PROTOBUF_NAMESPACE_ID::uint64 koin_claimed() const;
+  void set_koin_claimed(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_koin_claimed() const;
+  void _internal_set_koin_claimed(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.claim.claim_info)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 total_eth_accounts_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 eth_accounts_claimed_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 total_koin_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 koin_claimed_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto;
+};
+// -------------------------------------------------------------------
 
 class claim_status final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.claim.claim_status) */ {
@@ -124,7 +308,7 @@ class claim_status final :
                &_claim_status_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(claim_status& a, claim_status& b) {
     a.Swap(&b);
@@ -274,7 +458,7 @@ class claim_arguments final :
                &_claim_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(claim_arguments& a, claim_arguments& b) {
     a.Swap(&b);
@@ -434,7 +618,7 @@ class claim_result final :
                &_claim_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(claim_result& a, claim_result& b) {
     a.Swap(&b);
@@ -514,6 +698,280 @@ class claim_result final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto;
 };
+// -------------------------------------------------------------------
+
+class get_info_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.claim.get_info_arguments) */ {
+ public:
+  inline get_info_arguments() : get_info_arguments(nullptr) {}
+  ~get_info_arguments() override;
+  explicit constexpr get_info_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_info_arguments(const get_info_arguments& from);
+  get_info_arguments(get_info_arguments&& from) noexcept
+    : get_info_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline get_info_arguments& operator=(const get_info_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_info_arguments& operator=(get_info_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_info_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_info_arguments* internal_default_instance() {
+    return reinterpret_cast<const get_info_arguments*>(
+               &_get_info_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(get_info_arguments& a, get_info_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_info_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_info_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_info_arguments* New() const final {
+    return new get_info_arguments();
+  }
+
+  get_info_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_info_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_info_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_info_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_info_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.claim.get_info_arguments";
+  }
+  protected:
+  explicit get_info_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.claim.get_info_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto;
+};
+// -------------------------------------------------------------------
+
+class get_info_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.claim.get_info_result) */ {
+ public:
+  inline get_info_result() : get_info_result(nullptr) {}
+  ~get_info_result() override;
+  explicit constexpr get_info_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_info_result(const get_info_result& from);
+  get_info_result(get_info_result&& from) noexcept
+    : get_info_result() {
+    *this = ::std::move(from);
+  }
+
+  inline get_info_result& operator=(const get_info_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_info_result& operator=(get_info_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_info_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_info_result* internal_default_instance() {
+    return reinterpret_cast<const get_info_result*>(
+               &_get_info_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(get_info_result& a, get_info_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_info_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_info_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_info_result* New() const final {
+    return new get_info_result();
+  }
+
+  get_info_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_info_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_info_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_info_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_info_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.claim.get_info_result";
+  }
+  protected:
+  explicit get_info_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // .koinos.contracts.claim.claim_info value = 1;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  const ::koinos::contracts::claim::claim_info& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::contracts::claim::claim_info* release_value();
+  ::koinos::contracts::claim::claim_info* mutable_value();
+  void set_allocated_value(::koinos::contracts::claim::claim_info* value);
+  private:
+  const ::koinos::contracts::claim::claim_info& _internal_value() const;
+  ::koinos::contracts::claim::claim_info* _internal_mutable_value();
+  public:
+  void unsafe_arena_set_allocated_value(
+      ::koinos::contracts::claim::claim_info* value);
+  ::koinos::contracts::claim::claim_info* unsafe_arena_release_value();
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.claim.get_info_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::contracts::claim::claim_info* value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto;
+};
 // ===================================================================
 
 
@@ -523,6 +981,90 @@ class claim_result final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// claim_info
+
+// uint32 total_eth_accounts = 1;
+inline void claim_info::clear_total_eth_accounts() {
+  total_eth_accounts_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 claim_info::_internal_total_eth_accounts() const {
+  return total_eth_accounts_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 claim_info::total_eth_accounts() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.claim_info.total_eth_accounts)
+  return _internal_total_eth_accounts();
+}
+inline void claim_info::_internal_set_total_eth_accounts(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  total_eth_accounts_ = value;
+}
+inline void claim_info::set_total_eth_accounts(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_total_eth_accounts(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.claim.claim_info.total_eth_accounts)
+}
+
+// uint32 eth_accounts_claimed = 2;
+inline void claim_info::clear_eth_accounts_claimed() {
+  eth_accounts_claimed_ = 0u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 claim_info::_internal_eth_accounts_claimed() const {
+  return eth_accounts_claimed_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 claim_info::eth_accounts_claimed() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.claim_info.eth_accounts_claimed)
+  return _internal_eth_accounts_claimed();
+}
+inline void claim_info::_internal_set_eth_accounts_claimed(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  
+  eth_accounts_claimed_ = value;
+}
+inline void claim_info::set_eth_accounts_claimed(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_eth_accounts_claimed(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.claim.claim_info.eth_accounts_claimed)
+}
+
+// uint64 total_koin = 3;
+inline void claim_info::clear_total_koin() {
+  total_koin_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 claim_info::_internal_total_koin() const {
+  return total_koin_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 claim_info::total_koin() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.claim_info.total_koin)
+  return _internal_total_koin();
+}
+inline void claim_info::_internal_set_total_koin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  total_koin_ = value;
+}
+inline void claim_info::set_total_koin(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_total_koin(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.claim.claim_info.total_koin)
+}
+
+// uint64 koin_claimed = 4;
+inline void claim_info::clear_koin_claimed() {
+  koin_claimed_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 claim_info::_internal_koin_claimed() const {
+  return koin_claimed_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 claim_info::koin_claimed() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.claim_info.koin_claimed)
+  return _internal_koin_claimed();
+}
+inline void claim_info::_internal_set_koin_claimed(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  koin_claimed_ = value;
+}
+inline void claim_info::set_koin_claimed(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_koin_claimed(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.claim.claim_info.koin_claimed)
+}
+
+// -------------------------------------------------------------------
+
 // claim_status
 
 // uint64 token_amount = 1 [jstype = JS_STRING];
@@ -665,9 +1207,113 @@ inline void claim_arguments::set_allocated_koin_address(std::string* koin_addres
 
 // claim_result
 
+// -------------------------------------------------------------------
+
+// get_info_arguments
+
+// -------------------------------------------------------------------
+
+// get_info_result
+
+// .koinos.contracts.claim.claim_info value = 1;
+inline bool get_info_result::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
+}
+inline bool get_info_result::has_value() const {
+  return _internal_has_value();
+}
+inline void get_info_result::clear_value() {
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
+  }
+  value_ = nullptr;
+}
+inline const ::koinos::contracts::claim::claim_info& get_info_result::_internal_value() const {
+  const ::koinos::contracts::claim::claim_info* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::contracts::claim::claim_info&>(
+      ::koinos::contracts::claim::_claim_info_default_instance_);
+}
+inline const ::koinos::contracts::claim::claim_info& get_info_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.get_info_result.value)
+  return _internal_value();
+}
+inline void get_info_result::unsafe_arena_set_allocated_value(
+    ::koinos::contracts::claim::claim_info* value) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  value_ = value;
+  if (value) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.claim.get_info_result.value)
+}
+inline ::koinos::contracts::claim::claim_info* get_info_result::release_value() {
+  
+  ::koinos::contracts::claim::claim_info* temp = value_;
+  value_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::contracts::claim::claim_info* get_info_result::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.claim.get_info_result.value)
+  
+  ::koinos::contracts::claim::claim_info* temp = value_;
+  value_ = nullptr;
+  return temp;
+}
+inline ::koinos::contracts::claim::claim_info* get_info_result::_internal_mutable_value() {
+  
+  if (value_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::contracts::claim::claim_info>(GetArenaForAllocation());
+    value_ = p;
+  }
+  return value_;
+}
+inline ::koinos::contracts::claim::claim_info* get_info_result::mutable_value() {
+  ::koinos::contracts::claim::claim_info* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.claim.get_info_result.value)
+  return _msg;
+}
+inline void get_info_result::set_allocated_value(::koinos::contracts::claim::claim_info* value) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete value_;
+  }
+  if (value) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::contracts::claim::claim_info>::GetOwningArena(value);
+    if (message_arena != submessage_arena) {
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.claim.get_info_result.value)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

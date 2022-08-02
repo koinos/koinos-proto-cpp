@@ -81,8 +81,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fvalue_2eproto
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::koinos::chain::value_type, kind_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::enum_type, _internal_metadata_),
@@ -100,8 +98,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fvalue_2eproto
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::chain::value_type)},
-  { 22, -1, sizeof(::koinos::chain::enum_type)},
-  { 29, -1, sizeof(::koinos::chain::list_type)},
+  { 20, -1, sizeof(::koinos::chain::enum_type)},
+  { 27, -1, sizeof(::koinos::chain::list_type)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -112,29 +110,28 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fchain_2fvalue_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/value.proto\022\014koinos.chain"
-  "\032\031google/protobuf/any.proto\"\277\003\n\nvalue_ty"
+  "\032\031google/protobuf/any.proto\"\220\003\n\nvalue_ty"
   "pe\022-\n\rmessage_value\030\001 \001(\0132\024.google.proto"
-  "buf.AnyH\000\022\026\n\014double_value\030\002 \001(\001H\000\022\025\n\013flo"
-  "at_value\030\003 \001(\002H\000\022\025\n\013int32_value\030\004 \001(\005H\000\022"
-  "\031\n\013int64_value\030\005 \001(\003B\0020\001H\000\022\026\n\014uint32_val"
-  "ue\030\006 \001(\rH\000\022\032\n\014uint64_value\030\007 \001(\004B\0020\001H\000\022\026"
-  "\n\014sint32_value\030\010 \001(\021H\000\022\032\n\014sint64_value\030\t"
-  " \001(\022B\0020\001H\000\022\027\n\rfixed32_value\030\n \001(\007H\000\022\033\n\rf"
-  "ixed64_value\030\013 \001(\006B\0020\001H\000\022\030\n\016sfixed32_val"
-  "ue\030\014 \001(\017H\000\022\034\n\016sfixed64_value\030\r \001(\020B\0020\001H\000"
-  "\022\024\n\nbool_value\030\016 \001(\010H\000\022\026\n\014string_value\030\017"
-  " \001(\tH\000\022\025\n\013bytes_value\030\020 \001(\014H\000B\006\n\004kind\")\n"
-  "\tenum_type\022\014\n\004name\030\001 \001(\t\022\016\n\006number\030\002 \001(\005"
-  "\"5\n\tlist_type\022(\n\006values\030\001 \003(\0132\030.koinos.c"
-  "hain.value_typeB7Z5github.com/koinos/koi"
-  "nos-proto-golang/koinos/protocolb\006proto3"
+  "buf.AnyH\000\022\025\n\013int32_value\030\002 \001(\005H\000\022\031\n\013int6"
+  "4_value\030\003 \001(\003B\0020\001H\000\022\026\n\014uint32_value\030\004 \001("
+  "\rH\000\022\032\n\014uint64_value\030\005 \001(\004B\0020\001H\000\022\026\n\014sint3"
+  "2_value\030\006 \001(\021H\000\022\032\n\014sint64_value\030\007 \001(\022B\0020"
+  "\001H\000\022\027\n\rfixed32_value\030\010 \001(\007H\000\022\033\n\rfixed64_"
+  "value\030\t \001(\006B\0020\001H\000\022\030\n\016sfixed32_value\030\n \001("
+  "\017H\000\022\034\n\016sfixed64_value\030\013 \001(\020B\0020\001H\000\022\024\n\nboo"
+  "l_value\030\014 \001(\010H\000\022\026\n\014string_value\030\r \001(\tH\000\022"
+  "\025\n\013bytes_value\030\016 \001(\014H\000B\006\n\004kind\")\n\tenum_t"
+  "ype\022\014\n\004name\030\001 \001(\t\022\016\n\006number\030\002 \001(\005\"5\n\tlis"
+  "t_type\022(\n\006values\030\001 \003(\0132\030.koinos.chain.va"
+  "lue_typeB7Z5github.com/koinos/koinos-pro"
+  "to-golang/koinos/protocolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fvalue_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fvalue_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fvalue_2eproto = {
-  false, false, 680, descriptor_table_protodef_koinos_2fchain_2fvalue_2eproto, "koinos/chain/value.proto", 
+  false, false, 633, descriptor_table_protodef_koinos_2fchain_2fvalue_2eproto, "koinos/chain/value.proto", 
   &descriptor_table_koinos_2fchain_2fvalue_2eproto_once, descriptor_table_koinos_2fchain_2fvalue_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fvalue_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fvalue_2eproto, file_level_enum_descriptors_koinos_2fchain_2fvalue_2eproto, file_level_service_descriptors_koinos_2fchain_2fvalue_2eproto,
@@ -200,14 +197,6 @@ value_type::value_type(const value_type& from)
   switch (from.kind_case()) {
     case kMessageValue: {
       _internal_mutable_message_value()->PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_message_value());
-      break;
-    }
-    case kDoubleValue: {
-      _internal_set_double_value(from._internal_double_value());
-      break;
-    }
-    case kFloatValue: {
-      _internal_set_float_value(from._internal_float_value());
       break;
     }
     case kInt32Value: {
@@ -306,14 +295,6 @@ void value_type::clear_kind() {
       }
       break;
     }
-    case kDoubleValue: {
-      // No need to clear
-      break;
-    }
-    case kFloatValue: {
-      // No need to clear
-      break;
-    }
     case kInt32Value: {
       // No need to clear
       break;
@@ -397,109 +378,95 @@ const char* value_type::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // double double_value = 2;
+      // int32 int32_value = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 17)) {
-          _internal_set_double_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
-          ptr += sizeof(double);
-        } else goto handle_unusual;
-        continue;
-      // float float_value = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 29)) {
-          _internal_set_float_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      // int32 int32_value = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           _internal_set_int32_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // int64 int64_value = 5 [jstype = JS_STRING];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // int64 int64_value = 3 [jstype = JS_STRING];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _internal_set_int64_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint32 uint32_value = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+      // uint32 uint32_value = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _internal_set_uint32_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // uint64 uint64_value = 7 [jstype = JS_STRING];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+      // uint64 uint64_value = 5 [jstype = JS_STRING];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           _internal_set_uint64_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // sint32 sint32_value = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
+      // sint32 sint32_value = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _internal_set_sint32_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag32(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // sint64 sint64_value = 9 [jstype = JS_STRING];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+      // sint64 sint64_value = 7 [jstype = JS_STRING];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           _internal_set_sint64_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarintZigZag64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // fixed32 fixed32_value = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 85)) {
+      // fixed32 fixed32_value = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 69)) {
           _internal_set_fixed32_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint32>(ptr));
           ptr += sizeof(::PROTOBUF_NAMESPACE_ID::uint32);
         } else goto handle_unusual;
         continue;
-      // fixed64 fixed64_value = 11 [jstype = JS_STRING];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 89)) {
+      // fixed64 fixed64_value = 9 [jstype = JS_STRING];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 73)) {
           _internal_set_fixed64_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint64>(ptr));
           ptr += sizeof(::PROTOBUF_NAMESPACE_ID::uint64);
         } else goto handle_unusual;
         continue;
-      // sfixed32 sfixed32_value = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 101)) {
+      // sfixed32 sfixed32_value = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 85)) {
           _internal_set_sfixed32_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::int32>(ptr));
           ptr += sizeof(::PROTOBUF_NAMESPACE_ID::int32);
         } else goto handle_unusual;
         continue;
-      // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 105)) {
+      // sfixed64 sfixed64_value = 11 [jstype = JS_STRING];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 89)) {
           _internal_set_sfixed64_value(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::int64>(ptr));
           ptr += sizeof(::PROTOBUF_NAMESPACE_ID::int64);
         } else goto handle_unusual;
         continue;
-      // bool bool_value = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 112)) {
+      // bool bool_value = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
           _internal_set_bool_value(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string string_value = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 122)) {
+      // string string_value = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 106)) {
           auto str = _internal_mutable_string_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.chain.value_type.string_value"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes bytes_value = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 130)) {
+      // bytes bytes_value = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 114)) {
           auto str = _internal_mutable_bytes_value();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
@@ -542,98 +509,86 @@ failure:
         1, _Internal::message_value(this), target, stream);
   }
 
-  // double double_value = 2;
-  if (_internal_has_double_value()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteDoubleToArray(2, this->_internal_double_value(), target);
-  }
-
-  // float float_value = 3;
-  if (_internal_has_float_value()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatToArray(3, this->_internal_float_value(), target);
-  }
-
-  // int32 int32_value = 4;
+  // int32 int32_value = 2;
   if (_internal_has_int32_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_int32_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_int32_value(), target);
   }
 
-  // int64 int64_value = 5 [jstype = JS_STRING];
+  // int64 int64_value = 3 [jstype = JS_STRING];
   if (_internal_has_int64_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(5, this->_internal_int64_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(3, this->_internal_int64_value(), target);
   }
 
-  // uint32 uint32_value = 6;
+  // uint32 uint32_value = 4;
   if (_internal_has_uint32_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_uint32_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_uint32_value(), target);
   }
 
-  // uint64 uint64_value = 7 [jstype = JS_STRING];
+  // uint64 uint64_value = 5 [jstype = JS_STRING];
   if (_internal_has_uint64_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(7, this->_internal_uint64_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_uint64_value(), target);
   }
 
-  // sint32 sint32_value = 8;
+  // sint32 sint32_value = 6;
   if (_internal_has_sint32_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(8, this->_internal_sint32_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt32ToArray(6, this->_internal_sint32_value(), target);
   }
 
-  // sint64 sint64_value = 9 [jstype = JS_STRING];
+  // sint64 sint64_value = 7 [jstype = JS_STRING];
   if (_internal_has_sint64_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt64ToArray(9, this->_internal_sint64_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSInt64ToArray(7, this->_internal_sint64_value(), target);
   }
 
-  // fixed32 fixed32_value = 10;
+  // fixed32 fixed32_value = 8;
   if (_internal_has_fixed32_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(10, this->_internal_fixed32_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed32ToArray(8, this->_internal_fixed32_value(), target);
   }
 
-  // fixed64 fixed64_value = 11 [jstype = JS_STRING];
+  // fixed64 fixed64_value = 9 [jstype = JS_STRING];
   if (_internal_has_fixed64_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed64ToArray(11, this->_internal_fixed64_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFixed64ToArray(9, this->_internal_fixed64_value(), target);
   }
 
-  // sfixed32 sfixed32_value = 12;
+  // sfixed32 sfixed32_value = 10;
   if (_internal_has_sfixed32_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSFixed32ToArray(12, this->_internal_sfixed32_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSFixed32ToArray(10, this->_internal_sfixed32_value(), target);
   }
 
-  // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
+  // sfixed64 sfixed64_value = 11 [jstype = JS_STRING];
   if (_internal_has_sfixed64_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSFixed64ToArray(13, this->_internal_sfixed64_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteSFixed64ToArray(11, this->_internal_sfixed64_value(), target);
   }
 
-  // bool bool_value = 14;
+  // bool bool_value = 12;
   if (_internal_has_bool_value()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(14, this->_internal_bool_value(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(12, this->_internal_bool_value(), target);
   }
 
-  // string string_value = 15;
+  // string string_value = 13;
   if (_internal_has_string_value()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_string_value().data(), static_cast<int>(this->_internal_string_value().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "koinos.chain.value_type.string_value");
     target = stream->WriteStringMaybeAliased(
-        15, this->_internal_string_value(), target);
+        13, this->_internal_string_value(), target);
   }
 
-  // bytes bytes_value = 16;
+  // bytes bytes_value = 14;
   if (_internal_has_bytes_value()) {
     target = stream->WriteBytesMaybeAliased(
-        16, this->_internal_bytes_value(), target);
+        14, this->_internal_bytes_value(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -660,93 +615,83 @@ size_t value_type::ByteSizeLong() const {
           *kind_.message_value_);
       break;
     }
-    // double double_value = 2;
-    case kDoubleValue: {
-      total_size += 1 + 8;
-      break;
-    }
-    // float float_value = 3;
-    case kFloatValue: {
-      total_size += 1 + 4;
-      break;
-    }
-    // int32 int32_value = 4;
+    // int32 int32_value = 2;
     case kInt32Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_int32_value());
       break;
     }
-    // int64 int64_value = 5 [jstype = JS_STRING];
+    // int64 int64_value = 3 [jstype = JS_STRING];
     case kInt64Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_int64_value());
       break;
     }
-    // uint32 uint32_value = 6;
+    // uint32 uint32_value = 4;
     case kUint32Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
           this->_internal_uint32_value());
       break;
     }
-    // uint64 uint64_value = 7 [jstype = JS_STRING];
+    // uint64 uint64_value = 5 [jstype = JS_STRING];
     case kUint64Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
           this->_internal_uint64_value());
       break;
     }
-    // sint32 sint32_value = 8;
+    // sint32 sint32_value = 6;
     case kSint32Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt32Size(
           this->_internal_sint32_value());
       break;
     }
-    // sint64 sint64_value = 9 [jstype = JS_STRING];
+    // sint64 sint64_value = 7 [jstype = JS_STRING];
     case kSint64Value: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SInt64Size(
           this->_internal_sint64_value());
       break;
     }
-    // fixed32 fixed32_value = 10;
+    // fixed32 fixed32_value = 8;
     case kFixed32Value: {
       total_size += 1 + 4;
       break;
     }
-    // fixed64 fixed64_value = 11 [jstype = JS_STRING];
+    // fixed64 fixed64_value = 9 [jstype = JS_STRING];
     case kFixed64Value: {
       total_size += 1 + 8;
       break;
     }
-    // sfixed32 sfixed32_value = 12;
+    // sfixed32 sfixed32_value = 10;
     case kSfixed32Value: {
       total_size += 1 + 4;
       break;
     }
-    // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
+    // sfixed64 sfixed64_value = 11 [jstype = JS_STRING];
     case kSfixed64Value: {
       total_size += 1 + 8;
       break;
     }
-    // bool bool_value = 14;
+    // bool bool_value = 12;
     case kBoolValue: {
       total_size += 1 + 1;
       break;
     }
-    // string string_value = 15;
+    // string string_value = 13;
     case kStringValue: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_string_value());
       break;
     }
-    // bytes bytes_value = 16;
+    // bytes bytes_value = 14;
     case kBytesValue: {
-      total_size += 2 +
+      total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
           this->_internal_bytes_value());
       break;
@@ -786,14 +731,6 @@ void value_type::MergeFrom(const value_type& from) {
   switch (from.kind_case()) {
     case kMessageValue: {
       _internal_mutable_message_value()->PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_message_value());
-      break;
-    }
-    case kDoubleValue: {
-      _internal_set_double_value(from._internal_double_value());
-      break;
-    }
-    case kFloatValue: {
-      _internal_set_float_value(from._internal_float_value());
       break;
     }
     case kInt32Value: {

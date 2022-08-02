@@ -118,21 +118,19 @@ class value_type final :
   }
   enum KindCase {
     kMessageValue = 1,
-    kDoubleValue = 2,
-    kFloatValue = 3,
-    kInt32Value = 4,
-    kInt64Value = 5,
-    kUint32Value = 6,
-    kUint64Value = 7,
-    kSint32Value = 8,
-    kSint64Value = 9,
-    kFixed32Value = 10,
-    kFixed64Value = 11,
-    kSfixed32Value = 12,
-    kSfixed64Value = 13,
-    kBoolValue = 14,
-    kStringValue = 15,
-    kBytesValue = 16,
+    kInt32Value = 2,
+    kInt64Value = 3,
+    kUint32Value = 4,
+    kUint64Value = 5,
+    kSint32Value = 6,
+    kSint64Value = 7,
+    kFixed32Value = 8,
+    kFixed64Value = 9,
+    kSfixed32Value = 10,
+    kSfixed64Value = 11,
+    kBoolValue = 12,
+    kStringValue = 13,
+    kBytesValue = 14,
     KIND_NOT_SET = 0,
   };
 
@@ -213,21 +211,19 @@ class value_type final :
 
   enum : int {
     kMessageValueFieldNumber = 1,
-    kDoubleValueFieldNumber = 2,
-    kFloatValueFieldNumber = 3,
-    kInt32ValueFieldNumber = 4,
-    kInt64ValueFieldNumber = 5,
-    kUint32ValueFieldNumber = 6,
-    kUint64ValueFieldNumber = 7,
-    kSint32ValueFieldNumber = 8,
-    kSint64ValueFieldNumber = 9,
-    kFixed32ValueFieldNumber = 10,
-    kFixed64ValueFieldNumber = 11,
-    kSfixed32ValueFieldNumber = 12,
-    kSfixed64ValueFieldNumber = 13,
-    kBoolValueFieldNumber = 14,
-    kStringValueFieldNumber = 15,
-    kBytesValueFieldNumber = 16,
+    kInt32ValueFieldNumber = 2,
+    kInt64ValueFieldNumber = 3,
+    kUint32ValueFieldNumber = 4,
+    kUint64ValueFieldNumber = 5,
+    kSint32ValueFieldNumber = 6,
+    kSint64ValueFieldNumber = 7,
+    kFixed32ValueFieldNumber = 8,
+    kFixed64ValueFieldNumber = 9,
+    kSfixed32ValueFieldNumber = 10,
+    kSfixed64ValueFieldNumber = 11,
+    kBoolValueFieldNumber = 12,
+    kStringValueFieldNumber = 13,
+    kBytesValueFieldNumber = 14,
   };
   // .google.protobuf.Any message_value = 1;
   bool has_message_value() const;
@@ -247,33 +243,7 @@ class value_type final :
       PROTOBUF_NAMESPACE_ID::Any* message_value);
   PROTOBUF_NAMESPACE_ID::Any* unsafe_arena_release_message_value();
 
-  // double double_value = 2;
-  bool has_double_value() const;
-  private:
-  bool _internal_has_double_value() const;
-  public:
-  void clear_double_value();
-  double double_value() const;
-  void set_double_value(double value);
-  private:
-  double _internal_double_value() const;
-  void _internal_set_double_value(double value);
-  public:
-
-  // float float_value = 3;
-  bool has_float_value() const;
-  private:
-  bool _internal_has_float_value() const;
-  public:
-  void clear_float_value();
-  float float_value() const;
-  void set_float_value(float value);
-  private:
-  float _internal_float_value() const;
-  void _internal_set_float_value(float value);
-  public:
-
-  // int32 int32_value = 4;
+  // int32 int32_value = 2;
   bool has_int32_value() const;
   private:
   bool _internal_has_int32_value() const;
@@ -286,7 +256,7 @@ class value_type final :
   void _internal_set_int32_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // int64 int64_value = 5 [jstype = JS_STRING];
+  // int64 int64_value = 3 [jstype = JS_STRING];
   bool has_int64_value() const;
   private:
   bool _internal_has_int64_value() const;
@@ -299,7 +269,7 @@ class value_type final :
   void _internal_set_int64_value(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // uint32 uint32_value = 6;
+  // uint32 uint32_value = 4;
   bool has_uint32_value() const;
   private:
   bool _internal_has_uint32_value() const;
@@ -312,7 +282,7 @@ class value_type final :
   void _internal_set_uint32_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // uint64 uint64_value = 7 [jstype = JS_STRING];
+  // uint64 uint64_value = 5 [jstype = JS_STRING];
   bool has_uint64_value() const;
   private:
   bool _internal_has_uint64_value() const;
@@ -325,7 +295,7 @@ class value_type final :
   void _internal_set_uint64_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // sint32 sint32_value = 8;
+  // sint32 sint32_value = 6;
   bool has_sint32_value() const;
   private:
   bool _internal_has_sint32_value() const;
@@ -338,7 +308,7 @@ class value_type final :
   void _internal_set_sint32_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // sint64 sint64_value = 9 [jstype = JS_STRING];
+  // sint64 sint64_value = 7 [jstype = JS_STRING];
   bool has_sint64_value() const;
   private:
   bool _internal_has_sint64_value() const;
@@ -351,7 +321,7 @@ class value_type final :
   void _internal_set_sint64_value(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // fixed32 fixed32_value = 10;
+  // fixed32 fixed32_value = 8;
   bool has_fixed32_value() const;
   private:
   bool _internal_has_fixed32_value() const;
@@ -364,7 +334,7 @@ class value_type final :
   void _internal_set_fixed32_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // fixed64 fixed64_value = 11 [jstype = JS_STRING];
+  // fixed64 fixed64_value = 9 [jstype = JS_STRING];
   bool has_fixed64_value() const;
   private:
   bool _internal_has_fixed64_value() const;
@@ -377,7 +347,7 @@ class value_type final :
   void _internal_set_fixed64_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // sfixed32 sfixed32_value = 12;
+  // sfixed32 sfixed32_value = 10;
   bool has_sfixed32_value() const;
   private:
   bool _internal_has_sfixed32_value() const;
@@ -390,7 +360,7 @@ class value_type final :
   void _internal_set_sfixed32_value(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
+  // sfixed64 sfixed64_value = 11 [jstype = JS_STRING];
   bool has_sfixed64_value() const;
   private:
   bool _internal_has_sfixed64_value() const;
@@ -403,7 +373,7 @@ class value_type final :
   void _internal_set_sfixed64_value(::PROTOBUF_NAMESPACE_ID::int64 value);
   public:
 
-  // bool bool_value = 14;
+  // bool bool_value = 12;
   bool has_bool_value() const;
   private:
   bool _internal_has_bool_value() const;
@@ -416,7 +386,7 @@ class value_type final :
   void _internal_set_bool_value(bool value);
   public:
 
-  // string string_value = 15;
+  // string string_value = 13;
   bool has_string_value() const;
   private:
   bool _internal_has_string_value() const;
@@ -434,7 +404,7 @@ class value_type final :
   std::string* _internal_mutable_string_value();
   public:
 
-  // bytes bytes_value = 16;
+  // bytes bytes_value = 14;
   bool has_bytes_value() const;
   private:
   bool _internal_has_bytes_value() const;
@@ -458,8 +428,6 @@ class value_type final :
  private:
   class _Internal;
   void set_has_message_value();
-  void set_has_double_value();
-  void set_has_float_value();
   void set_has_int32_value();
   void set_has_int64_value();
   void set_has_uint32_value();
@@ -484,8 +452,6 @@ class value_type final :
     constexpr KindUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     PROTOBUF_NAMESPACE_ID::Any* message_value_;
-    double double_value_;
-    float float_value_;
     ::PROTOBUF_NAMESPACE_ID::int32 int32_value_;
     ::PROTOBUF_NAMESPACE_ID::int64 int64_value_;
     ::PROTOBUF_NAMESPACE_ID::uint32 uint32_value_;
@@ -885,83 +851,7 @@ inline PROTOBUF_NAMESPACE_ID::Any* value_type::mutable_message_value() {
   return _msg;
 }
 
-// double double_value = 2;
-inline bool value_type::_internal_has_double_value() const {
-  return kind_case() == kDoubleValue;
-}
-inline bool value_type::has_double_value() const {
-  return _internal_has_double_value();
-}
-inline void value_type::set_has_double_value() {
-  _oneof_case_[0] = kDoubleValue;
-}
-inline void value_type::clear_double_value() {
-  if (_internal_has_double_value()) {
-    kind_.double_value_ = 0;
-    clear_has_kind();
-  }
-}
-inline double value_type::_internal_double_value() const {
-  if (_internal_has_double_value()) {
-    return kind_.double_value_;
-  }
-  return 0;
-}
-inline void value_type::_internal_set_double_value(double value) {
-  if (!_internal_has_double_value()) {
-    clear_kind();
-    set_has_double_value();
-  }
-  kind_.double_value_ = value;
-}
-inline double value_type::double_value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.value_type.double_value)
-  return _internal_double_value();
-}
-inline void value_type::set_double_value(double value) {
-  _internal_set_double_value(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.value_type.double_value)
-}
-
-// float float_value = 3;
-inline bool value_type::_internal_has_float_value() const {
-  return kind_case() == kFloatValue;
-}
-inline bool value_type::has_float_value() const {
-  return _internal_has_float_value();
-}
-inline void value_type::set_has_float_value() {
-  _oneof_case_[0] = kFloatValue;
-}
-inline void value_type::clear_float_value() {
-  if (_internal_has_float_value()) {
-    kind_.float_value_ = 0;
-    clear_has_kind();
-  }
-}
-inline float value_type::_internal_float_value() const {
-  if (_internal_has_float_value()) {
-    return kind_.float_value_;
-  }
-  return 0;
-}
-inline void value_type::_internal_set_float_value(float value) {
-  if (!_internal_has_float_value()) {
-    clear_kind();
-    set_has_float_value();
-  }
-  kind_.float_value_ = value;
-}
-inline float value_type::float_value() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.value_type.float_value)
-  return _internal_float_value();
-}
-inline void value_type::set_float_value(float value) {
-  _internal_set_float_value(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.value_type.float_value)
-}
-
-// int32 int32_value = 4;
+// int32 int32_value = 2;
 inline bool value_type::_internal_has_int32_value() const {
   return kind_case() == kInt32Value;
 }
@@ -999,7 +889,7 @@ inline void value_type::set_int32_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.int32_value)
 }
 
-// int64 int64_value = 5 [jstype = JS_STRING];
+// int64 int64_value = 3 [jstype = JS_STRING];
 inline bool value_type::_internal_has_int64_value() const {
   return kind_case() == kInt64Value;
 }
@@ -1037,7 +927,7 @@ inline void value_type::set_int64_value(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.int64_value)
 }
 
-// uint32 uint32_value = 6;
+// uint32 uint32_value = 4;
 inline bool value_type::_internal_has_uint32_value() const {
   return kind_case() == kUint32Value;
 }
@@ -1075,7 +965,7 @@ inline void value_type::set_uint32_value(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.uint32_value)
 }
 
-// uint64 uint64_value = 7 [jstype = JS_STRING];
+// uint64 uint64_value = 5 [jstype = JS_STRING];
 inline bool value_type::_internal_has_uint64_value() const {
   return kind_case() == kUint64Value;
 }
@@ -1113,7 +1003,7 @@ inline void value_type::set_uint64_value(::PROTOBUF_NAMESPACE_ID::uint64 value) 
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.uint64_value)
 }
 
-// sint32 sint32_value = 8;
+// sint32 sint32_value = 6;
 inline bool value_type::_internal_has_sint32_value() const {
   return kind_case() == kSint32Value;
 }
@@ -1151,7 +1041,7 @@ inline void value_type::set_sint32_value(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.sint32_value)
 }
 
-// sint64 sint64_value = 9 [jstype = JS_STRING];
+// sint64 sint64_value = 7 [jstype = JS_STRING];
 inline bool value_type::_internal_has_sint64_value() const {
   return kind_case() == kSint64Value;
 }
@@ -1189,7 +1079,7 @@ inline void value_type::set_sint64_value(::PROTOBUF_NAMESPACE_ID::int64 value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.sint64_value)
 }
 
-// fixed32 fixed32_value = 10;
+// fixed32 fixed32_value = 8;
 inline bool value_type::_internal_has_fixed32_value() const {
   return kind_case() == kFixed32Value;
 }
@@ -1227,7 +1117,7 @@ inline void value_type::set_fixed32_value(::PROTOBUF_NAMESPACE_ID::uint32 value)
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.fixed32_value)
 }
 
-// fixed64 fixed64_value = 11 [jstype = JS_STRING];
+// fixed64 fixed64_value = 9 [jstype = JS_STRING];
 inline bool value_type::_internal_has_fixed64_value() const {
   return kind_case() == kFixed64Value;
 }
@@ -1265,7 +1155,7 @@ inline void value_type::set_fixed64_value(::PROTOBUF_NAMESPACE_ID::uint64 value)
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.fixed64_value)
 }
 
-// sfixed32 sfixed32_value = 12;
+// sfixed32 sfixed32_value = 10;
 inline bool value_type::_internal_has_sfixed32_value() const {
   return kind_case() == kSfixed32Value;
 }
@@ -1303,7 +1193,7 @@ inline void value_type::set_sfixed32_value(::PROTOBUF_NAMESPACE_ID::int32 value)
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.sfixed32_value)
 }
 
-// sfixed64 sfixed64_value = 13 [jstype = JS_STRING];
+// sfixed64 sfixed64_value = 11 [jstype = JS_STRING];
 inline bool value_type::_internal_has_sfixed64_value() const {
   return kind_case() == kSfixed64Value;
 }
@@ -1341,7 +1231,7 @@ inline void value_type::set_sfixed64_value(::PROTOBUF_NAMESPACE_ID::int64 value)
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.sfixed64_value)
 }
 
-// bool bool_value = 14;
+// bool bool_value = 12;
 inline bool value_type::_internal_has_bool_value() const {
   return kind_case() == kBoolValue;
 }
@@ -1379,7 +1269,7 @@ inline void value_type::set_bool_value(bool value) {
   // @@protoc_insertion_point(field_set:koinos.chain.value_type.bool_value)
 }
 
-// string string_value = 15;
+// string string_value = 13;
 inline bool value_type::_internal_has_string_value() const {
   return kind_case() == kStringValue;
 }
@@ -1461,7 +1351,7 @@ inline void value_type::set_allocated_string_value(std::string* string_value) {
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.value_type.string_value)
 }
 
-// bytes bytes_value = 16;
+// bytes bytes_value = 14;
 inline bool value_type::_internal_has_bytes_value() const {
   return kind_case() == kBytesValue;
 }

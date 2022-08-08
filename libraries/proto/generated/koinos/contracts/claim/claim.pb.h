@@ -531,6 +531,7 @@ class claim_arguments final :
   enum : int {
     kEthAddressFieldNumber = 1,
     kKoinAddressFieldNumber = 2,
+    kSignatureFieldNumber = 3,
   };
   // bytes eth_address = 1 [(.koinos.btype) = HEX];
   void clear_eth_address();
@@ -560,6 +561,20 @@ class claim_arguments final :
   std::string* _internal_mutable_koin_address();
   public:
 
+  // bytes signature = 3;
+  void clear_signature();
+  const std::string& signature() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_signature(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_signature();
+  PROTOBUF_MUST_USE_RESULT std::string* release_signature();
+  void set_allocated_signature(std::string* signature);
+  private:
+  const std::string& _internal_signature() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_signature(const std::string& value);
+  std::string* _internal_mutable_signature();
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.contracts.claim.claim_arguments)
  private:
   class _Internal;
@@ -569,6 +584,7 @@ class claim_arguments final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr eth_address_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr koin_address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto;
 };
@@ -1201,6 +1217,52 @@ inline void claim_arguments::set_allocated_koin_address(std::string* koin_addres
   koin_address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), koin_address,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.claim.claim_arguments.koin_address)
+}
+
+// bytes signature = 3;
+inline void claim_arguments::clear_signature() {
+  signature_.ClearToEmpty();
+}
+inline const std::string& claim_arguments::signature() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.claim.claim_arguments.signature)
+  return _internal_signature();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void claim_arguments::set_signature(ArgT0&& arg0, ArgT... args) {
+ 
+ signature_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.claim.claim_arguments.signature)
+}
+inline std::string* claim_arguments::mutable_signature() {
+  std::string* _s = _internal_mutable_signature();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.claim.claim_arguments.signature)
+  return _s;
+}
+inline const std::string& claim_arguments::_internal_signature() const {
+  return signature_.Get();
+}
+inline void claim_arguments::_internal_set_signature(const std::string& value) {
+  
+  signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* claim_arguments::_internal_mutable_signature() {
+  
+  return signature_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* claim_arguments::release_signature() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.claim.claim_arguments.signature)
+  return signature_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void claim_arguments::set_allocated_signature(std::string* signature) {
+  if (signature != nullptr) {
+    
+  } else {
+    
+  }
+  signature_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signature,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.claim.claim_arguments.signature)
 }
 
 // -------------------------------------------------------------------

@@ -50,7 +50,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT claim_statusDefaultTypeInternal
 constexpr claim_arguments::claim_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : eth_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , koin_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , koin_address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct claim_argumentsDefaultTypeInternal {
   constexpr claim_argumentsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -125,6 +126,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fclaim_2fc
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::claim::claim_arguments, eth_address_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::claim::claim_arguments, koin_address_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::claim::claim_arguments, signature_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::claim::claim_result, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -146,9 +148,9 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::koinos::contracts::claim::claim_info)},
   { 9, -1, sizeof(::koinos::contracts::claim::claim_status)},
   { 16, -1, sizeof(::koinos::contracts::claim::claim_arguments)},
-  { 23, -1, sizeof(::koinos::contracts::claim::claim_result)},
-  { 28, -1, sizeof(::koinos::contracts::claim::get_info_arguments)},
-  { 33, -1, sizeof(::koinos::contracts::claim::get_info_result)},
+  { 24, -1, sizeof(::koinos::contracts::claim::claim_result)},
+  { 29, -1, sizeof(::koinos::contracts::claim::get_info_arguments)},
+  { 34, -1, sizeof(::koinos::contracts::claim::get_info_result)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -167,20 +169,21 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fclaim_2fclaim_2eproto[
   " \001(\r\022\034\n\024eth_accounts_claimed\030\002 \001(\r\022\022\n\nto"
   "tal_koin\030\003 \001(\004\022\024\n\014koin_claimed\030\004 \001(\004\"9\n\014"
   "claim_status\022\030\n\014token_amount\030\001 \001(\004B\0020\001\022\017"
-  "\n\007claimed\030\002 \001(\010\"H\n\017claim_arguments\022\031\n\013et"
+  "\n\007claimed\030\002 \001(\010\"[\n\017claim_arguments\022\031\n\013et"
   "h_address\030\001 \001(\014B\004\200\265\030\002\022\032\n\014koin_address\030\002 "
-  "\001(\014B\004\200\265\030\006\"\016\n\014claim_result\"\024\n\022get_info_ar"
-  "guments\"D\n\017get_info_result\0221\n\005value\030\001 \001("
-  "\0132\".koinos.contracts.claim.claim_infoB>Z"
-  "<github.com/koinos/koinos-proto-golang/k"
-  "oinos/contracts/claimb\006proto3"
+  "\001(\014B\004\200\265\030\006\022\021\n\tsignature\030\003 \001(\014\"\016\n\014claim_re"
+  "sult\"\024\n\022get_info_arguments\"D\n\017get_info_r"
+  "esult\0221\n\005value\030\001 \001(\0132\".koinos.contracts."
+  "claim.claim_infoB>Z<github.com/koinos/ko"
+  "inos-proto-golang/koinos/contracts/claim"
+  "b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto = {
-  false, false, 509, descriptor_table_protodef_koinos_2fcontracts_2fclaim_2fclaim_2eproto, "koinos/contracts/claim/claim.proto", 
+  false, false, 528, descriptor_table_protodef_koinos_2fcontracts_2fclaim_2fclaim_2eproto, "koinos/contracts/claim/claim.proto", 
   &descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_once, descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_deps, 1, 6,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fclaim_2fclaim_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fclaim_2fclaim_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fclaim_2fclaim_2eproto,
@@ -707,12 +710,18 @@ claim_arguments::claim_arguments(const claim_arguments& from)
     koin_address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_koin_address(), 
       GetArenaForAllocation());
   }
+  signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_signature().empty()) {
+    signature_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_signature(), 
+      GetArenaForAllocation());
+  }
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.claim.claim_arguments)
 }
 
 inline void claim_arguments::SharedCtor() {
 eth_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 koin_address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 claim_arguments::~claim_arguments() {
@@ -726,6 +735,7 @@ inline void claim_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   eth_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   koin_address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  signature_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void claim_arguments::ArenaDtor(void* object) {
@@ -746,6 +756,7 @@ void claim_arguments::Clear() {
 
   eth_address_.ClearToEmpty();
   koin_address_.ClearToEmpty();
+  signature_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -767,6 +778,14 @@ const char* claim_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_koin_address();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes signature = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_signature();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -812,6 +831,12 @@ failure:
         2, this->_internal_koin_address(), target);
   }
 
+  // bytes signature = 3;
+  if (!this->_internal_signature().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_signature(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -840,6 +865,13 @@ size_t claim_arguments::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_koin_address());
+  }
+
+  // bytes signature = 3;
+  if (!this->_internal_signature().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_signature());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -876,6 +908,9 @@ void claim_arguments::MergeFrom(const claim_arguments& from) {
   if (!from._internal_koin_address().empty()) {
     _internal_set_koin_address(from._internal_koin_address());
   }
+  if (!from._internal_signature().empty()) {
+    _internal_set_signature(from._internal_signature());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -902,6 +937,11 @@ void claim_arguments::InternalSwap(claim_arguments* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &koin_address_, GetArenaForAllocation(),
       &other->koin_address_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &signature_, GetArenaForAllocation(),
+      &other->signature_, other->GetArenaForAllocation()
   );
 }
 

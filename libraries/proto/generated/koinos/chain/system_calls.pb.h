@@ -10920,6 +10920,7 @@ class recover_public_key_arguments final :
     kSignatureFieldNumber = 2,
     kDigestFieldNumber = 3,
     kTypeFieldNumber = 1,
+    kCompressedFieldNumber = 4,
   };
   // bytes signature = 2;
   void clear_signature();
@@ -10958,6 +10959,15 @@ class recover_public_key_arguments final :
   void _internal_set_type(::koinos::chain::dsa value);
   public:
 
+  // bool compressed = 4;
+  void clear_compressed();
+  bool compressed() const;
+  void set_compressed(bool value);
+  private:
+  bool _internal_compressed() const;
+  void _internal_set_compressed(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.chain.recover_public_key_arguments)
  private:
   class _Internal;
@@ -10968,6 +10978,7 @@ class recover_public_key_arguments final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digest_;
   int type_;
+  bool compressed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -11545,6 +11556,7 @@ class verify_signature_arguments final :
     kSignatureFieldNumber = 3,
     kDigestFieldNumber = 4,
     kTypeFieldNumber = 1,
+    kCompressedFieldNumber = 5,
   };
   // bytes public_key = 2 [(.koinos.btype) = BASE64];
   void clear_public_key();
@@ -11597,6 +11609,15 @@ class verify_signature_arguments final :
   void _internal_set_type(::koinos::chain::dsa value);
   public:
 
+  // bool compressed = 5;
+  void clear_compressed();
+  bool compressed() const;
+  void set_compressed(bool value);
+  private:
+  bool _internal_compressed() const;
+  void _internal_set_compressed(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.chain.verify_signature_arguments)
  private:
   class _Internal;
@@ -11608,6 +11629,7 @@ class verify_signature_arguments final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr digest_;
   int type_;
+  bool compressed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -17710,6 +17732,26 @@ inline void recover_public_key_arguments::set_allocated_digest(std::string* dige
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.recover_public_key_arguments.digest)
 }
 
+// bool compressed = 4;
+inline void recover_public_key_arguments::clear_compressed() {
+  compressed_ = false;
+}
+inline bool recover_public_key_arguments::_internal_compressed() const {
+  return compressed_;
+}
+inline bool recover_public_key_arguments::compressed() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.recover_public_key_arguments.compressed)
+  return _internal_compressed();
+}
+inline void recover_public_key_arguments::_internal_set_compressed(bool value) {
+  
+  compressed_ = value;
+}
+inline void recover_public_key_arguments::set_compressed(bool value) {
+  _internal_set_compressed(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.recover_public_key_arguments.compressed)
+}
+
 // -------------------------------------------------------------------
 
 // recover_public_key_result
@@ -18069,6 +18111,26 @@ inline void verify_signature_arguments::set_allocated_digest(std::string* digest
   digest_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), digest,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.chain.verify_signature_arguments.digest)
+}
+
+// bool compressed = 5;
+inline void verify_signature_arguments::clear_compressed() {
+  compressed_ = false;
+}
+inline bool verify_signature_arguments::_internal_compressed() const {
+  return compressed_;
+}
+inline bool verify_signature_arguments::compressed() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.verify_signature_arguments.compressed)
+  return _internal_compressed();
+}
+inline void verify_signature_arguments::_internal_set_compressed(bool value) {
+  
+  compressed_ = value;
+}
+inline void verify_signature_arguments::set_compressed(bool value) {
+  _internal_set_compressed(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.verify_signature_arguments.compressed)
 }
 
 // -------------------------------------------------------------------

@@ -891,7 +891,8 @@ constexpr recover_public_key_arguments::recover_public_key_arguments(
   : signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , digest_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , type_(0)
-{}
+
+  , compressed_(false){}
 struct recover_public_key_argumentsDefaultTypeInternal {
   constexpr recover_public_key_argumentsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -944,7 +945,8 @@ constexpr verify_signature_arguments::verify_signature_arguments(
   , signature_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , digest_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , type_(0)
-{}
+
+  , compressed_(false){}
 struct verify_signature_argumentsDefaultTypeInternal {
   constexpr verify_signature_argumentsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -1585,6 +1587,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fsystem_5fcall
   PROTOBUF_FIELD_OFFSET(::koinos::chain::recover_public_key_arguments, type_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::recover_public_key_arguments, signature_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::recover_public_key_arguments, digest_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::recover_public_key_arguments, compressed_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::recover_public_key_result, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1613,6 +1616,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fsystem_5fcall
   PROTOBUF_FIELD_OFFSET(::koinos::chain::verify_signature_arguments, public_key_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::verify_signature_arguments, signature_),
   PROTOBUF_FIELD_OFFSET(::koinos::chain::verify_signature_arguments, digest_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::verify_signature_arguments, compressed_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::verify_signature_result, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1784,25 +1788,25 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 415, -1, sizeof(::koinos::chain::hash_arguments)},
   { 423, -1, sizeof(::koinos::chain::hash_result)},
   { 429, -1, sizeof(::koinos::chain::recover_public_key_arguments)},
-  { 437, -1, sizeof(::koinos::chain::recover_public_key_result)},
-  { 443, -1, sizeof(::koinos::chain::verify_merkle_root_arguments)},
-  { 450, -1, sizeof(::koinos::chain::verify_merkle_root_result)},
-  { 456, -1, sizeof(::koinos::chain::verify_signature_arguments)},
-  { 465, -1, sizeof(::koinos::chain::verify_signature_result)},
-  { 471, -1, sizeof(::koinos::chain::verify_vrf_proof_arguments)},
-  { 481, -1, sizeof(::koinos::chain::verify_vrf_proof_result)},
-  { 487, -1, sizeof(::koinos::chain::call_arguments)},
-  { 495, -1, sizeof(::koinos::chain::call_result)},
-  { 501, -1, sizeof(::koinos::chain::get_arguments_arguments)},
-  { 506, -1, sizeof(::koinos::chain::get_arguments_result)},
-  { 512, -1, sizeof(::koinos::chain::exit_arguments)},
-  { 519, -1, sizeof(::koinos::chain::exit_result)},
-  { 524, -1, sizeof(::koinos::chain::get_contract_id_arguments)},
-  { 529, -1, sizeof(::koinos::chain::get_contract_id_result)},
-  { 535, -1, sizeof(::koinos::chain::get_caller_arguments)},
-  { 540, -1, sizeof(::koinos::chain::get_caller_result)},
-  { 546, -1, sizeof(::koinos::chain::check_authority_arguments)},
-  { 554, -1, sizeof(::koinos::chain::check_authority_result)},
+  { 438, -1, sizeof(::koinos::chain::recover_public_key_result)},
+  { 444, -1, sizeof(::koinos::chain::verify_merkle_root_arguments)},
+  { 451, -1, sizeof(::koinos::chain::verify_merkle_root_result)},
+  { 457, -1, sizeof(::koinos::chain::verify_signature_arguments)},
+  { 467, -1, sizeof(::koinos::chain::verify_signature_result)},
+  { 473, -1, sizeof(::koinos::chain::verify_vrf_proof_arguments)},
+  { 483, -1, sizeof(::koinos::chain::verify_vrf_proof_result)},
+  { 489, -1, sizeof(::koinos::chain::call_arguments)},
+  { 497, -1, sizeof(::koinos::chain::call_result)},
+  { 503, -1, sizeof(::koinos::chain::get_arguments_arguments)},
+  { 508, -1, sizeof(::koinos::chain::get_arguments_result)},
+  { 514, -1, sizeof(::koinos::chain::exit_arguments)},
+  { 521, -1, sizeof(::koinos::chain::exit_result)},
+  { 526, -1, sizeof(::koinos::chain::get_contract_id_arguments)},
+  { 531, -1, sizeof(::koinos::chain::get_contract_id_result)},
+  { 537, -1, sizeof(::koinos::chain::get_caller_arguments)},
+  { 542, -1, sizeof(::koinos::chain::get_caller_result)},
+  { 548, -1, sizeof(::koinos::chain::check_authority_arguments)},
+  { 556, -1, sizeof(::koinos::chain::check_authority_result)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -2005,17 +2009,18 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] P
   "data\030\002 \001(\014\022\026\n\010impacted\030\003 \003(\014B\004\200\265\030\006\"\016\n\014ev"
   "ent_result\"A\n\016hash_arguments\022\020\n\004code\030\001 \001"
   "(\004B\0020\001\022\013\n\003obj\030\002 \001(\014\022\020\n\004size\030\003 \001(\004B\0020\001\"\034\n"
-  "\013hash_result\022\r\n\005value\030\001 \001(\014\"b\n\034recover_p"
+  "\013hash_result\022\r\n\005value\030\001 \001(\014\"v\n\034recover_p"
   "ublic_key_arguments\022\037\n\004type\030\001 \001(\0162\021.koin"
   "os.chain.dsa\022\021\n\tsignature\030\002 \001(\014\022\016\n\006diges"
-  "t\030\003 \001(\014\"0\n\031recover_public_key_result\022\023\n\005"
-  "value\030\001 \001(\014B\004\200\265\030\000\"<\n\034verify_merkle_root_"
-  "arguments\022\014\n\004root\030\001 \001(\014\022\016\n\006hashes\030\002 \003(\014\""
-  "*\n\031verify_merkle_root_result\022\r\n\005value\030\001 "
-  "\001(\010\"\206\001\n\032verify_signature_arguments\022\037\n\004ty"
-  "pe\030\001 \001(\0162\021.koinos.chain.dsa\022\030\n\npublic_ke"
-  "y\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsignature\030\003 \001(\014B\004\200\265\030\000\022\024"
-  "\n\006digest\030\004 \001(\014B\004\200\265\030\000\"(\n\027verify_signature"
+  "t\030\003 \001(\014\022\022\n\ncompressed\030\004 \001(\010\"0\n\031recover_p"
+  "ublic_key_result\022\023\n\005value\030\001 \001(\014B\004\200\265\030\000\"<\n"
+  "\034verify_merkle_root_arguments\022\014\n\004root\030\001 "
+  "\001(\014\022\016\n\006hashes\030\002 \003(\014\"*\n\031verify_merkle_roo"
+  "t_result\022\r\n\005value\030\001 \001(\010\"\232\001\n\032verify_signa"
+  "ture_arguments\022\037\n\004type\030\001 \001(\0162\021.koinos.ch"
+  "ain.dsa\022\030\n\npublic_key\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsig"
+  "nature\030\003 \001(\014B\004\200\265\030\000\022\024\n\006digest\030\004 \001(\014B\004\200\265\030\000"
+  "\022\022\n\ncompressed\030\005 \001(\010\"(\n\027verify_signature"
   "_result\022\r\n\005value\030\001 \001(\010\"\227\001\n\032verify_vrf_pr"
   "oof_arguments\022\037\n\004type\030\001 \001(\0162\021.koinos.cha"
   "in.dsa\022\030\n\npublic_key\030\002 \001(\014B\004\200\265\030\000\022\023\n\005proo"
@@ -2050,7 +2055,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto = {
-  false, false, 5520, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
+  false, false, 5560, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 5, 93,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto,
@@ -15958,14 +15963,19 @@ recover_public_key_arguments::recover_public_key_arguments(const recover_public_
     digest_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_digest(), 
       GetArenaForAllocation());
   }
-  type_ = from.type_;
+  ::memcpy(&type_, &from.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&compressed_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(compressed_));
   // @@protoc_insertion_point(copy_constructor:koinos.chain.recover_public_key_arguments)
 }
 
 inline void recover_public_key_arguments::SharedCtor() {
 signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-type_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&compressed_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(compressed_));
 }
 
 recover_public_key_arguments::~recover_public_key_arguments() {
@@ -15999,7 +16009,9 @@ void recover_public_key_arguments::Clear() {
 
   signature_.ClearToEmpty();
   digest_.ClearToEmpty();
-  type_ = 0;
+  ::memset(&type_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&compressed_) -
+      reinterpret_cast<char*>(&type_)) + sizeof(compressed_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16030,6 +16042,13 @@ const char* recover_public_key_arguments::_InternalParse(const char* ptr, ::PROT
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
           auto str = _internal_mutable_digest();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool compressed = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          compressed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -16081,6 +16100,12 @@ failure:
         3, this->_internal_digest(), target);
   }
 
+  // bool compressed = 4;
+  if (this->_internal_compressed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_compressed(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -16115,6 +16140,11 @@ size_t recover_public_key_arguments::ByteSizeLong() const {
   if (this->_internal_type() != 0) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
+  }
+
+  // bool compressed = 4;
+  if (this->_internal_compressed() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -16154,6 +16184,9 @@ void recover_public_key_arguments::MergeFrom(const recover_public_key_arguments&
   if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
+  if (from._internal_compressed() != 0) {
+    _internal_set_compressed(from._internal_compressed());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -16181,7 +16214,12 @@ void recover_public_key_arguments::InternalSwap(recover_public_key_arguments* ot
       &digest_, GetArenaForAllocation(),
       &other->digest_, other->GetArenaForAllocation()
   );
-  swap(type_, other->type_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(recover_public_key_arguments, compressed_)
+      + sizeof(recover_public_key_arguments::compressed_)
+      - PROTOBUF_FIELD_OFFSET(recover_public_key_arguments, type_)>(
+          reinterpret_cast<char*>(&type_),
+          reinterpret_cast<char*>(&other->type_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata recover_public_key_arguments::GetMetadata() const {
@@ -16828,7 +16866,9 @@ verify_signature_arguments::verify_signature_arguments(const verify_signature_ar
     digest_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_digest(), 
       GetArenaForAllocation());
   }
-  type_ = from.type_;
+  ::memcpy(&type_, &from.type_,
+    static_cast<size_t>(reinterpret_cast<char*>(&compressed_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(compressed_));
   // @@protoc_insertion_point(copy_constructor:koinos.chain.verify_signature_arguments)
 }
 
@@ -16836,7 +16876,10 @@ inline void verify_signature_arguments::SharedCtor() {
 public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 digest_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-type_ = 0;
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&type_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&compressed_) -
+    reinterpret_cast<char*>(&type_)) + sizeof(compressed_));
 }
 
 verify_signature_arguments::~verify_signature_arguments() {
@@ -16872,7 +16915,9 @@ void verify_signature_arguments::Clear() {
   public_key_.ClearToEmpty();
   signature_.ClearToEmpty();
   digest_.ClearToEmpty();
-  type_ = 0;
+  ::memset(&type_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&compressed_) -
+      reinterpret_cast<char*>(&type_)) + sizeof(compressed_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -16911,6 +16956,13 @@ const char* verify_signature_arguments::_InternalParse(const char* ptr, ::PROTOB
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_digest();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool compressed = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          compressed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -16968,6 +17020,12 @@ failure:
         4, this->_internal_digest(), target);
   }
 
+  // bool compressed = 5;
+  if (this->_internal_compressed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(5, this->_internal_compressed(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -17011,6 +17069,11 @@ size_t verify_signature_arguments::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_type());
   }
 
+  // bool compressed = 5;
+  if (this->_internal_compressed() != 0) {
+    total_size += 1 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -17051,6 +17114,9 @@ void verify_signature_arguments::MergeFrom(const verify_signature_arguments& fro
   if (from._internal_type() != 0) {
     _internal_set_type(from._internal_type());
   }
+  if (from._internal_compressed() != 0) {
+    _internal_set_compressed(from._internal_compressed());
+  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -17083,7 +17149,12 @@ void verify_signature_arguments::InternalSwap(verify_signature_arguments* other)
       &digest_, GetArenaForAllocation(),
       &other->digest_, other->GetArenaForAllocation()
   );
-  swap(type_, other->type_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(verify_signature_arguments, compressed_)
+      + sizeof(verify_signature_arguments::compressed_)
+      - PROTOBUF_FIELD_OFFSET(verify_signature_arguments, type_)>(
+          reinterpret_cast<char*>(&type_),
+          reinterpret_cast<char*>(&other->type_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_signature_arguments::GetMetadata() const {

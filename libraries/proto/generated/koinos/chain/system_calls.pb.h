@@ -30,7 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/options.pb.h"
 #include "koinos/protocol/protocol.pb.h"
@@ -440,31 +439,6 @@ PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace chain {
 
-enum system_authorization_type : int {
-  set_system_contract = 0,
-  set_system_call = 1,
-  system_authorization_type_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  system_authorization_type_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool system_authorization_type_IsValid(int value);
-constexpr system_authorization_type system_authorization_type_MIN = set_system_contract;
-constexpr system_authorization_type system_authorization_type_MAX = set_system_call;
-constexpr int system_authorization_type_ARRAYSIZE = system_authorization_type_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_authorization_type_descriptor();
-template<typename T>
-inline const std::string& system_authorization_type_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, system_authorization_type>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function system_authorization_type_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    system_authorization_type_descriptor(), enum_t_value);
-}
-inline bool system_authorization_type_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, system_authorization_type* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<system_authorization_type>(
-    system_authorization_type_descriptor(), name, value);
-}
 // ===================================================================
 
 class nop_arguments final :
@@ -6618,18 +6592,6 @@ class check_system_authority_arguments final :
 
   // accessors -------------------------------------------------------
 
-  enum : int {
-    kTypeFieldNumber = 1,
-  };
-  // .koinos.chain.system_authorization_type type = 1;
-  void clear_type();
-  ::koinos::chain::system_authorization_type type() const;
-  void set_type(::koinos::chain::system_authorization_type value);
-  private:
-  ::koinos::chain::system_authorization_type _internal_type() const;
-  void _internal_set_type(::koinos::chain::system_authorization_type value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.chain.check_system_authority_arguments)
  private:
   class _Internal;
@@ -6637,7 +6599,6 @@ class check_system_authority_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  int type_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -15627,26 +15588,6 @@ inline void set_account_nonce_arguments::set_allocated_nonce(std::string* nonce)
 
 // check_system_authority_arguments
 
-// .koinos.chain.system_authorization_type type = 1;
-inline void check_system_authority_arguments::clear_type() {
-  type_ = 0;
-}
-inline ::koinos::chain::system_authorization_type check_system_authority_arguments::_internal_type() const {
-  return static_cast< ::koinos::chain::system_authorization_type >(type_);
-}
-inline ::koinos::chain::system_authorization_type check_system_authority_arguments::type() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.check_system_authority_arguments.type)
-  return _internal_type();
-}
-inline void check_system_authority_arguments::_internal_set_type(::koinos::chain::system_authorization_type value) {
-  
-  type_ = value;
-}
-inline void check_system_authority_arguments::set_type(::koinos::chain::system_authorization_type value) {
-  _internal_set_type(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.check_system_authority_arguments.type)
-}
-
 // -------------------------------------------------------------------
 
 // check_system_authority_result
@@ -19243,16 +19184,6 @@ inline void check_authority_result::set_value(bool value) {
 
 }  // namespace chain
 }  // namespace koinos
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::koinos::chain::system_authorization_type> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::koinos::chain::system_authorization_type>() {
-  return ::koinos::chain::system_authorization_type_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

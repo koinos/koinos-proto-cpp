@@ -47,7 +47,7 @@ struct TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[18]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -102,6 +102,12 @@ extern register_public_key_resultDefaultTypeInternal _register_public_key_result
 class signature_data;
 struct signature_dataDefaultTypeInternal;
 extern signature_dataDefaultTypeInternal _signature_data_default_instance_;
+class update_consensus_parameters_arguments;
+struct update_consensus_parameters_argumentsDefaultTypeInternal;
+extern update_consensus_parameters_argumentsDefaultTypeInternal _update_consensus_parameters_arguments_default_instance_;
+class update_consensus_parameters_result;
+struct update_consensus_parameters_resultDefaultTypeInternal;
+extern update_consensus_parameters_resultDefaultTypeInternal _update_consensus_parameters_result_default_instance_;
 class vrf_payload;
 struct vrf_payloadDefaultTypeInternal;
 extern vrf_payloadDefaultTypeInternal _vrf_payload_default_instance_;
@@ -124,6 +130,8 @@ template<> ::koinos::contracts::pob::register_public_key_arguments* Arena::Creat
 template<> ::koinos::contracts::pob::register_public_key_event* Arena::CreateMaybeMessage<::koinos::contracts::pob::register_public_key_event>(Arena*);
 template<> ::koinos::contracts::pob::register_public_key_result* Arena::CreateMaybeMessage<::koinos::contracts::pob::register_public_key_result>(Arena*);
 template<> ::koinos::contracts::pob::signature_data* Arena::CreateMaybeMessage<::koinos::contracts::pob::signature_data>(Arena*);
+template<> ::koinos::contracts::pob::update_consensus_parameters_arguments* Arena::CreateMaybeMessage<::koinos::contracts::pob::update_consensus_parameters_arguments>(Arena*);
+template<> ::koinos::contracts::pob::update_consensus_parameters_result* Arena::CreateMaybeMessage<::koinos::contracts::pob::update_consensus_parameters_result>(Arena*);
 template<> ::koinos::contracts::pob::vrf_payload* Arena::CreateMaybeMessage<::koinos::contracts::pob::vrf_payload>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
@@ -2549,6 +2557,280 @@ class get_public_key_result final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
+// -------------------------------------------------------------------
+
+class update_consensus_parameters_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.pob.update_consensus_parameters_arguments) */ {
+ public:
+  inline update_consensus_parameters_arguments() : update_consensus_parameters_arguments(nullptr) {}
+  ~update_consensus_parameters_arguments() override;
+  explicit constexpr update_consensus_parameters_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  update_consensus_parameters_arguments(const update_consensus_parameters_arguments& from);
+  update_consensus_parameters_arguments(update_consensus_parameters_arguments&& from) noexcept
+    : update_consensus_parameters_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline update_consensus_parameters_arguments& operator=(const update_consensus_parameters_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline update_consensus_parameters_arguments& operator=(update_consensus_parameters_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const update_consensus_parameters_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const update_consensus_parameters_arguments* internal_default_instance() {
+    return reinterpret_cast<const update_consensus_parameters_arguments*>(
+               &_update_consensus_parameters_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    16;
+
+  friend void swap(update_consensus_parameters_arguments& a, update_consensus_parameters_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(update_consensus_parameters_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(update_consensus_parameters_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline update_consensus_parameters_arguments* New() const final {
+    return new update_consensus_parameters_arguments();
+  }
+
+  update_consensus_parameters_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<update_consensus_parameters_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const update_consensus_parameters_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const update_consensus_parameters_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(update_consensus_parameters_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.pob.update_consensus_parameters_arguments";
+  }
+  protected:
+  explicit update_consensus_parameters_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // .koinos.contracts.pob.consensus_parameters value = 1;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  const ::koinos::contracts::pob::consensus_parameters& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::contracts::pob::consensus_parameters* release_value();
+  ::koinos::contracts::pob::consensus_parameters* mutable_value();
+  void set_allocated_value(::koinos::contracts::pob::consensus_parameters* value);
+  private:
+  const ::koinos::contracts::pob::consensus_parameters& _internal_value() const;
+  ::koinos::contracts::pob::consensus_parameters* _internal_mutable_value();
+  public:
+  void unsafe_arena_set_allocated_value(
+      ::koinos::contracts::pob::consensus_parameters* value);
+  ::koinos::contracts::pob::consensus_parameters* unsafe_arena_release_value();
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.pob.update_consensus_parameters_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::contracts::pob::consensus_parameters* value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
+};
+// -------------------------------------------------------------------
+
+class update_consensus_parameters_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.pob.update_consensus_parameters_result) */ {
+ public:
+  inline update_consensus_parameters_result() : update_consensus_parameters_result(nullptr) {}
+  ~update_consensus_parameters_result() override;
+  explicit constexpr update_consensus_parameters_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  update_consensus_parameters_result(const update_consensus_parameters_result& from);
+  update_consensus_parameters_result(update_consensus_parameters_result&& from) noexcept
+    : update_consensus_parameters_result() {
+    *this = ::std::move(from);
+  }
+
+  inline update_consensus_parameters_result& operator=(const update_consensus_parameters_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline update_consensus_parameters_result& operator=(update_consensus_parameters_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const update_consensus_parameters_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const update_consensus_parameters_result* internal_default_instance() {
+    return reinterpret_cast<const update_consensus_parameters_result*>(
+               &_update_consensus_parameters_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(update_consensus_parameters_result& a, update_consensus_parameters_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(update_consensus_parameters_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(update_consensus_parameters_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline update_consensus_parameters_result* New() const final {
+    return new update_consensus_parameters_result();
+  }
+
+  update_consensus_parameters_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<update_consensus_parameters_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const update_consensus_parameters_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const update_consensus_parameters_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(update_consensus_parameters_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.pob.update_consensus_parameters_result";
+  }
+  protected:
+  explicit update_consensus_parameters_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.pob.update_consensus_parameters_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
+};
 // ===================================================================
 
 
@@ -3670,9 +3952,111 @@ inline void get_public_key_result::set_allocated_value(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.get_public_key_result.value)
 }
 
+// -------------------------------------------------------------------
+
+// update_consensus_parameters_arguments
+
+// .koinos.contracts.pob.consensus_parameters value = 1;
+inline bool update_consensus_parameters_arguments::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
+}
+inline bool update_consensus_parameters_arguments::has_value() const {
+  return _internal_has_value();
+}
+inline void update_consensus_parameters_arguments::clear_value() {
+  if (GetArenaForAllocation() == nullptr && value_ != nullptr) {
+    delete value_;
+  }
+  value_ = nullptr;
+}
+inline const ::koinos::contracts::pob::consensus_parameters& update_consensus_parameters_arguments::_internal_value() const {
+  const ::koinos::contracts::pob::consensus_parameters* p = value_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::contracts::pob::consensus_parameters&>(
+      ::koinos::contracts::pob::_consensus_parameters_default_instance_);
+}
+inline const ::koinos::contracts::pob::consensus_parameters& update_consensus_parameters_arguments::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.update_consensus_parameters_arguments.value)
+  return _internal_value();
+}
+inline void update_consensus_parameters_arguments::unsafe_arena_set_allocated_value(
+    ::koinos::contracts::pob::consensus_parameters* value) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
+  }
+  value_ = value;
+  if (value) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.contracts.pob.update_consensus_parameters_arguments.value)
+}
+inline ::koinos::contracts::pob::consensus_parameters* update_consensus_parameters_arguments::release_value() {
+  
+  ::koinos::contracts::pob::consensus_parameters* temp = value_;
+  value_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::contracts::pob::consensus_parameters* update_consensus_parameters_arguments::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pob.update_consensus_parameters_arguments.value)
+  
+  ::koinos::contracts::pob::consensus_parameters* temp = value_;
+  value_ = nullptr;
+  return temp;
+}
+inline ::koinos::contracts::pob::consensus_parameters* update_consensus_parameters_arguments::_internal_mutable_value() {
+  
+  if (value_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::contracts::pob::consensus_parameters>(GetArenaForAllocation());
+    value_ = p;
+  }
+  return value_;
+}
+inline ::koinos::contracts::pob::consensus_parameters* update_consensus_parameters_arguments::mutable_value() {
+  ::koinos::contracts::pob::consensus_parameters* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.update_consensus_parameters_arguments.value)
+  return _msg;
+}
+inline void update_consensus_parameters_arguments::set_allocated_value(::koinos::contracts::pob::consensus_parameters* value) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete value_;
+  }
+  if (value) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::contracts::pob::consensus_parameters>::GetOwningArena(value);
+    if (message_arena != submessage_arena) {
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.update_consensus_parameters_arguments.value)
+}
+
+// -------------------------------------------------------------------
+
+// update_consensus_parameters_result
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

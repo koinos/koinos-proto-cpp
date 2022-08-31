@@ -251,6 +251,7 @@ class consensus_parameters final :
     kTargetBurnPercentFieldNumber = 2,
     kTargetBlockIntervalFieldNumber = 3,
     kQuantumLengthFieldNumber = 4,
+    kMinimumBlockTimeFieldNumber = 5,
   };
   // uint32 target_annual_inflation_rate = 1;
   void clear_target_annual_inflation_rate();
@@ -288,6 +289,15 @@ class consensus_parameters final :
   void _internal_set_quantum_length(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // uint64 minimum_block_time = 5;
+  void clear_minimum_block_time();
+  ::PROTOBUF_NAMESPACE_ID::uint64 minimum_block_time() const;
+  void set_minimum_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_minimum_block_time() const;
+  void _internal_set_minimum_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.contracts.pob.consensus_parameters)
  private:
   class _Internal;
@@ -299,6 +309,7 @@ class consensus_parameters final :
   ::PROTOBUF_NAMESPACE_ID::uint32 target_burn_percent_;
   ::PROTOBUF_NAMESPACE_ID::uint32 target_block_interval_;
   ::PROTOBUF_NAMESPACE_ID::uint32 quantum_length_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 minimum_block_time_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
@@ -2627,6 +2638,26 @@ inline void consensus_parameters::_internal_set_quantum_length(::PROTOBUF_NAMESP
 inline void consensus_parameters::set_quantum_length(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_quantum_length(value);
   // @@protoc_insertion_point(field_set:koinos.contracts.pob.consensus_parameters.quantum_length)
+}
+
+// uint64 minimum_block_time = 5;
+inline void consensus_parameters::clear_minimum_block_time() {
+  minimum_block_time_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::_internal_minimum_block_time() const {
+  return minimum_block_time_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 consensus_parameters::minimum_block_time() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.consensus_parameters.minimum_block_time)
+  return _internal_minimum_block_time();
+}
+inline void consensus_parameters::_internal_set_minimum_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  minimum_block_time_ = value;
+}
+inline void consensus_parameters::set_minimum_block_time(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_minimum_block_time(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.consensus_parameters.minimum_block_time)
 }
 
 // -------------------------------------------------------------------

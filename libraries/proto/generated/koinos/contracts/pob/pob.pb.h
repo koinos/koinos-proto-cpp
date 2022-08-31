@@ -420,6 +420,7 @@ class public_key_record final :
 
   enum : int {
     kPublicKeyFieldNumber = 1,
+    kSetBlockHeightFieldNumber = 2,
   };
   // bytes public_key = 1 [(.koinos.btype) = BASE64];
   void clear_public_key();
@@ -435,6 +436,15 @@ class public_key_record final :
   std::string* _internal_mutable_public_key();
   public:
 
+  // uint64 set_block_height = 2 [jstype = JS_STRING];
+  void clear_set_block_height();
+  ::PROTOBUF_NAMESPACE_ID::uint64 set_block_height() const;
+  void set_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_set_block_height() const;
+  void _internal_set_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.contracts.pob.public_key_record)
  private:
   class _Internal;
@@ -443,6 +453,7 @@ class public_key_record final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr public_key_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 set_block_height_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
@@ -2666,6 +2677,26 @@ inline void public_key_record::set_allocated_public_key(std::string* public_key)
   public_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), public_key,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.public_key_record.public_key)
+}
+
+// uint64 set_block_height = 2 [jstype = JS_STRING];
+inline void public_key_record::clear_set_block_height() {
+  set_block_height_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 public_key_record::_internal_set_block_height() const {
+  return set_block_height_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 public_key_record::set_block_height() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.public_key_record.set_block_height)
+  return _internal_set_block_height();
+}
+inline void public_key_record::_internal_set_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  set_block_height_ = value;
+}
+inline void public_key_record::set_set_block_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_set_block_height(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.public_key_record.set_block_height)
 }
 
 // -------------------------------------------------------------------

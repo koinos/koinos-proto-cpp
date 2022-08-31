@@ -30,6 +30,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/options.pb.h"
 // @@protoc_insertion_point(includes)
@@ -47,7 +50,7 @@ struct TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[25]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -81,6 +84,18 @@ extern decimals_argumentsDefaultTypeInternal _decimals_arguments_default_instanc
 class decimals_result;
 struct decimals_resultDefaultTypeInternal;
 extern decimals_resultDefaultTypeInternal _decimals_result_default_instance_;
+class effective_balance_object;
+struct effective_balance_objectDefaultTypeInternal;
+extern effective_balance_objectDefaultTypeInternal _effective_balance_object_default_instance_;
+class effective_balance_object_PastBalancesEntry_DoNotUse;
+struct effective_balance_object_PastBalancesEntry_DoNotUseDefaultTypeInternal;
+extern effective_balance_object_PastBalancesEntry_DoNotUseDefaultTypeInternal _effective_balance_object_PastBalancesEntry_DoNotUse_default_instance_;
+class effective_balance_of_arguments;
+struct effective_balance_of_argumentsDefaultTypeInternal;
+extern effective_balance_of_argumentsDefaultTypeInternal _effective_balance_of_arguments_default_instance_;
+class effective_balance_of_result;
+struct effective_balance_of_resultDefaultTypeInternal;
+extern effective_balance_of_resultDefaultTypeInternal _effective_balance_of_result_default_instance_;
 class mana_balance_object;
 struct mana_balance_objectDefaultTypeInternal;
 extern mana_balance_objectDefaultTypeInternal _mana_balance_object_default_instance_;
@@ -132,6 +147,10 @@ template<> ::koinos::contracts::token::burn_event* Arena::CreateMaybeMessage<::k
 template<> ::koinos::contracts::token::burn_result* Arena::CreateMaybeMessage<::koinos::contracts::token::burn_result>(Arena*);
 template<> ::koinos::contracts::token::decimals_arguments* Arena::CreateMaybeMessage<::koinos::contracts::token::decimals_arguments>(Arena*);
 template<> ::koinos::contracts::token::decimals_result* Arena::CreateMaybeMessage<::koinos::contracts::token::decimals_result>(Arena*);
+template<> ::koinos::contracts::token::effective_balance_object* Arena::CreateMaybeMessage<::koinos::contracts::token::effective_balance_object>(Arena*);
+template<> ::koinos::contracts::token::effective_balance_object_PastBalancesEntry_DoNotUse* Arena::CreateMaybeMessage<::koinos::contracts::token::effective_balance_object_PastBalancesEntry_DoNotUse>(Arena*);
+template<> ::koinos::contracts::token::effective_balance_of_arguments* Arena::CreateMaybeMessage<::koinos::contracts::token::effective_balance_of_arguments>(Arena*);
+template<> ::koinos::contracts::token::effective_balance_of_result* Arena::CreateMaybeMessage<::koinos::contracts::token::effective_balance_of_result>(Arena*);
 template<> ::koinos::contracts::token::mana_balance_object* Arena::CreateMaybeMessage<::koinos::contracts::token::mana_balance_object>(Arena*);
 template<> ::koinos::contracts::token::mint_arguments* Arena::CreateMaybeMessage<::koinos::contracts::token::mint_arguments>(Arena*);
 template<> ::koinos::contracts::token::mint_event* Arena::CreateMaybeMessage<::koinos::contracts::token::mint_event>(Arena*);
@@ -1505,6 +1524,289 @@ class balance_of_result final :
 };
 // -------------------------------------------------------------------
 
+class effective_balance_of_arguments final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.token.effective_balance_of_arguments) */ {
+ public:
+  inline effective_balance_of_arguments() : effective_balance_of_arguments(nullptr) {}
+  ~effective_balance_of_arguments() override;
+  explicit constexpr effective_balance_of_arguments(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  effective_balance_of_arguments(const effective_balance_of_arguments& from);
+  effective_balance_of_arguments(effective_balance_of_arguments&& from) noexcept
+    : effective_balance_of_arguments() {
+    *this = ::std::move(from);
+  }
+
+  inline effective_balance_of_arguments& operator=(const effective_balance_of_arguments& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline effective_balance_of_arguments& operator=(effective_balance_of_arguments&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const effective_balance_of_arguments& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const effective_balance_of_arguments* internal_default_instance() {
+    return reinterpret_cast<const effective_balance_of_arguments*>(
+               &_effective_balance_of_arguments_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(effective_balance_of_arguments& a, effective_balance_of_arguments& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(effective_balance_of_arguments* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(effective_balance_of_arguments* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline effective_balance_of_arguments* New() const final {
+    return new effective_balance_of_arguments();
+  }
+
+  effective_balance_of_arguments* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<effective_balance_of_arguments>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const effective_balance_of_arguments& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const effective_balance_of_arguments& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(effective_balance_of_arguments* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.token.effective_balance_of_arguments";
+  }
+  protected:
+  explicit effective_balance_of_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kOwnerFieldNumber = 1,
+  };
+  // bytes owner = 1 [(.koinos.btype) = ADDRESS];
+  void clear_owner();
+  const std::string& owner() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_owner(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_owner();
+  PROTOBUF_MUST_USE_RESULT std::string* release_owner();
+  void set_allocated_owner(std::string* owner);
+  private:
+  const std::string& _internal_owner() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_owner(const std::string& value);
+  std::string* _internal_mutable_owner();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.token.effective_balance_of_arguments)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
+};
+// -------------------------------------------------------------------
+
+class effective_balance_of_result final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.token.effective_balance_of_result) */ {
+ public:
+  inline effective_balance_of_result() : effective_balance_of_result(nullptr) {}
+  ~effective_balance_of_result() override;
+  explicit constexpr effective_balance_of_result(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  effective_balance_of_result(const effective_balance_of_result& from);
+  effective_balance_of_result(effective_balance_of_result&& from) noexcept
+    : effective_balance_of_result() {
+    *this = ::std::move(from);
+  }
+
+  inline effective_balance_of_result& operator=(const effective_balance_of_result& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline effective_balance_of_result& operator=(effective_balance_of_result&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const effective_balance_of_result& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const effective_balance_of_result* internal_default_instance() {
+    return reinterpret_cast<const effective_balance_of_result*>(
+               &_effective_balance_of_result_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(effective_balance_of_result& a, effective_balance_of_result& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(effective_balance_of_result* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(effective_balance_of_result* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline effective_balance_of_result* New() const final {
+    return new effective_balance_of_result();
+  }
+
+  effective_balance_of_result* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<effective_balance_of_result>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const effective_balance_of_result& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const effective_balance_of_result& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(effective_balance_of_result* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.token.effective_balance_of_result";
+  }
+  protected:
+  explicit effective_balance_of_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // uint64 value = 1 [jstype = JS_STRING];
+  void clear_value();
+  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.token.effective_balance_of_result)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
+};
+// -------------------------------------------------------------------
+
 class transfer_arguments final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.token.transfer_arguments) */ {
  public:
@@ -1549,7 +1851,7 @@ class transfer_arguments final :
                &_transfer_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(transfer_arguments& a, transfer_arguments& b) {
     a.Swap(&b);
@@ -1720,7 +2022,7 @@ class transfer_result final :
                &_transfer_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   friend void swap(transfer_result& a, transfer_result& b) {
     a.Swap(&b);
@@ -1846,7 +2148,7 @@ class mint_arguments final :
                &_mint_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(mint_arguments& a, mint_arguments& b) {
     a.Swap(&b);
@@ -2001,7 +2303,7 @@ class mint_result final :
                &_mint_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(mint_result& a, mint_result& b) {
     a.Swap(&b);
@@ -2127,7 +2429,7 @@ class burn_arguments final :
                &_burn_arguments_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   friend void swap(burn_arguments& a, burn_arguments& b) {
     a.Swap(&b);
@@ -2282,7 +2584,7 @@ class burn_result final :
                &_burn_result_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   friend void swap(burn_result& a, burn_result& b) {
     a.Swap(&b);
@@ -2408,7 +2710,7 @@ class balance_object final :
                &_balance_object_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   friend void swap(balance_object& a, balance_object& b) {
     a.Swap(&b);
@@ -2547,7 +2849,7 @@ class mana_balance_object final :
                &_mana_balance_object_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   friend void swap(mana_balance_object& a, mana_balance_object& b) {
     a.Swap(&b);
@@ -2664,6 +2966,192 @@ class mana_balance_object final :
 };
 // -------------------------------------------------------------------
 
+class effective_balance_object_PastBalancesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<effective_balance_object_PastBalancesEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<effective_balance_object_PastBalancesEntry_DoNotUse, 
+    ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64> SuperType;
+  effective_balance_object_PastBalancesEntry_DoNotUse();
+  explicit constexpr effective_balance_object_PastBalancesEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit effective_balance_object_PastBalancesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const effective_balance_object_PastBalancesEntry_DoNotUse& other);
+  static const effective_balance_object_PastBalancesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const effective_balance_object_PastBalancesEntry_DoNotUse*>(&_effective_balance_object_PastBalancesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(void*) { return true; }
+  static bool ValidateValue(void*) { return true; }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
+class effective_balance_object final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.token.effective_balance_object) */ {
+ public:
+  inline effective_balance_object() : effective_balance_object(nullptr) {}
+  ~effective_balance_object() override;
+  explicit constexpr effective_balance_object(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  effective_balance_object(const effective_balance_object& from);
+  effective_balance_object(effective_balance_object&& from) noexcept
+    : effective_balance_object() {
+    *this = ::std::move(from);
+  }
+
+  inline effective_balance_object& operator=(const effective_balance_object& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline effective_balance_object& operator=(effective_balance_object&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const effective_balance_object& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const effective_balance_object* internal_default_instance() {
+    return reinterpret_cast<const effective_balance_object*>(
+               &_effective_balance_object_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  friend void swap(effective_balance_object& a, effective_balance_object& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(effective_balance_object* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(effective_balance_object* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline effective_balance_object* New() const final {
+    return new effective_balance_object();
+  }
+
+  effective_balance_object* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<effective_balance_object>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const effective_balance_object& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const effective_balance_object& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(effective_balance_object* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.contracts.token.effective_balance_object";
+  }
+  protected:
+  explicit effective_balance_object(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPastBalancesFieldNumber = 2,
+    kCurrentBalanceFieldNumber = 1,
+  };
+  // map<uint64, uint64> past_balances = 2;
+  int past_balances_size() const;
+  private:
+  int _internal_past_balances_size() const;
+  public:
+  void clear_past_balances();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >&
+      _internal_past_balances() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >*
+      _internal_mutable_past_balances();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >&
+      past_balances() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >*
+      mutable_past_balances();
+
+  // uint64 current_balance = 1 [jstype = JS_STRING];
+  void clear_current_balance();
+  ::PROTOBUF_NAMESPACE_ID::uint64 current_balance() const;
+  void set_current_balance(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_current_balance() const;
+  void _internal_set_current_balance(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.contracts.token.effective_balance_object)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      effective_balance_object_PastBalancesEntry_DoNotUse,
+      ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT64> past_balances_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 current_balance_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto;
+};
+// -------------------------------------------------------------------
+
 class burn_event final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.contracts.token.burn_event) */ {
  public:
@@ -2708,7 +3196,7 @@ class burn_event final :
                &_burn_event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    22;
 
   friend void swap(burn_event& a, burn_event& b) {
     a.Swap(&b);
@@ -2863,7 +3351,7 @@ class mint_event final :
                &_mint_event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(mint_event& a, mint_event& b) {
     a.Swap(&b);
@@ -3018,7 +3506,7 @@ class transfer_event final :
                &_transfer_event_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(transfer_event& a, transfer_event& b) {
     a.Swap(&b);
@@ -3390,6 +3878,80 @@ inline void balance_of_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) 
 
 // -------------------------------------------------------------------
 
+// effective_balance_of_arguments
+
+// bytes owner = 1 [(.koinos.btype) = ADDRESS];
+inline void effective_balance_of_arguments::clear_owner() {
+  owner_.ClearToEmpty();
+}
+inline const std::string& effective_balance_of_arguments::owner() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.token.effective_balance_of_arguments.owner)
+  return _internal_owner();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void effective_balance_of_arguments::set_owner(ArgT0&& arg0, ArgT... args) {
+ 
+ owner_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.token.effective_balance_of_arguments.owner)
+}
+inline std::string* effective_balance_of_arguments::mutable_owner() {
+  std::string* _s = _internal_mutable_owner();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.token.effective_balance_of_arguments.owner)
+  return _s;
+}
+inline const std::string& effective_balance_of_arguments::_internal_owner() const {
+  return owner_.Get();
+}
+inline void effective_balance_of_arguments::_internal_set_owner(const std::string& value) {
+  
+  owner_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* effective_balance_of_arguments::_internal_mutable_owner() {
+  
+  return owner_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* effective_balance_of_arguments::release_owner() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.token.effective_balance_of_arguments.owner)
+  return owner_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void effective_balance_of_arguments::set_allocated_owner(std::string* owner) {
+  if (owner != nullptr) {
+    
+  } else {
+    
+  }
+  owner_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), owner,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.token.effective_balance_of_arguments.owner)
+}
+
+// -------------------------------------------------------------------
+
+// effective_balance_of_result
+
+// uint64 value = 1 [jstype = JS_STRING];
+inline void effective_balance_of_result::clear_value() {
+  value_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 effective_balance_of_result::_internal_value() const {
+  return value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 effective_balance_of_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.token.effective_balance_of_result.value)
+  return _internal_value();
+}
+inline void effective_balance_of_result::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  value_ = value;
+}
+inline void effective_balance_of_result::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.token.effective_balance_of_result.value)
+}
+
+// -------------------------------------------------------------------
+
 // transfer_arguments
 
 // bytes from = 1 [(.koinos.btype) = ADDRESS];
@@ -3746,6 +4308,61 @@ inline void mana_balance_object::set_last_mana_update(::PROTOBUF_NAMESPACE_ID::u
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// effective_balance_object
+
+// uint64 current_balance = 1 [jstype = JS_STRING];
+inline void effective_balance_object::clear_current_balance() {
+  current_balance_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 effective_balance_object::_internal_current_balance() const {
+  return current_balance_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 effective_balance_object::current_balance() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.token.effective_balance_object.current_balance)
+  return _internal_current_balance();
+}
+inline void effective_balance_object::_internal_set_current_balance(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  current_balance_ = value;
+}
+inline void effective_balance_object::set_current_balance(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_current_balance(value);
+  // @@protoc_insertion_point(field_set:koinos.contracts.token.effective_balance_object.current_balance)
+}
+
+// map<uint64, uint64> past_balances = 2;
+inline int effective_balance_object::_internal_past_balances_size() const {
+  return past_balances_.size();
+}
+inline int effective_balance_object::past_balances_size() const {
+  return _internal_past_balances_size();
+}
+inline void effective_balance_object::clear_past_balances() {
+  past_balances_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >&
+effective_balance_object::_internal_past_balances() const {
+  return past_balances_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >&
+effective_balance_object::past_balances() const {
+  // @@protoc_insertion_point(field_map:koinos.contracts.token.effective_balance_object.past_balances)
+  return _internal_past_balances();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >*
+effective_balance_object::_internal_mutable_past_balances() {
+  return past_balances_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< ::PROTOBUF_NAMESPACE_ID::uint64, ::PROTOBUF_NAMESPACE_ID::uint64 >*
+effective_balance_object::mutable_past_balances() {
+  // @@protoc_insertion_point(field_mutable_map:koinos.contracts.token.effective_balance_object.past_balances)
+  return _internal_mutable_past_balances();
+}
+
+// -------------------------------------------------------------------
+
 // burn_event
 
 // bytes from = 1 [(.koinos.btype) = ADDRESS];
@@ -4003,6 +4620,14 @@ inline void transfer_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

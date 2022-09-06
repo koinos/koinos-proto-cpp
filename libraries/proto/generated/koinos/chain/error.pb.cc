@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/error.proto\022\014koinos.chain"
-  "*\230\t\n\nerror_code\022\013\n\007success\020\000\022\r\n\treversio"
+  "*\300\t\n\nerror_code\022\013\n\007success\020\000\022\r\n\treversio"
   "n\020\001\022\022\n\016internal_error\020d\022 \n\034system_author"
   "ization_failure\020e\022\024\n\020invalid_contract\020f\022"
   "\033\n\027insufficient_privileges\020g\022\023\n\017insuffic"
@@ -57,13 +57,14 @@ const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_S
   "\377\377\001\022-\n network_bandwidth_limit_exceeded\020"
   "\214\370\377\377\377\377\377\377\377\001\022-\n compute_bandwidth_limit_ex"
   "ceeded\020\213\370\377\377\377\377\377\377\377\001\022(\n\033disk_storage_limit_"
-  "exceeded\020\212\370\377\377\377\377\377\377\377\001B4Z2github.com/koinos"
+  "exceeded\020\212\370\377\377\377\377\377\377\377\001\022&\n\031pre_irreversibili"
+  "ty_block\020\211\370\377\377\377\377\377\377\377\001B4Z2github.com/koinos"
   "/koinos-proto-golang/koinos/chainb\006proto"
   "3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2ferror_2eproto = {
-  false, false, 1281, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
+  false, false, 1321, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
   &descriptor_table_koinos_2fchain_2ferror_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2ferror_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2ferror_2eproto, file_level_service_descriptors_koinos_2fchain_2ferror_2eproto,
@@ -82,6 +83,7 @@ const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* error_code_descriptor() {
 }
 bool error_code_IsValid(int value) {
   switch (value) {
+    case -1015:
     case -1014:
     case -1013:
     case -1012:

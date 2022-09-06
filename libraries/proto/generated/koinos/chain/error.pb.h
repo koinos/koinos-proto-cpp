@@ -96,11 +96,12 @@ enum error_code : int {
   network_bandwidth_limit_exceeded = -1012,
   compute_bandwidth_limit_exceeded = -1013,
   disk_storage_limit_exceeded = -1014,
+  pre_irreversibility_block = -1015,
   error_code_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   error_code_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool error_code_IsValid(int value);
-constexpr error_code error_code_MIN = disk_storage_limit_exceeded;
+constexpr error_code error_code_MIN = pre_irreversibility_block;
 constexpr error_code error_code_MAX = read_only_context;
 constexpr int error_code_ARRAYSIZE = error_code_MAX + 1;
 

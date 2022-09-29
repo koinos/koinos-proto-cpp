@@ -2872,6 +2872,9 @@ class block_receipt final :
     kDiskStorageUsedFieldNumber = 3,
     kNetworkBandwidthUsedFieldNumber = 4,
     kComputeBandwidthUsedFieldNumber = 5,
+    kDiskStorageChargedFieldNumber = 10,
+    kNetworkBandwidthChargedFieldNumber = 11,
+    kComputeBandwidthChargedFieldNumber = 12,
   };
   // repeated .koinos.protocol.event_data events = 7;
   int events_size() const;
@@ -2997,6 +3000,33 @@ class block_receipt final :
   void _internal_set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
+  // uint64 disk_storage_charged = 10 [jstype = JS_STRING];
+  void clear_disk_storage_charged();
+  ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_charged() const;
+  void set_disk_storage_charged(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_disk_storage_charged() const;
+  void _internal_set_disk_storage_charged(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 network_bandwidth_charged = 11 [jstype = JS_STRING];
+  void clear_network_bandwidth_charged();
+  ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_charged() const;
+  void set_network_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_network_bandwidth_charged() const;
+  void _internal_set_network_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 compute_bandwidth_charged = 12 [jstype = JS_STRING];
+  void clear_compute_bandwidth_charged();
+  ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_charged() const;
+  void set_compute_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_compute_bandwidth_charged() const;
+  void _internal_set_compute_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.protocol.block_receipt)
  private:
   class _Internal;
@@ -3013,6 +3043,9 @@ class block_receipt final :
   ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_used_;
   ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_used_;
   ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_charged_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_charged_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_charged_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fprotocol_2fprotocol_2eproto;
 };
@@ -5984,6 +6017,66 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 block_receipt::mutable_logs() {
   // @@protoc_insertion_point(field_mutable_list:koinos.protocol.block_receipt.logs)
   return &logs_;
+}
+
+// uint64 disk_storage_charged = 10 [jstype = JS_STRING];
+inline void block_receipt::clear_disk_storage_charged() {
+  disk_storage_charged_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 block_receipt::_internal_disk_storage_charged() const {
+  return disk_storage_charged_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 block_receipt::disk_storage_charged() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_receipt.disk_storage_charged)
+  return _internal_disk_storage_charged();
+}
+inline void block_receipt::_internal_set_disk_storage_charged(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  disk_storage_charged_ = value;
+}
+inline void block_receipt::set_disk_storage_charged(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_disk_storage_charged(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.disk_storage_charged)
+}
+
+// uint64 network_bandwidth_charged = 11 [jstype = JS_STRING];
+inline void block_receipt::clear_network_bandwidth_charged() {
+  network_bandwidth_charged_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 block_receipt::_internal_network_bandwidth_charged() const {
+  return network_bandwidth_charged_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 block_receipt::network_bandwidth_charged() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_receipt.network_bandwidth_charged)
+  return _internal_network_bandwidth_charged();
+}
+inline void block_receipt::_internal_set_network_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  network_bandwidth_charged_ = value;
+}
+inline void block_receipt::set_network_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_network_bandwidth_charged(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.network_bandwidth_charged)
+}
+
+// uint64 compute_bandwidth_charged = 12 [jstype = JS_STRING];
+inline void block_receipt::clear_compute_bandwidth_charged() {
+  compute_bandwidth_charged_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 block_receipt::_internal_compute_bandwidth_charged() const {
+  return compute_bandwidth_charged_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 block_receipt::compute_bandwidth_charged() const {
+  // @@protoc_insertion_point(field_get:koinos.protocol.block_receipt.compute_bandwidth_charged)
+  return _internal_compute_bandwidth_charged();
+}
+inline void block_receipt::_internal_set_compute_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  compute_bandwidth_charged_ = value;
+}
+inline void block_receipt::set_compute_bandwidth_charged(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_compute_bandwidth_charged(value);
+  // @@protoc_insertion_point(field_set:koinos.protocol.block_receipt.compute_bandwidth_charged)
 }
 
 #ifdef __GNUC__

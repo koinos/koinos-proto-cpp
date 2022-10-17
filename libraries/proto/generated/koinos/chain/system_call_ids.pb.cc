@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"koinos/chain/system_call_ids.proto\022\014ko"
-  "inos.chain*\243\010\n\016system_call_id\022\007\n\003nop\020\000\022\021"
+  "inos.chain*\326\010\n\016system_call_id\022\007\n\003nop\020\000\022\021"
   "\n\rget_head_info\020\001\022\017\n\013apply_block\020\002\022\025\n\021ap"
   "ply_transaction\020\003\022#\n\037apply_upload_contra"
   "ct_operation\020\004\022!\n\035apply_call_contract_op"
@@ -54,13 +54,14 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eprot
   "\020\367\003\022\025\n\020verify_signature\020\370\003\022\025\n\020verify_vrf"
   "_proof\020\371\003\022\t\n\004call\020\331\004\022\t\n\004exit\020\332\004\022\022\n\rget_a"
   "rguments\020\333\004\022\024\n\017get_contract_id\020\334\004\022\017\n\nget"
-  "_caller\020\335\004\022\024\n\017check_authority\020\336\004B4Z2gith"
-  "ub.com/koinos/koinos-proto-golang/koinos"
-  "/chainb\006proto3"
+  "_caller\020\335\004\022\024\n\017check_authority\020\336\004\022\026\n\021get_"
+  "contract_name\020\220N\022\031\n\024get_contract_address"
+  "\020\221NB4Z2github.com/koinos/koinos-proto-go"
+  "lang/koinos/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 1174, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
+  false, false, 1225, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto,
@@ -125,6 +126,8 @@ bool system_call_id_IsValid(int value) {
     case 604:
     case 605:
     case 606:
+    case 10000:
+    case 10001:
       return true;
     default:
       return false;

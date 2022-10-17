@@ -104,12 +104,14 @@ enum system_call_id : int {
   get_contract_id = 604,
   get_caller = 605,
   check_authority = 606,
+  get_contract_name = 10000,
+  get_contract_address = 10001,
   system_call_id_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
   system_call_id_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
 };
 bool system_call_id_IsValid(int value);
 constexpr system_call_id system_call_id_MIN = nop;
-constexpr system_call_id system_call_id_MAX = check_authority;
+constexpr system_call_id system_call_id_MAX = get_contract_address;
 constexpr int system_call_id_ARRAYSIZE = system_call_id_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* system_call_id_descriptor();

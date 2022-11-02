@@ -24,8 +24,7 @@ constexpr consensus_parameters::consensus_parameters(
   : target_annual_inflation_rate_(0u)
   , target_burn_percent_(0u)
   , target_block_interval_(0u)
-  , quantum_length_(0u)
-  , minimum_block_time_(uint64_t{0u}){}
+  , quantum_length_(0u){}
 struct consensus_parametersDefaultTypeInternal {
   constexpr consensus_parametersDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -261,7 +260,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fpob_2fpob
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::consensus_parameters, target_burn_percent_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::consensus_parameters, target_block_interval_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::consensus_parameters, quantum_length_),
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::consensus_parameters, minimum_block_time_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::public_key_record, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -372,23 +370,23 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fpob_2fpob
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::contracts::pob::consensus_parameters)},
-  { 10, -1, sizeof(::koinos::contracts::pob::public_key_record)},
-  { 17, -1, sizeof(::koinos::contracts::pob::metadata)},
-  { 25, -1, sizeof(::koinos::contracts::pob::signature_data)},
-  { 33, -1, sizeof(::koinos::contracts::pob::vrf_payload)},
-  { 40, -1, sizeof(::koinos::contracts::pob::register_public_key_arguments)},
-  { 47, -1, sizeof(::koinos::contracts::pob::register_public_key_result)},
-  { 52, -1, sizeof(::koinos::contracts::pob::burn_arguments)},
-  { 60, -1, sizeof(::koinos::contracts::pob::burn_result)},
-  { 65, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_arguments)},
-  { 70, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_result)},
-  { 76, -1, sizeof(::koinos::contracts::pob::get_metadata_arguments)},
-  { 81, -1, sizeof(::koinos::contracts::pob::get_metadata_result)},
-  { 87, -1, sizeof(::koinos::contracts::pob::register_public_key_event)},
-  { 94, -1, sizeof(::koinos::contracts::pob::get_public_key_arguments)},
-  { 100, -1, sizeof(::koinos::contracts::pob::get_public_key_result)},
-  { 106, -1, sizeof(::koinos::contracts::pob::update_consensus_parameters_arguments)},
-  { 112, -1, sizeof(::koinos::contracts::pob::update_consensus_parameters_result)},
+  { 9, -1, sizeof(::koinos::contracts::pob::public_key_record)},
+  { 16, -1, sizeof(::koinos::contracts::pob::metadata)},
+  { 24, -1, sizeof(::koinos::contracts::pob::signature_data)},
+  { 32, -1, sizeof(::koinos::contracts::pob::vrf_payload)},
+  { 39, -1, sizeof(::koinos::contracts::pob::register_public_key_arguments)},
+  { 46, -1, sizeof(::koinos::contracts::pob::register_public_key_result)},
+  { 51, -1, sizeof(::koinos::contracts::pob::burn_arguments)},
+  { 59, -1, sizeof(::koinos::contracts::pob::burn_result)},
+  { 64, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_arguments)},
+  { 69, -1, sizeof(::koinos::contracts::pob::get_consensus_parameters_result)},
+  { 75, -1, sizeof(::koinos::contracts::pob::get_metadata_arguments)},
+  { 80, -1, sizeof(::koinos::contracts::pob::get_metadata_result)},
+  { 86, -1, sizeof(::koinos::contracts::pob::register_public_key_event)},
+  { 93, -1, sizeof(::koinos::contracts::pob::get_public_key_arguments)},
+  { 99, -1, sizeof(::koinos::contracts::pob::get_public_key_result)},
+  { 105, -1, sizeof(::koinos::contracts::pob::update_consensus_parameters_arguments)},
+  { 111, -1, sizeof(::koinos::contracts::pob::update_consensus_parameters_result)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -414,48 +412,47 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\036koinos/contracts/pob/pob.proto\022\024koinos"
-  ".contracts.pob\032\024koinos/options.proto\"\254\001\n"
+  ".contracts.pob\032\024koinos/options.proto\"\220\001\n"
   "\024consensus_parameters\022$\n\034target_annual_i"
   "nflation_rate\030\001 \001(\r\022\033\n\023target_burn_perce"
   "nt\030\002 \001(\r\022\035\n\025target_block_interval\030\003 \001(\r\022"
-  "\026\n\016quantum_length\030\004 \001(\r\022\032\n\022minimum_block"
-  "_time\030\005 \001(\004\"K\n\021public_key_record\022\030\n\npubl"
-  "ic_key\030\001 \001(\014B\004\200\265\030\000\022\034\n\020set_block_height\030\002"
-  " \001(\004B\0020\001\"U\n\010metadata\022\022\n\004seed\030\001 \001(\014B\004\200\265\030\000"
-  "\022\030\n\ndifficulty\030\002 \001(\014B\004\200\265\030\000\022\033\n\017last_block"
-  "_time\030\003 \001(\004B\0020\001\"Z\n\016signature_data\022\027\n\tvrf"
-  "_proof\030\001 \001(\014B\004\200\265\030\000\022\026\n\010vrf_hash\030\002 \001(\014B\004\200\265"
-  "\030\000\022\027\n\tsignature\030\003 \001(\014B\004\200\265\030\000\"9\n\013vrf_paylo"
-  "ad\022\022\n\004seed\030\001 \001(\014B\004\200\265\030\000\022\026\n\nblock_time\030\002 \001"
-  "(\004B\0020\001\"Q\n\035register_public_key_arguments\022"
-  "\026\n\010producer\030\001 \001(\014B\004\200\265\030\006\022\030\n\npublic_key\030\002 "
-  "\001(\014B\004\200\265\030\000\"\034\n\032register_public_key_result\""
-  "a\n\016burn_arguments\022\030\n\014token_amount\030\001 \001(\004B"
-  "\0020\001\022\032\n\014burn_address\030\002 \001(\014B\004\200\265\030\006\022\031\n\013vhp_a"
-  "ddress\030\003 \001(\014B\004\200\265\030\006\"\r\n\013burn_result\"$\n\"get"
-  "_consensus_parameters_arguments\"\\\n\037get_c"
-  "onsensus_parameters_result\0229\n\005value\030\001 \001("
-  "\0132*.koinos.contracts.pob.consensus_param"
-  "eters\"\030\n\026get_metadata_arguments\"D\n\023get_m"
-  "etadata_result\022-\n\005value\030\001 \001(\0132\036.koinos.c"
-  "ontracts.pob.metadata\"L\n\031register_public"
-  "_key_event\022\030\n\npublic_key\030\001 \001(\014B\004\200\265\030\000\022\025\n\007"
-  "address\030\002 \001(\014B\004\200\265\030\006\"2\n\030get_public_key_ar"
-  "guments\022\026\n\010producer\030\001 \001(\014B\004\200\265\030\006\",\n\025get_p"
-  "ublic_key_result\022\023\n\005value\030\001 \001(\014B\004\200\265\030\000\"b\n"
-  "%update_consensus_parameters_arguments\0229"
+  "\026\n\016quantum_length\030\004 \001(\r\"K\n\021public_key_re"
+  "cord\022\030\n\npublic_key\030\001 \001(\014B\004\200\265\030\000\022\034\n\020set_bl"
+  "ock_height\030\002 \001(\004B\0020\001\"U\n\010metadata\022\022\n\004seed"
+  "\030\001 \001(\014B\004\200\265\030\000\022\030\n\ndifficulty\030\002 \001(\014B\004\200\265\030\000\022\033"
+  "\n\017last_block_time\030\003 \001(\004B\0020\001\"Z\n\016signature"
+  "_data\022\027\n\tvrf_proof\030\001 \001(\014B\004\200\265\030\000\022\026\n\010vrf_ha"
+  "sh\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsignature\030\003 \001(\014B\004\200\265\030\000\""
+  "9\n\013vrf_payload\022\022\n\004seed\030\001 \001(\014B\004\200\265\030\000\022\026\n\nbl"
+  "ock_time\030\002 \001(\004B\0020\001\"Q\n\035register_public_ke"
+  "y_arguments\022\026\n\010producer\030\001 \001(\014B\004\200\265\030\006\022\030\n\np"
+  "ublic_key\030\002 \001(\014B\004\200\265\030\000\"\034\n\032register_public"
+  "_key_result\"a\n\016burn_arguments\022\030\n\014token_a"
+  "mount\030\001 \001(\004B\0020\001\022\032\n\014burn_address\030\002 \001(\014B\004\200"
+  "\265\030\006\022\031\n\013vhp_address\030\003 \001(\014B\004\200\265\030\006\"\r\n\013burn_r"
+  "esult\"$\n\"get_consensus_parameters_argume"
+  "nts\"\\\n\037get_consensus_parameters_result\0229"
   "\n\005value\030\001 \001(\0132*.koinos.contracts.pob.con"
-  "sensus_parameters\"$\n\"update_consensus_pa"
-  "rameters_resultB<Z:github.com/koinos/koi"
-  "nos-proto-golang/koinos/contracts/pobb\006p"
-  "roto3"
+  "sensus_parameters\"\030\n\026get_metadata_argume"
+  "nts\"D\n\023get_metadata_result\022-\n\005value\030\001 \001("
+  "\0132\036.koinos.contracts.pob.metadata\"L\n\031reg"
+  "ister_public_key_event\022\030\n\npublic_key\030\001 \001"
+  "(\014B\004\200\265\030\000\022\025\n\007address\030\002 \001(\014B\004\200\265\030\006\"2\n\030get_p"
+  "ublic_key_arguments\022\026\n\010producer\030\001 \001(\014B\004\200"
+  "\265\030\006\",\n\025get_public_key_result\022\023\n\005value\030\001 "
+  "\001(\014B\004\200\265\030\000\"b\n%update_consensus_parameters"
+  "_arguments\0229\n\005value\030\001 \001(\0132*.koinos.contr"
+  "acts.pob.consensus_parameters\"$\n\"update_"
+  "consensus_parameters_resultB<Z:github.co"
+  "m/koinos/koinos-proto-golang/koinos/cont"
+  "racts/pobb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto = {
-  false, false, 1405, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
+  false, false, 1377, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
   &descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once, descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps, 1, 18,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto,
@@ -489,16 +486,16 @@ consensus_parameters::consensus_parameters(const consensus_parameters& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&target_annual_inflation_rate_, &from.target_annual_inflation_rate_,
-    static_cast<size_t>(reinterpret_cast<char*>(&minimum_block_time_) -
-    reinterpret_cast<char*>(&target_annual_inflation_rate_)) + sizeof(minimum_block_time_));
+    static_cast<size_t>(reinterpret_cast<char*>(&quantum_length_) -
+    reinterpret_cast<char*>(&target_annual_inflation_rate_)) + sizeof(quantum_length_));
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.pob.consensus_parameters)
 }
 
 inline void consensus_parameters::SharedCtor() {
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&target_annual_inflation_rate_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&minimum_block_time_) -
-    reinterpret_cast<char*>(&target_annual_inflation_rate_)) + sizeof(minimum_block_time_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&quantum_length_) -
+    reinterpret_cast<char*>(&target_annual_inflation_rate_)) + sizeof(quantum_length_));
 }
 
 consensus_parameters::~consensus_parameters() {
@@ -529,8 +526,8 @@ void consensus_parameters::Clear() {
   (void) cached_has_bits;
 
   ::memset(&target_annual_inflation_rate_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&minimum_block_time_) -
-      reinterpret_cast<char*>(&target_annual_inflation_rate_)) + sizeof(minimum_block_time_));
+      reinterpret_cast<char*>(&quantum_length_) -
+      reinterpret_cast<char*>(&target_annual_inflation_rate_)) + sizeof(quantum_length_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -565,13 +562,6 @@ const char* consensus_parameters::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           quantum_length_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint64 minimum_block_time = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          minimum_block_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -628,12 +618,6 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_quantum_length(), target);
   }
 
-  // uint64 minimum_block_time = 5;
-  if (this->_internal_minimum_block_time() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_minimum_block_time(), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -678,13 +662,6 @@ size_t consensus_parameters::ByteSizeLong() const {
         this->_internal_quantum_length());
   }
 
-  // uint64 minimum_block_time = 5;
-  if (this->_internal_minimum_block_time() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
-        this->_internal_minimum_block_time());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -725,9 +702,6 @@ void consensus_parameters::MergeFrom(const consensus_parameters& from) {
   if (from._internal_quantum_length() != 0) {
     _internal_set_quantum_length(from._internal_quantum_length());
   }
-  if (from._internal_minimum_block_time() != 0) {
-    _internal_set_minimum_block_time(from._internal_minimum_block_time());
-  }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -746,8 +720,8 @@ void consensus_parameters::InternalSwap(consensus_parameters* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(consensus_parameters, minimum_block_time_)
-      + sizeof(consensus_parameters::minimum_block_time_)
+      PROTOBUF_FIELD_OFFSET(consensus_parameters, quantum_length_)
+      + sizeof(consensus_parameters::quantum_length_)
       - PROTOBUF_FIELD_OFFSET(consensus_parameters, target_annual_inflation_rate_)>(
           reinterpret_cast<char*>(&target_annual_inflation_rate_),
           reinterpret_cast<char*>(&other->target_annual_inflation_rate_));

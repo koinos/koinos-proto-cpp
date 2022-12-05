@@ -185,8 +185,8 @@ struct get_metadata_resultDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_metadata_resultDefaultTypeInternal _get_metadata_result_default_instance_;
 constexpr register_public_key_event::register_public_key_event(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : public_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  : address_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , public_key_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
 struct register_public_key_eventDefaultTypeInternal {
   constexpr register_public_key_eventDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -342,8 +342,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fcontracts_2fpob_2fpob
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_event, public_key_),
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_event, address_),
+  PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::register_public_key_event, public_key_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::contracts::pob::get_public_key_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -436,8 +436,8 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto[] PR
   "sensus_parameters\"\030\n\026get_metadata_argume"
   "nts\"D\n\023get_metadata_result\022-\n\005value\030\001 \001("
   "\0132\036.koinos.contracts.pob.metadata\"L\n\031reg"
-  "ister_public_key_event\022\030\n\npublic_key\030\001 \001"
-  "(\014B\004\200\265\030\000\022\025\n\007address\030\002 \001(\014B\004\200\265\030\006\"2\n\030get_p"
+  "ister_public_key_event\022\025\n\007address\030\001 \001(\014B"
+  "\004\200\265\030\006\022\030\n\npublic_key\030\002 \001(\014B\004\200\265\030\000\"2\n\030get_p"
   "ublic_key_arguments\022\026\n\010producer\030\001 \001(\014B\004\200"
   "\265\030\006\",\n\025get_public_key_result\022\023\n\005value\030\001 "
   "\001(\014B\004\200\265\030\000\"b\n%update_consensus_parameters"
@@ -3226,22 +3226,22 @@ register_public_key_event::register_public_key_event(::PROTOBUF_NAMESPACE_ID::Ar
 register_public_key_event::register_public_key_event(const register_public_key_event& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_public_key().empty()) {
-    public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_public_key(), 
-      GetArenaForAllocation());
-  }
   address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_address().empty()) {
     address_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_address(), 
+      GetArenaForAllocation());
+  }
+  public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_public_key().empty()) {
+    public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_public_key(), 
       GetArenaForAllocation());
   }
   // @@protoc_insertion_point(copy_constructor:koinos.contracts.pob.register_public_key_event)
 }
 
 inline void register_public_key_event::SharedCtor() {
-public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 address_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+public_key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 register_public_key_event::~register_public_key_event() {
@@ -3253,8 +3253,8 @@ register_public_key_event::~register_public_key_event() {
 
 inline void register_public_key_event::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  public_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   address_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  public_key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void register_public_key_event::ArenaDtor(void* object) {
@@ -3273,8 +3273,8 @@ void register_public_key_event::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  public_key_.ClearToEmpty();
   address_.ClearToEmpty();
+  public_key_.ClearToEmpty();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3284,18 +3284,18 @@ const char* register_public_key_event::_InternalParse(const char* ptr, ::PROTOBU
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // bytes public_key = 1 [(.koinos.btype) = BASE64];
+      // bytes address = 1 [(.koinos.btype) = ADDRESS];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_public_key();
+          auto str = _internal_mutable_address();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // bytes address = 2 [(.koinos.btype) = ADDRESS];
+      // bytes public_key = 2 [(.koinos.btype) = BASE64];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          auto str = _internal_mutable_address();
+          auto str = _internal_mutable_public_key();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
         } else goto handle_unusual;
@@ -3329,16 +3329,16 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // bytes public_key = 1 [(.koinos.btype) = BASE64];
-  if (!this->_internal_public_key().empty()) {
-    target = stream->WriteBytesMaybeAliased(
-        1, this->_internal_public_key(), target);
-  }
-
-  // bytes address = 2 [(.koinos.btype) = ADDRESS];
+  // bytes address = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_address().empty()) {
     target = stream->WriteBytesMaybeAliased(
-        2, this->_internal_address(), target);
+        1, this->_internal_address(), target);
+  }
+
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
+  if (!this->_internal_public_key().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_public_key(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3357,18 +3357,18 @@ size_t register_public_key_event::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // bytes public_key = 1 [(.koinos.btype) = BASE64];
-  if (!this->_internal_public_key().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_public_key());
-  }
-
-  // bytes address = 2 [(.koinos.btype) = ADDRESS];
+  // bytes address = 1 [(.koinos.btype) = ADDRESS];
   if (!this->_internal_address().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_address());
+  }
+
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
+  if (!this->_internal_public_key().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_public_key());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3399,11 +3399,11 @@ void register_public_key_event::MergeFrom(const register_public_key_event& from)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_public_key().empty()) {
-    _internal_set_public_key(from._internal_public_key());
-  }
   if (!from._internal_address().empty()) {
     _internal_set_address(from._internal_address());
+  }
+  if (!from._internal_public_key().empty()) {
+    _internal_set_public_key(from._internal_public_key());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3424,13 +3424,13 @@ void register_public_key_event::InternalSwap(register_public_key_event* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &public_key_, GetArenaForAllocation(),
-      &other->public_key_, other->GetArenaForAllocation()
+      &address_, GetArenaForAllocation(),
+      &other->address_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &address_, GetArenaForAllocation(),
-      &other->address_, other->GetArenaForAllocation()
+      &public_key_, GetArenaForAllocation(),
+      &other->public_key_, other->GetArenaForAllocation()
   );
 }
 

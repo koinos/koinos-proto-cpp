@@ -2215,24 +2215,10 @@ class register_public_key_event final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPublicKeyFieldNumber = 1,
-    kAddressFieldNumber = 2,
+    kAddressFieldNumber = 1,
+    kPublicKeyFieldNumber = 2,
   };
-  // bytes public_key = 1 [(.koinos.btype) = BASE64];
-  void clear_public_key();
-  const std::string& public_key() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_public_key(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_public_key();
-  PROTOBUF_MUST_USE_RESULT std::string* release_public_key();
-  void set_allocated_public_key(std::string* public_key);
-  private:
-  const std::string& _internal_public_key() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_public_key(const std::string& value);
-  std::string* _internal_mutable_public_key();
-  public:
-
-  // bytes address = 2 [(.koinos.btype) = ADDRESS];
+  // bytes address = 1 [(.koinos.btype) = ADDRESS];
   void clear_address();
   const std::string& address() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2246,6 +2232,20 @@ class register_public_key_event final :
   std::string* _internal_mutable_address();
   public:
 
+  // bytes public_key = 2 [(.koinos.btype) = BASE64];
+  void clear_public_key();
+  const std::string& public_key() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_public_key(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_public_key();
+  PROTOBUF_MUST_USE_RESULT std::string* release_public_key();
+  void set_allocated_public_key(std::string* public_key);
+  private:
+  const std::string& _internal_public_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_public_key(const std::string& value);
+  std::string* _internal_mutable_public_key();
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.contracts.pob.register_public_key_event)
  private:
   class _Internal;
@@ -2253,8 +2253,8 @@ class register_public_key_event final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr public_key_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr address_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr public_key_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto;
 };
@@ -3729,53 +3729,7 @@ inline void get_metadata_result::set_allocated_value(::koinos::contracts::pob::m
 
 // register_public_key_event
 
-// bytes public_key = 1 [(.koinos.btype) = BASE64];
-inline void register_public_key_event::clear_public_key() {
-  public_key_.ClearToEmpty();
-}
-inline const std::string& register_public_key_event::public_key() const {
-  // @@protoc_insertion_point(field_get:koinos.contracts.pob.register_public_key_event.public_key)
-  return _internal_public_key();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void register_public_key_event::set_public_key(ArgT0&& arg0, ArgT... args) {
- 
- public_key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.contracts.pob.register_public_key_event.public_key)
-}
-inline std::string* register_public_key_event::mutable_public_key() {
-  std::string* _s = _internal_mutable_public_key();
-  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.register_public_key_event.public_key)
-  return _s;
-}
-inline const std::string& register_public_key_event::_internal_public_key() const {
-  return public_key_.Get();
-}
-inline void register_public_key_event::_internal_set_public_key(const std::string& value) {
-  
-  public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* register_public_key_event::_internal_mutable_public_key() {
-  
-  return public_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* register_public_key_event::release_public_key() {
-  // @@protoc_insertion_point(field_release:koinos.contracts.pob.register_public_key_event.public_key)
-  return public_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-}
-inline void register_public_key_event::set_allocated_public_key(std::string* public_key) {
-  if (public_key != nullptr) {
-    
-  } else {
-    
-  }
-  public_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), public_key,
-      GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.register_public_key_event.public_key)
-}
-
-// bytes address = 2 [(.koinos.btype) = ADDRESS];
+// bytes address = 1 [(.koinos.btype) = ADDRESS];
 inline void register_public_key_event::clear_address() {
   address_.ClearToEmpty();
 }
@@ -3819,6 +3773,52 @@ inline void register_public_key_event::set_allocated_address(std::string* addres
   address_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), address,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.register_public_key_event.address)
+}
+
+// bytes public_key = 2 [(.koinos.btype) = BASE64];
+inline void register_public_key_event::clear_public_key() {
+  public_key_.ClearToEmpty();
+}
+inline const std::string& register_public_key_event::public_key() const {
+  // @@protoc_insertion_point(field_get:koinos.contracts.pob.register_public_key_event.public_key)
+  return _internal_public_key();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void register_public_key_event::set_public_key(ArgT0&& arg0, ArgT... args) {
+ 
+ public_key_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.contracts.pob.register_public_key_event.public_key)
+}
+inline std::string* register_public_key_event::mutable_public_key() {
+  std::string* _s = _internal_mutable_public_key();
+  // @@protoc_insertion_point(field_mutable:koinos.contracts.pob.register_public_key_event.public_key)
+  return _s;
+}
+inline const std::string& register_public_key_event::_internal_public_key() const {
+  return public_key_.Get();
+}
+inline void register_public_key_event::_internal_set_public_key(const std::string& value) {
+  
+  public_key_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* register_public_key_event::_internal_mutable_public_key() {
+  
+  return public_key_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* register_public_key_event::release_public_key() {
+  // @@protoc_insertion_point(field_release:koinos.contracts.pob.register_public_key_event.public_key)
+  return public_key_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void register_public_key_event::set_allocated_public_key(std::string* public_key) {
+  if (public_key != nullptr) {
+    
+  } else {
+    
+  }
+  public_key_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), public_key,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.contracts.pob.register_public_key_event.public_key)
 }
 
 // -------------------------------------------------------------------

@@ -395,6 +395,7 @@ class check_pending_account_resources_request final :
 
   enum : int {
     kPayerFieldNumber = 1,
+    kBlockIdFieldNumber = 4,
     kMaxPayerRcFieldNumber = 2,
     kRcLimitFieldNumber = 3,
   };
@@ -410,6 +411,24 @@ class check_pending_account_resources_request final :
   const std::string& _internal_payer() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_payer(const std::string& value);
   std::string* _internal_mutable_payer();
+  public:
+
+  // optional bytes block_id = 4 [(.koinos.btype) = BLOCK_ID];
+  bool has_block_id() const;
+  private:
+  bool _internal_has_block_id() const;
+  public:
+  void clear_block_id();
+  const std::string& block_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_block_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_block_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_block_id();
+  void set_allocated_block_id(std::string* block_id);
+  private:
+  const std::string& _internal_block_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_block_id(const std::string& value);
+  std::string* _internal_mutable_block_id();
   public:
 
   // uint64 max_payer_rc = 2 [jstype = JS_STRING];
@@ -437,10 +456,12 @@ class check_pending_account_resources_request final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payer_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr block_id_;
   ::PROTOBUF_NAMESPACE_ID::uint64 max_payer_rc_;
   ::PROTOBUF_NAMESPACE_ID::uint64 rc_limit_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1575,6 +1596,64 @@ inline void check_pending_account_resources_request::_internal_set_rc_limit(::PR
 inline void check_pending_account_resources_request::set_rc_limit(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_rc_limit(value);
   // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.rc_limit)
+}
+
+// optional bytes block_id = 4 [(.koinos.btype) = BLOCK_ID];
+inline bool check_pending_account_resources_request::_internal_has_block_id() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool check_pending_account_resources_request::has_block_id() const {
+  return _internal_has_block_id();
+}
+inline void check_pending_account_resources_request::clear_block_id() {
+  block_id_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& check_pending_account_resources_request::block_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.check_pending_account_resources_request.block_id)
+  return _internal_block_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void check_pending_account_resources_request::set_block_id(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ block_id_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.check_pending_account_resources_request.block_id)
+}
+inline std::string* check_pending_account_resources_request::mutable_block_id() {
+  std::string* _s = _internal_mutable_block_id();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.check_pending_account_resources_request.block_id)
+  return _s;
+}
+inline const std::string& check_pending_account_resources_request::_internal_block_id() const {
+  return block_id_.Get();
+}
+inline void check_pending_account_resources_request::_internal_set_block_id(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  block_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* check_pending_account_resources_request::_internal_mutable_block_id() {
+  _has_bits_[0] |= 0x00000001u;
+  return block_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* check_pending_account_resources_request::release_block_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.check_pending_account_resources_request.block_id)
+  if (!_internal_has_block_id()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return block_id_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void check_pending_account_resources_request::set_allocated_block_id(std::string* block_id) {
+  if (block_id != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  block_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), block_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.check_pending_account_resources_request.block_id)
 }
 
 // -------------------------------------------------------------------

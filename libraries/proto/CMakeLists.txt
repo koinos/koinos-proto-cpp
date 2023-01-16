@@ -6,7 +6,7 @@ add_library(koinos_proto
             ${GEN_SOURCE}
             ${GEN_HEADERS}
             ${HEADERS})
-target_link_libraries(koinos_proto PUBLIC protobuf::libprotobuf)
+target_link_libraries(koinos_proto PUBLIC protobuf::libprotobuf gRPC::grpc)
 add_library(Koinos::proto ALIAS koinos_proto)
 
 target_include_directories(koinos_proto PUBLIC

@@ -23,8 +23,8 @@ set(
 include("cmake/HunterGate.cmake")
 
 HunterGate(
-   URL "https://github.com/cpp-pm/hunter/archive/v0.23.313.tar.gz"
-   SHA1 "6c369e5aab2749a616917df3b23511535f413604"
+   URL "https://github.com/cpp-pm/hunter/archive/v0.24.12.tar.gz"
+   SHA1 "dd581578f2fa63deb89eaf4816fa7a4b3f27dac3"
    LOCAL
 )
 
@@ -92,9 +92,19 @@ endif()
 
 hunter_add_package(Boost COMPONENTS test)
 hunter_add_package(Protobuf)
+hunter_add_package(gRPC)
+hunter_add_package(abseil)
+hunter_add_package(re2)
+hunter_add_package(c-ares)
+hunter_add_package(ZLIB)
 
 find_package(Boost CONFIG REQUIRED)
 find_package(Protobuf CONFIG REQUIRED)
+find_package(gRPC CONFIG REQUIRED)
+find_package(absl CONFIG REQUIRED)
+find_package(re2 CONFIG REQUIRED)
+find_package(c-ares CONFIG REQUIRED)
+find_package(ZLIB CONFIG REQUIRED)
 
 add_subdirectory(libraries)
 if (BUILD_TESTS)

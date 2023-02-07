@@ -160,43 +160,40 @@ const char descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_
   "\n4koinos/rpc/account_history/account_his"
   "tory_rpc.proto\022\032koinos.rpc.account_histo"
   "ry\032,koinos/account_history/account_histo"
-  "ry.proto\032\024koinos/options.proto\032\023koinos/c"
-  "ommon.proto\032\036koinos/protocol/protocol.pr"
-  "oto\032\024koinos/rpc/rpc.proto\"\250\001\n\025account_hi"
-  "story_entry\022\023\n\007seq_num\030\001 \001(\004B\0020\001\0229\n\003trx\030"
-  "\002 \001(\0132*.koinos.account_history.transacti"
-  "on_recordH\000\0225\n\005block\030\003 \001(\0132$.koinos.acco"
-  "unt_history.block_recordH\000B\010\n\006record\"\226\001\n"
-  "\033get_account_history_request\022\025\n\007address\030"
-  "\001 \001(\014B\004\200\265\030\006\022\030\n\007seq_num\030\002 \001(\004B\0020\001H\000\210\001\001\022\021\n"
-  "\005limit\030\003 \001(\004B\0020\001\022\021\n\tascending\030\004 \001(\010\022\024\n\014i"
-  "rreversible\030\005 \001(\010B\n\n\010_seq_num\"a\n\034get_acc"
-  "ount_history_response\022A\n\006values\030\001 \003(\01321."
-  "koinos.rpc.account_history.account_histo"
-  "ry_entry\"\252\001\n\027account_history_request\022,\n\010"
-  "reserved\030\001 \001(\0132\030.koinos.rpc.reserved_rpc"
-  "H\000\022V\n\023get_account_history\030\002 \001(\01327.koinos"
-  ".rpc.account_history.get_account_history"
-  "_requestH\000B\t\n\007request\"\332\001\n\030account_histor"
-  "y_response\022,\n\010reserved\030\001 \001(\0132\030.koinos.rp"
-  "c.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos"
-  ".rpc.error_responseH\000\022W\n\023get_account_his"
-  "tory\030\003 \001(\01328.koinos.rpc.account_history."
-  "get_account_history_responseH\000B\n\n\010respon"
-  "seBBZ@github.com/koinos/koinos-proto-gol"
-  "ang/koinos/rpc/account_historyb\006proto3"
+  "ry.proto\032\024koinos/options.proto\032\024koinos/r"
+  "pc/rpc.proto\"\250\001\n\025account_history_entry\022\023"
+  "\n\007seq_num\030\001 \001(\004B\0020\001\0229\n\003trx\030\002 \001(\0132*.koino"
+  "s.account_history.transaction_recordH\000\0225"
+  "\n\005block\030\003 \001(\0132$.koinos.account_history.b"
+  "lock_recordH\000B\010\n\006record\"\226\001\n\033get_account_"
+  "history_request\022\025\n\007address\030\001 \001(\014B\004\200\265\030\006\022\030"
+  "\n\007seq_num\030\002 \001(\004B\0020\001H\000\210\001\001\022\021\n\005limit\030\003 \001(\004B"
+  "\0020\001\022\021\n\tascending\030\004 \001(\010\022\024\n\014irreversible\030\005"
+  " \001(\010B\n\n\010_seq_num\"a\n\034get_account_history_"
+  "response\022A\n\006values\030\001 \003(\01321.koinos.rpc.ac"
+  "count_history.account_history_entry\"\252\001\n\027"
+  "account_history_request\022,\n\010reserved\030\001 \001("
+  "\0132\030.koinos.rpc.reserved_rpcH\000\022V\n\023get_acc"
+  "ount_history\030\002 \001(\01327.koinos.rpc.account_"
+  "history.get_account_history_requestH\000B\t\n"
+  "\007request\"\332\001\n\030account_history_response\022,\n"
+  "\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved_rp"
+  "cH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.error_re"
+  "sponseH\000\022W\n\023get_account_history\030\003 \001(\01328."
+  "koinos.rpc.account_history.get_account_h"
+  "istory_responseH\000B\n\n\010responseBBZ@github."
+  "com/koinos/koinos-proto-golang/koinos/rp"
+  "c/account_historyb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps[5] = {
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2faccount_5fhistory_2faccount_5fhistory_2eproto,
-  &::descriptor_table_koinos_2fcommon_2eproto,
   &::descriptor_table_koinos_2foptions_2eproto,
-  &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
   &::descriptor_table_koinos_2frpc_2frpc_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto = {
-  false, false, 1118, descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, "koinos/rpc/account_history/account_history_rpc.proto", 
-  &descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps, 5, 5,
+  false, false, 1065, descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, "koinos/rpc/account_history/account_history_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps, 3, 5,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto,
 };

@@ -60,20 +60,16 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fcontracts_2fkoin_2fkoin_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n koinos/contracts/koin/koin.proto\022\025koin"
-  "os.contracts.koin\032\024koinos/options.proto\""
-  "Z\n\023mana_balance_object\022\023\n\007balance\030\001 \001(\004B"
-  "\0020\001\022\020\n\004mana\030\002 \001(\004B\0020\001\022\034\n\020last_mana_updat"
-  "e\030\003 \001(\004B\0020\001B=Z;github.com/koinos/koinos-"
-  "proto-golang/koinos/contracts/koinb\006prot"
-  "o3"
+  "os.contracts.koin\"Z\n\023mana_balance_object"
+  "\022\023\n\007balance\030\001 \001(\004B\0020\001\022\020\n\004mana\030\002 \001(\004B\0020\001\022"
+  "\034\n\020last_mana_update\030\003 \001(\004B\0020\001B=Z;github."
+  "com/koinos/koinos-proto-golang/koinos/co"
+  "ntracts/koinb\006proto3"
   ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fkoin_2fkoin_2eproto_deps[1] = {
-  &::descriptor_table_koinos_2foptions_2eproto,
-};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fkoin_2fkoin_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fkoin_2fkoin_2eproto = {
-  false, false, 242, descriptor_table_protodef_koinos_2fcontracts_2fkoin_2fkoin_2eproto, "koinos/contracts/koin/koin.proto", 
-  &descriptor_table_koinos_2fcontracts_2fkoin_2fkoin_2eproto_once, descriptor_table_koinos_2fcontracts_2fkoin_2fkoin_2eproto_deps, 1, 1,
+  false, false, 220, descriptor_table_protodef_koinos_2fcontracts_2fkoin_2fkoin_2eproto, "koinos/contracts/koin/koin.proto", 
+  &descriptor_table_koinos_2fcontracts_2fkoin_2fkoin_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fkoin_2fkoin_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fkoin_2fkoin_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fkoin_2fkoin_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fkoin_2fkoin_2eproto,
 };

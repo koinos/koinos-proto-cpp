@@ -33,8 +33,6 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/account_history/account_history.pb.h"
 #include "koinos/options.pb.h"
-#include "koinos/common.pb.h"
-#include "koinos/protocol/protocol.pb.h"
 #include "koinos/rpc/rpc.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>

@@ -131,6 +131,13 @@ class koinos final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::get_resource_limits_response>> PrepareAsyncget_resource_limits(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_resource_limits_request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::get_resource_limits_response>>(PrepareAsyncget_resource_limitsRaw(context, request, cq));
     }
+    virtual ::grpc::Status invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::koinos::rpc::chain::invoke_system_call_response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::invoke_system_call_response>> Asyncinvoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::invoke_system_call_response>>(Asyncinvoke_system_callRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::invoke_system_call_response>> PrepareAsyncinvoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::invoke_system_call_response>>(PrepareAsyncinvoke_system_callRaw(context, request, cq));
+    }
     // Contract Meta Store
     virtual ::grpc::Status get_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::contract_meta_store::get_contract_meta_response>> Asyncget_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::grpc::CompletionQueue* cq) {
@@ -332,6 +339,18 @@ class koinos final {
       #else
       virtual void get_resource_limits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::get_resource_limits_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
       #endif
+      virtual void invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, std::function<void(::grpc::Status)>) = 0;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      virtual void invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      #else
+      virtual void invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      #endif
       // Contract Meta Store
       virtual void get_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request* request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response, std::function<void(::grpc::Status)>) = 0;
       virtual void get_contract_meta(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response, std::function<void(::grpc::Status)>) = 0;
@@ -431,6 +450,8 @@ class koinos final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::get_account_rc_response>* PrepareAsyncget_account_rcRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_account_rc_request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::get_resource_limits_response>* Asyncget_resource_limitsRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_resource_limits_request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::get_resource_limits_response>* PrepareAsyncget_resource_limitsRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_resource_limits_request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::invoke_system_call_response>* Asyncinvoke_system_callRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::chain::invoke_system_call_response>* PrepareAsyncinvoke_system_callRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::contract_meta_store::get_contract_meta_response>* Asyncget_contract_metaRaw(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::contract_meta_store::get_contract_meta_response>* PrepareAsyncget_contract_metaRaw(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::koinos::rpc::mempool::get_pending_transactions_response>* Asyncget_pending_transactionsRaw(::grpc::ClientContext* context, const ::koinos::rpc::mempool::get_pending_transactions_request& request, ::grpc::CompletionQueue* cq) = 0;
@@ -535,6 +556,13 @@ class koinos final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::get_resource_limits_response>> PrepareAsyncget_resource_limits(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_resource_limits_request& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::get_resource_limits_response>>(PrepareAsyncget_resource_limitsRaw(context, request, cq));
+    }
+    ::grpc::Status invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::koinos::rpc::chain::invoke_system_call_response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>> Asyncinvoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>>(Asyncinvoke_system_callRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>> PrepareAsyncinvoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>>(PrepareAsyncinvoke_system_callRaw(context, request, cq));
     }
     ::grpc::Status get_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::koinos::rpc::contract_meta_store::get_contract_meta_response>> Asyncget_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::grpc::CompletionQueue* cq) {
@@ -730,6 +758,18 @@ class koinos final {
       #else
       void get_resource_limits(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::get_resource_limits_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
       #endif
+      void invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, std::function<void(::grpc::Status)>) override;
+      void invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, std::function<void(::grpc::Status)>) override;
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
+      #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      void invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::ClientUnaryReactor* reactor) override;
+      #else
+      void invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      #endif
       void get_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request* request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response, std::function<void(::grpc::Status)>) override;
       void get_contract_meta(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response, std::function<void(::grpc::Status)>) override;
       #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -827,6 +867,8 @@ class koinos final {
     ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::get_account_rc_response>* PrepareAsyncget_account_rcRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_account_rc_request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::get_resource_limits_response>* Asyncget_resource_limitsRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_resource_limits_request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::get_resource_limits_response>* PrepareAsyncget_resource_limitsRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::get_resource_limits_request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>* Asyncinvoke_system_callRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>* PrepareAsyncinvoke_system_callRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::koinos::rpc::contract_meta_store::get_contract_meta_response>* Asyncget_contract_metaRaw(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::koinos::rpc::contract_meta_store::get_contract_meta_response>* PrepareAsyncget_contract_metaRaw(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::koinos::rpc::mempool::get_pending_transactions_response>* Asyncget_pending_transactionsRaw(::grpc::ClientContext* context, const ::koinos::rpc::mempool::get_pending_transactions_request& request, ::grpc::CompletionQueue* cq) override;
@@ -850,6 +892,7 @@ class koinos final {
     const ::grpc::internal::RpcMethod rpcmethod_get_account_nonce_;
     const ::grpc::internal::RpcMethod rpcmethod_get_account_rc_;
     const ::grpc::internal::RpcMethod rpcmethod_get_resource_limits_;
+    const ::grpc::internal::RpcMethod rpcmethod_invoke_system_call_;
     const ::grpc::internal::RpcMethod rpcmethod_get_contract_meta_;
     const ::grpc::internal::RpcMethod rpcmethod_get_pending_transactions_;
     const ::grpc::internal::RpcMethod rpcmethod_check_pending_account_resources_;
@@ -878,6 +921,7 @@ class koinos final {
     virtual ::grpc::Status get_account_nonce(::grpc::ServerContext* context, const ::koinos::rpc::chain::get_account_nonce_request* request, ::koinos::rpc::chain::get_account_nonce_response* response);
     virtual ::grpc::Status get_account_rc(::grpc::ServerContext* context, const ::koinos::rpc::chain::get_account_rc_request* request, ::koinos::rpc::chain::get_account_rc_response* response);
     virtual ::grpc::Status get_resource_limits(::grpc::ServerContext* context, const ::koinos::rpc::chain::get_resource_limits_request* request, ::koinos::rpc::chain::get_resource_limits_response* response);
+    virtual ::grpc::Status invoke_system_call(::grpc::ServerContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response);
     // Contract Meta Store
     virtual ::grpc::Status get_contract_meta(::grpc::ServerContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request* request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response);
     // Mempool
@@ -1149,12 +1193,32 @@ class koinos final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_invoke_system_call : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_invoke_system_call() {
+      ::grpc::Service::MarkMethodAsync(13);
+    }
+    ~WithAsyncMethod_invoke_system_call() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status invoke_system_call(::grpc::ServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestinvoke_system_call(::grpc::ServerContext* context, ::koinos::rpc::chain::invoke_system_call_request* request, ::grpc::ServerAsyncResponseWriter< ::koinos::rpc::chain::invoke_system_call_response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_get_contract_meta : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_get_contract_meta() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_get_contract_meta() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1165,7 +1229,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_contract_meta(::grpc::ServerContext* context, ::koinos::rpc::contract_meta_store::get_contract_meta_request* request, ::grpc::ServerAsyncResponseWriter< ::koinos::rpc::contract_meta_store::get_contract_meta_response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1174,7 +1238,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_get_pending_transactions() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_get_pending_transactions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1185,7 +1249,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_pending_transactions(::grpc::ServerContext* context, ::koinos::rpc::mempool::get_pending_transactions_request* request, ::grpc::ServerAsyncResponseWriter< ::koinos::rpc::mempool::get_pending_transactions_response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1194,7 +1258,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_check_pending_account_resources() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_check_pending_account_resources() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1205,7 +1269,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestcheck_pending_account_resources(::grpc::ServerContext* context, ::koinos::rpc::mempool::check_pending_account_resources_request* request, ::grpc::ServerAsyncResponseWriter< ::koinos::rpc::mempool::check_pending_account_resources_response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1214,7 +1278,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_get_gossip_status() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_get_gossip_status() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1225,7 +1289,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_gossip_status(::grpc::ServerContext* context, ::koinos::rpc::p2p::get_gossip_status_request* request, ::grpc::ServerAsyncResponseWriter< ::koinos::rpc::p2p::get_gossip_status_response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1234,7 +1298,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_get_transactions_by_id() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_get_transactions_by_id() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1245,10 +1309,10 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_transactions_by_id(::grpc::ServerContext* context, ::koinos::rpc::transaction_store::get_transactions_by_id_request* request, ::grpc::ServerAsyncResponseWriter< ::koinos::rpc::transaction_store::get_transactions_by_id_response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_get_account_history<WithAsyncMethod_get_blocks_by_id<WithAsyncMethod_get_blocks_by_height<WithAsyncMethod_get_highest_block<WithAsyncMethod_submit_block<WithAsyncMethod_submit_transaction<WithAsyncMethod_get_head_info<WithAsyncMethod_get_chain_id<WithAsyncMethod_get_fork_heads<WithAsyncMethod_read_contract<WithAsyncMethod_get_account_nonce<WithAsyncMethod_get_account_rc<WithAsyncMethod_get_resource_limits<WithAsyncMethod_get_contract_meta<WithAsyncMethod_get_pending_transactions<WithAsyncMethod_check_pending_account_resources<WithAsyncMethod_get_gossip_status<WithAsyncMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_get_account_history<WithAsyncMethod_get_blocks_by_id<WithAsyncMethod_get_blocks_by_height<WithAsyncMethod_get_highest_block<WithAsyncMethod_submit_block<WithAsyncMethod_submit_transaction<WithAsyncMethod_get_head_info<WithAsyncMethod_get_chain_id<WithAsyncMethod_get_fork_heads<WithAsyncMethod_read_contract<WithAsyncMethod_get_account_nonce<WithAsyncMethod_get_account_rc<WithAsyncMethod_get_resource_limits<WithAsyncMethod_invoke_system_call<WithAsyncMethod_get_contract_meta<WithAsyncMethod_get_pending_transactions<WithAsyncMethod_check_pending_account_resources<WithAsyncMethod_get_gossip_status<WithAsyncMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class ExperimentalWithCallbackMethod_get_account_history : public BaseClass {
    private:
@@ -1861,6 +1925,53 @@ class koinos final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithCallbackMethod_invoke_system_call : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithCallbackMethod_invoke_system_call() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodCallback(13,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::chain::invoke_system_call_request, ::koinos::rpc::chain::invoke_system_call_response>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response) { return this->invoke_system_call(context, request, response); }));}
+    void SetMessageAllocatorFor_invoke_system_call(
+        ::grpc::experimental::MessageAllocator< ::koinos::rpc::chain::invoke_system_call_request, ::koinos::rpc::chain::invoke_system_call_response>* allocator) {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+    #else
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+    #endif
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::chain::invoke_system_call_request, ::koinos::rpc::chain::invoke_system_call_response>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~ExperimentalWithCallbackMethod_invoke_system_call() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status invoke_system_call(::grpc::ServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* invoke_system_call(
+      ::grpc::CallbackServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* invoke_system_call(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithCallbackMethod_get_contract_meta : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -1871,7 +1982,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(13,
+        MarkMethodCallback(14,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::contract_meta_store::get_contract_meta_request, ::koinos::rpc::contract_meta_store::get_contract_meta_response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1883,9 +1994,9 @@ class koinos final {
     void SetMessageAllocatorFor_get_contract_meta(
         ::grpc::experimental::MessageAllocator< ::koinos::rpc::contract_meta_store::get_contract_meta_request, ::koinos::rpc::contract_meta_store::get_contract_meta_response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::contract_meta_store::get_contract_meta_request, ::koinos::rpc::contract_meta_store::get_contract_meta_response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1918,7 +2029,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(14,
+        MarkMethodCallback(15,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::mempool::get_pending_transactions_request, ::koinos::rpc::mempool::get_pending_transactions_response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1930,9 +2041,9 @@ class koinos final {
     void SetMessageAllocatorFor_get_pending_transactions(
         ::grpc::experimental::MessageAllocator< ::koinos::rpc::mempool::get_pending_transactions_request, ::koinos::rpc::mempool::get_pending_transactions_response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::mempool::get_pending_transactions_request, ::koinos::rpc::mempool::get_pending_transactions_response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -1965,7 +2076,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(15,
+        MarkMethodCallback(16,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::mempool::check_pending_account_resources_request, ::koinos::rpc::mempool::check_pending_account_resources_response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -1977,9 +2088,9 @@ class koinos final {
     void SetMessageAllocatorFor_check_pending_account_resources(
         ::grpc::experimental::MessageAllocator< ::koinos::rpc::mempool::check_pending_account_resources_request, ::koinos::rpc::mempool::check_pending_account_resources_response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::mempool::check_pending_account_resources_request, ::koinos::rpc::mempool::check_pending_account_resources_response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -2012,7 +2123,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(16,
+        MarkMethodCallback(17,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::p2p::get_gossip_status_request, ::koinos::rpc::p2p::get_gossip_status_response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2024,9 +2135,9 @@ class koinos final {
     void SetMessageAllocatorFor_get_gossip_status(
         ::grpc::experimental::MessageAllocator< ::koinos::rpc::p2p::get_gossip_status_request, ::koinos::rpc::p2p::get_gossip_status_response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::p2p::get_gossip_status_request, ::koinos::rpc::p2p::get_gossip_status_response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -2059,7 +2170,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodCallback(17,
+        MarkMethodCallback(18,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::transaction_store::get_transactions_by_id_request, ::koinos::rpc::transaction_store::get_transactions_by_id_response>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -2071,9 +2182,9 @@ class koinos final {
     void SetMessageAllocatorFor_get_transactions_by_id(
         ::grpc::experimental::MessageAllocator< ::koinos::rpc::transaction_store::get_transactions_by_id_request, ::koinos::rpc::transaction_store::get_transactions_by_id_response>* allocator) {
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
     #else
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::experimental().GetHandler(18);
     #endif
       static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::koinos::rpc::transaction_store::get_transactions_by_id_request, ::koinos::rpc::transaction_store::get_transactions_by_id_response>*>(handler)
               ->SetMessageAllocator(allocator);
@@ -2096,10 +2207,10 @@ class koinos final {
       { return nullptr; }
   };
   #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
-  typedef ExperimentalWithCallbackMethod_get_account_history<ExperimentalWithCallbackMethod_get_blocks_by_id<ExperimentalWithCallbackMethod_get_blocks_by_height<ExperimentalWithCallbackMethod_get_highest_block<ExperimentalWithCallbackMethod_submit_block<ExperimentalWithCallbackMethod_submit_transaction<ExperimentalWithCallbackMethod_get_head_info<ExperimentalWithCallbackMethod_get_chain_id<ExperimentalWithCallbackMethod_get_fork_heads<ExperimentalWithCallbackMethod_read_contract<ExperimentalWithCallbackMethod_get_account_nonce<ExperimentalWithCallbackMethod_get_account_rc<ExperimentalWithCallbackMethod_get_resource_limits<ExperimentalWithCallbackMethod_get_contract_meta<ExperimentalWithCallbackMethod_get_pending_transactions<ExperimentalWithCallbackMethod_check_pending_account_resources<ExperimentalWithCallbackMethod_get_gossip_status<ExperimentalWithCallbackMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef ExperimentalWithCallbackMethod_get_account_history<ExperimentalWithCallbackMethod_get_blocks_by_id<ExperimentalWithCallbackMethod_get_blocks_by_height<ExperimentalWithCallbackMethod_get_highest_block<ExperimentalWithCallbackMethod_submit_block<ExperimentalWithCallbackMethod_submit_transaction<ExperimentalWithCallbackMethod_get_head_info<ExperimentalWithCallbackMethod_get_chain_id<ExperimentalWithCallbackMethod_get_fork_heads<ExperimentalWithCallbackMethod_read_contract<ExperimentalWithCallbackMethod_get_account_nonce<ExperimentalWithCallbackMethod_get_account_rc<ExperimentalWithCallbackMethod_get_resource_limits<ExperimentalWithCallbackMethod_invoke_system_call<ExperimentalWithCallbackMethod_get_contract_meta<ExperimentalWithCallbackMethod_get_pending_transactions<ExperimentalWithCallbackMethod_check_pending_account_resources<ExperimentalWithCallbackMethod_get_gossip_status<ExperimentalWithCallbackMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > > CallbackService;
   #endif
 
-  typedef ExperimentalWithCallbackMethod_get_account_history<ExperimentalWithCallbackMethod_get_blocks_by_id<ExperimentalWithCallbackMethod_get_blocks_by_height<ExperimentalWithCallbackMethod_get_highest_block<ExperimentalWithCallbackMethod_submit_block<ExperimentalWithCallbackMethod_submit_transaction<ExperimentalWithCallbackMethod_get_head_info<ExperimentalWithCallbackMethod_get_chain_id<ExperimentalWithCallbackMethod_get_fork_heads<ExperimentalWithCallbackMethod_read_contract<ExperimentalWithCallbackMethod_get_account_nonce<ExperimentalWithCallbackMethod_get_account_rc<ExperimentalWithCallbackMethod_get_resource_limits<ExperimentalWithCallbackMethod_get_contract_meta<ExperimentalWithCallbackMethod_get_pending_transactions<ExperimentalWithCallbackMethod_check_pending_account_resources<ExperimentalWithCallbackMethod_get_gossip_status<ExperimentalWithCallbackMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_get_account_history<ExperimentalWithCallbackMethod_get_blocks_by_id<ExperimentalWithCallbackMethod_get_blocks_by_height<ExperimentalWithCallbackMethod_get_highest_block<ExperimentalWithCallbackMethod_submit_block<ExperimentalWithCallbackMethod_submit_transaction<ExperimentalWithCallbackMethod_get_head_info<ExperimentalWithCallbackMethod_get_chain_id<ExperimentalWithCallbackMethod_get_fork_heads<ExperimentalWithCallbackMethod_read_contract<ExperimentalWithCallbackMethod_get_account_nonce<ExperimentalWithCallbackMethod_get_account_rc<ExperimentalWithCallbackMethod_get_resource_limits<ExperimentalWithCallbackMethod_invoke_system_call<ExperimentalWithCallbackMethod_get_contract_meta<ExperimentalWithCallbackMethod_get_pending_transactions<ExperimentalWithCallbackMethod_check_pending_account_resources<ExperimentalWithCallbackMethod_get_gossip_status<ExperimentalWithCallbackMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > > ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_get_account_history : public BaseClass {
    private:
@@ -2322,12 +2433,29 @@ class koinos final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_invoke_system_call : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_invoke_system_call() {
+      ::grpc::Service::MarkMethodGeneric(13);
+    }
+    ~WithGenericMethod_invoke_system_call() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status invoke_system_call(::grpc::ServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_get_contract_meta : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_get_contract_meta() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_get_contract_meta() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2344,7 +2472,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_get_pending_transactions() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_get_pending_transactions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2361,7 +2489,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_check_pending_account_resources() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_check_pending_account_resources() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2378,7 +2506,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_get_gossip_status() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_get_gossip_status() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2395,7 +2523,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_get_transactions_by_id() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_get_transactions_by_id() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2667,12 +2795,32 @@ class koinos final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_invoke_system_call : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_invoke_system_call() {
+      ::grpc::Service::MarkMethodRaw(13);
+    }
+    ~WithRawMethod_invoke_system_call() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status invoke_system_call(::grpc::ServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void Requestinvoke_system_call(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_get_contract_meta : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_get_contract_meta() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_get_contract_meta() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2683,7 +2831,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_contract_meta(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2692,7 +2840,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_get_pending_transactions() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_get_pending_transactions() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2703,7 +2851,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_pending_transactions(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2712,7 +2860,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_check_pending_account_resources() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_check_pending_account_resources() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2723,7 +2871,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestcheck_pending_account_resources(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2732,7 +2880,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_get_gossip_status() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_get_gossip_status() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2743,7 +2891,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_gossip_status(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2752,7 +2900,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_get_transactions_by_id() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_get_transactions_by_id() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2763,7 +2911,7 @@ class koinos final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void Requestget_transactions_by_id(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3261,6 +3409,44 @@ class koinos final {
       { return nullptr; }
   };
   template <class BaseClass>
+  class ExperimentalWithRawCallbackMethod_invoke_system_call : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    ExperimentalWithRawCallbackMethod_invoke_system_call() {
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+      ::grpc::Service::
+    #else
+      ::grpc::Service::experimental().
+    #endif
+        MarkMethodRawCallback(13,
+          new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+                   ::grpc::CallbackServerContext*
+    #else
+                   ::grpc::experimental::CallbackServerContext*
+    #endif
+                     context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->invoke_system_call(context, request, response); }));
+    }
+    ~ExperimentalWithRawCallbackMethod_invoke_system_call() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status invoke_system_call(::grpc::ServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
+    virtual ::grpc::ServerUnaryReactor* invoke_system_call(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #else
+    virtual ::grpc::experimental::ServerUnaryReactor* invoke_system_call(
+      ::grpc::experimental::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)
+    #endif
+      { return nullptr; }
+  };
+  template <class BaseClass>
   class ExperimentalWithRawCallbackMethod_get_contract_meta : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
@@ -3271,7 +3457,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(13,
+        MarkMethodRawCallback(14,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3309,7 +3495,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(14,
+        MarkMethodRawCallback(15,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3347,7 +3533,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(15,
+        MarkMethodRawCallback(16,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3385,7 +3571,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(16,
+        MarkMethodRawCallback(17,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3423,7 +3609,7 @@ class koinos final {
     #else
       ::grpc::Service::experimental().
     #endif
-        MarkMethodRawCallback(17,
+        MarkMethodRawCallback(18,
           new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
     #ifdef GRPC_CALLBACK_API_NONEXPERIMENTAL
@@ -3802,12 +3988,39 @@ class koinos final {
     virtual ::grpc::Status Streamedget_resource_limits(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::koinos::rpc::chain::get_resource_limits_request,::koinos::rpc::chain::get_resource_limits_response>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_invoke_system_call : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_invoke_system_call() {
+      ::grpc::Service::MarkMethodStreamed(13,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::koinos::rpc::chain::invoke_system_call_request, ::koinos::rpc::chain::invoke_system_call_response>(
+            [this](::grpc_impl::ServerContext* context,
+                   ::grpc_impl::ServerUnaryStreamer<
+                     ::koinos::rpc::chain::invoke_system_call_request, ::koinos::rpc::chain::invoke_system_call_response>* streamer) {
+                       return this->Streamedinvoke_system_call(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_invoke_system_call() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status invoke_system_call(::grpc::ServerContext* /*context*/, const ::koinos::rpc::chain::invoke_system_call_request* /*request*/, ::koinos::rpc::chain::invoke_system_call_response* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status Streamedinvoke_system_call(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::koinos::rpc::chain::invoke_system_call_request,::koinos::rpc::chain::invoke_system_call_response>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_get_contract_meta : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_get_contract_meta() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::koinos::rpc::contract_meta_store::get_contract_meta_request, ::koinos::rpc::contract_meta_store::get_contract_meta_response>(
             [this](::grpc_impl::ServerContext* context,
@@ -3834,7 +4047,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_get_pending_transactions() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::koinos::rpc::mempool::get_pending_transactions_request, ::koinos::rpc::mempool::get_pending_transactions_response>(
             [this](::grpc_impl::ServerContext* context,
@@ -3861,7 +4074,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_check_pending_account_resources() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::koinos::rpc::mempool::check_pending_account_resources_request, ::koinos::rpc::mempool::check_pending_account_resources_response>(
             [this](::grpc_impl::ServerContext* context,
@@ -3888,7 +4101,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_get_gossip_status() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::koinos::rpc::p2p::get_gossip_status_request, ::koinos::rpc::p2p::get_gossip_status_response>(
             [this](::grpc_impl::ServerContext* context,
@@ -3915,7 +4128,7 @@ class koinos final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_get_transactions_by_id() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::koinos::rpc::transaction_store::get_transactions_by_id_request, ::koinos::rpc::transaction_store::get_transactions_by_id_response>(
             [this](::grpc_impl::ServerContext* context,
@@ -3936,9 +4149,9 @@ class koinos final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status Streamedget_transactions_by_id(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::koinos::rpc::transaction_store::get_transactions_by_id_request,::koinos::rpc::transaction_store::get_transactions_by_id_response>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_get_account_history<WithStreamedUnaryMethod_get_blocks_by_id<WithStreamedUnaryMethod_get_blocks_by_height<WithStreamedUnaryMethod_get_highest_block<WithStreamedUnaryMethod_submit_block<WithStreamedUnaryMethod_submit_transaction<WithStreamedUnaryMethod_get_head_info<WithStreamedUnaryMethod_get_chain_id<WithStreamedUnaryMethod_get_fork_heads<WithStreamedUnaryMethod_read_contract<WithStreamedUnaryMethod_get_account_nonce<WithStreamedUnaryMethod_get_account_rc<WithStreamedUnaryMethod_get_resource_limits<WithStreamedUnaryMethod_get_contract_meta<WithStreamedUnaryMethod_get_pending_transactions<WithStreamedUnaryMethod_check_pending_account_resources<WithStreamedUnaryMethod_get_gossip_status<WithStreamedUnaryMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_get_account_history<WithStreamedUnaryMethod_get_blocks_by_id<WithStreamedUnaryMethod_get_blocks_by_height<WithStreamedUnaryMethod_get_highest_block<WithStreamedUnaryMethod_submit_block<WithStreamedUnaryMethod_submit_transaction<WithStreamedUnaryMethod_get_head_info<WithStreamedUnaryMethod_get_chain_id<WithStreamedUnaryMethod_get_fork_heads<WithStreamedUnaryMethod_read_contract<WithStreamedUnaryMethod_get_account_nonce<WithStreamedUnaryMethod_get_account_rc<WithStreamedUnaryMethod_get_resource_limits<WithStreamedUnaryMethod_invoke_system_call<WithStreamedUnaryMethod_get_contract_meta<WithStreamedUnaryMethod_get_pending_transactions<WithStreamedUnaryMethod_check_pending_account_resources<WithStreamedUnaryMethod_get_gossip_status<WithStreamedUnaryMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_get_account_history<WithStreamedUnaryMethod_get_blocks_by_id<WithStreamedUnaryMethod_get_blocks_by_height<WithStreamedUnaryMethod_get_highest_block<WithStreamedUnaryMethod_submit_block<WithStreamedUnaryMethod_submit_transaction<WithStreamedUnaryMethod_get_head_info<WithStreamedUnaryMethod_get_chain_id<WithStreamedUnaryMethod_get_fork_heads<WithStreamedUnaryMethod_read_contract<WithStreamedUnaryMethod_get_account_nonce<WithStreamedUnaryMethod_get_account_rc<WithStreamedUnaryMethod_get_resource_limits<WithStreamedUnaryMethod_get_contract_meta<WithStreamedUnaryMethod_get_pending_transactions<WithStreamedUnaryMethod_check_pending_account_resources<WithStreamedUnaryMethod_get_gossip_status<WithStreamedUnaryMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_get_account_history<WithStreamedUnaryMethod_get_blocks_by_id<WithStreamedUnaryMethod_get_blocks_by_height<WithStreamedUnaryMethod_get_highest_block<WithStreamedUnaryMethod_submit_block<WithStreamedUnaryMethod_submit_transaction<WithStreamedUnaryMethod_get_head_info<WithStreamedUnaryMethod_get_chain_id<WithStreamedUnaryMethod_get_fork_heads<WithStreamedUnaryMethod_read_contract<WithStreamedUnaryMethod_get_account_nonce<WithStreamedUnaryMethod_get_account_rc<WithStreamedUnaryMethod_get_resource_limits<WithStreamedUnaryMethod_invoke_system_call<WithStreamedUnaryMethod_get_contract_meta<WithStreamedUnaryMethod_get_pending_transactions<WithStreamedUnaryMethod_check_pending_account_resources<WithStreamedUnaryMethod_get_gossip_status<WithStreamedUnaryMethod_get_transactions_by_id<Service > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace services

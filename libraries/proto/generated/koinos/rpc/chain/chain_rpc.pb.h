@@ -51,7 +51,7 @@ struct TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[20]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -103,6 +103,12 @@ extern get_resource_limits_requestDefaultTypeInternal _get_resource_limits_reque
 class get_resource_limits_response;
 struct get_resource_limits_responseDefaultTypeInternal;
 extern get_resource_limits_responseDefaultTypeInternal _get_resource_limits_response_default_instance_;
+class invoke_system_call_request;
+struct invoke_system_call_requestDefaultTypeInternal;
+extern invoke_system_call_requestDefaultTypeInternal _invoke_system_call_request_default_instance_;
+class invoke_system_call_response;
+struct invoke_system_call_responseDefaultTypeInternal;
+extern invoke_system_call_responseDefaultTypeInternal _invoke_system_call_response_default_instance_;
 class read_contract_request;
 struct read_contract_requestDefaultTypeInternal;
 extern read_contract_requestDefaultTypeInternal _read_contract_request_default_instance_;
@@ -139,6 +145,8 @@ template<> ::koinos::rpc::chain::get_head_info_request* Arena::CreateMaybeMessag
 template<> ::koinos::rpc::chain::get_head_info_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::get_head_info_response>(Arena*);
 template<> ::koinos::rpc::chain::get_resource_limits_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::get_resource_limits_request>(Arena*);
 template<> ::koinos::rpc::chain::get_resource_limits_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::get_resource_limits_response>(Arena*);
+template<> ::koinos::rpc::chain::invoke_system_call_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::invoke_system_call_request>(Arena*);
+template<> ::koinos::rpc::chain::invoke_system_call_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::invoke_system_call_response>(Arena*);
 template<> ::koinos::rpc::chain::read_contract_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::read_contract_request>(Arena*);
 template<> ::koinos::rpc::chain::read_contract_response* Arena::CreateMaybeMessage<::koinos::rpc::chain::read_contract_response>(Arena*);
 template<> ::koinos::rpc::chain::submit_block_request* Arena::CreateMaybeMessage<::koinos::rpc::chain::submit_block_request>(Arena*);
@@ -2817,6 +2825,348 @@ class get_resource_limits_response final :
 };
 // -------------------------------------------------------------------
 
+class invoke_system_call_request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.invoke_system_call_request) */ {
+ public:
+  inline invoke_system_call_request() : invoke_system_call_request(nullptr) {}
+  ~invoke_system_call_request() override;
+  explicit constexpr invoke_system_call_request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  invoke_system_call_request(const invoke_system_call_request& from);
+  invoke_system_call_request(invoke_system_call_request&& from) noexcept
+    : invoke_system_call_request() {
+    *this = ::std::move(from);
+  }
+
+  inline invoke_system_call_request& operator=(const invoke_system_call_request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline invoke_system_call_request& operator=(invoke_system_call_request&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const invoke_system_call_request& default_instance() {
+    return *internal_default_instance();
+  }
+  enum SystemCallCase {
+    kId = 1,
+    kName = 2,
+    SYSTEM_CALL_NOT_SET = 0,
+  };
+
+  static inline const invoke_system_call_request* internal_default_instance() {
+    return reinterpret_cast<const invoke_system_call_request*>(
+               &_invoke_system_call_request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    18;
+
+  friend void swap(invoke_system_call_request& a, invoke_system_call_request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(invoke_system_call_request* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(invoke_system_call_request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline invoke_system_call_request* New() const final {
+    return new invoke_system_call_request();
+  }
+
+  invoke_system_call_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<invoke_system_call_request>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const invoke_system_call_request& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const invoke_system_call_request& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(invoke_system_call_request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.rpc.chain.invoke_system_call_request";
+  }
+  protected:
+  explicit invoke_system_call_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kArgsFieldNumber = 3,
+    kIdFieldNumber = 1,
+    kNameFieldNumber = 2,
+  };
+  // bytes args = 3;
+  void clear_args();
+  const std::string& args() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_args(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_args();
+  PROTOBUF_MUST_USE_RESULT std::string* release_args();
+  void set_allocated_args(std::string* args);
+  private:
+  const std::string& _internal_args() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_args(const std::string& value);
+  std::string* _internal_mutable_args();
+  public:
+
+  // int64 id = 1;
+  bool has_id() const;
+  private:
+  bool _internal_has_id() const;
+  public:
+  void clear_id();
+  ::PROTOBUF_NAMESPACE_ID::int64 id() const;
+  void set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int64 _internal_id() const;
+  void _internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value);
+  public:
+
+  // string name = 2;
+  bool has_name() const;
+  private:
+  bool _internal_has_name() const;
+  public:
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_MUST_USE_RESULT std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  void clear_system_call();
+  SystemCallCase system_call_case() const;
+  // @@protoc_insertion_point(class_scope:koinos.rpc.chain.invoke_system_call_request)
+ private:
+  class _Internal;
+  void set_has_id();
+  void set_has_name();
+
+  inline bool has_system_call() const;
+  inline void clear_has_system_call();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr args_;
+  union SystemCallUnion {
+    constexpr SystemCallUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::PROTOBUF_NAMESPACE_ID::int64 id_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  } system_call_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
+
+  friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class invoke_system_call_response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.invoke_system_call_response) */ {
+ public:
+  inline invoke_system_call_response() : invoke_system_call_response(nullptr) {}
+  ~invoke_system_call_response() override;
+  explicit constexpr invoke_system_call_response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  invoke_system_call_response(const invoke_system_call_response& from);
+  invoke_system_call_response(invoke_system_call_response&& from) noexcept
+    : invoke_system_call_response() {
+    *this = ::std::move(from);
+  }
+
+  inline invoke_system_call_response& operator=(const invoke_system_call_response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline invoke_system_call_response& operator=(invoke_system_call_response&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const invoke_system_call_response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const invoke_system_call_response* internal_default_instance() {
+    return reinterpret_cast<const invoke_system_call_response*>(
+               &_invoke_system_call_response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    19;
+
+  friend void swap(invoke_system_call_response& a, invoke_system_call_response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(invoke_system_call_response* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(invoke_system_call_response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline invoke_system_call_response* New() const final {
+    return new invoke_system_call_response();
+  }
+
+  invoke_system_call_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<invoke_system_call_response>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const invoke_system_call_response& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const invoke_system_call_response& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(invoke_system_call_response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.rpc.chain.invoke_system_call_response";
+  }
+  protected:
+  explicit invoke_system_call_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kValueFieldNumber = 1,
+  };
+  // bytes value = 1;
+  void clear_value();
+  const std::string& value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_value();
+  PROTOBUF_MUST_USE_RESULT std::string* release_value();
+  void set_allocated_value(std::string* value);
+  private:
+  const std::string& _internal_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.rpc.chain.invoke_system_call_response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
 class chain_request final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.chain.chain_request) */ {
  public:
@@ -2867,6 +3217,7 @@ class chain_request final :
     kGetAccountNonce = 8,
     kGetAccountRc = 9,
     kGetResourceLimits = 10,
+    kInvokeSystemCall = 11,
     REQUEST_NOT_SET = 0,
   };
 
@@ -2875,7 +3226,7 @@ class chain_request final :
                &_chain_request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   friend void swap(chain_request& a, chain_request& b) {
     a.Swap(&b);
@@ -2956,6 +3307,7 @@ class chain_request final :
     kGetAccountNonceFieldNumber = 8,
     kGetAccountRcFieldNumber = 9,
     kGetResourceLimitsFieldNumber = 10,
+    kInvokeSystemCallFieldNumber = 11,
   };
   // .koinos.rpc.reserved_rpc reserved = 1;
   bool has_reserved() const;
@@ -3137,6 +3489,24 @@ class chain_request final :
       ::koinos::rpc::chain::get_resource_limits_request* get_resource_limits);
   ::koinos::rpc::chain::get_resource_limits_request* unsafe_arena_release_get_resource_limits();
 
+  // .koinos.rpc.chain.invoke_system_call_request invoke_system_call = 11;
+  bool has_invoke_system_call() const;
+  private:
+  bool _internal_has_invoke_system_call() const;
+  public:
+  void clear_invoke_system_call();
+  const ::koinos::rpc::chain::invoke_system_call_request& invoke_system_call() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::chain::invoke_system_call_request* release_invoke_system_call();
+  ::koinos::rpc::chain::invoke_system_call_request* mutable_invoke_system_call();
+  void set_allocated_invoke_system_call(::koinos::rpc::chain::invoke_system_call_request* invoke_system_call);
+  private:
+  const ::koinos::rpc::chain::invoke_system_call_request& _internal_invoke_system_call() const;
+  ::koinos::rpc::chain::invoke_system_call_request* _internal_mutable_invoke_system_call();
+  public:
+  void unsafe_arena_set_allocated_invoke_system_call(
+      ::koinos::rpc::chain::invoke_system_call_request* invoke_system_call);
+  ::koinos::rpc::chain::invoke_system_call_request* unsafe_arena_release_invoke_system_call();
+
   void clear_request();
   RequestCase request_case() const;
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.chain_request)
@@ -3152,6 +3522,7 @@ class chain_request final :
   void set_has_get_account_nonce();
   void set_has_get_account_rc();
   void set_has_get_resource_limits();
+  void set_has_invoke_system_call();
 
   inline bool has_request() const;
   inline void clear_has_request();
@@ -3172,6 +3543,7 @@ class chain_request final :
     ::koinos::rpc::chain::get_account_nonce_request* get_account_nonce_;
     ::koinos::rpc::chain::get_account_rc_request* get_account_rc_;
     ::koinos::rpc::chain::get_resource_limits_request* get_resource_limits_;
+    ::koinos::rpc::chain::invoke_system_call_request* invoke_system_call_;
   } request_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -3231,6 +3603,7 @@ class chain_response final :
     kGetAccountNonce = 9,
     kGetAccountRc = 10,
     kGetResourceLimits = 11,
+    kInvokeSystemCall = 12,
     RESPONSE_NOT_SET = 0,
   };
 
@@ -3239,7 +3612,7 @@ class chain_response final :
                &_chain_response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   friend void swap(chain_response& a, chain_response& b) {
     a.Swap(&b);
@@ -3321,6 +3694,7 @@ class chain_response final :
     kGetAccountNonceFieldNumber = 9,
     kGetAccountRcFieldNumber = 10,
     kGetResourceLimitsFieldNumber = 11,
+    kInvokeSystemCallFieldNumber = 12,
   };
   // .koinos.rpc.reserved_rpc reserved = 1;
   bool has_reserved() const;
@@ -3520,6 +3894,24 @@ class chain_response final :
       ::koinos::rpc::chain::get_resource_limits_response* get_resource_limits);
   ::koinos::rpc::chain::get_resource_limits_response* unsafe_arena_release_get_resource_limits();
 
+  // .koinos.rpc.chain.invoke_system_call_response invoke_system_call = 12;
+  bool has_invoke_system_call() const;
+  private:
+  bool _internal_has_invoke_system_call() const;
+  public:
+  void clear_invoke_system_call();
+  const ::koinos::rpc::chain::invoke_system_call_response& invoke_system_call() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::chain::invoke_system_call_response* release_invoke_system_call();
+  ::koinos::rpc::chain::invoke_system_call_response* mutable_invoke_system_call();
+  void set_allocated_invoke_system_call(::koinos::rpc::chain::invoke_system_call_response* invoke_system_call);
+  private:
+  const ::koinos::rpc::chain::invoke_system_call_response& _internal_invoke_system_call() const;
+  ::koinos::rpc::chain::invoke_system_call_response* _internal_mutable_invoke_system_call();
+  public:
+  void unsafe_arena_set_allocated_invoke_system_call(
+      ::koinos::rpc::chain::invoke_system_call_response* invoke_system_call);
+  ::koinos::rpc::chain::invoke_system_call_response* unsafe_arena_release_invoke_system_call();
+
   void clear_response();
   ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:koinos.rpc.chain.chain_response)
@@ -3536,6 +3928,7 @@ class chain_response final :
   void set_has_get_account_nonce();
   void set_has_get_account_rc();
   void set_has_get_resource_limits();
+  void set_has_invoke_system_call();
 
   inline bool has_response() const;
   inline void clear_has_response();
@@ -3557,6 +3950,7 @@ class chain_response final :
     ::koinos::rpc::chain::get_account_nonce_response* get_account_nonce_;
     ::koinos::rpc::chain::get_account_rc_response* get_account_rc_;
     ::koinos::rpc::chain::get_resource_limits_response* get_resource_limits_;
+    ::koinos::rpc::chain::invoke_system_call_response* invoke_system_call_;
   } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -4826,6 +5220,235 @@ inline void get_resource_limits_response::set_allocated_resource_limit_data(::ko
 
 // -------------------------------------------------------------------
 
+// invoke_system_call_request
+
+// int64 id = 1;
+inline bool invoke_system_call_request::_internal_has_id() const {
+  return system_call_case() == kId;
+}
+inline bool invoke_system_call_request::has_id() const {
+  return _internal_has_id();
+}
+inline void invoke_system_call_request::set_has_id() {
+  _oneof_case_[0] = kId;
+}
+inline void invoke_system_call_request::clear_id() {
+  if (_internal_has_id()) {
+    system_call_.id_ = int64_t{0};
+    clear_has_system_call();
+  }
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 invoke_system_call_request::_internal_id() const {
+  if (_internal_has_id()) {
+    return system_call_.id_;
+  }
+  return int64_t{0};
+}
+inline void invoke_system_call_request::_internal_set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  if (!_internal_has_id()) {
+    clear_system_call();
+    set_has_id();
+  }
+  system_call_.id_ = value;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int64 invoke_system_call_request::id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.invoke_system_call_request.id)
+  return _internal_id();
+}
+inline void invoke_system_call_request::set_id(::PROTOBUF_NAMESPACE_ID::int64 value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.invoke_system_call_request.id)
+}
+
+// string name = 2;
+inline bool invoke_system_call_request::_internal_has_name() const {
+  return system_call_case() == kName;
+}
+inline bool invoke_system_call_request::has_name() const {
+  return _internal_has_name();
+}
+inline void invoke_system_call_request::set_has_name() {
+  _oneof_case_[0] = kName;
+}
+inline void invoke_system_call_request::clear_name() {
+  if (_internal_has_name()) {
+    system_call_.name_.Destroy(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+    clear_has_system_call();
+  }
+}
+inline const std::string& invoke_system_call_request::name() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.invoke_system_call_request.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline void invoke_system_call_request::set_name(ArgT0&& arg0, ArgT... args) {
+  if (!_internal_has_name()) {
+    clear_system_call();
+    set_has_name();
+    system_call_.name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  system_call_.name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.invoke_system_call_request.name)
+}
+inline std::string* invoke_system_call_request::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.invoke_system_call_request.name)
+  return _s;
+}
+inline const std::string& invoke_system_call_request::_internal_name() const {
+  if (_internal_has_name()) {
+    return system_call_.name_.Get();
+  }
+  return ::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited();
+}
+inline void invoke_system_call_request::_internal_set_name(const std::string& value) {
+  if (!_internal_has_name()) {
+    clear_system_call();
+    set_has_name();
+    system_call_.name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  system_call_.name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* invoke_system_call_request::_internal_mutable_name() {
+  if (!_internal_has_name()) {
+    clear_system_call();
+    set_has_name();
+    system_call_.name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  }
+  return system_call_.name_.Mutable(
+      ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* invoke_system_call_request::release_name() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.invoke_system_call_request.name)
+  if (_internal_has_name()) {
+    clear_has_system_call();
+    return system_call_.name_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  } else {
+    return nullptr;
+  }
+}
+inline void invoke_system_call_request::set_allocated_name(std::string* name) {
+  if (has_system_call()) {
+    clear_system_call();
+  }
+  if (name != nullptr) {
+    set_has_name();
+    system_call_.name_.UnsafeSetDefault(name);
+    ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArenaForAllocation();
+    if (arena != nullptr) {
+      arena->Own(name);
+    }
+  }
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.invoke_system_call_request.name)
+}
+
+// bytes args = 3;
+inline void invoke_system_call_request::clear_args() {
+  args_.ClearToEmpty();
+}
+inline const std::string& invoke_system_call_request::args() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.invoke_system_call_request.args)
+  return _internal_args();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void invoke_system_call_request::set_args(ArgT0&& arg0, ArgT... args) {
+ 
+ args_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.invoke_system_call_request.args)
+}
+inline std::string* invoke_system_call_request::mutable_args() {
+  std::string* _s = _internal_mutable_args();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.invoke_system_call_request.args)
+  return _s;
+}
+inline const std::string& invoke_system_call_request::_internal_args() const {
+  return args_.Get();
+}
+inline void invoke_system_call_request::_internal_set_args(const std::string& value) {
+  
+  args_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* invoke_system_call_request::_internal_mutable_args() {
+  
+  return args_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* invoke_system_call_request::release_args() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.invoke_system_call_request.args)
+  return args_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void invoke_system_call_request::set_allocated_args(std::string* args) {
+  if (args != nullptr) {
+    
+  } else {
+    
+  }
+  args_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), args,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.invoke_system_call_request.args)
+}
+
+inline bool invoke_system_call_request::has_system_call() const {
+  return system_call_case() != SYSTEM_CALL_NOT_SET;
+}
+inline void invoke_system_call_request::clear_has_system_call() {
+  _oneof_case_[0] = SYSTEM_CALL_NOT_SET;
+}
+inline invoke_system_call_request::SystemCallCase invoke_system_call_request::system_call_case() const {
+  return invoke_system_call_request::SystemCallCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// invoke_system_call_response
+
+// bytes value = 1;
+inline void invoke_system_call_response::clear_value() {
+  value_.ClearToEmpty();
+}
+inline const std::string& invoke_system_call_response::value() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.invoke_system_call_response.value)
+  return _internal_value();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void invoke_system_call_response::set_value(ArgT0&& arg0, ArgT... args) {
+ 
+ value_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.chain.invoke_system_call_response.value)
+}
+inline std::string* invoke_system_call_response::mutable_value() {
+  std::string* _s = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.invoke_system_call_response.value)
+  return _s;
+}
+inline const std::string& invoke_system_call_response::_internal_value() const {
+  return value_.Get();
+}
+inline void invoke_system_call_response::_internal_set_value(const std::string& value) {
+  
+  value_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* invoke_system_call_response::_internal_mutable_value() {
+  
+  return value_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* invoke_system_call_response::release_value() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.invoke_system_call_response.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void invoke_system_call_response::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
+    
+  } else {
+    
+  }
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.invoke_system_call_response.value)
+}
+
+// -------------------------------------------------------------------
+
 // chain_request
 
 // .koinos.rpc.reserved_rpc reserved = 1;
@@ -5557,6 +6180,80 @@ inline ::koinos::rpc::chain::get_resource_limits_request* chain_request::_intern
 inline ::koinos::rpc::chain::get_resource_limits_request* chain_request::mutable_get_resource_limits() {
   ::koinos::rpc::chain::get_resource_limits_request* _msg = _internal_mutable_get_resource_limits();
   // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.get_resource_limits)
+  return _msg;
+}
+
+// .koinos.rpc.chain.invoke_system_call_request invoke_system_call = 11;
+inline bool chain_request::_internal_has_invoke_system_call() const {
+  return request_case() == kInvokeSystemCall;
+}
+inline bool chain_request::has_invoke_system_call() const {
+  return _internal_has_invoke_system_call();
+}
+inline void chain_request::set_has_invoke_system_call() {
+  _oneof_case_[0] = kInvokeSystemCall;
+}
+inline void chain_request::clear_invoke_system_call() {
+  if (_internal_has_invoke_system_call()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete request_.invoke_system_call_;
+    }
+    clear_has_request();
+  }
+}
+inline ::koinos::rpc::chain::invoke_system_call_request* chain_request::release_invoke_system_call() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_request.invoke_system_call)
+  if (_internal_has_invoke_system_call()) {
+    clear_has_request();
+      ::koinos::rpc::chain::invoke_system_call_request* temp = request_.invoke_system_call_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    request_.invoke_system_call_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::rpc::chain::invoke_system_call_request& chain_request::_internal_invoke_system_call() const {
+  return _internal_has_invoke_system_call()
+      ? *request_.invoke_system_call_
+      : reinterpret_cast< ::koinos::rpc::chain::invoke_system_call_request&>(::koinos::rpc::chain::_invoke_system_call_request_default_instance_);
+}
+inline const ::koinos::rpc::chain::invoke_system_call_request& chain_request::invoke_system_call() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_request.invoke_system_call)
+  return _internal_invoke_system_call();
+}
+inline ::koinos::rpc::chain::invoke_system_call_request* chain_request::unsafe_arena_release_invoke_system_call() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_request.invoke_system_call)
+  if (_internal_has_invoke_system_call()) {
+    clear_has_request();
+    ::koinos::rpc::chain::invoke_system_call_request* temp = request_.invoke_system_call_;
+    request_.invoke_system_call_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void chain_request::unsafe_arena_set_allocated_invoke_system_call(::koinos::rpc::chain::invoke_system_call_request* invoke_system_call) {
+  clear_request();
+  if (invoke_system_call) {
+    set_has_invoke_system_call();
+    request_.invoke_system_call_ = invoke_system_call;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_request.invoke_system_call)
+}
+inline ::koinos::rpc::chain::invoke_system_call_request* chain_request::_internal_mutable_invoke_system_call() {
+  if (!_internal_has_invoke_system_call()) {
+    clear_request();
+    set_has_invoke_system_call();
+    request_.invoke_system_call_ = CreateMaybeMessage< ::koinos::rpc::chain::invoke_system_call_request >(GetArenaForAllocation());
+  }
+  return request_.invoke_system_call_;
+}
+inline ::koinos::rpc::chain::invoke_system_call_request* chain_request::mutable_invoke_system_call() {
+  ::koinos::rpc::chain::invoke_system_call_request* _msg = _internal_mutable_invoke_system_call();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_request.invoke_system_call)
   return _msg;
 }
 
@@ -6371,6 +7068,80 @@ inline ::koinos::rpc::chain::get_resource_limits_response* chain_response::mutab
   return _msg;
 }
 
+// .koinos.rpc.chain.invoke_system_call_response invoke_system_call = 12;
+inline bool chain_response::_internal_has_invoke_system_call() const {
+  return response_case() == kInvokeSystemCall;
+}
+inline bool chain_response::has_invoke_system_call() const {
+  return _internal_has_invoke_system_call();
+}
+inline void chain_response::set_has_invoke_system_call() {
+  _oneof_case_[0] = kInvokeSystemCall;
+}
+inline void chain_response::clear_invoke_system_call() {
+  if (_internal_has_invoke_system_call()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.invoke_system_call_;
+    }
+    clear_has_response();
+  }
+}
+inline ::koinos::rpc::chain::invoke_system_call_response* chain_response::release_invoke_system_call() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.invoke_system_call)
+  if (_internal_has_invoke_system_call()) {
+    clear_has_response();
+      ::koinos::rpc::chain::invoke_system_call_response* temp = response_.invoke_system_call_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.invoke_system_call_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::rpc::chain::invoke_system_call_response& chain_response::_internal_invoke_system_call() const {
+  return _internal_has_invoke_system_call()
+      ? *response_.invoke_system_call_
+      : reinterpret_cast< ::koinos::rpc::chain::invoke_system_call_response&>(::koinos::rpc::chain::_invoke_system_call_response_default_instance_);
+}
+inline const ::koinos::rpc::chain::invoke_system_call_response& chain_response::invoke_system_call() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.invoke_system_call)
+  return _internal_invoke_system_call();
+}
+inline ::koinos::rpc::chain::invoke_system_call_response* chain_response::unsafe_arena_release_invoke_system_call() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.invoke_system_call)
+  if (_internal_has_invoke_system_call()) {
+    clear_has_response();
+    ::koinos::rpc::chain::invoke_system_call_response* temp = response_.invoke_system_call_;
+    response_.invoke_system_call_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void chain_response::unsafe_arena_set_allocated_invoke_system_call(::koinos::rpc::chain::invoke_system_call_response* invoke_system_call) {
+  clear_response();
+  if (invoke_system_call) {
+    set_has_invoke_system_call();
+    response_.invoke_system_call_ = invoke_system_call;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.invoke_system_call)
+}
+inline ::koinos::rpc::chain::invoke_system_call_response* chain_response::_internal_mutable_invoke_system_call() {
+  if (!_internal_has_invoke_system_call()) {
+    clear_response();
+    set_has_invoke_system_call();
+    response_.invoke_system_call_ = CreateMaybeMessage< ::koinos::rpc::chain::invoke_system_call_response >(GetArenaForAllocation());
+  }
+  return response_.invoke_system_call_;
+}
+inline ::koinos::rpc::chain::invoke_system_call_response* chain_response::mutable_invoke_system_call() {
+  ::koinos::rpc::chain::invoke_system_call_response* _msg = _internal_mutable_invoke_system_call();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.invoke_system_call)
+  return _msg;
+}
+
 inline bool chain_response::has_response() const {
   return response_case() != RESPONSE_NOT_SET;
 }
@@ -6383,6 +7154,10 @@ inline chain_response::ResponseCase chain_response::response_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

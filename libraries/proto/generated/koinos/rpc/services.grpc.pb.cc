@@ -36,6 +36,7 @@ static const char* koinos_method_names[] = {
   "/koinos.services.koinos/get_account_nonce",
   "/koinos.services.koinos/get_account_rc",
   "/koinos.services.koinos/get_resource_limits",
+  "/koinos.services.koinos/invoke_system_call",
   "/koinos.services.koinos/get_contract_meta",
   "/koinos.services.koinos/get_pending_transactions",
   "/koinos.services.koinos/check_pending_account_resources",
@@ -63,11 +64,12 @@ koinos::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_get_account_nonce_(koinos_method_names[10], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_get_account_rc_(koinos_method_names[11], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_get_resource_limits_(koinos_method_names[12], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get_contract_meta_(koinos_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get_pending_transactions_(koinos_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_check_pending_account_resources_(koinos_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get_gossip_status_(koinos_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_get_transactions_by_id_(koinos_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_invoke_system_call_(koinos_method_names[13], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_get_contract_meta_(koinos_method_names[14], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_get_pending_transactions_(koinos_method_names[15], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_check_pending_account_resources_(koinos_method_names[16], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_get_gossip_status_(koinos_method_names[17], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_get_transactions_by_id_(koinos_method_names[18], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status koinos::Stub::get_account_history(::grpc::ClientContext* context, const ::koinos::rpc::account_history::get_account_history_request& request, ::koinos::rpc::account_history::get_account_history_response* response) {
@@ -434,6 +436,34 @@ void koinos::Stub::experimental_async::get_resource_limits(::grpc::ClientContext
   return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::koinos::rpc::chain::get_resource_limits_response>::Create(channel_.get(), cq, rpcmethod_get_resource_limits_, context, request, false);
 }
 
+::grpc::Status koinos::Stub::invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::koinos::rpc::chain::invoke_system_call_response* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_invoke_system_call_, context, request, response);
+}
+
+void koinos::Stub::experimental_async::invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_invoke_system_call_, context, request, response, std::move(f));
+}
+
+void koinos::Stub::experimental_async::invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_invoke_system_call_, context, request, response, std::move(f));
+}
+
+void koinos::Stub::experimental_async::invoke_system_call(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_invoke_system_call_, context, request, response, reactor);
+}
+
+void koinos::Stub::experimental_async::invoke_system_call(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::koinos::rpc::chain::invoke_system_call_response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_invoke_system_call_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>* koinos::Stub::Asyncinvoke_system_callRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::koinos::rpc::chain::invoke_system_call_response>::Create(channel_.get(), cq, rpcmethod_invoke_system_call_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::koinos::rpc::chain::invoke_system_call_response>* koinos::Stub::PrepareAsyncinvoke_system_callRaw(::grpc::ClientContext* context, const ::koinos::rpc::chain::invoke_system_call_request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::koinos::rpc::chain::invoke_system_call_response>::Create(channel_.get(), cq, rpcmethod_invoke_system_call_, context, request, false);
+}
+
 ::grpc::Status koinos::Stub::get_contract_meta(::grpc::ClientContext* context, const ::koinos::rpc::contract_meta_store::get_contract_meta_request& request, ::koinos::rpc::contract_meta_store::get_contract_meta_response* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_get_contract_meta_, context, request, response);
 }
@@ -708,6 +738,16 @@ koinos::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       koinos_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< koinos::Service, ::koinos::rpc::chain::invoke_system_call_request, ::koinos::rpc::chain::invoke_system_call_response>(
+          [](koinos::Service* service,
+             ::grpc_impl::ServerContext* ctx,
+             const ::koinos::rpc::chain::invoke_system_call_request* req,
+             ::koinos::rpc::chain::invoke_system_call_response* resp) {
+               return service->invoke_system_call(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      koinos_method_names[14],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< koinos::Service, ::koinos::rpc::contract_meta_store::get_contract_meta_request, ::koinos::rpc::contract_meta_store::get_contract_meta_response>(
           [](koinos::Service* service,
              ::grpc_impl::ServerContext* ctx,
@@ -716,7 +756,7 @@ koinos::Service::Service() {
                return service->get_contract_meta(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      koinos_method_names[14],
+      koinos_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< koinos::Service, ::koinos::rpc::mempool::get_pending_transactions_request, ::koinos::rpc::mempool::get_pending_transactions_response>(
           [](koinos::Service* service,
@@ -726,7 +766,7 @@ koinos::Service::Service() {
                return service->get_pending_transactions(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      koinos_method_names[15],
+      koinos_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< koinos::Service, ::koinos::rpc::mempool::check_pending_account_resources_request, ::koinos::rpc::mempool::check_pending_account_resources_response>(
           [](koinos::Service* service,
@@ -736,7 +776,7 @@ koinos::Service::Service() {
                return service->check_pending_account_resources(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      koinos_method_names[16],
+      koinos_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< koinos::Service, ::koinos::rpc::p2p::get_gossip_status_request, ::koinos::rpc::p2p::get_gossip_status_response>(
           [](koinos::Service* service,
@@ -746,7 +786,7 @@ koinos::Service::Service() {
                return service->get_gossip_status(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      koinos_method_names[17],
+      koinos_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< koinos::Service, ::koinos::rpc::transaction_store::get_transactions_by_id_request, ::koinos::rpc::transaction_store::get_transactions_by_id_response>(
           [](koinos::Service* service,
@@ -845,6 +885,13 @@ koinos::Service::~Service() {
 }
 
 ::grpc::Status koinos::Service::get_resource_limits(::grpc::ServerContext* context, const ::koinos::rpc::chain::get_resource_limits_request* request, ::koinos::rpc::chain::get_resource_limits_response* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status koinos::Service::invoke_system_call(::grpc::ServerContext* context, const ::koinos::rpc::chain::invoke_system_call_request* request, ::koinos::rpc::chain::invoke_system_call_response* response) {
   (void) context;
   (void) request;
   (void) response;

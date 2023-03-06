@@ -36,7 +36,7 @@ const char descriptor_table_protodef_koinos_2frpc_2fservices_2eproto[] PROTOBUF_
   "\032$koinos/rpc/mempool/mempool_rpc.proto\032\034"
   "koinos/rpc/p2p/p2p_rpc.proto\0328koinos/rpc"
   "/transaction_store/transaction_store_rpc"
-  ".proto2\235\021\n\006koinos\022\212\001\n\023get_account_histor"
+  ".proto2\222\022\n\006koinos\022\212\001\n\023get_account_histor"
   "y\0227.koinos.rpc.account_history.get_accou"
   "nt_history_request\0328.koinos.rpc.account_"
   "history.get_account_history_response\"\000\022y"
@@ -73,26 +73,29 @@ const char descriptor_table_protodef_koinos_2frpc_2fservices_2eproto[] PROTOBUF_
   ".get_account_rc_response\"\000\022v\n\023get_resour"
   "ce_limits\022-.koinos.rpc.chain.get_resourc"
   "e_limits_request\032..koinos.rpc.chain.get_"
-  "resource_limits_response\"\000\022\214\001\n\021get_contr"
-  "act_meta\0229.koinos.rpc.contract_meta_stor"
-  "e.get_contract_meta_request\032:.koinos.rpc"
-  ".contract_meta_store.get_contract_meta_r"
-  "esponse\"\000\022\211\001\n\030get_pending_transactions\0224"
-  ".koinos.rpc.mempool.get_pending_transact"
-  "ions_request\0325.koinos.rpc.mempool.get_pe"
-  "nding_transactions_response\"\000\022\236\001\n\037check_"
-  "pending_account_resources\022;.koinos.rpc.m"
-  "empool.check_pending_account_resources_r"
-  "equest\032<.koinos.rpc.mempool.check_pendin"
-  "g_account_resources_response\"\000\022l\n\021get_go"
-  "ssip_status\022).koinos.rpc.p2p.get_gossip_"
-  "status_request\032*.koinos.rpc.p2p.get_goss"
-  "ip_status_response\"\000\022\227\001\n\026get_transaction"
-  "s_by_id\022<.koinos.rpc.transaction_store.g"
-  "et_transactions_by_id_request\032=.koinos.r"
-  "pc.transaction_store.get_transactions_by"
-  "_id_response\"\000B7Z5github.com/koinos/koin"
-  "os-proto-golang/koinos/servicesb\006proto3"
+  "resource_limits_response\"\000\022s\n\022invoke_sys"
+  "tem_call\022,.koinos.rpc.chain.invoke_syste"
+  "m_call_request\032-.koinos.rpc.chain.invoke"
+  "_system_call_response\"\000\022\214\001\n\021get_contract"
+  "_meta\0229.koinos.rpc.contract_meta_store.g"
+  "et_contract_meta_request\032:.koinos.rpc.co"
+  "ntract_meta_store.get_contract_meta_resp"
+  "onse\"\000\022\211\001\n\030get_pending_transactions\0224.ko"
+  "inos.rpc.mempool.get_pending_transaction"
+  "s_request\0325.koinos.rpc.mempool.get_pendi"
+  "ng_transactions_response\"\000\022\236\001\n\037check_pen"
+  "ding_account_resources\022;.koinos.rpc.memp"
+  "ool.check_pending_account_resources_requ"
+  "est\032<.koinos.rpc.mempool.check_pending_a"
+  "ccount_resources_response\"\000\022l\n\021get_gossi"
+  "p_status\022).koinos.rpc.p2p.get_gossip_sta"
+  "tus_request\032*.koinos.rpc.p2p.get_gossip_"
+  "status_response\"\000\022\227\001\n\026get_transactions_b"
+  "y_id\022<.koinos.rpc.transaction_store.get_"
+  "transactions_by_id_request\032=.koinos.rpc."
+  "transaction_store.get_transactions_by_id"
+  "_response\"\000B7Z5github.com/koinos/koinos-"
+  "proto-golang/koinos/servicesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fservices_2eproto_deps[7] = {
   &::descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto,
@@ -105,7 +108,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fservices_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fservices_2eproto = {
-  false, false, 2639, descriptor_table_protodef_koinos_2frpc_2fservices_2eproto, "koinos/rpc/services.proto", 
+  false, false, 2756, descriptor_table_protodef_koinos_2frpc_2fservices_2eproto, "koinos/rpc/services.proto", 
   &descriptor_table_koinos_2frpc_2fservices_2eproto_once, descriptor_table_koinos_2frpc_2fservices_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fservices_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2frpc_2fservices_2eproto, file_level_service_descriptors_koinos_2frpc_2fservices_2eproto,

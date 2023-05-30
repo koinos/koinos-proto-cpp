@@ -574,6 +574,30 @@ struct get_operation_resultDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_operation_resultDefaultTypeInternal _get_operation_result_default_instance_;
+constexpr get_contract_metadata_arguments::get_contract_metadata_arguments(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : contract_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct get_contract_metadata_argumentsDefaultTypeInternal {
+  constexpr get_contract_metadata_argumentsDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~get_contract_metadata_argumentsDefaultTypeInternal() {}
+  union {
+    get_contract_metadata_arguments _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_contract_metadata_argumentsDefaultTypeInternal _get_contract_metadata_arguments_default_instance_;
+constexpr get_contract_metadata_result::get_contract_metadata_result(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : contract_metadata_(nullptr){}
+struct get_contract_metadata_resultDefaultTypeInternal {
+  constexpr get_contract_metadata_resultDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~get_contract_metadata_resultDefaultTypeInternal() {}
+  union {
+    get_contract_metadata_result _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT get_contract_metadata_resultDefaultTypeInternal _get_contract_metadata_result_default_instance_;
 constexpr get_account_rc_arguments::get_account_rc_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : account_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
@@ -1143,7 +1167,7 @@ struct check_authority_resultDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT check_authority_resultDefaultTypeInternal _check_authority_result_default_instance_;
 }  // namespace chain
 }  // namespace koinos
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[93];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[95];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto = nullptr;
 
@@ -1416,6 +1440,18 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2fsystem_5fcall
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::get_operation_result, value_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_contract_metadata_arguments, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_contract_metadata_arguments, contract_id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_contract_metadata_result, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::get_contract_metadata_result, contract_metadata_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::get_account_rc_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1759,51 +1795,53 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 251, -1, sizeof(::koinos::chain::check_system_authority_result)},
   { 257, -1, sizeof(::koinos::chain::get_operation_arguments)},
   { 262, -1, sizeof(::koinos::chain::get_operation_result)},
-  { 268, -1, sizeof(::koinos::chain::get_account_rc_arguments)},
-  { 274, -1, sizeof(::koinos::chain::get_account_rc_result)},
-  { 280, -1, sizeof(::koinos::chain::consume_account_rc_arguments)},
-  { 287, -1, sizeof(::koinos::chain::consume_account_rc_result)},
-  { 293, -1, sizeof(::koinos::chain::get_resource_limits_arguments)},
-  { 298, -1, sizeof(::koinos::chain::get_resource_limits_result)},
-  { 304, -1, sizeof(::koinos::chain::consume_block_resources_arguments)},
-  { 312, -1, sizeof(::koinos::chain::consume_block_resources_result)},
-  { 318, -1, sizeof(::koinos::chain::put_object_arguments)},
-  { 326, -1, sizeof(::koinos::chain::put_object_result)},
-  { 331, -1, sizeof(::koinos::chain::remove_object_arguments)},
-  { 338, -1, sizeof(::koinos::chain::remove_object_result)},
-  { 343, -1, sizeof(::koinos::chain::get_object_arguments)},
-  { 350, -1, sizeof(::koinos::chain::database_object)},
-  { 358, -1, sizeof(::koinos::chain::get_object_result)},
-  { 364, -1, sizeof(::koinos::chain::get_next_object_arguments)},
-  { 371, -1, sizeof(::koinos::chain::get_next_object_result)},
-  { 377, -1, sizeof(::koinos::chain::get_prev_object_arguments)},
-  { 384, -1, sizeof(::koinos::chain::get_prev_object_result)},
-  { 390, -1, sizeof(::koinos::chain::log_arguments)},
-  { 396, -1, sizeof(::koinos::chain::log_result)},
-  { 401, -1, sizeof(::koinos::chain::event_arguments)},
-  { 409, -1, sizeof(::koinos::chain::event_result)},
-  { 414, -1, sizeof(::koinos::chain::hash_arguments)},
-  { 422, -1, sizeof(::koinos::chain::hash_result)},
-  { 428, -1, sizeof(::koinos::chain::recover_public_key_arguments)},
-  { 437, -1, sizeof(::koinos::chain::recover_public_key_result)},
-  { 443, -1, sizeof(::koinos::chain::verify_merkle_root_arguments)},
-  { 450, -1, sizeof(::koinos::chain::verify_merkle_root_result)},
-  { 456, -1, sizeof(::koinos::chain::verify_signature_arguments)},
-  { 466, -1, sizeof(::koinos::chain::verify_signature_result)},
-  { 472, -1, sizeof(::koinos::chain::verify_vrf_proof_arguments)},
-  { 482, -1, sizeof(::koinos::chain::verify_vrf_proof_result)},
-  { 488, -1, sizeof(::koinos::chain::call_arguments)},
-  { 496, -1, sizeof(::koinos::chain::call_result)},
-  { 502, -1, sizeof(::koinos::chain::get_arguments_arguments)},
-  { 507, -1, sizeof(::koinos::chain::get_arguments_result)},
-  { 513, -1, sizeof(::koinos::chain::exit_arguments)},
-  { 520, -1, sizeof(::koinos::chain::exit_result)},
-  { 525, -1, sizeof(::koinos::chain::get_contract_id_arguments)},
-  { 530, -1, sizeof(::koinos::chain::get_contract_id_result)},
-  { 536, -1, sizeof(::koinos::chain::get_caller_arguments)},
-  { 541, -1, sizeof(::koinos::chain::get_caller_result)},
-  { 547, -1, sizeof(::koinos::chain::check_authority_arguments)},
-  { 555, -1, sizeof(::koinos::chain::check_authority_result)},
+  { 268, -1, sizeof(::koinos::chain::get_contract_metadata_arguments)},
+  { 274, -1, sizeof(::koinos::chain::get_contract_metadata_result)},
+  { 280, -1, sizeof(::koinos::chain::get_account_rc_arguments)},
+  { 286, -1, sizeof(::koinos::chain::get_account_rc_result)},
+  { 292, -1, sizeof(::koinos::chain::consume_account_rc_arguments)},
+  { 299, -1, sizeof(::koinos::chain::consume_account_rc_result)},
+  { 305, -1, sizeof(::koinos::chain::get_resource_limits_arguments)},
+  { 310, -1, sizeof(::koinos::chain::get_resource_limits_result)},
+  { 316, -1, sizeof(::koinos::chain::consume_block_resources_arguments)},
+  { 324, -1, sizeof(::koinos::chain::consume_block_resources_result)},
+  { 330, -1, sizeof(::koinos::chain::put_object_arguments)},
+  { 338, -1, sizeof(::koinos::chain::put_object_result)},
+  { 343, -1, sizeof(::koinos::chain::remove_object_arguments)},
+  { 350, -1, sizeof(::koinos::chain::remove_object_result)},
+  { 355, -1, sizeof(::koinos::chain::get_object_arguments)},
+  { 362, -1, sizeof(::koinos::chain::database_object)},
+  { 370, -1, sizeof(::koinos::chain::get_object_result)},
+  { 376, -1, sizeof(::koinos::chain::get_next_object_arguments)},
+  { 383, -1, sizeof(::koinos::chain::get_next_object_result)},
+  { 389, -1, sizeof(::koinos::chain::get_prev_object_arguments)},
+  { 396, -1, sizeof(::koinos::chain::get_prev_object_result)},
+  { 402, -1, sizeof(::koinos::chain::log_arguments)},
+  { 408, -1, sizeof(::koinos::chain::log_result)},
+  { 413, -1, sizeof(::koinos::chain::event_arguments)},
+  { 421, -1, sizeof(::koinos::chain::event_result)},
+  { 426, -1, sizeof(::koinos::chain::hash_arguments)},
+  { 434, -1, sizeof(::koinos::chain::hash_result)},
+  { 440, -1, sizeof(::koinos::chain::recover_public_key_arguments)},
+  { 449, -1, sizeof(::koinos::chain::recover_public_key_result)},
+  { 455, -1, sizeof(::koinos::chain::verify_merkle_root_arguments)},
+  { 462, -1, sizeof(::koinos::chain::verify_merkle_root_result)},
+  { 468, -1, sizeof(::koinos::chain::verify_signature_arguments)},
+  { 478, -1, sizeof(::koinos::chain::verify_signature_result)},
+  { 484, -1, sizeof(::koinos::chain::verify_vrf_proof_arguments)},
+  { 494, -1, sizeof(::koinos::chain::verify_vrf_proof_result)},
+  { 500, -1, sizeof(::koinos::chain::call_arguments)},
+  { 508, -1, sizeof(::koinos::chain::call_result)},
+  { 514, -1, sizeof(::koinos::chain::get_arguments_arguments)},
+  { 519, -1, sizeof(::koinos::chain::get_arguments_result)},
+  { 525, -1, sizeof(::koinos::chain::exit_arguments)},
+  { 532, -1, sizeof(::koinos::chain::exit_result)},
+  { 537, -1, sizeof(::koinos::chain::get_contract_id_arguments)},
+  { 542, -1, sizeof(::koinos::chain::get_contract_id_result)},
+  { 548, -1, sizeof(::koinos::chain::get_caller_arguments)},
+  { 553, -1, sizeof(::koinos::chain::get_caller_result)},
+  { 559, -1, sizeof(::koinos::chain::check_authority_arguments)},
+  { 567, -1, sizeof(::koinos::chain::check_authority_result)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1855,6 +1893,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_check_system_authority_result_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_get_operation_arguments_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_get_operation_result_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_get_contract_metadata_arguments_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_get_contract_metadata_result_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_get_account_rc_arguments_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_get_account_rc_result_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::chain::_consume_account_rc_arguments_default_instance_),
@@ -1967,78 +2007,82 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] P
   "ments\".\n\035check_system_authority_result\022\r"
   "\n\005value\030\001 \001(\010\"\031\n\027get_operation_arguments"
   "\"A\n\024get_operation_result\022)\n\005value\030\001 \001(\0132"
-  "\032.koinos.protocol.operation\"1\n\030get_accou"
-  "nt_rc_arguments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\"*"
-  "\n\025get_account_rc_result\022\021\n\005value\030\001 \001(\004B\002"
-  "0\001\"H\n\034consume_account_rc_arguments\022\025\n\007ac"
-  "count\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"*\n\031"
-  "consume_account_rc_result\022\r\n\005value\030\001 \001(\010"
-  "\"\037\n\035get_resource_limits_arguments\"N\n\032get"
-  "_resource_limits_result\0220\n\005value\030\001 \001(\0132!"
-  ".koinos.chain.resource_limit_data\"\226\001\n!co"
-  "nsume_block_resources_arguments\022!\n\025disk_"
-  "storage_consumed\030\001 \001(\004B\0020\001\022&\n\032network_ba"
-  "ndwidth_consumed\030\002 \001(\004B\0020\001\022&\n\032compute_ba"
-  "ndwidth_consumed\030\003 \001(\004B\0020\001\"/\n\036consume_bl"
-  "ock_resources_result\022\r\n\005value\030\001 \001(\010\"[\n\024p"
-  "ut_object_arguments\022)\n\005space\030\001 \001(\0132\032.koi"
-  "nos.chain.object_space\022\013\n\003key\030\002 \001(\014\022\013\n\003o"
-  "bj\030\003 \001(\014\"\023\n\021put_object_result\"Q\n\027remove_"
+  "\032.koinos.protocol.operation\"<\n\037get_contr"
+  "act_metadata_arguments\022\031\n\013contract_id\030\001 "
+  "\001(\014B\004\200\265\030\005\"a\n\034get_contract_metadata_resul"
+  "t\022A\n\021contract_metadata\030\001 \001(\0132&.koinos.ch"
+  "ain.contract_metadata_object\"1\n\030get_acco"
+  "unt_rc_arguments\022\025\n\007account\030\001 \001(\014B\004\200\265\030\006\""
+  "*\n\025get_account_rc_result\022\021\n\005value\030\001 \001(\004B"
+  "\0020\001\"H\n\034consume_account_rc_arguments\022\025\n\007a"
+  "ccount\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"*\n"
+  "\031consume_account_rc_result\022\r\n\005value\030\001 \001("
+  "\010\"\037\n\035get_resource_limits_arguments\"N\n\032ge"
+  "t_resource_limits_result\0220\n\005value\030\001 \001(\0132"
+  "!.koinos.chain.resource_limit_data\"\226\001\n!c"
+  "onsume_block_resources_arguments\022!\n\025disk"
+  "_storage_consumed\030\001 \001(\004B\0020\001\022&\n\032network_b"
+  "andwidth_consumed\030\002 \001(\004B\0020\001\022&\n\032compute_b"
+  "andwidth_consumed\030\003 \001(\004B\0020\001\"/\n\036consume_b"
+  "lock_resources_result\022\r\n\005value\030\001 \001(\010\"[\n\024"
+  "put_object_arguments\022)\n\005space\030\001 \001(\0132\032.ko"
+  "inos.chain.object_space\022\013\n\003key\030\002 \001(\014\022\013\n\003"
+  "obj\030\003 \001(\014\"\023\n\021put_object_result\"Q\n\027remove"
+  "_object_arguments\022)\n\005space\030\001 \001(\0132\032.koino"
+  "s.chain.object_space\022\013\n\003key\030\002 \001(\014\"\026\n\024rem"
+  "ove_object_result\"N\n\024get_object_argument"
+  "s\022)\n\005space\030\001 \001(\0132\032.koinos.chain.object_s"
+  "pace\022\013\n\003key\030\002 \001(\014\"=\n\017database_object\022\016\n\006"
+  "exists\030\001 \001(\010\022\r\n\005value\030\002 \001(\014\022\013\n\003key\030\003 \001(\014"
+  "\"A\n\021get_object_result\022,\n\005value\030\001 \001(\0132\035.k"
+  "oinos.chain.database_object\"S\n\031get_next_"
   "object_arguments\022)\n\005space\030\001 \001(\0132\032.koinos"
-  ".chain.object_space\022\013\n\003key\030\002 \001(\014\"\026\n\024remo"
-  "ve_object_result\"N\n\024get_object_arguments"
-  "\022)\n\005space\030\001 \001(\0132\032.koinos.chain.object_sp"
-  "ace\022\013\n\003key\030\002 \001(\014\"=\n\017database_object\022\016\n\006e"
-  "xists\030\001 \001(\010\022\r\n\005value\030\002 \001(\014\022\013\n\003key\030\003 \001(\014\""
-  "A\n\021get_object_result\022,\n\005value\030\001 \001(\0132\035.ko"
-  "inos.chain.database_object\"S\n\031get_next_o"
-  "bject_arguments\022)\n\005space\030\001 \001(\0132\032.koinos."
-  "chain.object_space\022\013\n\003key\030\002 \001(\014\"F\n\026get_n"
-  "ext_object_result\022,\n\005value\030\001 \001(\0132\035.koino"
-  "s.chain.database_object\"S\n\031get_prev_obje"
-  "ct_arguments\022)\n\005space\030\001 \001(\0132\032.koinos.cha"
-  "in.object_space\022\013\n\003key\030\002 \001(\014\"F\n\026get_prev"
-  "_object_result\022,\n\005value\030\001 \001(\0132\035.koinos.c"
-  "hain.database_object\" \n\rlog_arguments\022\017\n"
-  "\007message\030\001 \001(\t\"\014\n\nlog_result\"E\n\017event_ar"
-  "guments\022\014\n\004name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\022\026\n\010i"
-  "mpacted\030\003 \003(\014B\004\200\265\030\006\"\016\n\014event_result\"A\n\016h"
-  "ash_arguments\022\020\n\004code\030\001 \001(\004B\0020\001\022\013\n\003obj\030\002"
-  " \001(\014\022\020\n\004size\030\003 \001(\004B\0020\001\"\034\n\013hash_result\022\r\n"
-  "\005value\030\001 \001(\014\"v\n\034recover_public_key_argum"
-  "ents\022\037\n\004type\030\001 \001(\0162\021.koinos.chain.dsa\022\021\n"
-  "\tsignature\030\002 \001(\014\022\016\n\006digest\030\003 \001(\014\022\022\n\ncomp"
-  "ressed\030\004 \001(\010\"0\n\031recover_public_key_resul"
-  "t\022\023\n\005value\030\001 \001(\014B\004\200\265\030\000\"<\n\034verify_merkle_"
-  "root_arguments\022\014\n\004root\030\001 \001(\014\022\016\n\006hashes\030\002"
-  " \003(\014\"*\n\031verify_merkle_root_result\022\r\n\005val"
-  "ue\030\001 \001(\010\"\232\001\n\032verify_signature_arguments\022"
+  ".chain.object_space\022\013\n\003key\030\002 \001(\014\"F\n\026get_"
+  "next_object_result\022,\n\005value\030\001 \001(\0132\035.koin"
+  "os.chain.database_object\"S\n\031get_prev_obj"
+  "ect_arguments\022)\n\005space\030\001 \001(\0132\032.koinos.ch"
+  "ain.object_space\022\013\n\003key\030\002 \001(\014\"F\n\026get_pre"
+  "v_object_result\022,\n\005value\030\001 \001(\0132\035.koinos."
+  "chain.database_object\" \n\rlog_arguments\022\017"
+  "\n\007message\030\001 \001(\t\"\014\n\nlog_result\"E\n\017event_a"
+  "rguments\022\014\n\004name\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\022\026\n\010"
+  "impacted\030\003 \003(\014B\004\200\265\030\006\"\016\n\014event_result\"A\n\016"
+  "hash_arguments\022\020\n\004code\030\001 \001(\004B\0020\001\022\013\n\003obj\030"
+  "\002 \001(\014\022\020\n\004size\030\003 \001(\004B\0020\001\"\034\n\013hash_result\022\r"
+  "\n\005value\030\001 \001(\014\"v\n\034recover_public_key_argu"
+  "ments\022\037\n\004type\030\001 \001(\0162\021.koinos.chain.dsa\022\021"
+  "\n\tsignature\030\002 \001(\014\022\016\n\006digest\030\003 \001(\014\022\022\n\ncom"
+  "pressed\030\004 \001(\010\"0\n\031recover_public_key_resu"
+  "lt\022\023\n\005value\030\001 \001(\014B\004\200\265\030\000\"<\n\034verify_merkle"
+  "_root_arguments\022\014\n\004root\030\001 \001(\014\022\016\n\006hashes\030"
+  "\002 \003(\014\"*\n\031verify_merkle_root_result\022\r\n\005va"
+  "lue\030\001 \001(\010\"\232\001\n\032verify_signature_arguments"
+  "\022\037\n\004type\030\001 \001(\0162\021.koinos.chain.dsa\022\030\n\npub"
+  "lic_key\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsignature\030\003 \001(\014B\004"
+  "\200\265\030\000\022\024\n\006digest\030\004 \001(\014B\004\200\265\030\000\022\022\n\ncompressed"
+  "\030\005 \001(\010\"(\n\027verify_signature_result\022\r\n\005val"
+  "ue\030\001 \001(\010\"\227\001\n\032verify_vrf_proof_arguments\022"
   "\037\n\004type\030\001 \001(\0162\021.koinos.chain.dsa\022\030\n\npubl"
-  "ic_key\030\002 \001(\014B\004\200\265\030\000\022\027\n\tsignature\030\003 \001(\014B\004\200"
-  "\265\030\000\022\024\n\006digest\030\004 \001(\014B\004\200\265\030\000\022\022\n\ncompressed\030"
-  "\005 \001(\010\"(\n\027verify_signature_result\022\r\n\005valu"
-  "e\030\001 \001(\010\"\227\001\n\032verify_vrf_proof_arguments\022\037"
-  "\n\004type\030\001 \001(\0162\021.koinos.chain.dsa\022\030\n\npubli"
-  "c_key\030\002 \001(\014B\004\200\265\030\000\022\023\n\005proof\030\003 \001(\014B\004\200\265\030\000\022\022"
-  "\n\004hash\030\004 \001(\014B\004\200\265\030\000\022\025\n\007message\030\005 \001(\014B\004\200\265\030"
-  "\000\"(\n\027verify_vrf_proof_result\022\r\n\005value\030\001 "
-  "\001(\010\"N\n\016call_arguments\022\031\n\013contract_id\030\001 \001"
-  "(\014B\004\200\265\030\005\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003 "
-  "\001(\014\"\034\n\013call_result\022\r\n\005value\030\001 \001(\014\"\031\n\027get"
-  "_arguments_arguments\"B\n\024get_arguments_re"
-  "sult\022*\n\005value\030\001 \001(\0132\033.koinos.chain.argum"
-  "ent_data\"A\n\016exit_arguments\022\014\n\004code\030\001 \001(\005"
-  "\022!\n\003res\030\002 \001(\0132\024.koinos.chain.result\"\r\n\013e"
-  "xit_result\"\033\n\031get_contract_id_arguments\""
-  "-\n\026get_contract_id_result\022\023\n\005value\030\001 \001(\014"
-  "B\004\200\265\030\005\"\026\n\024get_caller_arguments\"=\n\021get_ca"
-  "ller_result\022(\n\005value\030\001 \001(\0132\031.koinos.chai"
-  "n.caller_data\"p\n\031check_authority_argumen"
-  "ts\022.\n\004type\030\001 \001(\0162 .koinos.chain.authoriz"
-  "ation_type\022\025\n\007account\030\002 \001(\014B\004\200\265\030\006\022\014\n\004dat"
-  "a\030\003 \001(\014\"\'\n\026check_authority_result\022\r\n\005val"
-  "ue\030\001 \001(\010B4Z2github.com/koinos/koinos-pro"
-  "to-golang/koinos/chainb\006proto3"
+  "ic_key\030\002 \001(\014B\004\200\265\030\000\022\023\n\005proof\030\003 \001(\014B\004\200\265\030\000\022"
+  "\022\n\004hash\030\004 \001(\014B\004\200\265\030\000\022\025\n\007message\030\005 \001(\014B\004\200\265"
+  "\030\000\"(\n\027verify_vrf_proof_result\022\r\n\005value\030\001"
+  " \001(\010\"N\n\016call_arguments\022\031\n\013contract_id\030\001 "
+  "\001(\014B\004\200\265\030\005\022\023\n\013entry_point\030\002 \001(\r\022\014\n\004args\030\003"
+  " \001(\014\"\034\n\013call_result\022\r\n\005value\030\001 \001(\014\"\031\n\027ge"
+  "t_arguments_arguments\"B\n\024get_arguments_r"
+  "esult\022*\n\005value\030\001 \001(\0132\033.koinos.chain.argu"
+  "ment_data\"A\n\016exit_arguments\022\014\n\004code\030\001 \001("
+  "\005\022!\n\003res\030\002 \001(\0132\024.koinos.chain.result\"\r\n\013"
+  "exit_result\"\033\n\031get_contract_id_arguments"
+  "\"-\n\026get_contract_id_result\022\023\n\005value\030\001 \001("
+  "\014B\004\200\265\030\005\"\026\n\024get_caller_arguments\"=\n\021get_c"
+  "aller_result\022(\n\005value\030\001 \001(\0132\031.koinos.cha"
+  "in.caller_data\"p\n\031check_authority_argume"
+  "nts\022.\n\004type\030\001 \001(\0162 .koinos.chain.authori"
+  "zation_type\022\025\n\007account\030\002 \001(\014B\004\200\265\030\006\022\014\n\004da"
+  "ta\030\003 \001(\014\"\'\n\026check_authority_result\022\r\n\005va"
+  "lue\030\001 \001(\010B4Z2github.com/koinos/koinos-pr"
+  "oto-golang/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fchain_2fauthority_2eproto,
@@ -2049,8 +2093,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto = {
-  false, false, 5430, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
-  &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 5, 93,
+  false, false, 5591, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
+  &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 5, 95,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto,
 };
@@ -10672,6 +10716,407 @@ void get_operation_result::InternalSwap(get_operation_result* other) {
 
 // ===================================================================
 
+class get_contract_metadata_arguments::_Internal {
+ public:
+};
+
+get_contract_metadata_arguments::get_contract_metadata_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.chain.get_contract_metadata_arguments)
+}
+get_contract_metadata_arguments::get_contract_metadata_arguments(const get_contract_metadata_arguments& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_contract_id().empty()) {
+    contract_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_contract_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:koinos.chain.get_contract_metadata_arguments)
+}
+
+inline void get_contract_metadata_arguments::SharedCtor() {
+contract_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+get_contract_metadata_arguments::~get_contract_metadata_arguments() {
+  // @@protoc_insertion_point(destructor:koinos.chain.get_contract_metadata_arguments)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void get_contract_metadata_arguments::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  contract_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void get_contract_metadata_arguments::ArenaDtor(void* object) {
+  get_contract_metadata_arguments* _this = reinterpret_cast< get_contract_metadata_arguments* >(object);
+  (void)_this;
+}
+void get_contract_metadata_arguments::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void get_contract_metadata_arguments::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void get_contract_metadata_arguments::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.chain.get_contract_metadata_arguments)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  contract_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* get_contract_metadata_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_contract_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* get_contract_metadata_arguments::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.chain.get_contract_metadata_arguments)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
+  if (!this->_internal_contract_id().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_contract_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.chain.get_contract_metadata_arguments)
+  return target;
+}
+
+size_t get_contract_metadata_arguments::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.chain.get_contract_metadata_arguments)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes contract_id = 1 [(.koinos.btype) = CONTRACT_ID];
+  if (!this->_internal_contract_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_contract_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData get_contract_metadata_arguments::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    get_contract_metadata_arguments::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*get_contract_metadata_arguments::GetClassData() const { return &_class_data_; }
+
+void get_contract_metadata_arguments::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<get_contract_metadata_arguments *>(to)->MergeFrom(
+      static_cast<const get_contract_metadata_arguments &>(from));
+}
+
+
+void get_contract_metadata_arguments::MergeFrom(const get_contract_metadata_arguments& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.chain.get_contract_metadata_arguments)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_contract_id().empty()) {
+    _internal_set_contract_id(from._internal_contract_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void get_contract_metadata_arguments::CopyFrom(const get_contract_metadata_arguments& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.chain.get_contract_metadata_arguments)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool get_contract_metadata_arguments::IsInitialized() const {
+  return true;
+}
+
+void get_contract_metadata_arguments::InternalSwap(get_contract_metadata_arguments* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &contract_id_, GetArenaForAllocation(),
+      &other->contract_id_, other->GetArenaForAllocation()
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata get_contract_metadata_arguments::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[48]);
+}
+
+// ===================================================================
+
+class get_contract_metadata_result::_Internal {
+ public:
+  static const ::koinos::chain::contract_metadata_object& contract_metadata(const get_contract_metadata_result* msg);
+};
+
+const ::koinos::chain::contract_metadata_object&
+get_contract_metadata_result::_Internal::contract_metadata(const get_contract_metadata_result* msg) {
+  return *msg->contract_metadata_;
+}
+void get_contract_metadata_result::clear_contract_metadata() {
+  if (GetArenaForAllocation() == nullptr && contract_metadata_ != nullptr) {
+    delete contract_metadata_;
+  }
+  contract_metadata_ = nullptr;
+}
+get_contract_metadata_result::get_contract_metadata_result(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.chain.get_contract_metadata_result)
+}
+get_contract_metadata_result::get_contract_metadata_result(const get_contract_metadata_result& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_contract_metadata()) {
+    contract_metadata_ = new ::koinos::chain::contract_metadata_object(*from.contract_metadata_);
+  } else {
+    contract_metadata_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:koinos.chain.get_contract_metadata_result)
+}
+
+inline void get_contract_metadata_result::SharedCtor() {
+contract_metadata_ = nullptr;
+}
+
+get_contract_metadata_result::~get_contract_metadata_result() {
+  // @@protoc_insertion_point(destructor:koinos.chain.get_contract_metadata_result)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void get_contract_metadata_result::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete contract_metadata_;
+}
+
+void get_contract_metadata_result::ArenaDtor(void* object) {
+  get_contract_metadata_result* _this = reinterpret_cast< get_contract_metadata_result* >(object);
+  (void)_this;
+}
+void get_contract_metadata_result::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void get_contract_metadata_result::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void get_contract_metadata_result::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.chain.get_contract_metadata_result)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && contract_metadata_ != nullptr) {
+    delete contract_metadata_;
+  }
+  contract_metadata_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* get_contract_metadata_result::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .koinos.chain.contract_metadata_object contract_metadata = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_contract_metadata(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* get_contract_metadata_result::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.chain.get_contract_metadata_result)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .koinos.chain.contract_metadata_object contract_metadata = 1;
+  if (this->_internal_has_contract_metadata()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::contract_metadata(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.chain.get_contract_metadata_result)
+  return target;
+}
+
+size_t get_contract_metadata_result::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.chain.get_contract_metadata_result)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .koinos.chain.contract_metadata_object contract_metadata = 1;
+  if (this->_internal_has_contract_metadata()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *contract_metadata_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData get_contract_metadata_result::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    get_contract_metadata_result::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*get_contract_metadata_result::GetClassData() const { return &_class_data_; }
+
+void get_contract_metadata_result::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<get_contract_metadata_result *>(to)->MergeFrom(
+      static_cast<const get_contract_metadata_result &>(from));
+}
+
+
+void get_contract_metadata_result::MergeFrom(const get_contract_metadata_result& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.chain.get_contract_metadata_result)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_contract_metadata()) {
+    _internal_mutable_contract_metadata()->::koinos::chain::contract_metadata_object::MergeFrom(from._internal_contract_metadata());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void get_contract_metadata_result::CopyFrom(const get_contract_metadata_result& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.chain.get_contract_metadata_result)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool get_contract_metadata_result::IsInitialized() const {
+  return true;
+}
+
+void get_contract_metadata_result::InternalSwap(get_contract_metadata_result* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(contract_metadata_, other->contract_metadata_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata get_contract_metadata_result::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[49]);
+}
+
+// ===================================================================
+
 class get_account_rc_arguments::_Internal {
  public:
 };
@@ -10862,7 +11307,7 @@ void get_account_rc_arguments::InternalSwap(get_account_rc_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_account_rc_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[48]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[50]);
 }
 
 // ===================================================================
@@ -11047,7 +11492,7 @@ void get_account_rc_result::InternalSwap(get_account_rc_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_account_rc_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[49]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[51]);
 }
 
 // ===================================================================
@@ -11269,7 +11714,7 @@ void consume_account_rc_arguments::InternalSwap(consume_account_rc_arguments* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata consume_account_rc_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[50]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[52]);
 }
 
 // ===================================================================
@@ -11452,7 +11897,7 @@ void consume_account_rc_result::InternalSwap(consume_account_rc_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata consume_account_rc_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[51]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[53]);
 }
 
 // ===================================================================
@@ -11605,7 +12050,7 @@ void get_resource_limits_arguments::InternalSwap(get_resource_limits_arguments* 
 ::PROTOBUF_NAMESPACE_ID::Metadata get_resource_limits_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[52]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[54]);
 }
 
 // ===================================================================
@@ -11811,7 +12256,7 @@ void get_resource_limits_result::InternalSwap(get_resource_limits_result* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata get_resource_limits_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[53]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[55]);
 }
 
 // ===================================================================
@@ -12054,7 +12499,7 @@ void consume_block_resources_arguments::InternalSwap(consume_block_resources_arg
 ::PROTOBUF_NAMESPACE_ID::Metadata consume_block_resources_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[54]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[56]);
 }
 
 // ===================================================================
@@ -12237,7 +12682,7 @@ void consume_block_resources_result::InternalSwap(consume_block_resources_result
 ::PROTOBUF_NAMESPACE_ID::Metadata consume_block_resources_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[55]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[57]);
 }
 
 // ===================================================================
@@ -12517,7 +12962,7 @@ void put_object_arguments::InternalSwap(put_object_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata put_object_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[56]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[58]);
 }
 
 // ===================================================================
@@ -12670,7 +13115,7 @@ void put_object_result::InternalSwap(put_object_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata put_object_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[57]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[59]);
 }
 
 // ===================================================================
@@ -12913,7 +13358,7 @@ void remove_object_arguments::InternalSwap(remove_object_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata remove_object_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[58]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[60]);
 }
 
 // ===================================================================
@@ -13066,7 +13511,7 @@ void remove_object_result::InternalSwap(remove_object_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata remove_object_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[59]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[61]);
 }
 
 // ===================================================================
@@ -13309,7 +13754,7 @@ void get_object_arguments::InternalSwap(get_object_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_object_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[60]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[62]);
 }
 
 // ===================================================================
@@ -13566,7 +14011,7 @@ void database_object::InternalSwap(database_object* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata database_object::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[61]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[63]);
 }
 
 // ===================================================================
@@ -13766,7 +14211,7 @@ void get_object_result::InternalSwap(get_object_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_object_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[62]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[64]);
 }
 
 // ===================================================================
@@ -14009,7 +14454,7 @@ void get_next_object_arguments::InternalSwap(get_next_object_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_next_object_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[63]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[65]);
 }
 
 // ===================================================================
@@ -14209,7 +14654,7 @@ void get_next_object_result::InternalSwap(get_next_object_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_next_object_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[64]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[66]);
 }
 
 // ===================================================================
@@ -14452,7 +14897,7 @@ void get_prev_object_arguments::InternalSwap(get_prev_object_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_prev_object_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[65]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[67]);
 }
 
 // ===================================================================
@@ -14652,7 +15097,7 @@ void get_prev_object_result::InternalSwap(get_prev_object_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_prev_object_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[66]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[68]);
 }
 
 // ===================================================================
@@ -14852,7 +15297,7 @@ void log_arguments::InternalSwap(log_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata log_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[67]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[69]);
 }
 
 // ===================================================================
@@ -15005,7 +15450,7 @@ void log_result::InternalSwap(log_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata log_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[68]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[70]);
 }
 
 // ===================================================================
@@ -15274,7 +15719,7 @@ void event_arguments::InternalSwap(event_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata event_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[69]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[71]);
 }
 
 // ===================================================================
@@ -15427,7 +15872,7 @@ void event_result::InternalSwap(event_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata event_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[70]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[72]);
 }
 
 // ===================================================================
@@ -15684,7 +16129,7 @@ void hash_arguments::InternalSwap(hash_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata hash_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[71]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[73]);
 }
 
 // ===================================================================
@@ -15879,7 +16324,7 @@ void hash_result::InternalSwap(hash_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata hash_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[72]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[74]);
 }
 
 // ===================================================================
@@ -16172,7 +16617,7 @@ void recover_public_key_arguments::InternalSwap(recover_public_key_arguments* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata recover_public_key_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[73]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[75]);
 }
 
 // ===================================================================
@@ -16367,7 +16812,7 @@ void recover_public_key_result::InternalSwap(recover_public_key_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata recover_public_key_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[74]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[76]);
 }
 
 // ===================================================================
@@ -16594,7 +17039,7 @@ void verify_merkle_root_arguments::InternalSwap(verify_merkle_root_arguments* ot
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_merkle_root_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[75]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[77]);
 }
 
 // ===================================================================
@@ -16777,7 +17222,7 @@ void verify_merkle_root_result::InternalSwap(verify_merkle_root_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_merkle_root_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[76]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[78]);
 }
 
 // ===================================================================
@@ -17107,7 +17552,7 @@ void verify_signature_arguments::InternalSwap(verify_signature_arguments* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_signature_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[77]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[79]);
 }
 
 // ===================================================================
@@ -17290,7 +17735,7 @@ void verify_signature_result::InternalSwap(verify_signature_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_signature_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[78]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[80]);
 }
 
 // ===================================================================
@@ -17624,7 +18069,7 @@ void verify_vrf_proof_arguments::InternalSwap(verify_vrf_proof_arguments* other)
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_vrf_proof_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[79]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[81]);
 }
 
 // ===================================================================
@@ -17807,7 +18252,7 @@ void verify_vrf_proof_result::InternalSwap(verify_vrf_proof_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata verify_vrf_proof_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[80]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[82]);
 }
 
 // ===================================================================
@@ -18066,7 +18511,7 @@ void call_arguments::InternalSwap(call_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata call_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[81]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[83]);
 }
 
 // ===================================================================
@@ -18261,7 +18706,7 @@ void call_result::InternalSwap(call_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata call_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[82]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[84]);
 }
 
 // ===================================================================
@@ -18414,7 +18859,7 @@ void get_arguments_arguments::InternalSwap(get_arguments_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_arguments_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[83]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[85]);
 }
 
 // ===================================================================
@@ -18620,7 +19065,7 @@ void get_arguments_result::InternalSwap(get_arguments_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_arguments_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[84]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[86]);
 }
 
 // ===================================================================
@@ -18859,7 +19304,7 @@ void exit_arguments::InternalSwap(exit_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata exit_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[85]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[87]);
 }
 
 // ===================================================================
@@ -19012,7 +19457,7 @@ void exit_result::InternalSwap(exit_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata exit_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[86]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[88]);
 }
 
 // ===================================================================
@@ -19165,7 +19610,7 @@ void get_contract_id_arguments::InternalSwap(get_contract_id_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_contract_id_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[87]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[89]);
 }
 
 // ===================================================================
@@ -19360,7 +19805,7 @@ void get_contract_id_result::InternalSwap(get_contract_id_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_contract_id_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[88]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[90]);
 }
 
 // ===================================================================
@@ -19513,7 +19958,7 @@ void get_caller_arguments::InternalSwap(get_caller_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_caller_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[89]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[91]);
 }
 
 // ===================================================================
@@ -19719,7 +20164,7 @@ void get_caller_result::InternalSwap(get_caller_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata get_caller_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[90]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[92]);
 }
 
 // ===================================================================
@@ -19979,7 +20424,7 @@ void check_authority_arguments::InternalSwap(check_authority_arguments* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata check_authority_arguments::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[91]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[93]);
 }
 
 // ===================================================================
@@ -20162,7 +20607,7 @@ void check_authority_result::InternalSwap(check_authority_result* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata check_authority_result::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_getter, &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once,
-      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[92]);
+      file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto[94]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -20312,6 +20757,12 @@ template<> PROTOBUF_NOINLINE ::koinos::chain::get_operation_arguments* Arena::Cr
 }
 template<> PROTOBUF_NOINLINE ::koinos::chain::get_operation_result* Arena::CreateMaybeMessage< ::koinos::chain::get_operation_result >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::chain::get_operation_result >(arena);
+}
+template<> PROTOBUF_NOINLINE ::koinos::chain::get_contract_metadata_arguments* Arena::CreateMaybeMessage< ::koinos::chain::get_contract_metadata_arguments >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::chain::get_contract_metadata_arguments >(arena);
+}
+template<> PROTOBUF_NOINLINE ::koinos::chain::get_contract_metadata_result* Arena::CreateMaybeMessage< ::koinos::chain::get_contract_metadata_result >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::chain::get_contract_metadata_result >(arena);
 }
 template<> PROTOBUF_NOINLINE ::koinos::chain::get_account_rc_arguments* Arena::CreateMaybeMessage< ::koinos::chain::get_account_rc_arguments >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::chain::get_account_rc_arguments >(arena);

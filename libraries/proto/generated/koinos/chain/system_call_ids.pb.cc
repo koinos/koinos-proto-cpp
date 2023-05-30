@@ -28,7 +28,7 @@ static constexpr ::PROTOBUF_NAMESPACE_ID::Message* const* file_default_instances
 
 const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\"koinos/chain/system_call_ids.proto\022\014ko"
-  "inos.chain*\326\010\n\016system_call_id\022\007\n\003nop\020\000\022\021"
+  "inos.chain*\361\010\n\016system_call_id\022\007\n\003nop\020\000\022\021"
   "\n\rget_head_info\020\001\022\017\n\013apply_block\020\002\022\025\n\021ap"
   "ply_transaction\020\003\022#\n\037apply_upload_contra"
   "ct_operation\020\004\022!\n\035apply_call_contract_op"
@@ -44,24 +44,25 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eprot
   "j\022\025\n\021get_account_nonce\020k\022\030\n\024verify_accou"
   "nt_nonce\020l\022\025\n\021set_account_nonce\020m\022\032\n\026che"
   "ck_system_authority\020n\022\021\n\rget_operation\020o"
-  "\022\023\n\016get_account_rc\020\311\001\022\027\n\022consume_account"
-  "_rc\020\312\001\022\030\n\023get_resource_limits\020\313\001\022\034\n\027cons"
-  "ume_block_resources\020\314\001\022\017\n\nput_object\020\255\002\022"
-  "\022\n\rremove_object\020\256\002\022\017\n\nget_object\020\257\002\022\024\n\017"
-  "get_next_object\020\260\002\022\024\n\017get_prev_object\020\261\002"
-  "\022\010\n\003log\020\221\003\022\n\n\005event\020\222\003\022\t\n\004hash\020\365\003\022\027\n\022rec"
-  "over_public_key\020\366\003\022\027\n\022verify_merkle_root"
-  "\020\367\003\022\025\n\020verify_signature\020\370\003\022\025\n\020verify_vrf"
-  "_proof\020\371\003\022\t\n\004call\020\331\004\022\t\n\004exit\020\332\004\022\022\n\rget_a"
-  "rguments\020\333\004\022\024\n\017get_contract_id\020\334\004\022\017\n\nget"
-  "_caller\020\335\004\022\024\n\017check_authority\020\336\004\022\026\n\021get_"
-  "contract_name\020\220N\022\031\n\024get_contract_address"
-  "\020\221NB4Z2github.com/koinos/koinos-proto-go"
-  "lang/koinos/chainb\006proto3"
+  "\022\031\n\025get_contract_metadata\020p\022\023\n\016get_accou"
+  "nt_rc\020\311\001\022\027\n\022consume_account_rc\020\312\001\022\030\n\023get"
+  "_resource_limits\020\313\001\022\034\n\027consume_block_res"
+  "ources\020\314\001\022\017\n\nput_object\020\255\002\022\022\n\rremove_obj"
+  "ect\020\256\002\022\017\n\nget_object\020\257\002\022\024\n\017get_next_obje"
+  "ct\020\260\002\022\024\n\017get_prev_object\020\261\002\022\010\n\003log\020\221\003\022\n\n"
+  "\005event\020\222\003\022\t\n\004hash\020\365\003\022\027\n\022recover_public_k"
+  "ey\020\366\003\022\027\n\022verify_merkle_root\020\367\003\022\025\n\020verify"
+  "_signature\020\370\003\022\025\n\020verify_vrf_proof\020\371\003\022\t\n\004"
+  "call\020\331\004\022\t\n\004exit\020\332\004\022\022\n\rget_arguments\020\333\004\022\024"
+  "\n\017get_contract_id\020\334\004\022\017\n\nget_caller\020\335\004\022\024\n"
+  "\017check_authority\020\336\004\022\026\n\021get_contract_name"
+  "\020\220N\022\031\n\024get_contract_address\020\221NB4Z2github"
+  ".com/koinos/koinos-proto-golang/koinos/c"
+  "hainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 1225, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
+  false, false, 1252, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto,
@@ -104,6 +105,7 @@ bool system_call_id_IsValid(int value) {
     case 109:
     case 110:
     case 111:
+    case 112:
     case 201:
     case 202:
     case 203:

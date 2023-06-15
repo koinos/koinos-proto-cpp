@@ -7284,25 +7284,25 @@ class get_contract_metadata_result final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kContractMetadataFieldNumber = 1,
+    kValueFieldNumber = 1,
   };
-  // .koinos.chain.contract_metadata_object contract_metadata = 1;
-  bool has_contract_metadata() const;
+  // .koinos.chain.contract_metadata_object value = 1;
+  bool has_value() const;
   private:
-  bool _internal_has_contract_metadata() const;
+  bool _internal_has_value() const;
   public:
-  void clear_contract_metadata();
-  const ::koinos::chain::contract_metadata_object& contract_metadata() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::chain::contract_metadata_object* release_contract_metadata();
-  ::koinos::chain::contract_metadata_object* mutable_contract_metadata();
-  void set_allocated_contract_metadata(::koinos::chain::contract_metadata_object* contract_metadata);
+  void clear_value();
+  const ::koinos::chain::contract_metadata_object& value() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::contract_metadata_object* release_value();
+  ::koinos::chain::contract_metadata_object* mutable_value();
+  void set_allocated_value(::koinos::chain::contract_metadata_object* value);
   private:
-  const ::koinos::chain::contract_metadata_object& _internal_contract_metadata() const;
-  ::koinos::chain::contract_metadata_object* _internal_mutable_contract_metadata();
+  const ::koinos::chain::contract_metadata_object& _internal_value() const;
+  ::koinos::chain::contract_metadata_object* _internal_mutable_value();
   public:
-  void unsafe_arena_set_allocated_contract_metadata(
-      ::koinos::chain::contract_metadata_object* contract_metadata);
-  ::koinos::chain::contract_metadata_object* unsafe_arena_release_contract_metadata();
+  void unsafe_arena_set_allocated_value(
+      ::koinos::chain::contract_metadata_object* value);
+  ::koinos::chain::contract_metadata_object* unsafe_arena_release_value();
 
   // @@protoc_insertion_point(class_scope:koinos.chain.get_contract_metadata_result)
  private:
@@ -7311,7 +7311,7 @@ class get_contract_metadata_result final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::chain::contract_metadata_object* contract_metadata_;
+  ::koinos::chain::contract_metadata_object* value_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto;
 };
@@ -16060,39 +16060,39 @@ inline void get_contract_metadata_arguments::set_allocated_contract_id(std::stri
 
 // get_contract_metadata_result
 
-// .koinos.chain.contract_metadata_object contract_metadata = 1;
-inline bool get_contract_metadata_result::_internal_has_contract_metadata() const {
-  return this != internal_default_instance() && contract_metadata_ != nullptr;
+// .koinos.chain.contract_metadata_object value = 1;
+inline bool get_contract_metadata_result::_internal_has_value() const {
+  return this != internal_default_instance() && value_ != nullptr;
 }
-inline bool get_contract_metadata_result::has_contract_metadata() const {
-  return _internal_has_contract_metadata();
+inline bool get_contract_metadata_result::has_value() const {
+  return _internal_has_value();
 }
-inline const ::koinos::chain::contract_metadata_object& get_contract_metadata_result::_internal_contract_metadata() const {
-  const ::koinos::chain::contract_metadata_object* p = contract_metadata_;
+inline const ::koinos::chain::contract_metadata_object& get_contract_metadata_result::_internal_value() const {
+  const ::koinos::chain::contract_metadata_object* p = value_;
   return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::contract_metadata_object&>(
       ::koinos::chain::_contract_metadata_object_default_instance_);
 }
-inline const ::koinos::chain::contract_metadata_object& get_contract_metadata_result::contract_metadata() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.get_contract_metadata_result.contract_metadata)
-  return _internal_contract_metadata();
+inline const ::koinos::chain::contract_metadata_object& get_contract_metadata_result::value() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.get_contract_metadata_result.value)
+  return _internal_value();
 }
-inline void get_contract_metadata_result::unsafe_arena_set_allocated_contract_metadata(
-    ::koinos::chain::contract_metadata_object* contract_metadata) {
+inline void get_contract_metadata_result::unsafe_arena_set_allocated_value(
+    ::koinos::chain::contract_metadata_object* value) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(contract_metadata_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
-  contract_metadata_ = contract_metadata;
-  if (contract_metadata) {
+  value_ = value;
+  if (value) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_contract_metadata_result.contract_metadata)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.chain.get_contract_metadata_result.value)
 }
-inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::release_contract_metadata() {
+inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::release_value() {
   
-  ::koinos::chain::contract_metadata_object* temp = contract_metadata_;
-  contract_metadata_ = nullptr;
+  ::koinos::chain::contract_metadata_object* temp = value_;
+  value_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -16104,46 +16104,46 @@ inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::unsafe_arena_release_contract_metadata() {
-  // @@protoc_insertion_point(field_release:koinos.chain.get_contract_metadata_result.contract_metadata)
+inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::unsafe_arena_release_value() {
+  // @@protoc_insertion_point(field_release:koinos.chain.get_contract_metadata_result.value)
   
-  ::koinos::chain::contract_metadata_object* temp = contract_metadata_;
-  contract_metadata_ = nullptr;
+  ::koinos::chain::contract_metadata_object* temp = value_;
+  value_ = nullptr;
   return temp;
 }
-inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::_internal_mutable_contract_metadata() {
+inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::_internal_mutable_value() {
   
-  if (contract_metadata_ == nullptr) {
+  if (value_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::chain::contract_metadata_object>(GetArenaForAllocation());
-    contract_metadata_ = p;
+    value_ = p;
   }
-  return contract_metadata_;
+  return value_;
 }
-inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::mutable_contract_metadata() {
-  ::koinos::chain::contract_metadata_object* _msg = _internal_mutable_contract_metadata();
-  // @@protoc_insertion_point(field_mutable:koinos.chain.get_contract_metadata_result.contract_metadata)
+inline ::koinos::chain::contract_metadata_object* get_contract_metadata_result::mutable_value() {
+  ::koinos::chain::contract_metadata_object* _msg = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:koinos.chain.get_contract_metadata_result.value)
   return _msg;
 }
-inline void get_contract_metadata_result::set_allocated_contract_metadata(::koinos::chain::contract_metadata_object* contract_metadata) {
+inline void get_contract_metadata_result::set_allocated_value(::koinos::chain::contract_metadata_object* value) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(contract_metadata_);
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(value_);
   }
-  if (contract_metadata) {
+  if (value) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
         ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
             ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(contract_metadata));
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(value));
     if (message_arena != submessage_arena) {
-      contract_metadata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, contract_metadata, submessage_arena);
+      value = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, value, submessage_arena);
     }
     
   } else {
     
   }
-  contract_metadata_ = contract_metadata;
-  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_contract_metadata_result.contract_metadata)
+  value_ = value;
+  // @@protoc_insertion_point(field_set_allocated:koinos.chain.get_contract_metadata_result.value)
 }
 
 // -------------------------------------------------------------------

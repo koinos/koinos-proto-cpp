@@ -2947,6 +2947,7 @@ class invoke_system_call_request final :
 
   enum : int {
     kArgsFieldNumber = 3,
+    kCallerDataFieldNumber = 4,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
   };
@@ -2963,6 +2964,24 @@ class invoke_system_call_request final :
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_args(const std::string& value);
   std::string* _internal_mutable_args();
   public:
+
+  // optional .koinos.chain.caller_data caller_data = 4;
+  bool has_caller_data() const;
+  private:
+  bool _internal_has_caller_data() const;
+  public:
+  void clear_caller_data();
+  const ::koinos::chain::caller_data& caller_data() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::chain::caller_data* release_caller_data();
+  ::koinos::chain::caller_data* mutable_caller_data();
+  void set_allocated_caller_data(::koinos::chain::caller_data* caller_data);
+  private:
+  const ::koinos::chain::caller_data& _internal_caller_data() const;
+  ::koinos::chain::caller_data* _internal_mutable_caller_data();
+  public:
+  void unsafe_arena_set_allocated_caller_data(
+      ::koinos::chain::caller_data* caller_data);
+  ::koinos::chain::caller_data* unsafe_arena_release_caller_data();
 
   // int64 id = 1;
   bool has_id() const;
@@ -3009,14 +3028,16 @@ class invoke_system_call_request final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr args_;
+  ::koinos::chain::caller_data* caller_data_;
   union SystemCallUnion {
     constexpr SystemCallUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::PROTOBUF_NAMESPACE_ID::int64 id_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   } system_call_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
 
   friend struct ::TableStruct_koinos_2frpc_2fchain_2fchain_5frpc_2eproto;
@@ -5386,6 +5407,94 @@ inline void invoke_system_call_request::set_allocated_args(std::string* args) {
   args_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), args,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.invoke_system_call_request.args)
+}
+
+// optional .koinos.chain.caller_data caller_data = 4;
+inline bool invoke_system_call_request::_internal_has_caller_data() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || caller_data_ != nullptr);
+  return value;
+}
+inline bool invoke_system_call_request::has_caller_data() const {
+  return _internal_has_caller_data();
+}
+inline const ::koinos::chain::caller_data& invoke_system_call_request::_internal_caller_data() const {
+  const ::koinos::chain::caller_data* p = caller_data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::chain::caller_data&>(
+      ::koinos::chain::_caller_data_default_instance_);
+}
+inline const ::koinos::chain::caller_data& invoke_system_call_request::caller_data() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.chain.invoke_system_call_request.caller_data)
+  return _internal_caller_data();
+}
+inline void invoke_system_call_request::unsafe_arena_set_allocated_caller_data(
+    ::koinos::chain::caller_data* caller_data) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(caller_data_);
+  }
+  caller_data_ = caller_data;
+  if (caller_data) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.invoke_system_call_request.caller_data)
+}
+inline ::koinos::chain::caller_data* invoke_system_call_request::release_caller_data() {
+  _has_bits_[0] &= ~0x00000001u;
+  ::koinos::chain::caller_data* temp = caller_data_;
+  caller_data_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::chain::caller_data* invoke_system_call_request::unsafe_arena_release_caller_data() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.chain.invoke_system_call_request.caller_data)
+  _has_bits_[0] &= ~0x00000001u;
+  ::koinos::chain::caller_data* temp = caller_data_;
+  caller_data_ = nullptr;
+  return temp;
+}
+inline ::koinos::chain::caller_data* invoke_system_call_request::_internal_mutable_caller_data() {
+  _has_bits_[0] |= 0x00000001u;
+  if (caller_data_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::chain::caller_data>(GetArenaForAllocation());
+    caller_data_ = p;
+  }
+  return caller_data_;
+}
+inline ::koinos::chain::caller_data* invoke_system_call_request::mutable_caller_data() {
+  ::koinos::chain::caller_data* _msg = _internal_mutable_caller_data();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.invoke_system_call_request.caller_data)
+  return _msg;
+}
+inline void invoke_system_call_request::set_allocated_caller_data(::koinos::chain::caller_data* caller_data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(caller_data_);
+  }
+  if (caller_data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(caller_data));
+    if (message_arena != submessage_arena) {
+      caller_data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, caller_data, submessage_arena);
+    }
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  caller_data_ = caller_data;
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.chain.invoke_system_call_request.caller_data)
 }
 
 inline bool invoke_system_call_request::has_system_call() const {

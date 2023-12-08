@@ -14,3 +14,11 @@ target_include_directories(koinos_proto_tests PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>  # <prefix>/include
 )
+
+add_library(koinos_proto_tests_format
+  main.cpp
+  proto_test.cpp
+)
+
+koinos_add_format_target(koinos_proto_tests_format)
+set_target_properties(koinos_proto_tests_format PROPERTIES EXCLUDE_FROM_ALL TRUE)

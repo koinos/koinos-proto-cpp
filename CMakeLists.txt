@@ -26,9 +26,11 @@ project(koinos_proto
   DESCRIPTION "The Koinos proto library"
   LANGUAGES CXX C)
 
+koinos_define_version()
+
 koinos_coverage(
   EXECUTABLE
-    koinos_util_tests
+    koinos_proto_tests
   EXCLUDE
     "tests/*"
     "*.pb.cc"

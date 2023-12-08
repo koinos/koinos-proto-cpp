@@ -1,12 +1,11 @@
-file(GLOB_RECURSE GEN_HEADERS "${PROJECT_SOURCE_DIR}/include/*.pb.h")
-file(GLOB_RECURSE GEN_SOURCE "*.pb.cc")
+file(GLOB_RECURSE GENERATED "*.pb.cc" "${PROJECT_SOURCE_DIR}/include/*.pb.h")
 
 add_library(proto
   koinos/serialization.cpp
-  ${GEN_SOURCE}
 
   ${PROJECT_SOURCE_DIR}/include/koinos/serialization.hpp
-  ${GEN_HEADERS}
+
+  ${GENERATED}
 )
 
 target_link_libraries(
@@ -25,17 +24,18 @@ target_include_directories(
 
 add_library(Koinos::proto ALIAS proto)
 
-add_library(proto_format
-  koinos/serialization.cpp
-  ${PROJECT_SOURCE_DIR}/include/koinos/serialization.hpp
+koinos_add_format(
+  TARGET
+    proto
+  EXCLUDE
+    ${GENERATED}
 )
 
-koinos_add_format_target(proto_format)
-set_target_properties(proto_format PROPERTIES EXCLUDE_FROM_ALL TRUE)
+koinos_install(TARGETS proto)
 
 install(
   DIRECTORY
     ${PROJECT_SOURCE_DIR}/include
   DESTINATION
-    include/
+    ${CMAKE_INSTALL_PREFIX}
 )

@@ -15,7 +15,7 @@ include(FetchContent)
 FetchContent_Declare(
   koinos_cmake
   GIT_REPOSITORY https://github.com/koinos/koinos-cmake.git
-  GIT_TAG        f3d5dd68611a515837b2a038cc93365ad12e8c41
+  GIT_TAG        2cd46f64627e67dc72d9a83beffaf0517fb8a346
 )
 FetchContent_MakeAvailable(koinos_cmake)
 
@@ -27,15 +27,6 @@ project(koinos_proto
   LANGUAGES CXX C)
 
 koinos_define_version()
-
-koinos_coverage(
-  EXECUTABLE
-    koinos_proto_tests
-  EXCLUDE
-    "tests/*"
-    "*.pb.cc"
-    "*.pb.h"
-)
 
 koinos_add_package(Boost CONFIG REQUIRED
   ADD_COMPONENTS test
@@ -50,5 +41,3 @@ koinos_add_package(ZLIB CONFIG REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(tests)
-
-koinos_install(TARGETS proto)

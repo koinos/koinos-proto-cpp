@@ -7,9 +7,10 @@ koinos_add_test(proto_tests
     main.cpp
     proto_test.cpp
     test_map.pb.cc
+    include/koinos/test_map.pb.h
 )
 
-target_link_libraries(proto_tests Koinos::proto ${PLATFORM_SPECIFIC_LIBS})
+target_link_libraries(proto_tests Koinos::proto)
 target_include_directories(proto_tests PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>  # <prefix>/include
@@ -27,7 +28,7 @@ koinos_coverage(
   EXECUTABLE
     proto_tests
   EXCLUDE
-    "./*"
+    "./tests/*"
     "*.pb.cc"
     "*.pb.h"
 )

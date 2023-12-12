@@ -34,10 +34,6 @@ koinos_add_package(Boost CONFIG REQUIRED
 
 koinos_add_package(Protobuf CONFIG REQUIRED)
 koinos_add_package(gRPC CONFIG REQUIRED)
-koinos_add_package(abseil NAME absl CONFIG REQUIRED)
-koinos_add_package(re2 CONFIG REQUIRED)
-koinos_add_package(c-ares CONFIG REQUIRED)
-koinos_add_package(ZLIB CONFIG REQUIRED)
 
 add_subdirectory(src)
 add_subdirectory(tests)

@@ -5,22 +5,19 @@ add_library(proto
 
   ${PROJECT_SOURCE_DIR}/include/koinos/serialization.hpp
 
-  ${GENERATED}
-)
+  ${GENERATED})
 
 target_link_libraries(
   proto
     PUBLIC
       protobuf::libprotobuf
-      gRPC::grpc
-)
+      gRPC::grpc)
 
 target_include_directories(
   proto
     PUBLIC
       $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-      $<INSTALL_INTERFACE:include>
-)
+      $<INSTALL_INTERFACE:include>)
 
 add_library(Koinos::proto ALIAS proto)
 
@@ -28,8 +25,7 @@ koinos_add_format(
   TARGET
     proto
   EXCLUDE
-    ${GENERATED}
-)
+    ${GENERATED})
 
 koinos_install(TARGETS proto)
 
@@ -37,5 +33,4 @@ install(
   DIRECTORY
     ${PROJECT_SOURCE_DIR}/include
   DESTINATION
-    ${CMAKE_INSTALL_PREFIX}
-)
+    ${CMAKE_INSTALL_PREFIX})

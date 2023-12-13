@@ -11,7 +11,7 @@ koinos_add_test(proto_tests
     test_map.pb.cc
     include/koinos/test_map.pb.h)
 
-target_link_libraries(proto_tests PRIVATE Koinos::proto)
+target_link_libraries(proto_tests PRIVATE proto)
 
 target_include_directories(
   proto_tests

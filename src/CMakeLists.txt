@@ -19,8 +19,6 @@ target_include_directories(
       $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
       $<INSTALL_INTERFACE:include>)
 
-add_library(Koinos::proto ALIAS proto)
-
 koinos_add_format(
   TARGET
     proto

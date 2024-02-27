@@ -2,7 +2,6 @@ language: c++
 
 cache:
   ccache: true
-  pip: true
 
 addons:
   apt:
@@ -23,7 +22,7 @@ jobs:
       env:
         - RUN_TYPE=static-analysis
         - MATRIX_EVAL="CC=clang && CXX=clang++"
-    - - name: "Sanitizer"
+    - name: "Sanitizer"
       os: linux
       dist: jammy
       env:

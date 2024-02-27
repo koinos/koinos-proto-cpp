@@ -39,17 +39,17 @@ cmake -D CMAKE_BUILD_TYPE=Release -D STATIC_ANALYSIS=ON ..
 
 ### Testing
 
-Tests are built by default as target `koinos_proto_tests`. You can building them specifically with:
+Tests are built by default as target `proto_tests`. You can building them specifically with:
 
 ```
-cmake --build . --config Release --parallel --target koinos_proto_tests
+cmake --build . --config Release --parallel --target proto_tests
 ```
 
 Tests can be invoked from the tests directiory within the build directory.
 
 ```
 cd tests
-./koinos_proto_tests
+./proto_tests
 ```
 
 Tests can also be ran in parallel using CTest.

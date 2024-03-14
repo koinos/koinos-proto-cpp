@@ -6,14 +6,14 @@ include(FetchContent)
 FetchContent_Declare(
   koinos_cmake
   GIT_REPOSITORY https://github.com/koinos/koinos-cmake.git
-  GIT_TAG        897f11188f1761ddd810d77839417549e68465aa
+  GIT_TAG        v1.0.0
 )
 FetchContent_MakeAvailable(koinos_cmake)
 
 include("${koinos_cmake_SOURCE_DIR}/Koinos.cmake")
 
 project(koinos_proto
-  VERSION 1.0.0
+  VERSION 1.4.0
   DESCRIPTION "The Koinos proto library"
   LANGUAGES CXX C)
 

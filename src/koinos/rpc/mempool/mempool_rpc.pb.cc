@@ -112,6 +112,35 @@ struct check_account_nonce_responseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT check_account_nonce_responseDefaultTypeInternal _check_account_nonce_response_default_instance_;
+constexpr check_transaction_eligibility_request::check_transaction_eligibility_request(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : payer_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , payee_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , nonce_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , block_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , max_payer_rc_(uint64_t{0u})
+  , rc_limit_(uint64_t{0u}){}
+struct check_transaction_eligibility_requestDefaultTypeInternal {
+  constexpr check_transaction_eligibility_requestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~check_transaction_eligibility_requestDefaultTypeInternal() {}
+  union {
+    check_transaction_eligibility_request _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT check_transaction_eligibility_requestDefaultTypeInternal _check_transaction_eligibility_request_default_instance_;
+constexpr check_transaction_eligibility_response::check_transaction_eligibility_response(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : success_(false){}
+struct check_transaction_eligibility_responseDefaultTypeInternal {
+  constexpr check_transaction_eligibility_responseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~check_transaction_eligibility_responseDefaultTypeInternal() {}
+  union {
+    check_transaction_eligibility_response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT check_transaction_eligibility_responseDefaultTypeInternal _check_transaction_eligibility_response_default_instance_;
 constexpr mempool_request::mempool_request(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : _oneof_case_{}{}
@@ -139,7 +168,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT mempool_responseDefaultTypeInte
 }  // namespace mempool
 }  // namespace rpc
 }  // namespace koinos
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[9];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[11];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = nullptr;
 
@@ -204,11 +233,35 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2frpc_2fmempool_2fmempo
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_account_nonce_response, success_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, payer_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, payee_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, nonce_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, max_payer_rc_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, rc_limit_),
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_request, block_id_),
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_response, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::check_transaction_eligibility_response, success_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::mempool_request, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::mempool_request, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
@@ -224,6 +277,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2frpc_2fmempool_2fmempo
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::koinos::rpc::mempool::mempool_response, response_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -234,8 +288,10 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 37, -1, sizeof(::koinos::rpc::mempool::get_pending_transactions_response)},
   { 43, 51, sizeof(::koinos::rpc::mempool::check_account_nonce_request)},
   { 54, -1, sizeof(::koinos::rpc::mempool::check_account_nonce_response)},
-  { 60, -1, sizeof(::koinos::rpc::mempool::mempool_request)},
-  { 70, -1, sizeof(::koinos::rpc::mempool::mempool_response)},
+  { 60, 71, sizeof(::koinos::rpc::mempool::check_transaction_eligibility_request)},
+  { 77, -1, sizeof(::koinos::rpc::mempool::check_transaction_eligibility_response)},
+  { 83, -1, sizeof(::koinos::rpc::mempool::mempool_request)},
+  { 94, -1, sizeof(::koinos::rpc::mempool::mempool_response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -246,6 +302,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_get_pending_transactions_response_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_check_account_nonce_request_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_check_account_nonce_response_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_check_transaction_eligibility_request_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_check_transaction_eligibility_response_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_mempool_request_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::koinos::rpc::mempool::_mempool_response_default_instance_),
 };
@@ -273,27 +331,39 @@ const char descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2epr
   "uest\022\023\n\005payee\030\001 \001(\014B\004\200\265\030\006\022\r\n\005nonce\030\002 \001(\014"
   "\022\033\n\010block_id\030\003 \001(\014B\004\200\265\030\003H\000\210\001\001B\013\n\t_block_"
   "id\"/\n\034check_account_nonce_response\022\017\n\007su"
-  "ccess\030\001 \001(\010\"\334\002\n\017mempool_request\022,\n\010reser"
-  "ved\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022f\n"
-  "\037check_pending_account_resources\030\002 \001(\0132;"
-  ".koinos.rpc.mempool.check_pending_accoun"
-  "t_resources_requestH\000\022X\n\030get_pending_tra"
-  "nsactions\030\003 \001(\01324.koinos.rpc.mempool.get"
-  "_pending_transactions_requestH\000\022N\n\023check"
-  "_account_nonce\030\004 \001(\0132/.koinos.rpc.mempoo"
-  "l.check_account_nonce_requestH\000B\t\n\007reque"
-  "st\"\216\003\n\020mempool_response\022,\n\010reserved\030\001 \001("
-  "\0132\030.koinos.rpc.reserved_rpcH\000\022+\n\005error\030\002"
-  " \001(\0132\032.koinos.rpc.error_responseH\000\022g\n\037ch"
-  "eck_pending_account_resources\030\003 \001(\0132<.ko"
-  "inos.rpc.mempool.check_pending_account_r"
-  "esources_responseH\000\022Y\n\030get_pending_trans"
-  "actions\030\004 \001(\01325.koinos.rpc.mempool.get_p"
-  "ending_transactions_responseH\000\022O\n\023check_"
-  "account_nonce\030\005 \001(\01320.koinos.rpc.mempool"
-  ".check_account_nonce_responseH\000B\n\n\010respo"
-  "nseB:Z8github.com/koinos/koinos-proto-go"
-  "lang/koinos/rpc/mempoolb\006proto3"
+  "ccess\030\001 \001(\010\"\273\001\n%check_transaction_eligib"
+  "ility_request\022\023\n\005payer\030\001 \001(\014B\004\200\265\030\006\022\023\n\005pa"
+  "yee\030\002 \001(\014B\004\200\265\030\006\022\r\n\005nonce\030\003 \001(\014\022\030\n\014max_pa"
+  "yer_rc\030\004 \001(\004B\0020\001\022\024\n\010rc_limit\030\005 \001(\004B\0020\001\022\034"
+  "\n\010block_id\030\350\007 \001(\014B\004\200\265\030\003H\000\210\001\001B\013\n\t_block_i"
+  "d\"9\n&check_transaction_eligibility_respo"
+  "nse\022\017\n\007success\030\001 \001(\010\"\300\003\n\017mempool_request"
+  "\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved"
+  "_rpcH\000\022f\n\037check_pending_account_resource"
+  "s\030\002 \001(\0132;.koinos.rpc.mempool.check_pendi"
+  "ng_account_resources_requestH\000\022X\n\030get_pe"
+  "nding_transactions\030\003 \001(\01324.koinos.rpc.me"
+  "mpool.get_pending_transactions_requestH\000"
+  "\022N\n\023check_account_nonce\030\004 \001(\0132/.koinos.r"
+  "pc.mempool.check_account_nonce_requestH\000"
+  "\022b\n\035check_transaction_eligibility\030\005 \001(\0132"
+  "9.koinos.rpc.mempool.check_transaction_e"
+  "ligibility_requestH\000B\t\n\007request\"\363\003\n\020memp"
+  "ool_response\022,\n\010reserved\030\001 \001(\0132\030.koinos."
+  "rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koin"
+  "os.rpc.error_responseH\000\022g\n\037check_pending"
+  "_account_resources\030\003 \001(\0132<.koinos.rpc.me"
+  "mpool.check_pending_account_resources_re"
+  "sponseH\000\022Y\n\030get_pending_transactions\030\004 \001"
+  "(\01325.koinos.rpc.mempool.get_pending_tran"
+  "sactions_responseH\000\022O\n\023check_account_non"
+  "ce\030\005 \001(\01320.koinos.rpc.mempool.check_acco"
+  "unt_nonce_responseH\000\022c\n\035check_transactio"
+  "n_eligibility\030\006 \001(\0132:.koinos.rpc.mempool"
+  ".check_transaction_eligibility_responseH"
+  "\000B\n\n\010responseB:Z8github.com/koinos/koino"
+  "s-proto-golang/koinos/rpc/mempoolb\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -302,8 +372,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, 1711, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
-  &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 3, 9,
+  false, false, 2161, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 3, 11,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
 };
@@ -1988,12 +2058,577 @@ void check_account_nonce_response::InternalSwap(check_account_nonce_response* ot
 
 // ===================================================================
 
+class check_transaction_eligibility_request::_Internal {
+ public:
+  using HasBits = decltype(std::declval<check_transaction_eligibility_request>()._has_bits_);
+  static void set_has_block_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+check_transaction_eligibility_request::check_transaction_eligibility_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.check_transaction_eligibility_request)
+}
+check_transaction_eligibility_request::check_transaction_eligibility_request(const check_transaction_eligibility_request& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_payer().empty()) {
+    payer_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_payer(), 
+      GetArenaForAllocation());
+  }
+  payee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_payee().empty()) {
+    payee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_payee(), 
+      GetArenaForAllocation());
+  }
+  nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_nonce().empty()) {
+    nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nonce(), 
+      GetArenaForAllocation());
+  }
+  block_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_block_id()) {
+    block_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_block_id(), 
+      GetArenaForAllocation());
+  }
+  ::memcpy(&max_payer_rc_, &from.max_payer_rc_,
+    static_cast<size_t>(reinterpret_cast<char*>(&rc_limit_) -
+    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(rc_limit_));
+  // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.check_transaction_eligibility_request)
+}
+
+inline void check_transaction_eligibility_request::SharedCtor() {
+payer_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+payee_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+nonce_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+block_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&max_payer_rc_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&rc_limit_) -
+    reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(rc_limit_));
+}
+
+check_transaction_eligibility_request::~check_transaction_eligibility_request() {
+  // @@protoc_insertion_point(destructor:koinos.rpc.mempool.check_transaction_eligibility_request)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void check_transaction_eligibility_request::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  payer_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  payee_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  nonce_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  block_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void check_transaction_eligibility_request::ArenaDtor(void* object) {
+  check_transaction_eligibility_request* _this = reinterpret_cast< check_transaction_eligibility_request* >(object);
+  (void)_this;
+}
+void check_transaction_eligibility_request::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void check_transaction_eligibility_request::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void check_transaction_eligibility_request::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.rpc.mempool.check_transaction_eligibility_request)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  payer_.ClearToEmpty();
+  payee_.ClearToEmpty();
+  nonce_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    block_id_.ClearNonDefaultToEmpty();
+  }
+  ::memset(&max_payer_rc_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&rc_limit_) -
+      reinterpret_cast<char*>(&max_payer_rc_)) + sizeof(rc_limit_));
+  _has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* check_transaction_eligibility_request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes payer = 1 [(.koinos.btype) = ADDRESS];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_payer();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes payee = 2 [(.koinos.btype) = ADDRESS];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_payee();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bytes nonce = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_nonce();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 max_payer_rc = 4 [jstype = JS_STRING];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+          max_payer_rc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint64 rc_limit = 5 [jstype = JS_STRING];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+          rc_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // optional bytes block_id = 1000 [(.koinos.btype) = BLOCK_ID];
+      case 1000:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_block_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  _has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* check_transaction_eligibility_request::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.rpc.mempool.check_transaction_eligibility_request)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes payer = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_payer().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_payer(), target);
+  }
+
+  // bytes payee = 2 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_payee().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_payee(), target);
+  }
+
+  // bytes nonce = 3;
+  if (!this->_internal_nonce().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        3, this->_internal_nonce(), target);
+  }
+
+  // uint64 max_payer_rc = 4 [jstype = JS_STRING];
+  if (this->_internal_max_payer_rc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(4, this->_internal_max_payer_rc(), target);
+  }
+
+  // uint64 rc_limit = 5 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(5, this->_internal_rc_limit(), target);
+  }
+
+  // optional bytes block_id = 1000 [(.koinos.btype) = BLOCK_ID];
+  if (_internal_has_block_id()) {
+    target = stream->WriteBytesMaybeAliased(
+        1000, this->_internal_block_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.rpc.mempool.check_transaction_eligibility_request)
+  return target;
+}
+
+size_t check_transaction_eligibility_request::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.rpc.mempool.check_transaction_eligibility_request)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes payer = 1 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_payer().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_payer());
+  }
+
+  // bytes payee = 2 [(.koinos.btype) = ADDRESS];
+  if (!this->_internal_payee().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_payee());
+  }
+
+  // bytes nonce = 3;
+  if (!this->_internal_nonce().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_nonce());
+  }
+
+  // optional bytes block_id = 1000 [(.koinos.btype) = BLOCK_ID];
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_block_id());
+  }
+
+  // uint64 max_payer_rc = 4 [jstype = JS_STRING];
+  if (this->_internal_max_payer_rc() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_max_payer_rc());
+  }
+
+  // uint64 rc_limit = 5 [jstype = JS_STRING];
+  if (this->_internal_rc_limit() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt64Size(
+        this->_internal_rc_limit());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData check_transaction_eligibility_request::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    check_transaction_eligibility_request::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*check_transaction_eligibility_request::GetClassData() const { return &_class_data_; }
+
+void check_transaction_eligibility_request::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<check_transaction_eligibility_request *>(to)->MergeFrom(
+      static_cast<const check_transaction_eligibility_request &>(from));
+}
+
+
+void check_transaction_eligibility_request::MergeFrom(const check_transaction_eligibility_request& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.check_transaction_eligibility_request)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_payer().empty()) {
+    _internal_set_payer(from._internal_payer());
+  }
+  if (!from._internal_payee().empty()) {
+    _internal_set_payee(from._internal_payee());
+  }
+  if (!from._internal_nonce().empty()) {
+    _internal_set_nonce(from._internal_nonce());
+  }
+  if (from._internal_has_block_id()) {
+    _internal_set_block_id(from._internal_block_id());
+  }
+  if (from._internal_max_payer_rc() != 0) {
+    _internal_set_max_payer_rc(from._internal_max_payer_rc());
+  }
+  if (from._internal_rc_limit() != 0) {
+    _internal_set_rc_limit(from._internal_rc_limit());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void check_transaction_eligibility_request::CopyFrom(const check_transaction_eligibility_request& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.rpc.mempool.check_transaction_eligibility_request)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool check_transaction_eligibility_request::IsInitialized() const {
+  return true;
+}
+
+void check_transaction_eligibility_request::InternalSwap(check_transaction_eligibility_request* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &payer_, GetArenaForAllocation(),
+      &other->payer_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &payee_, GetArenaForAllocation(),
+      &other->payee_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &nonce_, GetArenaForAllocation(),
+      &other->nonce_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &block_id_, GetArenaForAllocation(),
+      &other->block_id_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(check_transaction_eligibility_request, rc_limit_)
+      + sizeof(check_transaction_eligibility_request::rc_limit_)
+      - PROTOBUF_FIELD_OFFSET(check_transaction_eligibility_request, max_payer_rc_)>(
+          reinterpret_cast<char*>(&max_payer_rc_),
+          reinterpret_cast<char*>(&other->max_payer_rc_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata check_transaction_eligibility_request::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[7]);
+}
+
+// ===================================================================
+
+class check_transaction_eligibility_response::_Internal {
+ public:
+};
+
+check_transaction_eligibility_response::check_transaction_eligibility_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:koinos.rpc.mempool.check_transaction_eligibility_response)
+}
+check_transaction_eligibility_response::check_transaction_eligibility_response(const check_transaction_eligibility_response& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  success_ = from.success_;
+  // @@protoc_insertion_point(copy_constructor:koinos.rpc.mempool.check_transaction_eligibility_response)
+}
+
+inline void check_transaction_eligibility_response::SharedCtor() {
+success_ = false;
+}
+
+check_transaction_eligibility_response::~check_transaction_eligibility_response() {
+  // @@protoc_insertion_point(destructor:koinos.rpc.mempool.check_transaction_eligibility_response)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void check_transaction_eligibility_response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void check_transaction_eligibility_response::ArenaDtor(void* object) {
+  check_transaction_eligibility_response* _this = reinterpret_cast< check_transaction_eligibility_response* >(object);
+  (void)_this;
+}
+void check_transaction_eligibility_response::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void check_transaction_eligibility_response::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void check_transaction_eligibility_response::Clear() {
+// @@protoc_insertion_point(message_clear_start:koinos.rpc.mempool.check_transaction_eligibility_response)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  success_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* check_transaction_eligibility_response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bool success = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          success_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag == 0) || ((tag & 7) == 4)) {
+          CHK_(ptr);
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* check_transaction_eligibility_response::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:koinos.rpc.mempool.check_transaction_eligibility_response)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(1, this->_internal_success(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:koinos.rpc.mempool.check_transaction_eligibility_response)
+  return target;
+}
+
+size_t check_transaction_eligibility_response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:koinos.rpc.mempool.check_transaction_eligibility_response)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bool success = 1;
+  if (this->_internal_success() != 0) {
+    total_size += 1 + 1;
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData check_transaction_eligibility_response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    check_transaction_eligibility_response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*check_transaction_eligibility_response::GetClassData() const { return &_class_data_; }
+
+void check_transaction_eligibility_response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message&from) {
+  static_cast<check_transaction_eligibility_response *>(to)->MergeFrom(
+      static_cast<const check_transaction_eligibility_response &>(from));
+}
+
+
+void check_transaction_eligibility_response::MergeFrom(const check_transaction_eligibility_response& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:koinos.rpc.mempool.check_transaction_eligibility_response)
+  GOOGLE_DCHECK_NE(&from, this);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_success() != 0) {
+    _internal_set_success(from._internal_success());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void check_transaction_eligibility_response::CopyFrom(const check_transaction_eligibility_response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:koinos.rpc.mempool.check_transaction_eligibility_response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool check_transaction_eligibility_response::IsInitialized() const {
+  return true;
+}
+
+void check_transaction_eligibility_response::InternalSwap(check_transaction_eligibility_response* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(success_, other->success_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata check_transaction_eligibility_response::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[8]);
+}
+
+// ===================================================================
+
 class mempool_request::_Internal {
  public:
   static const ::koinos::rpc::reserved_rpc& reserved(const mempool_request* msg);
   static const ::koinos::rpc::mempool::check_pending_account_resources_request& check_pending_account_resources(const mempool_request* msg);
   static const ::koinos::rpc::mempool::get_pending_transactions_request& get_pending_transactions(const mempool_request* msg);
   static const ::koinos::rpc::mempool::check_account_nonce_request& check_account_nonce(const mempool_request* msg);
+  static const ::koinos::rpc::mempool::check_transaction_eligibility_request& check_transaction_eligibility(const mempool_request* msg);
 };
 
 const ::koinos::rpc::reserved_rpc&
@@ -2011,6 +2646,10 @@ mempool_request::_Internal::get_pending_transactions(const mempool_request* msg)
 const ::koinos::rpc::mempool::check_account_nonce_request&
 mempool_request::_Internal::check_account_nonce(const mempool_request* msg) {
   return *msg->request_.check_account_nonce_;
+}
+const ::koinos::rpc::mempool::check_transaction_eligibility_request&
+mempool_request::_Internal::check_transaction_eligibility(const mempool_request* msg) {
+  return *msg->request_.check_transaction_eligibility_;
 }
 void mempool_request::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -2082,6 +2721,21 @@ void mempool_request::set_allocated_check_account_nonce(::koinos::rpc::mempool::
   }
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_request.check_account_nonce)
 }
+void mempool_request::set_allocated_check_transaction_eligibility(::koinos::rpc::mempool::check_transaction_eligibility_request* check_transaction_eligibility) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_request();
+  if (check_transaction_eligibility) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::mempool::check_transaction_eligibility_request>::GetOwningArena(check_transaction_eligibility);
+    if (message_arena != submessage_arena) {
+      check_transaction_eligibility = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, check_transaction_eligibility, submessage_arena);
+    }
+    set_has_check_transaction_eligibility();
+    request_.check_transaction_eligibility_ = check_transaction_eligibility;
+  }
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_request.check_transaction_eligibility)
+}
 mempool_request::mempool_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2110,6 +2764,10 @@ mempool_request::mempool_request(const mempool_request& from)
     }
     case kCheckAccountNonce: {
       _internal_mutable_check_account_nonce()->::koinos::rpc::mempool::check_account_nonce_request::MergeFrom(from._internal_check_account_nonce());
+      break;
+    }
+    case kCheckTransactionEligibility: {
+      _internal_mutable_check_transaction_eligibility()->::koinos::rpc::mempool::check_transaction_eligibility_request::MergeFrom(from._internal_check_transaction_eligibility());
       break;
     }
     case REQUEST_NOT_SET: {
@@ -2174,6 +2832,12 @@ void mempool_request::clear_request() {
       }
       break;
     }
+    case kCheckTransactionEligibility: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete request_.check_transaction_eligibility_;
+      }
+      break;
+    }
     case REQUEST_NOT_SET: {
       break;
     }
@@ -2223,6 +2887,13 @@ const char* mempool_request::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_check_account_nonce(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .koinos.rpc.mempool.check_transaction_eligibility_request check_transaction_eligibility = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_check_transaction_eligibility(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2287,6 +2958,14 @@ failure:
         4, _Internal::check_account_nonce(this), target, stream);
   }
 
+  // .koinos.rpc.mempool.check_transaction_eligibility_request check_transaction_eligibility = 5;
+  if (_internal_has_check_transaction_eligibility()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        5, _Internal::check_transaction_eligibility(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2330,6 +3009,13 @@ size_t mempool_request::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *request_.check_account_nonce_);
+      break;
+    }
+    // .koinos.rpc.mempool.check_transaction_eligibility_request check_transaction_eligibility = 5;
+    case kCheckTransactionEligibility: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *request_.check_transaction_eligibility_);
       break;
     }
     case REQUEST_NOT_SET: {
@@ -2381,6 +3067,10 @@ void mempool_request::MergeFrom(const mempool_request& from) {
       _internal_mutable_check_account_nonce()->::koinos::rpc::mempool::check_account_nonce_request::MergeFrom(from._internal_check_account_nonce());
       break;
     }
+    case kCheckTransactionEligibility: {
+      _internal_mutable_check_transaction_eligibility()->::koinos::rpc::mempool::check_transaction_eligibility_request::MergeFrom(from._internal_check_transaction_eligibility());
+      break;
+    }
     case REQUEST_NOT_SET: {
       break;
     }
@@ -2409,7 +3099,7 @@ void mempool_request::InternalSwap(mempool_request* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata mempool_request::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
-      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[7]);
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[9]);
 }
 
 // ===================================================================
@@ -2421,6 +3111,7 @@ class mempool_response::_Internal {
   static const ::koinos::rpc::mempool::check_pending_account_resources_response& check_pending_account_resources(const mempool_response* msg);
   static const ::koinos::rpc::mempool::get_pending_transactions_response& get_pending_transactions(const mempool_response* msg);
   static const ::koinos::rpc::mempool::check_account_nonce_response& check_account_nonce(const mempool_response* msg);
+  static const ::koinos::rpc::mempool::check_transaction_eligibility_response& check_transaction_eligibility(const mempool_response* msg);
 };
 
 const ::koinos::rpc::reserved_rpc&
@@ -2442,6 +3133,10 @@ mempool_response::_Internal::get_pending_transactions(const mempool_response* ms
 const ::koinos::rpc::mempool::check_account_nonce_response&
 mempool_response::_Internal::check_account_nonce(const mempool_response* msg) {
   return *msg->response_.check_account_nonce_;
+}
+const ::koinos::rpc::mempool::check_transaction_eligibility_response&
+mempool_response::_Internal::check_transaction_eligibility(const mempool_response* msg) {
+  return *msg->response_.check_transaction_eligibility_;
 }
 void mempool_response::set_allocated_reserved(::koinos::rpc::reserved_rpc* reserved) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -2538,6 +3233,21 @@ void mempool_response::set_allocated_check_account_nonce(::koinos::rpc::mempool:
   }
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_response.check_account_nonce)
 }
+void mempool_response::set_allocated_check_transaction_eligibility(::koinos::rpc::mempool::check_transaction_eligibility_response* check_transaction_eligibility) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (check_transaction_eligibility) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::rpc::mempool::check_transaction_eligibility_response>::GetOwningArena(check_transaction_eligibility);
+    if (message_arena != submessage_arena) {
+      check_transaction_eligibility = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, check_transaction_eligibility, submessage_arena);
+    }
+    set_has_check_transaction_eligibility();
+    response_.check_transaction_eligibility_ = check_transaction_eligibility;
+  }
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.mempool_response.check_transaction_eligibility)
+}
 mempool_response::mempool_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -2570,6 +3280,10 @@ mempool_response::mempool_response(const mempool_response& from)
     }
     case kCheckAccountNonce: {
       _internal_mutable_check_account_nonce()->::koinos::rpc::mempool::check_account_nonce_response::MergeFrom(from._internal_check_account_nonce());
+      break;
+    }
+    case kCheckTransactionEligibility: {
+      _internal_mutable_check_transaction_eligibility()->::koinos::rpc::mempool::check_transaction_eligibility_response::MergeFrom(from._internal_check_transaction_eligibility());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -2640,6 +3354,12 @@ void mempool_response::clear_response() {
       }
       break;
     }
+    case kCheckTransactionEligibility: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.check_transaction_eligibility_;
+      }
+      break;
+    }
     case RESPONSE_NOT_SET: {
       break;
     }
@@ -2696,6 +3416,13 @@ const char* mempool_response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_check_account_nonce(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .koinos.rpc.mempool.check_transaction_eligibility_response check_transaction_eligibility = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_check_transaction_eligibility(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2768,6 +3495,14 @@ failure:
         5, _Internal::check_account_nonce(this), target, stream);
   }
 
+  // .koinos.rpc.mempool.check_transaction_eligibility_response check_transaction_eligibility = 6;
+  if (_internal_has_check_transaction_eligibility()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        6, _Internal::check_transaction_eligibility(this), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -2818,6 +3553,13 @@ size_t mempool_response::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *response_.check_account_nonce_);
+      break;
+    }
+    // .koinos.rpc.mempool.check_transaction_eligibility_response check_transaction_eligibility = 6;
+    case kCheckTransactionEligibility: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.check_transaction_eligibility_);
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -2873,6 +3615,10 @@ void mempool_response::MergeFrom(const mempool_response& from) {
       _internal_mutable_check_account_nonce()->::koinos::rpc::mempool::check_account_nonce_response::MergeFrom(from._internal_check_account_nonce());
       break;
     }
+    case kCheckTransactionEligibility: {
+      _internal_mutable_check_transaction_eligibility()->::koinos::rpc::mempool::check_transaction_eligibility_response::MergeFrom(from._internal_check_transaction_eligibility());
+      break;
+    }
     case RESPONSE_NOT_SET: {
       break;
     }
@@ -2901,7 +3647,7 @@ void mempool_response::InternalSwap(mempool_response* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata mempool_response::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_getter, &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once,
-      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[8]);
+      file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto[10]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2929,6 +3675,12 @@ template<> PROTOBUF_NOINLINE ::koinos::rpc::mempool::check_account_nonce_request
 }
 template<> PROTOBUF_NOINLINE ::koinos::rpc::mempool::check_account_nonce_response* Arena::CreateMaybeMessage< ::koinos::rpc::mempool::check_account_nonce_response >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::rpc::mempool::check_account_nonce_response >(arena);
+}
+template<> PROTOBUF_NOINLINE ::koinos::rpc::mempool::check_transaction_eligibility_request* Arena::CreateMaybeMessage< ::koinos::rpc::mempool::check_transaction_eligibility_request >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::rpc::mempool::check_transaction_eligibility_request >(arena);
+}
+template<> PROTOBUF_NOINLINE ::koinos::rpc::mempool::check_transaction_eligibility_response* Arena::CreateMaybeMessage< ::koinos::rpc::mempool::check_transaction_eligibility_response >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::koinos::rpc::mempool::check_transaction_eligibility_response >(arena);
 }
 template<> PROTOBUF_NOINLINE ::koinos::rpc::mempool::mempool_request* Arena::CreateMaybeMessage< ::koinos::rpc::mempool::mempool_request >(Arena* arena) {
   return Arena::CreateMessageInternal< ::koinos::rpc::mempool::mempool_request >(arena);

@@ -317,7 +317,6 @@ class error_status final :
     kDetailsFieldNumber = 10,
     kMessageFieldNumber = 1,
     kDataFieldNumber = 2,
-    kCodeFieldNumber = 3,
   };
   // repeated .google.protobuf.Any details = 10;
   int details_size() const;
@@ -365,15 +364,6 @@ class error_status final :
   std::string* _internal_mutable_data();
   public:
 
-  // int32 code = 3;
-  void clear_code();
-  ::PROTOBUF_NAMESPACE_ID::int32 code() const;
-  void set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_code() const;
-  void _internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.rpc.error_status)
  private:
   class _Internal;
@@ -384,7 +374,6 @@ class error_status final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< PROTOBUF_NAMESPACE_ID::Any > details_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
-  ::PROTOBUF_NAMESPACE_ID::int32 code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2frpc_2eproto;
 };
@@ -493,26 +482,6 @@ inline void error_status::set_allocated_data(std::string* data) {
   data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data,
       GetArenaForAllocation());
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.error_status.data)
-}
-
-// int32 code = 3;
-inline void error_status::clear_code() {
-  code_ = 0;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 error_status::_internal_code() const {
-  return code_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int32 error_status::code() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.error_status.code)
-  return _internal_code();
-}
-inline void error_status::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  code_ = value;
-}
-inline void error_status::set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:koinos.rpc.error_status.code)
 }
 
 // repeated .google.protobuf.Any details = 10;

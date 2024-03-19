@@ -176,14 +176,14 @@ const char descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_
   "\0132\030.koinos.rpc.reserved_rpcH\000\022V\n\023get_acc"
   "ount_history\030\002 \001(\01327.koinos.rpc.account_"
   "history.get_account_history_requestH\000B\t\n"
-  "\007request\"\332\001\n\030account_history_response\022,\n"
+  "\007request\"\330\001\n\030account_history_response\022,\n"
   "\010reserved\030\001 \001(\0132\030.koinos.rpc.reserved_rp"
-  "cH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.error_re"
-  "sponseH\000\022W\n\023get_account_history\030\003 \001(\01328."
-  "koinos.rpc.account_history.get_account_h"
-  "istory_responseH\000B\n\n\010responseBBZ@github."
-  "com/koinos/koinos-proto-golang/koinos/rp"
-  "c/account_historyb\006proto3"
+  "cH\000\022)\n\005error\030\002 \001(\0132\030.koinos.rpc.error_st"
+  "atusH\000\022W\n\023get_account_history\030\003 \001(\01328.ko"
+  "inos.rpc.account_history.get_account_his"
+  "tory_responseH\000B\n\n\010responseBBZ@github.co"
+  "m/koinos/koinos-proto-golang/koinos/rpc/"
+  "account_historyb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2faccount_5fhistory_2faccount_5fhistory_2eproto,
@@ -192,7 +192,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto = {
-  false, false, 1065, descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, "koinos/rpc/account_history/account_history_rpc.proto", 
+  false, false, 1063, descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, "koinos/rpc/account_history/account_history_rpc.proto", 
   &descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps, 3, 5,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto,
@@ -1378,7 +1378,7 @@ void account_history_request::InternalSwap(account_history_request* other) {
 class account_history_response::_Internal {
  public:
   static const ::koinos::rpc::reserved_rpc& reserved(const account_history_response* msg);
-  static const ::koinos::rpc::error_response& error(const account_history_response* msg);
+  static const ::koinos::rpc::error_status& error(const account_history_response* msg);
   static const ::koinos::rpc::account_history::get_account_history_response& get_account_history(const account_history_response* msg);
 };
 
@@ -1386,7 +1386,7 @@ const ::koinos::rpc::reserved_rpc&
 account_history_response::_Internal::reserved(const account_history_response* msg) {
   return *msg->response_.reserved_;
 }
-const ::koinos::rpc::error_response&
+const ::koinos::rpc::error_status&
 account_history_response::_Internal::error(const account_history_response* msg) {
   return *msg->response_.error_;
 }
@@ -1419,7 +1419,7 @@ void account_history_response::clear_reserved() {
     clear_has_response();
   }
 }
-void account_history_response::set_allocated_error(::koinos::rpc::error_response* error) {
+void account_history_response::set_allocated_error(::koinos::rpc::error_status* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -1478,7 +1478,7 @@ account_history_response::account_history_response(const account_history_respons
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetAccountHistory: {
@@ -1572,7 +1572,7 @@ const char* account_history_response::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.rpc.error_response error = 2;
+      // .koinos.rpc.error_status error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -1623,7 +1623,7 @@ failure:
         1, _Internal::reserved(this), target, stream);
   }
 
-  // .koinos.rpc.error_response error = 2;
+  // .koinos.rpc.error_status error = 2;
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1663,7 +1663,7 @@ size_t account_history_response::ByteSizeLong() const {
           *response_.reserved_);
       break;
     }
-    // .koinos.rpc.error_response error = 2;
+    // .koinos.rpc.error_status error = 2;
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1715,7 +1715,7 @@ void account_history_response::MergeFrom(const account_history_response& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetAccountHistory: {

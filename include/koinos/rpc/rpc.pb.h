@@ -31,6 +31,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/any.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_koinos_2frpc_2frpc_2eproto
@@ -55,16 +56,16 @@ struct TableStruct_koinos_2frpc_2frpc_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2frpc_2eproto;
 namespace koinos {
 namespace rpc {
-class error_response;
-struct error_responseDefaultTypeInternal;
-extern error_responseDefaultTypeInternal _error_response_default_instance_;
+class error_status;
+struct error_statusDefaultTypeInternal;
+extern error_statusDefaultTypeInternal _error_status_default_instance_;
 class reserved_rpc;
 struct reserved_rpcDefaultTypeInternal;
 extern reserved_rpcDefaultTypeInternal _reserved_rpc_default_instance_;
 }  // namespace rpc
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
-template<> ::koinos::rpc::error_response* Arena::CreateMaybeMessage<::koinos::rpc::error_response>(Arena*);
+template<> ::koinos::rpc::error_status* Arena::CreateMaybeMessage<::koinos::rpc::error_status>(Arena*);
 template<> ::koinos::rpc::reserved_rpc* Arena::CreateMaybeMessage<::koinos::rpc::reserved_rpc>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
@@ -198,24 +199,24 @@ class reserved_rpc final :
 };
 // -------------------------------------------------------------------
 
-class error_response final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.error_response) */ {
+class error_status final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.error_status) */ {
  public:
-  inline error_response() : error_response(nullptr) {}
-  ~error_response() override;
-  explicit constexpr error_response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline error_status() : error_status(nullptr) {}
+  ~error_status() override;
+  explicit constexpr error_status(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  error_response(const error_response& from);
-  error_response(error_response&& from) noexcept
-    : error_response() {
+  error_status(const error_status& from);
+  error_status(error_status&& from) noexcept
+    : error_status() {
     *this = ::std::move(from);
   }
 
-  inline error_response& operator=(const error_response& from) {
+  inline error_status& operator=(const error_status& from) {
     CopyFrom(from);
     return *this;
   }
-  inline error_response& operator=(error_response&& from) noexcept {
+  inline error_status& operator=(error_status&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -234,20 +235,20 @@ class error_response final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const error_response& default_instance() {
+  static const error_status& default_instance() {
     return *internal_default_instance();
   }
-  static inline const error_response* internal_default_instance() {
-    return reinterpret_cast<const error_response*>(
-               &_error_response_default_instance_);
+  static inline const error_status* internal_default_instance() {
+    return reinterpret_cast<const error_status*>(
+               &_error_status_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     1;
 
-  friend void swap(error_response& a, error_response& b) {
+  friend void swap(error_status& a, error_status& b) {
     a.Swap(&b);
   }
-  inline void Swap(error_response* other) {
+  inline void Swap(error_status* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -255,7 +256,7 @@ class error_response final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(error_response* other) {
+  void UnsafeArenaSwap(error_status* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -263,17 +264,17 @@ class error_response final :
 
   // implements Message ----------------------------------------------
 
-  inline error_response* New() const final {
-    return new error_response();
+  inline error_status* New() const final {
+    return new error_status();
   }
 
-  error_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<error_response>(arena);
+  error_status* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<error_status>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const error_response& from);
+  void CopyFrom(const error_status& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const error_response& from);
+  void MergeFrom(const error_status& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -290,13 +291,13 @@ class error_response final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(error_response* other);
+  void InternalSwap(error_status* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.rpc.error_response";
+    return "koinos.rpc.error_status";
   }
   protected:
-  explicit error_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit error_status(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -313,9 +314,29 @@ class error_response final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kDetailsFieldNumber = 10,
     kMessageFieldNumber = 1,
     kDataFieldNumber = 2,
+    kCodeFieldNumber = 3,
   };
+  // repeated .google.protobuf.Any details = 10;
+  int details_size() const;
+  private:
+  int _internal_details_size() const;
+  public:
+  void clear_details();
+  PROTOBUF_NAMESPACE_ID::Any* mutable_details(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< PROTOBUF_NAMESPACE_ID::Any >*
+      mutable_details();
+  private:
+  const PROTOBUF_NAMESPACE_ID::Any& _internal_details(int index) const;
+  PROTOBUF_NAMESPACE_ID::Any* _internal_add_details();
+  public:
+  const PROTOBUF_NAMESPACE_ID::Any& details(int index) const;
+  PROTOBUF_NAMESPACE_ID::Any* add_details();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< PROTOBUF_NAMESPACE_ID::Any >&
+      details() const;
+
   // string message = 1;
   void clear_message();
   const std::string& message() const;
@@ -344,15 +365,26 @@ class error_response final :
   std::string* _internal_mutable_data();
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.rpc.error_response)
+  // int32 code = 3;
+  void clear_code();
+  ::PROTOBUF_NAMESPACE_ID::int32 code() const;
+  void set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_code() const;
+  void _internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.rpc.error_status)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< PROTOBUF_NAMESPACE_ID::Any > details_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
+  ::PROTOBUF_NAMESPACE_ID::int32 code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2frpc_2frpc_2eproto;
 };
@@ -369,44 +401,44 @@ class error_response final :
 
 // -------------------------------------------------------------------
 
-// error_response
+// error_status
 
 // string message = 1;
-inline void error_response::clear_message() {
+inline void error_status::clear_message() {
   message_.ClearToEmpty();
 }
-inline const std::string& error_response::message() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.error_response.message)
+inline const std::string& error_status::message() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.error_status.message)
   return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void error_response::set_message(ArgT0&& arg0, ArgT... args) {
+void error_status::set_message(ArgT0&& arg0, ArgT... args) {
  
  message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.rpc.error_response.message)
+  // @@protoc_insertion_point(field_set:koinos.rpc.error_status.message)
 }
-inline std::string* error_response::mutable_message() {
+inline std::string* error_status::mutable_message() {
   std::string* _s = _internal_mutable_message();
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.error_response.message)
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.error_status.message)
   return _s;
 }
-inline const std::string& error_response::_internal_message() const {
+inline const std::string& error_status::_internal_message() const {
   return message_.Get();
 }
-inline void error_response::_internal_set_message(const std::string& value) {
+inline void error_status::_internal_set_message(const std::string& value) {
   
   message_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* error_response::_internal_mutable_message() {
+inline std::string* error_status::_internal_mutable_message() {
   
   return message_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* error_response::release_message() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.error_response.message)
+inline std::string* error_status::release_message() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.error_status.message)
   return message_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void error_response::set_allocated_message(std::string* message) {
+inline void error_status::set_allocated_message(std::string* message) {
   if (message != nullptr) {
     
   } else {
@@ -414,45 +446,45 @@ inline void error_response::set_allocated_message(std::string* message) {
   }
   message_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), message,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.error_response.message)
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.error_status.message)
 }
 
 // string data = 2;
-inline void error_response::clear_data() {
+inline void error_status::clear_data() {
   data_.ClearToEmpty();
 }
-inline const std::string& error_response::data() const {
-  // @@protoc_insertion_point(field_get:koinos.rpc.error_response.data)
+inline const std::string& error_status::data() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.error_status.data)
   return _internal_data();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void error_response::set_data(ArgT0&& arg0, ArgT... args) {
+void error_status::set_data(ArgT0&& arg0, ArgT... args) {
  
  data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:koinos.rpc.error_response.data)
+  // @@protoc_insertion_point(field_set:koinos.rpc.error_status.data)
 }
-inline std::string* error_response::mutable_data() {
+inline std::string* error_status::mutable_data() {
   std::string* _s = _internal_mutable_data();
-  // @@protoc_insertion_point(field_mutable:koinos.rpc.error_response.data)
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.error_status.data)
   return _s;
 }
-inline const std::string& error_response::_internal_data() const {
+inline const std::string& error_status::_internal_data() const {
   return data_.Get();
 }
-inline void error_response::_internal_set_data(const std::string& value) {
+inline void error_status::_internal_set_data(const std::string& value) {
   
   data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* error_response::_internal_mutable_data() {
+inline std::string* error_status::_internal_mutable_data() {
   
   return data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* error_response::release_data() {
-  // @@protoc_insertion_point(field_release:koinos.rpc.error_response.data)
+inline std::string* error_status::release_data() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.error_status.data)
   return data_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void error_response::set_allocated_data(std::string* data) {
+inline void error_status::set_allocated_data(std::string* data) {
   if (data != nullptr) {
     
   } else {
@@ -460,7 +492,64 @@ inline void error_response::set_allocated_data(std::string* data) {
   }
   data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), data,
       GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.error_response.data)
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.error_status.data)
+}
+
+// int32 code = 3;
+inline void error_status::clear_code() {
+  code_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 error_status::_internal_code() const {
+  return code_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 error_status::code() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.error_status.code)
+  return _internal_code();
+}
+inline void error_status::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  code_ = value;
+}
+inline void error_status::set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_code(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.error_status.code)
+}
+
+// repeated .google.protobuf.Any details = 10;
+inline int error_status::_internal_details_size() const {
+  return details_.size();
+}
+inline int error_status::details_size() const {
+  return _internal_details_size();
+}
+inline PROTOBUF_NAMESPACE_ID::Any* error_status::mutable_details(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.error_status.details)
+  return details_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< PROTOBUF_NAMESPACE_ID::Any >*
+error_status::mutable_details() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.rpc.error_status.details)
+  return &details_;
+}
+inline const PROTOBUF_NAMESPACE_ID::Any& error_status::_internal_details(int index) const {
+  return details_.Get(index);
+}
+inline const PROTOBUF_NAMESPACE_ID::Any& error_status::details(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.error_status.details)
+  return _internal_details(index);
+}
+inline PROTOBUF_NAMESPACE_ID::Any* error_status::_internal_add_details() {
+  return details_.Add();
+}
+inline PROTOBUF_NAMESPACE_ID::Any* error_status::add_details() {
+  PROTOBUF_NAMESPACE_ID::Any* _add = _internal_add_details();
+  // @@protoc_insertion_point(field_add:koinos.rpc.error_status.details)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< PROTOBUF_NAMESPACE_ID::Any >&
+error_status::details() const {
+  // @@protoc_insertion_point(field_list:koinos.rpc.error_status.details)
+  return details_;
 }
 
 #ifdef __GNUC__

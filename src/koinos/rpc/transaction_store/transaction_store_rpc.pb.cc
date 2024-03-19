@@ -133,14 +133,14 @@ const char descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransa
   "oinos.rpc.reserved_rpcH\000\022^\n\026get_transact"
   "ions_by_id\030\002 \001(\0132<.koinos.rpc.transactio"
   "n_store.get_transactions_by_id_requestH\000"
-  "B\t\n\007request\"\344\001\n\032transaction_store_respon"
+  "B\t\n\007request\"\342\001\n\032transaction_store_respon"
   "se\022,\n\010reserved\030\001 \001(\0132\030.koinos.rpc.reserv"
-  "ed_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koinos.rpc.err"
-  "or_responseH\000\022_\n\026get_transactions_by_id\030"
-  "\003 \001(\0132=.koinos.rpc.transaction_store.get"
-  "_transactions_by_id_responseH\000B\n\n\010respon"
-  "seBDZBgithub.com/koinos/koinos-proto-gol"
-  "ang/koinos/rpc/transaction_storeb\006proto3"
+  "ed_rpcH\000\022)\n\005error\030\002 \001(\0132\030.koinos.rpc.err"
+  "or_statusH\000\022_\n\026get_transactions_by_id\030\003 "
+  "\001(\0132=.koinos.rpc.transaction_store.get_t"
+  "ransactions_by_id_responseH\000B\n\n\010response"
+  "BDZBgithub.com/koinos/koinos-proto-golan"
+  "g/koinos/rpc/transaction_storeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -149,7 +149,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = {
-  false, false, 840, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
+  false, false, 838, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto,
@@ -866,7 +866,7 @@ void transaction_store_request::InternalSwap(transaction_store_request* other) {
 class transaction_store_response::_Internal {
  public:
   static const ::koinos::rpc::reserved_rpc& reserved(const transaction_store_response* msg);
-  static const ::koinos::rpc::error_response& error(const transaction_store_response* msg);
+  static const ::koinos::rpc::error_status& error(const transaction_store_response* msg);
   static const ::koinos::rpc::transaction_store::get_transactions_by_id_response& get_transactions_by_id(const transaction_store_response* msg);
 };
 
@@ -874,7 +874,7 @@ const ::koinos::rpc::reserved_rpc&
 transaction_store_response::_Internal::reserved(const transaction_store_response* msg) {
   return *msg->response_.reserved_;
 }
-const ::koinos::rpc::error_response&
+const ::koinos::rpc::error_status&
 transaction_store_response::_Internal::error(const transaction_store_response* msg) {
   return *msg->response_.error_;
 }
@@ -907,7 +907,7 @@ void transaction_store_response::clear_reserved() {
     clear_has_response();
   }
 }
-void transaction_store_response::set_allocated_error(::koinos::rpc::error_response* error) {
+void transaction_store_response::set_allocated_error(::koinos::rpc::error_status* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -966,7 +966,7 @@ transaction_store_response::transaction_store_response(const transaction_store_r
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetTransactionsById: {
@@ -1060,7 +1060,7 @@ const char* transaction_store_response::_InternalParse(const char* ptr, ::PROTOB
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.rpc.error_response error = 2;
+      // .koinos.rpc.error_status error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -1111,7 +1111,7 @@ failure:
         1, _Internal::reserved(this), target, stream);
   }
 
-  // .koinos.rpc.error_response error = 2;
+  // .koinos.rpc.error_status error = 2;
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1151,7 +1151,7 @@ size_t transaction_store_response::ByteSizeLong() const {
           *response_.reserved_);
       break;
     }
-    // .koinos.rpc.error_response error = 2;
+    // .koinos.rpc.error_status error = 2;
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1203,7 +1203,7 @@ void transaction_store_response::MergeFrom(const transaction_store_response& fro
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetTransactionsById: {

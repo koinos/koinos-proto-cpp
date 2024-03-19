@@ -348,22 +348,21 @@ const char descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2epr
   "pc.mempool.check_account_nonce_requestH\000"
   "\022b\n\035check_transaction_eligibility\030\005 \001(\0132"
   "9.koinos.rpc.mempool.check_transaction_e"
-  "ligibility_requestH\000B\t\n\007request\"\363\003\n\020memp"
+  "ligibility_requestH\000B\t\n\007request\"\361\003\n\020memp"
   "ool_response\022,\n\010reserved\030\001 \001(\0132\030.koinos."
-  "rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.koin"
-  "os.rpc.error_responseH\000\022g\n\037check_pending"
-  "_account_resources\030\003 \001(\0132<.koinos.rpc.me"
-  "mpool.check_pending_account_resources_re"
-  "sponseH\000\022Y\n\030get_pending_transactions\030\004 \001"
-  "(\01325.koinos.rpc.mempool.get_pending_tran"
-  "sactions_responseH\000\022O\n\023check_account_non"
-  "ce\030\005 \001(\01320.koinos.rpc.mempool.check_acco"
-  "unt_nonce_responseH\000\022c\n\035check_transactio"
-  "n_eligibility\030\006 \001(\0132:.koinos.rpc.mempool"
-  ".check_transaction_eligibility_responseH"
-  "\000B\n\n\010responseB:Z8github.com/koinos/koino"
-  "s-proto-golang/koinos/rpc/mempoolb\006proto"
-  "3"
+  "rpc.reserved_rpcH\000\022)\n\005error\030\002 \001(\0132\030.koin"
+  "os.rpc.error_statusH\000\022g\n\037check_pending_a"
+  "ccount_resources\030\003 \001(\0132<.koinos.rpc.memp"
+  "ool.check_pending_account_resources_resp"
+  "onseH\000\022Y\n\030get_pending_transactions\030\004 \001(\013"
+  "25.koinos.rpc.mempool.get_pending_transa"
+  "ctions_responseH\000\022O\n\023check_account_nonce"
+  "\030\005 \001(\01320.koinos.rpc.mempool.check_accoun"
+  "t_nonce_responseH\000\022c\n\035check_transaction_"
+  "eligibility\030\006 \001(\0132:.koinos.rpc.mempool.c"
+  "heck_transaction_eligibility_responseH\000B"
+  "\n\n\010responseB:Z8github.com/koinos/koinos-"
+  "proto-golang/koinos/rpc/mempoolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -372,7 +371,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, 2161, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  false, false, 2159, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 3, 11,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,
@@ -3107,7 +3106,7 @@ void mempool_request::InternalSwap(mempool_request* other) {
 class mempool_response::_Internal {
  public:
   static const ::koinos::rpc::reserved_rpc& reserved(const mempool_response* msg);
-  static const ::koinos::rpc::error_response& error(const mempool_response* msg);
+  static const ::koinos::rpc::error_status& error(const mempool_response* msg);
   static const ::koinos::rpc::mempool::check_pending_account_resources_response& check_pending_account_resources(const mempool_response* msg);
   static const ::koinos::rpc::mempool::get_pending_transactions_response& get_pending_transactions(const mempool_response* msg);
   static const ::koinos::rpc::mempool::check_account_nonce_response& check_account_nonce(const mempool_response* msg);
@@ -3118,7 +3117,7 @@ const ::koinos::rpc::reserved_rpc&
 mempool_response::_Internal::reserved(const mempool_response* msg) {
   return *msg->response_.reserved_;
 }
-const ::koinos::rpc::error_response&
+const ::koinos::rpc::error_status&
 mempool_response::_Internal::error(const mempool_response* msg) {
   return *msg->response_.error_;
 }
@@ -3163,7 +3162,7 @@ void mempool_response::clear_reserved() {
     clear_has_response();
   }
 }
-void mempool_response::set_allocated_error(::koinos::rpc::error_response* error) {
+void mempool_response::set_allocated_error(::koinos::rpc::error_status* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -3267,7 +3266,7 @@ mempool_response::mempool_response(const mempool_response& from)
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kCheckPendingAccountResources: {
@@ -3391,7 +3390,7 @@ const char* mempool_response::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.rpc.error_response error = 2;
+      // .koinos.rpc.error_status error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -3463,7 +3462,7 @@ failure:
         1, _Internal::reserved(this), target, stream);
   }
 
-  // .koinos.rpc.error_response error = 2;
+  // .koinos.rpc.error_status error = 2;
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -3527,7 +3526,7 @@ size_t mempool_response::ByteSizeLong() const {
           *response_.reserved_);
       break;
     }
-    // .koinos.rpc.error_response error = 2;
+    // .koinos.rpc.error_status error = 2;
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3600,7 +3599,7 @@ void mempool_response::MergeFrom(const mempool_response& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kCheckPendingAccountResources: {

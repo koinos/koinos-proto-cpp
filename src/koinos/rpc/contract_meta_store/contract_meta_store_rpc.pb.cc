@@ -132,15 +132,15 @@ const char descriptor_table_protodef_koinos_2frpc_2fcontract_5fmeta_5fstore_2fco
   "tore_request\022,\n\010reserved\030\001 \001(\0132\030.koinos."
   "rpc.reserved_rpcH\000\022V\n\021get_contract_meta\030"
   "\002 \001(\01329.koinos.rpc.contract_meta_store.g"
-  "et_contract_meta_requestH\000B\t\n\007request\"\336\001"
+  "et_contract_meta_requestH\000B\t\n\007request\"\334\001"
   "\n\034contract_meta_store_response\022,\n\010reserv"
-  "ed\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022+\n\005"
-  "error\030\002 \001(\0132\032.koinos.rpc.error_responseH"
-  "\000\022W\n\021get_contract_meta\030\003 \001(\0132:.koinos.rp"
-  "c.contract_meta_store.get_contract_meta_"
-  "responseH\000B\n\n\010responseBFZDgithub.com/koi"
-  "nos/koinos-proto-golang/koinos/rpc/contr"
-  "act_meta_storeb\006proto3"
+  "ed\030\001 \001(\0132\030.koinos.rpc.reserved_rpcH\000\022)\n\005"
+  "error\030\002 \001(\0132\030.koinos.rpc.error_statusH\000\022"
+  "W\n\021get_contract_meta\030\003 \001(\0132:.koinos.rpc."
+  "contract_meta_store.get_contract_meta_re"
+  "sponseH\000B\n\n\010responseBFZDgithub.com/koino"
+  "s/koinos-proto-golang/koinos/rpc/contrac"
+  "t_meta_storeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto,
@@ -149,7 +149,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto = {
-  false, false, 822, descriptor_table_protodef_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, "koinos/rpc/contract_meta_store/contract_meta_store_rpc.proto", 
+  false, false, 820, descriptor_table_protodef_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, "koinos/rpc/contract_meta_store/contract_meta_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto,
@@ -884,7 +884,7 @@ void contract_meta_store_request::InternalSwap(contract_meta_store_request* othe
 class contract_meta_store_response::_Internal {
  public:
   static const ::koinos::rpc::reserved_rpc& reserved(const contract_meta_store_response* msg);
-  static const ::koinos::rpc::error_response& error(const contract_meta_store_response* msg);
+  static const ::koinos::rpc::error_status& error(const contract_meta_store_response* msg);
   static const ::koinos::rpc::contract_meta_store::get_contract_meta_response& get_contract_meta(const contract_meta_store_response* msg);
 };
 
@@ -892,7 +892,7 @@ const ::koinos::rpc::reserved_rpc&
 contract_meta_store_response::_Internal::reserved(const contract_meta_store_response* msg) {
   return *msg->response_.reserved_;
 }
-const ::koinos::rpc::error_response&
+const ::koinos::rpc::error_status&
 contract_meta_store_response::_Internal::error(const contract_meta_store_response* msg) {
   return *msg->response_.error_;
 }
@@ -925,7 +925,7 @@ void contract_meta_store_response::clear_reserved() {
     clear_has_response();
   }
 }
-void contract_meta_store_response::set_allocated_error(::koinos::rpc::error_response* error) {
+void contract_meta_store_response::set_allocated_error(::koinos::rpc::error_status* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -984,7 +984,7 @@ contract_meta_store_response::contract_meta_store_response(const contract_meta_s
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetContractMeta: {
@@ -1078,7 +1078,7 @@ const char* contract_meta_store_response::_InternalParse(const char* ptr, ::PROT
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.rpc.error_response error = 2;
+      // .koinos.rpc.error_status error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -1129,7 +1129,7 @@ failure:
         1, _Internal::reserved(this), target, stream);
   }
 
-  // .koinos.rpc.error_response error = 2;
+  // .koinos.rpc.error_status error = 2;
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -1169,7 +1169,7 @@ size_t contract_meta_store_response::ByteSizeLong() const {
           *response_.reserved_);
       break;
     }
-    // .koinos.rpc.error_response error = 2;
+    // .koinos.rpc.error_status error = 2;
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1221,7 +1221,7 @@ void contract_meta_store_response::MergeFrom(const contract_meta_store_response&
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetContractMeta: {

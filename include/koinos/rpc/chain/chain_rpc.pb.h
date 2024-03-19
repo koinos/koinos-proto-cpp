@@ -3735,23 +3735,23 @@ class chain_response final :
       ::koinos::rpc::reserved_rpc* reserved);
   ::koinos::rpc::reserved_rpc* unsafe_arena_release_reserved();
 
-  // .koinos.rpc.error_response error = 2;
+  // .koinos.rpc.error_status error = 2;
   bool has_error() const;
   private:
   bool _internal_has_error() const;
   public:
   void clear_error();
-  const ::koinos::rpc::error_response& error() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::error_response* release_error();
-  ::koinos::rpc::error_response* mutable_error();
-  void set_allocated_error(::koinos::rpc::error_response* error);
+  const ::koinos::rpc::error_status& error() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::error_status* release_error();
+  ::koinos::rpc::error_status* mutable_error();
+  void set_allocated_error(::koinos::rpc::error_status* error);
   private:
-  const ::koinos::rpc::error_response& _internal_error() const;
-  ::koinos::rpc::error_response* _internal_mutable_error();
+  const ::koinos::rpc::error_status& _internal_error() const;
+  ::koinos::rpc::error_status* _internal_mutable_error();
   public:
   void unsafe_arena_set_allocated_error(
-      ::koinos::rpc::error_response* error);
-  ::koinos::rpc::error_response* unsafe_arena_release_error();
+      ::koinos::rpc::error_status* error);
+  ::koinos::rpc::error_status* unsafe_arena_release_error();
 
   // .koinos.rpc.chain.submit_block_response submit_block = 3;
   bool has_submit_block() const;
@@ -3961,7 +3961,7 @@ class chain_response final :
     constexpr ResponseUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::koinos::rpc::reserved_rpc* reserved_;
-    ::koinos::rpc::error_response* error_;
+    ::koinos::rpc::error_status* error_;
     ::koinos::rpc::chain::submit_block_response* submit_block_;
     ::koinos::rpc::chain::submit_transaction_response* submit_transaction_;
     ::koinos::rpc::chain::get_head_info_response* get_head_info_;
@@ -6445,7 +6445,7 @@ inline ::koinos::rpc::reserved_rpc* chain_response::mutable_reserved() {
   return _msg;
 }
 
-// .koinos.rpc.error_response error = 2;
+// .koinos.rpc.error_status error = 2;
 inline bool chain_response::_internal_has_error() const {
   return response_case() == kError;
 }
@@ -6455,11 +6455,11 @@ inline bool chain_response::has_error() const {
 inline void chain_response::set_has_error() {
   _oneof_case_[0] = kError;
 }
-inline ::koinos::rpc::error_response* chain_response::release_error() {
+inline ::koinos::rpc::error_status* chain_response::release_error() {
   // @@protoc_insertion_point(field_release:koinos.rpc.chain.chain_response.error)
   if (_internal_has_error()) {
     clear_has_response();
-      ::koinos::rpc::error_response* temp = response_.error_;
+      ::koinos::rpc::error_status* temp = response_.error_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
@@ -6469,27 +6469,27 @@ inline ::koinos::rpc::error_response* chain_response::release_error() {
     return nullptr;
   }
 }
-inline const ::koinos::rpc::error_response& chain_response::_internal_error() const {
+inline const ::koinos::rpc::error_status& chain_response::_internal_error() const {
   return _internal_has_error()
       ? *response_.error_
-      : reinterpret_cast< ::koinos::rpc::error_response&>(::koinos::rpc::_error_response_default_instance_);
+      : reinterpret_cast< ::koinos::rpc::error_status&>(::koinos::rpc::_error_status_default_instance_);
 }
-inline const ::koinos::rpc::error_response& chain_response::error() const {
+inline const ::koinos::rpc::error_status& chain_response::error() const {
   // @@protoc_insertion_point(field_get:koinos.rpc.chain.chain_response.error)
   return _internal_error();
 }
-inline ::koinos::rpc::error_response* chain_response::unsafe_arena_release_error() {
+inline ::koinos::rpc::error_status* chain_response::unsafe_arena_release_error() {
   // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.chain.chain_response.error)
   if (_internal_has_error()) {
     clear_has_response();
-    ::koinos::rpc::error_response* temp = response_.error_;
+    ::koinos::rpc::error_status* temp = response_.error_;
     response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void chain_response::unsafe_arena_set_allocated_error(::koinos::rpc::error_response* error) {
+inline void chain_response::unsafe_arena_set_allocated_error(::koinos::rpc::error_status* error) {
   clear_response();
   if (error) {
     set_has_error();
@@ -6497,16 +6497,16 @@ inline void chain_response::unsafe_arena_set_allocated_error(::koinos::rpc::erro
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.chain.chain_response.error)
 }
-inline ::koinos::rpc::error_response* chain_response::_internal_mutable_error() {
+inline ::koinos::rpc::error_status* chain_response::_internal_mutable_error() {
   if (!_internal_has_error()) {
     clear_response();
     set_has_error();
-    response_.error_ = CreateMaybeMessage< ::koinos::rpc::error_response >(GetArenaForAllocation());
+    response_.error_ = CreateMaybeMessage< ::koinos::rpc::error_status >(GetArenaForAllocation());
   }
   return response_.error_;
 }
-inline ::koinos::rpc::error_response* chain_response::mutable_error() {
-  ::koinos::rpc::error_response* _msg = _internal_mutable_error();
+inline ::koinos::rpc::error_status* chain_response::mutable_error() {
+  ::koinos::rpc::error_status* _msg = _internal_mutable_error();
   // @@protoc_insertion_point(field_mutable:koinos.rpc.chain.chain_response.error)
   return _msg;
 }

@@ -287,20 +287,20 @@ const char descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstor
   "dd_block\030\004 \001(\0132).koinos.rpc.block_store."
   "add_block_requestH\000\022N\n\021get_highest_block"
   "\030\005 \001(\01321.koinos.rpc.block_store.get_high"
-  "est_block_requestH\000B\t\n\007request\"\265\003\n\024block"
+  "est_block_requestH\000B\t\n\007request\"\263\003\n\024block"
   "_store_response\022,\n\010reserved\030\001 \001(\0132\030.koin"
-  "os.rpc.reserved_rpcH\000\022+\n\005error\030\002 \001(\0132\032.k"
-  "oinos.rpc.error_responseH\000\022M\n\020get_blocks"
-  "_by_id\030\003 \001(\01321.koinos.rpc.block_store.ge"
-  "t_blocks_by_id_responseH\000\022U\n\024get_blocks_"
-  "by_height\030\004 \001(\01325.koinos.rpc.block_store"
-  ".get_blocks_by_height_responseH\000\022\?\n\tadd_"
-  "block\030\005 \001(\0132*.koinos.rpc.block_store.add"
-  "_block_responseH\000\022O\n\021get_highest_block\030\006"
-  " \001(\01322.koinos.rpc.block_store.get_highes"
-  "t_block_responseH\000B\n\n\010responseB>Z<github"
-  ".com/koinos/koinos-proto-golang/koinos/r"
-  "pc/block_storeb\006proto3"
+  "os.rpc.reserved_rpcH\000\022)\n\005error\030\002 \001(\0132\030.k"
+  "oinos.rpc.error_statusH\000\022M\n\020get_blocks_b"
+  "y_id\030\003 \001(\01321.koinos.rpc.block_store.get_"
+  "blocks_by_id_responseH\000\022U\n\024get_blocks_by"
+  "_height\030\004 \001(\01325.koinos.rpc.block_store.g"
+  "et_blocks_by_height_responseH\000\022\?\n\tadd_bl"
+  "ock\030\005 \001(\0132*.koinos.rpc.block_store.add_b"
+  "lock_responseH\000\022O\n\021get_highest_block\030\006 \001"
+  "(\01322.koinos.rpc.block_store.get_highest_"
+  "block_responseH\000B\n\n\010responseB>Z<github.c"
+  "om/koinos/koinos-proto-golang/koinos/rpc"
+  "/block_storeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,
@@ -311,7 +311,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto = {
-  false, false, 1782, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
+  false, false, 1780, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps, 5, 10,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto,
@@ -2518,7 +2518,7 @@ void block_store_request::InternalSwap(block_store_request* other) {
 class block_store_response::_Internal {
  public:
   static const ::koinos::rpc::reserved_rpc& reserved(const block_store_response* msg);
-  static const ::koinos::rpc::error_response& error(const block_store_response* msg);
+  static const ::koinos::rpc::error_status& error(const block_store_response* msg);
   static const ::koinos::rpc::block_store::get_blocks_by_id_response& get_blocks_by_id(const block_store_response* msg);
   static const ::koinos::rpc::block_store::get_blocks_by_height_response& get_blocks_by_height(const block_store_response* msg);
   static const ::koinos::rpc::block_store::add_block_response& add_block(const block_store_response* msg);
@@ -2529,7 +2529,7 @@ const ::koinos::rpc::reserved_rpc&
 block_store_response::_Internal::reserved(const block_store_response* msg) {
   return *msg->response_.reserved_;
 }
-const ::koinos::rpc::error_response&
+const ::koinos::rpc::error_status&
 block_store_response::_Internal::error(const block_store_response* msg) {
   return *msg->response_.error_;
 }
@@ -2574,7 +2574,7 @@ void block_store_response::clear_reserved() {
     clear_has_response();
   }
 }
-void block_store_response::set_allocated_error(::koinos::rpc::error_response* error) {
+void block_store_response::set_allocated_error(::koinos::rpc::error_status* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -2678,7 +2678,7 @@ block_store_response::block_store_response(const block_store_response& from)
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetBlocksById: {
@@ -2802,7 +2802,7 @@ const char* block_store_response::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.rpc.error_response error = 2;
+      // .koinos.rpc.error_status error = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -2874,7 +2874,7 @@ failure:
         1, _Internal::reserved(this), target, stream);
   }
 
-  // .koinos.rpc.error_response error = 2;
+  // .koinos.rpc.error_status error = 2;
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -2938,7 +2938,7 @@ size_t block_store_response::ByteSizeLong() const {
           *response_.reserved_);
       break;
     }
-    // .koinos.rpc.error_response error = 2;
+    // .koinos.rpc.error_status error = 2;
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -3011,7 +3011,7 @@ void block_store_response::MergeFrom(const block_store_response& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::koinos::rpc::error_response::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::koinos::rpc::error_status::MergeFrom(from._internal_error());
       break;
     }
     case kGetBlocksById: {

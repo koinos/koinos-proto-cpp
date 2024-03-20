@@ -56,13 +56,13 @@ struct TableStruct_koinos_2fchain_2ferror_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2ferror_2eproto;
 namespace koinos {
 namespace chain {
-class chain_error_details;
-struct chain_error_detailsDefaultTypeInternal;
-extern chain_error_detailsDefaultTypeInternal _chain_error_details_default_instance_;
+class error_details;
+struct error_detailsDefaultTypeInternal;
+extern error_detailsDefaultTypeInternal _error_details_default_instance_;
 }  // namespace chain
 }  // namespace koinos
 PROTOBUF_NAMESPACE_OPEN
-template<> ::koinos::chain::chain_error_details* Arena::CreateMaybeMessage<::koinos::chain::chain_error_details>(Arena*);
+template<> ::koinos::chain::error_details* Arena::CreateMaybeMessage<::koinos::chain::error_details>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
 namespace chain {
@@ -131,24 +131,24 @@ inline bool error_code_Parse(
 }
 // ===================================================================
 
-class chain_error_details final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.chain_error_details) */ {
+class error_details final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.chain.error_details) */ {
  public:
-  inline chain_error_details() : chain_error_details(nullptr) {}
-  ~chain_error_details() override;
-  explicit constexpr chain_error_details(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline error_details() : error_details(nullptr) {}
+  ~error_details() override;
+  explicit constexpr error_details(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  chain_error_details(const chain_error_details& from);
-  chain_error_details(chain_error_details&& from) noexcept
-    : chain_error_details() {
+  error_details(const error_details& from);
+  error_details(error_details&& from) noexcept
+    : error_details() {
     *this = ::std::move(from);
   }
 
-  inline chain_error_details& operator=(const chain_error_details& from) {
+  inline error_details& operator=(const error_details& from) {
     CopyFrom(from);
     return *this;
   }
-  inline chain_error_details& operator=(chain_error_details&& from) noexcept {
+  inline error_details& operator=(error_details&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()) {
       InternalSwap(&from);
@@ -167,20 +167,20 @@ class chain_error_details final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const chain_error_details& default_instance() {
+  static const error_details& default_instance() {
     return *internal_default_instance();
   }
-  static inline const chain_error_details* internal_default_instance() {
-    return reinterpret_cast<const chain_error_details*>(
-               &_chain_error_details_default_instance_);
+  static inline const error_details* internal_default_instance() {
+    return reinterpret_cast<const error_details*>(
+               &_error_details_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(chain_error_details& a, chain_error_details& b) {
+  friend void swap(error_details& a, error_details& b) {
     a.Swap(&b);
   }
-  inline void Swap(chain_error_details* other) {
+  inline void Swap(error_details* other) {
     if (other == this) return;
     if (GetOwningArena() == other->GetOwningArena()) {
       InternalSwap(other);
@@ -188,7 +188,7 @@ class chain_error_details final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(chain_error_details* other) {
+  void UnsafeArenaSwap(error_details* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -196,17 +196,17 @@ class chain_error_details final :
 
   // implements Message ----------------------------------------------
 
-  inline chain_error_details* New() const final {
-    return new chain_error_details();
+  inline error_details* New() const final {
+    return new error_details();
   }
 
-  chain_error_details* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<chain_error_details>(arena);
+  error_details* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<error_details>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const chain_error_details& from);
+  void CopyFrom(const error_details& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const chain_error_details& from);
+  void MergeFrom(const error_details& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
   public:
@@ -223,13 +223,13 @@ class chain_error_details final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(chain_error_details* other);
+  void InternalSwap(error_details* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.chain.chain_error_details";
+    return "koinos.chain.error_details";
   }
   protected:
-  explicit chain_error_details(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit error_details(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
   static void ArenaDtor(void* object);
@@ -257,7 +257,7 @@ class chain_error_details final :
   void _internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // @@protoc_insertion_point(class_scope:koinos.chain.chain_error_details)
+  // @@protoc_insertion_point(class_scope:koinos.chain.error_details)
  private:
   class _Internal;
 
@@ -277,26 +277,26 @@ class chain_error_details final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// chain_error_details
+// error_details
 
 // int32 code = 1;
-inline void chain_error_details::clear_code() {
+inline void error_details::clear_code() {
   code_ = 0;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 chain_error_details::_internal_code() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 error_details::_internal_code() const {
   return code_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 chain_error_details::code() const {
-  // @@protoc_insertion_point(field_get:koinos.chain.chain_error_details.code)
+inline ::PROTOBUF_NAMESPACE_ID::int32 error_details::code() const {
+  // @@protoc_insertion_point(field_get:koinos.chain.error_details.code)
   return _internal_code();
 }
-inline void chain_error_details::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void error_details::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   
   code_ = value;
 }
-inline void chain_error_details::set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
+inline void error_details::set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_code(value);
-  // @@protoc_insertion_point(field_set:koinos.chain.chain_error_details.code)
+  // @@protoc_insertion_point(field_set:koinos.chain.error_details.code)
 }
 
 #ifdef __GNUC__

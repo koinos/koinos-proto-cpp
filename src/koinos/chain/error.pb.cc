@@ -20,7 +20,8 @@ namespace koinos {
 namespace chain {
 constexpr error_details::error_details(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : code_(0){}
+  : logs_()
+  , code_(0){}
 struct error_detailsDefaultTypeInternal {
   constexpr error_detailsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -43,6 +44,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fchain_2ferror_2eproto
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::chain::error_details, code_),
+  PROTOBUF_FIELD_OFFSET(::koinos::chain::error_details, logs_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::chain::error_details)},
@@ -54,43 +56,44 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/error.proto\022\014koinos.chain"
-  "\"\035\n\rerror_details\022\014\n\004code\030\001 \001(\005*\300\t\n\nerro"
-  "r_code\022\013\n\007success\020\000\022\r\n\treversion\020\001\022\022\n\016in"
-  "ternal_error\020d\022 \n\034system_authorization_f"
-  "ailure\020e\022\024\n\020invalid_contract\020f\022\033\n\027insuff"
-  "icient_privileges\020g\022\023\n\017insufficient_rc\020h"
-  "\022\036\n\032insufficient_return_buffer\020i\022\021\n\runkn"
-  "own_thunk\020j\022\025\n\021unknown_operation\020k\022\025\n\021re"
-  "ad_only_context\020l\022\024\n\007failure\020\377\377\377\377\377\377\377\377\377\001\022"
-  "\034\n\017field_not_found\020\234\377\377\377\377\377\377\377\377\001\022\036\n\021unknown"
-  "_hash_code\020\233\377\377\377\377\377\377\377\377\001\022\030\n\013unknown_dsa\020\232\377\377"
-  "\377\377\377\377\377\377\001\022 \n\023unknown_system_call\020\231\377\377\377\377\377\377\377\377"
-  "\001\022 \n\023operation_not_found\020\230\377\377\377\377\377\377\377\377\001\022\"\n\025a"
-  "uthorization_failure\020\270\376\377\377\377\377\377\377\377\001\022\032\n\rinval"
-  "id_nonce\020\267\376\377\377\377\377\377\377\377\001\022\036\n\021invalid_signature"
-  "\020\266\376\377\377\377\377\377\377\377\001\022\034\n\017malformed_block\020\265\376\377\377\377\377\377\377\377"
-  "\001\022\"\n\025malformed_transaction\020\264\376\377\377\377\377\377\377\377\001\022#\n"
-  "\026block_resource_failure\020\263\376\377\377\377\377\377\377\377\001\022\034\n\017un"
-  "known_backend\020\230\370\377\377\377\377\377\377\377\001\022\035\n\020unexpected_s"
-  "tate\020\227\370\377\377\377\377\377\377\377\001\022\'\n\032missing_required_argu"
-  "ments\020\226\370\377\377\377\377\377\377\377\001\022#\n\026unknown_previous_blo"
-  "ck\020\225\370\377\377\377\377\377\377\377\001\022\036\n\021unexpected_height\020\224\370\377\377\377"
-  "\377\377\377\377\001\022\036\n\021block_state_error\020\223\370\377\377\377\377\377\377\377\001\022\"\n"
-  "\025state_merkle_mismatch\020\222\370\377\377\377\377\377\377\377\001\022\037\n\022une"
-  "xpected_receipt\020\221\370\377\377\377\377\377\377\377\001\022\030\n\013rpc_failur"
-  "e\020\220\370\377\377\377\377\377\377\377\001\022 \n\023pending_state_error\020\217\370\377\377"
-  "\377\377\377\377\377\001\022$\n\027timestamp_out_of_bounds\020\216\370\377\377\377\377"
-  "\377\377\377\001\022\034\n\017indexer_failure\020\215\370\377\377\377\377\377\377\377\001\022-\n ne"
-  "twork_bandwidth_limit_exceeded\020\214\370\377\377\377\377\377\377\377"
-  "\001\022-\n compute_bandwidth_limit_exceeded\020\213\370"
-  "\377\377\377\377\377\377\377\001\022(\n\033disk_storage_limit_exceeded\020"
-  "\212\370\377\377\377\377\377\377\377\001\022&\n\031pre_irreversibility_block\020"
-  "\211\370\377\377\377\377\377\377\377\001B4Z2github.com/koinos/koinos-p"
-  "roto-golang/koinos/chainb\006proto3"
+  "\"+\n\rerror_details\022\014\n\004code\030\001 \001(\005\022\014\n\004logs\030"
+  "\002 \003(\t*\300\t\n\nerror_code\022\013\n\007success\020\000\022\r\n\trev"
+  "ersion\020\001\022\022\n\016internal_error\020d\022 \n\034system_a"
+  "uthorization_failure\020e\022\024\n\020invalid_contra"
+  "ct\020f\022\033\n\027insufficient_privileges\020g\022\023\n\017ins"
+  "ufficient_rc\020h\022\036\n\032insufficient_return_bu"
+  "ffer\020i\022\021\n\runknown_thunk\020j\022\025\n\021unknown_ope"
+  "ration\020k\022\025\n\021read_only_context\020l\022\024\n\007failu"
+  "re\020\377\377\377\377\377\377\377\377\377\001\022\034\n\017field_not_found\020\234\377\377\377\377\377\377"
+  "\377\377\001\022\036\n\021unknown_hash_code\020\233\377\377\377\377\377\377\377\377\001\022\030\n\013u"
+  "nknown_dsa\020\232\377\377\377\377\377\377\377\377\001\022 \n\023unknown_system_"
+  "call\020\231\377\377\377\377\377\377\377\377\001\022 \n\023operation_not_found\020\230"
+  "\377\377\377\377\377\377\377\377\001\022\"\n\025authorization_failure\020\270\376\377\377\377"
+  "\377\377\377\377\001\022\032\n\rinvalid_nonce\020\267\376\377\377\377\377\377\377\377\001\022\036\n\021inv"
+  "alid_signature\020\266\376\377\377\377\377\377\377\377\001\022\034\n\017malformed_b"
+  "lock\020\265\376\377\377\377\377\377\377\377\001\022\"\n\025malformed_transaction"
+  "\020\264\376\377\377\377\377\377\377\377\001\022#\n\026block_resource_failure\020\263\376"
+  "\377\377\377\377\377\377\377\001\022\034\n\017unknown_backend\020\230\370\377\377\377\377\377\377\377\001\022\035"
+  "\n\020unexpected_state\020\227\370\377\377\377\377\377\377\377\001\022\'\n\032missing"
+  "_required_arguments\020\226\370\377\377\377\377\377\377\377\001\022#\n\026unknow"
+  "n_previous_block\020\225\370\377\377\377\377\377\377\377\001\022\036\n\021unexpecte"
+  "d_height\020\224\370\377\377\377\377\377\377\377\001\022\036\n\021block_state_error"
+  "\020\223\370\377\377\377\377\377\377\377\001\022\"\n\025state_merkle_mismatch\020\222\370\377"
+  "\377\377\377\377\377\377\001\022\037\n\022unexpected_receipt\020\221\370\377\377\377\377\377\377\377\001"
+  "\022\030\n\013rpc_failure\020\220\370\377\377\377\377\377\377\377\001\022 \n\023pending_st"
+  "ate_error\020\217\370\377\377\377\377\377\377\377\001\022$\n\027timestamp_out_of"
+  "_bounds\020\216\370\377\377\377\377\377\377\377\001\022\034\n\017indexer_failure\020\215\370"
+  "\377\377\377\377\377\377\377\001\022-\n network_bandwidth_limit_exce"
+  "eded\020\214\370\377\377\377\377\377\377\377\001\022-\n compute_bandwidth_lim"
+  "it_exceeded\020\213\370\377\377\377\377\377\377\377\001\022(\n\033disk_storage_l"
+  "imit_exceeded\020\212\370\377\377\377\377\377\377\377\001\022&\n\031pre_irrevers"
+  "ibility_block\020\211\370\377\377\377\377\377\377\377\001B4Z2github.com/k"
+  "oinos/koinos-proto-golang/koinos/chainb\006"
+  "proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2ferror_2eproto = {
-  false, false, 1352, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
+  false, false, 1366, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
   &descriptor_table_koinos_2fchain_2ferror_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2ferror_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2ferror_2eproto, file_level_enum_descriptors_koinos_2fchain_2ferror_2eproto, file_level_service_descriptors_koinos_2fchain_2ferror_2eproto,
@@ -163,7 +166,8 @@ class error_details::_Internal {
 
 error_details::error_details(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  logs_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -171,7 +175,8 @@ error_details::error_details(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.chain.error_details)
 }
 error_details::error_details(const error_details& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      logs_(from.logs_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   code_ = from.code_;
   // @@protoc_insertion_point(copy_constructor:koinos.chain.error_details)
@@ -208,6 +213,7 @@ void error_details::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  logs_.Clear();
   code_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -223,6 +229,20 @@ const char* error_details::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           code_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated string logs = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_logs();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.chain.error_details.logs"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<18>(ptr));
         } else goto handle_unusual;
         continue;
       default: {
@@ -260,6 +280,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_code(), target);
   }
 
+  // repeated string logs = 2;
+  for (int i = 0, n = this->_internal_logs_size(); i < n; i++) {
+    const auto& s = this->_internal_logs(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.chain.error_details.logs");
+    target = stream->WriteString(2, s, target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -275,6 +305,14 @@ size_t error_details::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // repeated string logs = 2;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(logs_.size());
+  for (int i = 0, n = logs_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      logs_.Get(i));
+  }
 
   // int32 code = 1;
   if (this->_internal_code() != 0) {
@@ -311,6 +349,7 @@ void error_details::MergeFrom(const error_details& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  logs_.MergeFrom(from.logs_);
   if (from._internal_code() != 0) {
     _internal_set_code(from._internal_code());
   }
@@ -331,6 +370,7 @@ bool error_details::IsInitialized() const {
 void error_details::InternalSwap(error_details* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  logs_.InternalSwap(&other->logs_);
   swap(code_, other->code_);
 }
 

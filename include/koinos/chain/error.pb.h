@@ -246,8 +246,33 @@ class error_details final :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kLogsFieldNumber = 2,
     kCodeFieldNumber = 1,
   };
+  // repeated string logs = 2;
+  int logs_size() const;
+  private:
+  int _internal_logs_size() const;
+  public:
+  void clear_logs();
+  const std::string& logs(int index) const;
+  std::string* mutable_logs(int index);
+  void set_logs(int index, const std::string& value);
+  void set_logs(int index, std::string&& value);
+  void set_logs(int index, const char* value);
+  void set_logs(int index, const char* value, size_t size);
+  std::string* add_logs();
+  void add_logs(const std::string& value);
+  void add_logs(std::string&& value);
+  void add_logs(const char* value);
+  void add_logs(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& logs() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_logs();
+  private:
+  const std::string& _internal_logs(int index) const;
+  std::string* _internal_add_logs();
+  public:
+
   // int32 code = 1;
   void clear_code();
   ::PROTOBUF_NAMESPACE_ID::int32 code() const;
@@ -264,6 +289,7 @@ class error_details final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> logs_;
   ::PROTOBUF_NAMESPACE_ID::int32 code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fchain_2ferror_2eproto;
@@ -297,6 +323,81 @@ inline void error_details::_internal_set_code(::PROTOBUF_NAMESPACE_ID::int32 val
 inline void error_details::set_code(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_code(value);
   // @@protoc_insertion_point(field_set:koinos.chain.error_details.code)
+}
+
+// repeated string logs = 2;
+inline int error_details::_internal_logs_size() const {
+  return logs_.size();
+}
+inline int error_details::logs_size() const {
+  return _internal_logs_size();
+}
+inline void error_details::clear_logs() {
+  logs_.Clear();
+}
+inline std::string* error_details::add_logs() {
+  std::string* _s = _internal_add_logs();
+  // @@protoc_insertion_point(field_add_mutable:koinos.chain.error_details.logs)
+  return _s;
+}
+inline const std::string& error_details::_internal_logs(int index) const {
+  return logs_.Get(index);
+}
+inline const std::string& error_details::logs(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.chain.error_details.logs)
+  return _internal_logs(index);
+}
+inline std::string* error_details::mutable_logs(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.chain.error_details.logs)
+  return logs_.Mutable(index);
+}
+inline void error_details::set_logs(int index, const std::string& value) {
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.chain.error_details.logs)
+}
+inline void error_details::set_logs(int index, std::string&& value) {
+  logs_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.chain.error_details.logs)
+}
+inline void error_details::set_logs(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.chain.error_details.logs)
+}
+inline void error_details::set_logs(int index, const char* value, size_t size) {
+  logs_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.chain.error_details.logs)
+}
+inline std::string* error_details::_internal_add_logs() {
+  return logs_.Add();
+}
+inline void error_details::add_logs(const std::string& value) {
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.chain.error_details.logs)
+}
+inline void error_details::add_logs(std::string&& value) {
+  logs_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.chain.error_details.logs)
+}
+inline void error_details::add_logs(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  logs_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.chain.error_details.logs)
+}
+inline void error_details::add_logs(const char* value, size_t size) {
+  logs_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.chain.error_details.logs)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+error_details::logs() const {
+  // @@protoc_insertion_point(field_list:koinos.chain.error_details.logs)
+  return logs_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+error_details::mutable_logs() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.chain.error_details.logs)
+  return &logs_;
 }
 
 #ifdef __GNUC__

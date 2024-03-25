@@ -13,7 +13,7 @@ FetchContent_MakeAvailable(koinos_cmake)
 include("${koinos_cmake_SOURCE_DIR}/Koinos.cmake")
 
 project(koinos_proto
-  VERSION 1.4.0
+  VERSION 2.0.0
   DESCRIPTION "The Koinos proto library"
   LANGUAGES CXX C)
 

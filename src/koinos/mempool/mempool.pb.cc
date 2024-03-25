@@ -112,15 +112,15 @@ const char descriptor_table_protodef_koinos_2fmempool_2fmempool_2eproto[] PROTOB
   "protocol.transaction\022\021\n\ttimestamp\030\002 \001(\004\022"
   "\031\n\021disk_storage_used\030\003 \001(\004\022\036\n\026network_ba"
   "ndwidth_used\030\004 \001(\004\022\036\n\026compute_bandwidth_"
-  "used\030\005 \001(\004B6Z4github.com/koinos/koinos-p"
-  "roto-golang/koinos/mempoolb\006proto3"
+  "used\030\005 \001(\004B9Z7github.com/koinos/koinos-p"
+  "roto-golang/v2/koinos/mempoolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fmempool_2fmempool_2eproto_deps[1] = {
   &::descriptor_table_koinos_2fprotocol_2fprotocol_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fmempool_2fmempool_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fmempool_2fmempool_2eproto = {
-  false, false, 434, descriptor_table_protodef_koinos_2fmempool_2fmempool_2eproto, "koinos/mempool/mempool.proto", 
+  false, false, 437, descriptor_table_protodef_koinos_2fmempool_2fmempool_2eproto, "koinos/mempool/mempool.proto", 
   &descriptor_table_koinos_2fmempool_2fmempool_2eproto_once, descriptor_table_koinos_2fmempool_2fmempool_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_koinos_2fmempool_2fmempool_2eproto::offsets,
   file_level_metadata_koinos_2fmempool_2fmempool_2eproto, file_level_enum_descriptors_koinos_2fmempool_2fmempool_2eproto, file_level_service_descriptors_koinos_2fmempool_2fmempool_2eproto,

@@ -79,15 +79,15 @@ const char descriptor_table_protodef_koinos_2frpc_2frpc_2eproto[] PROTOBUF_SECTI
   "le/protobuf/any.proto\"\016\n\014reserved_rpc\"T\n"
   "\014error_status\022\017\n\007message\030\001 \001(\t\022\014\n\004data\030\002"
   " \001(\t\022%\n\007details\030\n \003(\0132\024.google.protobuf."
-  "AnyB2Z0github.com/koinos/koinos-proto-go"
-  "lang/koinos/rpcb\006proto3"
+  "AnyB5Z3github.com/koinos/koinos-proto-go"
+  "lang/v2/koinos/rpcb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2frpc_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2frpc_2eproto = {
-  false, false, 223, descriptor_table_protodef_koinos_2frpc_2frpc_2eproto, "koinos/rpc/rpc.proto", 
+  false, false, 226, descriptor_table_protodef_koinos_2frpc_2frpc_2eproto, "koinos/rpc/rpc.proto", 
   &descriptor_table_koinos_2frpc_2frpc_2eproto_once, descriptor_table_koinos_2frpc_2frpc_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2frpc_2eproto,

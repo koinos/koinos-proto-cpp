@@ -56,13 +56,13 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eprot
   "call\020\331\004\022\t\n\004exit\020\332\004\022\022\n\rget_arguments\020\333\004\022\024"
   "\n\017get_contract_id\020\334\004\022\017\n\nget_caller\020\335\004\022\024\n"
   "\017check_authority\020\336\004\022\026\n\021get_contract_name"
-  "\020\220N\022\031\n\024get_contract_address\020\221NB4Z2github"
-  ".com/koinos/koinos-proto-golang/koinos/c"
-  "hainb\006proto3"
+  "\020\220N\022\031\n\024get_contract_address\020\221NB7Z5github"
+  ".com/koinos/koinos-proto-golang/v2/koino"
+  "s/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto = {
-  false, false, 1252, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
+  false, false, 1255, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, "koinos/chain/system_call_ids.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcall_5fids_2eproto_once, nullptr, 0, 0,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcall_5fids_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcall_5fids_2eproto,

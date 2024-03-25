@@ -181,9 +181,9 @@ const char descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_
   "cH\000\022)\n\005error\030\002 \001(\0132\030.koinos.rpc.error_st"
   "atusH\000\022W\n\023get_account_history\030\003 \001(\01328.ko"
   "inos.rpc.account_history.get_account_his"
-  "tory_responseH\000B\n\n\010responseBBZ@github.co"
-  "m/koinos/koinos-proto-golang/koinos/rpc/"
-  "account_historyb\006proto3"
+  "tory_responseH\000B\n\n\010responseBEZCgithub.co"
+  "m/koinos/koinos-proto-golang/v2/koinos/r"
+  "pc/account_historyb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2faccount_5fhistory_2faccount_5fhistory_2eproto,
@@ -192,7 +192,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto = {
-  false, false, 1063, descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, "koinos/rpc/account_history/account_history_rpc.proto", 
+  false, false, 1066, descriptor_table_protodef_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, "koinos/rpc/account_history/account_history_rpc.proto", 
   &descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto_deps, 3, 5,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto,

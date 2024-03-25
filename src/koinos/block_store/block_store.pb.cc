@@ -98,9 +98,9 @@ const char descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2epr
   "ht\030\002 \001(\004B\0020\001\022%\n\005block\030\003 \001(\0132\026.koinos.pro"
   "tocol.block\022/\n\007receipt\030\004 \001(\0132\036.koinos.pr"
   "otocol.block_receipt\022 \n\022previous_block_i"
-  "ds\030\005 \003(\014B\004\200\265\030\003B>Z<github.com/koinos/koin"
-  "os-proto-golang/koinos/rpc/block_storeb\006"
-  "proto3"
+  "ds\030\005 \003(\014B\004\200\265\030\003BAZ\?github.com/koinos/koin"
+  "os-proto-golang/v2/koinos/rpc/block_stor"
+  "eb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_deps[2] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -108,7 +108,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto = {
-  false, false, 526, descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, "koinos/block_store/block_store.proto", 
+  false, false, 529, descriptor_table_protodef_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, "koinos/block_store/block_store.proto", 
   &descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_once, descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_koinos_2fblock_5fstore_2fblock_5fstore_2eproto::offsets,
   file_level_metadata_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, file_level_enum_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto, file_level_service_descriptors_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,

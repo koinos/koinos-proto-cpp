@@ -292,8 +292,8 @@ const char descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2epr
   "ding_transactions_responseH\000\022O\n\023check_ac"
   "count_nonce\030\005 \001(\01320.koinos.rpc.mempool.c"
   "heck_account_nonce_responseH\000B\n\n\010respons"
-  "eB:Z8github.com/koinos/koinos-proto-gola"
-  "ng/koinos/rpc/mempoolb\006proto3"
+  "eB=Z;github.com/koinos/koinos-proto-gola"
+  "ng/v2/koinos/rpc/mempoolb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -302,7 +302,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto = {
-  false, false, 1709, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
+  false, false, 1712, descriptor_table_protodef_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, "koinos/rpc/mempool/mempool_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto_deps, 3, 9,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto,

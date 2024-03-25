@@ -217,16 +217,16 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fclaim_2fclaim_2eproto[
   "claim.claim_info\"2\n\025check_claim_argument"
   "s\022\031\n\013eth_address\030\001 \001(\014B\004\200\265\030\002\"I\n\022check_cl"
   "aim_result\0223\n\005value\030\001 \001(\0132$.koinos.contr"
-  "acts.claim.claim_statusB>Z<github.com/ko"
-  "inos/koinos-proto-golang/koinos/contract"
-  "s/claimb\006proto3"
+  "acts.claim.claim_statusBAZ\?github.com/ko"
+  "inos/koinos-proto-golang/v2/koinos/contr"
+  "acts/claimb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto = {
-  false, false, 655, descriptor_table_protodef_koinos_2fcontracts_2fclaim_2fclaim_2eproto, "koinos/contracts/claim/claim.proto", 
+  false, false, 658, descriptor_table_protodef_koinos_2fcontracts_2fclaim_2fclaim_2eproto, "koinos/contracts/claim/claim.proto", 
   &descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_once, descriptor_table_koinos_2fcontracts_2fclaim_2fclaim_2eproto_deps, 1, 8,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fclaim_2fclaim_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fclaim_2fclaim_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fclaim_2fclaim_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fclaim_2fclaim_2eproto,

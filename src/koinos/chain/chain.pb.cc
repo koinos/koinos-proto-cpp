@@ -389,8 +389,8 @@ const char descriptor_table_protodef_koinos_2fchain_2fchain_2eproto[] PROTOBUF_S
   "\014genesis_data\022,\n\007entries\030\001 \003(\0132\033.koinos."
   "chain.genesis_entry*+\n\tprivilege\022\017\n\013kern"
   "el_mode\020\000\022\r\n\tuser_mode\020\001*\032\n\003dsa\022\023\n\017ecdsa"
-  "_secp256k1\020\000B4Z2github.com/koinos/koinos"
-  "-proto-golang/koinos/chainb\006proto3"
+  "_secp256k1\020\000B7Z5github.com/koinos/koinos"
+  "-proto-golang/v2/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fchain_2eproto_deps[2] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -398,7 +398,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fchain_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fchain_2eproto = {
-  false, false, 1474, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
+  false, false, 1477, descriptor_table_protodef_koinos_2fchain_2fchain_2eproto, "koinos/chain/chain.proto", 
   &descriptor_table_koinos_2fchain_2fchain_2eproto_once, descriptor_table_koinos_2fchain_2fchain_2eproto_deps, 2, 14,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fchain_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fchain_2eproto, file_level_enum_descriptors_koinos_2fchain_2fchain_2eproto, file_level_service_descriptors_koinos_2fchain_2fchain_2eproto,

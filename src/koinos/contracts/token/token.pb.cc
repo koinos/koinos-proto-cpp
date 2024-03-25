@@ -458,15 +458,16 @@ const char descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto[
   "\001\"1\n\nmint_event\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005val"
   "ue\030\002 \001(\004B\0020\001\"I\n\016transfer_event\022\022\n\004from\030\001"
   " \001(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 "
-  "\001(\004B\0020\001B>Z<github.com/koinos/koinos-prot"
-  "o-golang/koinos/contracts/tokenb\006proto3"
+  "\001(\004B\0020\001BAZ\?github.com/koinos/koinos-prot"
+  "o-golang/v2/koinos/contracts/tokenb\006prot"
+  "o3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto = {
-  false, false, 919, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
+  false, false, 922, descriptor_table_protodef_koinos_2fcontracts_2ftoken_2ftoken_2eproto, "koinos/contracts/token/token.proto", 
   &descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_once, descriptor_table_koinos_2fcontracts_2ftoken_2ftoken_2eproto_deps, 1, 20,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2ftoken_2ftoken_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto, file_level_service_descriptors_koinos_2fcontracts_2ftoken_2ftoken_2eproto,

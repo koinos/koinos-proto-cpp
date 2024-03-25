@@ -443,16 +443,16 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto[] PR
   "\001(\014B\004\200\265\030\000\"b\n%update_consensus_parameters"
   "_arguments\0229\n\005value\030\001 \001(\0132*.koinos.contr"
   "acts.pob.consensus_parameters\"$\n\"update_"
-  "consensus_parameters_resultB<Z:github.co"
-  "m/koinos/koinos-proto-golang/koinos/cont"
-  "racts/pobb\006proto3"
+  "consensus_parameters_resultB\?Z=github.co"
+  "m/koinos/koinos-proto-golang/v2/koinos/c"
+  "ontracts/pobb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto = {
-  false, false, 1377, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
+  false, false, 1380, descriptor_table_protodef_koinos_2fcontracts_2fpob_2fpob_2eproto, "koinos/contracts/pob/pob.proto", 
   &descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_once, descriptor_table_koinos_2fcontracts_2fpob_2fpob_2eproto_deps, 1, 18,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpob_2fpob_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpob_2fpob_2eproto,

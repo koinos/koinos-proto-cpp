@@ -231,15 +231,16 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fname_5fservice_2fname_
   "nts\022\014\n\004name\030\001 \001(\t\022\025\n\007address\030\002 \001(\014B\004\200\265\030\006"
   "\"\023\n\021set_record_result\":\n\023record_update_e"
   "vent\022\014\n\004name\030\001 \001(\t\022\025\n\007address\030\002 \001(\014B\004\200\265\030"
-  "\006BEZCgithub.com/koinos/koinos-proto-gola"
-  "ng/koinos/contracts/name-serviceb\006proto3"
+  "\006BHZFgithub.com/koinos/koinos-proto-gola"
+  "ng/v2/koinos/contracts/name-serviceb\006pro"
+  "to3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto = {
-  false, false, 640, descriptor_table_protodef_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto, "koinos/contracts/name_service/name_service.proto", 
+  false, false, 643, descriptor_table_protodef_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto, "koinos/contracts/name_service/name_service.proto", 
   &descriptor_table_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto_once, descriptor_table_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto_deps, 1, 9,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fname_5fservice_2fname_5fservice_2eproto,

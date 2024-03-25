@@ -245,9 +245,9 @@ const char descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto[] PR
   "\n\014event_parcel\022\026\n\010block_id\030\001 \001(\014B\004\200\265\030\003\022\016"
   "\n\006height\030\002 \001(\004\022!\n\016transaction_id\030\003 \001(\014B\004"
   "\200\265\030\004H\000\210\001\001\022*\n\005event\030\004 \001(\0132\033.koinos.protoc"
-  "ol.event_dataB\021\n\017_transaction_idB8Z6gith"
-  "ub.com/koinos/koinos-proto-golang/koinos"
-  "/broadcastb\006proto3"
+  "ol.event_dataB\021\n\017_transaction_idB;Z9gith"
+  "ub.com/koinos/koinos-proto-golang/v2/koi"
+  "nos/broadcastb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcommon_2eproto,
@@ -256,7 +256,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto = {
-  false, false, 1058, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
+  false, false, 1061, descriptor_table_protodef_koinos_2fbroadcast_2fbroadcast_2eproto, "koinos/broadcast/broadcast.proto", 
   &descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_once, descriptor_table_koinos_2fbroadcast_2fbroadcast_2eproto_deps, 3, 8,
   schemas, file_default_instances, TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto::offsets,
   file_level_metadata_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_enum_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto, file_level_service_descriptors_koinos_2fbroadcast_2fbroadcast_2eproto,

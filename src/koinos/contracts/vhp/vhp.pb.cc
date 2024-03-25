@@ -128,15 +128,15 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fvhp_2fvhp_2eproto[] PR
   "\004B\0020\001\"s\n\030effective_balance_object\022\033\n\017cur"
   "rent_balance\030\001 \001(\004B\0020\001\022:\n\rpast_balances\030"
   "\002 \003(\0132#.koinos.contracts.vhp.balance_ent"
-  "ryB<Z:github.com/koinos/koinos-proto-gol"
-  "ang/koinos/contracts/vhpb\006proto3"
+  "ryB\?Z=github.com/koinos/koinos-proto-gol"
+  "ang/v2/koinos/contracts/vhpb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcontracts_2fvhp_2fvhp_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fvhp_2fvhp_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fvhp_2fvhp_2eproto = {
-  false, false, 432, descriptor_table_protodef_koinos_2fcontracts_2fvhp_2fvhp_2eproto, "koinos/contracts/vhp/vhp.proto", 
+  false, false, 435, descriptor_table_protodef_koinos_2fcontracts_2fvhp_2fvhp_2eproto, "koinos/contracts/vhp/vhp.proto", 
   &descriptor_table_koinos_2fcontracts_2fvhp_2fvhp_2eproto_once, descriptor_table_koinos_2fcontracts_2fvhp_2fvhp_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fvhp_2fvhp_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fvhp_2fvhp_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fvhp_2fvhp_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fvhp_2fvhp_2eproto,

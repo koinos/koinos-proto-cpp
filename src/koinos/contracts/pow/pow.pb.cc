@@ -130,13 +130,13 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto[] PR
   "a_result\0228\n\005value\030\001 \001(\0132).koinos.contrac"
   "ts.pow.difficulty_metadata\"B\n\022pow_signat"
   "ure_data\022\r\n\005nonce\030\001 \001(\014\022\035\n\025recoverable_s"
-  "ignature\030\002 \001(\014B<Z:github.com/koinos/koin"
-  "os-proto-golang/koinos/contracts/powb\006pr"
-  "oto3"
+  "ignature\030\002 \001(\014B\?Z=github.com/koinos/koin"
+  "os-proto-golang/v2/koinos/contracts/powb"
+  "\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto = {
-  false, false, 444, descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto, "koinos/contracts/pow/pow.proto", 
+  false, false, 447, descriptor_table_protodef_koinos_2fcontracts_2fpow_2fpow_2eproto, "koinos/contracts/pow/pow.proto", 
   &descriptor_table_koinos_2fcontracts_2fpow_2fpow_2eproto_once, nullptr, 0, 4,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fpow_2fpow_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fpow_2fpow_2eproto,

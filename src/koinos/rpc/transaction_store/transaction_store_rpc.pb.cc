@@ -139,8 +139,9 @@ const char descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransa
   "or_statusH\000\022_\n\026get_transactions_by_id\030\003 "
   "\001(\0132=.koinos.rpc.transaction_store.get_t"
   "ransactions_by_id_responseH\000B\n\n\010response"
-  "BDZBgithub.com/koinos/koinos-proto-golan"
-  "g/koinos/rpc/transaction_storeb\006proto3"
+  "BGZEgithub.com/koinos/koinos-proto-golan"
+  "g/v2/koinos/rpc/transaction_storeb\006proto"
+  "3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2foptions_2eproto,
@@ -149,7 +150,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto = {
-  false, false, 838, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
+  false, false, 841, descriptor_table_protodef_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, "koinos/rpc/transaction_store/transaction_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2ftransaction_5fstore_2ftransaction_5fstore_5frpc_2eproto,

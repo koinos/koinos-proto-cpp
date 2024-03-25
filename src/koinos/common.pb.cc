@@ -58,15 +58,15 @@ const char descriptor_table_protodef_koinos_2fcommon_2eproto[] PROTOBUF_SECTION_
   "\n\023koinos/common.proto\022\006koinos\032\024koinos/op"
   "tions.proto\"N\n\016block_topology\022\020\n\002id\030\001 \001("
   "\014B\004\200\265\030\003\022\022\n\006height\030\002 \001(\004B\0020\001\022\026\n\010previous\030"
-  "\003 \001(\014B\004\200\265\030\003B.Z,github.com/koinos/koinos-"
-  "proto-golang/koinosb\006proto3"
+  "\003 \001(\014B\004\200\265\030\003B1Z/github.com/koinos/koinos-"
+  "proto-golang/v2/koinosb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fcommon_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcommon_2eproto = {
-  false, false, 187, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
+  false, false, 190, descriptor_table_protodef_koinos_2fcommon_2eproto, "koinos/common.proto", 
   &descriptor_table_koinos_2fcommon_2eproto_once, descriptor_table_koinos_2fcommon_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcommon_2eproto::offsets,
   file_level_metadata_koinos_2fcommon_2eproto, file_level_enum_descriptors_koinos_2fcommon_2eproto, file_level_service_descriptors_koinos_2fcommon_2eproto,

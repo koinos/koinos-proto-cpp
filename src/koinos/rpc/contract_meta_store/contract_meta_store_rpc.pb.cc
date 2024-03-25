@@ -138,9 +138,9 @@ const char descriptor_table_protodef_koinos_2frpc_2fcontract_5fmeta_5fstore_2fco
   "error\030\002 \001(\0132\030.koinos.rpc.error_statusH\000\022"
   "W\n\021get_contract_meta\030\003 \001(\0132:.koinos.rpc."
   "contract_meta_store.get_contract_meta_re"
-  "sponseH\000B\n\n\010responseBFZDgithub.com/koino"
-  "s/koinos-proto-golang/koinos/rpc/contrac"
-  "t_meta_storeb\006proto3"
+  "sponseH\000B\n\n\010responseBIZGgithub.com/koino"
+  "s/koinos-proto-golang/v2/koinos/rpc/cont"
+  "ract_meta_storeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_deps[3] = {
   &::descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto,
@@ -149,7 +149,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto = {
-  false, false, 820, descriptor_table_protodef_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, "koinos/rpc/contract_meta_store/contract_meta_store_rpc.proto", 
+  false, false, 823, descriptor_table_protodef_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, "koinos/rpc/contract_meta_store/contract_meta_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto_deps, 3, 4,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_5frpc_2eproto,

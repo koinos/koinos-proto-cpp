@@ -324,13 +324,13 @@ const char descriptor_table_protodef_koinos_2fcontracts_2fresources_2fresources_
   "_parameters_result\"#\n!get_resource_param"
   "eters_arguments\"`\n\036get_resource_paramete"
   "rs_result\022>\n\005value\030\001 \001(\0132/.koinos.contra"
-  "cts.resources.resource_parametersBBZ@git"
-  "hub.com/koinos/koinos-proto-golang/koino"
-  "s/contracts/resourcesb\006proto3"
+  "cts.resources.resource_parametersBEZCgit"
+  "hub.com/koinos/koinos-proto-golang/v2/ko"
+  "inos/contracts/resourcesb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontracts_2fresources_2fresources_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontracts_2fresources_2fresources_2eproto = {
-  false, false, 1429, descriptor_table_protodef_koinos_2fcontracts_2fresources_2fresources_2eproto, "koinos/contracts/resources/resources.proto", 
+  false, false, 1432, descriptor_table_protodef_koinos_2fcontracts_2fresources_2fresources_2eproto, "koinos/contracts/resources/resources.proto", 
   &descriptor_table_koinos_2fcontracts_2fresources_2fresources_2eproto_once, nullptr, 0, 12,
   schemas, file_default_instances, TableStruct_koinos_2fcontracts_2fresources_2fresources_2eproto::offsets,
   file_level_metadata_koinos_2fcontracts_2fresources_2fresources_2eproto, file_level_enum_descriptors_koinos_2fcontracts_2fresources_2fresources_2eproto, file_level_service_descriptors_koinos_2fcontracts_2fresources_2fresources_2eproto,

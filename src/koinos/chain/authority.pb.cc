@@ -114,15 +114,15 @@ const char descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto[] PROTOB
   "l\"!\n\020authorize_result\022\r\n\005value\030\001 \001(\010*Y\n\022"
   "authorization_type\022\021\n\rcontract_call\020\000\022\033\n"
   "\027transaction_application\020\001\022\023\n\017contract_u"
-  "pload\020\002B4Z2github.com/koinos/koinos-prot"
-  "o-golang/koinos/chainb\006proto3"
+  "pload\020\002B7Z5github.com/koinos/koinos-prot"
+  "o-golang/v2/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fauthority_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fauthority_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fauthority_2eproto = {
-  false, false, 469, descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto, "koinos/chain/authority.proto", 
+  false, false, 472, descriptor_table_protodef_koinos_2fchain_2fauthority_2eproto, "koinos/chain/authority.proto", 
   &descriptor_table_koinos_2fchain_2fauthority_2eproto_once, descriptor_table_koinos_2fchain_2fauthority_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fauthority_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fauthority_2eproto, file_level_enum_descriptors_koinos_2fchain_2fauthority_2eproto, file_level_service_descriptors_koinos_2fchain_2fauthority_2eproto,

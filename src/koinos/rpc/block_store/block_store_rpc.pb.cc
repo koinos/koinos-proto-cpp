@@ -298,9 +298,9 @@ const char descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstor
   "ock\030\005 \001(\0132*.koinos.rpc.block_store.add_b"
   "lock_responseH\000\022O\n\021get_highest_block\030\006 \001"
   "(\01322.koinos.rpc.block_store.get_highest_"
-  "block_responseH\000B\n\n\010responseB>Z<github.c"
-  "om/koinos/koinos-proto-golang/koinos/rpc"
-  "/block_storeb\006proto3"
+  "block_responseH\000B\n\n\010responseBAZ\?github.c"
+  "om/koinos/koinos-proto-golang/v2/koinos/"
+  "rpc/block_storeb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fblock_5fstore_2fblock_5fstore_2eproto,
@@ -311,7 +311,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto = {
-  false, false, 1780, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
+  false, false, 1783, descriptor_table_protodef_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, "koinos/rpc/block_store/block_store_rpc.proto", 
   &descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_once, descriptor_table_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto_deps, 5, 10,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2fblock_5fstore_2fblock_5fstore_5frpc_2eproto,

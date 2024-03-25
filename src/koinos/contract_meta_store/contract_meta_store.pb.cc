@@ -55,13 +55,13 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n4koinos/contract_meta_store/contract_me"
   "ta_store.proto\022\032koinos.contract_meta_sto"
-  "re\"!\n\022contract_meta_item\022\013\n\003abi\030\001 \001(\tBBZ"
-  "@github.com/koinos/koinos-proto-golang/k"
-  "oinos/contract_meta_storeb\006proto3"
+  "re\"!\n\022contract_meta_item\022\013\n\003abi\030\001 \001(\tBEZ"
+  "Cgithub.com/koinos/koinos-proto-golang/v"
+  "2/koinos/contract_meta_storeb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto = {
-  false, false, 193, descriptor_table_protodef_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, "koinos/contract_meta_store/contract_meta_store.proto", 
+  false, false, 196, descriptor_table_protodef_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, "koinos/contract_meta_store/contract_meta_store.proto", 
   &descriptor_table_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto::offsets,
   file_level_metadata_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, file_level_enum_descriptors_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto, file_level_service_descriptors_koinos_2fcontract_5fmeta_5fstore_2fcontract_5fmeta_5fstore_2eproto,

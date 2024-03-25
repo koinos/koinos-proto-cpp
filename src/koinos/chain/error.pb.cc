@@ -87,13 +87,13 @@ const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_S
   "eded\020\214\370\377\377\377\377\377\377\377\001\022-\n compute_bandwidth_lim"
   "it_exceeded\020\213\370\377\377\377\377\377\377\377\001\022(\n\033disk_storage_l"
   "imit_exceeded\020\212\370\377\377\377\377\377\377\377\001\022&\n\031pre_irrevers"
-  "ibility_block\020\211\370\377\377\377\377\377\377\377\001B4Z2github.com/k"
-  "oinos/koinos-proto-golang/koinos/chainb\006"
-  "proto3"
+  "ibility_block\020\211\370\377\377\377\377\377\377\377\001B7Z5github.com/k"
+  "oinos/koinos-proto-golang/v2/koinos/chai"
+  "nb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2ferror_2eproto = {
-  false, false, 1366, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
+  false, false, 1369, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
   &descriptor_table_koinos_2fchain_2ferror_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2ferror_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2ferror_2eproto, file_level_enum_descriptors_koinos_2fchain_2ferror_2eproto, file_level_service_descriptors_koinos_2fchain_2ferror_2eproto,

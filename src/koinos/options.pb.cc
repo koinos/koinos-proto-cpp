@@ -31,15 +31,15 @@ const char descriptor_table_protodef_koinos_2foptions_2eproto[] PROTOBUF_SECTION
   "_ID\020\003\022\022\n\016TRANSACTION_ID\020\004\022\017\n\013CONTRACT_ID"
   "\020\005\022\013\n\007ADDRESS\020\006:E\n\005btype\022\035.google.protob"
   "uf.FieldOptions\030\320\206\003 \001(\0162\022.koinos.bytes_t"
-  "ype\210\001\001B.Z,github.com/koinos/koinos-proto"
-  "-golang/koinosb\006proto3"
+  "ype\210\001\001B1Z/github.com/koinos/koinos-proto"
+  "-golang/v2/koinosb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2foptions_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fdescriptor_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2foptions_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2foptions_2eproto = {
-  false, false, 302, descriptor_table_protodef_koinos_2foptions_2eproto, "koinos/options.proto", 
+  false, false, 305, descriptor_table_protodef_koinos_2foptions_2eproto, "koinos/options.proto", 
   &descriptor_table_koinos_2foptions_2eproto_once, descriptor_table_koinos_2foptions_2eproto_deps, 1, 0,
   schemas, file_default_instances, TableStruct_koinos_2foptions_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2foptions_2eproto, file_level_service_descriptors_koinos_2foptions_2eproto,

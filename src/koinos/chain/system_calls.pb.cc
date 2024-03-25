@@ -2080,9 +2080,9 @@ const char descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto[] P
   "ta\"p\n\031check_authority_arguments\022.\n\004type\030"
   "\001 \001(\0162 .koinos.chain.authorization_type\022"
   "\025\n\007account\030\002 \001(\014B\004\200\265\030\006\022\014\n\004data\030\003 \001(\014\"\'\n\026"
-  "check_authority_result\022\r\n\005value\030\001 \001(\010B4Z"
-  "2github.com/koinos/koinos-proto-golang/k"
-  "oinos/chainb\006proto3"
+  "check_authority_result\022\r\n\005value\030\001 \001(\010B7Z"
+  "5github.com/koinos/koinos-proto-golang/v"
+  "2/koinos/chainb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps[5] = {
   &::descriptor_table_koinos_2fchain_2fauthority_2eproto,
@@ -2093,7 +2093,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto = {
-  false, false, 5579, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
+  false, false, 5582, descriptor_table_protodef_koinos_2fchain_2fsystem_5fcalls_2eproto, "koinos/chain/system_calls.proto", 
   &descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_once, descriptor_table_koinos_2fchain_2fsystem_5fcalls_2eproto_deps, 5, 95,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2fsystem_5fcalls_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_enum_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto, file_level_service_descriptors_koinos_2fchain_2fsystem_5fcalls_2eproto,

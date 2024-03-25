@@ -94,8 +94,8 @@ const char descriptor_table_protodef_koinos_2frpc_2fservices_2eproto[] PROTOBUF_
   "y_id\022<.koinos.rpc.transaction_store.get_"
   "transactions_by_id_request\032=.koinos.rpc."
   "transaction_store.get_transactions_by_id"
-  "_response\"\000B7Z5github.com/koinos/koinos-"
-  "proto-golang/koinos/servicesb\006proto3"
+  "_response\"\000B:Z8github.com/koinos/koinos-"
+  "proto-golang/v2/koinos/servicesb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2fservices_2eproto_deps[7] = {
   &::descriptor_table_koinos_2frpc_2faccount_5fhistory_2faccount_5fhistory_5frpc_2eproto,
@@ -108,7 +108,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2fservices_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2fservices_2eproto = {
-  false, false, 2756, descriptor_table_protodef_koinos_2frpc_2fservices_2eproto, "koinos/rpc/services.proto", 
+  false, false, 2759, descriptor_table_protodef_koinos_2frpc_2fservices_2eproto, "koinos/rpc/services.proto", 
   &descriptor_table_koinos_2frpc_2fservices_2eproto_once, descriptor_table_koinos_2frpc_2fservices_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2fservices_2eproto::offsets,
   nullptr, file_level_enum_descriptors_koinos_2frpc_2fservices_2eproto, file_level_service_descriptors_koinos_2frpc_2fservices_2eproto,

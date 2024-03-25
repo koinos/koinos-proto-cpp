@@ -76,18 +76,18 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_koinos_2frpc_2frpc_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\024koinos/rpc/rpc.proto\022\nkoinos.rpc\032\031goog"
-  "le/protobuf/any.proto\"\016\n\014reserved_rpc\"T\n"
-  "\014error_status\022\017\n\007message\030\001 \001(\t\022\014\n\004data\030\002"
-  " \001(\t\022%\n\007details\030\n \003(\0132\024.google.protobuf."
-  "AnyB5Z3github.com/koinos/koinos-proto-go"
-  "lang/v2/koinos/rpcb\006proto3"
+  "le/protobuf/any.proto\"\016\n\014reserved_rpc\"X\n"
+  "\014error_status\022\017\n\007message\030\001 \001(\t\022\020\n\004data\030\002"
+  " \001(\tB\002\030\001\022%\n\007details\030\n \003(\0132\024.google.proto"
+  "buf.AnyB5Z3github.com/koinos/koinos-prot"
+  "o-golang/v2/koinos/rpcb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2frpc_2frpc_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2frpc_2frpc_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2frpc_2frpc_2eproto = {
-  false, false, 226, descriptor_table_protodef_koinos_2frpc_2frpc_2eproto, "koinos/rpc/rpc.proto", 
+  false, false, 230, descriptor_table_protodef_koinos_2frpc_2frpc_2eproto, "koinos/rpc/rpc.proto", 
   &descriptor_table_koinos_2frpc_2frpc_2eproto_once, descriptor_table_koinos_2frpc_2frpc_2eproto_deps, 1, 2,
   schemas, file_default_instances, TableStruct_koinos_2frpc_2frpc_2eproto::offsets,
   file_level_metadata_koinos_2frpc_2frpc_2eproto, file_level_enum_descriptors_koinos_2frpc_2frpc_2eproto, file_level_service_descriptors_koinos_2frpc_2frpc_2eproto,
@@ -345,7 +345,7 @@ const char* error_status::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string data = 2;
+      // string data = 2 [deprecated = true];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           auto str = _internal_mutable_data();
@@ -405,7 +405,7 @@ failure:
         1, this->_internal_message(), target);
   }
 
-  // string data = 2;
+  // string data = 2 [deprecated = true];
   if (!this->_internal_data().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_data().data(), static_cast<int>(this->_internal_data().length()),
@@ -453,7 +453,7 @@ size_t error_status::ByteSizeLong() const {
         this->_internal_message());
   }
 
-  // string data = 2;
+  // string data = 2 [deprecated = true];
   if (!this->_internal_data().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(

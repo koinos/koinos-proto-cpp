@@ -350,14 +350,14 @@ class error_status final :
   std::string* _internal_mutable_message();
   public:
 
-  // string data = 2;
-  void clear_data();
-  const std::string& data() const;
+  // string data = 2 [deprecated = true];
+  PROTOBUF_DEPRECATED void clear_data();
+  PROTOBUF_DEPRECATED const std::string& data() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_data(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_data();
-  PROTOBUF_MUST_USE_RESULT std::string* release_data();
-  void set_allocated_data(std::string* data);
+  PROTOBUF_DEPRECATED void set_data(ArgT0&& arg0, ArgT... args);
+  PROTOBUF_DEPRECATED std::string* mutable_data();
+  PROTOBUF_MUST_USE_RESULT PROTOBUF_DEPRECATED std::string* release_data();
+  PROTOBUF_DEPRECATED void set_allocated_data(std::string* data);
   private:
   const std::string& _internal_data() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(const std::string& value);
@@ -438,7 +438,7 @@ inline void error_status::set_allocated_message(std::string* message) {
   // @@protoc_insertion_point(field_set_allocated:koinos.rpc.error_status.message)
 }
 
-// string data = 2;
+// string data = 2 [deprecated = true];
 inline void error_status::clear_data() {
   data_.ClearToEmpty();
 }

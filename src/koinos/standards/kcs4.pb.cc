@@ -203,8 +203,7 @@ constexpr get_allowances_arguments::get_allowances_arguments(
   : owner_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , start_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , limit_(0)
-  , direction_(0)
-{}
+  , descending_(false){}
 struct get_allowances_argumentsDefaultTypeInternal {
   constexpr get_allowances_argumentsDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -397,7 +396,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT balance_objectDefaultTypeIntern
 }  // namespace standards
 }  // namespace koinos
 static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_koinos_2fstandards_2fkcs4_2eproto[30];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_koinos_2fstandards_2fkcs4_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_koinos_2fstandards_2fkcs4_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_koinos_2fstandards_2fkcs4_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -498,7 +497,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2epr
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_arguments, owner_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_arguments, start_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_arguments, limit_),
-  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_arguments, direction_),
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_arguments, descending_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_result, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -677,40 +676,38 @@ const char descriptor_table_protodef_koinos_2fstandards_2fkcs4_2eproto[] PROTOBU
   "wance_arguments\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007"
   "spender\030\002 \001(\014B\004\200\265\030\006\"%\n\020allowance_result\022"
   "\021\n\005value\030\001 \001(\004B\0020\001\"9\n\rspender_value\022\025\n\007s"
-  "pender\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"\210\001"
-  "\n\030get_allowances_arguments\022\023\n\005owner\030\001 \001("
-  "\014B\004\200\265\030\006\022\023\n\005start\030\002 \001(\014B\004\200\265\030\006\022\r\n\005limit\030\003 "
-  "\001(\005\0223\n\tdirection\030\004 \001(\0162 .koinos.standard"
-  "s.kcs4.direction\"f\n\025get_allowances_resul"
-  "t\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\0228\n\nallowances\030\002 \003"
-  "(\0132$.koinos.standards.kcs4.spender_value"
-  "\"[\n\022transfer_arguments\022\022\n\004from\030\001 \001(\014B\004\200\265"
-  "\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\022"
-  "\014\n\004memo\030\004 \001(\t\"\021\n\017transfer_result\"5\n\016mint"
-  "_arguments\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 "
-  "\001(\004B\0020\001\"\r\n\013mint_result\"7\n\016burn_arguments"
-  "\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\""
-  "\r\n\013burn_result\"R\n\021approve_arguments\022\023\n\005o"
-  "wner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spender\030\002 \001(\014B\004\200\265\030\006\022"
-  "\021\n\005value\030\003 \001(\004B\0020\001\"\020\n\016approve_result\"3\n\n"
-  "burn_event\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030"
-  "\002 \001(\004B\0020\001\"1\n\nmint_event\022\020\n\002to\030\001 \001(\014B\004\200\265\030"
-  "\006\022\021\n\005value\030\002 \001(\004B\0020\001\"W\n\016transfer_event\022\022"
-  "\n\004from\030\001 \001(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005"
-  "value\030\003 \001(\004B\0020\001\022\014\n\004memo\030\004 \001(\t\"N\n\rapprove"
-  "_event\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spender\030\002"
-  " \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\"#\n\016balance"
-  "_object\022\021\n\005value\030\001 \001(\004B\0020\001**\n\tdirection\022"
-  "\r\n\tascending\020\000\022\016\n\ndescending\020\001B@Z>github"
-  ".com/koinos/koinos-proto-golang/v2/koino"
-  "s/standards/kcs4b\006proto3"
+  "pender\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"g\n"
+  "\030get_allowances_arguments\022\023\n\005owner\030\001 \001(\014"
+  "B\004\200\265\030\006\022\023\n\005start\030\002 \001(\014B\004\200\265\030\006\022\r\n\005limit\030\003 \001"
+  "(\005\022\022\n\ndescending\030\004 \001(\010\"f\n\025get_allowances"
+  "_result\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\0228\n\nallowanc"
+  "es\030\002 \003(\0132$.koinos.standards.kcs4.spender"
+  "_value\"[\n\022transfer_arguments\022\022\n\004from\030\001 \001"
+  "(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001("
+  "\004B\0020\001\022\014\n\004memo\030\004 \001(\t\"\021\n\017transfer_result\"5"
+  "\n\016mint_arguments\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005va"
+  "lue\030\002 \001(\004B\0020\001\"\r\n\013mint_result\"7\n\016burn_arg"
+  "uments\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001("
+  "\004B\0020\001\"\r\n\013burn_result\"R\n\021approve_argument"
+  "s\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spender\030\002 \001(\014B"
+  "\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\"\020\n\016approve_resu"
+  "lt\"3\n\nburn_event\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005"
+  "value\030\002 \001(\004B\0020\001\"1\n\nmint_event\022\020\n\002to\030\001 \001("
+  "\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"W\n\016transfer_e"
+  "vent\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265"
+  "\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\022\014\n\004memo\030\004 \001(\t\"N\n\ra"
+  "pprove_event\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spe"
+  "nder\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\"#\n\016b"
+  "alance_object\022\021\n\005value\030\001 \001(\004B\0020\001B@Z>gith"
+  "ub.com/koinos/koinos-proto-golang/v2/koi"
+  "nos/standards/kcs4b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fstandards_2fkcs4_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fstandards_2fkcs4_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fstandards_2fkcs4_2eproto = {
-  false, false, 1664, descriptor_table_protodef_koinos_2fstandards_2fkcs4_2eproto, "koinos/standards/kcs4.proto", 
+  false, false, 1586, descriptor_table_protodef_koinos_2fstandards_2fkcs4_2eproto, "koinos/standards/kcs4.proto", 
   &descriptor_table_koinos_2fstandards_2fkcs4_2eproto_once, descriptor_table_koinos_2fstandards_2fkcs4_2eproto_deps, 1, 30,
   schemas, file_default_instances, TableStruct_koinos_2fstandards_2fkcs4_2eproto::offsets,
   file_level_metadata_koinos_2fstandards_2fkcs4_2eproto, file_level_enum_descriptors_koinos_2fstandards_2fkcs4_2eproto, file_level_service_descriptors_koinos_2fstandards_2fkcs4_2eproto,
@@ -724,20 +721,6 @@ PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDe
 namespace koinos {
 namespace standards {
 namespace kcs4 {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* direction_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_koinos_2fstandards_2fkcs4_2eproto);
-  return file_level_enum_descriptors_koinos_2fstandards_2fkcs4_2eproto[0];
-}
-bool direction_IsValid(int value) {
-  switch (value) {
-    case 0:
-    case 1:
-      return true;
-    default:
-      return false;
-  }
-}
-
 
 // ===================================================================
 
@@ -3591,8 +3574,8 @@ get_allowances_arguments::get_allowances_arguments(const get_allowances_argument
       GetArenaForAllocation());
   }
   ::memcpy(&limit_, &from.limit_,
-    static_cast<size_t>(reinterpret_cast<char*>(&direction_) -
-    reinterpret_cast<char*>(&limit_)) + sizeof(direction_));
+    static_cast<size_t>(reinterpret_cast<char*>(&descending_) -
+    reinterpret_cast<char*>(&limit_)) + sizeof(descending_));
   // @@protoc_insertion_point(copy_constructor:koinos.standards.kcs4.get_allowances_arguments)
 }
 
@@ -3601,8 +3584,8 @@ owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlread
 start_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&limit_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&direction_) -
-    reinterpret_cast<char*>(&limit_)) + sizeof(direction_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&descending_) -
+    reinterpret_cast<char*>(&limit_)) + sizeof(descending_));
 }
 
 get_allowances_arguments::~get_allowances_arguments() {
@@ -3637,8 +3620,8 @@ void get_allowances_arguments::Clear() {
   owner_.ClearToEmpty();
   start_.ClearToEmpty();
   ::memset(&limit_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&direction_) -
-      reinterpret_cast<char*>(&limit_)) + sizeof(direction_));
+      reinterpret_cast<char*>(&descending_) -
+      reinterpret_cast<char*>(&limit_)) + sizeof(descending_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3671,12 +3654,11 @@ const char* get_allowances_arguments::_InternalParse(const char* ptr, ::PROTOBUF
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // .koinos.standards.kcs4.direction direction = 4;
+      // bool descending = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          descending_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_direction(static_cast<::koinos::standards::kcs4::direction>(val));
         } else goto handle_unusual;
         continue;
       default: {
@@ -3726,11 +3708,10 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_limit(), target);
   }
 
-  // .koinos.standards.kcs4.direction direction = 4;
-  if (this->_internal_direction() != 0) {
+  // bool descending = 4;
+  if (this->_internal_descending() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      4, this->_internal_direction(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(4, this->_internal_descending(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3770,10 +3751,9 @@ size_t get_allowances_arguments::ByteSizeLong() const {
         this->_internal_limit());
   }
 
-  // .koinos.standards.kcs4.direction direction = 4;
-  if (this->_internal_direction() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_direction());
+  // bool descending = 4;
+  if (this->_internal_descending() != 0) {
+    total_size += 1 + 1;
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3813,8 +3793,8 @@ void get_allowances_arguments::MergeFrom(const get_allowances_arguments& from) {
   if (from._internal_limit() != 0) {
     _internal_set_limit(from._internal_limit());
   }
-  if (from._internal_direction() != 0) {
-    _internal_set_direction(from._internal_direction());
+  if (from._internal_descending() != 0) {
+    _internal_set_descending(from._internal_descending());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -3844,8 +3824,8 @@ void get_allowances_arguments::InternalSwap(get_allowances_arguments* other) {
       &other->start_, other->GetArenaForAllocation()
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(get_allowances_arguments, direction_)
-      + sizeof(get_allowances_arguments::direction_)
+      PROTOBUF_FIELD_OFFSET(get_allowances_arguments, descending_)
+      + sizeof(get_allowances_arguments::descending_)
       - PROTOBUF_FIELD_OFFSET(get_allowances_arguments, limit_)>(
           reinterpret_cast<char*>(&limit_),
           reinterpret_cast<char*>(&other->limit_));

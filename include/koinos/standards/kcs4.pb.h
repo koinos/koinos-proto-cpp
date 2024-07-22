@@ -30,7 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "koinos/options.pb.h"
 // @@protoc_insertion_point(includes)
@@ -187,31 +186,6 @@ namespace koinos {
 namespace standards {
 namespace kcs4 {
 
-enum direction : int {
-  ascending = 0,
-  descending = 1,
-  direction_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
-  direction_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
-};
-bool direction_IsValid(int value);
-constexpr direction direction_MIN = ascending;
-constexpr direction direction_MAX = descending;
-constexpr int direction_ARRAYSIZE = direction_MAX + 1;
-
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* direction_descriptor();
-template<typename T>
-inline const std::string& direction_Name(T enum_t_value) {
-  static_assert(::std::is_same<T, direction>::value ||
-    ::std::is_integral<T>::value,
-    "Incorrect type passed to function direction_Name.");
-  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
-    direction_descriptor(), enum_t_value);
-}
-inline bool direction_Parse(
-    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, direction* value) {
-  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<direction>(
-    direction_descriptor(), name, value);
-}
 // ===================================================================
 
 class name_arguments final :
@@ -2436,7 +2410,7 @@ class get_allowances_arguments final :
     kOwnerFieldNumber = 1,
     kStartFieldNumber = 2,
     kLimitFieldNumber = 3,
-    kDirectionFieldNumber = 4,
+    kDescendingFieldNumber = 4,
   };
   // bytes owner = 1 [(.koinos.btype) = ADDRESS];
   void clear_owner();
@@ -2475,13 +2449,13 @@ class get_allowances_arguments final :
   void _internal_set_limit(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // .koinos.standards.kcs4.direction direction = 4;
-  void clear_direction();
-  ::koinos::standards::kcs4::direction direction() const;
-  void set_direction(::koinos::standards::kcs4::direction value);
+  // bool descending = 4;
+  void clear_descending();
+  bool descending() const;
+  void set_descending(bool value);
   private:
-  ::koinos::standards::kcs4::direction _internal_direction() const;
-  void _internal_set_direction(::koinos::standards::kcs4::direction value);
+  bool _internal_descending() const;
+  void _internal_set_descending(bool value);
   public:
 
   // @@protoc_insertion_point(class_scope:koinos.standards.kcs4.get_allowances_arguments)
@@ -2494,7 +2468,7 @@ class get_allowances_arguments final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr start_;
   ::PROTOBUF_NAMESPACE_ID::int32 limit_;
-  int direction_;
+  bool descending_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
@@ -5312,24 +5286,24 @@ inline void get_allowances_arguments::set_limit(::PROTOBUF_NAMESPACE_ID::int32 v
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.get_allowances_arguments.limit)
 }
 
-// .koinos.standards.kcs4.direction direction = 4;
-inline void get_allowances_arguments::clear_direction() {
-  direction_ = 0;
+// bool descending = 4;
+inline void get_allowances_arguments::clear_descending() {
+  descending_ = false;
 }
-inline ::koinos::standards::kcs4::direction get_allowances_arguments::_internal_direction() const {
-  return static_cast< ::koinos::standards::kcs4::direction >(direction_);
+inline bool get_allowances_arguments::_internal_descending() const {
+  return descending_;
 }
-inline ::koinos::standards::kcs4::direction get_allowances_arguments::direction() const {
-  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.get_allowances_arguments.direction)
-  return _internal_direction();
+inline bool get_allowances_arguments::descending() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.get_allowances_arguments.descending)
+  return _internal_descending();
 }
-inline void get_allowances_arguments::_internal_set_direction(::koinos::standards::kcs4::direction value) {
+inline void get_allowances_arguments::_internal_set_descending(bool value) {
   
-  direction_ = value;
+  descending_ = value;
 }
-inline void get_allowances_arguments::set_direction(::koinos::standards::kcs4::direction value) {
-  _internal_set_direction(value);
-  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.get_allowances_arguments.direction)
+inline void get_allowances_arguments::set_descending(bool value) {
+  _internal_set_descending(value);
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.get_allowances_arguments.descending)
 }
 
 // -------------------------------------------------------------------
@@ -6365,16 +6339,6 @@ inline void balance_object::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
 }  // namespace kcs4
 }  // namespace standards
 }  // namespace koinos
-
-PROTOBUF_NAMESPACE_OPEN
-
-template <> struct is_proto_enum< ::koinos::standards::kcs4::direction> : ::std::true_type {};
-template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::koinos::standards::kcs4::direction>() {
-  return ::koinos::standards::kcs4::direction_descriptor();
-}
-
-PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

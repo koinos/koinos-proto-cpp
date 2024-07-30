@@ -48,7 +48,7 @@ struct TableStruct_koinos_2fstandards_2fkcs3_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[30]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -73,9 +73,6 @@ extern approve_eventDefaultTypeInternal _approve_event_default_instance_;
 class approve_result;
 struct approve_resultDefaultTypeInternal;
 extern approve_resultDefaultTypeInternal _approve_result_default_instance_;
-class balance_object;
-struct balance_objectDefaultTypeInternal;
-extern balance_objectDefaultTypeInternal _balance_object_default_instance_;
 class balance_of_arguments;
 struct balance_of_argumentsDefaultTypeInternal;
 extern balance_of_argumentsDefaultTypeInternal _balance_of_arguments_default_instance_;
@@ -157,7 +154,6 @@ template<> ::koinos::standards::kcs3::allowance_result* Arena::CreateMaybeMessag
 template<> ::koinos::standards::kcs3::approve_arguments* Arena::CreateMaybeMessage<::koinos::standards::kcs3::approve_arguments>(Arena*);
 template<> ::koinos::standards::kcs3::approve_event* Arena::CreateMaybeMessage<::koinos::standards::kcs3::approve_event>(Arena*);
 template<> ::koinos::standards::kcs3::approve_result* Arena::CreateMaybeMessage<::koinos::standards::kcs3::approve_result>(Arena*);
-template<> ::koinos::standards::kcs3::balance_object* Arena::CreateMaybeMessage<::koinos::standards::kcs3::balance_object>(Arena*);
 template<> ::koinos::standards::kcs3::balance_of_arguments* Arena::CreateMaybeMessage<::koinos::standards::kcs3::balance_of_arguments>(Arena*);
 template<> ::koinos::standards::kcs3::balance_of_result* Arena::CreateMaybeMessage<::koinos::standards::kcs3::balance_of_result>(Arena*);
 template<> ::koinos::standards::kcs3::burn_arguments* Arena::CreateMaybeMessage<::koinos::standards::kcs3::burn_arguments>(Arena*);
@@ -4470,145 +4466,6 @@ class approve_event final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs3_2eproto;
 };
-// -------------------------------------------------------------------
-
-class balance_object final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.standards.kcs3.balance_object) */ {
- public:
-  inline balance_object() : balance_object(nullptr) {}
-  ~balance_object() override;
-  explicit constexpr balance_object(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  balance_object(const balance_object& from);
-  balance_object(balance_object&& from) noexcept
-    : balance_object() {
-    *this = ::std::move(from);
-  }
-
-  inline balance_object& operator=(const balance_object& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline balance_object& operator=(balance_object&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const balance_object& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const balance_object* internal_default_instance() {
-    return reinterpret_cast<const balance_object*>(
-               &_balance_object_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    29;
-
-  friend void swap(balance_object& a, balance_object& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(balance_object* other) {
-    if (other == this) return;
-    if (GetOwningArena() == other->GetOwningArena()) {
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(balance_object* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline balance_object* New() const final {
-    return new balance_object();
-  }
-
-  balance_object* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<balance_object>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const balance_object& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const balance_object& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
-      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(balance_object* other);
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "koinos.standards.kcs3.balance_object";
-  }
-  protected:
-  explicit balance_object(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kValueFieldNumber = 1,
-  };
-  // uint64 value = 1 [jstype = JS_STRING];
-  void clear_value();
-  ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
-  void set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_value() const;
-  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // @@protoc_insertion_point(class_scope:koinos.standards.kcs3.balance_object)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_koinos_2fstandards_2fkcs3_2eproto;
-};
 // ===================================================================
 
 
@@ -6150,35 +6007,9 @@ inline void approve_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:koinos.standards.kcs3.approve_event.value)
 }
 
-// -------------------------------------------------------------------
-
-// balance_object
-
-// uint64 value = 1 [jstype = JS_STRING];
-inline void balance_object::clear_value() {
-  value_ = uint64_t{0u};
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 balance_object::_internal_value() const {
-  return value_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 balance_object::value() const {
-  // @@protoc_insertion_point(field_get:koinos.standards.kcs3.balance_object.value)
-  return _internal_value();
-}
-inline void balance_object::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  value_ = value;
-}
-inline void balance_object::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_value(value);
-  // @@protoc_insertion_point(field_set:koinos.standards.kcs3.balance_object.value)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

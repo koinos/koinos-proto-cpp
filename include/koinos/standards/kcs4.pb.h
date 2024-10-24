@@ -2782,7 +2782,11 @@ class transfer_arguments final :
   std::string* _internal_mutable_to();
   public:
 
-  // string memo = 4;
+  // optional string memo = 4;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
   void clear_memo();
   const std::string& memo() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2812,11 +2816,12 @@ class transfer_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
   ::PROTOBUF_NAMESPACE_ID::uint64 value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3063,6 +3068,7 @@ class mint_arguments final :
 
   enum : int {
     kToFieldNumber = 1,
+    kMemoFieldNumber = 3,
     kValueFieldNumber = 2,
   };
   // bytes to = 1 [(.koinos.btype) = ADDRESS];
@@ -3077,6 +3083,24 @@ class mint_arguments final :
   const std::string& _internal_to() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_to(const std::string& value);
   std::string* _internal_mutable_to();
+  public:
+
+  // optional string memo = 3;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
+  void clear_memo();
+  const std::string& memo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_memo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_memo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_memo();
+  void set_allocated_memo(std::string* memo);
+  private:
+  const std::string& _internal_memo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_memo(const std::string& value);
+  std::string* _internal_mutable_memo();
   public:
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -3095,9 +3119,11 @@ class mint_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3344,6 +3370,7 @@ class burn_arguments final :
 
   enum : int {
     kFromFieldNumber = 1,
+    kMemoFieldNumber = 3,
     kValueFieldNumber = 2,
   };
   // bytes from = 1 [(.koinos.btype) = ADDRESS];
@@ -3358,6 +3385,24 @@ class burn_arguments final :
   const std::string& _internal_from() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_from(const std::string& value);
   std::string* _internal_mutable_from();
+  public:
+
+  // optional string memo = 3;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
+  void clear_memo();
+  const std::string& memo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_memo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_memo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_memo();
+  void set_allocated_memo(std::string* memo);
+  private:
+  const std::string& _internal_memo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_memo(const std::string& value);
+  std::string* _internal_mutable_memo();
   public:
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -3376,9 +3421,11 @@ class burn_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3626,6 +3673,7 @@ class approve_arguments final :
   enum : int {
     kOwnerFieldNumber = 1,
     kSpenderFieldNumber = 2,
+    kMemoFieldNumber = 4,
     kValueFieldNumber = 3,
   };
   // bytes owner = 1 [(.koinos.btype) = ADDRESS];
@@ -3656,6 +3704,24 @@ class approve_arguments final :
   std::string* _internal_mutable_spender();
   public:
 
+  // optional string memo = 4;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
+  void clear_memo();
+  const std::string& memo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_memo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_memo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_memo();
+  void set_allocated_memo(std::string* memo);
+  private:
+  const std::string& _internal_memo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_memo(const std::string& value);
+  std::string* _internal_mutable_memo();
+  public:
+
   // uint64 value = 3 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
@@ -3672,10 +3738,12 @@ class approve_arguments final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr spender_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
   ::PROTOBUF_NAMESPACE_ID::uint64 value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -3922,6 +3990,7 @@ class burn_event final :
 
   enum : int {
     kFromFieldNumber = 1,
+    kMemoFieldNumber = 3,
     kValueFieldNumber = 2,
   };
   // bytes from = 1 [(.koinos.btype) = ADDRESS];
@@ -3936,6 +4005,24 @@ class burn_event final :
   const std::string& _internal_from() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_from(const std::string& value);
   std::string* _internal_mutable_from();
+  public:
+
+  // optional string memo = 3;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
+  void clear_memo();
+  const std::string& memo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_memo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_memo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_memo();
+  void set_allocated_memo(std::string* memo);
+  private:
+  const std::string& _internal_memo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_memo(const std::string& value);
+  std::string* _internal_mutable_memo();
   public:
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -3954,9 +4041,11 @@ class burn_event final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -4077,6 +4166,7 @@ class mint_event final :
 
   enum : int {
     kToFieldNumber = 1,
+    kMemoFieldNumber = 3,
     kValueFieldNumber = 2,
   };
   // bytes to = 1 [(.koinos.btype) = ADDRESS];
@@ -4091,6 +4181,24 @@ class mint_event final :
   const std::string& _internal_to() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_to(const std::string& value);
   std::string* _internal_mutable_to();
+  public:
+
+  // optional string memo = 3;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
+  void clear_memo();
+  const std::string& memo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_memo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_memo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_memo();
+  void set_allocated_memo(std::string* memo);
+  private:
+  const std::string& _internal_memo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_memo(const std::string& value);
+  std::string* _internal_mutable_memo();
   public:
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -4109,9 +4217,11 @@ class mint_event final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 value_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -4264,7 +4374,11 @@ class transfer_event final :
   std::string* _internal_mutable_to();
   public:
 
-  // string memo = 4;
+  // optional string memo = 4;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
   void clear_memo();
   const std::string& memo() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -4294,11 +4408,12 @@ class transfer_event final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr from_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr to_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
   ::PROTOBUF_NAMESPACE_ID::uint64 value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // -------------------------------------------------------------------
@@ -4420,6 +4535,7 @@ class approve_event final :
   enum : int {
     kOwnerFieldNumber = 1,
     kSpenderFieldNumber = 2,
+    kMemoFieldNumber = 4,
     kValueFieldNumber = 3,
   };
   // bytes owner = 1 [(.koinos.btype) = ADDRESS];
@@ -4450,6 +4566,24 @@ class approve_event final :
   std::string* _internal_mutable_spender();
   public:
 
+  // optional string memo = 4;
+  bool has_memo() const;
+  private:
+  bool _internal_has_memo() const;
+  public:
+  void clear_memo();
+  const std::string& memo() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_memo(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_memo();
+  PROTOBUF_MUST_USE_RESULT std::string* release_memo();
+  void set_allocated_memo(std::string* memo);
+  private:
+  const std::string& _internal_memo() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_memo(const std::string& value);
+  std::string* _internal_mutable_memo();
+  public:
+
   // uint64 value = 3 [jstype = JS_STRING];
   void clear_value();
   ::PROTOBUF_NAMESPACE_ID::uint64 value() const;
@@ -4466,10 +4600,12 @@ class approve_event final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr owner_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr spender_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr memo_;
   ::PROTOBUF_NAMESPACE_ID::uint64 value_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fstandards_2fkcs4_2eproto;
 };
 // ===================================================================
@@ -5369,9 +5505,17 @@ inline void transfer_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value)
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.transfer_arguments.value)
 }
 
-// string memo = 4;
+// optional string memo = 4;
+inline bool transfer_arguments::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool transfer_arguments::has_memo() const {
+  return _internal_has_memo();
+}
 inline void transfer_arguments::clear_memo() {
   memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& transfer_arguments::memo() const {
   // @@protoc_insertion_point(field_get:koinos.standards.kcs4.transfer_arguments.memo)
@@ -5380,7 +5524,7 @@ inline const std::string& transfer_arguments::memo() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void transfer_arguments::set_memo(ArgT0&& arg0, ArgT... args) {
- 
+ _has_bits_[0] |= 0x00000001u;
  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.transfer_arguments.memo)
 }
@@ -5393,22 +5537,26 @@ inline const std::string& transfer_arguments::_internal_memo() const {
   return memo_.Get();
 }
 inline void transfer_arguments::_internal_set_memo(const std::string& value) {
-  
+  _has_bits_[0] |= 0x00000001u;
   memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* transfer_arguments::_internal_mutable_memo() {
-  
+  _has_bits_[0] |= 0x00000001u;
   return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* transfer_arguments::release_memo() {
   // @@protoc_insertion_point(field_release:koinos.standards.kcs4.transfer_arguments.memo)
-  return memo_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
 inline void transfer_arguments::set_allocated_memo(std::string* memo) {
   if (memo != nullptr) {
-    
+    _has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _has_bits_[0] &= ~0x00000001u;
   }
   memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
       GetArenaForAllocation());
@@ -5489,6 +5637,64 @@ inline void mint_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.mint_arguments.value)
 }
 
+// optional string memo = 3;
+inline bool mint_arguments::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool mint_arguments::has_memo() const {
+  return _internal_has_memo();
+}
+inline void mint_arguments::clear_memo() {
+  memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& mint_arguments::memo() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.mint_arguments.memo)
+  return _internal_memo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void mint_arguments::set_memo(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.mint_arguments.memo)
+}
+inline std::string* mint_arguments::mutable_memo() {
+  std::string* _s = _internal_mutable_memo();
+  // @@protoc_insertion_point(field_mutable:koinos.standards.kcs4.mint_arguments.memo)
+  return _s;
+}
+inline const std::string& mint_arguments::_internal_memo() const {
+  return memo_.Get();
+}
+inline void mint_arguments::_internal_set_memo(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* mint_arguments::_internal_mutable_memo() {
+  _has_bits_[0] |= 0x00000001u;
+  return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* mint_arguments::release_memo() {
+  // @@protoc_insertion_point(field_release:koinos.standards.kcs4.mint_arguments.memo)
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void mint_arguments::set_allocated_memo(std::string* memo) {
+  if (memo != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.standards.kcs4.mint_arguments.memo)
+}
+
 // -------------------------------------------------------------------
 
 // mint_result
@@ -5561,6 +5767,64 @@ inline void burn_arguments::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 
 inline void burn_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_value(value);
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.burn_arguments.value)
+}
+
+// optional string memo = 3;
+inline bool burn_arguments::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool burn_arguments::has_memo() const {
+  return _internal_has_memo();
+}
+inline void burn_arguments::clear_memo() {
+  memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& burn_arguments::memo() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.burn_arguments.memo)
+  return _internal_memo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void burn_arguments::set_memo(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.burn_arguments.memo)
+}
+inline std::string* burn_arguments::mutable_memo() {
+  std::string* _s = _internal_mutable_memo();
+  // @@protoc_insertion_point(field_mutable:koinos.standards.kcs4.burn_arguments.memo)
+  return _s;
+}
+inline const std::string& burn_arguments::_internal_memo() const {
+  return memo_.Get();
+}
+inline void burn_arguments::_internal_set_memo(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* burn_arguments::_internal_mutable_memo() {
+  _has_bits_[0] |= 0x00000001u;
+  return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* burn_arguments::release_memo() {
+  // @@protoc_insertion_point(field_release:koinos.standards.kcs4.burn_arguments.memo)
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void burn_arguments::set_allocated_memo(std::string* memo) {
+  if (memo != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.standards.kcs4.burn_arguments.memo)
 }
 
 // -------------------------------------------------------------------
@@ -5683,6 +5947,64 @@ inline void approve_arguments::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) 
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.approve_arguments.value)
 }
 
+// optional string memo = 4;
+inline bool approve_arguments::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool approve_arguments::has_memo() const {
+  return _internal_has_memo();
+}
+inline void approve_arguments::clear_memo() {
+  memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& approve_arguments::memo() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.approve_arguments.memo)
+  return _internal_memo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void approve_arguments::set_memo(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.approve_arguments.memo)
+}
+inline std::string* approve_arguments::mutable_memo() {
+  std::string* _s = _internal_mutable_memo();
+  // @@protoc_insertion_point(field_mutable:koinos.standards.kcs4.approve_arguments.memo)
+  return _s;
+}
+inline const std::string& approve_arguments::_internal_memo() const {
+  return memo_.Get();
+}
+inline void approve_arguments::_internal_set_memo(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* approve_arguments::_internal_mutable_memo() {
+  _has_bits_[0] |= 0x00000001u;
+  return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* approve_arguments::release_memo() {
+  // @@protoc_insertion_point(field_release:koinos.standards.kcs4.approve_arguments.memo)
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void approve_arguments::set_allocated_memo(std::string* memo) {
+  if (memo != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.standards.kcs4.approve_arguments.memo)
+}
+
 // -------------------------------------------------------------------
 
 // approve_result
@@ -5757,6 +6079,64 @@ inline void burn_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.burn_event.value)
 }
 
+// optional string memo = 3;
+inline bool burn_event::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool burn_event::has_memo() const {
+  return _internal_has_memo();
+}
+inline void burn_event::clear_memo() {
+  memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& burn_event::memo() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.burn_event.memo)
+  return _internal_memo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void burn_event::set_memo(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.burn_event.memo)
+}
+inline std::string* burn_event::mutable_memo() {
+  std::string* _s = _internal_mutable_memo();
+  // @@protoc_insertion_point(field_mutable:koinos.standards.kcs4.burn_event.memo)
+  return _s;
+}
+inline const std::string& burn_event::_internal_memo() const {
+  return memo_.Get();
+}
+inline void burn_event::_internal_set_memo(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* burn_event::_internal_mutable_memo() {
+  _has_bits_[0] |= 0x00000001u;
+  return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* burn_event::release_memo() {
+  // @@protoc_insertion_point(field_release:koinos.standards.kcs4.burn_event.memo)
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void burn_event::set_allocated_memo(std::string* memo) {
+  if (memo != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.standards.kcs4.burn_event.memo)
+}
+
 // -------------------------------------------------------------------
 
 // mint_event
@@ -5825,6 +6205,64 @@ inline void mint_event::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 valu
 inline void mint_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_value(value);
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.mint_event.value)
+}
+
+// optional string memo = 3;
+inline bool mint_event::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool mint_event::has_memo() const {
+  return _internal_has_memo();
+}
+inline void mint_event::clear_memo() {
+  memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& mint_event::memo() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.mint_event.memo)
+  return _internal_memo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void mint_event::set_memo(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.mint_event.memo)
+}
+inline std::string* mint_event::mutable_memo() {
+  std::string* _s = _internal_mutable_memo();
+  // @@protoc_insertion_point(field_mutable:koinos.standards.kcs4.mint_event.memo)
+  return _s;
+}
+inline const std::string& mint_event::_internal_memo() const {
+  return memo_.Get();
+}
+inline void mint_event::_internal_set_memo(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* mint_event::_internal_mutable_memo() {
+  _has_bits_[0] |= 0x00000001u;
+  return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* mint_event::release_memo() {
+  // @@protoc_insertion_point(field_release:koinos.standards.kcs4.mint_event.memo)
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void mint_event::set_allocated_memo(std::string* memo) {
+  if (memo != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.standards.kcs4.mint_event.memo)
 }
 
 // -------------------------------------------------------------------
@@ -5943,9 +6381,17 @@ inline void transfer_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.transfer_event.value)
 }
 
-// string memo = 4;
+// optional string memo = 4;
+inline bool transfer_event::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool transfer_event::has_memo() const {
+  return _internal_has_memo();
+}
 inline void transfer_event::clear_memo() {
   memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& transfer_event::memo() const {
   // @@protoc_insertion_point(field_get:koinos.standards.kcs4.transfer_event.memo)
@@ -5954,7 +6400,7 @@ inline const std::string& transfer_event::memo() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void transfer_event::set_memo(ArgT0&& arg0, ArgT... args) {
- 
+ _has_bits_[0] |= 0x00000001u;
  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.transfer_event.memo)
 }
@@ -5967,22 +6413,26 @@ inline const std::string& transfer_event::_internal_memo() const {
   return memo_.Get();
 }
 inline void transfer_event::_internal_set_memo(const std::string& value) {
-  
+  _has_bits_[0] |= 0x00000001u;
   memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* transfer_event::_internal_mutable_memo() {
-  
+  _has_bits_[0] |= 0x00000001u;
   return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* transfer_event::release_memo() {
   // @@protoc_insertion_point(field_release:koinos.standards.kcs4.transfer_event.memo)
-  return memo_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
 inline void transfer_event::set_allocated_memo(std::string* memo) {
   if (memo != nullptr) {
-    
+    _has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _has_bits_[0] &= ~0x00000001u;
   }
   memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
       GetArenaForAllocation());
@@ -6103,6 +6553,64 @@ inline void approve_event::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint64 v
 inline void approve_event::set_value(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_value(value);
   // @@protoc_insertion_point(field_set:koinos.standards.kcs4.approve_event.value)
+}
+
+// optional string memo = 4;
+inline bool approve_event::_internal_has_memo() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool approve_event::has_memo() const {
+  return _internal_has_memo();
+}
+inline void approve_event::clear_memo() {
+  memo_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& approve_event::memo() const {
+  // @@protoc_insertion_point(field_get:koinos.standards.kcs4.approve_event.memo)
+  return _internal_memo();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void approve_event::set_memo(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.standards.kcs4.approve_event.memo)
+}
+inline std::string* approve_event::mutable_memo() {
+  std::string* _s = _internal_mutable_memo();
+  // @@protoc_insertion_point(field_mutable:koinos.standards.kcs4.approve_event.memo)
+  return _s;
+}
+inline const std::string& approve_event::_internal_memo() const {
+  return memo_.Get();
+}
+inline void approve_event::_internal_set_memo(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* approve_event::_internal_mutable_memo() {
+  _has_bits_[0] |= 0x00000001u;
+  return memo_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* approve_event::release_memo() {
+  // @@protoc_insertion_point(field_release:koinos.standards.kcs4.approve_event.memo)
+  if (!_internal_has_memo()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return memo_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void approve_event::set_allocated_memo(std::string* memo) {
+  if (memo != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  memo_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), memo,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.standards.kcs4.approve_event.memo)
 }
 
 #ifdef __GNUC__

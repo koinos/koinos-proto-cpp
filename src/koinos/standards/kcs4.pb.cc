@@ -255,6 +255,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT transfer_resultDefaultTypeInter
 constexpr mint_arguments::mint_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : to_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , value_(uint64_t{0u}){}
 struct mint_argumentsDefaultTypeInternal {
   constexpr mint_argumentsDefaultTypeInternal()
@@ -279,6 +280,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT mint_resultDefaultTypeInternal 
 constexpr burn_arguments::burn_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : from_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , value_(uint64_t{0u}){}
 struct burn_argumentsDefaultTypeInternal {
   constexpr burn_argumentsDefaultTypeInternal()
@@ -304,6 +306,7 @@ constexpr approve_arguments::approve_arguments(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : owner_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , spender_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , value_(uint64_t{0u}){}
 struct approve_argumentsDefaultTypeInternal {
   constexpr approve_argumentsDefaultTypeInternal()
@@ -328,6 +331,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT approve_resultDefaultTypeIntern
 constexpr burn_event::burn_event(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : from_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , value_(uint64_t{0u}){}
 struct burn_eventDefaultTypeInternal {
   constexpr burn_eventDefaultTypeInternal()
@@ -341,6 +345,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT burn_eventDefaultTypeInternal _
 constexpr mint_event::mint_event(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : to_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , value_(uint64_t{0u}){}
 struct mint_eventDefaultTypeInternal {
   constexpr mint_eventDefaultTypeInternal()
@@ -370,6 +375,7 @@ constexpr approve_event::approve_event(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : owner_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , spender_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , memo_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , value_(uint64_t{0u}){}
 struct approve_eventDefaultTypeInternal {
   constexpr approve_eventDefaultTypeInternal()
@@ -493,7 +499,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2epr
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_result, owner_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::get_allowances_result, allowances_),
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_arguments, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -502,36 +508,48 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2epr
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_arguments, to_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_arguments, value_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_arguments, memo_),
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_result, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_arguments, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_arguments, to_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_arguments, value_),
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_arguments, memo_),
+  ~0u,
+  ~0u,
+  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_result, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_arguments, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_arguments, from_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_arguments, value_),
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_arguments, memo_),
+  ~0u,
+  ~0u,
+  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_result, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_arguments, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_arguments, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -539,26 +557,39 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2epr
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_arguments, owner_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_arguments, spender_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_arguments, value_),
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_arguments, memo_),
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_result, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_event, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_event, from_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_event, value_),
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::burn_event, memo_),
+  ~0u,
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_event, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_event, to_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_event, value_),
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::mint_event, memo_),
+  ~0u,
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_event, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -567,7 +598,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2epr
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_event, to_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_event, value_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::transfer_event, memo_),
-  ~0u,  // no _has_bits_
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_event, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_event, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -575,6 +610,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_koinos_2fstandards_2fkcs4_2epr
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_event, owner_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_event, spender_),
   PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_event, value_),
+  PROTOBUF_FIELD_OFFSET(::koinos::standards::kcs4::approve_event, memo_),
+  ~0u,
+  ~0u,
+  ~0u,
+  0,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::koinos::standards::kcs4::name_arguments)},
@@ -594,18 +634,18 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 82, -1, sizeof(::koinos::standards::kcs4::spender_value)},
   { 89, -1, sizeof(::koinos::standards::kcs4::get_allowances_arguments)},
   { 98, -1, sizeof(::koinos::standards::kcs4::get_allowances_result)},
-  { 105, -1, sizeof(::koinos::standards::kcs4::transfer_arguments)},
-  { 114, -1, sizeof(::koinos::standards::kcs4::transfer_result)},
-  { 119, -1, sizeof(::koinos::standards::kcs4::mint_arguments)},
-  { 126, -1, sizeof(::koinos::standards::kcs4::mint_result)},
-  { 131, -1, sizeof(::koinos::standards::kcs4::burn_arguments)},
-  { 138, -1, sizeof(::koinos::standards::kcs4::burn_result)},
-  { 143, -1, sizeof(::koinos::standards::kcs4::approve_arguments)},
-  { 151, -1, sizeof(::koinos::standards::kcs4::approve_result)},
-  { 156, -1, sizeof(::koinos::standards::kcs4::burn_event)},
-  { 163, -1, sizeof(::koinos::standards::kcs4::mint_event)},
-  { 170, -1, sizeof(::koinos::standards::kcs4::transfer_event)},
-  { 179, -1, sizeof(::koinos::standards::kcs4::approve_event)},
+  { 105, 114, sizeof(::koinos::standards::kcs4::transfer_arguments)},
+  { 118, -1, sizeof(::koinos::standards::kcs4::transfer_result)},
+  { 123, 131, sizeof(::koinos::standards::kcs4::mint_arguments)},
+  { 134, -1, sizeof(::koinos::standards::kcs4::mint_result)},
+  { 139, 147, sizeof(::koinos::standards::kcs4::burn_arguments)},
+  { 150, -1, sizeof(::koinos::standards::kcs4::burn_result)},
+  { 155, 164, sizeof(::koinos::standards::kcs4::approve_arguments)},
+  { 168, -1, sizeof(::koinos::standards::kcs4::approve_result)},
+  { 173, 181, sizeof(::koinos::standards::kcs4::burn_event)},
+  { 184, 192, sizeof(::koinos::standards::kcs4::mint_event)},
+  { 195, 204, sizeof(::koinos::standards::kcs4::transfer_event)},
+  { 208, 217, sizeof(::koinos::standards::kcs4::approve_event)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -662,31 +702,36 @@ const char descriptor_table_protodef_koinos_2fstandards_2fkcs4_2eproto[] PROTOBU
   "(\005\022\022\n\ndescending\030\004 \001(\010\"f\n\025get_allowances"
   "_result\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\0228\n\nallowanc"
   "es\030\002 \003(\0132$.koinos.standards.kcs4.spender"
-  "_value\"[\n\022transfer_arguments\022\022\n\004from\030\001 \001"
+  "_value\"i\n\022transfer_arguments\022\022\n\004from\030\001 \001"
   "(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001("
-  "\004B\0020\001\022\014\n\004memo\030\004 \001(\t\"\021\n\017transfer_result\"5"
-  "\n\016mint_arguments\022\020\n\002to\030\001 \001(\014B\004\200\265\030\006\022\021\n\005va"
-  "lue\030\002 \001(\004B\0020\001\"\r\n\013mint_result\"7\n\016burn_arg"
-  "uments\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001("
-  "\004B\0020\001\"\r\n\013burn_result\"R\n\021approve_argument"
-  "s\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spender\030\002 \001(\014B"
-  "\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\"\020\n\016approve_resu"
-  "lt\"3\n\nburn_event\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005"
-  "value\030\002 \001(\004B\0020\001\"1\n\nmint_event\022\020\n\002to\030\001 \001("
-  "\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\"W\n\016transfer_e"
-  "vent\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265"
-  "\030\006\022\021\n\005value\030\003 \001(\004B\0020\001\022\014\n\004memo\030\004 \001(\t\"N\n\ra"
-  "pprove_event\022\023\n\005owner\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spe"
-  "nder\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B\0020\001B@Z>g"
-  "ithub.com/koinos/koinos-proto-golang/v2/"
-  "koinos/standards/kcs4b\006proto3"
+  "\004B\0020\001\022\021\n\004memo\030\004 \001(\tH\000\210\001\001B\007\n\005_memo\"\021\n\017tra"
+  "nsfer_result\"Q\n\016mint_arguments\022\020\n\002to\030\001 \001"
+  "(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\022\021\n\004memo\030\003 \001("
+  "\tH\000\210\001\001B\007\n\005_memo\"\r\n\013mint_result\"S\n\016burn_a"
+  "rguments\022\022\n\004from\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 "
+  "\001(\004B\0020\001\022\021\n\004memo\030\003 \001(\tH\000\210\001\001B\007\n\005_memo\"\r\n\013b"
+  "urn_result\"n\n\021approve_arguments\022\023\n\005owner"
+  "\030\001 \001(\014B\004\200\265\030\006\022\025\n\007spender\030\002 \001(\014B\004\200\265\030\006\022\021\n\005v"
+  "alue\030\003 \001(\004B\0020\001\022\021\n\004memo\030\004 \001(\tH\000\210\001\001B\007\n\005_me"
+  "mo\"\020\n\016approve_result\"O\n\nburn_event\022\022\n\004fr"
+  "om\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\022\021\n\004mem"
+  "o\030\003 \001(\tH\000\210\001\001B\007\n\005_memo\"M\n\nmint_event\022\020\n\002t"
+  "o\030\001 \001(\014B\004\200\265\030\006\022\021\n\005value\030\002 \001(\004B\0020\001\022\021\n\004memo"
+  "\030\003 \001(\tH\000\210\001\001B\007\n\005_memo\"e\n\016transfer_event\022\022"
+  "\n\004from\030\001 \001(\014B\004\200\265\030\006\022\020\n\002to\030\002 \001(\014B\004\200\265\030\006\022\021\n\005"
+  "value\030\003 \001(\004B\0020\001\022\021\n\004memo\030\004 \001(\tH\000\210\001\001B\007\n\005_m"
+  "emo\"j\n\rapprove_event\022\023\n\005owner\030\001 \001(\014B\004\200\265\030"
+  "\006\022\025\n\007spender\030\002 \001(\014B\004\200\265\030\006\022\021\n\005value\030\003 \001(\004B"
+  "\0020\001\022\021\n\004memo\030\004 \001(\tH\000\210\001\001B\007\n\005_memoB@Z>githu"
+  "b.com/koinos/koinos-proto-golang/v2/koin"
+  "os/standards/kcs4b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_koinos_2fstandards_2fkcs4_2eproto_deps[1] = {
   &::descriptor_table_koinos_2foptions_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fstandards_2fkcs4_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fstandards_2fkcs4_2eproto = {
-  false, false, 1549, descriptor_table_protodef_koinos_2fstandards_2fkcs4_2eproto, "koinos/standards/kcs4.proto", 
+  false, false, 1745, descriptor_table_protodef_koinos_2fstandards_2fkcs4_2eproto, "koinos/standards/kcs4.proto", 
   &descriptor_table_koinos_2fstandards_2fkcs4_2eproto_once, descriptor_table_koinos_2fstandards_2fkcs4_2eproto_deps, 1, 29,
   schemas, file_default_instances, TableStruct_koinos_2fstandards_2fkcs4_2eproto::offsets,
   file_level_metadata_koinos_2fstandards_2fkcs4_2eproto, file_level_enum_descriptors_koinos_2fstandards_2fkcs4_2eproto, file_level_service_descriptors_koinos_2fstandards_2fkcs4_2eproto,
@@ -4047,6 +4092,10 @@ void get_allowances_result::InternalSwap(get_allowances_result* other) {
 
 class transfer_arguments::_Internal {
  public:
+  using HasBits = decltype(std::declval<transfer_arguments>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 transfer_arguments::transfer_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -4059,7 +4108,8 @@ transfer_arguments::transfer_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.transfer_arguments)
 }
 transfer_arguments::transfer_arguments(const transfer_arguments& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_from().empty()) {
@@ -4072,7 +4122,7 @@ transfer_arguments::transfer_arguments(const transfer_arguments& from)
       GetArenaForAllocation());
   }
   memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_memo().empty()) {
+  if (from._internal_has_memo()) {
     memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
       GetArenaForAllocation());
   }
@@ -4119,13 +4169,18 @@ void transfer_arguments::Clear() {
 
   from_.ClearToEmpty();
   to_.ClearToEmpty();
-  memo_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4153,7 +4208,7 @@ const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string memo = 4;
+      // optional string memo = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_memo();
@@ -4178,6 +4233,7 @@ const char* transfer_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -4209,8 +4265,8 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_value(), target);
   }
 
-  // string memo = 4;
-  if (!this->_internal_memo().empty()) {
+  // optional string memo = 4;
+  if (_internal_has_memo()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -4249,8 +4305,9 @@ size_t transfer_arguments::ByteSizeLong() const {
         this->_internal_to());
   }
 
-  // string memo = 4;
-  if (!this->_internal_memo().empty()) {
+  // optional string memo = 4;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_memo());
@@ -4297,7 +4354,7 @@ void transfer_arguments::MergeFrom(const transfer_arguments& from) {
   if (!from._internal_to().empty()) {
     _internal_set_to(from._internal_to());
   }
-  if (!from._internal_memo().empty()) {
+  if (from._internal_has_memo()) {
     _internal_set_memo(from._internal_memo());
   }
   if (from._internal_value() != 0) {
@@ -4320,6 +4377,7 @@ bool transfer_arguments::IsInitialized() const {
 void transfer_arguments::InternalSwap(transfer_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &from_, GetArenaForAllocation(),
@@ -4501,6 +4559,10 @@ void transfer_result::InternalSwap(transfer_result* other) {
 
 class mint_arguments::_Internal {
  public:
+  using HasBits = decltype(std::declval<mint_arguments>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 mint_arguments::mint_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -4513,11 +4575,17 @@ mint_arguments::mint_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.mint_arguments)
 }
 mint_arguments::mint_arguments(const mint_arguments& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   to_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_to().empty()) {
     to_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_to(), 
+      GetArenaForAllocation());
+  }
+  memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_memo()) {
+    memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
       GetArenaForAllocation());
   }
   value_ = from.value_;
@@ -4526,6 +4594,7 @@ mint_arguments::mint_arguments(const mint_arguments& from)
 
 inline void mint_arguments::SharedCtor() {
 to_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 value_ = uint64_t{0u};
 }
 
@@ -4539,6 +4608,7 @@ mint_arguments::~mint_arguments() {
 inline void mint_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   to_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void mint_arguments::ArenaDtor(void* object) {
@@ -4558,12 +4628,18 @@ void mint_arguments::Clear() {
   (void) cached_has_bits;
 
   to_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* mint_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4583,6 +4659,15 @@ const char* mint_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional string memo = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_memo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.standards.kcs4.mint_arguments.memo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
@@ -4599,6 +4684,7 @@ const char* mint_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -4624,6 +4710,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
   }
 
+  // optional string memo = 3;
+  if (_internal_has_memo()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.standards.kcs4.mint_arguments.memo");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_memo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -4645,6 +4741,14 @@ size_t mint_arguments::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_to());
+  }
+
+  // optional string memo = 3;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memo());
   }
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -4685,6 +4789,9 @@ void mint_arguments::MergeFrom(const mint_arguments& from) {
   if (!from._internal_to().empty()) {
     _internal_set_to(from._internal_to());
   }
+  if (from._internal_has_memo()) {
+    _internal_set_memo(from._internal_memo());
+  }
   if (from._internal_value() != 0) {
     _internal_set_value(from._internal_value());
   }
@@ -4705,10 +4812,16 @@ bool mint_arguments::IsInitialized() const {
 void mint_arguments::InternalSwap(mint_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &to_, GetArenaForAllocation(),
       &other->to_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memo_, GetArenaForAllocation(),
+      &other->memo_, other->GetArenaForAllocation()
   );
   swap(value_, other->value_);
 }
@@ -4876,6 +4989,10 @@ void mint_result::InternalSwap(mint_result* other) {
 
 class burn_arguments::_Internal {
  public:
+  using HasBits = decltype(std::declval<burn_arguments>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 burn_arguments::burn_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -4888,11 +5005,17 @@ burn_arguments::burn_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.burn_arguments)
 }
 burn_arguments::burn_arguments(const burn_arguments& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_from().empty()) {
     from_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_from(), 
+      GetArenaForAllocation());
+  }
+  memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_memo()) {
+    memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
       GetArenaForAllocation());
   }
   value_ = from.value_;
@@ -4901,6 +5024,7 @@ burn_arguments::burn_arguments(const burn_arguments& from)
 
 inline void burn_arguments::SharedCtor() {
 from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 value_ = uint64_t{0u};
 }
 
@@ -4914,6 +5038,7 @@ burn_arguments::~burn_arguments() {
 inline void burn_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   from_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void burn_arguments::ArenaDtor(void* object) {
@@ -4933,12 +5058,18 @@ void burn_arguments::Clear() {
   (void) cached_has_bits;
 
   from_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* burn_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4958,6 +5089,15 @@ const char* burn_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional string memo = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_memo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.standards.kcs4.burn_arguments.memo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
@@ -4974,6 +5114,7 @@ const char* burn_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -4999,6 +5140,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
   }
 
+  // optional string memo = 3;
+  if (_internal_has_memo()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.standards.kcs4.burn_arguments.memo");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_memo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5020,6 +5171,14 @@ size_t burn_arguments::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_from());
+  }
+
+  // optional string memo = 3;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memo());
   }
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -5060,6 +5219,9 @@ void burn_arguments::MergeFrom(const burn_arguments& from) {
   if (!from._internal_from().empty()) {
     _internal_set_from(from._internal_from());
   }
+  if (from._internal_has_memo()) {
+    _internal_set_memo(from._internal_memo());
+  }
   if (from._internal_value() != 0) {
     _internal_set_value(from._internal_value());
   }
@@ -5080,10 +5242,16 @@ bool burn_arguments::IsInitialized() const {
 void burn_arguments::InternalSwap(burn_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &from_, GetArenaForAllocation(),
       &other->from_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memo_, GetArenaForAllocation(),
+      &other->memo_, other->GetArenaForAllocation()
   );
   swap(value_, other->value_);
 }
@@ -5251,6 +5419,10 @@ void burn_result::InternalSwap(burn_result* other) {
 
 class approve_arguments::_Internal {
  public:
+  using HasBits = decltype(std::declval<approve_arguments>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 approve_arguments::approve_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -5263,7 +5435,8 @@ approve_arguments::approve_arguments(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.approve_arguments)
 }
 approve_arguments::approve_arguments(const approve_arguments& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_owner().empty()) {
@@ -5275,6 +5448,11 @@ approve_arguments::approve_arguments(const approve_arguments& from)
     spender_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_spender(), 
       GetArenaForAllocation());
   }
+  memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_memo()) {
+    memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
+      GetArenaForAllocation());
+  }
   value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:koinos.standards.kcs4.approve_arguments)
 }
@@ -5282,6 +5460,7 @@ approve_arguments::approve_arguments(const approve_arguments& from)
 inline void approve_arguments::SharedCtor() {
 owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 spender_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 value_ = uint64_t{0u};
 }
 
@@ -5296,6 +5475,7 @@ inline void approve_arguments::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   owner_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   spender_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void approve_arguments::ArenaDtor(void* object) {
@@ -5316,12 +5496,18 @@ void approve_arguments::Clear() {
 
   owner_.ClearToEmpty();
   spender_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* approve_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5349,6 +5535,15 @@ const char* approve_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional string memo = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_memo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.standards.kcs4.approve_arguments.memo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
@@ -5365,6 +5560,7 @@ const char* approve_arguments::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -5396,6 +5592,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_value(), target);
   }
 
+  // optional string memo = 4;
+  if (_internal_has_memo()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.standards.kcs4.approve_arguments.memo");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_memo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5424,6 +5630,14 @@ size_t approve_arguments::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_spender());
+  }
+
+  // optional string memo = 4;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memo());
   }
 
   // uint64 value = 3 [jstype = JS_STRING];
@@ -5467,6 +5681,9 @@ void approve_arguments::MergeFrom(const approve_arguments& from) {
   if (!from._internal_spender().empty()) {
     _internal_set_spender(from._internal_spender());
   }
+  if (from._internal_has_memo()) {
+    _internal_set_memo(from._internal_memo());
+  }
   if (from._internal_value() != 0) {
     _internal_set_value(from._internal_value());
   }
@@ -5487,6 +5704,7 @@ bool approve_arguments::IsInitialized() const {
 void approve_arguments::InternalSwap(approve_arguments* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &owner_, GetArenaForAllocation(),
@@ -5496,6 +5714,11 @@ void approve_arguments::InternalSwap(approve_arguments* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &spender_, GetArenaForAllocation(),
       &other->spender_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memo_, GetArenaForAllocation(),
+      &other->memo_, other->GetArenaForAllocation()
   );
   swap(value_, other->value_);
 }
@@ -5663,6 +5886,10 @@ void approve_result::InternalSwap(approve_result* other) {
 
 class burn_event::_Internal {
  public:
+  using HasBits = decltype(std::declval<burn_event>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 burn_event::burn_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -5675,11 +5902,17 @@ burn_event::burn_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.burn_event)
 }
 burn_event::burn_event(const burn_event& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_from().empty()) {
     from_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_from(), 
+      GetArenaForAllocation());
+  }
+  memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_memo()) {
+    memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
       GetArenaForAllocation());
   }
   value_ = from.value_;
@@ -5688,6 +5921,7 @@ burn_event::burn_event(const burn_event& from)
 
 inline void burn_event::SharedCtor() {
 from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 value_ = uint64_t{0u};
 }
 
@@ -5701,6 +5935,7 @@ burn_event::~burn_event() {
 inline void burn_event::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   from_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void burn_event::ArenaDtor(void* object) {
@@ -5720,12 +5955,18 @@ void burn_event::Clear() {
   (void) cached_has_bits;
 
   from_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* burn_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5745,6 +5986,15 @@ const char* burn_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional string memo = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_memo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.standards.kcs4.burn_event.memo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
@@ -5761,6 +6011,7 @@ const char* burn_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -5786,6 +6037,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
   }
 
+  // optional string memo = 3;
+  if (_internal_has_memo()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.standards.kcs4.burn_event.memo");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_memo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5807,6 +6068,14 @@ size_t burn_event::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_from());
+  }
+
+  // optional string memo = 3;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memo());
   }
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -5847,6 +6116,9 @@ void burn_event::MergeFrom(const burn_event& from) {
   if (!from._internal_from().empty()) {
     _internal_set_from(from._internal_from());
   }
+  if (from._internal_has_memo()) {
+    _internal_set_memo(from._internal_memo());
+  }
   if (from._internal_value() != 0) {
     _internal_set_value(from._internal_value());
   }
@@ -5867,10 +6139,16 @@ bool burn_event::IsInitialized() const {
 void burn_event::InternalSwap(burn_event* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &from_, GetArenaForAllocation(),
       &other->from_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memo_, GetArenaForAllocation(),
+      &other->memo_, other->GetArenaForAllocation()
   );
   swap(value_, other->value_);
 }
@@ -5885,6 +6163,10 @@ void burn_event::InternalSwap(burn_event* other) {
 
 class mint_event::_Internal {
  public:
+  using HasBits = decltype(std::declval<mint_event>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 mint_event::mint_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -5897,11 +6179,17 @@ mint_event::mint_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.mint_event)
 }
 mint_event::mint_event(const mint_event& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   to_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_to().empty()) {
     to_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_to(), 
+      GetArenaForAllocation());
+  }
+  memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_memo()) {
+    memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
       GetArenaForAllocation());
   }
   value_ = from.value_;
@@ -5910,6 +6198,7 @@ mint_event::mint_event(const mint_event& from)
 
 inline void mint_event::SharedCtor() {
 to_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 value_ = uint64_t{0u};
 }
 
@@ -5923,6 +6212,7 @@ mint_event::~mint_event() {
 inline void mint_event::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   to_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void mint_event::ArenaDtor(void* object) {
@@ -5942,12 +6232,18 @@ void mint_event::Clear() {
   (void) cached_has_bits;
 
   to_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* mint_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5967,6 +6263,15 @@ const char* mint_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional string memo = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_memo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.standards.kcs4.mint_event.memo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
@@ -5983,6 +6288,7 @@ const char* mint_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -6008,6 +6314,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(2, this->_internal_value(), target);
   }
 
+  // optional string memo = 3;
+  if (_internal_has_memo()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.standards.kcs4.mint_event.memo");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_memo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6029,6 +6345,14 @@ size_t mint_event::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_to());
+  }
+
+  // optional string memo = 3;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memo());
   }
 
   // uint64 value = 2 [jstype = JS_STRING];
@@ -6069,6 +6393,9 @@ void mint_event::MergeFrom(const mint_event& from) {
   if (!from._internal_to().empty()) {
     _internal_set_to(from._internal_to());
   }
+  if (from._internal_has_memo()) {
+    _internal_set_memo(from._internal_memo());
+  }
   if (from._internal_value() != 0) {
     _internal_set_value(from._internal_value());
   }
@@ -6089,10 +6416,16 @@ bool mint_event::IsInitialized() const {
 void mint_event::InternalSwap(mint_event* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &to_, GetArenaForAllocation(),
       &other->to_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memo_, GetArenaForAllocation(),
+      &other->memo_, other->GetArenaForAllocation()
   );
   swap(value_, other->value_);
 }
@@ -6107,6 +6440,10 @@ void mint_event::InternalSwap(mint_event* other) {
 
 class transfer_event::_Internal {
  public:
+  using HasBits = decltype(std::declval<transfer_event>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 transfer_event::transfer_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -6119,7 +6456,8 @@ transfer_event::transfer_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.transfer_event)
 }
 transfer_event::transfer_event(const transfer_event& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   from_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_from().empty()) {
@@ -6132,7 +6470,7 @@ transfer_event::transfer_event(const transfer_event& from)
       GetArenaForAllocation());
   }
   memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_memo().empty()) {
+  if (from._internal_has_memo()) {
     memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
       GetArenaForAllocation());
   }
@@ -6179,13 +6517,18 @@ void transfer_event::Clear() {
 
   from_.ClearToEmpty();
   to_.ClearToEmpty();
-  memo_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* transfer_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6213,7 +6556,7 @@ const char* transfer_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string memo = 4;
+      // optional string memo = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
           auto str = _internal_mutable_memo();
@@ -6238,6 +6581,7 @@ const char* transfer_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -6269,8 +6613,8 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_value(), target);
   }
 
-  // string memo = 4;
-  if (!this->_internal_memo().empty()) {
+  // optional string memo = 4;
+  if (_internal_has_memo()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
@@ -6309,8 +6653,9 @@ size_t transfer_event::ByteSizeLong() const {
         this->_internal_to());
   }
 
-  // string memo = 4;
-  if (!this->_internal_memo().empty()) {
+  // optional string memo = 4;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_memo());
@@ -6357,7 +6702,7 @@ void transfer_event::MergeFrom(const transfer_event& from) {
   if (!from._internal_to().empty()) {
     _internal_set_to(from._internal_to());
   }
-  if (!from._internal_memo().empty()) {
+  if (from._internal_has_memo()) {
     _internal_set_memo(from._internal_memo());
   }
   if (from._internal_value() != 0) {
@@ -6380,6 +6725,7 @@ bool transfer_event::IsInitialized() const {
 void transfer_event::InternalSwap(transfer_event* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &from_, GetArenaForAllocation(),
@@ -6408,6 +6754,10 @@ void transfer_event::InternalSwap(transfer_event* other) {
 
 class approve_event::_Internal {
  public:
+  using HasBits = decltype(std::declval<approve_event>()._has_bits_);
+  static void set_has_memo(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 approve_event::approve_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -6420,7 +6770,8 @@ approve_event::approve_event(::PROTOBUF_NAMESPACE_ID::Arena* arena,
   // @@protoc_insertion_point(arena_constructor:koinos.standards.kcs4.approve_event)
 }
 approve_event::approve_event(const approve_event& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_owner().empty()) {
@@ -6432,6 +6783,11 @@ approve_event::approve_event(const approve_event& from)
     spender_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_spender(), 
       GetArenaForAllocation());
   }
+  memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from._internal_has_memo()) {
+    memo_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_memo(), 
+      GetArenaForAllocation());
+  }
   value_ = from.value_;
   // @@protoc_insertion_point(copy_constructor:koinos.standards.kcs4.approve_event)
 }
@@ -6439,6 +6795,7 @@ approve_event::approve_event(const approve_event& from)
 inline void approve_event::SharedCtor() {
 owner_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 spender_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+memo_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 value_ = uint64_t{0u};
 }
 
@@ -6453,6 +6810,7 @@ inline void approve_event::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   owner_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   spender_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void approve_event::ArenaDtor(void* object) {
@@ -6473,12 +6831,18 @@ void approve_event::Clear() {
 
   owner_.ClearToEmpty();
   spender_.ClearToEmpty();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    memo_.ClearNonDefaultToEmpty();
+  }
   value_ = uint64_t{0u};
+  _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* approve_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6506,6 +6870,15 @@ const char* approve_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // optional string memo = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_memo();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "koinos.standards.kcs4.approve_event.memo"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag == 0) || ((tag & 7) == 4)) {
@@ -6522,6 +6895,7 @@ const char* approve_event::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
     }  // switch
   }  // while
 success:
+  _has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -6553,6 +6927,16 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt64ToArray(3, this->_internal_value(), target);
   }
 
+  // optional string memo = 4;
+  if (_internal_has_memo()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_memo().data(), static_cast<int>(this->_internal_memo().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "koinos.standards.kcs4.approve_event.memo");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_memo(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -6581,6 +6965,14 @@ size_t approve_event::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
         this->_internal_spender());
+  }
+
+  // optional string memo = 4;
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_memo());
   }
 
   // uint64 value = 3 [jstype = JS_STRING];
@@ -6624,6 +7016,9 @@ void approve_event::MergeFrom(const approve_event& from) {
   if (!from._internal_spender().empty()) {
     _internal_set_spender(from._internal_spender());
   }
+  if (from._internal_has_memo()) {
+    _internal_set_memo(from._internal_memo());
+  }
   if (from._internal_value() != 0) {
     _internal_set_value(from._internal_value());
   }
@@ -6644,6 +7039,7 @@ bool approve_event::IsInitialized() const {
 void approve_event::InternalSwap(approve_event* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &owner_, GetArenaForAllocation(),
@@ -6653,6 +7049,11 @@ void approve_event::InternalSwap(approve_event* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &spender_, GetArenaForAllocation(),
       &other->spender_, other->GetArenaForAllocation()
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &memo_, GetArenaForAllocation(),
+      &other->memo_, other->GetArenaForAllocation()
   );
   swap(value_, other->value_);
 }

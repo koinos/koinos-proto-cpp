@@ -49,7 +49,7 @@ struct TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[13]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -71,6 +71,12 @@ extern check_pending_account_resources_requestDefaultTypeInternal _check_pending
 class check_pending_account_resources_response;
 struct check_pending_account_resources_responseDefaultTypeInternal;
 extern check_pending_account_resources_responseDefaultTypeInternal _check_pending_account_resources_response_default_instance_;
+class get_pending_nonce_request;
+struct get_pending_nonce_requestDefaultTypeInternal;
+extern get_pending_nonce_requestDefaultTypeInternal _get_pending_nonce_request_default_instance_;
+class get_pending_nonce_response;
+struct get_pending_nonce_responseDefaultTypeInternal;
+extern get_pending_nonce_responseDefaultTypeInternal _get_pending_nonce_response_default_instance_;
 class get_pending_transactions_request;
 struct get_pending_transactions_requestDefaultTypeInternal;
 extern get_pending_transactions_requestDefaultTypeInternal _get_pending_transactions_request_default_instance_;
@@ -100,6 +106,8 @@ template<> ::koinos::rpc::mempool::check_account_nonce_request* Arena::CreateMay
 template<> ::koinos::rpc::mempool::check_account_nonce_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::check_account_nonce_response>(Arena*);
 template<> ::koinos::rpc::mempool::check_pending_account_resources_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::check_pending_account_resources_request>(Arena*);
 template<> ::koinos::rpc::mempool::check_pending_account_resources_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::check_pending_account_resources_response>(Arena*);
+template<> ::koinos::rpc::mempool::get_pending_nonce_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_nonce_request>(Arena*);
+template<> ::koinos::rpc::mempool::get_pending_nonce_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_nonce_response>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transactions_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_request>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transactions_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_response>(Arena*);
 template<> ::koinos::rpc::mempool::get_reserved_account_rc_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_reserved_account_rc_request>(Arena*);
@@ -1532,6 +1540,315 @@ class get_reserved_account_rc_response final :
 };
 // -------------------------------------------------------------------
 
+class get_pending_nonce_request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.get_pending_nonce_request) */ {
+ public:
+  inline get_pending_nonce_request() : get_pending_nonce_request(nullptr) {}
+  ~get_pending_nonce_request() override;
+  explicit constexpr get_pending_nonce_request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_pending_nonce_request(const get_pending_nonce_request& from);
+  get_pending_nonce_request(get_pending_nonce_request&& from) noexcept
+    : get_pending_nonce_request() {
+    *this = ::std::move(from);
+  }
+
+  inline get_pending_nonce_request& operator=(const get_pending_nonce_request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_pending_nonce_request& operator=(get_pending_nonce_request&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_pending_nonce_request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_pending_nonce_request* internal_default_instance() {
+    return reinterpret_cast<const get_pending_nonce_request*>(
+               &_get_pending_nonce_request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    9;
+
+  friend void swap(get_pending_nonce_request& a, get_pending_nonce_request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_pending_nonce_request* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_pending_nonce_request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_pending_nonce_request* New() const final {
+    return new get_pending_nonce_request();
+  }
+
+  get_pending_nonce_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_pending_nonce_request>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_pending_nonce_request& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_pending_nonce_request& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_pending_nonce_request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.rpc.mempool.get_pending_nonce_request";
+  }
+  protected:
+  explicit get_pending_nonce_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPayeeFieldNumber = 1,
+    kBlockIdFieldNumber = 2,
+  };
+  // bytes payee = 1 [(.koinos.btype) = ADDRESS];
+  void clear_payee();
+  const std::string& payee() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_payee(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_payee();
+  PROTOBUF_MUST_USE_RESULT std::string* release_payee();
+  void set_allocated_payee(std::string* payee);
+  private:
+  const std::string& _internal_payee() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_payee(const std::string& value);
+  std::string* _internal_mutable_payee();
+  public:
+
+  // optional bytes block_id = 2 [(.koinos.btype) = BLOCK_ID];
+  bool has_block_id() const;
+  private:
+  bool _internal_has_block_id() const;
+  public:
+  void clear_block_id();
+  const std::string& block_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_block_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_block_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_block_id();
+  void set_allocated_block_id(std::string* block_id);
+  private:
+  const std::string& _internal_block_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_block_id(const std::string& value);
+  std::string* _internal_mutable_block_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.get_pending_nonce_request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr payee_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr block_id_;
+  friend struct ::TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class get_pending_nonce_response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.get_pending_nonce_response) */ {
+ public:
+  inline get_pending_nonce_response() : get_pending_nonce_response(nullptr) {}
+  ~get_pending_nonce_response() override;
+  explicit constexpr get_pending_nonce_response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_pending_nonce_response(const get_pending_nonce_response& from);
+  get_pending_nonce_response(get_pending_nonce_response&& from) noexcept
+    : get_pending_nonce_response() {
+    *this = ::std::move(from);
+  }
+
+  inline get_pending_nonce_response& operator=(const get_pending_nonce_response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_pending_nonce_response& operator=(get_pending_nonce_response&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_pending_nonce_response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_pending_nonce_response* internal_default_instance() {
+    return reinterpret_cast<const get_pending_nonce_response*>(
+               &_get_pending_nonce_response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(get_pending_nonce_response& a, get_pending_nonce_response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_pending_nonce_response* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_pending_nonce_response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_pending_nonce_response* New() const final {
+    return new get_pending_nonce_response();
+  }
+
+  get_pending_nonce_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_pending_nonce_response>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_pending_nonce_response& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_pending_nonce_response& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_pending_nonce_response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.rpc.mempool.get_pending_nonce_response";
+  }
+  protected:
+  explicit get_pending_nonce_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNonceFieldNumber = 1,
+  };
+  // bytes nonce = 1;
+  void clear_nonce();
+  const std::string& nonce() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_nonce(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_nonce();
+  PROTOBUF_MUST_USE_RESULT std::string* release_nonce();
+  void set_allocated_nonce(std::string* nonce);
+  private:
+  const std::string& _internal_nonce() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nonce(const std::string& value);
+  std::string* _internal_mutable_nonce();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.get_pending_nonce_response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nonce_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
 class mempool_request final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.mempool_request) */ {
  public:
@@ -1577,6 +1894,7 @@ class mempool_request final :
     kGetPendingTransactions = 3,
     kCheckAccountNonce = 4,
     kGetReservedAccountRc = 5,
+    kGetPendingNonce = 6,
     REQUEST_NOT_SET = 0,
   };
 
@@ -1585,7 +1903,7 @@ class mempool_request final :
                &_mempool_request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   friend void swap(mempool_request& a, mempool_request& b) {
     a.Swap(&b);
@@ -1661,6 +1979,7 @@ class mempool_request final :
     kGetPendingTransactionsFieldNumber = 3,
     kCheckAccountNonceFieldNumber = 4,
     kGetReservedAccountRcFieldNumber = 5,
+    kGetPendingNonceFieldNumber = 6,
   };
   // .koinos.rpc.reserved_rpc reserved = 1;
   bool has_reserved() const;
@@ -1752,6 +2071,24 @@ class mempool_request final :
       ::koinos::rpc::mempool::get_reserved_account_rc_request* get_reserved_account_rc);
   ::koinos::rpc::mempool::get_reserved_account_rc_request* unsafe_arena_release_get_reserved_account_rc();
 
+  // .koinos.rpc.mempool.get_pending_nonce_request get_pending_nonce = 6;
+  bool has_get_pending_nonce() const;
+  private:
+  bool _internal_has_get_pending_nonce() const;
+  public:
+  void clear_get_pending_nonce();
+  const ::koinos::rpc::mempool::get_pending_nonce_request& get_pending_nonce() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::mempool::get_pending_nonce_request* release_get_pending_nonce();
+  ::koinos::rpc::mempool::get_pending_nonce_request* mutable_get_pending_nonce();
+  void set_allocated_get_pending_nonce(::koinos::rpc::mempool::get_pending_nonce_request* get_pending_nonce);
+  private:
+  const ::koinos::rpc::mempool::get_pending_nonce_request& _internal_get_pending_nonce() const;
+  ::koinos::rpc::mempool::get_pending_nonce_request* _internal_mutable_get_pending_nonce();
+  public:
+  void unsafe_arena_set_allocated_get_pending_nonce(
+      ::koinos::rpc::mempool::get_pending_nonce_request* get_pending_nonce);
+  ::koinos::rpc::mempool::get_pending_nonce_request* unsafe_arena_release_get_pending_nonce();
+
   void clear_request();
   RequestCase request_case() const;
   // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_request)
@@ -1762,6 +2099,7 @@ class mempool_request final :
   void set_has_get_pending_transactions();
   void set_has_check_account_nonce();
   void set_has_get_reserved_account_rc();
+  void set_has_get_pending_nonce();
 
   inline bool has_request() const;
   inline void clear_has_request();
@@ -1777,6 +2115,7 @@ class mempool_request final :
     ::koinos::rpc::mempool::get_pending_transactions_request* get_pending_transactions_;
     ::koinos::rpc::mempool::check_account_nonce_request* check_account_nonce_;
     ::koinos::rpc::mempool::get_reserved_account_rc_request* get_reserved_account_rc_;
+    ::koinos::rpc::mempool::get_pending_nonce_request* get_pending_nonce_;
   } request_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1831,6 +2170,7 @@ class mempool_response final :
     kGetPendingTransactions = 4,
     kCheckAccountNonce = 5,
     kGetReservedAccountRc = 6,
+    kGetPendingNonce = 7,
     RESPONSE_NOT_SET = 0,
   };
 
@@ -1839,7 +2179,7 @@ class mempool_response final :
                &_mempool_response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   friend void swap(mempool_response& a, mempool_response& b) {
     a.Swap(&b);
@@ -1916,6 +2256,7 @@ class mempool_response final :
     kGetPendingTransactionsFieldNumber = 4,
     kCheckAccountNonceFieldNumber = 5,
     kGetReservedAccountRcFieldNumber = 6,
+    kGetPendingNonceFieldNumber = 7,
   };
   // .koinos.rpc.reserved_rpc reserved = 1;
   bool has_reserved() const;
@@ -2025,6 +2366,24 @@ class mempool_response final :
       ::koinos::rpc::mempool::get_reserved_account_rc_response* get_reserved_account_rc);
   ::koinos::rpc::mempool::get_reserved_account_rc_response* unsafe_arena_release_get_reserved_account_rc();
 
+  // .koinos.rpc.mempool.get_pending_nonce_response get_pending_nonce = 7;
+  bool has_get_pending_nonce() const;
+  private:
+  bool _internal_has_get_pending_nonce() const;
+  public:
+  void clear_get_pending_nonce();
+  const ::koinos::rpc::mempool::get_pending_nonce_response& get_pending_nonce() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::mempool::get_pending_nonce_response* release_get_pending_nonce();
+  ::koinos::rpc::mempool::get_pending_nonce_response* mutable_get_pending_nonce();
+  void set_allocated_get_pending_nonce(::koinos::rpc::mempool::get_pending_nonce_response* get_pending_nonce);
+  private:
+  const ::koinos::rpc::mempool::get_pending_nonce_response& _internal_get_pending_nonce() const;
+  ::koinos::rpc::mempool::get_pending_nonce_response* _internal_mutable_get_pending_nonce();
+  public:
+  void unsafe_arena_set_allocated_get_pending_nonce(
+      ::koinos::rpc::mempool::get_pending_nonce_response* get_pending_nonce);
+  ::koinos::rpc::mempool::get_pending_nonce_response* unsafe_arena_release_get_pending_nonce();
+
   void clear_response();
   ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_response)
@@ -2036,6 +2395,7 @@ class mempool_response final :
   void set_has_get_pending_transactions();
   void set_has_check_account_nonce();
   void set_has_get_reserved_account_rc();
+  void set_has_get_pending_nonce();
 
   inline bool has_response() const;
   inline void clear_has_response();
@@ -2052,6 +2412,7 @@ class mempool_response final :
     ::koinos::rpc::mempool::get_pending_transactions_response* get_pending_transactions_;
     ::koinos::rpc::mempool::check_account_nonce_response* check_account_nonce_;
     ::koinos::rpc::mempool::get_reserved_account_rc_response* get_reserved_account_rc_;
+    ::koinos::rpc::mempool::get_pending_nonce_response* get_pending_nonce_;
   } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2767,6 +3128,164 @@ inline void get_reserved_account_rc_response::set_rc(::PROTOBUF_NAMESPACE_ID::ui
 
 // -------------------------------------------------------------------
 
+// get_pending_nonce_request
+
+// bytes payee = 1 [(.koinos.btype) = ADDRESS];
+inline void get_pending_nonce_request::clear_payee() {
+  payee_.ClearToEmpty();
+}
+inline const std::string& get_pending_nonce_request::payee() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.get_pending_nonce_request.payee)
+  return _internal_payee();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_pending_nonce_request::set_payee(ArgT0&& arg0, ArgT... args) {
+ 
+ payee_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.get_pending_nonce_request.payee)
+}
+inline std::string* get_pending_nonce_request::mutable_payee() {
+  std::string* _s = _internal_mutable_payee();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.get_pending_nonce_request.payee)
+  return _s;
+}
+inline const std::string& get_pending_nonce_request::_internal_payee() const {
+  return payee_.Get();
+}
+inline void get_pending_nonce_request::_internal_set_payee(const std::string& value) {
+  
+  payee_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_pending_nonce_request::_internal_mutable_payee() {
+  
+  return payee_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_pending_nonce_request::release_payee() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.get_pending_nonce_request.payee)
+  return payee_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_pending_nonce_request::set_allocated_payee(std::string* payee) {
+  if (payee != nullptr) {
+    
+  } else {
+    
+  }
+  payee_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), payee,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.get_pending_nonce_request.payee)
+}
+
+// optional bytes block_id = 2 [(.koinos.btype) = BLOCK_ID];
+inline bool get_pending_nonce_request::_internal_has_block_id() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool get_pending_nonce_request::has_block_id() const {
+  return _internal_has_block_id();
+}
+inline void get_pending_nonce_request::clear_block_id() {
+  block_id_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& get_pending_nonce_request::block_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.get_pending_nonce_request.block_id)
+  return _internal_block_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_pending_nonce_request::set_block_id(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ block_id_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.get_pending_nonce_request.block_id)
+}
+inline std::string* get_pending_nonce_request::mutable_block_id() {
+  std::string* _s = _internal_mutable_block_id();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.get_pending_nonce_request.block_id)
+  return _s;
+}
+inline const std::string& get_pending_nonce_request::_internal_block_id() const {
+  return block_id_.Get();
+}
+inline void get_pending_nonce_request::_internal_set_block_id(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  block_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_pending_nonce_request::_internal_mutable_block_id() {
+  _has_bits_[0] |= 0x00000001u;
+  return block_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_pending_nonce_request::release_block_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.get_pending_nonce_request.block_id)
+  if (!_internal_has_block_id()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return block_id_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_pending_nonce_request::set_allocated_block_id(std::string* block_id) {
+  if (block_id != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  block_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), block_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.get_pending_nonce_request.block_id)
+}
+
+// -------------------------------------------------------------------
+
+// get_pending_nonce_response
+
+// bytes nonce = 1;
+inline void get_pending_nonce_response::clear_nonce() {
+  nonce_.ClearToEmpty();
+}
+inline const std::string& get_pending_nonce_response::nonce() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.get_pending_nonce_response.nonce)
+  return _internal_nonce();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_pending_nonce_response::set_nonce(ArgT0&& arg0, ArgT... args) {
+ 
+ nonce_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.get_pending_nonce_response.nonce)
+}
+inline std::string* get_pending_nonce_response::mutable_nonce() {
+  std::string* _s = _internal_mutable_nonce();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.get_pending_nonce_response.nonce)
+  return _s;
+}
+inline const std::string& get_pending_nonce_response::_internal_nonce() const {
+  return nonce_.Get();
+}
+inline void get_pending_nonce_response::_internal_set_nonce(const std::string& value) {
+  
+  nonce_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_pending_nonce_response::_internal_mutable_nonce() {
+  
+  return nonce_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_pending_nonce_response::release_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.get_pending_nonce_response.nonce)
+  return nonce_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_pending_nonce_response::set_allocated_nonce(std::string* nonce) {
+  if (nonce != nullptr) {
+    
+  } else {
+    
+  }
+  nonce_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), nonce,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.get_pending_nonce_response.nonce)
+}
+
+// -------------------------------------------------------------------
+
 // mempool_request
 
 // .koinos.rpc.reserved_rpc reserved = 1;
@@ -3128,6 +3647,80 @@ inline ::koinos::rpc::mempool::get_reserved_account_rc_request* mempool_request:
 inline ::koinos::rpc::mempool::get_reserved_account_rc_request* mempool_request::mutable_get_reserved_account_rc() {
   ::koinos::rpc::mempool::get_reserved_account_rc_request* _msg = _internal_mutable_get_reserved_account_rc();
   // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.get_reserved_account_rc)
+  return _msg;
+}
+
+// .koinos.rpc.mempool.get_pending_nonce_request get_pending_nonce = 6;
+inline bool mempool_request::_internal_has_get_pending_nonce() const {
+  return request_case() == kGetPendingNonce;
+}
+inline bool mempool_request::has_get_pending_nonce() const {
+  return _internal_has_get_pending_nonce();
+}
+inline void mempool_request::set_has_get_pending_nonce() {
+  _oneof_case_[0] = kGetPendingNonce;
+}
+inline void mempool_request::clear_get_pending_nonce() {
+  if (_internal_has_get_pending_nonce()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete request_.get_pending_nonce_;
+    }
+    clear_has_request();
+  }
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_request* mempool_request::release_get_pending_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_request.get_pending_nonce)
+  if (_internal_has_get_pending_nonce()) {
+    clear_has_request();
+      ::koinos::rpc::mempool::get_pending_nonce_request* temp = request_.get_pending_nonce_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    request_.get_pending_nonce_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::rpc::mempool::get_pending_nonce_request& mempool_request::_internal_get_pending_nonce() const {
+  return _internal_has_get_pending_nonce()
+      ? *request_.get_pending_nonce_
+      : reinterpret_cast< ::koinos::rpc::mempool::get_pending_nonce_request&>(::koinos::rpc::mempool::_get_pending_nonce_request_default_instance_);
+}
+inline const ::koinos::rpc::mempool::get_pending_nonce_request& mempool_request::get_pending_nonce() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_request.get_pending_nonce)
+  return _internal_get_pending_nonce();
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_request* mempool_request::unsafe_arena_release_get_pending_nonce() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_request.get_pending_nonce)
+  if (_internal_has_get_pending_nonce()) {
+    clear_has_request();
+    ::koinos::rpc::mempool::get_pending_nonce_request* temp = request_.get_pending_nonce_;
+    request_.get_pending_nonce_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void mempool_request::unsafe_arena_set_allocated_get_pending_nonce(::koinos::rpc::mempool::get_pending_nonce_request* get_pending_nonce) {
+  clear_request();
+  if (get_pending_nonce) {
+    set_has_get_pending_nonce();
+    request_.get_pending_nonce_ = get_pending_nonce;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_request.get_pending_nonce)
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_request* mempool_request::_internal_mutable_get_pending_nonce() {
+  if (!_internal_has_get_pending_nonce()) {
+    clear_request();
+    set_has_get_pending_nonce();
+    request_.get_pending_nonce_ = CreateMaybeMessage< ::koinos::rpc::mempool::get_pending_nonce_request >(GetArenaForAllocation());
+  }
+  return request_.get_pending_nonce_;
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_request* mempool_request::mutable_get_pending_nonce() {
+  ::koinos::rpc::mempool::get_pending_nonce_request* _msg = _internal_mutable_get_pending_nonce();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.get_pending_nonce)
   return _msg;
 }
 
@@ -3572,6 +4165,80 @@ inline ::koinos::rpc::mempool::get_reserved_account_rc_response* mempool_respons
   return _msg;
 }
 
+// .koinos.rpc.mempool.get_pending_nonce_response get_pending_nonce = 7;
+inline bool mempool_response::_internal_has_get_pending_nonce() const {
+  return response_case() == kGetPendingNonce;
+}
+inline bool mempool_response::has_get_pending_nonce() const {
+  return _internal_has_get_pending_nonce();
+}
+inline void mempool_response::set_has_get_pending_nonce() {
+  _oneof_case_[0] = kGetPendingNonce;
+}
+inline void mempool_response::clear_get_pending_nonce() {
+  if (_internal_has_get_pending_nonce()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.get_pending_nonce_;
+    }
+    clear_has_response();
+  }
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_response* mempool_response::release_get_pending_nonce() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_response.get_pending_nonce)
+  if (_internal_has_get_pending_nonce()) {
+    clear_has_response();
+      ::koinos::rpc::mempool::get_pending_nonce_response* temp = response_.get_pending_nonce_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.get_pending_nonce_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::rpc::mempool::get_pending_nonce_response& mempool_response::_internal_get_pending_nonce() const {
+  return _internal_has_get_pending_nonce()
+      ? *response_.get_pending_nonce_
+      : reinterpret_cast< ::koinos::rpc::mempool::get_pending_nonce_response&>(::koinos::rpc::mempool::_get_pending_nonce_response_default_instance_);
+}
+inline const ::koinos::rpc::mempool::get_pending_nonce_response& mempool_response::get_pending_nonce() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_response.get_pending_nonce)
+  return _internal_get_pending_nonce();
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_response* mempool_response::unsafe_arena_release_get_pending_nonce() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_response.get_pending_nonce)
+  if (_internal_has_get_pending_nonce()) {
+    clear_has_response();
+    ::koinos::rpc::mempool::get_pending_nonce_response* temp = response_.get_pending_nonce_;
+    response_.get_pending_nonce_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void mempool_response::unsafe_arena_set_allocated_get_pending_nonce(::koinos::rpc::mempool::get_pending_nonce_response* get_pending_nonce) {
+  clear_response();
+  if (get_pending_nonce) {
+    set_has_get_pending_nonce();
+    response_.get_pending_nonce_ = get_pending_nonce;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_response.get_pending_nonce)
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_response* mempool_response::_internal_mutable_get_pending_nonce() {
+  if (!_internal_has_get_pending_nonce()) {
+    clear_response();
+    set_has_get_pending_nonce();
+    response_.get_pending_nonce_ = CreateMaybeMessage< ::koinos::rpc::mempool::get_pending_nonce_response >(GetArenaForAllocation());
+  }
+  return response_.get_pending_nonce_;
+}
+inline ::koinos::rpc::mempool::get_pending_nonce_response* mempool_response::mutable_get_pending_nonce() {
+  ::koinos::rpc::mempool::get_pending_nonce_response* _msg = _internal_mutable_get_pending_nonce();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_response.get_pending_nonce)
+  return _msg;
+}
+
 inline bool mempool_response::has_response() const {
   return response_case() != RESPONSE_NOT_SET;
 }
@@ -3584,6 +4251,10 @@ inline mempool_response::ResponseCase mempool_response::response_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

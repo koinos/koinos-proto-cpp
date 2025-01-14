@@ -57,7 +57,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\030koinos/chain/error.proto\022\014koinos.chain"
   "\"+\n\rerror_details\022\014\n\004code\030\001 \001(\005\022\014\n\004logs\030"
-  "\002 \003(\t*\300\t\n\nerror_code\022\013\n\007success\020\000\022\r\n\trev"
+  "\002 \003(\t*\361\t\n\nerror_code\022\013\n\007success\020\000\022\r\n\trev"
   "ersion\020\001\022\022\n\016internal_error\020d\022 \n\034system_a"
   "uthorization_failure\020e\022\024\n\020invalid_contra"
   "ct\020f\022\033\n\027insufficient_privileges\020g\022\023\n\017ins"
@@ -73,27 +73,28 @@ const char descriptor_table_protodef_koinos_2fchain_2ferror_2eproto[] PROTOBUF_S
   "alid_signature\020\266\376\377\377\377\377\377\377\377\001\022\034\n\017malformed_b"
   "lock\020\265\376\377\377\377\377\377\377\377\001\022\"\n\025malformed_transaction"
   "\020\264\376\377\377\377\377\377\377\377\001\022#\n\026block_resource_failure\020\263\376"
-  "\377\377\377\377\377\377\377\001\022\034\n\017unknown_backend\020\230\370\377\377\377\377\377\377\377\001\022\035"
-  "\n\020unexpected_state\020\227\370\377\377\377\377\377\377\377\001\022\'\n\032missing"
-  "_required_arguments\020\226\370\377\377\377\377\377\377\377\001\022#\n\026unknow"
-  "n_previous_block\020\225\370\377\377\377\377\377\377\377\001\022\036\n\021unexpecte"
-  "d_height\020\224\370\377\377\377\377\377\377\377\001\022\036\n\021block_state_error"
-  "\020\223\370\377\377\377\377\377\377\377\001\022\"\n\025state_merkle_mismatch\020\222\370\377"
-  "\377\377\377\377\377\377\001\022\037\n\022unexpected_receipt\020\221\370\377\377\377\377\377\377\377\001"
-  "\022\030\n\013rpc_failure\020\220\370\377\377\377\377\377\377\377\001\022 \n\023pending_st"
-  "ate_error\020\217\370\377\377\377\377\377\377\377\001\022$\n\027timestamp_out_of"
-  "_bounds\020\216\370\377\377\377\377\377\377\377\001\022\034\n\017indexer_failure\020\215\370"
-  "\377\377\377\377\377\377\377\001\022-\n network_bandwidth_limit_exce"
-  "eded\020\214\370\377\377\377\377\377\377\377\001\022-\n compute_bandwidth_lim"
-  "it_exceeded\020\213\370\377\377\377\377\377\377\377\001\022(\n\033disk_storage_l"
-  "imit_exceeded\020\212\370\377\377\377\377\377\377\377\001\022&\n\031pre_irrevers"
-  "ibility_block\020\211\370\377\377\377\377\377\377\377\001B7Z5github.com/k"
-  "oinos/koinos-proto-golang/v2/koinos/chai"
-  "nb\006proto3"
+  "\377\377\377\377\377\377\377\001\022/\n\"pending_transaction_limit_ex"
+  "ceeded\020\262\376\377\377\377\377\377\377\377\001\022\034\n\017unknown_backend\020\230\370\377"
+  "\377\377\377\377\377\377\001\022\035\n\020unexpected_state\020\227\370\377\377\377\377\377\377\377\001\022\'"
+  "\n\032missing_required_arguments\020\226\370\377\377\377\377\377\377\377\001\022"
+  "#\n\026unknown_previous_block\020\225\370\377\377\377\377\377\377\377\001\022\036\n\021"
+  "unexpected_height\020\224\370\377\377\377\377\377\377\377\001\022\036\n\021block_st"
+  "ate_error\020\223\370\377\377\377\377\377\377\377\001\022\"\n\025state_merkle_mis"
+  "match\020\222\370\377\377\377\377\377\377\377\001\022\037\n\022unexpected_receipt\020\221"
+  "\370\377\377\377\377\377\377\377\001\022\030\n\013rpc_failure\020\220\370\377\377\377\377\377\377\377\001\022 \n\023p"
+  "ending_state_error\020\217\370\377\377\377\377\377\377\377\001\022$\n\027timesta"
+  "mp_out_of_bounds\020\216\370\377\377\377\377\377\377\377\001\022\034\n\017indexer_f"
+  "ailure\020\215\370\377\377\377\377\377\377\377\001\022-\n network_bandwidth_l"
+  "imit_exceeded\020\214\370\377\377\377\377\377\377\377\001\022-\n compute_band"
+  "width_limit_exceeded\020\213\370\377\377\377\377\377\377\377\001\022(\n\033disk_"
+  "storage_limit_exceeded\020\212\370\377\377\377\377\377\377\377\001\022&\n\031pre"
+  "_irreversibility_block\020\211\370\377\377\377\377\377\377\377\001B7Z5git"
+  "hub.com/koinos/koinos-proto-golang/v2/ko"
+  "inos/chainb\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_koinos_2fchain_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_koinos_2fchain_2ferror_2eproto = {
-  false, false, 1369, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
+  false, false, 1418, descriptor_table_protodef_koinos_2fchain_2ferror_2eproto, "koinos/chain/error.proto", 
   &descriptor_table_koinos_2fchain_2ferror_2eproto_once, nullptr, 0, 1,
   schemas, file_default_instances, TableStruct_koinos_2fchain_2ferror_2eproto::offsets,
   file_level_metadata_koinos_2fchain_2ferror_2eproto, file_level_enum_descriptors_koinos_2fchain_2ferror_2eproto, file_level_service_descriptors_koinos_2fchain_2ferror_2eproto,
@@ -128,6 +129,7 @@ bool error_code_IsValid(int value) {
     case -1002:
     case -1001:
     case -1000:
+    case -206:
     case -205:
     case -204:
     case -203:

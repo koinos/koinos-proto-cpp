@@ -47,7 +47,7 @@ struct TableStruct_koinos_2fmempool_2fmempool_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[3]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,6 +62,9 @@ extern address_resource_recordDefaultTypeInternal _address_resource_record_defau
 class mempool_metadata;
 struct mempool_metadataDefaultTypeInternal;
 extern mempool_metadataDefaultTypeInternal _mempool_metadata_default_instance_;
+class pending_transaction;
+struct pending_transactionDefaultTypeInternal;
+extern pending_transactionDefaultTypeInternal _pending_transaction_default_instance_;
 class pending_transaction_record;
 struct pending_transaction_recordDefaultTypeInternal;
 extern pending_transaction_recordDefaultTypeInternal _pending_transaction_record_default_instance_;
@@ -70,6 +73,7 @@ extern pending_transaction_recordDefaultTypeInternal _pending_transaction_record
 PROTOBUF_NAMESPACE_OPEN
 template<> ::koinos::mempool::address_resource_record* Arena::CreateMaybeMessage<::koinos::mempool::address_resource_record>(Arena*);
 template<> ::koinos::mempool::mempool_metadata* Arena::CreateMaybeMessage<::koinos::mempool::mempool_metadata>(Arena*);
+template<> ::koinos::mempool::pending_transaction* Arena::CreateMaybeMessage<::koinos::mempool::pending_transaction>(Arena*);
 template<> ::koinos::mempool::pending_transaction_record* Arena::CreateMaybeMessage<::koinos::mempool::pending_transaction_record>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace koinos {
@@ -366,6 +370,220 @@ class address_resource_record final :
 };
 // -------------------------------------------------------------------
 
+class pending_transaction final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.mempool.pending_transaction) */ {
+ public:
+  inline pending_transaction() : pending_transaction(nullptr) {}
+  ~pending_transaction() override;
+  explicit constexpr pending_transaction(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  pending_transaction(const pending_transaction& from);
+  pending_transaction(pending_transaction&& from) noexcept
+    : pending_transaction() {
+    *this = ::std::move(from);
+  }
+
+  inline pending_transaction& operator=(const pending_transaction& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline pending_transaction& operator=(pending_transaction&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const pending_transaction& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const pending_transaction* internal_default_instance() {
+    return reinterpret_cast<const pending_transaction*>(
+               &_pending_transaction_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(pending_transaction& a, pending_transaction& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(pending_transaction* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(pending_transaction* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline pending_transaction* New() const final {
+    return new pending_transaction();
+  }
+
+  pending_transaction* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<pending_transaction>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const pending_transaction& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const pending_transaction& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(pending_transaction* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.mempool.pending_transaction";
+  }
+  protected:
+  explicit pending_transaction(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransactionFieldNumber = 1,
+    kDiskStorageUsedFieldNumber = 2,
+    kNetworkBandwidthUsedFieldNumber = 3,
+    kComputeBandwidthUsedFieldNumber = 4,
+    kSystemDiskStorageUsedFieldNumber = 5,
+    kSystemNetworkBandwidthUsedFieldNumber = 6,
+    kSystemComputeBandwidthUsedFieldNumber = 7,
+  };
+  // .koinos.protocol.transaction transaction = 1;
+  bool has_transaction() const;
+  private:
+  bool _internal_has_transaction() const;
+  public:
+  void clear_transaction();
+  const ::koinos::protocol::transaction& transaction() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_transaction();
+  ::koinos::protocol::transaction* mutable_transaction();
+  void set_allocated_transaction(::koinos::protocol::transaction* transaction);
+  private:
+  const ::koinos::protocol::transaction& _internal_transaction() const;
+  ::koinos::protocol::transaction* _internal_mutable_transaction();
+  public:
+  void unsafe_arena_set_allocated_transaction(
+      ::koinos::protocol::transaction* transaction);
+  ::koinos::protocol::transaction* unsafe_arena_release_transaction();
+
+  // uint64 disk_storage_used = 2 [jstype = JS_STRING];
+  void clear_disk_storage_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_used() const;
+  void set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_disk_storage_used() const;
+  void _internal_set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 network_bandwidth_used = 3 [jstype = JS_STRING];
+  void clear_network_bandwidth_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_used() const;
+  void set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_network_bandwidth_used() const;
+  void _internal_set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 compute_bandwidth_used = 4 [jstype = JS_STRING];
+  void clear_compute_bandwidth_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_used() const;
+  void set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_compute_bandwidth_used() const;
+  void _internal_set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 system_disk_storage_used = 5 [jstype = JS_STRING];
+  void clear_system_disk_storage_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_disk_storage_used() const;
+  void set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_system_disk_storage_used() const;
+  void _internal_set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 system_network_bandwidth_used = 6 [jstype = JS_STRING];
+  void clear_system_network_bandwidth_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_network_bandwidth_used() const;
+  void set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_system_network_bandwidth_used() const;
+  void _internal_set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 system_compute_bandwidth_used = 7 [jstype = JS_STRING];
+  void clear_system_compute_bandwidth_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_compute_bandwidth_used() const;
+  void set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_system_compute_bandwidth_used() const;
+  void _internal_set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.mempool.pending_transaction)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::koinos::protocol::transaction* transaction_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_disk_storage_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_network_bandwidth_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_compute_bandwidth_used_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2fmempool_2fmempool_2eproto;
+};
+// -------------------------------------------------------------------
+
 class pending_transaction_record final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.mempool.pending_transaction_record) */ {
  public:
@@ -410,7 +628,7 @@ class pending_transaction_record final :
                &_pending_transaction_record_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(pending_transaction_record& a, pending_transaction_record& b) {
     a.Swap(&b);
@@ -481,29 +699,26 @@ class pending_transaction_record final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTransactionFieldNumber = 1,
+    kPendingTransactionFieldNumber = 1,
     kTimestampFieldNumber = 2,
-    kDiskStorageUsedFieldNumber = 3,
-    kNetworkBandwidthUsedFieldNumber = 4,
-    kComputeBandwidthUsedFieldNumber = 5,
   };
-  // .koinos.protocol.transaction transaction = 1;
-  bool has_transaction() const;
+  // .koinos.mempool.pending_transaction pending_transaction = 1;
+  bool has_pending_transaction() const;
   private:
-  bool _internal_has_transaction() const;
+  bool _internal_has_pending_transaction() const;
   public:
-  void clear_transaction();
-  const ::koinos::protocol::transaction& transaction() const;
-  PROTOBUF_MUST_USE_RESULT ::koinos::protocol::transaction* release_transaction();
-  ::koinos::protocol::transaction* mutable_transaction();
-  void set_allocated_transaction(::koinos::protocol::transaction* transaction);
+  void clear_pending_transaction();
+  const ::koinos::mempool::pending_transaction& pending_transaction() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::mempool::pending_transaction* release_pending_transaction();
+  ::koinos::mempool::pending_transaction* mutable_pending_transaction();
+  void set_allocated_pending_transaction(::koinos::mempool::pending_transaction* pending_transaction);
   private:
-  const ::koinos::protocol::transaction& _internal_transaction() const;
-  ::koinos::protocol::transaction* _internal_mutable_transaction();
+  const ::koinos::mempool::pending_transaction& _internal_pending_transaction() const;
+  ::koinos::mempool::pending_transaction* _internal_mutable_pending_transaction();
   public:
-  void unsafe_arena_set_allocated_transaction(
-      ::koinos::protocol::transaction* transaction);
-  ::koinos::protocol::transaction* unsafe_arena_release_transaction();
+  void unsafe_arena_set_allocated_pending_transaction(
+      ::koinos::mempool::pending_transaction* pending_transaction);
+  ::koinos::mempool::pending_transaction* unsafe_arena_release_pending_transaction();
 
   // uint64 timestamp = 2;
   void clear_timestamp();
@@ -514,33 +729,6 @@ class pending_transaction_record final :
   void _internal_set_timestamp(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
-  // uint64 disk_storage_used = 3;
-  void clear_disk_storage_used();
-  ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_used() const;
-  void set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_disk_storage_used() const;
-  void _internal_set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // uint64 network_bandwidth_used = 4;
-  void clear_network_bandwidth_used();
-  ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_used() const;
-  void set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_network_bandwidth_used() const;
-  void _internal_set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
-  // uint64 compute_bandwidth_used = 5;
-  void clear_compute_bandwidth_used();
-  ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_used() const;
-  void set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_compute_bandwidth_used() const;
-  void _internal_set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:koinos.mempool.pending_transaction_record)
  private:
   class _Internal;
@@ -548,11 +736,8 @@ class pending_transaction_record final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::koinos::protocol::transaction* transaction_;
+  ::koinos::mempool::pending_transaction* pending_transaction_;
   ::PROTOBUF_NAMESPACE_ID::uint64 timestamp_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 disk_storage_used_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 network_bandwidth_used_;
-  ::PROTOBUF_NAMESPACE_ID::uint64 compute_bandwidth_used_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fmempool_2fmempool_2eproto;
 };
@@ -633,25 +818,25 @@ inline void address_resource_record::set_current_rc(::PROTOBUF_NAMESPACE_ID::uin
 
 // -------------------------------------------------------------------
 
-// pending_transaction_record
+// pending_transaction
 
 // .koinos.protocol.transaction transaction = 1;
-inline bool pending_transaction_record::_internal_has_transaction() const {
+inline bool pending_transaction::_internal_has_transaction() const {
   return this != internal_default_instance() && transaction_ != nullptr;
 }
-inline bool pending_transaction_record::has_transaction() const {
+inline bool pending_transaction::has_transaction() const {
   return _internal_has_transaction();
 }
-inline const ::koinos::protocol::transaction& pending_transaction_record::_internal_transaction() const {
+inline const ::koinos::protocol::transaction& pending_transaction::_internal_transaction() const {
   const ::koinos::protocol::transaction* p = transaction_;
   return p != nullptr ? *p : reinterpret_cast<const ::koinos::protocol::transaction&>(
       ::koinos::protocol::_transaction_default_instance_);
 }
-inline const ::koinos::protocol::transaction& pending_transaction_record::transaction() const {
-  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction_record.transaction)
+inline const ::koinos::protocol::transaction& pending_transaction::transaction() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.transaction)
   return _internal_transaction();
 }
-inline void pending_transaction_record::unsafe_arena_set_allocated_transaction(
+inline void pending_transaction::unsafe_arena_set_allocated_transaction(
     ::koinos::protocol::transaction* transaction) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_);
@@ -662,9 +847,9 @@ inline void pending_transaction_record::unsafe_arena_set_allocated_transaction(
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.mempool.pending_transaction_record.transaction)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.mempool.pending_transaction.transaction)
 }
-inline ::koinos::protocol::transaction* pending_transaction_record::release_transaction() {
+inline ::koinos::protocol::transaction* pending_transaction::release_transaction() {
   
   ::koinos::protocol::transaction* temp = transaction_;
   transaction_ = nullptr;
@@ -679,14 +864,14 @@ inline ::koinos::protocol::transaction* pending_transaction_record::release_tran
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::koinos::protocol::transaction* pending_transaction_record::unsafe_arena_release_transaction() {
-  // @@protoc_insertion_point(field_release:koinos.mempool.pending_transaction_record.transaction)
+inline ::koinos::protocol::transaction* pending_transaction::unsafe_arena_release_transaction() {
+  // @@protoc_insertion_point(field_release:koinos.mempool.pending_transaction.transaction)
   
   ::koinos::protocol::transaction* temp = transaction_;
   transaction_ = nullptr;
   return temp;
 }
-inline ::koinos::protocol::transaction* pending_transaction_record::_internal_mutable_transaction() {
+inline ::koinos::protocol::transaction* pending_transaction::_internal_mutable_transaction() {
   
   if (transaction_ == nullptr) {
     auto* p = CreateMaybeMessage<::koinos::protocol::transaction>(GetArenaForAllocation());
@@ -694,12 +879,12 @@ inline ::koinos::protocol::transaction* pending_transaction_record::_internal_mu
   }
   return transaction_;
 }
-inline ::koinos::protocol::transaction* pending_transaction_record::mutable_transaction() {
+inline ::koinos::protocol::transaction* pending_transaction::mutable_transaction() {
   ::koinos::protocol::transaction* _msg = _internal_mutable_transaction();
-  // @@protoc_insertion_point(field_mutable:koinos.mempool.pending_transaction_record.transaction)
+  // @@protoc_insertion_point(field_mutable:koinos.mempool.pending_transaction.transaction)
   return _msg;
 }
-inline void pending_transaction_record::set_allocated_transaction(::koinos::protocol::transaction* transaction) {
+inline void pending_transaction::set_allocated_transaction(::koinos::protocol::transaction* transaction) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(transaction_);
@@ -718,7 +903,221 @@ inline void pending_transaction_record::set_allocated_transaction(::koinos::prot
     
   }
   transaction_ = transaction;
-  // @@protoc_insertion_point(field_set_allocated:koinos.mempool.pending_transaction_record.transaction)
+  // @@protoc_insertion_point(field_set_allocated:koinos.mempool.pending_transaction.transaction)
+}
+
+// uint64 disk_storage_used = 2 [jstype = JS_STRING];
+inline void pending_transaction::clear_disk_storage_used() {
+  disk_storage_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::_internal_disk_storage_used() const {
+  return disk_storage_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::disk_storage_used() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.disk_storage_used)
+  return _internal_disk_storage_used();
+}
+inline void pending_transaction::_internal_set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  disk_storage_used_ = value;
+}
+inline void pending_transaction::set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_disk_storage_used(value);
+  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction.disk_storage_used)
+}
+
+// uint64 network_bandwidth_used = 3 [jstype = JS_STRING];
+inline void pending_transaction::clear_network_bandwidth_used() {
+  network_bandwidth_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::_internal_network_bandwidth_used() const {
+  return network_bandwidth_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::network_bandwidth_used() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.network_bandwidth_used)
+  return _internal_network_bandwidth_used();
+}
+inline void pending_transaction::_internal_set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  network_bandwidth_used_ = value;
+}
+inline void pending_transaction::set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_network_bandwidth_used(value);
+  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction.network_bandwidth_used)
+}
+
+// uint64 compute_bandwidth_used = 4 [jstype = JS_STRING];
+inline void pending_transaction::clear_compute_bandwidth_used() {
+  compute_bandwidth_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::_internal_compute_bandwidth_used() const {
+  return compute_bandwidth_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::compute_bandwidth_used() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.compute_bandwidth_used)
+  return _internal_compute_bandwidth_used();
+}
+inline void pending_transaction::_internal_set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  compute_bandwidth_used_ = value;
+}
+inline void pending_transaction::set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_compute_bandwidth_used(value);
+  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction.compute_bandwidth_used)
+}
+
+// uint64 system_disk_storage_used = 5 [jstype = JS_STRING];
+inline void pending_transaction::clear_system_disk_storage_used() {
+  system_disk_storage_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::_internal_system_disk_storage_used() const {
+  return system_disk_storage_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::system_disk_storage_used() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.system_disk_storage_used)
+  return _internal_system_disk_storage_used();
+}
+inline void pending_transaction::_internal_set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  system_disk_storage_used_ = value;
+}
+inline void pending_transaction::set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_system_disk_storage_used(value);
+  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction.system_disk_storage_used)
+}
+
+// uint64 system_network_bandwidth_used = 6 [jstype = JS_STRING];
+inline void pending_transaction::clear_system_network_bandwidth_used() {
+  system_network_bandwidth_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::_internal_system_network_bandwidth_used() const {
+  return system_network_bandwidth_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::system_network_bandwidth_used() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.system_network_bandwidth_used)
+  return _internal_system_network_bandwidth_used();
+}
+inline void pending_transaction::_internal_set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  system_network_bandwidth_used_ = value;
+}
+inline void pending_transaction::set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_system_network_bandwidth_used(value);
+  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction.system_network_bandwidth_used)
+}
+
+// uint64 system_compute_bandwidth_used = 7 [jstype = JS_STRING];
+inline void pending_transaction::clear_system_compute_bandwidth_used() {
+  system_compute_bandwidth_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::_internal_system_compute_bandwidth_used() const {
+  return system_compute_bandwidth_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction::system_compute_bandwidth_used() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction.system_compute_bandwidth_used)
+  return _internal_system_compute_bandwidth_used();
+}
+inline void pending_transaction::_internal_set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  system_compute_bandwidth_used_ = value;
+}
+inline void pending_transaction::set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_system_compute_bandwidth_used(value);
+  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction.system_compute_bandwidth_used)
+}
+
+// -------------------------------------------------------------------
+
+// pending_transaction_record
+
+// .koinos.mempool.pending_transaction pending_transaction = 1;
+inline bool pending_transaction_record::_internal_has_pending_transaction() const {
+  return this != internal_default_instance() && pending_transaction_ != nullptr;
+}
+inline bool pending_transaction_record::has_pending_transaction() const {
+  return _internal_has_pending_transaction();
+}
+inline void pending_transaction_record::clear_pending_transaction() {
+  if (GetArenaForAllocation() == nullptr && pending_transaction_ != nullptr) {
+    delete pending_transaction_;
+  }
+  pending_transaction_ = nullptr;
+}
+inline const ::koinos::mempool::pending_transaction& pending_transaction_record::_internal_pending_transaction() const {
+  const ::koinos::mempool::pending_transaction* p = pending_transaction_;
+  return p != nullptr ? *p : reinterpret_cast<const ::koinos::mempool::pending_transaction&>(
+      ::koinos::mempool::_pending_transaction_default_instance_);
+}
+inline const ::koinos::mempool::pending_transaction& pending_transaction_record::pending_transaction() const {
+  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction_record.pending_transaction)
+  return _internal_pending_transaction();
+}
+inline void pending_transaction_record::unsafe_arena_set_allocated_pending_transaction(
+    ::koinos::mempool::pending_transaction* pending_transaction) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(pending_transaction_);
+  }
+  pending_transaction_ = pending_transaction;
+  if (pending_transaction) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.mempool.pending_transaction_record.pending_transaction)
+}
+inline ::koinos::mempool::pending_transaction* pending_transaction_record::release_pending_transaction() {
+  
+  ::koinos::mempool::pending_transaction* temp = pending_transaction_;
+  pending_transaction_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::koinos::mempool::pending_transaction* pending_transaction_record::unsafe_arena_release_pending_transaction() {
+  // @@protoc_insertion_point(field_release:koinos.mempool.pending_transaction_record.pending_transaction)
+  
+  ::koinos::mempool::pending_transaction* temp = pending_transaction_;
+  pending_transaction_ = nullptr;
+  return temp;
+}
+inline ::koinos::mempool::pending_transaction* pending_transaction_record::_internal_mutable_pending_transaction() {
+  
+  if (pending_transaction_ == nullptr) {
+    auto* p = CreateMaybeMessage<::koinos::mempool::pending_transaction>(GetArenaForAllocation());
+    pending_transaction_ = p;
+  }
+  return pending_transaction_;
+}
+inline ::koinos::mempool::pending_transaction* pending_transaction_record::mutable_pending_transaction() {
+  ::koinos::mempool::pending_transaction* _msg = _internal_mutable_pending_transaction();
+  // @@protoc_insertion_point(field_mutable:koinos.mempool.pending_transaction_record.pending_transaction)
+  return _msg;
+}
+inline void pending_transaction_record::set_allocated_pending_transaction(::koinos::mempool::pending_transaction* pending_transaction) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete pending_transaction_;
+  }
+  if (pending_transaction) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::koinos::mempool::pending_transaction>::GetOwningArena(pending_transaction);
+    if (message_arena != submessage_arena) {
+      pending_transaction = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, pending_transaction, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  pending_transaction_ = pending_transaction;
+  // @@protoc_insertion_point(field_set_allocated:koinos.mempool.pending_transaction_record.pending_transaction)
 }
 
 // uint64 timestamp = 2;
@@ -741,69 +1140,11 @@ inline void pending_transaction_record::set_timestamp(::PROTOBUF_NAMESPACE_ID::u
   // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction_record.timestamp)
 }
 
-// uint64 disk_storage_used = 3;
-inline void pending_transaction_record::clear_disk_storage_used() {
-  disk_storage_used_ = uint64_t{0u};
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction_record::_internal_disk_storage_used() const {
-  return disk_storage_used_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction_record::disk_storage_used() const {
-  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction_record.disk_storage_used)
-  return _internal_disk_storage_used();
-}
-inline void pending_transaction_record::_internal_set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  disk_storage_used_ = value;
-}
-inline void pending_transaction_record::set_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_disk_storage_used(value);
-  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction_record.disk_storage_used)
-}
-
-// uint64 network_bandwidth_used = 4;
-inline void pending_transaction_record::clear_network_bandwidth_used() {
-  network_bandwidth_used_ = uint64_t{0u};
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction_record::_internal_network_bandwidth_used() const {
-  return network_bandwidth_used_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction_record::network_bandwidth_used() const {
-  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction_record.network_bandwidth_used)
-  return _internal_network_bandwidth_used();
-}
-inline void pending_transaction_record::_internal_set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  network_bandwidth_used_ = value;
-}
-inline void pending_transaction_record::set_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_network_bandwidth_used(value);
-  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction_record.network_bandwidth_used)
-}
-
-// uint64 compute_bandwidth_used = 5;
-inline void pending_transaction_record::clear_compute_bandwidth_used() {
-  compute_bandwidth_used_ = uint64_t{0u};
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction_record::_internal_compute_bandwidth_used() const {
-  return compute_bandwidth_used_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint64 pending_transaction_record::compute_bandwidth_used() const {
-  // @@protoc_insertion_point(field_get:koinos.mempool.pending_transaction_record.compute_bandwidth_used)
-  return _internal_compute_bandwidth_used();
-}
-inline void pending_transaction_record::_internal_set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  
-  compute_bandwidth_used_ = value;
-}
-inline void pending_transaction_record::set_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
-  _internal_set_compute_bandwidth_used(value);
-  // @@protoc_insertion_point(field_set:koinos.mempool.pending_transaction_record.compute_bandwidth_used)
-}
-
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

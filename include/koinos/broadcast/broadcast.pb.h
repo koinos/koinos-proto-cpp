@@ -217,6 +217,9 @@ class transaction_accepted final :
     kTransactionFieldNumber = 1,
     kReceiptFieldNumber = 2,
     kHeightFieldNumber = 3,
+    kSystemDiskStorageUsedFieldNumber = 4,
+    kSystemNetworkBandwidthUsedFieldNumber = 5,
+    kSystemComputeBandwidthUsedFieldNumber = 6,
   };
   // .koinos.protocol.transaction transaction = 1;
   bool has_transaction() const;
@@ -263,6 +266,33 @@ class transaction_accepted final :
   void _internal_set_height(::PROTOBUF_NAMESPACE_ID::uint64 value);
   public:
 
+  // uint64 system_disk_storage_used = 4;
+  void clear_system_disk_storage_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_disk_storage_used() const;
+  void set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_system_disk_storage_used() const;
+  void _internal_set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 system_network_bandwidth_used = 5;
+  void clear_system_network_bandwidth_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_network_bandwidth_used() const;
+  void set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_system_network_bandwidth_used() const;
+  void _internal_set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
+  // uint64 system_compute_bandwidth_used = 6;
+  void clear_system_compute_bandwidth_used();
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_compute_bandwidth_used() const;
+  void set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint64 _internal_system_compute_bandwidth_used() const;
+  void _internal_set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:koinos.broadcast.transaction_accepted)
  private:
   class _Internal;
@@ -273,6 +303,9 @@ class transaction_accepted final :
   ::koinos::protocol::transaction* transaction_;
   ::koinos::protocol::transaction_receipt* receipt_;
   ::PROTOBUF_NAMESPACE_ID::uint64 height_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_disk_storage_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_network_bandwidth_used_;
+  ::PROTOBUF_NAMESPACE_ID::uint64 system_compute_bandwidth_used_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_koinos_2fbroadcast_2fbroadcast_2eproto;
 };
@@ -1652,6 +1685,66 @@ inline void transaction_accepted::_internal_set_height(::PROTOBUF_NAMESPACE_ID::
 inline void transaction_accepted::set_height(::PROTOBUF_NAMESPACE_ID::uint64 value) {
   _internal_set_height(value);
   // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.height)
+}
+
+// uint64 system_disk_storage_used = 4;
+inline void transaction_accepted::clear_system_disk_storage_used() {
+  system_disk_storage_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_accepted::_internal_system_disk_storage_used() const {
+  return system_disk_storage_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_accepted::system_disk_storage_used() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.transaction_accepted.system_disk_storage_used)
+  return _internal_system_disk_storage_used();
+}
+inline void transaction_accepted::_internal_set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  system_disk_storage_used_ = value;
+}
+inline void transaction_accepted::set_system_disk_storage_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_system_disk_storage_used(value);
+  // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.system_disk_storage_used)
+}
+
+// uint64 system_network_bandwidth_used = 5;
+inline void transaction_accepted::clear_system_network_bandwidth_used() {
+  system_network_bandwidth_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_accepted::_internal_system_network_bandwidth_used() const {
+  return system_network_bandwidth_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_accepted::system_network_bandwidth_used() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.transaction_accepted.system_network_bandwidth_used)
+  return _internal_system_network_bandwidth_used();
+}
+inline void transaction_accepted::_internal_set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  system_network_bandwidth_used_ = value;
+}
+inline void transaction_accepted::set_system_network_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_system_network_bandwidth_used(value);
+  // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.system_network_bandwidth_used)
+}
+
+// uint64 system_compute_bandwidth_used = 6;
+inline void transaction_accepted::clear_system_compute_bandwidth_used() {
+  system_compute_bandwidth_used_ = uint64_t{0u};
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_accepted::_internal_system_compute_bandwidth_used() const {
+  return system_compute_bandwidth_used_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint64 transaction_accepted::system_compute_bandwidth_used() const {
+  // @@protoc_insertion_point(field_get:koinos.broadcast.transaction_accepted.system_compute_bandwidth_used)
+  return _internal_system_compute_bandwidth_used();
+}
+inline void transaction_accepted::_internal_set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  
+  system_compute_bandwidth_used_ = value;
+}
+inline void transaction_accepted::set_system_compute_bandwidth_used(::PROTOBUF_NAMESPACE_ID::uint64 value) {
+  _internal_set_system_compute_bandwidth_used(value);
+  // @@protoc_insertion_point(field_set:koinos.broadcast.transaction_accepted.system_compute_bandwidth_used)
 }
 
 // -------------------------------------------------------------------

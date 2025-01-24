@@ -50,7 +50,7 @@ struct TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[14]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[16]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -84,6 +84,12 @@ extern get_pending_transaction_count_requestDefaultTypeInternal _get_pending_tra
 class get_pending_transaction_count_response;
 struct get_pending_transaction_count_responseDefaultTypeInternal;
 extern get_pending_transaction_count_responseDefaultTypeInternal _get_pending_transaction_count_response_default_instance_;
+class get_pending_transactions_by_id_request;
+struct get_pending_transactions_by_id_requestDefaultTypeInternal;
+extern get_pending_transactions_by_id_requestDefaultTypeInternal _get_pending_transactions_by_id_request_default_instance_;
+class get_pending_transactions_by_id_response;
+struct get_pending_transactions_by_id_responseDefaultTypeInternal;
+extern get_pending_transactions_by_id_responseDefaultTypeInternal _get_pending_transactions_by_id_response_default_instance_;
 class get_pending_transactions_request;
 struct get_pending_transactions_requestDefaultTypeInternal;
 extern get_pending_transactions_requestDefaultTypeInternal _get_pending_transactions_request_default_instance_;
@@ -114,6 +120,8 @@ template<> ::koinos::rpc::mempool::get_pending_nonce_request* Arena::CreateMaybe
 template<> ::koinos::rpc::mempool::get_pending_nonce_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_nonce_response>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transaction_count_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transaction_count_request>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transaction_count_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transaction_count_response>(Arena*);
+template<> ::koinos::rpc::mempool::get_pending_transactions_by_id_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_by_id_request>(Arena*);
+template<> ::koinos::rpc::mempool::get_pending_transactions_by_id_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_by_id_response>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transactions_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_request>(Arena*);
 template<> ::koinos::rpc::mempool::get_pending_transactions_response* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_pending_transactions_response>(Arena*);
 template<> ::koinos::rpc::mempool::get_reserved_account_rc_request* Arena::CreateMaybeMessage<::koinos::rpc::mempool::get_reserved_account_rc_request>(Arena*);
@@ -1977,6 +1985,329 @@ class get_pending_transaction_count_response final :
 };
 // -------------------------------------------------------------------
 
+class get_pending_transactions_by_id_request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.get_pending_transactions_by_id_request) */ {
+ public:
+  inline get_pending_transactions_by_id_request() : get_pending_transactions_by_id_request(nullptr) {}
+  ~get_pending_transactions_by_id_request() override;
+  explicit constexpr get_pending_transactions_by_id_request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_pending_transactions_by_id_request(const get_pending_transactions_by_id_request& from);
+  get_pending_transactions_by_id_request(get_pending_transactions_by_id_request&& from) noexcept
+    : get_pending_transactions_by_id_request() {
+    *this = ::std::move(from);
+  }
+
+  inline get_pending_transactions_by_id_request& operator=(const get_pending_transactions_by_id_request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_pending_transactions_by_id_request& operator=(get_pending_transactions_by_id_request&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_pending_transactions_by_id_request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_pending_transactions_by_id_request* internal_default_instance() {
+    return reinterpret_cast<const get_pending_transactions_by_id_request*>(
+               &_get_pending_transactions_by_id_request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(get_pending_transactions_by_id_request& a, get_pending_transactions_by_id_request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_pending_transactions_by_id_request* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_pending_transactions_by_id_request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_pending_transactions_by_id_request* New() const final {
+    return new get_pending_transactions_by_id_request();
+  }
+
+  get_pending_transactions_by_id_request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_pending_transactions_by_id_request>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_pending_transactions_by_id_request& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_pending_transactions_by_id_request& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_pending_transactions_by_id_request* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.rpc.mempool.get_pending_transactions_by_id_request";
+  }
+  protected:
+  explicit get_pending_transactions_by_id_request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTransactionIdsFieldNumber = 1,
+    kBlockIdFieldNumber = 2,
+  };
+  // repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
+  int transaction_ids_size() const;
+  private:
+  int _internal_transaction_ids_size() const;
+  public:
+  void clear_transaction_ids();
+  const std::string& transaction_ids(int index) const;
+  std::string* mutable_transaction_ids(int index);
+  void set_transaction_ids(int index, const std::string& value);
+  void set_transaction_ids(int index, std::string&& value);
+  void set_transaction_ids(int index, const char* value);
+  void set_transaction_ids(int index, const void* value, size_t size);
+  std::string* add_transaction_ids();
+  void add_transaction_ids(const std::string& value);
+  void add_transaction_ids(std::string&& value);
+  void add_transaction_ids(const char* value);
+  void add_transaction_ids(const void* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& transaction_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_transaction_ids();
+  private:
+  const std::string& _internal_transaction_ids(int index) const;
+  std::string* _internal_add_transaction_ids();
+  public:
+
+  // optional bytes block_id = 2 [(.koinos.btype) = BLOCK_ID];
+  bool has_block_id() const;
+  private:
+  bool _internal_has_block_id() const;
+  public:
+  void clear_block_id();
+  const std::string& block_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_block_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_block_id();
+  PROTOBUF_MUST_USE_RESULT std::string* release_block_id();
+  void set_allocated_block_id(std::string* block_id);
+  private:
+  const std::string& _internal_block_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_block_id(const std::string& value);
+  std::string* _internal_mutable_block_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.get_pending_transactions_by_id_request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> transaction_ids_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr block_id_;
+  friend struct ::TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
+class get_pending_transactions_by_id_response final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.get_pending_transactions_by_id_response) */ {
+ public:
+  inline get_pending_transactions_by_id_response() : get_pending_transactions_by_id_response(nullptr) {}
+  ~get_pending_transactions_by_id_response() override;
+  explicit constexpr get_pending_transactions_by_id_response(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  get_pending_transactions_by_id_response(const get_pending_transactions_by_id_response& from);
+  get_pending_transactions_by_id_response(get_pending_transactions_by_id_response&& from) noexcept
+    : get_pending_transactions_by_id_response() {
+    *this = ::std::move(from);
+  }
+
+  inline get_pending_transactions_by_id_response& operator=(const get_pending_transactions_by_id_response& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline get_pending_transactions_by_id_response& operator=(get_pending_transactions_by_id_response&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const get_pending_transactions_by_id_response& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const get_pending_transactions_by_id_response* internal_default_instance() {
+    return reinterpret_cast<const get_pending_transactions_by_id_response*>(
+               &_get_pending_transactions_by_id_response_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    13;
+
+  friend void swap(get_pending_transactions_by_id_response& a, get_pending_transactions_by_id_response& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(get_pending_transactions_by_id_response* other) {
+    if (other == this) return;
+    if (GetOwningArena() == other->GetOwningArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(get_pending_transactions_by_id_response* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline get_pending_transactions_by_id_response* New() const final {
+    return new get_pending_transactions_by_id_response();
+  }
+
+  get_pending_transactions_by_id_response* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<get_pending_transactions_by_id_response>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const get_pending_transactions_by_id_response& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const get_pending_transactions_by_id_response& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message*to, const ::PROTOBUF_NAMESPACE_ID::Message&from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(get_pending_transactions_by_id_response* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "koinos.rpc.mempool.get_pending_transactions_by_id_response";
+  }
+  protected:
+  explicit get_pending_transactions_by_id_response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPendingTransactionsFieldNumber = 1,
+  };
+  // repeated .koinos.mempool.pending_transaction pending_transactions = 1;
+  int pending_transactions_size() const;
+  private:
+  int _internal_pending_transactions_size() const;
+  public:
+  void clear_pending_transactions();
+  ::koinos::mempool::pending_transaction* mutable_pending_transactions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::mempool::pending_transaction >*
+      mutable_pending_transactions();
+  private:
+  const ::koinos::mempool::pending_transaction& _internal_pending_transactions(int index) const;
+  ::koinos::mempool::pending_transaction* _internal_add_pending_transactions();
+  public:
+  const ::koinos::mempool::pending_transaction& pending_transactions(int index) const;
+  ::koinos::mempool::pending_transaction* add_pending_transactions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::mempool::pending_transaction >&
+      pending_transactions() const;
+
+  // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.get_pending_transactions_by_id_response)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::mempool::pending_transaction > pending_transactions_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_koinos_2frpc_2fmempool_2fmempool_5frpc_2eproto;
+};
+// -------------------------------------------------------------------
+
 class mempool_request final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:koinos.rpc.mempool.mempool_request) */ {
  public:
@@ -2024,6 +2355,7 @@ class mempool_request final :
     kGetReservedAccountRc = 5,
     kGetPendingNonce = 6,
     kGetPendingTransactionCount = 7,
+    kGetPendingTransactionsById = 8,
     REQUEST_NOT_SET = 0,
   };
 
@@ -2032,7 +2364,7 @@ class mempool_request final :
                &_mempool_request_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   friend void swap(mempool_request& a, mempool_request& b) {
     a.Swap(&b);
@@ -2110,6 +2442,7 @@ class mempool_request final :
     kGetReservedAccountRcFieldNumber = 5,
     kGetPendingNonceFieldNumber = 6,
     kGetPendingTransactionCountFieldNumber = 7,
+    kGetPendingTransactionsByIdFieldNumber = 8,
   };
   // .koinos.rpc.reserved_rpc reserved = 1;
   bool has_reserved() const;
@@ -2237,6 +2570,24 @@ class mempool_request final :
       ::koinos::rpc::mempool::get_pending_transaction_count_request* get_pending_transaction_count);
   ::koinos::rpc::mempool::get_pending_transaction_count_request* unsafe_arena_release_get_pending_transaction_count();
 
+  // .koinos.rpc.mempool.get_pending_transactions_by_id_request get_pending_transactions_by_id = 8;
+  bool has_get_pending_transactions_by_id() const;
+  private:
+  bool _internal_has_get_pending_transactions_by_id() const;
+  public:
+  void clear_get_pending_transactions_by_id();
+  const ::koinos::rpc::mempool::get_pending_transactions_by_id_request& get_pending_transactions_by_id() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::mempool::get_pending_transactions_by_id_request* release_get_pending_transactions_by_id();
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_request* mutable_get_pending_transactions_by_id();
+  void set_allocated_get_pending_transactions_by_id(::koinos::rpc::mempool::get_pending_transactions_by_id_request* get_pending_transactions_by_id);
+  private:
+  const ::koinos::rpc::mempool::get_pending_transactions_by_id_request& _internal_get_pending_transactions_by_id() const;
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_request* _internal_mutable_get_pending_transactions_by_id();
+  public:
+  void unsafe_arena_set_allocated_get_pending_transactions_by_id(
+      ::koinos::rpc::mempool::get_pending_transactions_by_id_request* get_pending_transactions_by_id);
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_request* unsafe_arena_release_get_pending_transactions_by_id();
+
   void clear_request();
   RequestCase request_case() const;
   // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_request)
@@ -2249,6 +2600,7 @@ class mempool_request final :
   void set_has_get_reserved_account_rc();
   void set_has_get_pending_nonce();
   void set_has_get_pending_transaction_count();
+  void set_has_get_pending_transactions_by_id();
 
   inline bool has_request() const;
   inline void clear_has_request();
@@ -2266,6 +2618,7 @@ class mempool_request final :
     ::koinos::rpc::mempool::get_reserved_account_rc_request* get_reserved_account_rc_;
     ::koinos::rpc::mempool::get_pending_nonce_request* get_pending_nonce_;
     ::koinos::rpc::mempool::get_pending_transaction_count_request* get_pending_transaction_count_;
+    ::koinos::rpc::mempool::get_pending_transactions_by_id_request* get_pending_transactions_by_id_;
   } request_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -2322,6 +2675,7 @@ class mempool_response final :
     kGetReservedAccountRc = 6,
     kGetPendingNonce = 7,
     kGetPendingTransactionCount = 8,
+    kGetPendingTransactionsById = 9,
     RESPONSE_NOT_SET = 0,
   };
 
@@ -2330,7 +2684,7 @@ class mempool_response final :
                &_mempool_response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   friend void swap(mempool_response& a, mempool_response& b) {
     a.Swap(&b);
@@ -2409,6 +2763,7 @@ class mempool_response final :
     kGetReservedAccountRcFieldNumber = 6,
     kGetPendingNonceFieldNumber = 7,
     kGetPendingTransactionCountFieldNumber = 8,
+    kGetPendingTransactionsByIdFieldNumber = 9,
   };
   // .koinos.rpc.reserved_rpc reserved = 1;
   bool has_reserved() const;
@@ -2554,6 +2909,24 @@ class mempool_response final :
       ::koinos::rpc::mempool::get_pending_transaction_count_response* get_pending_transaction_count);
   ::koinos::rpc::mempool::get_pending_transaction_count_response* unsafe_arena_release_get_pending_transaction_count();
 
+  // .koinos.rpc.mempool.get_pending_transactions_by_id_response get_pending_transactions_by_id = 9;
+  bool has_get_pending_transactions_by_id() const;
+  private:
+  bool _internal_has_get_pending_transactions_by_id() const;
+  public:
+  void clear_get_pending_transactions_by_id();
+  const ::koinos::rpc::mempool::get_pending_transactions_by_id_response& get_pending_transactions_by_id() const;
+  PROTOBUF_MUST_USE_RESULT ::koinos::rpc::mempool::get_pending_transactions_by_id_response* release_get_pending_transactions_by_id();
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_response* mutable_get_pending_transactions_by_id();
+  void set_allocated_get_pending_transactions_by_id(::koinos::rpc::mempool::get_pending_transactions_by_id_response* get_pending_transactions_by_id);
+  private:
+  const ::koinos::rpc::mempool::get_pending_transactions_by_id_response& _internal_get_pending_transactions_by_id() const;
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_response* _internal_mutable_get_pending_transactions_by_id();
+  public:
+  void unsafe_arena_set_allocated_get_pending_transactions_by_id(
+      ::koinos::rpc::mempool::get_pending_transactions_by_id_response* get_pending_transactions_by_id);
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_response* unsafe_arena_release_get_pending_transactions_by_id();
+
   void clear_response();
   ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:koinos.rpc.mempool.mempool_response)
@@ -2567,6 +2940,7 @@ class mempool_response final :
   void set_has_get_reserved_account_rc();
   void set_has_get_pending_nonce();
   void set_has_get_pending_transaction_count();
+  void set_has_get_pending_transactions_by_id();
 
   inline bool has_response() const;
   inline void clear_has_response();
@@ -2585,6 +2959,7 @@ class mempool_response final :
     ::koinos::rpc::mempool::get_reserved_account_rc_response* get_reserved_account_rc_;
     ::koinos::rpc::mempool::get_pending_nonce_response* get_pending_nonce_;
     ::koinos::rpc::mempool::get_pending_transaction_count_response* get_pending_transaction_count_;
+    ::koinos::rpc::mempool::get_pending_transactions_by_id_response* get_pending_transactions_by_id_;
   } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -3437,6 +3812,184 @@ inline void get_pending_transaction_count_response::set_count(::PROTOBUF_NAMESPA
 
 // -------------------------------------------------------------------
 
+// get_pending_transactions_by_id_request
+
+// repeated bytes transaction_ids = 1 [(.koinos.btype) = TRANSACTION_ID];
+inline int get_pending_transactions_by_id_request::_internal_transaction_ids_size() const {
+  return transaction_ids_.size();
+}
+inline int get_pending_transactions_by_id_request::transaction_ids_size() const {
+  return _internal_transaction_ids_size();
+}
+inline void get_pending_transactions_by_id_request::clear_transaction_ids() {
+  transaction_ids_.Clear();
+}
+inline std::string* get_pending_transactions_by_id_request::add_transaction_ids() {
+  std::string* _s = _internal_add_transaction_ids();
+  // @@protoc_insertion_point(field_add_mutable:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+  return _s;
+}
+inline const std::string& get_pending_transactions_by_id_request::_internal_transaction_ids(int index) const {
+  return transaction_ids_.Get(index);
+}
+inline const std::string& get_pending_transactions_by_id_request::transaction_ids(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+  return _internal_transaction_ids(index);
+}
+inline std::string* get_pending_transactions_by_id_request::mutable_transaction_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+  return transaction_ids_.Mutable(index);
+}
+inline void get_pending_transactions_by_id_request::set_transaction_ids(int index, const std::string& value) {
+  transaction_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline void get_pending_transactions_by_id_request::set_transaction_ids(int index, std::string&& value) {
+  transaction_ids_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline void get_pending_transactions_by_id_request::set_transaction_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  transaction_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline void get_pending_transactions_by_id_request::set_transaction_ids(int index, const void* value, size_t size) {
+  transaction_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline std::string* get_pending_transactions_by_id_request::_internal_add_transaction_ids() {
+  return transaction_ids_.Add();
+}
+inline void get_pending_transactions_by_id_request::add_transaction_ids(const std::string& value) {
+  transaction_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline void get_pending_transactions_by_id_request::add_transaction_ids(std::string&& value) {
+  transaction_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline void get_pending_transactions_by_id_request::add_transaction_ids(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  transaction_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline void get_pending_transactions_by_id_request::add_transaction_ids(const void* value, size_t size) {
+  transaction_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+get_pending_transactions_by_id_request::transaction_ids() const {
+  // @@protoc_insertion_point(field_list:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+  return transaction_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+get_pending_transactions_by_id_request::mutable_transaction_ids() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.rpc.mempool.get_pending_transactions_by_id_request.transaction_ids)
+  return &transaction_ids_;
+}
+
+// optional bytes block_id = 2 [(.koinos.btype) = BLOCK_ID];
+inline bool get_pending_transactions_by_id_request::_internal_has_block_id() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool get_pending_transactions_by_id_request::has_block_id() const {
+  return _internal_has_block_id();
+}
+inline void get_pending_transactions_by_id_request::clear_block_id() {
+  block_id_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& get_pending_transactions_by_id_request::block_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.get_pending_transactions_by_id_request.block_id)
+  return _internal_block_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void get_pending_transactions_by_id_request::set_block_id(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ block_id_.SetBytes(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:koinos.rpc.mempool.get_pending_transactions_by_id_request.block_id)
+}
+inline std::string* get_pending_transactions_by_id_request::mutable_block_id() {
+  std::string* _s = _internal_mutable_block_id();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.get_pending_transactions_by_id_request.block_id)
+  return _s;
+}
+inline const std::string& get_pending_transactions_by_id_request::_internal_block_id() const {
+  return block_id_.Get();
+}
+inline void get_pending_transactions_by_id_request::_internal_set_block_id(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  block_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* get_pending_transactions_by_id_request::_internal_mutable_block_id() {
+  _has_bits_[0] |= 0x00000001u;
+  return block_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* get_pending_transactions_by_id_request::release_block_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.get_pending_transactions_by_id_request.block_id)
+  if (!_internal_has_block_id()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return block_id_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void get_pending_transactions_by_id_request::set_allocated_block_id(std::string* block_id) {
+  if (block_id != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  block_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), block_id,
+      GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set_allocated:koinos.rpc.mempool.get_pending_transactions_by_id_request.block_id)
+}
+
+// -------------------------------------------------------------------
+
+// get_pending_transactions_by_id_response
+
+// repeated .koinos.mempool.pending_transaction pending_transactions = 1;
+inline int get_pending_transactions_by_id_response::_internal_pending_transactions_size() const {
+  return pending_transactions_.size();
+}
+inline int get_pending_transactions_by_id_response::pending_transactions_size() const {
+  return _internal_pending_transactions_size();
+}
+inline ::koinos::mempool::pending_transaction* get_pending_transactions_by_id_response::mutable_pending_transactions(int index) {
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.get_pending_transactions_by_id_response.pending_transactions)
+  return pending_transactions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::mempool::pending_transaction >*
+get_pending_transactions_by_id_response::mutable_pending_transactions() {
+  // @@protoc_insertion_point(field_mutable_list:koinos.rpc.mempool.get_pending_transactions_by_id_response.pending_transactions)
+  return &pending_transactions_;
+}
+inline const ::koinos::mempool::pending_transaction& get_pending_transactions_by_id_response::_internal_pending_transactions(int index) const {
+  return pending_transactions_.Get(index);
+}
+inline const ::koinos::mempool::pending_transaction& get_pending_transactions_by_id_response::pending_transactions(int index) const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.get_pending_transactions_by_id_response.pending_transactions)
+  return _internal_pending_transactions(index);
+}
+inline ::koinos::mempool::pending_transaction* get_pending_transactions_by_id_response::_internal_add_pending_transactions() {
+  return pending_transactions_.Add();
+}
+inline ::koinos::mempool::pending_transaction* get_pending_transactions_by_id_response::add_pending_transactions() {
+  ::koinos::mempool::pending_transaction* _add = _internal_add_pending_transactions();
+  // @@protoc_insertion_point(field_add:koinos.rpc.mempool.get_pending_transactions_by_id_response.pending_transactions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::koinos::mempool::pending_transaction >&
+get_pending_transactions_by_id_response::pending_transactions() const {
+  // @@protoc_insertion_point(field_list:koinos.rpc.mempool.get_pending_transactions_by_id_response.pending_transactions)
+  return pending_transactions_;
+}
+
+// -------------------------------------------------------------------
+
 // mempool_request
 
 // .koinos.rpc.reserved_rpc reserved = 1;
@@ -3946,6 +4499,80 @@ inline ::koinos::rpc::mempool::get_pending_transaction_count_request* mempool_re
 inline ::koinos::rpc::mempool::get_pending_transaction_count_request* mempool_request::mutable_get_pending_transaction_count() {
   ::koinos::rpc::mempool::get_pending_transaction_count_request* _msg = _internal_mutable_get_pending_transaction_count();
   // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.get_pending_transaction_count)
+  return _msg;
+}
+
+// .koinos.rpc.mempool.get_pending_transactions_by_id_request get_pending_transactions_by_id = 8;
+inline bool mempool_request::_internal_has_get_pending_transactions_by_id() const {
+  return request_case() == kGetPendingTransactionsById;
+}
+inline bool mempool_request::has_get_pending_transactions_by_id() const {
+  return _internal_has_get_pending_transactions_by_id();
+}
+inline void mempool_request::set_has_get_pending_transactions_by_id() {
+  _oneof_case_[0] = kGetPendingTransactionsById;
+}
+inline void mempool_request::clear_get_pending_transactions_by_id() {
+  if (_internal_has_get_pending_transactions_by_id()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete request_.get_pending_transactions_by_id_;
+    }
+    clear_has_request();
+  }
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_request* mempool_request::release_get_pending_transactions_by_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_request.get_pending_transactions_by_id)
+  if (_internal_has_get_pending_transactions_by_id()) {
+    clear_has_request();
+      ::koinos::rpc::mempool::get_pending_transactions_by_id_request* temp = request_.get_pending_transactions_by_id_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    request_.get_pending_transactions_by_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::rpc::mempool::get_pending_transactions_by_id_request& mempool_request::_internal_get_pending_transactions_by_id() const {
+  return _internal_has_get_pending_transactions_by_id()
+      ? *request_.get_pending_transactions_by_id_
+      : reinterpret_cast< ::koinos::rpc::mempool::get_pending_transactions_by_id_request&>(::koinos::rpc::mempool::_get_pending_transactions_by_id_request_default_instance_);
+}
+inline const ::koinos::rpc::mempool::get_pending_transactions_by_id_request& mempool_request::get_pending_transactions_by_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_request.get_pending_transactions_by_id)
+  return _internal_get_pending_transactions_by_id();
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_request* mempool_request::unsafe_arena_release_get_pending_transactions_by_id() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_request.get_pending_transactions_by_id)
+  if (_internal_has_get_pending_transactions_by_id()) {
+    clear_has_request();
+    ::koinos::rpc::mempool::get_pending_transactions_by_id_request* temp = request_.get_pending_transactions_by_id_;
+    request_.get_pending_transactions_by_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void mempool_request::unsafe_arena_set_allocated_get_pending_transactions_by_id(::koinos::rpc::mempool::get_pending_transactions_by_id_request* get_pending_transactions_by_id) {
+  clear_request();
+  if (get_pending_transactions_by_id) {
+    set_has_get_pending_transactions_by_id();
+    request_.get_pending_transactions_by_id_ = get_pending_transactions_by_id;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_request.get_pending_transactions_by_id)
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_request* mempool_request::_internal_mutable_get_pending_transactions_by_id() {
+  if (!_internal_has_get_pending_transactions_by_id()) {
+    clear_request();
+    set_has_get_pending_transactions_by_id();
+    request_.get_pending_transactions_by_id_ = CreateMaybeMessage< ::koinos::rpc::mempool::get_pending_transactions_by_id_request >(GetArenaForAllocation());
+  }
+  return request_.get_pending_transactions_by_id_;
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_request* mempool_request::mutable_get_pending_transactions_by_id() {
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_request* _msg = _internal_mutable_get_pending_transactions_by_id();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_request.get_pending_transactions_by_id)
   return _msg;
 }
 
@@ -4538,6 +5165,80 @@ inline ::koinos::rpc::mempool::get_pending_transaction_count_response* mempool_r
   return _msg;
 }
 
+// .koinos.rpc.mempool.get_pending_transactions_by_id_response get_pending_transactions_by_id = 9;
+inline bool mempool_response::_internal_has_get_pending_transactions_by_id() const {
+  return response_case() == kGetPendingTransactionsById;
+}
+inline bool mempool_response::has_get_pending_transactions_by_id() const {
+  return _internal_has_get_pending_transactions_by_id();
+}
+inline void mempool_response::set_has_get_pending_transactions_by_id() {
+  _oneof_case_[0] = kGetPendingTransactionsById;
+}
+inline void mempool_response::clear_get_pending_transactions_by_id() {
+  if (_internal_has_get_pending_transactions_by_id()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.get_pending_transactions_by_id_;
+    }
+    clear_has_response();
+  }
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_response* mempool_response::release_get_pending_transactions_by_id() {
+  // @@protoc_insertion_point(field_release:koinos.rpc.mempool.mempool_response.get_pending_transactions_by_id)
+  if (_internal_has_get_pending_transactions_by_id()) {
+    clear_has_response();
+      ::koinos::rpc::mempool::get_pending_transactions_by_id_response* temp = response_.get_pending_transactions_by_id_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.get_pending_transactions_by_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::koinos::rpc::mempool::get_pending_transactions_by_id_response& mempool_response::_internal_get_pending_transactions_by_id() const {
+  return _internal_has_get_pending_transactions_by_id()
+      ? *response_.get_pending_transactions_by_id_
+      : reinterpret_cast< ::koinos::rpc::mempool::get_pending_transactions_by_id_response&>(::koinos::rpc::mempool::_get_pending_transactions_by_id_response_default_instance_);
+}
+inline const ::koinos::rpc::mempool::get_pending_transactions_by_id_response& mempool_response::get_pending_transactions_by_id() const {
+  // @@protoc_insertion_point(field_get:koinos.rpc.mempool.mempool_response.get_pending_transactions_by_id)
+  return _internal_get_pending_transactions_by_id();
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_response* mempool_response::unsafe_arena_release_get_pending_transactions_by_id() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:koinos.rpc.mempool.mempool_response.get_pending_transactions_by_id)
+  if (_internal_has_get_pending_transactions_by_id()) {
+    clear_has_response();
+    ::koinos::rpc::mempool::get_pending_transactions_by_id_response* temp = response_.get_pending_transactions_by_id_;
+    response_.get_pending_transactions_by_id_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void mempool_response::unsafe_arena_set_allocated_get_pending_transactions_by_id(::koinos::rpc::mempool::get_pending_transactions_by_id_response* get_pending_transactions_by_id) {
+  clear_response();
+  if (get_pending_transactions_by_id) {
+    set_has_get_pending_transactions_by_id();
+    response_.get_pending_transactions_by_id_ = get_pending_transactions_by_id;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:koinos.rpc.mempool.mempool_response.get_pending_transactions_by_id)
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_response* mempool_response::_internal_mutable_get_pending_transactions_by_id() {
+  if (!_internal_has_get_pending_transactions_by_id()) {
+    clear_response();
+    set_has_get_pending_transactions_by_id();
+    response_.get_pending_transactions_by_id_ = CreateMaybeMessage< ::koinos::rpc::mempool::get_pending_transactions_by_id_response >(GetArenaForAllocation());
+  }
+  return response_.get_pending_transactions_by_id_;
+}
+inline ::koinos::rpc::mempool::get_pending_transactions_by_id_response* mempool_response::mutable_get_pending_transactions_by_id() {
+  ::koinos::rpc::mempool::get_pending_transactions_by_id_response* _msg = _internal_mutable_get_pending_transactions_by_id();
+  // @@protoc_insertion_point(field_mutable:koinos.rpc.mempool.mempool_response.get_pending_transactions_by_id)
+  return _msg;
+}
+
 inline bool mempool_response::has_response() const {
   return response_case() != RESPONSE_NOT_SET;
 }
@@ -4550,6 +5251,10 @@ inline mempool_response::ResponseCase mempool_response::response_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
